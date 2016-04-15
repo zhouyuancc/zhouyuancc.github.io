@@ -1,0 +1,136 @@
+/*通用设置*/
+a, address, b, big, blockquote, body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{
+    margin: 0px;
+    padding: 0px;
+}
+
+/*去除ul中li左边的圆点*/
+ul{
+    list-style: none;
+}
+
+body{
+    background: url("../images/apple.jpg");
+    /*图像跟随屏幕变化*/
+    background-size: cover;
+}
+
+/*--------------头部--------------------*/
+#header{
+    background: rgb(241,241,241);
+    /*阴影*/
+    box-shadow: 0px 1px 10px black;
+    /*垂直居中*/
+    height: 30px;
+    line-height: 30px;
+}
+
+/*头部左边*/
+/*<ul class="header-left">*/
+#header .header-left{
+    /*
+     在这设置为 行内-块级标签
+     头部右边<ul class="header-right">就会与左边在一行
+     */
+    display: inline-block;
+}
+
+#header .header-left li{
+    display: inline-block;
+    margin: 0px 6px;
+    font-size: 16px;
+}
+
+#header .header-left li:hover{
+    cursor: pointer;
+}
+
+#header .header-right{
+    float: right;
+}
+
+#header .header-right li{
+    display: inline-block;
+    margin: 0px 6px;
+    font-size: 16px;
+}
+
+#header .header-right li:hover{
+    cursor: pointer;
+}
+
+/*--------------中间内容--------------------*/
+#content .file{
+    display: block;
+    width: 60px;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+#content .file img{
+   width: 60px;
+   height: 60px;
+}
+
+#content .file p{
+    color: #ffffff;
+    text-align: center;
+}
+
+#content .file:hover
+{
+    cursor: pointer;
+}
+
+/*--------------尾部--------------------*/
+#footer{
+    height: 70px;
+    width: 100%;
+    text-align: center;
+
+    /*绝对定位，bottom设置与底部的距离*/
+    position: absolute;
+    bottom: 0px;
+}
+
+#footer .dock{
+
+    /*父标签的70%*/
+    width: 70%;
+
+    height: 100%;
+    line-height: 60px;
+    background-color: #ddd;
+    display: inline-block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    opacity: 0.8;
+    margin: 0px auto;
+
+}
+
+#footer .dock ul{
+    display: inline-block;
+}
+
+#footer .dock img{
+    width: 50px;
+    height: 50px;
+    margin: 0px 6px;
+
+}
+
+#footer .dock ul li{
+    display: inline-block;
+
+    /*火狐不兼容*/
+    /*过渡的时间 效果*/
+    -webkit-transition: 0.25s linear;
+}
+
+#footer .dock ul li:hover{
+    /*参照*/
+    -webkit-transform-origin:center bottom;
+    /*形变 放大1.3倍*/
+    -webkit-transform:scale(1.3);
+}
