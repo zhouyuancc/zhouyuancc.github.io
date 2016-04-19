@@ -21,8 +21,8 @@ body{
     /*阴影*/
     box-shadow: 0px 1px 10px black;
     /*垂直居中*/
-    height: 30px;
-    line-height: 30px;
+    height: 26px;
+    line-height: 26px;
 }
 
 /*头部左边*/
@@ -38,11 +38,11 @@ body{
 #header .header-left li{
     display: inline-block;
     margin: 0px 6px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #header .header-left li:hover{
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 
 #header .header-right{
@@ -63,8 +63,8 @@ body{
 #content .file{
     display: block;
     width: 60px;
-    margin-left: 20px;
-    margin-top: 40px;
+    margin-left: 30px;
+    margin-top: 30px;
 }
 
 #content .file img{

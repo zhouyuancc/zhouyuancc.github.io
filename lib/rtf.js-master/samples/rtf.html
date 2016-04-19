@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="1.11.3/jquery.min.js"></script>
 <script src="jquery.binarytransport.js"></script>
 <script src="cptable.full.js"></script>
 <link rel="stylesheet" href="jquery.svg.css">
@@ -64,7 +64,7 @@ function displayRtfFile(blob) {
 						element: lnk
 					};
 				}
-			},
+			}
 		};
 		var doc = new RTFJS.Document(blob, settings);
 		var haveMeta = false;
@@ -172,6 +172,9 @@ $(document).ready(function() {
 				<option>simplepng.rtf</option>
 				<option>simplepngbin.rtf</option>
 				<option>hyperlink.rtf</option>
+                                <option>调用AppDelegate.h中的方法.rtf</option>
+                            <option>cs.rtf</option>
+                            <option>cs.md</option>
 			</select>
 		</form>
 	</span>
