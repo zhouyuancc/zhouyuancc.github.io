@@ -2579,8 +2579,10 @@
 		/* Content */
 
 			#content {
-				padding: 3em 5em 8em 5em;
-				margin-left: 21em;
+				/*padding: 3em 5em 8em 5em;*/
+				/*margin-left: 21em;*/
+                padding: 2em 3em 6em 3em;
+                margin-left: 14em;
 			}
 
 	}
