@@ -134,6 +134,9 @@ $(document).ready(function() {
 			evt.preventDefault();
 			
 			var files = evt.originalEvent.dataTransfer.files;
+                    alert(files[0])
+                    console.log(files[0])
+
 			if (files.length > 1) {
 				alert("Please only drop one file!");
 			} else {
@@ -172,7 +175,7 @@ $(document).ready(function() {
 				<option>simplepng.rtf</option>
 				<option>simplepngbin.rtf</option>
 				<option>hyperlink.rtf</option>
-                                <option>调用AppDelegate.h中的方法.rtf</option>
+                                <option>从模型数组中筛选包含关键字NSString *的模型数组，并赋值给另一个数组.rtfd</option>
                             <option>cs.rtf</option>
                             <option>cs.md</option>
 			</select>

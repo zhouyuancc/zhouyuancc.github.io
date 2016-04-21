@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>blog</title>
+		<title>zhou's blog</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -15,9 +15,9 @@
 	</head>
 	<body>
 
-		<!-- Content -->
+		<!-- 右侧Content -->
 			<div id="content">
-				<div class="inner">
+				<div id="contentInner" class="inner">
 
 					<!-- Post -->
 						<article class="box post post-excerpt">
@@ -96,7 +96,7 @@
 						<ul>
 							<li class="current"><a href="#">Latest Post</a></li>
 							<li><a href="#">Archives</a></li>
-							<li><a href="#">About Me</a></li>
+							<li><a href="http://resume.qmail.com/jathinzy_001/jTeLQG1bq4k">About Me</a></li>
 							<li><a href="#">Contact Me</a></li>
 						</ul>
 					</nav>
@@ -219,6 +219,13 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+
+                <script type="text/javascript">
+                    $(function(){
+                        var url = "../resume/iOS_ZY_resume.html" //被加载的页面url
+                        $("#contentInner").load(url,null,function(){alert("加载成功")});
+                    });
+                </script>
 
 	</body>
 </html>
