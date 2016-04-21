@@ -2,50 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="838d39a1-b21a-4edf-b30a-083ad55e6a9e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/0.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/ico_loading1e9c5d.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/ajax_proxy.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/all2d1760.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/ftn2875f2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_resume.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/jTeLQG1bq4k.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/pkg24e6b9.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/pkg2a2606.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/player289cd9.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/qmclipboard24e6b9.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/qmfw2b676f.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/qmpreviewer2a2601.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/qmtool2abd4c.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resume/iOS_ZY_files/resume_other2767f6.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/desk/css/index.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/aple.jpg" afterPath="$PROJECT_DIR$/desk/images/aple.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/apple.jpg" afterPath="$PROJECT_DIR$/desk/images/apple.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/apple1.jpg" afterPath="$PROJECT_DIR$/desk/images/apple1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/apples.jpg" afterPath="$PROJECT_DIR$/desk/images/apples.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/bg1.jpg" afterPath="$PROJECT_DIR$/desk/images/bg1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/bg2.jpg" afterPath="$PROJECT_DIR$/desk/images/bg2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/body-bg.jpg" afterPath="$PROJECT_DIR$/desk/images/body-bg.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/dock_bg.png" afterPath="$PROJECT_DIR$/desk/images/dock_bg.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/download-button.png" afterPath="$PROJECT_DIR$/desk/images/download-button.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/facebook-icon.png" afterPath="$PROJECT_DIR$/desk/images/facebook-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/file.png" afterPath="$PROJECT_DIR$/desk/images/file.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/github-button.png" afterPath="$PROJECT_DIR$/desk/images/github-button.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/google-icon.png" afterPath="$PROJECT_DIR$/desk/images/google-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/header-bg.jpg" afterPath="$PROJECT_DIR$/desk/images/header-bg.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/highlight-bg.jpg" afterPath="$PROJECT_DIR$/desk/images/highlight-bg.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/lastfm-icon.png" afterPath="$PROJECT_DIR$/desk/images/lastfm-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/linkedin-icon.png" afterPath="$PROJECT_DIR$/desk/images/linkedin-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/notable-icon.png" afterPath="$PROJECT_DIR$/desk/images/notable-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/play-button.png" afterPath="$PROJECT_DIR$/desk/images/play-button.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/sidebar-bg.jpg" afterPath="$PROJECT_DIR$/desk/images/sidebar-bg.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/zurb-divider.png" afterPath="$PROJECT_DIR$/desk/images/zurb-divider.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/zurb-icon.png" afterPath="$PROJECT_DIR$/desk/images/zurb-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/javascripts/main.js" afterPath="$PROJECT_DIR$/desk/javascripts/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/index.html" afterPath="$PROJECT_DIR$/blog/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/rtf.html" afterPath="$PROJECT_DIR$/lib/rtf.js-master/samples/rtf.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stylesheets/stylesheet.css" afterPath="$PROJECT_DIR$/stylesheets/stylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/wmf.html" afterPath="$PROJECT_DIR$/lib/rtf.js-master/samples/wmf.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="zhouyuancc.github.io.iws" />
@@ -71,25 +28,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5497896" vertical-offset="283" max-vertical-offset="1080">
-              <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.833334" vertical-offset="832" max-vertical-offset="1560">
-              <caret line="224" column="45" selection-start-line="224" selection-start-column="35" selection-end-line="224" selection-end-column="45" />
+            <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="1560">
+              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
               <folding>
                 <element signature="tag#head#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#1;tag#body#0;tag#html#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.59210527" vertical-offset="180" max-vertical-offset="720">
+              <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -137,6 +94,7 @@
         <option value="$PROJECT_DIR$/resume/iOS_ZY_resume.html" />
         <option value="$PROJECT_DIR$/desk/css/index.css" />
         <option value="$PROJECT_DIR$/blog/index.html" />
+        <option value="$PROJECT_DIR$/indexDesk.html" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -202,52 +160,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resume" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="desk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="desk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="blog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -265,6 +177,22 @@
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/工作练习/21-HTML5/21-HTML5+CSS3/12-宠物网首页/css/index.css" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="54" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="64" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="66" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="597" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="51" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="64" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="67" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="599" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -274,6 +202,8 @@
       <recent name="$PROJECT_DIR$/blog" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/blog" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/desk" />
       <recent name="$PROJECT_DIR$/resume/iOS_ZY_files" />
       <recent name="$PROJECT_DIR$/resume/QQ_iOS_files" />
@@ -357,21 +287,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="334" y="23" width="834" height="873" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.4995141" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.49856734" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.49856734" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29065302" sideWeight="0.49856734" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24928367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2651048" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2651048" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29065302" sideWeight="0.50143266" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29065302" sideWeight="0.49856734" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -426,31 +356,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1065">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/rtf.js-master/samples/rtf.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="855" max-vertical-offset="2970">
           <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="339" max-vertical-offset="1065">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1065">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -691,6 +600,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="139170">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -734,6 +644,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.137042" vertical-offset="480" max-vertical-offset="2310">
           <caret line="137" column="26" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -745,17 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.833334" vertical-offset="832" max-vertical-offset="1560">
-          <caret line="224" column="45" selection-start-line="224" selection-start-column="35" selection-end-line="224" selection-end-column="45" />
-          <folding>
-            <element signature="tag#head#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resume/iOS_ZY_resume.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-135.625" vertical-offset="15" max-vertical-offset="23475">
@@ -764,10 +664,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blog/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="1560">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding>
+            <element signature="tag#head#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#1;tag#body#0;tag#html#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5497896" vertical-offset="283" max-vertical-offset="1080">
-          <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.59210527" vertical-offset="180" max-vertical-offset="720">
+          <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
           <folding />
         </state>
       </provider>
