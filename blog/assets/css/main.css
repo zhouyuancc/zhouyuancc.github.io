@@ -2488,6 +2488,31 @@
 				font-size: 12pt;
 			}
 
+        /* Logo */
+
+        #logo {
+            display: none;
+        }
+
+        /* Nav */
+
+        #nav {
+            margin-top: 0 !important;
+        }
+
+        #nav:before {
+            display: none !important;
+        }
+
+        #nav li:hover a {
+            background: none;
+        }
+
+        /* Sidebar */
+        #sidebar {
+            padding: 30px 20px 30px 20px;
+        }
+
 		/* Box */
 
 			.box.post h2 {
@@ -2496,12 +2521,12 @@
 			}
 
 			.box.post header {
-				padding: 2.75em 0 0 0;
-				margin: 0 0 3em 0;
+				padding: 0 0 0 0;
+				margin: 0 0 2em 0;
 			}
 
 				.box.post header > p {
-					font-size: 2.25em;
+					font-size: 1.75em;
 					line-height: 1.5em;
 					position: relative;
 					top: -0.65em;
@@ -2516,7 +2541,7 @@
 				background-image: url("images/bg02.png");
 				left: -10.5em;
 				top: 0;
-				padding: 1.5em 1em 1.5em 1em;
+				padding: 0.5em 1em 1.5em 1em;
 				border-top-left-radius: 0.4em;
 				border-bottom-left-radius: 0.4em;
 				box-shadow: 0.25em 0 0 0 #fbfbfb, 0 0 0.25em 0em rgba(0, 0, 0, 0.25);
@@ -2579,10 +2604,8 @@
 		/* Content */
 
 			#content {
-				/*padding: 3em 5em 8em 5em;*/
-				/*margin-left: 21em;*/
-                padding: 2em 3em 6em 3em;
-                margin-left: 14em;
+				padding: 1em 5em 8em 5em;
+				margin-left: 14em;
 			}
 
 	}
@@ -2601,8 +2624,35 @@
 			input, textarea, select {
 				font-size: 11pt;
 			}
+        /* Logo */
 
-		/* Box */
+        #logo {
+            display: none;
+        }
+
+        /* Nav */
+
+        #nav {
+            margin-top: 0 !important;
+        }
+
+        #nav:before {
+            display: none !important;
+        }
+
+        #nav li:hover a {
+            background: none;
+        }
+
+        /* Sidebar */
+
+        #sidebar {
+            padding: 30px 20px 30px 20px;
+        }
+
+
+
+        /* Box */
 
 			.box.post h2 {
 				font-size: 3.25em;
@@ -2610,12 +2660,12 @@
 			}
 
 			.box.post header {
-				padding: 1.5em 0 0 0;
-				margin: 0 0 3em 0;
+				padding: 0 0 0 0;
+				margin: 0 0 2em 0;
 			}
 
 				.box.post header > p {
-					font-size: 1.75em;
+					font-size: 1.55em;
 					line-height: 1.5em;
 					position: relative;
 					top: -0.75em;
@@ -2661,7 +2711,7 @@
 		/* Content */
 
 			#content {
-				padding: 2em 3em 6em 3em;
+				padding: 1em 3em 8em 3em;
 				margin-left: 14em;
 			}
 
@@ -2708,7 +2758,14 @@
 				padding: 30px 20px 30px 20px;
 			}
 
-	}
+        /* Content */
+
+        #content {
+            padding: 1em 3em 6em 3em;
+            margin-left: 14em;
+        }
+
+    }
 
 /* Mobile */
 
@@ -2834,7 +2891,7 @@
 
 			#content {
 				margin-top: 44px;
-				padding: 3em 20px 2em 20px;
+				padding: 0.2em 20px 2em 20px;
 			}
 
 		/* Sidebar */
@@ -2892,9 +2949,9 @@
 
 		/* Sidebar */
 
-			#titleBar {
-				display: block;
-			}
+        #titleBar {
+            display: block;
+        }
 
 			#sidebar {
 				-moz-backface-visibility: hidden;

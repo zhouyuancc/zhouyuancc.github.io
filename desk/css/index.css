@@ -138,7 +138,13 @@ body{
 /*响应式设计,监听屏幕的变化,当宽度和高度产生变化的时候,在这里面重写样式*/
 /*当屏幕宽度到达1153px，还要缩小时，执行*/
 @media screen and (max-width:335px){
-    /*修改宠物列表 宽度、下外边距*/
+
+    body {
+        line-height: 1.75em;
+        font-size: 11pt;
+        letter-spacing: 0;
+    }
+
     #header .header-left{
         width: 335px;
     }
