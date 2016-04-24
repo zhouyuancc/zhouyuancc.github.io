@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #fff995}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s10 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #3d1d81; background-color: #fff995}
+    span.s12 {font-variant-ligatures: no-common-ligatures; background-color: #fff995}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #6122ae; background-color: #fff995}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #703daa; background-color: #fff995}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span></span><span class="s2">多线程断点下载</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s2">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s2">通过响应头获取文件长度</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s2">- (</span><span class="s3">void</span><span class="s2">)getFilesize</span></p>
+<p class="p4"><span class="s2">{</span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">NSMutableURLRequest</span><span class="s4"> *request = [</span><span class="s2">NSMutableURLRequest</span><span class="s4"> </span><span class="s5">requestWithURL</span><span class="s4">:[</span><span class="s2">NSURL</span><span class="s4"> </span><span class="s5">URLWithString</span><span class="s4">:</span><span class="s3">self</span><span class="s4">.</span><span class="s6">url</span><span class="s4">]];</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>request.</span><span class="s7">HTTPMethod</span><span class="s2"> = </span><span class="s8">@"HEAD"</span><span class="s2">;</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s9">NSURLResponse</span><span class="s2"> *response = </span><span class="s3">nil</span><span class="s2">; <span class="Apple-converted-space">   </span></span></p>
+<p class="p7"><span class="s2"></span><br></p>
+<p class="p8"><span class="s2">#warning </span><span class="s10">这里要用异步请求</span></p>
+<p class="p3"><span class="s2">//<span class="Apple-converted-space">    </span>[NSURLConnection sendSynchronousRequest:request returningResponse:&amp;response error:nil];//</span><span class="s10">不耗时</span><span class="s2">,</span><span class="s10">同步有些卡</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>[</span><span class="s9">NSURLConnection</span><span class="s2"> </span><span class="s11">sendAsynchronousRequest</span><span class="s2">:request </span><span class="s5">queue</span><span class="s2">:</span><span class="s12">[</span><span class="s13">NSOperationQueue</span><span class="s12"> </span><span class="s11">mainQueue</span><span class="s12">]</span><span class="s2"> </span><span class="s5">completionHandler</span><span class="s2">:^(</span><span class="s9">NSURLResponse</span><span class="s2"> * </span><span class="s3">_Nullable</span><span class="s2"> response, </span><span class="s9">NSData</span><span class="s2"> * </span><span class="s3">_Nullable</span><span class="s2"> data, </span><span class="s9">NSError</span><span class="s2"> * </span><span class="s3">_Nullable</span><span class="s2"> connectionError) {</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space">       </span></span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">self</span><span class="s2">.</span><span class="s6">totalLength</span><span class="s2"> = </span><span class="s12">response.</span><span class="s14">expectedContentLength</span><span class="s2">;</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space">        </span></span></p>
+<p class="p3"><span class="s2"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>//</span><span class="s10">开始下载</span></p>
+<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s2">//</span><span class="s10">数组中每个</span><span class="s2">HMFileSingleDownloader</span><span class="s10">下载器都执行该方法</span></p>
+<p class="p9"><span class="s4"><span class="Apple-converted-space">        </span>[</span><span class="s3">self</span><span class="s4">.</span><span class="s6">singleDownloaders</span><span class="s4"> </span><span class="s2">makeObjectsPerformSelector</span><span class="s4">:</span><span class="s3">@selector</span><span class="s4">(start)];</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s6">_downloading</span><span class="s2"> = </span><span class="s3">YES</span><span class="s2">;</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p4"><span class="s2">}</span></p>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Times}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Courier}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: #0435ff}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: #1d9421}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae; background-color: #fff995}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; min-height: 25.0px}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81; background-color: #fff995}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #fff995}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #0435ff; min-height: 21.0px}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; background-color: #e0edd4}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s4 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #ff2600}
+    span.s7 {font-variant-ligatures: no-common-ligatures; background-color: #e0edd4}
+    span.s8 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; background-color: #e0edd4}
+    span.s9 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; background-color: #fff995}
+    span.s10 {font-variant-ligatures: no-common-ligatures; background-color: #fff995}
+    span.s11 {font-kerning: none}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s13 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s15 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s16 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s17 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.Apple-tab-span {white-space:pre}
+    td.td1 {width: 86.0px}
+    td.td2 {width: 253.0px}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">HTTP</span><span class="s2">协议</span></p>
+<p class="p2"><span class="s3">1.</span><span class="s1">面试题</span><span class="s4">: </span><span class="s1">聊一下</span><span class="s4">HTTP</span><span class="s1">协议</span><span class="s4">(</span><span class="s1">协议的完整的通信过程</span><span class="s4">)</span></p>
+<p class="p2"><span class="s1">*全称：超文本传输协议，定制传输数据的规范（客户端和服务器之间的数据传输规范）</span></p>
+<p class="p2"><span class="s4">*</span><span class="s1">描述</span><span class="s4">HTTP</span><span class="s1">协议完整的通信过程</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s3">2.</span><span class="s1">通信过程</span></p>
+<p class="p1"><span class="s5">1</span><span class="s1">&gt; </span><span class="s2">请求</span></p>
+<p class="p1"><span class="s1">* </span><span class="s2">客户端</span><span class="s1"> --&gt; </span><span class="s2">服务器</span></p>
+<p class="p2"><span class="s4">* </span><span class="s1">请求的内容</span></p>
+<p class="p2"><span class="s4">a. </span><span class="s6">请求行</span><span class="s4">(</span><span class="s7">请求方法</span><span class="s8">\</span><span class="s7">请求资源路径</span><span class="s8">\HTTP</span><span class="s7">协议版本</span><span class="s4">)</span></p>
+<p class="p2"><span class="s9">GET </span><span class="s10">/Server/Login?username=123 HTTP/1.1</span></p>
+<p class="p2"><span class="s4">b. </span><span class="s6">请求头</span><span class="s4">(</span><span class="s1">描述客户端的信息</span><span class="s4">)</span></p>
+<table cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p4"><span class="s11">Accept-Encoding</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p5"><span class="s11">gzip, deflate, br</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p4"><span class="s11">Accept-Language</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p5"><span class="s11">zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s4">c. </span><span class="s6">请求体</span><span class="s4">(POST</span><span class="s1">请求才需要有</span><span class="s4">, </span><span class="s1">存放具体数据</span><span class="s4">)</span></p>
+<p class="p2"><span class="s4">*</span><span class="s1">比如<span class="Apple-converted-space">  </span></span><span class="s4">POST</span><span class="s1">请求的参数数据</span></p>
+<p class="p2"><span class="s4">*</span><span class="s1">比如</span><span class="s4"> </span><span class="s1">文件数据</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s5">2</span><span class="s1">&gt; </span><span class="s2">响应</span></p>
+<p class="p1"><span class="s1">* </span><span class="s2">服务器</span><span class="s1"> --&gt; </span><span class="s2">客户端</span></p>
+<p class="p2"><span class="s4">* </span><span class="s1">响应的内容</span></p>
+<p class="p2"><span class="s4">a. </span><span class="s1">状态行</span><span class="s4">(HTTP</span><span class="s1">协议版本\状态码\状态信息，也可称为“</span><span class="s6">响应行</span><span class="s1">”</span><span class="s4">)</span></p>
+<p class="p1"><span class="s1">HTTP/1.1 200 OK</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s4">b. </span><span class="s6">响应头</span><span class="s4">(</span><span class="s1">服务器信息</span><span class="s4">, </span><span class="s1">返回数据的类型</span><span class="s4">, </span><span class="s1">返回数据的长度</span><span class="s4">)</span></p>
+<p class="p1"><span class="s1">Server: Apache-Coyote/1.1</span></p>
+<p class="p1"><span class="s1">Content-Type: application/json;charset=UTF-8</span></p>
+<p class="p1"><span class="s1">Content-Length: 250</span></p>
+<p class="p1"><span class="s1">Transfer-Encoding:chunked</span></p>
+<p class="p1"><span class="s1">Date: Tue,01 Jul 2014 03:05:25 GMT</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s4">c. </span><span class="s1">实体内容</span><span class="s4">(</span><span class="s6">响应体</span><span class="s4">, </span><span class="s1">返回给客户端的具体内容</span><span class="s4">)</span></p>
+<p class="p2"><span class="s4">*</span><span class="s1">比如</span><span class="s4"> </span><span class="s1">服务器返回的</span><span class="s4">JSON</span><span class="s1">数据</span></p>
+<p class="p2"><span class="s4">*</span><span class="s1">比如</span><span class="s4"> </span><span class="s1">服务器返回的文件数据</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s5">3.</span><span class="s1">HTTP</span><span class="s2">请求的方法</span></p>
+<p class="p1"><span class="s5">1</span><span class="s1">&gt; GET</span></p>
+<p class="p2"><span class="s4">* </span><span class="s1">参数都拼接在</span><span class="s4">URL</span><span class="s1">后面</span></p>
+<p class="p2"><span class="s4">* </span><span class="s1">参数有限制</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s5">2</span><span class="s1">&gt; POST</span></p>
+<p class="p2"><span class="s4">* </span><span class="s1">参数都在请求体</span></p>
+<p class="p2"><span class="s4">* </span><span class="s1">参数没有限制</span></p>
+<p class="p2"><span class="s1">*<span class="Apple-converted-space">  </span>文件上传只能用POST</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s3">2</span><span class="s4">&gt; HEAD : </span><span class="s1">只获得响应头信息，不获取响应体</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s5">4.</span><span class="s1">iOS</span><span class="s2">中发送</span><span class="s1">GET\POST</span><span class="s2">请求的手段</span></p>
+<p class="p1"><span class="s5">1</span><span class="s1">&gt; NSURLConnection</span></p>
+<p class="p2"><span class="s4">* </span><span class="s1">苹果原生</span></p>
+<p class="p2"><span class="s1">*<span class="Apple-converted-space">  </span>使用起来比ASI/AFN复杂，代理</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s5">2</span><span class="s1">&gt; ASI</span></p>
+<p class="p1"><span class="s1">* </span><span class="s2">基于</span><span class="s1">CFNetWork</span></p>
+<p class="p2"><span class="s4">* </span><span class="s1">提供了非常多强大的功能，使用简单</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s5">3</span><span class="s1">&gt; AFN</span></p>
+<p class="p1"><span class="s1">* </span><span class="s2">基于</span><span class="s1">NSURLConnection</span></p>
+<p class="p2"><span class="s4">* </span><span class="s1">提供了常用的功能</span></p>
+<p class="p2"><span class="s1">提高开发效率，减少调试花费的时间</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s2">二、</span><span class="s1">NSURLConnection</span></p>
+<p class="p6"><span class="s4">1.</span><span class="s1">发送请求</span></p>
+<p class="p2"><span class="s3">1</span><span class="s4">&gt; </span><span class="s1">发送一个同步请求</span></p>
+<p class="p1"><span class="s1">+ (NSData *)sendSynchronousRequest:(NSURLRequest *)request returningResponse:(NSURLResponse **)response error:(NSError **)error;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s3">2</span><span class="s4">&gt; </span><span class="s1">发送一个异步请求</span></p>
+<p class="p1"><span class="s1">+ (</span><span class="s12">void</span><span class="s1">)sendAsynchronousRequest:(NSURLRequest*) request</span></p>
+<p class="p1"><span class="s1">queue:(NSOperationQueue*) queue</span></p>
+<p class="p1"><span class="s1">completionHandler:(</span><span class="s12">void</span><span class="s1"> (^)(NSURLResponse* response, NSData* data, NSError* connectionError)) handler;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s3">3</span><span class="s4">&gt; </span><span class="s1">代理的方法</span><span class="s4">(</span><span class="s1">异步</span><span class="s4">)</span></p>
+<p class="p1"><span class="s1">[NSURLConnection connectionWithRequest:request delegate:</span><span class="s12">self</span><span class="s1">];</span></p>
+<p class="p1"><span class="s1">[[NSURLConnection alloc] initWithRequest:request delegate:</span><span class="s12">self</span><span class="s1">];</span></p>
+<p class="p1"><span class="s1">[[NSURLConnection alloc] initWithRequest:request delegate:</span><span class="s12">self</span><span class="s1"> startImmediately:</span><span class="s12">YES</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s2">前三种自动发请求，下面这一种 </span><span class="s1">startImmediately:</span><span class="s12">NO </span><span class="s2">所以需要</span><span class="s1">start</span></p>
+<p class="p1"><span class="s1">NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:</span><span class="s12">self</span><span class="s1"> startImmediately:</span><span class="s12">NO</span><span class="s1">];</span></p>
+<p class="p1"><span class="s1">[conn start];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p6"><span class="s4">2.</span><span class="s1">文件下载（大文件下载）</span></p>
+<p class="p2"><span class="s3">1</span><span class="s4">&gt;</span><span class="s1"> 实现方案：边下载边写入（写到沙盒的某个文件中）</span></p>
+<p class="p2"><span class="s3">2</span><span class="s4">&gt;</span><span class="s1"> 具体实现步骤</span></p>
+<p class="p2"><span class="s1">a.在接收到服务器的响应时</span></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span>创建一个空文件 - NSFileManager</span></p>
+<p class="p7"><span class="s13"><span class="Apple-converted-space">    </span></span><span class="s4">// 1.</span><span class="s1">创建一个空的文件到沙盒中</span></p>
+<p class="p8"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s1">NSFileManager</span><span class="s14"> *mgr = [</span><span class="s1">NSFileManager</span><span class="s14"> </span><span class="s15">defaultManager</span><span class="s14">];</span></p>
+<p class="p7"><span class="s13"><span class="Apple-converted-space">    </span></span><span class="s4">// </span><span class="s1">刚创建完毕的大小是</span><span class="s4">0</span><span class="s1">字节</span></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span>[mgr </span><span class="s1">createFileAtPath</span><span class="s14">:</span><span class="s12">self</span><span class="s14">.</span><span class="s16">destPath</span><span class="s14"> </span><span class="s1">contents</span><span class="s14">:</span><span class="s12">nil</span><span class="s14"> </span><span class="s1">attributes</span><span class="s14">:</span><span class="s12">nil</span><span class="s14">];</span></p>
+<p class="p10"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span>创建一个跟空文件相关联的句柄对象 - NSFileHandle</span></p>
+<p class="p7"><span class="s13"><span class="Apple-converted-space">    </span></span><span class="s4">// 2.</span><span class="s1">创建写数据的文件句柄（类似一个指向 沙盒中新建的文件 的下载位置的 一个指针）</span></p>
+<p class="p11"><span class="s14"><span class="Apple-tab-span">	</span>[</span><span class="s17">NSFileHandle</span><span class="s14"> </span><span class="s1">fileHandleForWritingAtPath</span><span class="s14">:</span><span class="s12">self</span><span class="s14">.</span><span class="s16">destPath</span><span class="s14">];</span></p>
+<p class="p10"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">b.在接收到服务器的数据时</span></p>
+<p class="p2"><span class="s1">利用句柄对象将服务器返回的数据写到文件的末尾</span></p>
+<p class="p7"><span class="s13"><span class="Apple-converted-space">    </span></span><span class="s4">// </span><span class="s1">移动到文件的尾部</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s12">self</span><span class="s1">.writeHandle seekToEndOfFile];</span></p>
+<p class="p7"><span class="s13"><span class="Apple-converted-space">    </span></span><span class="s4">// </span><span class="s1">从当前移动的位置</span><span class="s4">(</span><span class="s1">文件尾部</span><span class="s4">)</span><span class="s1">开始写入数据</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s12">self</span><span class="s1">.writeHandle writeData:data];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s4">c.</span><span class="s1">在接收完服务器返回的数据时，关闭句柄</span></p>
+<p class="p7"><span class="s13"><span class="Apple-converted-space">        </span></span><span class="s4">// </span><span class="s1">关闭连接</span><span class="s4">(</span><span class="s1">不再输入数据到文件中</span><span class="s4">)</span></p>
+<p class="p12"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s12">self</span><span class="s1">.</span><span class="s16">writeHandle</span><span class="s1"> </span><span class="s15">closeFile</span><span class="s1">];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s12">self</span><span class="s1">.</span><span class="s16">writeHandle</span><span class="s1"> = </span><span class="s12">nil</span><span class="s1">;</span></p>
+<p class="p10"><span class="s1"></span><br></p>
+<p class="p6"><span class="s4">3.</span><span class="s1">断点下载</span></p>
+<p class="p2"><span class="s3">1</span><span class="s4">&gt;</span><span class="s1"> 关键技术点</span></p>
+<p class="p2"><span class="s1">* 设置请求头Range，告诉服务器下载哪一段数据</span></p>
+<p class="p10"><span class="s1"></span><br></p>
+<p class="p6"><span class="s4">4.</span><span class="s1">文件上传</span></p>
+<p class="p2"><span class="s3">1</span><span class="s4">&gt;</span><span class="s1"> 明确</span></p>
+<p class="p1"><span class="s1">* </span><span class="s2">只能用</span><span class="s1">POST</span><span class="s2">请求</span></p>
+<p class="p2"><span class="s1">*<span class="Apple-converted-space">  </span>请求参数都在请求体（文件参数\非文件类型的普通参数）</span></p>
+<p class="p13"><span class="s1"></span><br></p>
+<p class="p2"><span class="s3">2</span><span class="s4">&gt;</span><span class="s1"> 实现步骤</span></p>
+<p class="p2"><span class="s4">a.</span><span class="s1">拼接请求体（文件参数\非文件类型的普通参数）</span></p>
+<p class="p2"><span class="s1">* 文件参数</span></p>
+<p class="p14"><span class="s1">//参数的开始标记（分割线）</span></p>
+<p class="p14"><span class="s1">—heima\r\n</span></p>
+<p class="p14"><span class="s1">//参数描述（参数名...）</span></p>
+<p class="p14"><span class="s1">Content-Disposition: form-data;name=“参数名”；filename=“文件名”\r\n</span></p>
+<p class="p14"><span class="s1">//文件类型</span></p>
+<p class="p14"><span class="s1">Content-Type:文件类型MIMEType\r\n</span></p>
+<p class="p14"><span class="s1">//文件的二进制数据</span></p>
+<p class="p14"><span class="s1">\r\n</span></p>
+<p class="p10"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">* 非文件参数（普通参数）</span></p>
+<p class="p14"><span class="s1">//参数的开始标记（分割线）</span></p>
+<p class="p14"><span class="s1">—heima\r\n</span></p>
+<p class="p14"><span class="s1">//参数描述（参数名...）</span></p>
+<p class="p14"><span class="s1">Content-Disposition: form-data;name=“参数名”\r\n</span></p>
+<p class="p14"><span class="s1">//参数值</span></p>
+<p class="p14"><span class="s1">\r\n</span></p>
+<p class="p10"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">*所有参数结束的标记</span></p>
+<p class="p14"><span class="s1">—heima—\r\n</span></p>
+<p class="p10"><span class="s1"></span><br></p>
+<p class="p2"><span class="s4">b.</span><span class="s1">设置请求头</span></p>
+<p class="p2"><span class="s1">* 请求体的长度</span></p>
+<p class="p2"><span class="s1">Content-Length: 请求体的长度（字节长度）</span></p>
+<p class="p10"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">* 请求数据的类型</span></p>
+<p class="p2"><span class="s1">Content-Type:<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">//</span><span class="s2">普通</span><span class="s1">POST</span><span class="s2">请求：</span><span class="s1">application/x-www-form-urlencoded</span></p>
+<p class="p1"><span class="s1">//</span><span class="s2">上传文件的</span><span class="s1">POST</span><span class="s2">请求：</span><span class="s1"> multipart/form-data;boundary=-—heima</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"></span><br></p>
+</body>
+</html>

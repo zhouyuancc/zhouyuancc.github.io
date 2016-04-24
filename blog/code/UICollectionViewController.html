@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s3 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s9 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s13 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s2">1.</span><span class="s3">注册</span><span class="s1">cell(</span><span class="s3">告诉</span><span class="s1">collectionView</span><span class="s3">将来创建怎样的</span><span class="s1">cell)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>[</span><span class="s4">self</span><span class="s1">.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:</span><span class="s5">@"product"</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s2">2.</span><span class="s3">从缓存池中取出</span><span class="s1">cell</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>- (</span><span class="s6">UICollectionViewCell</span><span class="s1"> *)collectionView:(</span><span class="s6">UICollectionView</span><span class="s1"> *)collectionView cellForItemAtIndexPath:(</span><span class="s6">NSIndexPath</span><span class="s1"> *)indexPath</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{</span></p>
+<p class="p3"><span class="s7"><span class="Apple-converted-space">     </span></span><span class="s6">UICollectionViewCell</span><span class="s7"> *cell = [collectionView </span><span class="s1">dequeueReusableCellWithReuseIdentifier</span><span class="s7">:</span><span class="s5">@"product"</span><span class="s7"> </span><span class="s1">forIndexPath</span><span class="s7">:indexPath];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s4">return</span><span class="s1"> cell;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s8"><span class="Apple-converted-space"> </span></span><span class="s9">3.</span><span class="s1">重写</span><span class="s8">init</span><span class="s1">方法，创建布局参数</span></p>
+<p class="p5"><span class="s7"><span class="Apple-converted-space"> </span>- (</span><span class="s1">instancetype</span><span class="s7">)init</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{</span></p>
+<p class="p6"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//1.</span><span class="s3">流水布局</span></p>
+<p class="p7"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UICollectionViewFlowLayout</span><span class="s7"> *layout = [[</span><span class="s1">UICollectionViewFlowLayout</span><span class="s7"> </span><span class="s10">alloc</span><span class="s7">] </span><span class="s10">init</span><span class="s7">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s3">每个格子</span><span class="s1">cell</span><span class="s3">的尺寸</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>layout.</span><span class="s11">itemSize</span><span class="s1"> = </span><span class="s10">CGSizeMake</span><span class="s1">(</span><span class="s2">100</span><span class="s1">, </span><span class="s2">100</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s7"> [</span><span class="s4">super</span><span class="s7"> </span><span class="s1">initWithCollectionViewLayout</span><span class="s7">:layout];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>}</span></p>
+<p class="p1"><span class="s1">————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p6"><span class="s1">/**</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s3">重写</span><span class="s1">init</span><span class="s3">方法</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space"> </span>//</span><span class="s3">不会影响自定义</span><span class="s1">cell</span><span class="s3">的其他</span><span class="s1">cell</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p5"><span class="s7">- (</span><span class="s1">instancetype</span><span class="s7">)init</span></p>
+<p class="p1"><span class="s1">{</span></p>
+<p class="p6"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//1.</span><span class="s3">流水布局</span></p>
+<p class="p7"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UICollectionViewFlowLayout</span><span class="s7"> *layout = [[</span><span class="s1">UICollectionViewFlowLayout</span><span class="s7"> </span><span class="s10">alloc</span><span class="s7">] </span><span class="s10">init</span><span class="s7">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s3">每个格子</span><span class="s1">cell</span><span class="s3">的尺寸</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>layout.</span><span class="s11">itemSize</span><span class="s1"> = </span><span class="s10">CGSizeMake</span><span class="s1">(</span><span class="s2">100</span><span class="s1">, </span><span class="s2">100</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>if(self = [super initWithCollectionViewLayout:layout])</span></p>
+<p class="p6"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>{</span></p>
+<p class="p6"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s7"> [</span><span class="s4">super</span><span class="s7"> </span><span class="s1">initWithCollectionViewLayout</span><span class="s7">:layout];</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)viewDidLoad</span></p>
+<p class="p1"><span class="s1">{</span></p>
+<p class="p3"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s4">super</span><span class="s7"> </span><span class="s1">viewDidLoad</span><span class="s7">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s3">通过</span><span class="s1">xib</span><span class="s3">注册</span><span class="s1">cell</span><span class="s3">，不能写如下</span></p>
+<p class="p6"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//1.</span><span class="s3">注册</span><span class="s1">cell(</span><span class="s3">告诉</span><span class="s1">collectionView</span><span class="s3">将来创建怎样的</span><span class="s1">cell)</span></p>
+<p class="p3"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s7">.</span><span class="s11">collectionView</span><span class="s7"> </span><span class="s1">registerClass</span><span class="s7">:[</span><span class="s6">UICollectionViewCell</span><span class="s7"> </span><span class="s1">class</span><span class="s7">] </span><span class="s1">forCellWithReuseIdentifier</span><span class="s7">:</span><span class="s12">ProductCellID</span><span class="s7">];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"><span class="Apple-tab-span">	</span>//</span><span class="s3">通过</span><span class="s1">xib</span><span class="s3">注册</span><span class="s1">cell</span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">    </span>UINib *nib = [UINib nibWithNibName:@"ProductCollectionViewCell" bundle:nil];</span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">    </span>[self.collectionView registerNib:nib forCellWithReuseIdentifier:ProductCellID];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1">#pragma mark - </span><span class="s3">数据源方法</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView</span></p>
+<p class="p6"><span class="s1">//{</span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">    </span>return 1;</span></p>
+<p class="p6"><span class="s1">//}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">/**</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space"> </span>section</span><span class="s3">块中含有多少个</span><span class="s1">item</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p1"><span class="s1">- (</span><span class="s11">NSInteger</span><span class="s1">)collectionView:(</span><span class="s6">UICollectionView</span><span class="s1"> *)collectionView numberOfItemsInSection:(</span><span class="s11">NSInteger</span><span class="s1">)section</span></p>
+<p class="p1"><span class="s1">{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> </span><span class="s2">12</span><span class="s1">;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">/**</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space"> </span>indexPath</span><span class="s3">位置显示的格子</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p1"><span class="s1">- (</span><span class="s6">UICollectionViewCell</span><span class="s1"> *)collectionView:(</span><span class="s6">UICollectionView</span><span class="s1"> *)collectionView cellForItemAtIndexPath:(</span><span class="s6">NSIndexPath</span><span class="s1"> *)indexPath</span></p>
+<p class="p1"><span class="s1">{</span></p>
+<p class="p6"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//1.</span><span class="s3">获得</span><span class="s1">cell</span></p>
+<p class="p9"><span class="s13"><span class="Apple-converted-space">    </span></span><span class="s8">//</span><span class="s1">从缓存池取；若没有，会根据注册的东西创建一个</span><span class="s8">cell</span></p>
+<p class="p3"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s6">UICollectionViewCell</span><span class="s7"> *cell = [collectionView </span><span class="s1">dequeueReusableCellWithReuseIdentifier</span><span class="s7">:</span><span class="s12">ProductCellID</span><span class="s7"> </span><span class="s1">forIndexPath</span><span class="s7">:indexPath];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">    </span>//cell</span><span class="s3">不是这样创建</span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">    </span>if(cell == nil)</span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">    </span>{</span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">        </span>cell = [[UICollectionViewCell alloc]init];</span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cell.</span><span class="s11">backgroundColor</span><span class="s1"> = [</span><span class="s6">UIColor</span><span class="s1"> </span><span class="s10">orangeColor</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> cell;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1">}</span></p>
+</body>
+</html>

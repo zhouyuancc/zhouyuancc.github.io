@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e; min-height: 21.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275; min-height: 21.0px}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s15 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s16 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">———Singleton.h————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">// ## : </span><span class="s2">连接字符串和参数</span></p>
+<p class="p5"><span class="s1">#define singleton_h(name) + (instancetype)shared##name;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">// </span><span class="s2">非</span><span class="s1">ARC</span></p>
+<p class="p6"><span class="s3">// \ : </span><span class="s1">每行后面写</span><span class="s3">\,</span><span class="s1">表示后面一行也是宏的内容，最后一行不打</span><span class="s3">\</span><span class="s1">符号</span></p>
+<p class="p5"><span class="s1">#define singleton_m(name) \</span></p>
+<p class="p5"><span class="s1">static id _instance; \</span></p>
+<p class="p5"><span class="s1">+ (id)allocWithZone:(struct _NSZone *)zone \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">static dispatch_once_t onceToken; \</span></p>
+<p class="p5"><span class="s1">dispatch_once(&amp;onceToken, ^{ \</span></p>
+<p class="p5"><span class="s1">_instance = [super allocWithZone:zone]; \</span></p>
+<p class="p5"><span class="s1">}); \</span></p>
+<p class="p5"><span class="s1">return _instance; \</span></p>
+<p class="p5"><span class="s1">} \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">+ (instancetype)shared##name \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">static dispatch_once_t onceToken; \</span></p>
+<p class="p5"><span class="s1">dispatch_once(&amp;onceToken, ^{ \</span></p>
+<p class="p5"><span class="s1">_instance = [[self alloc] init]; \</span></p>
+<p class="p5"><span class="s1">}); \</span></p>
+<p class="p5"><span class="s1">return _instance; \</span></p>
+<p class="p5"><span class="s1">} \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">- (oneway void)release \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">} \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">- (id)autorelease \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">return _instance; \</span></p>
+<p class="p5"><span class="s1">} \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">- (id)retain \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">return _instance; \</span></p>
+<p class="p5"><span class="s1">} \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">- (NSUInteger)retainCount \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">return </span><span class="s4">1</span><span class="s1">; \</span></p>
+<p class="p5"><span class="s1">} \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">+ (id)copyWithZone:(struct _NSZone *)zone \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">return _instance; \</span></p>
+<p class="p5"><span class="s1">}</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">———</span><span class="s2">验证内存地址</span><span class="s1">————————————————————————————————————————————————————————————————————</span></p>
+<p class="p4"><span class="s1">//</span></p>
+<p class="p4"><span class="s1">//<span class="Apple-converted-space">  </span>HMViewController.m</span></p>
+<p class="p4"><span class="s1">//<span class="Apple-converted-space">  </span>02-</span><span class="s2">单例模式</span><span class="s1">(</span><span class="s2">非</span><span class="s1">ARC)</span></p>
+<p class="p4"><span class="s1">//</span></p>
+<p class="p4"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 14-6-24.</span></p>
+<p class="p4"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2014</span><span class="s2">年</span><span class="s1"> heima. All rights reserved.</span></p>
+<p class="p4"><span class="s1">//</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p8"><span class="s5">#import </span><span class="s1">"HMViewController.h"</span></p>
+<p class="p8"><span class="s5">#import </span><span class="s1">"HMAudioTool.h"</span></p>
+<p class="p8"><span class="s5">#import </span><span class="s1">"HMNetTool.h"</span></p>
+<p class="p8"><span class="s5">#import </span><span class="s1">"HMMainTool.h"</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p9"><span class="s6">@interface</span><span class="s7"> </span><span class="s1">HMViewController</span><span class="s7"> ()</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p10"><span class="s1">@end</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s6">@implementation</span><span class="s1"> HMViewController</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)viewDidLoad</span></p>
+<p class="p2"><span class="s1">{</span></p>
+<p class="p11"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">super</span><span class="s7"> </span><span class="s1">viewDidLoad</span><span class="s7">];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">HMAudioTool</span><span class="s1"> *audio1 = [[</span><span class="s8">HMAudioTool</span><span class="s1"> </span><span class="s9">alloc</span><span class="s1">] </span><span class="s9">init</span><span class="s1">];</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">HMAudioTool</span><span class="s7"> *audio2 = [</span><span class="s1">HMAudioTool</span><span class="s7"> </span><span class="s10">sharedAudioTool</span><span class="s7">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9">NSLog</span><span class="s1">(</span><span class="s11">@"%p %p"</span><span class="s1">, audio1, audio2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">HMNetTool</span><span class="s1"> *net1 = [[</span><span class="s8">HMNetTool</span><span class="s1"> </span><span class="s9">alloc</span><span class="s1">] </span><span class="s9">init</span><span class="s1">];</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">HMNetTool</span><span class="s7"> *net2 = [</span><span class="s1">HMNetTool</span><span class="s7"> </span><span class="s10">sharedNetTool</span><span class="s7">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9">NSLog</span><span class="s1">(</span><span class="s11">@"%p %p"</span><span class="s1">, net1, net2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">HMMainTool</span><span class="s1"> *main1 = [[</span><span class="s8">HMMainTool</span><span class="s1"> </span><span class="s9">alloc</span><span class="s1">] </span><span class="s9">init</span><span class="s1">];</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">HMMainTool</span><span class="s7"> *main2 = [</span><span class="s1">HMMainTool</span><span class="s7"> </span><span class="s10">sharedMainTool</span><span class="s7">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9">NSLog</span><span class="s1">(</span><span class="s11">@"%p %p"</span><span class="s1">, main1, main2);</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p10"><span class="s1">@end</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">———</span><span class="s2">调用</span><span class="s1">————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">//</span></p>
+<p class="p4"><span class="s1">//<span class="Apple-converted-space">  </span>HMAudioTool.h</span></p>
+<p class="p4"><span class="s1">//<span class="Apple-converted-space">  </span>02-</span><span class="s2">单例模式</span><span class="s1">(</span><span class="s2">非</span><span class="s1">ARC)</span></p>
+<p class="p4"><span class="s1">//</span></p>
+<p class="p4"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 14-6-24.</span></p>
+<p class="p4"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2014</span><span class="s2">年</span><span class="s1"> heima. All rights reserved.</span></p>
+<p class="p4"><span class="s1">//</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p8"><span class="s5">#import </span><span class="s1">&lt;Foundation/Foundation.h&gt;</span></p>
+<p class="p8"><span class="s5">#import </span><span class="s1">"Singleton.h"</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s6">@interface</span><span class="s1"> HMAudioTool : </span><span class="s12">NSObject</span></p>
+<p class="p2"><span class="s13">singleton_h</span><span class="s1">(AudioTool)</span></p>
+<p class="p10"><span class="s1">@end</span></p>
+<p class="p12"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">//</span></p>
+<p class="p4"><span class="s1">//<span class="Apple-converted-space">  </span>HMAudioTool.m</span></p>
+<p class="p4"><span class="s1">//<span class="Apple-converted-space">  </span>02-</span><span class="s2">单例模式</span><span class="s1">(</span><span class="s2">非</span><span class="s1">ARC)</span></p>
+<p class="p4"><span class="s1">//</span></p>
+<p class="p4"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 14-6-24.</span></p>
+<p class="p4"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2014</span><span class="s2">年</span><span class="s1"> heima. All rights reserved.</span></p>
+<p class="p4"><span class="s1">//</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p8"><span class="s5">#import </span><span class="s1">"HMAudioTool.h"</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p10"><span class="s1">@implementation</span><span class="s7"> HMAudioTool</span></p>
+<p class="p2"><span class="s1">- (</span><span class="s6">id</span><span class="s1">)init</span></p>
+<p class="p2"><span class="s1">{</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">if</span><span class="s1"> (</span><span class="s6">self</span><span class="s1"> = [</span><span class="s6">super</span><span class="s1"> </span><span class="s9">init</span><span class="s1">]) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">static</span><span class="s1"> </span><span class="s14">dispatch_once_t</span><span class="s1"> onceToken;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s13">dispatch_once</span><span class="s1">(&amp;onceToken, ^{</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s15">// </span><span class="s16">加载资源</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p10"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">return</span><span class="s7"> </span><span class="s1">self</span><span class="s7">;</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s13">singleton_m</span><span class="s1">(AudioTool)</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p10"><span class="s1">@end</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+</body>
+</html>

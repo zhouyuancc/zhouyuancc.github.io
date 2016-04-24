@@ -143,6 +143,25 @@ body{
         line-height: 1.75em;
         font-size: 11pt;
         letter-spacing: 0;
+        min-width: 335px;
+    }
+
+    #header .header-left{
+        width: 335px;
+    }
+
+    #content {
+        width: 335px;
+    }
+}
+
+@media screen and (max-width: 736px) {
+
+    body {
+        line-height: 1.75em;
+        font-size: 11pt;
+        letter-spacing: 0;
+        min-width: 736px;
     }
 
     #header .header-left{

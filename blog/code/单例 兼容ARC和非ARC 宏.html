@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">———Singleton.h————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">// ## : </span><span class="s2">连接字符串和参数</span></p>
+<p class="p5"><span class="s1">#define singleton_h(name) + (instancetype)shared##name;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p6"><span class="s3">// \ : </span><span class="s1">每行后面写</span><span class="s3">\,</span><span class="s1">表示后面一行也是宏的内容，最后一行不打</span><span class="s3">\</span><span class="s1">符号</span></p>
+<p class="p5"><span class="s1">#if __has_feature(objc_arc) </span><span class="s4">// ARC</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">#define singleton_m(name) \</span></p>
+<p class="p5"><span class="s1">static id _instance; \</span></p>
+<p class="p5"><span class="s1">+ (id)allocWithZone:(struct _NSZone *)zone \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>static dispatch_once_t onceToken; \</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>dispatch_once(&amp;onceToken, ^{ \</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>_instance = [super allocWithZone:zone]; \</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}); \</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>return _instance; \</span></p>
+<p class="p5"><span class="s1">} \</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span>\</span></p>
+<p class="p5"><span class="s1">+ (instancetype)shared##name \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>static dispatch_once_t onceToken; \</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>dispatch_once(&amp;onceToken, ^{ \</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>_instance = [[self alloc] init]; \</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>})</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">return</span><span class="s1"> _instance; \</span></p>
+<p class="p2"><span class="s1">} \</span></p>
+<p class="p2"><span class="s1">+ (</span><span class="s5">id</span><span class="s1">)copyWithZone:(</span><span class="s5">struct</span><span class="s1"> _NSZone *)zone \</span></p>
+<p class="p2"><span class="s1">{ \</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">return</span><span class="s1"> _instance; \</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p4"><span class="s6">#else </span><span class="s1">// </span><span class="s2">非</span><span class="s1">ARC</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">#define singleton_m(name) \</span></p>
+<p class="p5"><span class="s1">static id _instance; \</span></p>
+<p class="p5"><span class="s1">+ (id)allocWithZone:(struct _NSZone *)zone \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">static dispatch_once_t onceToken; \</span></p>
+<p class="p5"><span class="s1">dispatch_once(&amp;onceToken, ^{ \</span></p>
+<p class="p5"><span class="s1">_instance = [super allocWithZone:zone]; \</span></p>
+<p class="p5"><span class="s1">}); \</span></p>
+<p class="p5"><span class="s1">return _instance; \</span></p>
+<p class="p5"><span class="s1">} \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">+ (instancetype)shared##name \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">static dispatch_once_t onceToken; \</span></p>
+<p class="p5"><span class="s1">dispatch_once(&amp;onceToken, ^{ \</span></p>
+<p class="p5"><span class="s1">_instance = [[self alloc] init]; \</span></p>
+<p class="p5"><span class="s1">}); \</span></p>
+<p class="p5"><span class="s1">return _instance; \</span></p>
+<p class="p5"><span class="s1">} \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">- (oneway void)release \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">} \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">- (id)autorelease \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">return _instance; \</span></p>
+<p class="p5"><span class="s1">} \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">- (id)retain \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">return _instance; \</span></p>
+<p class="p5"><span class="s1">} \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">- (NSUInteger)retainCount \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">return </span><span class="s7">1</span><span class="s1">; \</span></p>
+<p class="p5"><span class="s1">} \</span></p>
+<p class="p5"><span class="s1">\</span></p>
+<p class="p5"><span class="s1">+ (id)copyWithZone:(struct _NSZone *)zone \</span></p>
+<p class="p5"><span class="s1">{ \</span></p>
+<p class="p5"><span class="s1">return _instance; \</span></p>
+<p class="p5"><span class="s1">}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">#endif</span></p>
+</body>
+</html>

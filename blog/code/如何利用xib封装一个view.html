@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Heiti SC Light'}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Heiti SC Light'; min-height: 25.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font: 24.0px Helvetica}
+    span.s2 {font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+  </style>
+</head>
+<body>
+<p class="p1">如何利用<span class="s1">xib</span>封装一个view</p>
+<p class="p2"><br></p>
+<p class="p1">1新建一个xib文件描述一个view的内部结构</p>
+<p class="p2"><br></p>
+<p class="p1">2新建一个新的类 继承自某个系统自带的view，继承自哪个类取决于xib的 根对象 的类型class</p>
+<p class="p2"><br></p>
+<p class="p1">3新建类的类名最好跟xib的名称一致</p>
+<p class="p2"><br></p>
+<p class="p1">4将xib中的控件和自定义的类进行连线</p>
+<p class="p3"><span class="s2">@interface</span><span class="s3"> </span><span class="s4">FooterView</span><span class="s3">()</span></p>
+<p class="p3"><span class="s2">@property</span><span class="s3"> (</span><span class="s2">weak</span><span class="s3">, </span><span class="s2">nonatomic</span><span class="s3">) </span><span class="s2">IBOutlet</span><span class="s3"> </span><span class="s5">UIView</span><span class="s3"> *loading;</span></p>
+<p class="p3"><span class="s2">@property</span><span class="s3"> (</span><span class="s2">weak</span><span class="s3">, </span><span class="s2">nonatomic</span><span class="s3">) </span><span class="s2">IBOutlet</span><span class="s3"> </span><span class="s5">UIButton</span><span class="s3"> *button;</span></p>
+<p class="p3"><span class="s2">@end</span></p>
+<p class="p2"><br></p>
+<p class="p1">5提供一个类方法快速返回一个创建好的自定义view（屏蔽从xib加载这个过程）</p>
+<p class="p3"><span class="s3">+(</span><span class="s2">instancetype</span><span class="s3">)footView</span></p>
+<p class="p4"><span class="s2">{</span></p>
+<p class="p5"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s6">return</span><span class="s3"> [[[</span><span class="s5">NSBundle</span><span class="s3"> </span><span class="s2">mainBundle</span><span class="s3">] </span><span class="s2">loadNibNamed</span><span class="s3">:</span><span class="s7">@"FooterView"</span><span class="s3"> </span><span class="s2">owner</span><span class="s3">:</span><span class="s6">nil</span><span class="s3"> </span><span class="s2">options</span><span class="s3">:</span><span class="s6">nil</span><span class="s3">] </span><span class="s2">lastObject</span><span class="s3">];</span></p>
+<p class="p4"><span class="s2">}</span></p>
+</body>
+</html>

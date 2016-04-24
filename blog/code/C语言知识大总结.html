@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: #1d9421}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s4 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s7 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>main.c</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>08-C</span><span class="s2">语言大总结</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by Apple on 14/11/15.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2014</span><span class="s2">年</span><span class="s1"> itcast. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">#include </span><span class="s3">&lt;stdio.h&gt;</span></p>
+<p class="p1"><span class="s1">/*</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span>1</span><span class="s1">、</span><span class="s4"> C</span><span class="s1">语言基本常识</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span>1</span><span class="s2">、</span><span class="s1">C</span><span class="s2">语言由函数组成</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span>2</span><span class="s2">、</span><span class="s1">main</span><span class="s2">是程序的入口</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">       </span>3</span><span class="s1">、</span><span class="s4">C</span><span class="s1">中不能出现中文或中文字符（注释和字符串中除外）</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">       </span></span><span class="s1">关键字：</span><span class="s4">C</span><span class="s1">语言提供表示特殊含义的单词</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s2">特点：</span><span class="s1">1</span><span class="s2">、全部小写</span><span class="s1"> 2</span><span class="s2">、在</span><span class="s1">Xcode</span><span class="s2">的紫褐色</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">       </span></span><span class="s1">标识符：程序员自己在代码中为某些东西起名字</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s2">规则：</span><span class="s1">1</span><span class="s2">、字母、数组、下划线组成</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                   </span>2</span><span class="s2">、严格区分大小写</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                   </span>3</span><span class="s2">、不能以数字开头</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                   </span>4</span><span class="s2">、不能与关键字重名</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s2">规范：驼峰标识</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">       </span></span><span class="s1">注释：对代码的解释说明，它是程序员看的，它不参与编译</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">单行注释</span><span class="s1"> </span><span class="s2">和多行注释</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">多行注释可以嵌套单行注释，但多行注释不能嵌套多行注释</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">数据：存储时长：静态数据：存储在硬盘上的数据</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s2">动态数据：内存中的数据</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">常量：不可改变的量</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">变量：可以改变的量</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">   </span>2</span><span class="s1">、数据类型</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>1</span><span class="s2">、基本数据类型</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>int <span class="Apple-converted-space">  </span>4</span><span class="s2">字节</span><span class="s1"><span class="Apple-converted-space">  </span>%d %i</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>float 4</span><span class="s2">字节</span><span class="s1"><span class="Apple-converted-space">  </span>%f</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>double 8</span><span class="s2">字节</span><span class="s1"><span class="Apple-converted-space">  </span>%lf</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>char<span class="Apple-converted-space">  </span>1</span><span class="s2">字节</span><span class="s1"><span class="Apple-converted-space">  </span>%c</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span></span><span class="s2">枚举：枚举本质是整形（</span><span class="s1">enum</span><span class="s2">）</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">         </span></span><span class="s1">场合：当某个东西只有几个固定取值的时候</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">         </span></span><span class="s1">特点：先定义枚举类型，根据枚举类型定义枚举变量</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span>2</span><span class="s2">、构造类型</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span></span><span class="s1">数组：用来存储相同数据类型的多个数据的集合</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s2">定义：数据类型</span><span class="s1"> </span><span class="s2">数组名称</span><span class="s1">[</span><span class="s2">元素个数</span><span class="s1">]</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s1">遍历：就把所有元素都拿出来看一下（循环）</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span></span><span class="s1">结构体：多个数据放在一起可以表示特定含义我们就把它们组成结构体</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s2">特点：先定义结构体类型，然后定义结构体变量</span><span class="s1">(struct)</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s1">结构体与函数就如同基本数据类型与函数的关系</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">      </span>3</span><span class="s1">、指针：指针就是地址</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">指针变量：用来存储地址变量</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span>1</span><span class="s1">、指针只有初始化才可以访问它所指向存储空间</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span>2</span><span class="s1">、如果一个指针没有初始化它里面是垃圾值，野指针</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span>3</span><span class="s1">、指针不能直接赋值一个整形数</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">基本数据类型的指针：指向基本数据类型的指针</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span></span><span class="s2">格式：</span><span class="s1"> </span><span class="s2">数据类型</span><span class="s1"> * </span><span class="s2">指针变量名称</span><span class="s1">;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">结构体的指针：指向结构体的类型的指针</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span></span><span class="s2">格式</span><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s2">结构体类型</span><span class="s1"> * </span><span class="s2">指针变量名称</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">             </span></span><span class="s1">访问其所指向的结构体成员方式</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>(*</span><span class="s2">指针变量名称</span><span class="s1">).</span><span class="s2">成员名称</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span></span><span class="s2">指针变量名称</span><span class="s1">-&gt;</span><span class="s2">成员名称</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">数组指针：指向数组的指针</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">             </span></span><span class="s1">格式：</span><span class="s4"> </span><span class="s1">所指向的数组的数据类型</span><span class="s4"> (*</span><span class="s1">指针变量名称</span><span class="s4">)[</span><span class="s1">所指向的数组的元素个数</span><span class="s4">];</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">             </span></span><span class="s1">这种指针与二维数组名是等价的</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">函数指针：指向函数的指针</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">             </span></span><span class="s1">格式：所指向的函数的返回值类型</span><span class="s4"> (*</span><span class="s1">指针变量名称</span><span class="s4">)(</span><span class="s1">所指向的函数的形参列表</span><span class="s4">)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span></span><span class="s2">通过函数指针调用函数</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>(*</span><span class="s2">指针变量名称</span><span class="s1">)(</span><span class="s2">实参列表</span><span class="s1">)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s2">指针变量名称</span><span class="s1">(</span><span class="s2">实参列表</span><span class="s1">)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>4</span><span class="s2">、运算符</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>1</span><span class="s2">、算术运算符</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>+ - * / %</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>2</span><span class="s2">、赋值运算</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>= += -= *= /= %=</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>3</span><span class="s2">、自增自减</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>++a,a++</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--a,a--</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">         </span>4</span><span class="s1">、</span><span class="s4">sizeof</span><span class="s1">运算符：用来计算变量、常量、数据类型所占用存储空间的字节数</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>sizeof(</span><span class="s2">常量</span><span class="s1">)<span class="Apple-converted-space">  </span>sizeof </span><span class="s2">常量</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>sizeof(</span><span class="s2">变量</span><span class="s1">)<span class="Apple-converted-space">  </span>sizeof </span><span class="s2">变量</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>sizeof(</span><span class="s2">数据类型</span><span class="s1">)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>5</span><span class="s2">、逗号运算符</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>1</span><span class="s2">、运算顺序是从左到右</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span>2</span><span class="s1">、逗号表达式的运算结果为最后一个表达式的值</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>6</span><span class="s2">、关系运算</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>== != &gt; &lt; &gt;= &lt;=</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>7</span><span class="s2">、逻辑运算符</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&amp;&amp; || !</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>8</span><span class="s2">、三目运算</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">条件表达式</span><span class="s1"> ? </span><span class="s2">结果</span><span class="s1">1 : </span><span class="s2">结果</span><span class="s1">2</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">         </span></span><span class="s1">优先级：一般优先级越高越先进行计算</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">         </span></span><span class="s1">结合方向：当优先级相同时，计算方向</span><span class="s4">(</span><span class="s1">从左往右，从右往左</span><span class="s4">)</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">     </span></span><span class="s1">流程控制：控制程序的执行流程</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">     </span></span><span class="s1">顺序结构：按照从上到下的顺序执行</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">     </span></span><span class="s1">分支结构：分支结构就相当于岔路口，当条件满足的时候就执行某段代码</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>if</span><span class="s2">语句：</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>1</span><span class="s2">、</span><span class="s1">if</span><span class="s2">必须以</span><span class="s1">if</span><span class="s2">开头</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>2</span><span class="s2">、</span><span class="s1">if</span><span class="s2">可以有多个</span><span class="s1">else if</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>3</span><span class="s2">、</span><span class="s1">if</span><span class="s2">语句最多有一个</span><span class="s1">else</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">             </span>4</span><span class="s1">、</span><span class="s4">if</span><span class="s1">语句中最多只有一个代码块会被执行</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>5</span><span class="s2">、如果有</span><span class="s1">else</span><span class="s2">那么必然有一个代码块会被执行</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">             </span>switch</span><span class="s1">语句：当变量与某个常量相等的时候，就执行这个常量所对应的代码块中的语句</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span></span><span class="s2">格式：</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>switch(</span><span class="s2">变量</span><span class="s1">){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>case </span><span class="s2">常量</span><span class="s1">:</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                   </span>....</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>break;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>case </span><span class="s2">常量</span><span class="s1">:</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>....</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>break;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>....</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>default:</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>...</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>break;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">注意点：</span><span class="s1">1</span><span class="s2">、仅支持整型数</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                   </span>2</span><span class="s2">、</span><span class="s1">case </span><span class="s2">后面只能常量或常量表达式</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                   </span>3</span><span class="s2">、</span><span class="s1">case </span><span class="s2">后面的常量的值不能相同</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                   </span>4</span><span class="s2">、结束条件</span><span class="s1"> </span><span class="s2">遇到</span><span class="s1">break </span><span class="s2">或者</span><span class="s1"> </span><span class="s2">运行</span><span class="s1"> ”}“</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">循环结构：当条件满足就会一直循环执行循环体中的代码，直到条件不再满足位置</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span>while </span><span class="s1">语句：当条件满足的时候就执行</span><span class="s4">while</span><span class="s1">后面大括号中语句</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>do while:</span><span class="s2">循环体中代码至少执行一次</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>for</span><span class="s2">语句</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span>for(</span><span class="s1">初始化表达式</span><span class="s4">;</span><span class="s1">条件表达式</span><span class="s4">;</span><span class="s1">循环后操作表达式</span><span class="s4">){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2">语句</span><span class="s1">;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>...</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>break:1</span><span class="s2">、用在</span><span class="s1">switch</span><span class="s2">语句中用来结束</span><span class="s1">switch</span><span class="s2">语句</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span>2</span><span class="s1">、用在循环结构中，用结束当前的循环的语句</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>continue</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span>1</span><span class="s1">、只能用在循环结构中，跳过本次循环体中</span><span class="s4">continue</span><span class="s1">后面的语句，进入下一个条件判断</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">函数：完成特定功能代码段</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">定义格式：返回值类型</span><span class="s4"> </span><span class="s1">函数名称</span><span class="s4">(</span><span class="s1">形参列表</span><span class="s4">){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span></span><span class="s2">语句</span><span class="s1">;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>....</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">函数声明：告诉编译器该函数已经存在了</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">函数的声明可以有多个，函数定义只能有一个</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">函数参数：</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span>1</span><span class="s1">、基本数据类型作为函数参数传递是值传递</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span>2</span><span class="s1">、数组作为函数参数传递是地址传递</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span>3</span><span class="s1">、指针作为函数参数传递是地址传递</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span>4</span><span class="s1">、结构体作为函数参数传递与基本数据类型一致</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">函数返回值：函数完成功能后要返回给主调函数中的数据</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span>1</span><span class="s1">、返回值的类型必须与返回的值的类型一致</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span>2</span><span class="s1">、一个函数只能有一个返回值</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return </span><span class="s2">作用：返回值给主调函数</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2">结束函数</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">预处理指令：在编译之前需要进行解析处理的指令</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>1</span><span class="s2">、宏定义：</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">       </span></span><span class="s1">不带参数的宏定义：在编译之前，使用宏名的后面值，替换代码中所有出现宏名标识的地方</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">       </span></span><span class="s1">带参数的宏定义：把参数代入宏名后面的表达式中，然后替换宏调用的地方</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span>2</span><span class="s1">、条件编译：在编译的时候，当条件满足的时候就编译某段代码</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span>#if</span><span class="s2">开头</span><span class="s1"><span class="Apple-converted-space">  </span>#elif<span class="Apple-converted-space">  </span>#else<span class="Apple-converted-space">  </span>#endif</span><span class="s2">结尾</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span>#ifdef<span class="Apple-converted-space">  </span>#endif</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span>#ifndef #endif</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span>3</span><span class="s1">、文件包含：</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span>#include </span><span class="s2">拷贝所包含的文件内容到</span><span class="s1">#include</span><span class="s2">指令所在地方</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span>#include " " </span><span class="s2">包含自己写文件</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span>#include &lt; &gt; </span><span class="s2">包含系统的头文件</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">进制：</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span></span><span class="s2">十进制</span><span class="s1"> <span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span></span><span class="s2">二进制</span><span class="s1"><span class="Apple-converted-space">  </span>0b </span><span class="s2">或</span><span class="s1"> 0B</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span></span><span class="s2">八进制</span><span class="s1"><span class="Apple-converted-space">  </span>0 <span class="Apple-converted-space">        </span>%o </span><span class="s2">或</span><span class="s1"> %O</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span></span><span class="s2">十六进制</span><span class="s1"><span class="Apple-converted-space">  </span>0x </span><span class="s2">或</span><span class="s1">0X<span class="Apple-converted-space">  </span>%x </span><span class="s2">或</span><span class="s1"> %X</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span></span><span class="s2">位运算</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span>&amp;<span class="Apple-converted-space">  </span>|<span class="Apple-converted-space">  </span>^<span class="Apple-converted-space">  </span>~<span class="Apple-converted-space">  </span>&gt;&gt;<span class="Apple-converted-space">  </span>&lt;&lt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p6"><span class="s5">int</span><span class="s1"> main(</span><span class="s5">int</span><span class="s1"> argc, </span><span class="s5">const</span><span class="s1"> </span><span class="s5">char</span><span class="s1"> * argv[]) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">struct</span><span class="s1"> _PhoneBook{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">char</span><span class="s1"> *name;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">char</span><span class="s1"> *phone;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}PhoneBook;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">struct</span><span class="s1"> <span class="Apple-converted-space">  </span>_PhoneBook phonebook[</span><span class="s6">5</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">for</span><span class="s1"> (</span><span class="s5">int</span><span class="s1"> i=</span><span class="s6">0</span><span class="s1">; i&lt;</span><span class="s6">5</span><span class="s1">; i++) {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>printf(</span><span class="s3">"</span><span class="s7">请输入第</span><span class="s3">%d</span><span class="s7">个人的姓名：</span><span class="s3">\n"</span><span class="s1">,i+</span><span class="s6">1</span><span class="s1">);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>scanf(</span><span class="s3">"%s\n"</span><span class="s1">,phonebook[i].name);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>printf(</span><span class="s3">"</span><span class="s7">请输入第</span><span class="s3">%d</span><span class="s7">个人的电话：</span><span class="s3">\n"</span><span class="s1">,i+</span><span class="s6">1</span><span class="s1">);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>scanf(</span><span class="s3">"%s\n"</span><span class="s1">,phonebook[i].phone);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">for</span><span class="s1"> (</span><span class="s5">int</span><span class="s1"> i=</span><span class="s6">0</span><span class="s1">; i&lt;</span><span class="s6">5</span><span class="s1">; i++) {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>printf(</span><span class="s3">"</span><span class="s7">姓名：</span><span class="s3">%s</span><span class="s7">，电话：</span><span class="s3">%s\n"</span><span class="s1">,phonebook[i].name,phonebook[i].name);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">return</span><span class="s1"> </span><span class="s6">0</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1">}</span></p>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">自定义控件要具备</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>- (id)initWithCoder:(NSCoder *)aDecoder;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>- (instancetype)initWithFrame:(CGRect)frame;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>-(void)drawRect:(CGRect)rect;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s3">通过</span><span class="s1"> storyboard</span><span class="s3">、</span><span class="s1">xib</span><span class="s3">、文件</span><span class="s1"> </span><span class="s3">创建时调用</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">id</span><span class="s1">)initWithCoder:(</span><span class="s5">NSCoder</span><span class="s1"> *)aDecoder</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1">(</span><span class="s4">self</span><span class="s1"> = [</span><span class="s4">super</span><span class="s1"> </span><span class="s6">initWithCoder</span><span class="s1">:aDecoder])</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s4">self</span><span class="s1"> </span><span class="s7">setup</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p5"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">return</span><span class="s8"> </span><span class="s1">self</span><span class="s8">;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">通过</span><span class="s2"> </span><span class="s1">代码</span><span class="s2"> </span><span class="s1">创建时调用</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">instancetype</span><span class="s1">)initWithFrame:(</span><span class="s9">CGRect</span><span class="s1">)frame</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1">(</span><span class="s4">self</span><span class="s1"> = [</span><span class="s4">super</span><span class="s1"> </span><span class="s6">initWithFrame</span><span class="s1">:frame])</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s4">self</span><span class="s1"> </span><span class="s7">setup</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p5"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">return</span><span class="s8"> </span><span class="s1">self</span><span class="s8">;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+</body>
+</html>

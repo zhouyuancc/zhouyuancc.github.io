@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; background-color: #ffb5af}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421; background-color: #ffb5af}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #ffb5af}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #ffb5af; min-height: 21.0px}
+    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81; background-color: #ffb5af}
+    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa; background-color: #ffb5af}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s9 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s14 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s15 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>04-iphone</span><span class="s2">侧滑菜单</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 16/3/3.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2016</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"ViewController.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"ZYMenuViewController.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"ZYCenterViewController.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"UIView+MJ.h"</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p5"><span class="s4">//</span><span class="s1">左侧菜单宽度</span></p>
+<p class="p6"><span class="s1">#define MenuWidth </span><span class="s5">100</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p7"><span class="s6">@interface</span><span class="s7"> </span><span class="s1">ViewController</span><span class="s7"> ()</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p9"><span class="s6">@implementation</span><span class="s1"> ViewController</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p9"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)viewDidLoad {</span></p>
+<p class="p10"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">super</span><span class="s7"> </span><span class="s1">viewDidLoad</span><span class="s7">];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//1.</span><span class="s2">初始化子控制器</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>[self setupViewController];</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//1.1</span><span class="s2">左侧菜单</span></p>
+<p class="p7"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">ZYMenuViewController</span><span class="s7"> *menuVc = [[</span><span class="s1">ZYMenuViewController</span><span class="s7"> </span><span class="s8">alloc</span><span class="s7">] </span><span class="s8">init</span><span class="s7">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s4">//</span><span class="s1">其它值不用设置</span><span class="s4">,</span><span class="s1">控制器的高度本就是那个高度</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span>menuVc.</span><span class="s10">view</span><span class="s1">.</span><span class="s11">width</span><span class="s1"> = </span><span class="s12">MenuWidth</span><span class="s1">;</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span>menuVc.</span><span class="s10">view</span><span class="s1">.</span><span class="s11">y</span><span class="s1"> = </span><span class="s5">20</span><span class="s1">;</span><span class="s13">//iOS6</span><span class="s14">控制器是</span><span class="s13">20</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s1">.</span><span class="s10">view</span><span class="s1"> </span><span class="s8">addSubview</span><span class="s1">:menuVc.</span><span class="s10">view</span><span class="s1">];</span></p>
+<p class="p10"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">addChildViewController</span><span class="s7">:menuVc];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//1.2</span><span class="s2">中间内容</span></p>
+<p class="p7"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">ZYCenterViewController</span><span class="s7"> *centerVc = [[</span><span class="s1">ZYCenterViewController</span><span class="s7"> </span><span class="s8">alloc</span><span class="s7">] </span><span class="s8">init</span><span class="s7">];</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span>centerVc.</span><span class="s10">view</span><span class="s1">.</span><span class="s10">frame</span><span class="s1"> = </span><span class="s6">self</span><span class="s1">.</span><span class="s10">view</span><span class="s1">.</span><span class="s10">bounds</span><span class="s1">;</span><span class="s13">//y</span><span class="s14">是</span><span class="s13">0</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s1">.</span><span class="s10">view</span><span class="s1"> </span><span class="s8">addSubview</span><span class="s1">:centerVc.</span><span class="s10">view</span><span class="s1">];</span></p>
+<p class="p10"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">addChildViewController</span><span class="s7">:centerVc];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//2.</span><span class="s2">监听手势</span></p>
+<p class="p10"><span class="s7"><span class="Apple-converted-space">    </span>[centerVc.</span><span class="s10">view</span><span class="s7"> </span><span class="s1">addGestureRecognizer</span><span class="s7">:[[</span><span class="s15">UIPanGestureRecognizer</span><span class="s7"> </span><span class="s1">alloc</span><span class="s7">] </span><span class="s1">initWithTarget</span><span class="s7">:</span><span class="s6">self</span><span class="s7"> </span><span class="s1">action</span><span class="s7">:</span><span class="s6">@selector</span><span class="s7">(dragCenterView:)]];</span></p>
+<p class="p9"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p11"><span class="s1">/**</span></p>
+<p class="p12"><span class="s4"><span class="Apple-converted-space"> </span></span><span class="s1">实现手势侧滑</span></p>
+<p class="p11"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p13"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)dragCenterView:(</span><span class="s15">UIPanGestureRecognizer</span><span class="s1"> *)pan</span></p>
+<p class="p13"><span class="s1">{</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s13">/**</span></p>
+<p class="p11"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">用</span><span class="s1">pan.view.x</span><span class="s2">来判断，用</span><span class="s1">transform</span><span class="s2">来控制</span></p>
+<p class="p11"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">CGPoint</span><span class="s1"> point = [pan </span><span class="s8">translationInView</span><span class="s1">:pan.</span><span class="s10">view</span><span class="s1">];</span></p>
+<p class="p14"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p12"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s4">//</span><span class="s1">不允许往左移动</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">if</span><span class="s1"> (pan.</span><span class="s10">view</span><span class="s1">.</span><span class="s11">x</span><span class="s1"> &lt; </span><span class="s5">0</span><span class="s1">) </span><span class="s6">return</span><span class="s1">;</span></p>
+<p class="p14"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p11"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">结束拖拽</span></p>
+<p class="p15"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s6">if</span><span class="s7"> (pan.</span><span class="s10">state</span><span class="s7"> == </span><span class="s1">UIGestureRecognizerStateEnded</span><span class="s7">||pan.</span><span class="s10">state</span><span class="s7"> == </span><span class="s1">UIGestureRecognizerStateCancelled</span><span class="s7">) {</span></p>
+<p class="p14"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p11"><span class="s7"><span class="Apple-converted-space">        </span></span><span class="s1">//point.x</span><span class="s2">每次都清</span><span class="s1">0</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">if</span><span class="s1">(pan.</span><span class="s10">view</span><span class="s1">.</span><span class="s11">x</span><span class="s1"> &gt;= </span><span class="s12">MenuWidth</span><span class="s1"> * </span><span class="s5">0.5</span><span class="s1">)</span><span class="s13">//</span><span class="s14">向右边走了至少</span><span class="s13">menu</span><span class="s14">的一半</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p15"><span class="s7"><span class="Apple-converted-space">            </span>[</span><span class="s15">UIView</span><span class="s7"> </span><span class="s1">animateWithDuration</span><span class="s7">:</span><span class="s5">0.5</span><span class="s7"> </span><span class="s1">animations</span><span class="s7">:^{</span></p>
+<p class="p15"><span class="s7"><span class="Apple-converted-space">                </span>pan.</span><span class="s10">view</span><span class="s7">.</span><span class="s10">transform</span><span class="s7"> = </span><span class="s1">CGAffineTransformMakeTranslation</span><span class="s7">(</span><span class="s12">MenuWidth</span><span class="s7">, </span><span class="s5">0</span><span class="s7">);</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">            </span>}];</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p11"><span class="s7"><span class="Apple-converted-space">        </span></span><span class="s6">else</span><span class="s1">//</span><span class="s2">拖拽距离没有达到</span><span class="s1">menu</span><span class="s2">的一半</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s13">//</span><span class="s14">恢复原尺寸</span></p>
+<p class="p15"><span class="s7"><span class="Apple-converted-space">            </span>[</span><span class="s15">UIView</span><span class="s7"> </span><span class="s1">animateWithDuration</span><span class="s7">:</span><span class="s5">0.5</span><span class="s7"> </span><span class="s1">animations</span><span class="s7">:^{</span></p>
+<p class="p16"><span class="s7"><span class="Apple-converted-space">                </span>pan.</span><span class="s1">view</span><span class="s7">.</span><span class="s1">transform</span><span class="s7"> = </span><span class="s1">CGAffineTransformIdentity</span><span class="s7">;</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">            </span>}];</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p11"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s6">else</span><span class="s1">//</span><span class="s2">正在拖拽</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p11"><span class="s7"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">每次点击</span><span class="s1"> </span><span class="s2">都是</span><span class="s1"> </span><span class="s2">相对原始位置</span><span class="s1"> </span><span class="s2">平移</span><span class="s1">x</span></p>
+<p class="p11"><span class="s1">//<span class="Apple-converted-space">        </span>pan.view.transform = CGAffineTransformMakeTranslation(point.x, 0);</span></p>
+<p class="p14"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s13">//</span><span class="s14">平移的</span><span class="s13">x</span><span class="s14">累加</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s13">/**</span></p>
+<p class="p11"><span class="s1"><span class="Apple-converted-space">         </span></span><span class="s2">拖动位移</span><span class="s1"> 0 ~ 30</span></p>
+<p class="p11"><span class="s1"><span class="Apple-converted-space">         </span>0 + 1 + 2 + 3 +...+ 30</span></p>
+<p class="p11"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span>pan.</span><span class="s10">view</span><span class="s1">.</span><span class="s10">transform</span><span class="s1"> = </span><span class="s8">CGAffineTransformTranslate</span><span class="s1">(pan.</span><span class="s10">view</span><span class="s1">.</span><span class="s10">transform</span><span class="s1">, point.</span><span class="s10">x</span><span class="s1">, </span><span class="s5">0</span><span class="s1">);</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s13">//</span><span class="s14">等价于</span></p>
+<p class="p11"><span class="s1">//<span class="Apple-converted-space">        </span>pan.view.x += point.x;</span></p>
+<p class="p14"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p11"><span class="s7"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">防止重复累加，清</span><span class="s1">0</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span>[pan </span><span class="s8">setTranslation</span><span class="s1">:</span><span class="s10">CGPointZero</span><span class="s1"> </span><span class="s8">inView</span><span class="s1">:pan.</span><span class="s10">view</span><span class="s1">];</span></p>
+<p class="p14"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p14"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">if</span><span class="s1">(pan.</span><span class="s10">view</span><span class="s1">.</span><span class="s11">x</span><span class="s1"> &gt;= </span><span class="s12">MenuWidth</span><span class="s1">)</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p15"><span class="s7"><span class="Apple-converted-space">            </span>pan.</span><span class="s10">view</span><span class="s7">.</span><span class="s10">transform</span><span class="s7"> = </span><span class="s1">CGAffineTransformMakeTranslation</span><span class="s7">(</span><span class="s12">MenuWidth</span><span class="s7">, </span><span class="s5">0</span><span class="s7">);</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">else</span><span class="s1"> </span><span class="s6">if</span><span class="s1">(pan.</span><span class="s10">view</span><span class="s1">.</span><span class="s11">x</span><span class="s1"> &lt;= </span><span class="s5">0</span><span class="s1">)</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p16"><span class="s7"><span class="Apple-converted-space">            </span>pan.</span><span class="s1">view</span><span class="s7">.</span><span class="s1">transform</span><span class="s7"> =<span class="Apple-converted-space">  </span></span><span class="s1">CGAffineTransformIdentity</span><span class="s7">;</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p13"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p13"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1">@end</span></p>
+</body>
+</html>

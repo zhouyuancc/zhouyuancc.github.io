@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81; background-color: #fff995}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #539aa4}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #e0edd4; min-height: 21.0px}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c; min-height: 21.0px}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c; background-color: #e0edd4; min-height: 21.0px}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>HMFileMultiDownloader.m</span></p>
+<p class="p2"><span class="s2">//<span class="Apple-converted-space">  </span></span><span class="s1">多线程断点下载</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p4"><span class="s3">@property</span><span class="s1"> (</span><span class="s3">nonatomic</span><span class="s1">, </span><span class="s3">strong</span><span class="s1">) </span><span class="s4">NSMutableArray</span><span class="s1"> *singleDownloaders;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span>* </span><span class="s1">开始</span><span class="s2">(</span><span class="s1">恢复</span><span class="s2">)</span><span class="s1">下载</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)start</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s6">数组中每个</span><span class="s1">HMFileSingleDownloader</span><span class="s6">下载器都执行该方法</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s5">.</span><span class="s7">singleDownloaders</span><span class="s5"> </span><span class="s1">makeObjectsPerformSelector</span><span class="s5">:</span><span class="s3">@selector</span><span class="s5">(start)];</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">_downloading</span><span class="s5"> = </span><span class="s3">YES</span><span class="s5">;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span>* </span><span class="s1">暂停下载</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)pause</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s5">.</span><span class="s7">singleDownloaders</span><span class="s5"> </span><span class="s1">makeObjectsPerformSelector</span><span class="s5">:</span><span class="s3">@selector</span><span class="s5">(pause)];</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">_downloading</span><span class="s5"> = </span><span class="s3">NO</span><span class="s5">;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p8"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>HMFileSingleDownloader.h</span></p>
+<p class="p2"><span class="s2">//<span class="Apple-converted-space">  </span></span><span class="s1">多线程断点下载</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p4"><span class="s3">@interface</span><span class="s1"> HMFileSingleDownloader : </span><span class="s8">HMFileDownloader</span></p>
+<p class="p10"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>HMFileSingleDownloader.m</span></p>
+<p class="p2"><span class="s2">//<span class="Apple-converted-space">  </span></span><span class="s1">多线程断点下载</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span>* </span><span class="s1">开始</span><span class="s2">(</span><span class="s1">恢复</span><span class="s2">)</span><span class="s1">下载</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)start</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSURL</span><span class="s1"> *url = [</span><span class="s4">NSURL</span><span class="s1"> </span><span class="s9">URLWithString</span><span class="s1">:</span><span class="s3">self</span><span class="s1">.</span><span class="s7">url</span><span class="s1">];</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// </span><span class="s6">默认就是</span><span class="s1">GET</span><span class="s6">请求</span></p>
+<p class="p11"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSMutableURLRequest</span><span class="s5"> *request = [</span><span class="s1">NSMutableURLRequest</span><span class="s5"> </span><span class="s9">requestWithURL</span><span class="s5">:url];</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// </span><span class="s6">设置请求头信息</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSString</span><span class="s1"> *value = [</span><span class="s4">NSString</span><span class="s1"> </span><span class="s9">stringWithFormat</span><span class="s1">:</span><span class="s10">@"bytes=%lld-%lld"</span><span class="s1">, </span><span class="s3">self</span><span class="s1">.</span><span class="s7">begin</span><span class="s1"> + </span><span class="s3">self</span><span class="s1">.</span><span class="s7">currentLength</span><span class="s1">, </span><span class="s3">self</span><span class="s1">.</span><span class="s7">end</span><span class="s1">];</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span>[request </span><span class="s1">setValue</span><span class="s5">:value </span><span class="s1">forHTTPHeaderField</span><span class="s5">:</span><span class="s10">@"Range"</span><span class="s5">];</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">self</span><span class="s5">.</span><span class="s7">conn</span><span class="s5"> = [</span><span class="s4">NSURLConnection</span><span class="s5"> </span><span class="s1">connectionWithRequest</span><span class="s5">:request </span><span class="s1">delegate</span><span class="s5">:</span><span class="s3">self</span><span class="s5">];</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">_downloading</span><span class="s5"> = </span><span class="s3">YES</span><span class="s5">;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span>* </span><span class="s1">暂停下载</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)pause</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s1">.</span><span class="s7">conn</span><span class="s1"> </span><span class="s9">cancel</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">self</span><span class="s1">.</span><span class="s7">conn</span><span class="s1"> = </span><span class="s3">nil</span><span class="s1">;</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">_downloading</span><span class="s5"> = </span><span class="s3">NO</span><span class="s5">;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p12"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>HMFileDownloader.h</span></p>
+<p class="p2"><span class="s2">//<span class="Apple-converted-space">  </span></span><span class="s1">多线程断点下载</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span>* </span><span class="s1">开始</span><span class="s2">(</span><span class="s1">恢复</span><span class="s2">)</span><span class="s1">下载</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)start;</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span>* </span><span class="s1">暂停下载</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)pause;</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>HMFileDownloader.m</span></p>
+<p class="p2"><span class="s2">//<span class="Apple-converted-space">  </span></span><span class="s1">多线程断点下载</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p13"><span class="s11">#import </span><span class="s1">"HMFileDownloader.h"</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p4"><span class="s3">@implementation</span><span class="s1"> HMFileDownloader</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p14"><span class="s1">@end</span></p>
+</body>
+</html>

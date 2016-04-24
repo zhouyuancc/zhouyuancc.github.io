@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s2 {font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s10 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s11 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s13 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">//////////////</span><span class="s3">创建一个按钮</span><span class="s2">//////////////////////////////////////////</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">//1.</span><span class="s3">创建代码</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s4">UIButton</span><span class="s2"> *btn = [[</span><span class="s4">UIButton</span><span class="s2"> </span><span class="s5">alloc</span><span class="s2">] </span><span class="s5">init</span><span class="s2">];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">//2.</span><span class="s3">添加按钮</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s2">.</span><span class="s7">view</span><span class="s2"> </span><span class="s5">addSubview</span><span class="s2">:btn];</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">//3.</span><span class="s3">设置</span><span class="s2">iframe</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>btn.</span><span class="s7">frame</span><span class="s2"> = </span><span class="s5">CGRectMake</span><span class="s2">(</span><span class="s8">100</span><span class="s2">, </span><span class="s8">100</span><span class="s2">, </span><span class="s8">100</span><span class="s2">, </span><span class="s8">100</span><span class="s2">);</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">//4.</span><span class="s3">设置背景色</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>btn.</span><span class="s7">backgroundColor</span><span class="s2"> = [</span><span class="s4">UIColor</span><span class="s2"> </span><span class="s5">blueColor</span><span class="s2">];</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">//5.</span><span class="s3">设置背景图片</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">UIImage</span><span class="s1"> *image = [</span><span class="s4">UIImage</span><span class="s1"> </span><span class="s5">imageNamed</span><span class="s1">:</span><span class="s9">@"btn_01"</span><span class="s1">];</span><span class="s2">//</span><span class="s3">通过文件名加载图片（</span><span class="s2">.png</span><span class="s3">图片都不需要加拓展名）</span></p>
+<p class="p4"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s11">//</span><span class="s2">设置普通状态下图片</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>[btn </span><span class="s2">setBackgroundImage</span><span class="s1">:image </span><span class="s2">forState</span><span class="s1">:</span><span class="s2">UIControlStateNormal</span><span class="s1">];</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s11">//</span><span class="s2">加载高亮的图片</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s4">UIImage</span><span class="s2"> *highLight = [</span><span class="s4">UIImage</span><span class="s2"> </span><span class="s5">imageNamed</span><span class="s2">:</span><span class="s9">@"btn_02"</span><span class="s2">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>[btn </span><span class="s2">setBackgroundImage</span><span class="s1">:highLight </span><span class="s2">forState</span><span class="s1">:</span><span class="s2">UIControlStateHighlighted</span><span class="s1">];</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">//6.</span><span class="s3">设置文字颜色</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">//</span><span class="s3">设置文字</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>[btn </span><span class="s2">setTitle</span><span class="s1">:</span><span class="s9">@"111"</span><span class="s1"> </span><span class="s2">forState</span><span class="s1">:</span><span class="s2">UIControlStateNormal</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>[btn </span><span class="s2">setTitle</span><span class="s1">:</span><span class="s9">@"222"</span><span class="s1"> </span><span class="s2">forState</span><span class="s1">:</span><span class="s2">UIControlStateHighlighted</span><span class="s1">];</span><span class="s12">//</span><span class="s13">默认白色</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">//</span><span class="s3">设置颜色</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>[btn </span><span class="s2">setTitleColor</span><span class="s1">:[</span><span class="s4">UIColor</span><span class="s1"> </span><span class="s2">cyanColor</span><span class="s1">] </span><span class="s2">forState</span><span class="s1">:</span><span class="s2">UIControlStateNormal</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>[btn </span><span class="s2">setTitleColor</span><span class="s1">:[</span><span class="s4">UIColor</span><span class="s1"> </span><span class="s2">blueColor</span><span class="s1">] </span><span class="s2">forState</span><span class="s1">:</span><span class="s2">UIControlStateHighlighted</span><span class="s1">];</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">//7.</span><span class="s3">监听按钮点击</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>[btn </span><span class="s2">addTarget</span><span class="s1">:</span><span class="s6">self</span><span class="s1"> </span><span class="s2">action</span><span class="s1">:</span><span class="s6">@selector</span><span class="s1">(btnClick:) </span><span class="s2">forControlEvents</span><span class="s1">:</span><span class="s2">UIControlEventTouchUpInside</span><span class="s1">];</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s11">//</span><span class="s2">添加一个系统自带圈圈</span><span class="s11">+</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">UIButton</span><span class="s1"> *addBtn = [</span><span class="s4">UIButton</span><span class="s1"> </span><span class="s2">buttonWithType</span><span class="s1">:</span><span class="s2">UIButtonTypeContactAdd</span><span class="s1">];</span></p>
+<p class="p1"><span class="s2">//<span class="Apple-converted-space">    </span>[addBtn addTarget:self action:@selector(addBtnClick) forControlEvents:UIControlEventTouchUpInside];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>[addBtn </span><span class="s2">addTarget</span><span class="s1">:</span><span class="s6">self</span><span class="s1"> </span><span class="s2">action</span><span class="s1">:</span><span class="s6">@selector</span><span class="s1">(btnClick:) </span><span class="s2">forControlEvents</span><span class="s1">:</span><span class="s2">UIControlEventTouchUpInside</span><span class="s1">];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">//</span><span class="s3">设置位置</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>addBtn.</span><span class="s7">center</span><span class="s2"> = </span><span class="s5">CGPointMake</span><span class="s2">(</span><span class="s8">10</span><span class="s2">, </span><span class="s8">22</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s2">.</span><span class="s7">view</span><span class="s2"> </span><span class="s5">addSubview</span><span class="s2">:addBtn];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">//////////////////////////////////////////////////////////////////</span></p>
+</body>
+</html>

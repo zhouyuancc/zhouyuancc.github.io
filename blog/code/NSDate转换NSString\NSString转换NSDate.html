@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s9 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ListDataTool.h</span></p>
+<p class="p1"><span class="s1">// <span class="Apple-converted-space">  </span></span><span class="s2">首钢机电</span><span class="s1">OA</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/10/21.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> </span><span class="s2">锐牛科技有限公司</span><span class="s1">. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>NSDate</span><span class="s2">转换</span><span class="s1">NSString</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p3"><span class="s1">+ (</span><span class="s3">NSString</span><span class="s1"> *)getNSStringFromNSDate:(</span><span class="s3">NSDate</span><span class="s1"> *)date;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">+(</span><span class="s3">NSString</span><span class="s1"> *)getNSStringFromNSDate:(</span><span class="s3">NSDate</span><span class="s1"> *)date</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">NSDate</span><span class="s1"> *senddate=date;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">NSDateFormatter</span><span class="s4"> *dateformatter=[[</span><span class="s1">NSDateFormatter</span><span class="s4"> </span><span class="s5">alloc</span><span class="s4">] </span><span class="s5">init</span><span class="s4">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>[dateformatter </span><span class="s5">setDateFormat</span><span class="s1">:</span><span class="s6">@"yyyy-MM-dd HH:mm:ss"</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">return</span><span class="s1"> [dateformatter </span><span class="s5">stringFromDate</span><span class="s1">:senddate];</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>AppdataStore.m</span></p>
+<p class="p1"><span class="s1">// <span class="Apple-converted-space">  </span></span><span class="s2">首钢机电</span><span class="s1">OA</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/10/21.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> </span><span class="s2">锐牛科技有限公司</span><span class="s1">. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>NSString</span><span class="s2">转换</span><span class="s1">NSDate<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">*/</span></p>
+<p class="p3"><span class="s1">-(</span><span class="s3">NSDate</span><span class="s1"> *)getNSDateFromNsstring:(</span><span class="s3">NSString</span><span class="s1"> *)stringdate</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">NSDateFormatter</span><span class="s4">* dateFormat = [[</span><span class="s1">NSDateFormatter</span><span class="s4"> </span><span class="s5">alloc</span><span class="s4">] </span><span class="s5">init</span><span class="s4">];</span><span class="s8">//</span><span class="s9">实例化一个</span><span class="s8">NSDateFormatter</span><span class="s9">对象</span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span>[dateFormat </span><span class="s5">setDateFormat</span><span class="s4">:</span><span class="s6">@"yyyy/MM/dd HH:mm:ss"</span><span class="s4">];</span><span class="s1">//</span><span class="s2">设定时间格式</span><span class="s1">,</span><span class="s2">要注意跟下面的</span><span class="s1">dateString</span><span class="s2">匹配，否则日起将无效</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">NSDate</span><span class="s1"> *date =[dateFormat </span><span class="s5">dateFromString</span><span class="s1">:stringdate];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">       </span></span><span class="s7">return</span><span class="s1"> date;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1">}</span></p>
+</body>
+</html>

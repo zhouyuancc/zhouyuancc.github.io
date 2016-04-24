@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275; min-height: 21.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s5 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s6 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s8 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">@property</span><span class="s2"> (</span><span class="s1">nonatomic</span><span class="s2">,</span><span class="s1">weak</span><span class="s2">) </span><span class="s3">UIButton</span><span class="s2"> *nameView;</span><span class="s4">//</span><span class="s5">箭头</span><span class="s4"> </span><span class="s5">名称栏</span></p>
+<p class="p3"><span class="s6">//</span><span class="s1">添加按钮</span></p>
+<p class="p4"><span class="s3">UIButton</span><span class="s2"> *nameView = [</span><span class="s3">UIButton</span><span class="s2"> </span><span class="s1">buttonWithType</span><span class="s2">:</span><span class="s1">UIButtonTypeCustom</span><span class="s2">];</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p3"><span class="s6">//</span><span class="s1">按钮的内容左对齐</span></p>
+<p class="p4"><span class="s2">nameView.</span><span class="s7">contentHorizontalAlignment</span><span class="s2"> = </span><span class="s1">UIControlContentHorizontalAlignmentLeft</span><span class="s2">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p6"><span class="s1">///////---------------////////</span></p>
+<p class="p3"><span class="s6">//</span><span class="s1">按钮的内边距</span></p>
+<p class="p6"><span class="s1">//nameView.imageEdgeInsets</span></p>
+<p class="p6"><span class="s1">//</span><span class="s8">内容</span></p>
+<p class="p7"><span class="s1">nameView.</span><span class="s7">contentEdgeInsets</span><span class="s1"> = </span><span class="s9">UIEdgeInsetsMake</span><span class="s1">(</span><span class="s10">0</span><span class="s1">, </span><span class="s10">10</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">);</span></p>
+<p class="p6"><span class="s1">//</span><span class="s8">文字</span></p>
+<p class="p7"><span class="s1">nameView.</span><span class="s7">titleEdgeInsets</span><span class="s1"> = </span><span class="s9">UIEdgeInsetsMake</span><span class="s1">(</span><span class="s10">0</span><span class="s1">, </span><span class="s10">10</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">);</span></p>
+<p class="p6"><span class="s1">///////---------------////////</span></p>
+<p class="p8"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">@property</span><span class="s2"> (</span><span class="s1">nonatomic</span><span class="s2">,</span><span class="s1">weak</span><span class="s2">) </span><span class="s3">UILabel</span><span class="s2"> *countView;</span><span class="s4">//</span><span class="s5">好友在线人数</span><span class="s4">/</span><span class="s5">总人数</span></p>
+<p class="p6"><span class="s1">/////////////////////////////////</span></p>
+<p class="p4"><span class="s2">countView.</span><span class="s7">textAlignment</span><span class="s2"> = </span><span class="s1">NSTextAlignmentRight</span><span class="s2">;</span></p>
+<p class="p7"><span class="s1">countView.</span><span class="s7">textColor</span><span class="s1"> = [</span><span class="s3">UIColor</span><span class="s1"> </span><span class="s9">grayColor</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1">/////////////////////////////////</span></p>
+</body>
+</html>

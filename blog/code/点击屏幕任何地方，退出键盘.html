@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #294c50}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s3 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)viewDidLoad {</span></p>
+<p class="p2"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"</span><span class="s3">发邮件</span><span class="s1">------------------------- %s",__FUNCTION__);</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span>[</span><span class="s2">super</span><span class="s4"> </span><span class="s1">viewDidLoad</span><span class="s4">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span>[</span><span class="s2">self</span><span class="s4"> </span><span class="s1">setUpForDismissKeyboard</span><span class="s4">];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)setUpForDismissKeyboard {</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">NSNotificationCenter</span><span class="s4"> *nc = [</span><span class="s1">NSNotificationCenter</span><span class="s4"> </span><span class="s5">defaultCenter</span><span class="s4">];</span></p>
+<p class="p6"><span class="s1">UITapGestureRecognizer</span><span class="s4"> *singleTapGR =</span></p>
+<p class="p6"><span class="s4">[[</span><span class="s1">UITapGestureRecognizer</span><span class="s4"> </span><span class="s5">alloc</span><span class="s4">] </span><span class="s5">initWithTarget</span><span class="s4">:</span><span class="s2">self</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span></span><span class="s5">action</span><span class="s1">:</span><span class="s2">@selector</span><span class="s1">(tapAnywhereToDismissKeyboard:)];</span></p>
+<p class="p6"><span class="s1">NSOperationQueue</span><span class="s4"> *mainQuene =[</span><span class="s1">NSOperationQueue</span><span class="s4"> </span><span class="s5">mainQueue</span><span class="s4">];</span></p>
+<p class="p7"><span class="s4">[nc </span><span class="s5">addObserverForName</span><span class="s4">:</span><span class="s1">UIKeyboardWillShowNotification</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s5">object</span><span class="s1">:</span><span class="s2">nil</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span></span><span class="s5">queue</span><span class="s1">:mainQuene</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">usingBlock</span><span class="s1">:^(</span><span class="s6">NSNotification</span><span class="s1"> *note){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>[</span><span class="s2">self</span><span class="s1">.</span><span class="s7">view</span><span class="s1"> </span><span class="s5">addGestureRecognizer</span><span class="s1">:singleTapGR];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}];</span></p>
+<p class="p7"><span class="s4">[nc </span><span class="s5">addObserverForName</span><span class="s4">:</span><span class="s1">UIKeyboardWillHideNotification</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s5">object</span><span class="s1">:</span><span class="s2">nil</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span></span><span class="s5">queue</span><span class="s1">:mainQuene</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">usingBlock</span><span class="s1">:^(</span><span class="s6">NSNotification</span><span class="s1"> *note){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>[</span><span class="s2">self</span><span class="s1">.</span><span class="s7">view</span><span class="s1"> </span><span class="s5">removeGestureRecognizer</span><span class="s1">:singleTapGR];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}];</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)tapAnywhereToDismissKeyboard:(</span><span class="s6">UIGestureRecognizer</span><span class="s1"> *)gestureRecognizer {</span></p>
+<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s3">此</span><span class="s1">method</span><span class="s3">会将</span><span class="s1">self.view</span><span class="s3">里所有的</span><span class="s1">subview</span><span class="s3">的</span><span class="s1">first responder</span><span class="s3">都</span><span class="s1">resign</span><span class="s3">掉</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s2">self</span><span class="s1">.</span><span class="s7">view</span><span class="s1"> </span><span class="s5">endEditing</span><span class="s1">:</span><span class="s2">YES</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">}</span></p>
+</body>
+</html>

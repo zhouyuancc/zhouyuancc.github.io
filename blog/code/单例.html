@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s6 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>DemoObj.h</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>05-</span><span class="s2">单例</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/8/17.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">&lt;Foundation/Foundation.h&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@interface</span><span class="s1"> DemoObj : </span><span class="s5">NSObject</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s6">//</span><span class="s1">共享实例，便于其他类访问</span></p>
+<p class="p4"><span class="s1">+(</span><span class="s4">instancetype</span><span class="s1">)sharedDemoObj;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>DemoObj.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>05-</span><span class="s2">单例</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/8/17.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"DemoObj.h"</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@implementation</span><span class="s7"> DemoObj</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space"> </span></span><span class="s1">面试：手写单例</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>1.</span><span class="s2">重写</span><span class="s1">allocWithZone,</span><span class="s2">用</span><span class="s1">dispatch_once</span><span class="s2">实例化一个静态变量</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>2.</span><span class="s2">写一个</span><span class="s1">+shareXXX</span><span class="s2">方便其他类调用</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s6">//</span><span class="s1">在</span><span class="s6">ios</span><span class="s1">中，所有对象的内存空间的分配，最终都会调用</span><span class="s6">allocWithZone</span><span class="s1">方法</span></p>
+<p class="p5"><span class="s6">//</span><span class="s1">如果要做单例，需要重写此方法</span></p>
+<p class="p5"><span class="s6">//GCD</span><span class="s1">提供了一个方法：专门用来创建单例</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/***********************/</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)allocWithZone:(</span><span class="s4">struct</span><span class="s1"> </span><span class="s8">_NSZone</span><span class="s1"> *)zone</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">static</span><span class="s1"> </span><span class="s9">DemoObj</span><span class="s1"> *instance;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//dispatch_once</span><span class="s2">是线程安全的</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">static</span><span class="s1"> </span><span class="s8">dispatch_once_t</span><span class="s1"> onceToken;</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//dispatch_once</span><span class="s2">宏可以保证块代码中的指令只被执行一次</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">dispatch_once</span><span class="s1">(&amp;onceToken, ^{</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">永远只会被执行</span><span class="s1">1</span><span class="s2">次</span><span class="s1">,instance</span><span class="s2">只会被实例化</span><span class="s1">1</span><span class="s2">次</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>instance = [</span><span class="s4">super</span><span class="s1"> </span><span class="s11">allocWithZone</span><span class="s1">:zone];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> instance;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">/***********************/</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/***********************/</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)sharedDemoObj</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [[</span><span class="s4">self</span><span class="s1"> </span><span class="s11">alloc</span><span class="s1">]</span><span class="s11">init</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">/***********************/</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+</body>
+</html>

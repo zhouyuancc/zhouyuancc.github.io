@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #294c50}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s10 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #000000; background-color: #fff995}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #703daa; background-color: #fff995}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>AllStatusViewController.m</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 16/3/3.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2016</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)logout</span></p>
+<p class="p2"><span class="s1">{</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>self.view.window.rootViewController = [[LoginViewController alloc] init];</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">     </span></span><span class="s1">加载出空页面</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">注</span><span class="s1"> : [[LoginViewController alloc] init]</span><span class="s2">加载顺序</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>1.</span><span class="s2">加载</span><span class="s1">LoginView.xib</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>2.</span><span class="s2">加载</span><span class="s1">LoginViewController.xib</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">注意</span><span class="s1"> : </span><span class="s2">不会加载</span><span class="s1">storyboard</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">UIStoryboard</span><span class="s1"> *storyboard = [</span><span class="s6">UIStoryboard</span><span class="s1"> </span><span class="s7">storyboardWithName</span><span class="s1">:</span><span class="s8">@"Main"</span><span class="s1"> </span><span class="s7">bundle</span><span class="s1">:</span><span class="s3">nil</span><span class="s1">];</span></p>
+<p class="p1"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">箭头所指的</span><span class="s1">storyboard</span></p>
+<p class="p5"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s6">UIViewController</span><span class="s9"> *loginVc = [storyboard </span><span class="s1">instantiateInitialViewController</span><span class="s9">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">//</span><span class="s10">或</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>[storyboard instantiateViewControllerWithIdentifier:@"login"];</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s3">self</span><span class="s9">.</span><span class="s1">view</span><span class="s9">.</span><span class="s1">window</span><span class="s9">.</span><span class="s1">rootViewController</span><span class="s9"> = loginVc;</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>AppDelegate.m</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">- (</span><span class="s3">BOOL</span><span class="s1">)application:(</span><span class="s6">UIApplication</span><span class="s1"> *)application didFinishLaunchingWithOptions:(</span><span class="s6">NSDictionary</span><span class="s1"> *)launchOptions {</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s9"><span class="Apple-converted-space">     </span></span><span class="s1">//</span><span class="s2">来主界面</span></p>
+<p class="p5"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s3">id</span><span class="s9"> mainVc = [[</span><span class="s6">UIStoryboard</span><span class="s9"> </span><span class="s1">storyboardWithName</span><span class="s9">:</span><span class="s8">@"Main"</span><span class="s9"> </span><span class="s1">bundle</span><span class="s9">:</span><span class="s3">nil</span><span class="s9">] </span><span class="s1">instantiateInitialViewController</span><span class="s9">];</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s3">self</span><span class="s9">.</span><span class="s11">window</span><span class="s9">.</span><span class="s1">rootViewController</span><span class="s9"> = mainVc;</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p8"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s1">return</span><span class="s9"> </span><span class="s1">YES</span><span class="s9">;</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>WCLoginViewController.m</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p3"><span class="s5">// 3.</span><span class="s1">登录成功切换到主界面</span></p>
+<p class="p9"><span class="s9">[</span><span class="s6">UIStoryboard</span><span class="s9"> </span><span class="s1">showInitialVCWithName</span><span class="s9">:</span><span class="s8">@"Main"</span><span class="s9">];</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>* </span><span class="s2">显示</span><span class="s1">Storybaord</span><span class="s2">的第一个控制器到窗口</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p2"><span class="s1">+(</span><span class="s3">void</span><span class="s1">)showInitialVCWithName:(</span><span class="s6">NSString</span><span class="s1"> *)name{</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">UIStoryboard</span><span class="s1"> *storyboard = [</span><span class="s6">UIStoryboard</span><span class="s1"> </span><span class="s7">storyboardWithName</span><span class="s1">:name </span><span class="s7">bundle</span><span class="s1">:</span><span class="s3">nil</span><span class="s1">];</span></p>
+<p class="p1"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s1">//WXLog(@"%@",[UIApplication sharedApplication].keyWindow);</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s9"><span class="Apple-converted-space">    </span>[</span><span class="s6">UIApplication</span><span class="s9"> </span><span class="s1">sharedApplication</span><span class="s9">]</span><span class="s12">.</span><span class="s13">keyWindow</span><span class="s12">.</span><span class="s13">rootViewController</span><span class="s9"> = storyboard.</span><span class="s1">instantiateInitialViewController</span><span class="s9">;</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// </span><span class="s2">等价于</span></p>
+<p class="p10"><span class="s1">#pragma mark </span><span class="s2">切换到主界面</span></p>
+<p class="p2"><span class="s1">-(</span><span class="s3">void</span><span class="s1">)changeToMain{</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s1">// 1.</span><span class="s2">获取</span><span class="s1">Main.storyboard</span><span class="s2">的第一个控制器</span></p>
+<p class="p5"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s3">id</span><span class="s9"> vc = [[</span><span class="s6">UIStoryboard</span><span class="s9"> </span><span class="s1">storyboardWithName</span><span class="s9">:</span><span class="s8">@"Main"</span><span class="s9"> </span><span class="s1">bundle</span><span class="s9">:</span><span class="s3">nil</span><span class="s9">] </span><span class="s1">instantiateInitialViewController</span><span class="s9">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s1">// 2.</span><span class="s2">切换</span><span class="s1">window</span><span class="s2">的根控制器</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">    </span>[</span><span class="s6">UIApplication</span><span class="s9"> </span><span class="s7">sharedApplication</span><span class="s9">].</span><span class="s1">keyWindow</span><span class="s9">.</span><span class="s1">rootViewController</span><span class="s9"> = vc;</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+</body>
+</html>

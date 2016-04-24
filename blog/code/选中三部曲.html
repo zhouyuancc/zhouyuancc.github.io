@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #539aa4}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Wheel.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>11-</span><span class="s2">转盘</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">@property</span><span class="s3"> (</span><span class="s1">nonatomic</span><span class="s3">,</span><span class="s1">weak</span><span class="s3">) </span><span class="s4">UIButton</span><span class="s3"> *selectedBtn;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">- (</span><span class="s5">void</span><span class="s1">)btnClick:(</span><span class="s4">UIButton</span><span class="s1"> *)btn</span></p>
+<p class="p5"><span class="s1">{</span></p>
+<p class="p6"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s5">self</span><span class="s3">.</span><span class="s1">selectedBtn</span><span class="s3">.</span><span class="s6">selected</span><span class="s3"> = </span><span class="s5">NO</span><span class="s3">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>btn.</span><span class="s6">selected</span><span class="s1"> = </span><span class="s5">YES</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">self</span><span class="s1">.</span><span class="s7">selectedBtn</span><span class="s1"> = btn;</span></p>
+<p class="p5"><span class="s1">}</span></p>
+</body>
+</html>

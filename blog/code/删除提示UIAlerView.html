@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s10 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s11 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s15 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s16 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s17 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+  </style>
+</head>
+<body>
+<p class="p1"><br></p>
+<p class="p1"><br></p>
+<p class="p2"><span class="s1">//<span class="Apple-converted-space">  </span>EditEmailTableViewController.m</span></p>
+<p class="p1"><br></p>
+<p class="p3"><span class="s2">@interface</span><span class="s3"> </span><span class="s1">EditEmailTableViewController</span><span class="s3"> ()&lt;</span><span class="s4">UIAlertViewDelegate</span><span class="s3">&gt;</span></p>
+<p class="p4"><span class="s5">//</span><span class="s1">人员按钮</span></p>
+<p class="p5"><span class="s1">@property</span><span class="s3"> (</span><span class="s1">nonatomic</span><span class="s3">,</span><span class="s1">strong</span><span class="s3">) </span><span class="s6">EmpButton</span><span class="s3"> *empButton;</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">@end</span></p>
+<p class="p1"><br></p>
+<p class="p1"><br></p>
+<p class="p7"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)editTableViewCellDidClickEmpBtn:(</span><span class="s6">EmpButton</span><span class="s1"> *)button</span></p>
+<p class="p7"><span class="s1">{</span></p>
+<p class="p2"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"editTableViewCellDidClickEmpBtn %@",button.name);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">self</span><span class="s1">.</span><span class="s7">empButton</span><span class="s1"> = button;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSString</span><span class="s1"> *message = [</span><span class="s4">NSString</span><span class="s1"> </span><span class="s8">stringWithFormat</span><span class="s1">:</span><span class="s9">@"</span><span class="s10">您确定要删除收件人</span><span class="s9">%@</span><span class="s10">吗？</span><span class="s9">"</span><span class="s1">,button.</span><span class="s7">name</span><span class="s1">];</span></p>
+<p class="p8"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s4">UIAlertView</span><span class="s3"> *alert = [[</span><span class="s4">UIAlertView</span><span class="s3"> </span><span class="s1">alloc</span><span class="s3">] </span><span class="s1">initWithTitle</span><span class="s3">:</span><span class="s2">nil</span><span class="s3"> </span><span class="s1">message</span><span class="s3">:message </span><span class="s1">delegate</span><span class="s3">:</span><span class="s2">self</span><span class="s3"> </span><span class="s1">cancelButtonTitle</span><span class="s3">:</span><span class="s9">@"</span><span class="s10">取消</span><span class="s9">"</span><span class="s3"> </span><span class="s1">otherButtonTitles</span><span class="s3">:</span><span class="s9">@"</span><span class="s10">确定</span><span class="s9">"</span><span class="s3">, </span><span class="s2">nil</span><span class="s3">];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>[alert </span><span class="s8">show</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p9"><span class="s1">#pragma mark - alertView</span><span class="s11">代理方法</span></p>
+<p class="p7"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)alertView:(</span><span class="s4">UIAlertView</span><span class="s1"> *)alertView clickedButtonAtIndex:(</span><span class="s12">NSInteger</span><span class="s1">)buttonIndex</span></p>
+<p class="p7"><span class="s1">{</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">if</span><span class="s1">(buttonIndex == </span><span class="s13">0</span><span class="s1">)</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">return</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s11">确定按钮</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s11">拼接字符串</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSString</span><span class="s1"> *replaceStrCode = [</span><span class="s2">self</span><span class="s1">.</span><span class="s7">empButton</span><span class="s1">.</span><span class="s7">code</span><span class="s1"> </span><span class="s8">stringByAppendingString</span><span class="s1">:</span><span class="s9">@","</span><span class="s1">];</span><span class="s14">//</span><span class="s15">要删除的编号</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSString</span><span class="s1"> *replaceStrName = [</span><span class="s2">self</span><span class="s1">.</span><span class="s7">empButton</span><span class="s1">.</span><span class="s7">name</span><span class="s1"> </span><span class="s8">stringByAppendingString</span><span class="s1">:</span><span class="s9">@","</span><span class="s1">];</span><span class="s14">//</span><span class="s15">要删除的姓名</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">EditEmailFrame</span><span class="s1"> *editFrame = </span><span class="s2">self</span><span class="s1">.</span><span class="s7">editEmailFrame</span><span class="s1">[</span><span class="s13">0</span><span class="s1">];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSString</span><span class="s1"> *Code = editFrame.</span><span class="s7">editEmail</span><span class="s1">.</span><span class="s7">code</span><span class="s1">;</span><span class="s14">//</span><span class="s15">收件人</span><span class="s14"> </span><span class="s15">原始所有编号</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSString</span><span class="s1"> *Name = editFrame.</span><span class="s7">editEmail</span><span class="s1">.</span><span class="s7">content</span><span class="s1">;</span><span class="s14">//</span><span class="s15">收件人</span><span class="s14"> </span><span class="s15">原始所有姓名</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"replaceStrCode %@ name %@",replaceStrCode,replaceStrName);</span></p>
+<p class="p2"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"%@ %@",Code,Name);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s16"><span class="Apple-converted-space">    </span></span><span class="s5">//</span><span class="s1">删除后的收件人</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s15">替换</span></p>
+<p class="p8"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s4">NSString</span><span class="s3"> *currentCode = [Code </span><span class="s1">stringByReplacingOccurrencesOfString</span><span class="s3">:replaceStrCode </span><span class="s1">withString</span><span class="s3">:</span><span class="s9">@""</span><span class="s3">];</span></p>
+<p class="p8"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s4">NSString</span><span class="s3"> *currentName = [Name </span><span class="s1">stringByReplacingOccurrencesOfString</span><span class="s3">:replaceStrName </span><span class="s1">withString</span><span class="s3">:</span><span class="s9">@""</span><span class="s3">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"currentCode %@<span class="Apple-converted-space">  </span>currentName %@",currentCode,currentName);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s2">self</span><span class="s1"> </span><span class="s17">reload</span><span class="s1">:currentCode </span><span class="s17">WithName</span><span class="s1">:currentName];</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">/**</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space"> </span></span><span class="s1">刷新数据</span><span class="s5"> </span><span class="s1">收件人</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space"> </span>//</span><span class="s1">全局刷新</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p7"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)reload:(</span><span class="s4">NSString</span><span class="s1"> *)code WithName:(</span><span class="s4">NSString</span><span class="s1"> *)name</span></p>
+<p class="p7"><span class="s1">{</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">EditEmailFrame</span><span class="s1"> *edit = </span><span class="s2">self</span><span class="s1">.</span><span class="s7">editEmailFrame</span><span class="s1">[</span><span class="s13">0</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">EditEmail</span><span class="s1"> *editEmail = [[</span><span class="s6">EditEmail</span><span class="s1"> </span><span class="s8">alloc</span><span class="s1">] </span><span class="s8">init</span><span class="s1">];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>editEmail.</span><span class="s7">name</span><span class="s1"> = </span><span class="s9">@"</span><span class="s10">收件人</span><span class="s9">:"</span><span class="s1">;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>editEmail.</span><span class="s7">content</span><span class="s1"> = name;</span><span class="s14">//</span><span class="s15">中文</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>editEmail.</span><span class="s7">code</span><span class="s1"> = code;</span><span class="s14">//</span><span class="s15">编号</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>editEmail.</span><span class="s7">add</span><span class="s1"> = </span><span class="s2">YES</span><span class="s1">;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>editEmail.</span><span class="s7">unEnable</span><span class="s1"> = </span><span class="s2">YES</span><span class="s1">;</span><span class="s14">//</span><span class="s15">不可写</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>edit.</span><span class="s7">cellHeight</span><span class="s1"> = [edit </span><span class="s17">changeCellHeight</span><span class="s1">:editEmail];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">        </span>NSLog(@"%f",edit.cellHeight);</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s11">全局刷新</span></p>
+<p class="p8"><span class="s3"><span class="Apple-converted-space">    </span>[</span><span class="s2">self</span><span class="s3">.</span><span class="s7">tableview</span><span class="s3"> </span><span class="s1">reloadData</span><span class="s3">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s16"><span class="Apple-converted-space">    </span></span><span class="s5">//</span><span class="s1">因为第一行</span><span class="s5">cellHeight</span><span class="s1">行高改变后，其他行的尺寸也有变动，所以此时不用局部刷新</span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">        </span>NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];</span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">        </span>[self.tableview reloadRowsAtIndexPaths:@[path] <span class="Apple-converted-space">    </span>withRowAnimation:UITableViewRowAnimationBottom];</span></p>
+<p class="p7"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+</body>
+</html>

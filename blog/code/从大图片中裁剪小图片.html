@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421; min-height: 19.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s13 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Wheel.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>11-</span><span class="s2">转盘</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space"> </span>xib</span><span class="s1">执行完毕后</span><span class="s3"> </span><span class="s1">调用</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s2">完成了连线操作，</span><span class="s1">self.centerWheel.frame</span><span class="s2">有值</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)awakeFromNib</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//imageView</span><span class="s2">默认与用户交互为</span><span class="s1">NO</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s4">self</span><span class="s5">.</span><span class="s6">centerWheel</span><span class="s5">.</span><span class="s1">userInteractionEnabled</span><span class="s5"> = </span><span class="s4">YES</span><span class="s5">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">加载大图片</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">UIImage</span><span class="s1"> *bigImage = [</span><span class="s8">UIImage</span><span class="s1"> </span><span class="s9">imageNamed</span><span class="s1">:</span><span class="s10">@"LuckyAstrology"</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s7">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">点</span><span class="s1"> : 1*1</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">像素</span><span class="s1"> : 2*2</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s11">CGFloat</span><span class="s1"> smallW = bigImage.</span><span class="s11">size</span><span class="s1">.</span><span class="s11">width</span><span class="s1">/</span><span class="s12">12</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s11">CGFloat</span><span class="s1"> smallH = bigImage.</span><span class="s11">size</span><span class="s1">.</span><span class="s11">height</span><span class="s1">;</span><span class="s7">//</span><span class="s13">点</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">点</span><span class="s1"> -&gt; </span><span class="s2">像素</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>smallW = smallW * 2;</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>smallH = smallH * 2;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">判断</span><span class="s1">retina</span><span class="s2">屏幕</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">屏幕的伸缩属性</span><span class="s1">[UIScreen mainScreen].scale</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//retina 2//</span><span class="s2">非</span><span class="s1">retina 1</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>smallW = smallW * [</span><span class="s8">UIScreen</span><span class="s1"> </span><span class="s9">mainScreen</span><span class="s1">].</span><span class="s11">scale</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>smallH = smallH * [</span><span class="s8">UIScreen</span><span class="s1"> </span><span class="s9">mainScreen</span><span class="s1">].</span><span class="s11">scale</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">添加</span><span class="s1">12</span><span class="s2">个按钮</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">for</span><span class="s1">(</span><span class="s4">int</span><span class="s1"> index = </span><span class="s12">0</span><span class="s1"> ; index &lt; </span><span class="s12">12</span><span class="s1"> ; index++)</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s8">UIButton</span><span class="s5"> *btn = [</span><span class="s8">UIButton</span><span class="s5"> </span><span class="s1">buttonWithType</span><span class="s5">:</span><span class="s1">UIButtonTypeCustom</span><span class="s5">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">/**</span></p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">         </span></span><span class="s1">从大图片中裁剪对应星座的图片</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>CGImageRef</span><span class="s2">中的</span><span class="s1">rect</span><span class="s2">使用的是</span><span class="s1"> </span><span class="s2">像素</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">CGFloat</span><span class="s1"> smallX = index * smallW;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">CGRect</span><span class="s1"> smallRect = </span><span class="s9">CGRectMake</span><span class="s1">(smallX, </span><span class="s12">0</span><span class="s1">, smallW, smallH);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1">/*********************************************************************/</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">从</span><span class="s1"> </span><span class="s2">左边大图片</span><span class="s1"> </span><span class="s2">裁剪</span><span class="s1"> </span><span class="s2">右边矩形</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">CGImageRef</span><span class="s1"> smallImage = </span><span class="s9">CGImageCreateWithImageInRect</span><span class="s1">(bigImage.</span><span class="s11">CGImage</span><span class="s1">, smallRect);</span><span class="s7">//(</span><span class="s13">像素</span><span class="s7">,</span><span class="s13">像素</span><span class="s7">)</span></p>
+<p class="p1"><span class="s1">/*********************************************************************/</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>btn.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1.0];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">        </span>[btn </span><span class="s1">setImage</span><span class="s5">:[</span><span class="s8">UIImage</span><span class="s5"> </span><span class="s1">imageWithCGImage</span><span class="s5">:smallImage] </span><span class="s1">forState</span><span class="s5">:</span><span class="s1">UIControlStateNormal</span><span class="s5">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">        </span>[btn </span><span class="s1">setBackgroundImage</span><span class="s5">:[</span><span class="s8">UIImage</span><span class="s5"> </span><span class="s1">imageNamed</span><span class="s5">:</span><span class="s10">@"LuckyRototeSelected"</span><span class="s5">] </span><span class="s1">forState</span><span class="s5">:</span><span class="s1">UIControlStateSelected</span><span class="s5">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>btn.</span><span class="s11">bounds</span><span class="s1"> = </span><span class="s9">CGRectMake</span><span class="s1">(</span><span class="s12">0</span><span class="s1">, </span><span class="s12">0</span><span class="s1">, </span><span class="s12">68</span><span class="s1">, </span><span class="s12">143</span><span class="s1">);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span></span><span class="s2">设置锚点和位置</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">//</span><span class="s13">锚点</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span>btn.</span><span class="s1">layer</span><span class="s5">.</span><span class="s1">position</span><span class="s5"> = </span><span class="s9">CGPointMake</span><span class="s5">(</span><span class="s4">self</span><span class="s5">.</span><span class="s6">centerWheel</span><span class="s5">.</span><span class="s1">frame</span><span class="s5">.</span><span class="s1">size</span><span class="s5">.</span><span class="s1">width</span><span class="s5"> * </span><span class="s12">0.5</span><span class="s5">, </span><span class="s4">self</span><span class="s5">.</span><span class="s6">centerWheel</span><span class="s5">.</span><span class="s1">frame</span><span class="s5">.</span><span class="s1">size</span><span class="s5">.</span><span class="s1">height</span><span class="s5"> * </span><span class="s12">0.5</span><span class="s5">);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>btn.</span><span class="s11">layer</span><span class="s1">.</span><span class="s11">anchorPoint</span><span class="s1"> = </span><span class="s9">CGPointMake</span><span class="s1">(</span><span class="s12">0.5</span><span class="s1">, </span><span class="s12">1</span><span class="s1">);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span></span><span class="s2">设置旋转角度</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">需要旋转的角度</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">CGFloat</span><span class="s1"> angle = (</span><span class="s12">30</span><span class="s1"> * index)/</span><span class="s12">180.0</span><span class="s1"> * </span><span class="s14">M_PI</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">//</span><span class="s13">绕锚点旋转</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">        </span>btn.</span><span class="s11">transform</span><span class="s5"> = </span><span class="s1">CGAffineTransformMakeRotation</span><span class="s5">(angle);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">//</span><span class="s13">监听按钮点击</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">        </span>[btn </span><span class="s1">addTarget</span><span class="s5">:</span><span class="s4">self</span><span class="s5"> </span><span class="s1">action</span><span class="s5">:</span><span class="s4">@selector</span><span class="s5">(btnClick:) </span><span class="s1">forControlEvents</span><span class="s5">:</span><span class="s1">UIControlEventTouchUpInside</span><span class="s5">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s4">self</span><span class="s1">.</span><span class="s6">centerWheel</span><span class="s1"> </span><span class="s9">addSubview</span><span class="s1">:btn];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>btn.selected = YES;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1">}</span></p>
+</body>
+</html>

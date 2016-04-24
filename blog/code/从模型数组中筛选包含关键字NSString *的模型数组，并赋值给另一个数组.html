@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #539aa4}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s12 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s15 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s16 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s17 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>WorkFlowViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>RniuOA_iOS</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/6/3.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> </span><span class="s2">锐牛科技有限公司</span><span class="s1">. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span></span><span class="s2">我的工作</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">//</span><span class="s1">重写搜索方法</span></p>
+<p class="p4"><span class="s1">-(</span><span class="s4">NSPredicate</span><span class="s1"> *)setSearchWay:(</span><span class="s4">NSString</span><span class="s1"> *)changeinfo</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>//</span><span class="s1">参数</span><span class="s5">Run_name</span><span class="s6">、</span><span class="s5">bzlc</span><span class="s1">是模型WorkInfo的成员变量</span></p>
+<p class="p5"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s8">return</span><span class="s7"> [</span><span class="s4">NSPredicate</span><span class="s7"> </span><span class="s9">predicateWithFormat</span><span class="s7">:</span><span class="s1">@"self.%@ contains[cd] %@ OR self.%@ contains[cd] %@"</span><span class="s7">, </span><span class="s1">@"Run_name"</span><span class="s7">, changeinfo, </span><span class="s1">@"bzlc"</span><span class="s7">, changeinfo];</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>NoticeViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>RniuOA_iOS</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/6/3.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> </span><span class="s2">锐牛科技有限公司</span><span class="s1">. All rights reserved.</span></p>
+<p class="p1"><span class="s1">// <span class="Apple-converted-space"> </span></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">-(</span><span class="s8">void</span><span class="s1">) initSecondSearch{</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p7"><span class="s7"><span class="Apple-converted-space">    </span>[[</span><span class="s4">NSNotificationCenter</span><span class="s7"> </span><span class="s1">defaultCenter</span><span class="s7">] </span><span class="s1">addObserver</span><span class="s7">:</span><span class="s8">self</span><span class="s7"> </span><span class="s1">selector</span><span class="s7">:</span><span class="s8">@selector</span><span class="s7">(textChange) </span><span class="s1">name</span><span class="s7">:</span><span class="s10">UITextFieldTextDidChangeNotification</span><span class="s7"> </span><span class="s1">object</span><span class="s7">:</span><span class="s11">_searchField</span><span class="s7">];</span></p>
+<p class="p4"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p3"><span class="s12"><span class="Apple-converted-space">    </span></span><span class="s3">//</span><span class="s1">搜索框点击事件</span></p>
+<p class="p8"><span class="s7"><span class="Apple-converted-space">    </span>[[</span><span class="s4">NSNotificationCenter</span><span class="s7"> </span><span class="s9">defaultCenter</span><span class="s7">] </span><span class="s9">addObserver</span><span class="s7">:</span><span class="s8">self</span><span class="s7"> </span><span class="s9">selector</span><span class="s7">:</span><span class="s8">@selector</span><span class="s7">(textOnfocus) </span><span class="s9">name</span><span class="s7">:</span><span class="s1">UITextFieldTextDidBeginEditingNotification</span><span class="s7"> </span><span class="s9">object</span><span class="s7">:</span><span class="s11">_searchField</span><span class="s7">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">分割线</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">UIView</span><span class="s1"> *divider = [[</span><span class="s4">UIView</span><span class="s1"> </span><span class="s9">alloc</span><span class="s1">] </span><span class="s9">init</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>divider.</span><span class="s10">backgroundColor</span><span class="s1"> = [</span><span class="s4">UIColor</span><span class="s1"> </span><span class="s9">blackColor</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>divider.</span><span class="s10">alpha</span><span class="s1"> = </span><span class="s13">0.1</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">CGFloat</span><span class="s1"> dividerX= </span><span class="s13">0</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">CGFloat</span><span class="s1"> dividerH= </span><span class="s13">1</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">CGFloat</span><span class="s1"> dividerY= </span><span class="s9">CGRectGetMaxY</span><span class="s1">(</span><span class="s11">_searchBackImage</span><span class="s1">.</span><span class="s10">frame</span><span class="s1">) + </span><span class="s13">6</span><span class="s1"> - dividerH;</span></p>
+<p class="p8"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">CGFloat</span><span class="s7"> dividerW= </span><span class="s8">self</span><span class="s7">.</span><span class="s1">view</span><span class="s7">.</span><span class="s1">frame</span><span class="s7">.</span><span class="s1">size</span><span class="s7">.</span><span class="s1">width</span><span class="s7">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>divider.</span><span class="s10">frame</span><span class="s1"> = </span><span class="s9">CGRectMake</span><span class="s1">(dividerX, dividerY, dividerW, dividerH);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s8">self</span><span class="s1">.</span><span class="s10">view</span><span class="s1"> </span><span class="s9">addSubview</span><span class="s1">:divider];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">-(</span><span class="s8">void</span><span class="s1">)textChange</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s9">NSLog</span><span class="s7">(</span><span class="s6">@"%@"</span><span class="s7">,</span><span class="s1">_searchField</span><span class="s7">.</span><span class="s10">text</span><span class="s7">);</span></p>
+<p class="p7"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s8">if</span><span class="s7"> ([</span><span class="s11">_searchField</span><span class="s7">.</span><span class="s10">text</span><span class="s7"> </span><span class="s1">isEqualToString</span><span class="s7">:</span><span class="s6">@""</span><span class="s7">]){</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">        </span></span><span class="s8">self</span><span class="s7">.</span><span class="s1">SearchReslutArray</span><span class="s7"> = </span><span class="s8">self</span><span class="s7">.</span><span class="s1">NoticeArray</span><span class="s7">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>} </span><span class="s8">else</span><span class="s1"> {</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">        </span></span><span class="s1">//<span class="Apple-converted-space">        </span>NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.%@ contains[cd] %@ OR self.%@ contains[cd] %@", @"InfoTitle", _searchField.text, @"InfoContent", _searchField.text];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s14">ZYLog</span><span class="s1">(</span><span class="s6">@"self.NoticeArray %@"</span><span class="s1">,</span><span class="s8">self</span><span class="s1">.NoticeArray);</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s14">ZYLog</span><span class="s1">(</span><span class="s6">@"[self setSearchWay:_searchField.text] %@"</span><span class="s1">,[</span><span class="s8">self</span><span class="s1"> setSearchWay:_searchField.text]);</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">        </span></span><span class="s1">//SELF."title" CONTAINS[cd] "</span><span class="s2">关</span><span class="s1">" OR SELF."Content" CONTAINS[cd] "</span><span class="s2">关</span><span class="s1">"</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">        </span></span><span class="s1">//SELF."Run_name" CONTAINS[cd] "</span><span class="s2">专</span><span class="s1">" OR SELF."Flow_name" CONTAINS[cd] "</span><span class="s2">专</span><span class="s1">"</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">———————</span><span class="s2">从数组</span><span class="s8">self</span><span class="s1">.</span><span class="s11">NoticeArray</span><span class="s15">中筛选包含关键字</span><span class="s1">_searchField.text</span><span class="s2">的数组，并赋值给</span><span class="s8">self</span><span class="s1">.</span><span class="s11">SearchReslutArray</span><span class="s1">————————————</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">        </span></span><span class="s8">self</span><span class="s7">.</span><span class="s1">SearchReslutArray</span><span class="s7"> = [</span><span class="s8">self</span><span class="s7">.</span><span class="s1">NoticeArray</span><span class="s7"> </span><span class="s9">filteredArrayUsingPredicate</span><span class="s7">:[</span><span class="s8">self</span><span class="s7"> </span><span class="s16">setSearchWay</span><span class="s7">:</span><span class="s1">_searchField</span><span class="s7">.</span><span class="s10">text</span><span class="s7">]];</span></p>
+<p class="p4"><span class="s1">———————</span><span class="s9">filter</span><span class="s17">过滤</span><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s14">ZYLog</span><span class="s1">(</span><span class="s6">@"self.SearchReslutArray %@"</span><span class="s1">,</span><span class="s8">self</span><span class="s1">.SearchReslutArray);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s8">self</span><span class="s7">.</span><span class="s1">NoticeTableview</span><span class="s7"> </span><span class="s9">reloadData</span><span class="s7">];</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">}</span></p>
+</body>
+</html>

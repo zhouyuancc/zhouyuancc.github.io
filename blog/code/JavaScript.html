@@ -1,0 +1,765 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Heiti SC Light'; color: #7f7f7f}
+    p.p2 {margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px Helvetica; color: #7f7f7f; min-height: 24.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Heiti SC Light'; color: #7f7f7f}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Heiti SC Light'; color: #7f7f7f; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 8.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #7f7f7f}
+    p.p6 {margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Heiti SC Light'; color: #b51a00; background-color: #b1dd8c}
+    p.p7 {margin: 0.0px 0.0px 8.0px 0.0px; font: 18.0px Menlo; color: #c41b17}
+    p.p8 {margin: 0.0px 0.0px 8.0px 0.0px; font: 18.0px Menlo; color: #aa2391}
+    p.p9 {margin: 0.0px 0.0px 8.0px 0.0px; font: 18.0px Helvetica; color: #7f7f7f; min-height: 22.0px}
+    p.p10 {margin: 0.0px 0.0px 8.0px 0.0px; font: 18.0px Helvetica; color: #7f7f7f}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c41b17}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #aa2391; min-height: 21.0px}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Heiti SC Light'}
+    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p18 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #b1dd8c}
+    p.p19 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p20 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421; background-color: #b1dd8c}
+    p.p21 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p22 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; background-color: #b1dd8c}
+    p.p23 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p24 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #e0edd4}
+    p.p25 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Heiti SC Light'; min-height: 21.0px}
+    p.p26 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #0435ff}
+    p.p27 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p28 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; background-color: #ebf38f}
+    p.p29 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421; background-color: #ebf38f}
+    p.p30 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Times}
+    p.p31 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Songti SC'}
+    p.p32 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1337ff}
+    p.p33 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; background-color: #fff995}
+    p.p34 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px Menlo}
+    p.p35 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275; background-color: #b1dd8c}
+    p.p36 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #b51a00; background-color: #b1dd8c}
+    p.p37 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #b51a00; background-color: #e0edd4}
+    p.p38 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #e0edd4; min-height: 21.0px}
+    p.p39 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #b51a00}
+    span.s1 {font: 20.0px Helvetica; font-kerning: none; font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-kerning: none; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #ff2500}
+    span.s4 {font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #0433ff}
+    span.s5 {font: 20.0px Helvetica; font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #0433ff}
+    span.s6 {font: 18.0px Helvetica; font-kerning: none; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #aa2391}
+    span.s8 {font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #836c27}
+    span.s9 {font: 18.0px 'Heiti SC Light'; font-kerning: none; font-variant-ligatures: no-common-ligatures}
+    span.s10 {font: 18.0px Menlo; font-kerning: none; font-variant-ligatures: no-common-ligatures}
+    span.s11 {font-kerning: none; font-variant-ligatures: no-common-ligatures; background-color: #b1dd8c}
+    span.s12 {font: 20.0px Menlo; font-kerning: none; font-variant-ligatures: no-common-ligatures}
+    span.s13 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s14 {font-variant-ligatures: no-common-ligatures}
+    span.s15 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s16 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s17 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s18 {font-variant-ligatures: no-common-ligatures; color: #c32275; background-color: #b1dd8c}
+    span.s19 {font-variant-ligatures: no-common-ligatures; background-color: #b1dd8c}
+    span.s20 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s21 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s22 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s23 {font-variant-ligatures: no-common-ligatures; color: #b51a00}
+    span.s24 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s25 {font-variant-ligatures: no-common-ligatures; color: #967e34}
+    span.s26 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s27 {font: 20.0px 'Heiti SC Light'; font-kerning: none; font-variant-ligatures: no-common-ligatures}
+    span.s28 {font-kerning: none}
+    span.s29 {font: 18.0px 'Songti SC'; font-kerning: none}
+    span.s30 {font-kerning: none; color: #b51a00}
+    span.s31 {font: 18.0px Times; font-kerning: none}
+    span.s32 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s33 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s34 {font-variant-ligatures: no-common-ligatures; color: #1337ff}
+    span.s35 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #b51a00}
+    span.s36 {font-variant-ligatures: no-common-ligatures; background-color: #e0edd4}
+    span.s37 {font-variant-ligatures: no-common-ligatures; color: #0435ff; background-color: #e0edd4}
+    span.s38 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; background-color: #b1dd8c}
+    span.s39 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #b51a00; background-color: #b1dd8c}
+    span.s40 {font-variant-ligatures: no-common-ligatures; color: #b51a00; background-color: #b1dd8c}
+    span.s41 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421; background-color: #b1dd8c}
+    span.s42 {font-variant-ligatures: no-common-ligatures; color: #000000; background-color: #b1dd8c}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">JavaScript</span><span class="s2">是一门广泛用于</span><span class="s3">浏览器客户端</span><span class="s2">的</span><span class="s4">脚本</span><span class="s2">语言http://www.w3school.com.cn/js/index.asp</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">JS</span><span class="s2">的常见用途</span></p>
+<p class="p1"><span class="s1">HTML </span><span class="s5">DOM</span><span class="s4">操作</span><span class="s2">（节点【标签】操作，比如添加、修改、删除节点）</span></p>
+<p class="p1"><span class="s2">给</span><span class="s1">HTML</span><span class="s2">网页增加</span><span class="s4">动态</span><span class="s2">功能，比如动画</span></p>
+<p class="p3"><span class="s4">事件</span><span class="s2">处理：比如监听鼠标点击、鼠标滑动、键盘输入</span></p>
+<p class="p4"><span class="s2"></span><br></p>
+<p class="p3"><span class="s2"><b>Node.js</b>可以作为后台语言，单线程（不增加额外线程的情况下，依然可以对任务进行并行处理）</span></p>
+<p class="p3"><span class="s2">Node是一个Js运行环境（runtime），对Google V8引擎进行了封装</span></p>
+<p class="p3"><span class="s2">V8引擎执行JS速度快，性能好</span></p>
+<p class="p4"><span class="s2"></span><br></p>
+<p class="p5"><span class="s2">页内</span><span class="s6">JS</span><span class="s2">：在当前网页的</span><span class="s6">script</span><span class="s2">标签中编写</span></p>
+<p class="p6"><span class="s2">放到body的最后</span></p>
+<p class="p7"><span class="s7">&lt;script </span><span class="s8">type</span><span class="s7">=</span><span class="s2">"text/javascript"</span><span class="s7">&gt;</span></p>
+<p class="p8"><span class="s2">&lt;/script&gt;</span></p>
+<p class="p9"><span class="s2"></span><br></p>
+<p class="p10"><span class="s9">外部</span><span class="s2">JS</span></p>
+<p class="p11"><span class="s7">&lt;script </span><span class="s8">src</span><span class="s7">=</span><span class="s2">"index.js"</span><span class="s7"> </span><span class="s8">type</span><span class="s7">=</span><span class="s2">"text/javascript"</span><span class="s7">&gt;&lt;/script&gt;</span></p>
+<p class="p12"><span class="s2"></span><br></p>
+<p class="p13"><span class="s10">//<span class="Apple-converted-space">        </span></span><span class="s2">单双引号都可用，但建议用单引号</span></p>
+<p class="p14"><span class="s2">//<span class="Apple-converted-space">        </span></span><span class="s9">因为</span><span class="s2"> </span><span class="s9">在</span><span class="s2">onclick</span><span class="s9">里写双引号，无效</span></p>
+<p class="p14"><span class="s2">//<span class="Apple-converted-space">        </span>alert('HelloWord');</span></p>
+<p class="p15"><span class="s2"></span><br></p>
+<p class="p14"><span class="s11">console.log('HelloWord');</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p16"><span class="s12">JS</span><span class="s2">的基本语法</span></p>
+<p class="p17"><span class="s13">//<span class="Apple-converted-space">    </span></span><span class="s14">定义</span><span class="s13"> </span><span class="s14">整数形、小数、字符串、</span><span class="s13">bool</span><span class="s14">，都用</span><span class="s13">var</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> number = </span><span class="s16">10</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> money = </span><span class="s16">100.99</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> name = </span><span class="s16">'jack'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> result = </span><span class="s15">true</span><span class="s14">;</span><span class="s17">//false</span></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> num = </span><span class="s15">null</span><span class="s14">;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(number,money,name,result);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(</span><span class="s18">typeof</span><span class="s19"> </span><span class="s14">number,</span><span class="s15">typeof</span><span class="s14"> money,</span><span class="s15">typeof</span><span class="s14"> name,</span><span class="s15">typeof</span><span class="s14"> result,</span><span class="s15">typeof</span><span class="s14"> num);</span></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//number number string boolean object(</span><span class="s21">对象类型</span><span class="s14">)</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> newName = name + name;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(newName);</span><span class="s17">//jackjack</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">// </span><span class="s21">运算是从左往右</span><span class="s14">, </span><span class="s21">任何类型遇到</span><span class="s14">string</span><span class="s21">都会被转为</span><span class="s14">string</span></p>
+<p class="p20"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">字符串后面都是字符串，不再计算了</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> str1 = </span><span class="s16">10</span><span class="s14"> + </span><span class="s16">10</span><span class="s14"> + </span><span class="s16">'10'</span><span class="s14"> + </span><span class="s16">'10'</span><span class="s14">; </span><span class="s17">// 201010</span></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> str2 = </span><span class="s16">'10'</span><span class="s14"> + </span><span class="s16">'10'</span><span class="s14"> + </span><span class="s16">10</span><span class="s14"> + </span><span class="s16">10</span><span class="s14">; </span><span class="s17">// </span><span class="s23">101010</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> str3 = (</span><span class="s16">10</span><span class="s14"> + </span><span class="s16">10</span><span class="s14">) + </span><span class="s16">'10'</span><span class="s14"> + </span><span class="s16">'10'</span><span class="s14">;</span><span class="s17">// 201010</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> str4 = </span><span class="s16">10</span><span class="s14"> + </span><span class="s16">10</span><span class="s14"> + </span><span class="s16">'10'</span><span class="s14"> + </span><span class="s16">10</span><span class="s14">; </span><span class="s17">// 201010</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(str2);</span></p>
+<p class="p15"><span class="s2"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//<span class="Apple-converted-space">    </span></span><span class="s21">数组</span><span class="s14"> object</span><span class="s21">类型</span></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">任何类型都可以放进去</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> numbers = [number,</span><span class="s16">10</span><span class="s14">,</span><span class="s16">'hhh'</span><span class="s14">,result,num,[</span><span class="s16">'rrr'</span><span class="s14">,</span><span class="s16">10</span><span class="s14">]];</span></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span>console.log(numbers);</span><span class="s14">// [10, 10, "hhh", true, null, ["rrr", 10]]</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">数组中的数组</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(numbers[</span><span class="s16">5</span><span class="s14">][</span><span class="s16">0</span><span class="s14">]);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">for</span><span class="s14">(</span><span class="s15">var</span><span class="s14"> i=</span><span class="s16">0</span><span class="s14">;i&lt;numbers.length;i++)</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>console.log(numbers[i]);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//<span class="Apple-converted-space">    </span></span><span class="s21">函数</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">function</span><span class="s14"> sum(num1,num2){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">        </span>return num1 + num2;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>console.log(num1 + num2);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s17">//</span><span class="s24">调用</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">    </span>var resultSum = sum(10,20);</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">    </span>console.log(resultSum);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>sum(</span><span class="s16">10</span><span class="s14">,</span><span class="s16">20</span><span class="s14">);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">万能的加法函数</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">function</span><span class="s14"> sumAll(numbers)</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">var</span><span class="s14"> count = </span><span class="s16">0</span><span class="s14">;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">for</span><span class="s14">(</span><span class="s15">var</span><span class="s14"> i=</span><span class="s16">0</span><span class="s14">;i&lt;numbers.length;i++)</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>count = count + numbers[i];</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">return</span><span class="s14"> count;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> arr = [</span><span class="s16">10</span><span class="s14">,</span><span class="s16">20</span><span class="s14">,</span><span class="s16">10</span><span class="s14">,</span><span class="s16">20</span><span class="s14">];</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> resultArr = sumAll(arr);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(resultArr);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">万能的加法函数</span><span class="s13"> </span><span class="s14">加强版</span><span class="s13"> arguments(</span><span class="s14">内置数组：传进来的参数都会放到这里</span><span class="s13">)</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">function</span><span class="s14"> sumArguments()</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">var</span><span class="s14"> count = </span><span class="s16">0</span><span class="s14">;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">for</span><span class="s14">(</span><span class="s15">var</span><span class="s14"> i=</span><span class="s16">0</span><span class="s14">;i&lt;arguments.length;i++)</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>count = count + arguments[i];</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">return</span><span class="s14"> count;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> resultArguments = sumArguments(</span><span class="s16">10</span><span class="s14">,</span><span class="s16">10</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(resultArguments);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">匿名函数</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> resultAno = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>console.log(</span><span class="s16">'------------'</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">// </span><span class="s21">调用匿名函数</span><span class="s14"> </span><span class="s21">变量名</span><span class="s14">();</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>resultAno();</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p16"><span class="s12">JS</span><span class="s2">的对象</span></p>
+<p class="p21"><span class="s15">&lt;script </span><span class="s25">type</span><span class="s15">=</span><span class="s14">"text/javascript"</span><span class="s15">&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s17">//</span><span class="s24">对象</span></p>
+<p class="p22"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//this </span><span class="s21">代表所在当前的对象</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> dog = {</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>name:</span><span class="s16">'</span><span class="s26">旺财</span><span class="s16">'</span><span class="s14">,</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>height:</span><span class="s16">1.55</span><span class="s14">,</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>age: </span><span class="s16">15</span><span class="s14">,</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>friends:[</span><span class="s16">'lulu'</span><span class="s14">,</span><span class="s16">'xixi'</span><span class="s14">],</span></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">        </span>run:</span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">            </span>console.log(</span><span class="s16">'function run'</span><span class="s14">);</span></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">        </span>},</span><span class="s17">//</span><span class="s24">匿名函数</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>eat:</span><span class="s15">function</span><span class="s14">(meat){</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>console.log(</span><span class="s18">this</span><span class="s19">.name</span><span class="s14"> + </span><span class="s16">'function eat'</span><span class="s14"> + meat);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">for</span><span class="s14">(</span><span class="s15">var</span><span class="s14"> name </span><span class="s15">in</span><span class="s14"> dog){</span></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s17">//</span><span class="s24">属性名</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>console.log(name);</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">        </span>name</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">        </span>height</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">        </span>age</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">        </span>friends</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p22"><span class="s20"><span class="Apple-converted-space">        </span></span><span class="s14">//</span><span class="s21">属性名</span><span class="s14"> </span><span class="s21">对应的值</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>console.log(dog[name]);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">单独获取</span><span class="s13"> </span><span class="s14">对象的属性值</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(dog.age);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(dog.friends[</span><span class="s16">0</span><span class="s14">]);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>dog.run();</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>dog.eat(</span><span class="s16">'</span><span class="s26">肉肉肉</span><span class="s16">'</span><span class="s14">);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p23"><span class="s14">&lt;/script&gt;</span></p>
+<p class="p23"><span class="s14">&lt;/body&gt;</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p16"><span class="s2">批量产生对象</span></p>
+<p class="p23"><span class="s14">&lt;script&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">构造函数</span><span class="s13"> </span><span class="s14">不带参数</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> Dog = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">this</span><span class="s14">.name = </span><span class="s15">null</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">this</span><span class="s14">.height = </span><span class="s15">null</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">this</span><span class="s14">.age = </span><span class="s15">null</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">this</span><span class="s14">.eat = </span><span class="s15">function</span><span class="s14">(meat){</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>console.log(</span><span class="s15">this</span><span class="s14">.name + </span><span class="s16">'eat'</span><span class="s14"> + meat);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">this</span><span class="s14">.run = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>console.log(</span><span class="s16">'run'</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">普通函数调用</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>Dog;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(</span><span class="s15">typeof</span><span class="s14"> Dog());</span><span class="s17">//undefined</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">批量产生对象</span></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">生成</span><span class="s14"> </span><span class="s21">构造函数</span><span class="s14"> //alloc init</span></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s20"> dog1 = </span><span class="s15">new</span><span class="s20"> Dog();</span><span class="s14">//[[Dog alloc] init]</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>dog1.name = </span><span class="s16">'</span><span class="s26">旺财</span><span class="s16">'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>dog1.height = </span><span class="s16">1.55</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>dog1.eat(</span><span class="s16">'</span><span class="s26">肉肉</span><span class="s16">'</span><span class="s14">);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> dog2 = </span><span class="s15">new</span><span class="s14"> Dog();</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>dog2.name = </span><span class="s16">'lulu'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>dog2.height = </span><span class="s16">1.0</span><span class="s14">;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(</span><span class="s15">typeof</span><span class="s14"> dog1);</span><span class="s17">//object</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(dog1);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(dog2);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">带参数</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> DogCS = </span><span class="s15">function</span><span class="s14">(name,height,age){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">this</span><span class="s14">.name = name;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">this</span><span class="s14">.height = height;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">this</span><span class="s14">.age = age;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">this</span><span class="s14">.eat = </span><span class="s15">function</span><span class="s14">(meat){</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>console.log(</span><span class="s15">this</span><span class="s14">.name + </span><span class="s16">'eat'</span><span class="s14"> + meat);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">this</span><span class="s14">.run = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>console.log(</span><span class="s16">'run'</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> dog3 = </span><span class="s15">new</span><span class="s14"> DogCS(</span><span class="s16">'xixi'</span><span class="s14">,</span><span class="s16">1.5</span><span class="s14">,</span><span class="s16">10</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> dog4 = </span><span class="s15">new</span><span class="s14"> DogCS(</span><span class="s16">'ahuang'</span><span class="s14">,</span><span class="s16">0.11</span><span class="s14">,</span><span class="s16">3</span><span class="s14">);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(dog3,dog4);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p23"><span class="s14">&lt;/script&gt;</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p23"><span class="s14">&lt;script&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">逻辑与</span><span class="s14">&amp;&amp; </span><span class="s21">逻辑或</span><span class="s14">||</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> name1 = </span><span class="s16">''</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> name2 = </span><span class="s16">'name2'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> name3 = </span><span class="s16">'name3'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> name4 = </span><span class="s16">'name4'</span><span class="s14">;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> newName = </span><span class="s15">null</span><span class="s14">;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">    </span>if(name1){</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">        </span>newName = name1;</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">    </span>}else if(name2){</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">        </span>newName = name2;</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">    </span>}else if(name3){</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">        </span>newName = name3;</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">    </span>}else{</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">        </span>newName = name4;</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">    </span>}</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">    </span>console.log(newName);//name2</span></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">同功能</span><span class="s13"> </span><span class="s14">用逻辑或写</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>newName = name1||name2||name3||name4;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(newName);</span><span class="s17">//name2</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> age = </span><span class="s16">22</span><span class="s14">;</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">    </span>if(age &gt; 20)</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">    </span>{</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">        </span>console.log('</span><span class="s21">可以结婚了</span><span class="s14">');</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">    </span>}</span></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">同功能</span><span class="s13"> </span><span class="s14">用逻辑与写</span></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">左边为真，若右边是输出，就直接输出</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>(age &gt; </span><span class="s16">20</span><span class="s14">) &amp;&amp; console.log(</span><span class="s16">'</span><span class="s26">可以结婚了</span><span class="s16">'</span><span class="s14">);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p23"><span class="s14">&lt;/script&gt;</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p16"><span class="s2">Window对象</span></p>
+<p class="p23"><span class="s14">&lt;script&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//window</span></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//1.</span><span class="s14">所有全局的变量都是它的属性</span></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//2.</span><span class="s14">所有全局的函数都是它的函数</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> age = </span><span class="s16">18</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(age);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(window.age + </span><span class="s16">'-----'</span><span class="s14">);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">function</span><span class="s14"> sum(){</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>console.log(</span><span class="s16">'hhhh'</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">    </span>sum();</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>window.sum();</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>window.console.log(</span><span class="s16">'1111'</span><span class="s14">);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">function</span><span class="s14"> dog(){</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>console.log(</span><span class="s15">this</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">    </span>dog();</span><span class="s17">//Window</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> dog1 = </span><span class="s15">new</span><span class="s14"> dog();</span><span class="s17">//dog {}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>window.location.href = </span><span class="s16">'http://www.baidu.com'</span><span class="s14">;</span></p>
+<p class="p19"><span class="s14">//<span class="Apple-converted-space">    </span>location.href = '';</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p23"><span class="s14">&lt;/script&gt;</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p16"><span class="s2">document对象</span></p>
+<p class="p25"><span class="s2"></span><br></p>
+<p class="p19"><span class="s14">//document</span></p>
+<p class="p17"><span class="s13">//1.</span><span class="s14">动态的获取网页中所有的节点</span></p>
+<p class="p19"><span class="s14">//2.</span><span class="s21">可以动态的对节点进行</span><span class="s14">CRUD</span><span class="s21">（做计算处理时的增加</span><span class="s14">(Create)</span><span class="s21">、读取</span><span class="s14">(Retrieve)</span><span class="s21">（重新得到数据）、更新</span><span class="s14">(Update)</span><span class="s21">和删除</span><span class="s14">(Delete)</span><span class="s21">）</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s14">//</span><span class="s21">写入</span><span class="s14">body</span></p>
+<p class="p14"><span class="s14">document.write(</span><span class="s16">'hello word'</span><span class="s14">);</span></p>
+<p class="p26"><span class="s20">document.write(</span><span class="s14">'&lt;button&gt;</span><span class="s21">百度一下</span><span class="s14">&lt;/button&gt;'</span><span class="s20">)</span></p>
+<p class="p26"><span class="s20">document.write(</span><span class="s14">'&lt;img src="https://www.baidu.com/img/bd_logo1.png" width="200"&gt;'</span><span class="s20">)</span></p>
+<p class="p27"><br></p>
+<p class="p21"><span class="s15">&lt;img </span><span class="s25">id</span><span class="s15">=</span><span class="s14">"icon"</span><span class="s15"> </span><span class="s25">class</span><span class="s15">=</span><span class="s14">"iconClass"</span><span class="s15"> </span><span class="s25">name</span><span class="s15">=</span><span class="s14">"iconName"</span><span class="s15"><span class="Apple-converted-space">  </span></span><span class="s25">src</span><span class="s15">=</span><span class="s14">"img/img_01.jpg"</span><span class="s15">&gt;</span></p>
+<p class="p21"><span class="s15">&lt;div </span><span class="s25">class</span><span class="s15"> = </span><span class="s14">"iconClass"</span><span class="s15"><span class="Apple-converted-space">  </span></span><span class="s25">name</span><span class="s15">=</span><span class="s14">"iconName"</span><span class="s15">&gt;</span><span class="s20">111</span><span class="s15">&lt;/div&gt;</span></p>
+<p class="p19"><span class="s14">//</span><span class="s21">通过</span><span class="s14"> getElementById id</span><span class="s21">名</span><span class="s14"> </span><span class="s21">获取</span></p>
+<p class="p19"><span class="s14">//</span><span class="s21">通过</span><span class="s14"> getElementsByClassName className </span><span class="s21">获取</span></p>
+<p class="p19"><span class="s14">//</span><span class="s21">通过</span><span class="s14"> getElementsByName </span><span class="s21">根据标签的内部属性</span><span class="s14">name </span><span class="s21">获取</span></p>
+<p class="p19"><span class="s14">//</span><span class="s21">通过</span><span class="s14"> getElementsByTagName </span><span class="s21">标签名</span><span class="s14"> </span><span class="s21">获取</span></p>
+<p class="p15"><span class="s2"></span><br></p>
+<p class="p19"><span class="s14">//</span><span class="s21">通过</span><span class="s14"> getElementById id</span><span class="s21">名</span><span class="s14"> </span><span class="s21">获取</span></p>
+<p class="p14"><span class="s15">var</span><span class="s14"> img = document.getElementById(</span><span class="s16">'icon'</span><span class="s14">);</span></p>
+<p class="p26"><span class="s20">img.src = </span><span class="s14">'img/img_02.jpg'</span><span class="s20">;</span></p>
+<p class="p19"><span class="s14">//</span><span class="s21">通过</span><span class="s14"> getElementsByClassName className </span><span class="s21">获取</span></p>
+<p class="p28"><span class="s14">//</span><span class="s21">数组</span></p>
+<p class="p14"><span class="s15">var</span><span class="s14"> iconImg = document.getElementsByClassName(</span><span class="s16">'iconClass'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p19"><span class="s14">//</span><span class="s21">通过</span><span class="s14"> getElementsByName </span><span class="s21">根据标签的内部属性</span><span class="s14">name </span><span class="s21">获取</span></p>
+<p class="p29"><span class="s13">//</span><span class="s14">数组</span></p>
+<p class="p14"><span class="s15">var</span><span class="s14"> imgName0 = document.getElementsByName(</span><span class="s16">'iconName'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p19"><span class="s14">//</span><span class="s21">通过</span><span class="s14"> getElementsByTagName </span><span class="s21">标签名</span><span class="s14"> </span><span class="s21">获取</span></p>
+<p class="p29"><span class="s13">//</span><span class="s14">数组</span></p>
+<p class="p14"><span class="s15">var</span><span class="s14"> imgTagName = document.getElementsByTagName(</span><span class="s16">'img'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p30"><span class="s27">DOM操作-切换图片<span class="Apple-converted-space">  </span></span><span class="s28">DOM</span><span class="s29">全称是</span><span class="s30">document object model</span><span class="s28">(</span><span class="s29">文档对象模型</span><span class="s28">)</span></p>
+<p class="p31"><span class="s28">DOM操作：拿到标签</span><span class="s31">CRUD</span></p>
+<p class="p15"><span class="s2"></span><br></p>
+<p class="p21"><span class="s15">&lt;img </span><span class="s25">src</span><span class="s15">=</span><span class="s14">"img/img_01.jpg"</span><span class="s15">&gt;</span></p>
+<p class="p23"><span class="s14">&lt;p&gt;&lt;/p&gt;</span></p>
+<p class="p23"><span class="s14">&lt;button </span><span class="s25">name</span><span class="s14">=</span><span class="s32">"btns"</span><span class="s14">&gt;</span><span class="s33">切换图片</span><span class="s14">&lt;/button&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p23"><span class="s14">&lt;script&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> img = document.getElementsByTagName(</span><span class="s16">'img'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> btn = document.getElementsByName(</span><span class="s16">'btns'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>btn.onclick = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>console.log(img.src);</span></p>
+<p class="p32"><span class="s20"><span class="Apple-converted-space">        </span></span><span class="s17">// <a href="http://localhost:63342/02-JS%E7%9A%84%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/img/img_01.jpg"><span class="s34">http://localhost:63342/02-JS%E7%9A%84%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/img/img_01.jpg</span></a></span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p33"><span class="s20"><span class="Apple-converted-space">        </span></span><span class="s14">//lastIndexOf </span><span class="s21">如果有，则返回任意一个正数；没有，则</span><span class="s14">-1</span></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">        </span></span><span class="s14">//indexOf </span><span class="s21">用法相同</span></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">        </span></span><span class="s14">//indexOf</span><span class="s21">与</span><span class="s14">lastIndexOf</span><span class="s21">结果相同，</span><span class="s14">indexOf</span><span class="s21">从前往后查，</span><span class="s14">lastIndexOf</span><span class="s21">从后往前查</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">if</span><span class="s14">(img.src.lastIndexOf(</span><span class="s16">'img_01.jpg'</span><span class="s14">) != </span><span class="s16">-1</span><span class="s14">)</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>img.src = </span><span class="s16">'img/img_02.jpg'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">else</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>img.src = </span><span class="s16">'img/img_01.jpg'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p23"><span class="s14">&lt;/script&gt;</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p16"><span class="s12">DOM</span><span class="s2">操作</span><span class="s12">-</span><span class="s2">鼠标操作</span></p>
+<p class="p25"><span class="s2"></span><br></p>
+<p class="p21"><span class="s15">&lt;img </span><span class="s25">src</span><span class="s15">=</span><span class="s14">"img/img_01.jpg"</span><span class="s15">&gt;</span></p>
+<p class="p23"><span class="s14">&lt;input&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p23"><span class="s14">&lt;script&gt;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> img = document.getElementsByTagName(</span><span class="s16">'img'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">鼠标在图片上移动</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>img.onmousemove = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>console.log(</span><span class="s16">'</span><span class="s26">在图片上移动</span><span class="s16">'</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">鼠标进入图片</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>img.onmouseover = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>console.log(</span><span class="s16">'</span><span class="s26">进入图片</span><span class="s16">'</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">鼠标移出图片</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>img.onmouseout = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>console.log(</span><span class="s16">'</span><span class="s26">移出图片</span><span class="s16">'</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> input = document.getElementsByTagName(</span><span class="s16">'input'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>console.log(input);</span><span class="s17">//&lt;input&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">鼠标在</span><span class="s14">input</span><span class="s21">获取焦点</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>input.onfocus = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">        </span></span><span class="s13">//</span><span class="s14">去掉</span><span class="s13"> </span><span class="s14">获取焦点时的蓝色边框</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s17">//</span><span class="s24">火狐不兼容</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>input.style.outline = </span><span class="s16">'none'</span><span class="s14">;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>input.style.width = </span><span class="s16">'300px'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>input.style.height = </span><span class="s16">'400px'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>input.style.fontSize = </span><span class="s16">'30px'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">鼠标在</span><span class="s14">input</span><span class="s21">里</span><span class="s35">选中文字</span><span class="s21">时</span><span class="s14"> </span><span class="s21">调用</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>input.onselect = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>console.log(input.value);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p23"><span class="s14">&lt;/script&gt;</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p34"><span class="s2">DOM</span><span class="s27">操作</span><span class="s2">-innerHTML</span><span class="s27">显示与隐藏</span></p>
+<p class="p15"><span class="s2"></span><br></p>
+<p class="p21"><span class="s15">&lt;img </span><span class="s25">id</span><span class="s15">=</span><span class="s14">"icon"</span><span class="s15"> </span><span class="s25">src</span><span class="s15">=</span><span class="s14">"img/img_01.jpg"</span><span class="s15">&gt;</span></p>
+<p class="p23"><span class="s14">&lt;p </span><span class="s25">id</span><span class="s14"> = </span><span class="s32">"word"</span><span class="s14">&gt;</span><span class="s20">11111111</span><span class="s14">&lt;/p&gt;</span></p>
+<p class="p23"><span class="s14">&lt;p&gt;&lt;/p&gt;</span></p>
+<p class="p35"><span class="s14">&lt;button </span><span class="s25">id</span><span class="s14">=</span><span class="s32">"btn"</span><span class="s14">&gt;</span><span class="s33">隐藏</span><span class="s14">&lt;/button&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p23"><span class="s14">&lt;script&gt;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> img = document.getElementById(</span><span class="s16">'icon'</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> p = document.getElementById(</span><span class="s16">'word'</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> btn = document.getElementById(</span><span class="s16">'btn'</span><span class="s14">);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>btn.onclick = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">        </span>console.log(btn.innerHTML);</span><span class="s17">//</span><span class="s24">隐藏</span></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">        </span>console.log(btn.outerHTML);</span><span class="s17">//&lt;button id="btn"&gt;</span><span class="s24">隐藏</span><span class="s17">&lt;/button&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">if</span><span class="s14">(btn.innerHTML == </span><span class="s16">'</span><span class="s26">隐藏</span><span class="s16">'</span><span class="s14">){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s17">//</span><span class="s24">修改按钮文字</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>btn.innerHTML = </span><span class="s16">'</span><span class="s26">显示</span><span class="s16">'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s17">//</span><span class="s24">隐藏图片</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>img.style.display = </span><span class="s16">'none'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>p.style.display = </span><span class="s16">'none'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">else</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s17">//</span><span class="s24">修改按钮文字</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>btn.innerHTML = </span><span class="s16">'</span><span class="s26">隐藏</span><span class="s16">'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s17">//</span><span class="s24">隐藏图片</span></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s17">//img</span><span class="s24">行内-块级标签</span></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">            </span>img.style.display = </span><span class="s16">'inline-block'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s17">//p</span><span class="s24">块级标签</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>p.style.display = </span><span class="s16">'block'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p23"><span class="s14">&lt;/script&gt;</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p16"><span class="s12">DOM</span><span class="s2">操作</span><span class="s12">-</span><span class="s2">图片上一张下一张切换</span></p>
+<p class="p15"><span class="s2"></span><br></p>
+<p class="p21"><span class="s15">&lt;img </span><span class="s25">class</span><span class="s15">=</span><span class="s14">"icon"</span><span class="s15"> </span><span class="s25">src</span><span class="s15">=</span><span class="s14">"image/icon_01.png"</span><span class="s15">&gt;</span></p>
+<p class="p23"><span class="s14">&lt;p&gt;&lt;/p&gt;</span></p>
+<p class="p23"><span class="s14">&lt;button </span><span class="s25">class</span><span class="s14">=</span><span class="s32">"pre"</span><span class="s14">&gt;</span><span class="s33">上一张</span><span class="s14">&lt;/button&gt;</span></p>
+<p class="p23"><span class="s14">&lt;button </span><span class="s25">class</span><span class="s14">=</span><span class="s32">"next"</span><span class="s14">&gt;</span><span class="s33">下一张</span><span class="s14">&lt;/button&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p23"><span class="s14">&lt;script </span><span class="s25">src</span><span class="s14">=</span><span class="s32">"js/index.js"</span><span class="s14">&gt;&lt;/script&gt;</span></p>
+<p class="p21"><span class="s15">&lt;script </span><span class="s25">type</span><span class="s15">=</span><span class="s14">"text/javascript"</span><span class="s15">&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">拿到所有的标签</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> icon = document.getElementsByClassName(</span><span class="s16">'icon'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> btnPre = document.getElementsByClassName(</span><span class="s16">'pre'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> btnNext = document.getElementsByClassName(</span><span class="s16">'next'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> maxImgCount = </span><span class="s16">9</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> minImgCount = </span><span class="s16">1</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> currentImg = minImgCount;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">点击上一张</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>btnPre.onclick = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">if</span><span class="s14">(currentImg == minImgCount)</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>currentImg = maxImgCount;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">else</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>currentImg = currentImg - </span><span class="s16">1</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s17">//!</span><span class="s24">拼接</span></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">        </span>icon.src = </span><span class="s16">'image/icon_0'</span><span class="s14"> + currentImg + </span><span class="s16">'.png'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">点击下一张</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>btnNext.onclick = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">if</span><span class="s14">(currentImg == maxImgCount)</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>currentImg = minImgCount;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">else</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>currentImg = currentImg + </span><span class="s16">1</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s17">//!</span><span class="s24">拼接</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>icon.src = </span><span class="s16">'image/icon_0'</span><span class="s14"> + currentImg + </span><span class="s16">'.png'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p23"><span class="s14">&lt;/script&gt;</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p16"><span class="s12">DOM</span><span class="s2">操作</span><span class="s12">-</span><span class="s2">倒计时Demo</span></p>
+<p class="p25"><span class="s2"></span><br></p>
+<p class="p21"><span class="s15">&lt;img </span><span class="s25">name</span><span class="s15">=</span><span class="s14">"icon"</span><span class="s15"> </span><span class="s25">src</span><span class="s15">=</span><span class="s14">"image/img_03.jpg"</span><span class="s15">&gt;</span></p>
+<p class="p23"><span class="s14">&lt;div </span><span class="s25">class</span><span class="s14">=</span><span class="s32">"time"</span><span class="s14">&gt;</span><span class="s20">10</span><span class="s14">&lt;/div&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p21"><span class="s15">&lt;script </span><span class="s25">type</span><span class="s15">=</span><span class="s14">"text/javascript"</span><span class="s15">&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">拿到对应得标签</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> img = document.getElementsByName(</span><span class="s16">'icon'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> div = document.getElementsByClassName(</span><span class="s16">'time'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p36"><span class="s14"><span class="Apple-converted-space">    </span>//</span><span class="s21">计时器</span><span class="s14"> 1000</span><span class="s21">毫秒</span><span class="s14"> = 1</span><span class="s21">秒</span></p>
+<p class="p37"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s20"> </span><span class="s19">timer</span><span class="s20"> = </span><span class="s19">setInterval</span><span class="s20">(</span><span class="s15">function</span><span class="s20">(){</span></p>
+<p class="p38"><span class="s14"></span><br></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">        </span>div.innerHTML = div.innerHTML - </span><span class="s16">1</span><span class="s14">;</span></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s17">//</span><span class="s24">判断</span></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">if</span><span class="s14">(div.innerHTML == </span><span class="s16">'0'</span><span class="s14">){</span></p>
+<p class="p38"><span class="s14"></span><br></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s17">//</span><span class="s24">清除计时器</span></p>
+<p class="p36"><span class="s14"><span class="Apple-converted-space">            </span>clearInterval(timer);</span></p>
+<p class="p38"><span class="s14"></span><br></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s17">//</span><span class="s24">隐藏</span><span class="s17">div</span></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">            </span>div.style.display = </span><span class="s16">'none'</span><span class="s14">;</span></p>
+<p class="p38"><span class="s14"></span><br></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s17">//</span><span class="s24">显示图片</span></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">            </span>img.style.display = </span><span class="s16">'inline-block'</span><span class="s14">;</span></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p38"><span class="s14"></span><br></p>
+<p class="p14"><span class="s36"><span class="Apple-converted-space">    </span>},</span><span class="s37">1000</span><span class="s36">);</span></p>
+<p class="p23"><span class="s14">&lt;/script&gt;</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p16"><span class="s12">DOM</span><span class="s2">操作</span><span class="s12">-</span><span class="s2">JS事件</span></p>
+<p class="p23"><span class="s14">&lt;style&gt;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>div{</span></p>
+<p class="p23"><span class="s20"><span class="Apple-converted-space">        </span></span><span class="s14">background-color</span><span class="s20">: </span><span class="s14">red</span><span class="s20">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">width</span><span class="s14">: </span><span class="s16">200</span><span class="s15">px</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">height</span><span class="s14">: </span><span class="s16">200</span><span class="s15">px</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p23"><span class="s14">&lt;/style&gt;</span></p>
+<p class="p25"><span class="s2"></span><br></p>
+<p class="p23"><span class="s14">&lt;div&gt;</span><span class="s20">1111</span><span class="s14">&lt;/div&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p21"><span class="s15">&lt;script </span><span class="s25">type</span><span class="s15">=</span><span class="s14">"text/javascript"</span><span class="s15">&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">页面</span><span class="s23">加载完毕时</span><span class="s13"> </span><span class="s14">调用</span></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">    </span>window.onload = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">    </span></span><span class="s14">//</span><span class="s21">页面退出时</span><span class="s14"> </span><span class="s21">调用</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>window.onunload = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> div = document.getElementsByTagName(</span><span class="s16">'div'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">鼠标点击</span><span class="s13">(</span><span class="s23">一直按住</span><span class="s13">)div</span><span class="s14">时，调用</span></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">    </span>div.onmousedown = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>div.style.background = </span><span class="s16">'green'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s17">//</span><span class="s35">抬起</span><span class="s24">鼠标</span></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">    </span>div.onmouseup = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>div.style.backgroundImage = </span><span class="s16">'url("image/img_03.jpg")'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p23"><span class="s14">&lt;/script&gt;</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p16"><span class="s2">JS的CRUD</span></p>
+<p class="p19"><span class="s14">/**</span></p>
+<p class="p19"><span class="s14"><span class="Apple-converted-space"> </span>* Created by Zhou on 16/3/16.</span></p>
+<p class="p19"><span class="s14"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s14">//</span><span class="s21">插入</span></p>
+<p class="p19"><span class="s14">//1.write</span></p>
+<p class="p24"><span class="s14">document.write(</span><span class="s16">'hello world'</span><span class="s14">);</span></p>
+<p class="p26"><span class="s20">document.write(</span><span class="s14">'&lt;img src="img/img_01.jpg"&gt;'</span><span class="s20">);</span><span class="s17">//</span><span class="s24">要写在</span><span class="s17">html</span><span class="s24">中</span><span class="s17">body</span><span class="s24">中的路径</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s14">//2.</span></p>
+<p class="p18"><span class="s15">var</span><span class="s14"> btn = document.</span><span class="s23">createElement</span><span class="s14">(</span><span class="s16">'button'</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14">btn.innerHTML = </span><span class="s16">'</span><span class="s26">百度一下，你就知道</span><span class="s16">'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14">btn.style.border = </span><span class="s16">'1px solid #ddd'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14">btn.style.width = </span><span class="s16">'100px'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14">btn.style.height = </span><span class="s16">'200px'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14">btn.style.backgroundColor = </span><span class="s16">'red'</span><span class="s14">;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14">console.log(btn);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s14">//</span><span class="s21">把按钮加入到</span><span class="s14">body</span></p>
+<p class="p18"><span class="s14">document.body.appendChild(btn);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s13">//</span><span class="s14">把按钮加入到</span><span class="s13">div</span><span class="s14">中</span></p>
+<p class="p17"><span class="s13">//</span><span class="s14">拿到对应的标签</span></p>
+<p class="p14"><span class="s15">var</span><span class="s14"> div = document.getElementsByClassName(</span><span class="s16">'test'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p17"><span class="s13">//</span><span class="s14">插入对应的标签</span></p>
+<p class="p18"><span class="s14">div.appendChild(btn);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s14">//</span><span class="s21">删除</span></p>
+<p class="p14"><span class="s15">var</span><span class="s14"> img = document.getElementsByClassName(</span><span class="s16">'icon'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p19"><span class="s14">//1.1</span><span class="s21">从</span><span class="s14">body</span><span class="s21">中删除</span></p>
+<p class="p19"><span class="s14">//document.body.removeChild(img);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s13">//1.2</span><span class="s14">拿到父控件节点，把自己删除（相比1.1的推荐做法）</span></p>
+<p class="p14"><span class="s14">img.parentNode.removeChild(img);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s14">//2.</span></p>
+<p class="p18"><span class="s14">img.remove();</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s14">//</span><span class="s21">修改</span></p>
+<p class="p14"><span class="s14">btn.innerHTML = </span><span class="s16">'</span><span class="s26">百度</span><span class="s16">'</span><span class="s14">;</span></p>
+<p class="p19"><span class="s14">//btn.color = 'white';</span><span class="s38">错误！！！</span><span class="s39">样式要加</span><span class="s40">.style</span><span class="s39">！！！</span></p>
+<p class="p14"><span class="s14">btn.style.color = </span><span class="s16">'white'</span><span class="s14">;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s13">//</span><span class="s14">修改链接</span></p>
+<p class="p14"><span class="s15">var</span><span class="s14"> a = document.getElementsByClassName(</span><span class="s16">'a'</span><span class="s14">)[</span><span class="s16">0</span><span class="s14">];</span></p>
+<p class="p14"><span class="s14">console.log(</span><span class="s19">a.href</span><span class="s14">)</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p39"><span class="s17">//a.style.href = '';</span><span class="s41">错误！！！</span><span class="s38">地址</span><span class="s19">src</span><span class="s38">、</span><span class="s19">href</span><span class="s38">不要加</span><span class="s19">.style</span><span class="s38">！！！href是与style同级别的属性</span></p>
+<p class="p26"><span class="s20">a.href = </span><span class="s14">'http://www.w3school.com.cn/'</span><span class="s20">;</span></p>
+<p class="p14"><span class="s14">a.target = </span><span class="s16">'_blank'</span><span class="s14">;</span><span class="s17">//</span><span class="s24">新窗口</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s14">//</span><span class="s21">查询</span></p>
+<p class="p19"><span class="s14">//1.</span></p>
+<p class="p14"><span class="s14">console.log(</span><span class="s19">document.body.children</span><span class="s14">);</span><span class="s17">//HTMLCollection</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s14">//2.</span></p>
+<p class="p24"><span class="s15">function</span><span class="s14"> find(o){</span><span class="s17">//</span><span class="s24">参数</span><span class="s17">o</span><span class="s24">为数组</span></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">for</span><span class="s14">(</span><span class="s15">var</span><span class="s14"> i=</span><span class="s16">0</span><span class="s14">;i&lt; o.length;i++){</span></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">        </span>console.log(o[i]);</span></p>
+<p class="p24"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p14"><span class="s36">}</span></p>
+<p class="p14"><span class="s14">find(document.body.children);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20">find(</span><span class="s42">div.children</span><span class="s20">);</span><span class="s14">//&lt;button style="border: 1px solid rgb(221, 221, 221); width: 100px; height: 200px; background-color: red; color: white;"&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s15">var</span><span class="s14"> dives = document.getElementsByClassName(</span><span class="s16">'test'</span><span class="s14">);</span></p>
+<p class="p19"><span class="s20">find(dives);</span><span class="s14">//&lt;div class="test"&gt;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s14">//3.</span></p>
+<p class="p18"><span class="s14">console.log(document.body.innerHTML);</span></p>
+<p class="p18"><span class="s14">console.log(document.body.outerHTML);</span><span class="s17">//&lt;body&gt;...&lt;/body&gt;</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p15"><span class="s2"></span><br></p>
+<p class="p19"><span class="s14">/**</span></p>
+<p class="p19"><span class="s14"><span class="Apple-converted-space"> </span>* Created by zhouyaun on 16/3/16.</span></p>
+<p class="p19"><span class="s14"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p36"><span class="s14">//== </span><span class="s21">值比较</span></p>
+<p class="p36"><span class="s14">//=== </span><span class="s21">类型比较</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p28"><span class="s14">//$(id) --&gt; document.getElementById(id)</span></p>
+<p class="p23"><span class="s14">function</span><span class="s20"> $(id){</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">return</span><span class="s14"> </span><span class="s15">typeof</span><span class="s14"> id === </span><span class="s16">'string'</span><span class="s14"> ? document.getElementById(id):id;</span></p>
+<p class="p14"><span class="s14">}</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s13">//</span><span class="s14">页面加载完毕时</span><span class="s13"> </span><span class="s14">调用</span></p>
+<p class="p14"><span class="s14">window.onload = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s22"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s14">拿到所有的头部</span><span class="s13">li</span><span class="s14">标签（标签）和头部</span><span class="s13">li</span><span class="s14">对应的</span><span class="s13"> </span><span class="s14">内容</span><span class="s13">div</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> titles = $(</span><span class="s16">'tab-header'</span><span class="s14">).getElementsByTagName(</span><span class="s16">'li'</span><span class="s14">);</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">var</span><span class="s14"> divs = $(</span><span class="s16">'tab-content'</span><span class="s14">).getElementsByTagName(</span><span class="s16">'div'</span><span class="s14">);</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s17">//</span><span class="s24">判断</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">if</span><span class="s14">(titles.length != divs.length) </span><span class="s15">return</span><span class="s14">;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">for</span><span class="s14">(</span><span class="s15">var</span><span class="s14"> i=</span><span class="s16">0</span><span class="s14">;i&lt;titles.length;i++){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span></span><span class="s15">var</span><span class="s14"> li = titles[i];</span></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">        </span>li.id = i;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p17"><span class="s13"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>//</span><span class="s14">鼠标在上面移动</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>li.onmousemove = </span><span class="s15">function</span><span class="s14">(){</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p19"><span class="s20"><span class="Apple-converted-space">            </span></span><span class="s14">//</span><span class="s21">将所有头部</span><span class="s14">li</span><span class="s21">标签的选中状态取消</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s15">for</span><span class="s14">(</span><span class="s15">var</span><span class="s14"> j = </span><span class="s16">0</span><span class="s14">;j&lt;titles.length;j++)</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">                </span>titles[j].className = </span><span class="s16">''</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">                </span>divs[j].style.display = </span><span class="s16">'none'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s17">//</span><span class="s24">当前标签选中</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">            </span></span><span class="s15">this</span><span class="s14">.className = </span><span class="s16">'select'</span><span class="s14">;</span></p>
+<p class="p15"><span class="s14"></span><br></p>
+<p class="p28"><span class="s20"><span class="Apple-converted-space">            </span></span><span class="s14">//divs</span><span class="s21">数组中的第</span><span class="s14">this.id</span><span class="s21">个</span><span class="s14">,this.id</span><span class="s21">的</span><span class="s14">id</span><span class="s21">是按顺序排号的</span></p>
+<p class="p18"><span class="s14"><span class="Apple-converted-space">            </span>divs[</span><span class="s15">this</span><span class="s14">.id].style.display = </span><span class="s16">'block'</span><span class="s14">;</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p14"><span class="s14"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p14"><span class="s14">}</span></p>
+<p class="p14"><span class="s2">———————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p15"><span class="s2"></span><br></p>
+</body>
+</html>

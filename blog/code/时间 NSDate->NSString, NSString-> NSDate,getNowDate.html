@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s8 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s12 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">比较两日期大小</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p3"><span class="s1">-(</span><span class="s3">int</span><span class="s1">)compareDate:(</span><span class="s4">NSString</span><span class="s1">*)date01 withDate:(</span><span class="s4">NSString</span><span class="s1">*)date02</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">int</span><span class="s1"> ci;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSDateFormatter</span><span class="s5"> *df = [[</span><span class="s1">NSDateFormatter</span><span class="s5"> </span><span class="s6">alloc</span><span class="s5">] </span><span class="s6">init</span><span class="s5">];</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span>[df </span><span class="s6">setDateFormat</span><span class="s5">:</span><span class="s1">@"yyyy-MM-dd HH:mm:ss"</span><span class="s5">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSDate</span><span class="s1"> *dt1 = [[</span><span class="s4">NSDate</span><span class="s1"> </span><span class="s6">alloc</span><span class="s1">] </span><span class="s6">init</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSDate</span><span class="s1"> *dt2 = [[</span><span class="s4">NSDate</span><span class="s1"> </span><span class="s6">alloc</span><span class="s1">] </span><span class="s6">init</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>dt1 = [df </span><span class="s6">dateFromString</span><span class="s1">:date01];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>dt2 = [df </span><span class="s6">dateFromString</span><span class="s1">:date02];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">NSComparisonResult</span><span class="s1"> result = [dt1 </span><span class="s6">compare</span><span class="s1">:dt2];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">switch</span><span class="s1"> (result)</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">//date02</span><span class="s8">比</span><span class="s1">date01</span><span class="s8">大</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s3">case</span><span class="s5"> </span><span class="s1">NSOrderedAscending</span><span class="s5">: ci=</span><span class="s9">1</span><span class="s5">; </span><span class="s3">break</span><span class="s5">;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">//date02</span><span class="s8">比</span><span class="s1">date01</span><span class="s8">小</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s3">case</span><span class="s5"> </span><span class="s1">NSOrderedDescending</span><span class="s5">: ci=-</span><span class="s9">1</span><span class="s5">; </span><span class="s3">break</span><span class="s5">;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">//date02=date01</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">case</span><span class="s1"> </span><span class="s6">NSOrderedSame</span><span class="s1">: ci=</span><span class="s9">0</span><span class="s1">; </span><span class="s3">break</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">default</span><span class="s1">: </span><span class="s6">NSLog</span><span class="s1">(</span><span class="s10">@"erorr dates %@, %@"</span><span class="s1">, dt2, dt1); </span><span class="s3">break</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s11">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">     </span></span><span class="s1">比较两日期时间相差</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>double timeDiff = [dt1 timeIntervalSinceDate:dt2 ];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">return</span><span class="s1"> ci;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p8"><span class="s1"></span><br></p>
+<p class="p2"><span class="s2">//</span><span class="s1">字符串转化时间格式</span></p>
+<p class="p3"><span class="s1">-(</span><span class="s4">NSDate</span><span class="s1"> *)getNSDateFromNsstring:(</span><span class="s4">NSString</span><span class="s1"> *)stringdate</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSDateFormatter</span><span class="s5">* dateFormat = [[</span><span class="s1">NSDateFormatter</span><span class="s5"> </span><span class="s6">alloc</span><span class="s5">] </span><span class="s6">init</span><span class="s5">];</span><span class="s11">//</span><span class="s12">实例化一个</span><span class="s11">NSDateFormatter</span><span class="s12">对象</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span>[dateFormat </span><span class="s6">setDateFormat</span><span class="s5">:</span><span class="s10">@"yyyy/MM/dd HH:mm:ss"</span><span class="s5">];</span><span class="s1">//</span><span class="s8">设定时间格式</span><span class="s1">,</span><span class="s8">要注意跟下面的</span><span class="s1">dateString</span><span class="s8">匹配，否则日起将无效</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSDate</span><span class="s1"> *date =[dateFormat </span><span class="s6">dateFromString</span><span class="s1">:stringdate];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">       </span></span><span class="s3">return</span><span class="s1"> date;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p2"><span class="s2">//</span><span class="s1">时间格式转化为</span></p>
+<p class="p3"><span class="s1">-(</span><span class="s4">NSString</span><span class="s1"> *)getNSStringDateFormNSDate:(</span><span class="s4">NSDate</span><span class="s1"> *)date</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSDateFormatter</span><span class="s5">* dateFormat = [[</span><span class="s1">NSDateFormatter</span><span class="s5"> </span><span class="s6">alloc</span><span class="s5">] </span><span class="s6">init</span><span class="s5">];</span><span class="s11">//</span><span class="s12">实例化一个</span><span class="s11">NSDateFormatter</span><span class="s12">对象</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span>[dateFormat </span><span class="s6">setDateFormat</span><span class="s5">:</span><span class="s1">@"yyyy-MM-dd HH:mm:ss"</span><span class="s5">];</span><span class="s11">//</span><span class="s12">设定时间格式</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSString</span><span class="s1"> *dateString = [dateFormat </span><span class="s6">stringFromDate</span><span class="s1">:date];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">return</span><span class="s1"> dateString;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p2"><span class="s2">//</span><span class="s1">获取当前时间</span></p>
+<p class="p3"><span class="s1">-(</span><span class="s4">NSString</span><span class="s1"> *)getNowDate</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSDate</span><span class="s1"> *<span class="Apple-converted-space">  </span>senddate=[</span><span class="s4">NSDate</span><span class="s1"> </span><span class="s6">date</span><span class="s1">];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSDateFormatter</span><span class="s5"><span class="Apple-converted-space">  </span>*dateformatter=[[</span><span class="s1">NSDateFormatter</span><span class="s5"> </span><span class="s6">alloc</span><span class="s5">] </span><span class="s6">init</span><span class="s5">];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>[dateformatter </span><span class="s6">setDateFormat</span><span class="s1">:</span><span class="s10">@"yyyy-MM-dd HH:mm:ss"</span><span class="s1">];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSString</span><span class="s1"> *<span class="Apple-converted-space">  </span>locationString=[dateformatter </span><span class="s6">stringFromDate</span><span class="s1">:senddate];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">return</span><span class="s1"> locationString;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">获取当前时间</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p3"><span class="s1">- (</span><span class="s4">NSString</span><span class="s1">*)GetCurTime</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSDateFormatter</span><span class="s5"> *formatter = [[</span><span class="s1">NSDateFormatter</span><span class="s5"> </span><span class="s6">alloc</span><span class="s5">] </span><span class="s6">init</span><span class="s5">];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span>[formatter </span><span class="s6">setDateFormat</span><span class="s5">:</span><span class="s1">@"yyyy/MM/dd HH:mm:ss:SSS"</span><span class="s5">];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSString</span><span class="s1">*timeString=[formatter </span><span class="s6">stringFromDate</span><span class="s1">: [</span><span class="s4">NSDate</span><span class="s1"> </span><span class="s6">date</span><span class="s1">]];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">return</span><span class="s1"> timeString;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// NSDate timeIntervalSinceDate:</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p2"><span class="s2">//</span><span class="s1">下面转换</span><span class="s2">NSString</span><span class="s1">，用在保存时间时使用。</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">- (</span><span class="s3">double</span><span class="s1">)GetStringTimeDiff:(</span><span class="s4">NSString</span><span class="s1">*)timeS timeE:(</span><span class="s4">NSString</span><span class="s1">*)timeE</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">double</span><span class="s1"> timeDiff = </span><span class="s9">0.0</span><span class="s1">;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSDateFormatter</span><span class="s5"> *formatters = [[</span><span class="s1">NSDateFormatter</span><span class="s5"> </span><span class="s6">alloc</span><span class="s5">] </span><span class="s6">init</span><span class="s5">];</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span>[formatters </span><span class="s6">setDateFormat</span><span class="s5">:</span><span class="s1">@"yyyy/MM/dd HH:mm:ss:SSS"</span><span class="s5">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSDate</span><span class="s1"> *dateS = [formatters </span><span class="s6">dateFromString</span><span class="s1">:timeS];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSDateFormatter</span><span class="s5"> *formatterE = [[</span><span class="s1">NSDateFormatter</span><span class="s5"> </span><span class="s6">alloc</span><span class="s5">] </span><span class="s6">init</span><span class="s5">];</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span>[formatterE </span><span class="s6">setDateFormat</span><span class="s5">:</span><span class="s1">@"yyyy/MM/dd HH:mm:ss:SSS"</span><span class="s5">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSDate</span><span class="s1"> *dateE = [formatterE </span><span class="s6">dateFromString</span><span class="s1">:timeE];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>timeDiff = [dateE </span><span class="s6">timeIntervalSinceDate</span><span class="s1">:dateS ];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">return</span><span class="s1"> timeDiff;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">比较两日期大小</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p3"><span class="s1">-(</span><span class="s3">double</span><span class="s1">)compareDate:(</span><span class="s4">NSString</span><span class="s1">*)date01 withDate:(</span><span class="s4">NSString</span><span class="s1">*)date02</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSDateFormatter</span><span class="s5"> *df = [[</span><span class="s1">NSDateFormatter</span><span class="s5"> </span><span class="s6">alloc</span><span class="s5">] </span><span class="s6">init</span><span class="s5">];</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span>[df </span><span class="s6">setDateFormat</span><span class="s5">:</span><span class="s1">@"yyyy-MM-dd HH:mm:ss"</span><span class="s5">];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSDate</span><span class="s1"> *dt1 = [[</span><span class="s4">NSDate</span><span class="s1"> </span><span class="s6">alloc</span><span class="s1">] </span><span class="s6">init</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>dt1 = [df </span><span class="s6">dateFromString</span><span class="s1">:date01];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSDate</span><span class="s1"> *dt2 = [[</span><span class="s4">NSDate</span><span class="s1"> </span><span class="s6">alloc</span><span class="s1">] </span><span class="s6">init</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>dt2 = [df </span><span class="s6">dateFromString</span><span class="s1">:date02];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s11">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">     </span></span><span class="s1">比较两日期时间相差</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">double</span><span class="s1"> timeDiff = [dt1 </span><span class="s6">timeIntervalSinceDate</span><span class="s1">:dt2 ];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">return</span><span class="s1"> timeDiff;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421; min-height: 19.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #539aa4}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s7 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s12 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s13 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span><span class="s2">代理</span><span class="s1"> </span><span class="s2">委托</span><span class="s1">delegate</span></p>
+<p class="p2"><span class="s3">//1.</span><span class="s1">遵守协议</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">.h</span></p>
+<p class="p4"><span class="s4">@interface</span><span class="s5"> ViewController : </span><span class="s1">UIViewController</span><span class="s5"> &lt;</span><span class="s1">UIScrollViewDelegate</span><span class="s5">&gt;</span><span class="s6">//</span><span class="s7">遵守代理协议</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p2"><span class="s3">//</span><span class="s1">协议名称</span><span class="s3"> </span><span class="s1">都以</span><span class="s3"> </span><span class="s1">控件名</span><span class="s3"> </span><span class="s1">开头</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p6"><span class="s1">—————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p2"><span class="s1">.m</span></p>
+<p class="p4"><span class="s4">@interface</span><span class="s5"> </span><span class="s8">ViewController</span><span class="s5"> () &lt;</span><span class="s1">UIScrollViewDelegate</span><span class="s5">&gt;</span></p>
+<p class="p6"><span class="s1">@property</span><span class="s5"> (</span><span class="s1">weak</span><span class="s5">, </span><span class="s1">nonatomic</span><span class="s5">) </span><span class="s1">IBOutlet</span><span class="s5"> </span><span class="s9">UIScrollView</span><span class="s5"> *scrollView;</span></p>
+<p class="p6"><span class="s1">@property</span><span class="s5"> (</span><span class="s1">weak</span><span class="s5">, </span><span class="s1">nonatomic</span><span class="s5">) </span><span class="s1">IBOutlet</span><span class="s5"> </span><span class="s9">UIImageView</span><span class="s5"> *image;</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p2"><span class="s3">//2.</span><span class="s1">写方法</span><span class="s3"> </span><span class="s1">等调用</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span><span class="s2">用户开始拖拽</span><span class="s1">scrollView</span><span class="s2">时</span><span class="s1"> </span><span class="s2">就会调用</span><span class="s1">*/</span></p>
+<p class="p7"><span class="s1">-(</span><span class="s4">void</span><span class="s1">)scrollViewWillBeginDragging:(</span><span class="s9">UIScrollView</span><span class="s1"> *)scrollView</span></p>
+<p class="p7"><span class="s1">{</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">NSLog</span><span class="s1">(</span><span class="s11">@"</span><span class="s12">开始拖拽</span><span class="s11">"</span><span class="s1">);</span></p>
+<p class="p7"><span class="s1">}</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span><span class="s2">只要</span><span class="s1">scrollView</span><span class="s2">正在滚动，就会调用</span><span class="s1">*/</span></p>
+<p class="p7"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)scrollViewDidScroll:(</span><span class="s9">UIScrollView</span><span class="s1"> *)scrollView</span></p>
+<p class="p7"><span class="s1">{</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">结构体</span><span class="s1"> </span><span class="s2">转成</span><span class="s1"> </span><span class="s2">字符串</span></p>
+<p class="p2"><span class="s13"><span class="Apple-converted-space">    </span></span><span class="s3">//</span><span class="s1">时时知道滚动到什么位置</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSLog</span><span class="s5">(</span><span class="s11">@"</span><span class="s12">正在滚动</span><span class="s11"> %@"</span><span class="s5">,</span><span class="s1">NSStringFromCGPoint</span><span class="s5">(scrollView.</span><span class="s14">contentOffset</span><span class="s5">));</span><span class="s6">//</span><span class="s7">坐标</span></p>
+<p class="p7"><span class="s1">}</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p2"><span class="s3">//3.</span><span class="s1">控制器调用代理</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span><span class="s2">设置</span><span class="s1">****//3.</span><span class="s2">控制器调用代理</span></p>
+<p class="p9"><span class="s4">self</span><span class="s5">.</span><span class="s1">scrollView</span><span class="s5">.</span><span class="s14">delegate</span><span class="s5"> = </span><span class="s4">self</span><span class="s5">;</span></p>
+</body>
+</html>

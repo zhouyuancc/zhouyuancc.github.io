@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275; min-height: 21.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #4f7a28}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s9 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>UIImage+Extension.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>05-runtime</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 14-8-21.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2014</span><span class="s2">年</span><span class="s1"> heima. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">&lt;objc/runtime.h&gt;</span><span class="s2">//必须添加</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@implementation</span><span class="s1"> UIImage (Extension)</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">只要分类被装载到内存中，就会调用</span><span class="s5">1</span><span class="s1">次</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">void</span><span class="s1">)load</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>Method otherMehtod = class_getClassMethod(</span><span class="s4">self</span><span class="s1">, </span><span class="s4">@selector</span><span class="s1">(imageWithName:));</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>Method originMehtod = class_getClassMethod(</span><span class="s4">self</span><span class="s1">, </span><span class="s4">@selector</span><span class="s1">(imageNamed:));</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">// </span><span class="s2">交换</span><span class="s1">2</span><span class="s2">个方法的实现 (+加号 类方法 </span><span class="s6">getClassMethod</span><span class="s2">)</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>method_exchangeImplementations(otherMehtod, originMehtod);</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (UIImage *)imageWithName:(NSString *)name</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">BOOL</span><span class="s1"> iOS7 = [[UIDevice currentDevice].systemVersion floatValue] &gt;= </span><span class="s7">7.0</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>UIImage *image = </span><span class="s4">nil</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1"> (iOS7) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>NSString *newName = [name stringByAppendingString:</span><span class="s8">@"_os7"</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>image = [UIImage imageWithName:newName];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1"> (image == </span><span class="s4">nil</span><span class="s1">) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>image = [UIImage imageWithName:name];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> image;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Foundation+Extension.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>05-runtime</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 14-8-21.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2014</span><span class="s2">年</span><span class="s1"> heima. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">&lt;objc/runtime.h&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@implementation</span><span class="s1"> NSObject(Extension)</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">void</span><span class="s1">)swizzleClassMethod:(Class)class originSelector:(</span><span class="s4">SEL</span><span class="s1">)originSelector otherSelector:(</span><span class="s4">SEL</span><span class="s1">)otherSelector</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>Method otherMehtod = class_getClassMethod(class, otherSelector);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>Method originMehtod = class_getClassMethod(class, originSelector);</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">// </span><span class="s2">交换</span><span class="s1">2</span><span class="s2">个方法的实现</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>method_exchangeImplementations(otherMehtod, originMehtod);</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">void</span><span class="s1">)swizzleInstanceMethod:(Class)class originSelector:(</span><span class="s4">SEL</span><span class="s1">)originSelector otherSelector:(</span><span class="s4">SEL</span><span class="s1">)otherSelector</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>Method otherMehtod = class_getInstanceMethod(class, otherSelector);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>Method originMehtod = class_getInstanceMethod(class, originSelector);</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">// </span><span class="s2">交换</span><span class="s1">2</span><span class="s2">个方法的实现 (-减号 对象方法 </span><span class="s6">getInstanceMethod</span><span class="s2">)</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>method_exchangeImplementations(otherMehtod, originMehtod);</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@implementation</span><span class="s1"> NSArray(Extension)</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">void</span><span class="s1">)load</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s1"> swizzleInstanceMethod:NSClassFromString(</span><span class="s8">@"__NSArrayI"</span><span class="s1">) originSelector:</span><span class="s4">@selector</span><span class="s1">(objectAtIndex:) otherSelector:</span><span class="s4">@selector</span><span class="s1">(hm_objectAtIndex:)];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">id</span><span class="s1">)hm_objectAtIndex:(NSUInteger)index</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1"> (index &lt; </span><span class="s4">self</span><span class="s1">.count) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> hm_objectAtIndex:index];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>} </span><span class="s4">else</span><span class="s1"> {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">return</span><span class="s1"> </span><span class="s4">nil</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@implementation</span><span class="s1"> NSMutableArray(Extension)</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">void</span><span class="s1">)load</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p8"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s2">//</span><span class="s1">NSMutableArray</span><span class="s2">底层是</span><span class="s8">__NSArrayM</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s1"> swizzleInstanceMethod:NSClassFromString(</span><span class="s8">@"__NSArrayM"</span><span class="s1">) originSelector:</span><span class="s4">@selector</span><span class="s1">(addObject:) otherSelector:</span><span class="s4">@selector</span><span class="s1">(hm_addObject:)];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s1"> swizzleInstanceMethod:NSClassFromString(</span><span class="s8">@"__NSArrayM"</span><span class="s1">) originSelector:</span><span class="s4">@selector</span><span class="s1">(objectAtIndex:) otherSelector:</span><span class="s4">@selector</span><span class="s1">(hm_objectAtIndex:)];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)hm_addObject:(</span><span class="s4">id</span><span class="s1">)object</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1"> (object != </span><span class="s4">nil</span><span class="s1">) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s4">self</span><span class="s1"> hm_addObject:object];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">id</span><span class="s1">)hm_objectAtIndex:(NSUInteger)index</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1"> (index &lt; </span><span class="s4">self</span><span class="s1">.count) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> hm_objectAtIndex:index];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>} </span><span class="s4">else</span><span class="s1"> {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">return</span><span class="s1"> </span><span class="s4">nil</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p6"><span class="s1">@end</span></p>
+</body>
+</html>

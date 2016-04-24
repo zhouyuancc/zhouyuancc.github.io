@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #294c50}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s7 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s12 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s14 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s15 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>MJViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Get&amp;Post</span><span class="s2">登录</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 14-4-24.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2014</span><span class="s2">年</span><span class="s1"> itcast. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"MJViewController.h"</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@interface</span><span class="s5"> </span><span class="s1">MJViewController</span><span class="s5"> ()</span></p>
+<p class="p5"><span class="s1">@property</span><span class="s5"> (</span><span class="s1">weak</span><span class="s5">, </span><span class="s1">nonatomic</span><span class="s5">) </span><span class="s1">IBOutlet</span><span class="s5"> </span><span class="s6">UITextField</span><span class="s5"> *userName;</span></p>
+<p class="p5"><span class="s1">@property</span><span class="s5"> (</span><span class="s1">weak</span><span class="s5">, </span><span class="s1">nonatomic</span><span class="s5">) </span><span class="s1">IBOutlet</span><span class="s5"> </span><span class="s6">UITextField</span><span class="s5"> *userPwd;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">@property</span><span class="s5"> (</span><span class="s1">weak</span><span class="s5">, </span><span class="s1">nonatomic</span><span class="s5">) </span><span class="s1">IBOutlet</span><span class="s5"> </span><span class="s6">UILabel</span><span class="s5"> *logonResult;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s4">@implementation</span><span class="s1"> MJViewController</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p7"><span class="s7"><span class="Apple-converted-space"> </span></span><span class="s1">所有网络请求</span><span class="s7">,</span><span class="s1">统一使用异步请求</span><span class="s7">!</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s2">在今后的开发中</span><span class="s1">,</span><span class="s2">如果使用简单的</span><span class="s1">get/head</span><span class="s2">请求</span><span class="s1">,</span><span class="s2">可以用</span><span class="s1">NSURLConnction</span><span class="s2">异步方法</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>GET</span><span class="s2">查</span><span class="s1">/POST</span><span class="s2">增</span><span class="s1">/PUT</span><span class="s2">改</span><span class="s1">/DELETE</span><span class="s2">删</span><span class="s1">/HEAD</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>GET</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>1&gt; URL</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>2&gt; NSURLRequest</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>3&gt; NSURLConnction </span><span class="s2">异步</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>POST</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>1&gt; URL</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>2&gt; NSMutableURLRequest</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.httpMethod = @"POST";</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>str </span><span class="s2">从</span><span class="s1"> firebug</span><span class="s2">直接粘贴</span><span class="s1">,</span><span class="s2">或者自己写</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">变量名</span><span class="s1">1=</span><span class="s2">数值</span><span class="s1">1&amp;</span><span class="s2">变量名</span><span class="s1">2=</span><span class="s2">数值</span><span class="s1">2</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.httpData = [str dataUsingEncoding:NSUTF8StringEncoding];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>3&gt; NSURLConnction </span><span class="s2">异步</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p6"><span class="s1">- (</span><span class="s4">IBAction</span><span class="s1">)userLogon</span></p>
+<p class="p6"><span class="s1">{</span></p>
+<p class="p9"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s5"> </span><span class="s1">postLogon</span><span class="s5">];</span></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p10"><span class="s1">#pragma mark - POST</span><span class="s2">登录</span></p>
+<p class="p6"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)postLogon</span></p>
+<p class="p6"><span class="s1">{</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// 1. URL</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s6">NSURL</span><span class="s5"> *url = [</span><span class="s6">NSURL</span><span class="s5"> </span><span class="s8">URLWithString</span><span class="s5">:</span><span class="s1">@"http://localhost/login.php"</span><span class="s5">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// 2. </span><span class="s2">请求</span><span class="s1">(</span><span class="s2">可以改的请求</span><span class="s1">)</span></p>
+<p class="p11"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSMutableURLRequest</span><span class="s5"> *request = [</span><span class="s1">NSMutableURLRequest</span><span class="s5"> </span><span class="s8">requestWithURL</span><span class="s5">:url];</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// ? POST</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// </span><span class="s2">默认就是</span><span class="s1">GET</span><span class="s2">请求</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>request.</span><span class="s9">HTTPMethod</span><span class="s1"> = </span><span class="s10">@"POST"</span><span class="s1">;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// ? </span><span class="s2">数据体</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s6">NSString</span><span class="s5"> *str = [</span><span class="s6">NSString</span><span class="s5"> </span><span class="s8">stringWithFormat</span><span class="s5">:</span><span class="s1">@"username=%@&amp;password=%@"</span><span class="s5">, </span><span class="s4">self</span><span class="s5">.</span><span class="s11">userName</span><span class="s5">.</span><span class="s9">text</span><span class="s5">, </span><span class="s4">self</span><span class="s5">.</span><span class="s11">userPwd</span><span class="s5">.</span><span class="s9">text</span><span class="s5">];</span></p>
+<p class="p7"><span class="s12"><span class="Apple-converted-space">    </span></span><span class="s7">// </span><span class="s1">将字符串转换成数据</span></p>
+<p class="p12"><span class="s5"><span class="Apple-converted-space">    </span>request.</span><span class="s9">HTTPBody</span><span class="s5"> = [str </span><span class="s1">dataUsingEncoding</span><span class="s5">:</span><span class="s1">NSUTF8StringEncoding</span><span class="s5">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// 3. </span><span class="s2">连接</span><span class="s1">,</span><span class="s2">异步</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s6">NSURLConnection</span><span class="s1"> </span><span class="s8">sendAsynchronousRequest</span><span class="s1">:request </span><span class="s8">queue</span><span class="s1">:[[</span><span class="s6">NSOperationQueue</span><span class="s1"> </span><span class="s8">alloc</span><span class="s1">] </span><span class="s8">init</span><span class="s1">] </span><span class="s8">completionHandler</span><span class="s1">:^(</span><span class="s6">NSURLResponse</span><span class="s1"> *response, </span><span class="s6">NSData</span><span class="s1"> *data, </span><span class="s6">NSError</span><span class="s1"> *connectionError) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1"> (connectionError == </span><span class="s4">nil</span><span class="s1">) {</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">// </span><span class="s2">网络请求结束之后执行</span><span class="s1">!</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">// </span><span class="s2">将</span><span class="s1">Data</span><span class="s2">转换成字符串</span></p>
+<p class="p12"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s6">NSString</span><span class="s5"> *str = [[</span><span class="s6">NSString</span><span class="s5"> </span><span class="s1">alloc</span><span class="s5">] </span><span class="s1">initWithData</span><span class="s5">:data </span><span class="s1">encoding</span><span class="s5">:</span><span class="s1">NSUTF8StringEncoding</span><span class="s5">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s13">// num = 2</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">NSLog</span><span class="s1">(</span><span class="s10">@"%@ %@"</span><span class="s1">, str, [</span><span class="s6">NSThread</span><span class="s1"> </span><span class="s8">currentThread</span><span class="s1">]);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s13">// </span><span class="s14">更新界面</span></p>
+<p class="p12"><span class="s5"><span class="Apple-converted-space">            </span>[[</span><span class="s6">NSOperationQueue</span><span class="s5"> </span><span class="s1">mainQueue</span><span class="s5">] </span><span class="s1">addOperationWithBlock</span><span class="s5">:^{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s4">self</span><span class="s1">.</span><span class="s11">logonResult</span><span class="s1">.</span><span class="s9">text</span><span class="s1"> = str;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>}];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// num = 1</span></p>
+<p class="p12"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSLog</span><span class="s5">(</span><span class="s10">@"come here %@"</span><span class="s5">, [</span><span class="s6">NSThread</span><span class="s5"> </span><span class="s1">currentThread</span><span class="s5">]);</span></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p10"><span class="s1">#pragma mark - GET</span><span class="s2">登录</span></p>
+<p class="p6"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)getLogon</span></p>
+<p class="p6"><span class="s1">{</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// 1. URL</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s6">NSString</span><span class="s5"> *urlStr = [</span><span class="s6">NSString</span><span class="s5"> </span><span class="s8">stringWithFormat</span><span class="s5">:</span><span class="s1">@"http://localhost/login.php?username=%@&amp;password=%@"</span><span class="s5">, </span><span class="s4">self</span><span class="s5">.</span><span class="s11">userName</span><span class="s5">.</span><span class="s9">text</span><span class="s5">, </span><span class="s4">self</span><span class="s5">.</span><span class="s11">userPwd</span><span class="s5">.</span><span class="s9">text</span><span class="s5">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">NSURL</span><span class="s1"> *url = [</span><span class="s6">NSURL</span><span class="s1"> </span><span class="s8">URLWithString</span><span class="s1">:urlStr];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// 2. Request</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">NSURLRequest</span><span class="s1"> *request = [</span><span class="s6">NSURLRequest</span><span class="s1"> </span><span class="s8">requestWithURL</span><span class="s1">:url];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// 3. Connection</span></p>
+<p class="p7"><span class="s12"><span class="Apple-converted-space">    </span></span><span class="s7">// 1&gt; </span><span class="s1">登录完成之前</span><span class="s7">,</span><span class="s1">不能做后续工作</span><span class="s7">!</span></p>
+<p class="p7"><span class="s12"><span class="Apple-converted-space">    </span></span><span class="s7">// 2&gt; </span><span class="s1">登录进行中</span><span class="s7">,</span><span class="s1">可以允许用户干点别的会更好</span><span class="s7">!</span></p>
+<p class="p7"><span class="s12"><span class="Apple-converted-space">    </span></span><span class="s7">// 3&gt; </span><span class="s1">让登录操作在其他线程中进行</span><span class="s7">,</span><span class="s1">就不会阻塞主线程的工作</span></p>
+<p class="p7"><span class="s12"><span class="Apple-converted-space">    </span></span><span class="s7">// 4&gt; </span><span class="s1">结论</span><span class="s7">:</span><span class="s1">登陆也是异步访问</span><span class="s7">,</span><span class="s1">中间需要阻塞住</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s6">NSURLConnection</span><span class="s1"> </span><span class="s8">sendAsynchronousRequest</span><span class="s1">:request </span><span class="s8">queue</span><span class="s1">:[[</span><span class="s6">NSOperationQueue</span><span class="s1"> </span><span class="s8">alloc</span><span class="s1">] </span><span class="s8">init</span><span class="s1">] </span><span class="s8">completionHandler</span><span class="s1">:^(</span><span class="s6">NSURLResponse</span><span class="s1"> *response, </span><span class="s6">NSData</span><span class="s1"> *data, </span><span class="s6">NSError</span><span class="s1"> *connectionError) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1"> (connectionError == </span><span class="s4">nil</span><span class="s1">) {</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">// </span><span class="s2">网络请求结束之后执行</span><span class="s1">!</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">// </span><span class="s2">将</span><span class="s1">Data</span><span class="s2">转换成字符串</span></p>
+<p class="p12"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s6">NSString</span><span class="s5"> *str = [[</span><span class="s6">NSString</span><span class="s5"> </span><span class="s1">alloc</span><span class="s5">] </span><span class="s1">initWithData</span><span class="s5">:data </span><span class="s1">encoding</span><span class="s5">:</span><span class="s1">NSUTF8StringEncoding</span><span class="s5">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s13">// num = 2</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">NSLog</span><span class="s1">(</span><span class="s10">@"%@ %@"</span><span class="s1">, str, [</span><span class="s6">NSThread</span><span class="s1"> </span><span class="s8">currentThread</span><span class="s1">]);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s13">// </span><span class="s14">更新界面</span></p>
+<p class="p12"><span class="s5"><span class="Apple-converted-space">            </span>[[</span><span class="s6">NSOperationQueue</span><span class="s5"> </span><span class="s1">mainQueue</span><span class="s5">] </span><span class="s1">addOperationWithBlock</span><span class="s5">:^{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s4">self</span><span class="s1">.</span><span class="s11">logonResult</span><span class="s1">.</span><span class="s9">text</span><span class="s1"> = </span><span class="s10">@"</span><span class="s15">登录完成</span><span class="s10">"</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>}];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// num = 1</span></p>
+<p class="p12"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSLog</span><span class="s5">(</span><span class="s10">@"come here %@"</span><span class="s5">, [</span><span class="s6">NSThread</span><span class="s5"> </span><span class="s1">currentThread</span><span class="s5">]);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">NSURLResponse</span><span class="s1"> *response = </span><span class="s4">nil</span><span class="s1">;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// 1. &amp;response</span><span class="s2">真的理解了吗</span><span class="s1">?</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// 2. error:</span><span class="s2">为什么是</span><span class="s1">NULL,</span><span class="s2">而不是</span><span class="s1">nil</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// NULL</span><span class="s2">是</span><span class="s1">C</span><span class="s2">语言的</span><span class="s1"> = 0</span></p>
+<p class="p7"><span class="s12"><span class="Apple-converted-space">    </span></span><span class="s7">// </span><span class="s1">在</span><span class="s7">C</span><span class="s1">语言中</span><span class="s7">,</span><span class="s1">如果将指针的地址指向</span><span class="s7">0</span><span class="s1">就不会有危险</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s12"><span class="Apple-converted-space">    </span></span><span class="s7">// nil</span><span class="s1">是</span><span class="s7">OC</span><span class="s1">的</span><span class="s7">,</span><span class="s1">是一个空对象发送消息不会出问题</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>[response MIMEType];</span></p>
+<p class="p12"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s6">NSURLConnection</span><span class="s5"> </span><span class="s1">sendSynchronousRequest</span><span class="s5">:request </span><span class="s1">returningResponse</span><span class="s5">:&amp;response </span><span class="s1">error</span><span class="s5">:</span><span class="s4">NULL</span><span class="s5">];</span></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">@end</span></p>
+</body>
+</html>

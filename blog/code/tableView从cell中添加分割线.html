@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s4 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s7 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #000000; background-color: #fff995}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ContactsViewController.m</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)viewDidLoad {</span></p>
+<p class="p4"><span class="s3"><span class="Apple-converted-space">    </span>[</span><span class="s2">super</span><span class="s3"> </span><span class="s1">viewDidLoad</span><span class="s3">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s4">无分割线</span></p>
+<p class="p4"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s2">self</span><span class="s3">.</span><span class="s5">tableView</span><span class="s3">.</span><span class="s5">separatorStyle</span><span class="s3"> = </span><span class="s1">UITableViewCellSeparatorStyleNone</span><span class="s3">;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">——————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ContactCell.m</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@property</span><span class="s3"> (</span><span class="s1">nonatomic</span><span class="s3">,</span><span class="s1">weak</span><span class="s3">) </span><span class="s6">UIView</span><span class="s3"> *divider;</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p7"><span class="s7"><span class="Apple-converted-space"> </span></span><span class="s1">如果</span><span class="s7">cell</span><span class="s1">是通过</span><span class="s7"> storyboard</span><span class="s1">或者</span><span class="s7">xib </span><span class="s1">创建的，就不可能会调用这个方法来初始化</span><span class="s7">cell</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s4">如果</span><span class="s1">cell</span><span class="s4">是通过</span><span class="s1"> </span><span class="s4">手写代码</span><span class="s1"> </span><span class="s4">创建，会调用</span><span class="s1">initWithStyle</span><span class="s4">：</span><span class="s1">reuseIdentifier</span><span class="s4">：来初始化</span><span class="s1">cell</span></p>
+<p class="p7"><span class="s7"><span class="Apple-converted-space"> </span></span><span class="s1">这个方法的作用类似于</span><span class="s7">init</span><span class="s1">方法</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p1"><span class="s3">- (</span><span class="s2">void</span><span class="s3">)</span><span class="s8">awakeFromNib</span><span class="s3"> {</span><span class="s1">//</span><span class="s4">从</span><span class="s1">storyboard</span><span class="s4">中生成就会调用</span><span class="s1">awakeFromNib//storyboard</span><span class="s4">是从</span><span class="s1">xib</span><span class="s4">进化来的</span></p>
+<p class="p1"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">// Initialization code</span><span class="s4">初始化代码</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s4">添加分割线</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">UIView</span><span class="s1"> *divider = [[</span><span class="s6">UIView</span><span class="s1"> </span><span class="s9">alloc</span><span class="s1">] </span><span class="s9">init</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>divider.</span><span class="s5">backgroundColor</span><span class="s1"> = [</span><span class="s6">UIColor</span><span class="s1"> </span><span class="s9">blackColor</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s2">self</span><span class="s1">.</span><span class="s5">contentView</span><span class="s1"> </span><span class="s9">addSubview</span><span class="s1">:divider];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>divider.</span><span class="s5">alpha</span><span class="s1"> = </span><span class="s10">0.1</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">self</span><span class="s1">.</span><span class="s11">divider</span><span class="s1"> = divider;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s4">设置子控件的</span><span class="s1">frame</span></p>
+<p class="p7"><span class="s7"><span class="Apple-converted-space"> </span>//</span><span class="s1">最真实的高度</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p3"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)layoutSubviews</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p4"><span class="s3"><span class="Apple-converted-space">    </span>[</span><span class="s2">super</span><span class="s3"> </span><span class="s1">layoutSubviews</span><span class="s3">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s4">设置子控件的</span><span class="s1">frame</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">CGFloat</span><span class="s1"> dividerX= </span><span class="s10">0</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">CGFloat</span><span class="s1"> dividerH= </span><span class="s10">1</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">CGFloat</span><span class="s1"> dividerY= </span><span class="s2">self</span><span class="s1">.</span><span class="s5">frame</span><span class="s1">.</span><span class="s5">size</span><span class="s1">.</span><span class="s5">height</span><span class="s1"> - dividerH;</span></p>
+<p class="p8"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">CGFloat</span><span class="s3"> dividerW= </span><span class="s2">self</span><span class="s3">.</span><span class="s1">frame</span><span class="s3">.</span><span class="s1">size</span><span class="s3">.</span><span class="s1">width</span><span class="s3">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">self</span><span class="s1">.</span><span class="s11">divider</span><span class="s1">.</span><span class="s5">frame</span><span class="s1"> = </span><span class="s9">CGRectMake</span><span class="s1">(dividerX, dividerY, dividerW, dividerH);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">}</span></p>
+</body>
+</html>

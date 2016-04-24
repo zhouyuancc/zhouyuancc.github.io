@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 22.0px; font: 18.0px Menlo; color: #1d9421; -webkit-text-stroke: #1d9421; background-color: #cce8b5}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #822e0e; -webkit-text-stroke: #822e0e}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #c91b13; -webkit-text-stroke: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #1d9421; -webkit-text-stroke: #1d9421}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px 'Songti SC'; color: #1d9421; -webkit-text-stroke: #1d9421}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #000000; -webkit-text-stroke: #000000}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #c32275; -webkit-text-stroke: #c32275}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #1d9421; -webkit-text-stroke: #1d9421; background-color: #cce8b5}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px 'Songti SC'; color: #1d9421; -webkit-text-stroke: #1d9421; background-color: #e0edd4}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #3d1d81; -webkit-text-stroke: #3d1d81}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #000000; -webkit-text-stroke: #000000; min-height: 21.0px}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 22.0px; font: 18.0px Times; color: #e32400; -webkit-text-stroke: #e32400}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #78492a; -webkit-text-stroke: #78492a}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #007400; -webkit-text-stroke: #007400}
+    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px 'Songti SC'; color: #007400; -webkit-text-stroke: #007400}
+    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #2e116e; -webkit-text-stroke: #2e116e}
+    p.p17 {margin: 0.0px 0.0px 8.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #64381f; -webkit-text-stroke: #64381f}
+    p.p18 {margin: 0.0px 0.0px 8.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #007400; -webkit-text-stroke: #007400}
+    p.p19 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #1d9421; -webkit-text-stroke: #1d9421; min-height: 21.0px}
+    p.p20 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #469523; -webkit-text-stroke: #469523; background-color: #e0edd4}
+    p.p21 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 16.0px Menlo; color: #000000; -webkit-text-stroke: #000000}
+    p.p22 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #703daa; -webkit-text-stroke: #703daa}
+    p.p23 {margin: 0.0px 0.0px 8.0px 0.0px; line-height: 21.0px; font: 18.0px 'Songti SC'; color: #007400; -webkit-text-stroke: #007400}
+    p.p24 {margin: 0.0px 0.0px 8.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #000000; -webkit-text-stroke: #000000}
+    p.p25 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 22.0px; font: 18.0px Menlo; color: #5c2699; -webkit-text-stroke: #5c2699}
+    p.p26 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 22.0px; font: 18.0px Times; color: #595959; -webkit-text-stroke: #595959}
+    p.p27 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #595959; -webkit-text-stroke: #595959}
+    p.p28 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #6122ae; -webkit-text-stroke: #6122ae}
+    p.p29 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #469523; -webkit-text-stroke: #469523}
+    p.p30 {margin: 0.0px 0.0px 8.0px 0.0px; line-height: 22.0px; font: 18.0px 'Songti SC'; color: #595959; -webkit-text-stroke: #595959}
+    p.p31 {margin: 0.0px 0.0px 8.0px 0.0px; line-height: 22.0px; font: 18.0px Menlo; color: #595959; -webkit-text-stroke: #595959}
+    p.p32 {margin: 0.0px 0.0px 8.0px 0.0px; line-height: 21.0px; font: 18.0px Helvetica; color: #595959; -webkit-text-stroke: #595959}
+    p.p33 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px 'PingFang SC'; color: #1d9421; -webkit-text-stroke: #1d9421}
+    p.p34 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 22.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    p.p35 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 22.0px; font: 18.0px 'Songti SC'; color: #1d9421; -webkit-text-stroke: #1d9421}
+    p.p36 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 22.0px; font: 18.0px Times; color: #1d9421; -webkit-text-stroke: #1d9421}
+    p.p37 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Menlo; color: #294c50; -webkit-text-stroke: #294c50}
+    p.p38 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Times; color: #1d9421; -webkit-text-stroke: #1d9421}
+    span.s1 {font: 18.0px Times; font-kerning: none}
+    span.s2 {font-kerning: none}
+    span.s3 {font-kerning: none; color: #822e0e; -webkit-text-stroke: 0px #822e0e}
+    span.s4 {font: 18.0px Menlo; font-kerning: none}
+    span.s5 {font-kerning: none; color: #703daa; -webkit-text-stroke: 0px #703daa}
+    span.s6 {font-kerning: none; color: #3d1d81; -webkit-text-stroke: 0px #3d1d81}
+    span.s7 {font-kerning: none; color: #c32275; -webkit-text-stroke: 0px #c32275}
+    span.s8 {font-kerning: none; color: #294c50; -webkit-text-stroke: 0px #294c50}
+    span.s9 {font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
+    span.s10 {font: 18.0px 'Songti SC'; font-kerning: none}
+    span.s11 {font-kerning: none; color: #6122ae; -webkit-text-stroke: 0px #6122ae}
+    span.s12 {font-kerning: none; color: #539aa4; -webkit-text-stroke: 0px #539aa4}
+    span.s13 {font-kerning: none; color: #c91b13; -webkit-text-stroke: 0px #c91b13}
+    span.s14 {font: 18.0px 'Songti SC'; font-kerning: none; color: #c91b13; -webkit-text-stroke: 0px #c91b13}
+    span.s15 {font-kerning: none; color: #0435ff; -webkit-text-stroke: 0px #0435ff}
+    span.s16 {font-kerning: none; color: #1d9421; -webkit-text-stroke: 0px #1d9421}
+    span.s17 {font: 18.0px 'Songti SC'; font-kerning: none; color: #1d9421; -webkit-text-stroke: 0px #1d9421}
+    span.s18 {font: 18.0px Menlo; font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
+    span.s19 {font-kerning: none; color: #aa2391; -webkit-text-stroke: 0px #aa2391}
+    span.s20 {font-kerning: none; color: #1c27cf; -webkit-text-stroke: 0px #1c27cf}
+    span.s21 {font: 18.0px 'Songti SC'; font-kerning: none; color: #ff2500; -webkit-text-stroke: 0px #ff2500}
+    span.s22 {font-kerning: none; color: #2e116e; -webkit-text-stroke: 0px #2e116e}
+    span.s23 {font-kerning: none; color: #5c2699; -webkit-text-stroke: 0px #5c2699}
+    span.s24 {font-kerning: none; color: #78492a; -webkit-text-stroke: 0px #78492a}
+    span.s25 {font: 18.0px Helvetica; font-kerning: none}
+    span.s26 {font: 18.0px 'Songti SC'; font-kerning: none; color: #595959; -webkit-text-stroke: 0px #595959}
+    span.s27 {font-kerning: none; color: #469523; -webkit-text-stroke: 0px #469523}
+    span.s28 {font: 18.0px Times; font-kerning: none; color: #1d9421; -webkit-text-stroke: 0px #1d9421}
+    span.s29 {font-kerning: none; color: #007400; -webkit-text-stroke: 0px #007400}
+    span.s30 {font: 18.0px 'Songti SC'; font-kerning: none; color: #007400; -webkit-text-stroke: 0px #007400}
+    span.s31 {font: 18.0px 'PingFang SC'; font-kerning: none; color: #1d9421; -webkit-text-stroke: 0px #1d9421}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">[1]</span><span class="s2">pthread</span></p>
+<p class="p2"><span class="s2"><br>
+</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s2">&lt;pthread.h&gt;</span></p>
+<p class="p4"><span class="s2"><br>
+</span></p>
+<p class="p5"><span class="s4">// </span><span class="s2">执行一些耗时操作</span><span class="s4"> : </span><span class="s2">创建一条子线程</span></p>
+<p class="p6"><span class="s5">pthread_t</span><span class="s2"> threadId;</span></p>
+<p class="p6"><span class="s6">pthread_create</span><span class="s2">(&amp;threadId, </span><span class="s7">NULL</span><span class="s2">, </span><span class="s8">run</span><span class="s2">, </span><span class="s7">NULL</span><span class="s2">);</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s7">void</span><span class="s2"> *run(</span><span class="s7">void</span><span class="s2"> *data) {</span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">   </span></span><span class="s2">// </span><span class="s10">耗时操作</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">return</span><span class="s9"> </span><span class="s2">NULL</span><span class="s9">;</span></p>
+<p class="p6"><span class="s2">}</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span><br>
+</span></p>
+<p class="p8"><span class="s2">[2]NSThread<span class="Apple-converted-space"> </span></span></p>
+<p class="p9"><span class="s4">1</span><span class="s2">、开启子线程</span></p>
+<p class="p6"><span class="s2">----------------------------------------------------------------------------------------------------</span></p>
+<p class="p7"><span class="s2">@property</span><span class="s9"> (</span><span class="s2">nonatomic</span><span class="s9">, </span><span class="s2">strong</span><span class="s9">) </span><span class="s11">NSThread</span><span class="s9"> *thread0;</span></p>
+<p class="p7"><span class="s2">@property</span><span class="s9"> (</span><span class="s2">nonatomic</span><span class="s9">, </span><span class="s2">strong</span><span class="s9">) </span><span class="s11">NSThread</span><span class="s9"> *thread1;</span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space"> </span></span><span class="s2">/**</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span>* </span><span class="s10">一、</span><span class="s2">NSThread</span><span class="s10">的创建方式</span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space"> </span>* 1&gt; </span><span class="s2">先创建初始化线程</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span>* 2&gt; start</span><span class="s10">开启线程</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p10"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s7">self</span><span class="s9">.</span><span class="s12">thread0</span><span class="s9"> = [[</span><span class="s11">NSThread</span><span class="s9"> </span><span class="s2">alloc</span><span class="s9">] </span><span class="s2">initWithTarget</span><span class="s9">:</span><span class="s7">self</span><span class="s9"> </span><span class="s2">selector</span><span class="s9">:</span><span class="s7">@selector</span><span class="s9">(saleTicket) </span><span class="s2">object</span><span class="s9">:</span><span class="s7">nil</span><span class="s9">];</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s7">self</span><span class="s2">.</span><span class="s12">thread0</span><span class="s2">.</span><span class="s5">name</span><span class="s2"> = </span><span class="s13">@"</span><span class="s14">售票员</span><span class="s13"> A"</span><span class="s2">;</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p10"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s7">self</span><span class="s9">.</span><span class="s12">thread1</span><span class="s9"> = [[</span><span class="s11">NSThread</span><span class="s9"> </span><span class="s2">alloc</span><span class="s9">] </span><span class="s2">initWithTarget</span><span class="s9">:</span><span class="s7">self</span><span class="s9"> </span><span class="s2">selector</span><span class="s9">:</span><span class="s7">@selector</span><span class="s9">(saleTicket) </span><span class="s2">object</span><span class="s9">:</span><span class="s7">nil</span><span class="s9">];</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s7">self</span><span class="s2">.</span><span class="s12">thread1</span><span class="s2">.</span><span class="s5">name</span><span class="s2"> = </span><span class="s13">@"</span><span class="s14">售票员</span><span class="s13"> B"</span><span class="s2">;</span></p>
+<p class="p5"><span class="s4">//<span class="Apple-converted-space">    </span></span><span class="s2">调度优先级的取值范围是</span><span class="s4">0.0 ~ 1.0</span><span class="s2">，默认</span><span class="s4">0.5</span><span class="s2">，值越大，优先级越高</span></p>
+<p class="p4"><span class="s2">//<span class="Apple-converted-space">    </span>self.thread1.threadPriority = 1.0;</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s2">- (</span><span class="s7">void</span><span class="s2">)saleTicket</span></p>
+<p class="p6"><span class="s2">{</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s7">while</span><span class="s2"> (</span><span class="s15">1</span><span class="s2">) {</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">        </span></span><span class="s2">@synchronized</span><span class="s9">(</span><span class="s2">self</span><span class="s9">) { </span><span class="s16">// </span><span class="s17">加锁</span><span class="s16">(</span><span class="s17">只能用一把锁</span><span class="s16">)</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">         </span></span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">           </span></span><span class="s16">// </span><span class="s17">退出线程</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">           </span>[</span><span class="s11">NSThread</span><span class="s2"> </span><span class="s6">exit</span><span class="s2">];</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span>} </span><span class="s16">// </span><span class="s17">解锁</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p6"><span class="s2">}</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2">- (</span><span class="s7">void</span><span class="s2">)touchesBegan:(</span><span class="s11">NSSet</span><span class="s2"> *)touches withEvent:(</span><span class="s11">UIEvent</span><span class="s2"> *)event</span></p>
+<p class="p6"><span class="s2">{</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s2">.</span><span class="s12">thread0</span><span class="s2"> </span><span class="s6">start</span><span class="s2">];</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s2">.</span><span class="s12">thread1</span><span class="s2"> </span><span class="s6">start</span><span class="s2">];</span></p>
+<p class="p6"><span class="s2">}</span></p>
+<p class="p6"><span class="s2">----------------------------------------------------------------------------------------------------</span></p>
+<p class="p4"><span class="s2">/**</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span>* </span><span class="s10">二、</span><span class="s2">NSThread</span><span class="s10">的创建方式</span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space"> </span>* </span><span class="s2">创建完线程直接</span><span class="s4">(</span><span class="s2">自动</span><span class="s4">)</span><span class="s2">启动</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p10"><span class="s9">[</span><span class="s11">NSThread</span><span class="s9"> </span><span class="s2">detachNewThreadSelector</span><span class="s9">:</span><span class="s7">@selector</span><span class="s9">(run:) </span><span class="s2">toTarget</span><span class="s9">:</span><span class="s7">self</span><span class="s9"> </span><span class="s2">withObject</span><span class="s9">:</span><span class="s13">@"</span><span class="s14">我是参数</span><span class="s13">"</span><span class="s9">];</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p4"><span class="s2">/**</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span>* </span><span class="s10">三、</span><span class="s2">NSThread</span><span class="s10">的创建方式</span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space"> </span>* </span><span class="s2">隐式创建线程</span><span class="s4">, </span><span class="s2">并且直接</span><span class="s4">(</span><span class="s2">自动</span><span class="s4">)</span><span class="s2">启动</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p5"><span class="s4">// </span><span class="s2">在后台线程中执行</span><span class="s4"> === </span><span class="s2">在子线程中执行</span></p>
+<p class="p10"><span class="s9">[</span><span class="s7">self</span><span class="s9"> </span><span class="s2">performSelectorInBackground</span><span class="s9">:</span><span class="s7">@selector</span><span class="s9">(run:) </span><span class="s2">withObject</span><span class="s9">:</span><span class="s13">@"abc</span><span class="s14">参数</span><span class="s13">"</span><span class="s9">];</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p9"><span class="s4">2</span><span class="s2">、线程间通信</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p5"><span class="s4">// </span><span class="s2">开启子线程</span></p>
+<p class="p10"><span class="s9">[</span><span class="s7">self</span><span class="s9"> </span><span class="s2">performSelectorInBackground</span><span class="s9">:</span><span class="s7">@selector</span><span class="s9">(download) </span><span class="s2">withObject</span><span class="s9">:</span><span class="s7">nil</span><span class="s9">];</span></p>
+<p class="p4"><span class="s2"><br>
+</span></p>
+<p class="p5"><span class="s4">// </span><span class="s2">回到主线程</span></p>
+<p class="p10"><span class="s9">[</span><span class="s7">self</span><span class="s9">.</span><span class="s12">imageView</span><span class="s9"> </span><span class="s2">performSelectorOnMainThread</span><span class="s9">:</span><span class="s7">@selector</span><span class="s9">(setImage:) </span><span class="s2">withObject</span><span class="s9">:image </span><span class="s2">waitUntilDone</span><span class="s9">:</span><span class="s7">NO</span><span class="s9">];</span></p>
+<p class="p4"><span class="s2">// </span><span class="s10">或</span></p>
+<p class="p10"><span class="s9">[</span><span class="s7">self</span><span class="s9">.</span><span class="s12">imageView</span><span class="s9"> </span><span class="s2">performSelector</span><span class="s9">:</span><span class="s7">@selector</span><span class="s9">(setImage:) </span><span class="s2">onThread</span><span class="s9">:[</span><span class="s11">NSThread</span><span class="s9"> </span><span class="s2">mainThread</span><span class="s9">] </span><span class="s2">withObject</span><span class="s9">:image </span><span class="s2">waitUntilDone</span><span class="s9">:</span><span class="s7">NO</span><span class="s9">];</span></p>
+<p class="p4"><span class="s2">// </span><span class="s10">或</span></p>
+<p class="p10"><span class="s9">[</span><span class="s7">self</span><span class="s9"> </span><span class="s2">performSelectorOnMainThread</span><span class="s9">:</span><span class="s7">@selector</span><span class="s9">(settingImage:) </span><span class="s2">withObject</span><span class="s9">:image </span><span class="s2">waitUntilDone</span><span class="s9">:</span><span class="s7">NO</span><span class="s9">];</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p9"><span class="s4">3</span><span class="s2">、线程阻塞</span></p>
+<p class="p12"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s11">NSDate</span><span class="s2"> *date = [</span><span class="s11">NSDate</span><span class="s2"> dateWithIimeIntervalSinceNow:</span><span class="s15">2.0</span><span class="s2">];</span></p>
+<p class="p10"><span class="s9">[</span><span class="s11">NSThread</span><span class="s9"> </span><span class="s2">sleepUntilDate</span><span class="s9">:date];</span></p>
+<p class="p4"><span class="s2">// </span><span class="s10">或</span></p>
+<p class="p10"><span class="s9">[</span><span class="s11">NSThread</span><span class="s9"> </span><span class="s2">sleepForTimeInterval</span><span class="s9">:</span><span class="s15">0.1</span><span class="s9">];</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p8"><span class="s2">[3]GCD<span class="Apple-converted-space"> </span></span></p>
+<p class="p9"><span class="s4">1</span><span class="s2">、开启子线程</span></p>
+<p class="p4"><span class="s2">/**</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span>* </span><span class="s10">用</span><span class="s2">dispatch_async</span><span class="s10">异步函数往串行队列中添加任务</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p6"><span class="s2">- (</span><span class="s7">void</span><span class="s2">)asyncSerialQueue</span></p>
+<p class="p6"><span class="s2">{</span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// 1.</span><span class="s10">创建串行队列</span></p>
+<p class="p10"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s5">dispatch_queue_t</span><span class="s9"> queue = </span><span class="s2">dispatch_queue_create</span><span class="s9">(</span><span class="s13">"com.itheima.queue"</span><span class="s9">, </span><span class="s7">NULL</span><span class="s9">);</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// 2.</span><span class="s10">添加任务到队列中</span><span class="s2"> </span><span class="s10">执行</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s6">dispatch_async</span><span class="s2">(queue, ^{</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s6">dispatch_async</span><span class="s2">(queue, ^{</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s6">dispatch_async</span><span class="s2">(queue, ^{</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s18"><span class="Apple-converted-space">    </span></span><span class="s4">// </span><span class="s2">总结</span><span class="s4">: </span><span class="s2">只开</span><span class="s4">1</span><span class="s2">个线程执行任务</span></p>
+<p class="p6"><span class="s2">}</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p4"><span class="s2">/**</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span>* </span><span class="s10">用</span><span class="s2">dispatch_async</span><span class="s10">异步函数往并发队列中添加任务</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p6"><span class="s2">- (</span><span class="s7">void</span><span class="s2">)asyncGlobalQueue</span></p>
+<p class="p6"><span class="s2">{</span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// 1.</span><span class="s10">获得全局的并发队列</span></p>
+<p class="p13"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s5">dispatch_queue_t</span><span class="s9"> queue = </span><span class="s6">dispatch_get_global_queue</span><span class="s9">(</span><span class="s2">DISPATCH_QUEUE_PRIORITY_DEFAULT</span><span class="s9">, </span><span class="s15">0</span><span class="s9">);</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// 2.</span><span class="s10">添加任务到队列中</span><span class="s2"> </span><span class="s10">执行</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s6">dispatch_async</span><span class="s2">(queue, ^{</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s6">dispatch_async</span><span class="s2">(queue, ^{</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s6">dispatch_async</span><span class="s2">(queue, ^{</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// </span><span class="s10">总结</span><span class="s2">: </span><span class="s10">同时开启了</span><span class="s2">3</span><span class="s10">个线程</span></p>
+<p class="p6"><span class="s2">}</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p9"><span class="s4">2</span><span class="s2">、线程间通信</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p13"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s5">dispatch_queue_t</span><span class="s9"> queue = </span><span class="s6">dispatch_get_global_queue</span><span class="s9">(</span><span class="s2">DISPATCH_QUEUE_PRIORITY_DEFAULT</span><span class="s9">, </span><span class="s15">0</span><span class="s9">);</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s6">dispatch_async</span><span class="s2">(queue, ^{</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">       </span></span></p>
+<p class="p4"><span class="s2"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// </span><span class="s10">耗时操作</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s9"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">// </span><span class="s10">回到主线程</span></p>
+<p class="p10"><span class="s9"><span class="Apple-converted-space">        </span></span><span class="s2">dispatch_async</span><span class="s9">(</span><span class="s2">dispatch_get_main_queue</span><span class="s9">(), ^{</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">           </span></span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p9"><span class="s4">3</span><span class="s2">、延时</span></p>
+<p class="p14"><span class="s2"><br>
+</span></p>
+<p class="p15"><span class="s4">// 2</span><span class="s2">秒后再调用</span></p>
+<p class="p16"><span class="s9">[</span><span class="s19">self</span><span class="s9"> </span><span class="s2">performSelector</span><span class="s9">:</span><span class="s19">@selector</span><span class="s9">(run) </span><span class="s2">withObject</span><span class="s9">:</span><span class="s19">nil</span><span class="s9"> </span><span class="s2">afterDelay</span><span class="s9">:</span><span class="s20">2.0</span><span class="s9">];</span></p>
+<p class="p4"><span class="s2"><br>
+</span></p>
+<p class="p5"><span class="s4">// </span><span class="s2">或</span><span class="s1"> </span><span class="s2">在子线程延迟</span><span class="s1">5s</span></p>
+<p class="p13"><span class="s6">dispatch_after</span><span class="s9">(</span><span class="s6">dispatch_time</span><span class="s9">(</span><span class="s2">DISPATCH_TIME_NOW</span><span class="s9">, (</span><span class="s5">int64_t</span><span class="s9">)(</span><span class="s15">5.0</span><span class="s9"> * </span><span class="s2">NSEC_PER_SEC</span><span class="s9">)), </span><span class="s6">dispatch_get_global_queue</span><span class="s9">(</span><span class="s2">DISPATCH_QUEUE_PRIORITY_DEFAULT</span><span class="s9">, </span><span class="s15">0</span><span class="s9">), ^{</span></p>
+<p class="p14"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// 5</span><span class="s10">秒后</span><span class="s21">异步</span><span class="s10">执行这里的代码</span><span class="s2">...</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2">});</span></p>
+<p class="p5"><span class="s4">// </span><span class="s2">或</span><span class="s1"> </span><span class="s2">在主线程延迟</span><span class="s1">2s</span></p>
+<p class="p17"><span class="s22">dispatch_after</span><span class="s9">(</span><span class="s22">dispatch_time</span><span class="s9">(</span><span class="s2">DISPATCH_TIME_NOW</span><span class="s9">, (</span><span class="s23">int64_t</span><span class="s9">)(</span><span class="s20">2.0</span><span class="s9"> * </span><span class="s2">NSEC_PER_SEC</span><span class="s9">)), </span><span class="s6">dispatch_get_main_queue</span><span class="s9">(), ^{</span></p>
+<p class="p18"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// 2</span><span class="s10">秒后</span><span class="s21">异步</span><span class="s10">执行这里的代码</span><span class="s2">...</span></p>
+<p class="p6"><span class="s2">});</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p9"><span class="s4">4</span><span class="s2">、创建一个组</span><span class="s1">group</span><span class="s2">，等</span><span class="s1">group</span><span class="s2">中的所有任务都执行完毕，再回到主线程，执行其他操作</span></p>
+<p class="p4"><span class="s2">/**</span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space"> </span>1.</span><span class="s2">下载图片</span><span class="s4">1</span><span class="s2">和图片</span><span class="s4">2</span></p>
+<p class="p19"><span class="s2"><span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space"> </span>2.</span><span class="s2">将图片</span><span class="s4">1</span><span class="s2">和图片</span><span class="s4">2</span><span class="s2">合并成一张图片后显示到</span><span class="s4">imageView</span><span class="s2">上</span></p>
+<p class="p19"><span class="s2"><span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s10">思考</span><span class="s2">:</span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space"> </span>* </span><span class="s2">下载图片</span><span class="s4"> : </span><span class="s2">子线程</span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space"> </span>* </span><span class="s2">等</span><span class="s4">2</span><span class="s2">张图片都下载完毕后</span><span class="s4">, </span><span class="s2">才回到主线程</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// </span><span class="s10">创建一个组</span></p>
+<p class="p10"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s5">dispatch_group_t</span><span class="s9"> group = </span><span class="s2">dispatch_group_create</span><span class="s9">();</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// </span><span class="s10">开启一个任务</span><span class="s2">1</span></p>
+<p class="p10"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">dispatch_group_async</span><span class="s9">(group, </span><span class="s24">global_queue</span><span class="s9">, ^{</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// </span><span class="s10">开启一个任务</span><span class="s2">2</span></p>
+<p class="p10"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">dispatch_group_async</span><span class="s9">(group, </span><span class="s24">global_queue</span><span class="s9">, ^{</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// </span><span class="s10">同时执行任务</span><span class="s2">1\</span><span class="s10">任务</span><span class="s2">2</span><span class="s10">操作</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s18"><span class="Apple-converted-space">    </span></span><span class="s4">// </span><span class="s2">等</span><span class="s4">group</span><span class="s2">中的所有任务都执行完毕</span><span class="s4">, </span><span class="s2">再回到主线程执行其他操作</span></p>
+<p class="p10"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">dispatch_group_notify</span><span class="s9">(group, </span><span class="s24">main_queue</span><span class="s9">, ^{</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p20"><span class="s16">5</span><span class="s17">、</span><span class="s2">dispatch_once</span><span class="s1"> <span class="Apple-converted-space">  </span></span><span class="s10">在程序运行过程中</span><span class="s1">,</span><span class="s10">只被执行</span><span class="s25">1</span><span class="s10">次</span></p>
+<p class="p21"><span class="s2"><br>
+</span></p>
+<p class="p22"><span class="s7">static</span><span class="s9"> </span><span class="s2">dispatch_once_t</span><span class="s9"> onceToken;</span></p>
+<p class="p6"><span class="s24">dispatch_once</span><span class="s2">(&amp;onceToken, ^{</span></p>
+<p class="p23"><span class="s4"><span class="Apple-tab-span">	</span>// </span><span class="s2">只执行</span><span class="s4">1</span><span class="s2">次的代码</span><span class="s4">(</span><span class="s2">这里面默认是线程安全的</span><span class="s4">)</span></p>
+<p class="p18"><span class="s2"><br>
+</span></p>
+<p class="p24"><span class="s2">});</span></p>
+<p class="p24"><span class="s2"><br>
+</span></p>
+<p class="p8"><span class="s2">[4]NSOperation<span class="Apple-converted-space"> </span></span></p>
+<p class="p9"><span class="s4">1</span><span class="s2">、开启子线程</span></p>
+<p class="p25"><span class="s26">只有将</span><span class="s2">NSOperation</span><span class="s26">放到一个</span><span class="s2">NSOperationQueue</span><span class="s26">中，才会异步执行操作</span></p>
+<p class="p26"><span class="s2"><br>
+</span></p>
+<p class="p27"><span class="s16">// </span><span class="s17">一、</span><span class="s27">NSBlockOperation</span><span class="s9"> </span><span class="s10">注意：只要</span><span class="s23">NSBlockOperation</span><span class="s10">封装的操作数</span><span class="s1"> </span><span class="s25">&gt; 1</span><span class="s10">，就会异步执行操作</span></p>
+<p class="p28"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">NSBlockOperation</span><span class="s9"> *operation = [[</span><span class="s2">NSBlockOperation</span><span class="s9"> </span><span class="s6">alloc</span><span class="s9">] </span><span class="s6">init</span><span class="s9">];</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[operation </span><span class="s6">addExecutionBlock</span><span class="s2">:^{</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[operation </span><span class="s6">addExecutionBlock</span><span class="s2">:^{</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// 2.</span><span class="s10">执行操作</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[operation </span><span class="s6">start</span><span class="s2">];</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p29"><span class="s16">// </span><span class="s17">二、</span><span class="s2">NSOperationQueue1</span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// 1.</span><span class="s10">封装操作</span></p>
+<p class="p28"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">NSInvocationOperation</span><span class="s9"> *operation1 = [[</span><span class="s2">NSInvocationOperation</span><span class="s9"> </span><span class="s6">alloc</span><span class="s9">] </span><span class="s6">initWithTarget</span><span class="s9">:</span><span class="s7">self</span><span class="s9"> </span><span class="s6">selector</span><span class="s9">:</span><span class="s7">@selector</span><span class="s9">(download) </span><span class="s6">object</span><span class="s9">:</span><span class="s7">nil</span><span class="s9">];</span></p>
+<p class="p4"><span class="s2">//<span class="Apple-converted-space">    </span>operation1.queuePriority = NSOperationQueuePriorityHigh</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p28"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">NSInvocationOperation</span><span class="s9"> *operation2 = [[</span><span class="s2">NSInvocationOperation</span><span class="s9"> </span><span class="s6">alloc</span><span class="s9">] </span><span class="s6">initWithTarget</span><span class="s9">:</span><span class="s7">self</span><span class="s9"> </span><span class="s6">selector</span><span class="s9">:</span><span class="s7">@selector</span><span class="s9">(run) </span><span class="s6">object</span><span class="s9">:</span><span class="s7">nil</span><span class="s9">];</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p28"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">NSBlockOperation</span><span class="s9"> *operation3 = [</span><span class="s2">NSBlockOperation</span><span class="s9"> </span><span class="s6">blockOperationWithBlock</span><span class="s9">:^{</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">   </span>}];</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// 2.</span><span class="s10">创建队列</span></p>
+<p class="p28"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">NSOperationQueue</span><span class="s9"> *queue = [[</span><span class="s2">NSOperationQueue</span><span class="s9"> </span><span class="s6">alloc</span><span class="s9">] </span><span class="s6">init</span><span class="s9">];</span></p>
+<p class="p22"><span class="s9"><span class="Apple-converted-space">    </span>queue.</span><span class="s2">maxConcurrentOperationCount</span><span class="s9"> = </span><span class="s15">2</span><span class="s9">; </span><span class="s16">// </span><span class="s17">最大线程数</span><span class="s16"> </span><span class="s28">: </span><span class="s16">2 ~ 3</span><span class="s17">为宜</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">// </span><span class="s10">设置依赖</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[operation2 </span><span class="s6">addDependency</span><span class="s2">:operation3];</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[operation3 </span><span class="s6">addDependency</span><span class="s2">:operation1];</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s18"><span class="Apple-converted-space">    </span></span><span class="s4">// 3.</span><span class="s2">添加操作到队列中</span><span class="s4">(</span><span class="s2">自动执行操作</span><span class="s4">, </span><span class="s2">自动开启线程</span><span class="s4">)</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[queue </span><span class="s6">addOperation</span><span class="s2">:operation1];</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[queue </span><span class="s6">addOperation</span><span class="s2">:operation2];</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[queue </span><span class="s6">addOperation</span><span class="s2">:operation3];</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s2">//<span class="Apple-converted-space">    </span>[queue setSuspended:YES];</span></p>
+<p class="p30"><span class="s2">取消队列的所有操作</span></p>
+<p class="p24"><span class="s2">- (</span><span class="s19">void</span><span class="s2">)cancelAllOperations;</span></p>
+<p class="p31"><span class="s10">提示：也可以调用</span><span class="s23">NSOperation</span><span class="s10">的</span><span class="s9">- (</span><span class="s19">void</span><span class="s9">)cancel</span><span class="s10">方法取消单个操作</span></p>
+<p class="p32"><span class="s2"><br>
+</span></p>
+<p class="p30"><span class="s2">暂停和恢复队列</span></p>
+<p class="p24"><span class="s2">- (</span><span class="s19">void</span><span class="s2">)setSuspended:(</span><span class="s19">BOOL</span><span class="s2">)b; </span><span class="s29">// YES</span><span class="s30">代表暂停队列，</span><span class="s29">NO</span><span class="s30">代表恢复队列</span></p>
+<p class="p6"><span class="s2">- (</span><span class="s19">BOOL</span><span class="s2">)isSuspended;</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p29"><span class="s16">// </span><span class="s17">二、</span><span class="s2">NSOperationQueue2</span></p>
+<p class="p28"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">NSBlockOperation</span><span class="s9"> *operation1 = [</span><span class="s2">NSBlockOperation</span><span class="s9"> </span><span class="s6">blockOperationWithBlock</span><span class="s9">:^{</span></p>
+<p class="p3"><span class="s9"><span class="Apple-converted-space">        </span></span><span class="s6">NSLog</span><span class="s9">(</span><span class="s2">@"NSBlockOperation------</span><span class="s10">下载图片</span><span class="s2">1---%@"</span><span class="s9">, [</span><span class="s11">NSThread</span><span class="s9"> </span><span class="s6">currentThread</span><span class="s9">]);</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p28"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">NSBlockOperation</span><span class="s9"> *operation2 = [</span><span class="s2">NSBlockOperation</span><span class="s9"> </span><span class="s6">blockOperationWithBlock</span><span class="s9">:^{</span></p>
+<p class="p3"><span class="s9"><span class="Apple-converted-space">        </span></span><span class="s6">NSLog</span><span class="s9">(</span><span class="s2">@"NSBlockOperation------</span><span class="s10">下载图片</span><span class="s2">2---%@"</span><span class="s9">, [</span><span class="s11">NSThread</span><span class="s9"> </span><span class="s6">currentThread</span><span class="s9">]);</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[operation2 </span><span class="s6">addExecutionBlock</span><span class="s2">:^{</span></p>
+<p class="p3"><span class="s9"><span class="Apple-converted-space">        </span></span><span class="s6">NSLog</span><span class="s9">(</span><span class="s2">@"NSBlockOperation------</span><span class="s10">下载图片</span><span class="s2">22---%@"</span><span class="s9">, [</span><span class="s11">NSThread</span><span class="s9"> </span><span class="s6">currentThread</span><span class="s9">]);</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p28"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">NSOperationQueue</span><span class="s9"> *queue = [[</span><span class="s2">NSOperationQueue</span><span class="s9"> </span><span class="s6">alloc</span><span class="s9">] </span><span class="s6">init</span><span class="s9">];</span></p>
+<p class="p22"><span class="s9"><span class="Apple-converted-space">    </span>queue.</span><span class="s2">maxConcurrentOperationCount</span><span class="s9"> = </span><span class="s15">2</span><span class="s9">;</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[queue </span><span class="s6">addOperation</span><span class="s2">:operation1];</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[queue </span><span class="s6">addOperation</span><span class="s2">:operation2];</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p10"><span class="s9"><span class="Apple-converted-space">    </span>[queue </span><span class="s2">addOperationWithBlock</span><span class="s9">:^{</span></p>
+<p class="p3"><span class="s9"><span class="Apple-converted-space">        </span></span><span class="s6">NSLog</span><span class="s9">(</span><span class="s2">@"NSBlockOperation------</span><span class="s10">下载图片</span><span class="s2">3---%@"</span><span class="s9">, [</span><span class="s11">NSThread</span><span class="s9"> </span><span class="s6">currentThread</span><span class="s9">]);</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p29"><span class="s2"><br>
+</span></p>
+<p class="p29"><span class="s16">// </span><span class="s17">三、</span><span class="s2">opeationListen </span><span class="s11">NSBlockOperation</span><span class="s2"> </span><span class="s9">.</span><span class="s5">completionBlock</span><span class="s10">监听一个操作的执行完毕，再执行操作</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p28"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">NSBlockOperation</span><span class="s9"> *operation = [</span><span class="s2">NSBlockOperation</span><span class="s9"> </span><span class="s6">blockOperationWithBlock</span><span class="s9">:^{</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>operation.</span><span class="s5">completionBlock</span><span class="s2"> = ^{</span></p>
+<p class="p4"><span class="s9"><span class="Apple-converted-space">        </span></span><span class="s2">// </span><span class="s10">监听完毕后，执行操作</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p28"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s2">NSOperationQueue</span><span class="s9"> *queue = [[</span><span class="s2">NSOperationQueue</span><span class="s9"> </span><span class="s6">alloc</span><span class="s9">] </span><span class="s6">init</span><span class="s9">];</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>[queue </span><span class="s6">addOperation</span><span class="s2">:operation];</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p33"><span class="s4">// </span><span class="s2">四、回主线程</span><span class="s10">更新界面</span></p>
+<p class="p10"><span class="s9"><span class="Apple-converted-space">    </span>[[</span><span class="s11">NSOperationQueue</span><span class="s9"> </span><span class="s2">mainQueue</span><span class="s9">] </span><span class="s2">addOperationWithBlock</span><span class="s9">:^{</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s16">// </span><span class="s31">…</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p34"><span class="s2"><br>
+</span></p>
+<p class="p8"><span class="s2">[5]SDWebImage<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s2">/**</span></p>
+<p class="p35"><span class="s2">保存到沙盒，有缓存机制</span></p>
+<p class="p36"><span class="s2">(lldb) po NSHomeDirectory()</span></p>
+<p class="p4"><span class="s2">*/</span></p>
+<p class="p4"><span class="s2">//cell</span><span class="s10">显示图片</span></p>
+<p class="p37"><span class="s9">[cell.</span><span class="s5">imageView</span><span class="s9"> </span><span class="s2">sd_setImageWithURL</span><span class="s9">:[</span><span class="s11">NSURL</span><span class="s9"> </span><span class="s6">URLWithString</span><span class="s9">:app.</span><span class="s12">icon</span><span class="s9">] </span><span class="s2">placeholderImage</span><span class="s9">:place];</span></p>
+<p class="p4"><span class="s2"><br>
+</span></p>
+<p class="p38"><span class="s4">//</span><span class="s10">显示动画</span><span class="s2">(SDWebImage</span><span class="s10">播放本地</span><span class="s2">gif)</span></p>
+<p class="p10"><span class="s9">[</span><span class="s7">self</span><span class="s9">.</span><span class="s12">imageView</span><span class="s9"> </span><span class="s8">sd_setImageWithURL</span><span class="s9">:[[</span><span class="s11">NSBundle</span><span class="s9"> </span><span class="s2">mainBundle</span><span class="s9">] </span><span class="s2">URLForResource</span><span class="s9">:</span><span class="s13">@"bd698b0fjw1e0ph8unyg6g.gif"</span><span class="s9"> </span><span class="s2">withExtension</span><span class="s9">:</span><span class="s7">nil</span><span class="s9">]];</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2">- (</span><span class="s7">void</span><span class="s2">)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder;</span></p>
+<p class="p6"><span class="s2">- (</span><span class="s7">void</span><span class="s2">)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options;</span></p>
+<p class="p6"><span class="s2">- (</span><span class="s7">void</span><span class="s2">)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(SDWebImageCompletionBlock)completedBlock;</span></p>
+<p class="p6"><span class="s2">- (</span><span class="s7">void</span><span class="s2">)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionBlock)completedBlock;</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+<p class="p6"><span class="s2"><br>
+</span></p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s6 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s9 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">UIApplication</span><span class="s2"> *app = [</span><span class="s1">UIApplication</span><span class="s2"> </span><span class="s3">sharedApplication</span><span class="s2">];</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s4">/**</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">     </span></span><span class="s1">中途改变状态栏</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">     </span>IOS7</span><span class="s6">下</span><span class="s1"> </span><span class="s6">下面代码无效</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s6">需设置</span><span class="s1">Info.plist </span><span class="s6">最后一行添加其中最后一行</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">     </span>View controller-based status bar appearance</span><span class="s6">为</span><span class="s1">NO </span><span class="s6">基于</span><span class="s1">Application</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span>app.</span><span class="s1">statusBarHidden</span><span class="s2"> = </span><span class="s7">NO</span><span class="s2">;</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space">    </span>app.</span><span class="s8">statusBarStyle</span><span class="s2"> = </span><span class="s1">UIStatusBarStyleLightContent</span><span class="s2">;</span><span class="s4">//</span><span class="s9">设置状态栏为白色</span></p>
+<p class="p5"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s6">带动画划出</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space">    </span>[app </span><span class="s1">setStatusBarHidden</span><span class="s2">:</span><span class="s7">YES</span><span class="s2"> </span><span class="s1">withAnimation</span><span class="s2">:</span><span class="s1">UIStatusBarAnimationSlide</span><span class="s2">];</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space">    </span>[app </span><span class="s1">setStatusBarStyle</span><span class="s2">:</span><span class="s1">UIStatusBarStyleLightContent</span><span class="s2"> </span><span class="s1">animated</span><span class="s2">:</span><span class="s7">YES</span><span class="s2">];</span></p>
+<p class="p5"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">//////</span></p>
+</body>
+</html>

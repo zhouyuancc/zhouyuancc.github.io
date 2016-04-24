@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s5 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; background-color: #fff995}
+    span.s6 {font-variant-ligatures: no-common-ligatures; background-color: #fff995}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s8 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s9 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s11 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s2">//</span><span class="s1">懒加载</span></p>
+<p class="p3"><span class="s1">- (NSArray *)carGroup</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">if</span><span class="s1">(_carGroup == </span><span class="s3">nil</span><span class="s1">)</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s5">取出</span><span class="s6">plist</span><span class="s5">全路径</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>NSString *path = [[NSBundle mainBundle] </span><span class="s6">pathForResource:</span><span class="s7">@"cars_total.plist"</span><span class="s1"> ofType:</span><span class="s3">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s8">从路径</span><span class="s1">path</span><span class="s8">中加载组</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>NSArray *array = [NSArray </span><span class="s6">arrayWithContentsOfFile</span><span class="s1">:path];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s9"><span class="Apple-converted-space">        </span></span><span class="s2">//</span><span class="s1">将</span><span class="s2">array</span><span class="s1">中所有字典转成模型对象，放到新的数组中</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>NSMutableArray *addArray = [NSMutableArray array];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">for</span><span class="s1">(NSDictionary *dict </span><span class="s3">in</span><span class="s1"> array)</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">//</span><span class="s11">创建模型对象</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>CarGroup *group = [CarGroup carGroupWithDict:dict];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">//</span><span class="s8">将模型对象添加到数组中</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>[addArray addObject:group];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">//</span><span class="s11">赋值</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>_carGroup = addArray;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">return</span><span class="s1"> _carGroup;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+</body>
+</html>

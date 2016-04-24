@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e; min-height: 21.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s4 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s11 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">——————ViewController.h</span></p>
+<p class="p2"><span class="s2">@interface</span><span class="s3"> ViewController : </span><span class="s1">UITableViewController</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">@end</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">——————Main.storyboard</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">View Controller -&gt; Class : ViewController</span></p>
+<p class="p1"><span class="s1">Table View -&gt; Style : Grouped</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">——————ViewController.m</span></p>
+<p class="p1"><span class="s1">#pragma mark - </span><span class="s4">数据源方法</span></p>
+<p class="p7"><span class="s5">//</span><span class="s1">有几个部分</span></p>
+<p class="p8"><span class="s1">- (</span><span class="s6">NSInteger</span><span class="s1">)numberOfSectionsInTableView:(</span><span class="s7">UITableView</span><span class="s1"> *)tableView</span></p>
+<p class="p8"><span class="s1">{</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">return</span><span class="s1"> </span><span class="s8">3</span><span class="s1">;</span></p>
+<p class="p8"><span class="s1">}</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p7"><span class="s5">//</span><span class="s1">一个部分有几行</span></p>
+<p class="p8"><span class="s1">- (</span><span class="s6">NSInteger</span><span class="s1">)tableView:(</span><span class="s7">UITableView</span><span class="s1"> *)tableView numberOfRowsInSection:(</span><span class="s6">NSInteger</span><span class="s1">)section</span></p>
+<p class="p8"><span class="s1">{</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">if</span><span class="s1">(section == </span><span class="s8">0</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">return</span><span class="s1"> </span><span class="s8">1</span><span class="s1">;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">else</span><span class="s1"> </span><span class="s2">if</span><span class="s1">(section==</span><span class="s8">1</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">return</span><span class="s1"> </span><span class="s8">2</span><span class="s1">;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">else</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">return</span><span class="s1"> </span><span class="s8">3</span><span class="s1">;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p8"><span class="s1">}</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p7"><span class="s5">//</span><span class="s1">每行数据</span></p>
+<p class="p8"><span class="s1">- (</span><span class="s7">UITableViewCell</span><span class="s1"> *)tableView:(</span><span class="s7">UITableView</span><span class="s1"> *)tableView cellForRowAtIndexPath:(</span><span class="s7">NSIndexPath</span><span class="s1"> *)indexPath</span></p>
+<p class="p8"><span class="s1">{</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">static</span><span class="s1"> </span><span class="s7">NSString</span><span class="s1"> *ID = </span><span class="s9">@"qq"</span><span class="s1">;</span></p>
+<p class="p9"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s7">UITableViewCell</span><span class="s3"> *cell = [tableView </span><span class="s1">dequeueReusableCellWithIdentifier</span><span class="s3">:ID];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">if</span><span class="s1">(cell == </span><span class="s2">nil</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p9"><span class="s3"><span class="Apple-converted-space">        </span>cell = [[</span><span class="s7">UITableViewCell</span><span class="s3"> </span><span class="s1">alloc</span><span class="s3">] </span><span class="s1">initWithStyle</span><span class="s3">:</span><span class="s1">UITableViewCellStyleDefault</span><span class="s3"> </span><span class="s1">reuseIdentifier</span><span class="s3">:ID];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">if</span><span class="s1">(indexPath.</span><span class="s6">section</span><span class="s1"> == </span><span class="s8">0</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>cell.</span><span class="s6">imageView</span><span class="s1">.</span><span class="s6">image</span><span class="s1"> = [</span><span class="s7">UIImage</span><span class="s1"> </span><span class="s10">imageNamed</span><span class="s1">:</span><span class="s9">@"found_icons_qzone"</span><span class="s1">];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>cell.</span><span class="s6">textLabel</span><span class="s1">.</span><span class="s6">text</span><span class="s1"> = </span><span class="s9">@"</span><span class="s11">好友状态</span><span class="s9">"</span><span class="s1">;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">return</span><span class="s1"> cell;</span></p>
+<p class="p8"><span class="s1">}</span></p>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s15 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s16 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Masonry</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 16/3/9.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2016</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"ViewController.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"Masonry.h"</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@interface</span><span class="s5"> </span><span class="s1">ViewController</span><span class="s5"> ()</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s4">@implementation</span><span class="s1"> ViewController</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)viewDidLoad {</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s4">super</span><span class="s5"> </span><span class="s1">viewDidLoad</span><span class="s5">];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// 1.</span><span class="s2">添加两个控件</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">UIView</span><span class="s1"> *blueView = [[</span><span class="s6">UIView</span><span class="s1"> </span><span class="s7">alloc</span><span class="s1">] </span><span class="s7">init</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>blueView.</span><span class="s8">backgroundColor</span><span class="s1"> = [</span><span class="s6">UIColor</span><span class="s1"> </span><span class="s7">blueColor</span><span class="s1">];</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span>blueView.</span><span class="s1">translatesAutoresizingMaskIntoConstraints</span><span class="s5"> = </span><span class="s4">NO</span><span class="s5">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s1">.</span><span class="s8">view</span><span class="s1"> </span><span class="s7">addSubview</span><span class="s1">:blueView];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">UIView</span><span class="s1"> *redView = [[</span><span class="s6">UIView</span><span class="s1"> </span><span class="s7">alloc</span><span class="s1">] </span><span class="s7">init</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>redView.</span><span class="s8">backgroundColor</span><span class="s1"> = [</span><span class="s6">UIColor</span><span class="s1"> </span><span class="s7">redColor</span><span class="s1">];</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span>redView.</span><span class="s1">translatesAutoresizingMaskIntoConstraints</span><span class="s5"> = </span><span class="s4">NO</span><span class="s5">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s1">.</span><span class="s8">view</span><span class="s1"> </span><span class="s7">addSubview</span><span class="s1">:redView];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//2.</span><span class="s2">添加约束</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">练习</span><span class="s1">1 </span><span class="s2">定宽高居中</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9">/*</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>[blueView mas_makeConstraints:^(MASConstraintMaker *make) {</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>make.width.mas_equalTo(100);//</span><span class="s2">约束宽度</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>make.height.mas_equalTo(100);//</span><span class="s2">约束高度</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>make.centerX.equalTo(self.view.mas_centerX);//get</span><span class="s2">写成</span><span class="s1">.mas_centerX</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>//</span><span class="s2">与其他控件有关</span><span class="s1">,</span><span class="s2">直接用</span><span class="s1">.equalTo,</span><span class="s2">不用</span><span class="s1">.mas_equalTo</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>make.centerY.equalTo(self.view.mas_centerY);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>*/</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">练习</span><span class="s1">2</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9">/*</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>[blueView mas_makeConstraints:^(MASConstraintMaker *make)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>//offset : </span><span class="s2">偏移</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>//</span><span class="s2">距离</span><span class="s1"> </span><span class="s2">左边框</span><span class="s1"> 30</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>make.left.equalTo(self.view.mas_left).offset(30);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>//</span><span class="s2">距离</span><span class="s1"> </span><span class="s2">底部边框</span><span class="s1"> 30</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>make.bottom.equalTo(self.view.mas_bottom).offset(-30);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>//</span><span class="s2">距离</span><span class="s1"> redView</span><span class="s2">左边框</span><span class="s1"> 30</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>make.right.equalTo(redView.mas_left).offset(-30);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>//</span><span class="s2">高</span><span class="s1"> 50</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>make.height.mas_equalTo(30);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>[redView mas_makeConstraints:^(MASConstraintMaker *make) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>make.right.equalTo(self.view.mas_right).offset(-30);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>make.bottom.equalTo(self.view.mas_bottom).offset(-30);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>make.height.equalTo(blueView.mas_height);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>make.width.equalTo(blueView.mas_width);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>*/</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">练习</span><span class="s1">3</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>[blueView </span><span class="s10">mas_makeConstraints</span><span class="s1">:^(</span><span class="s11">MASConstraintMaker</span><span class="s1"> *make) {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>make.</span><span class="s12">left</span><span class="s1">.</span><span class="s10">equalTo</span><span class="s1">(</span><span class="s4">self</span><span class="s1">.</span><span class="s8">view</span><span class="s1">.</span><span class="s12">mas_left</span><span class="s1">).</span><span class="s10">offset</span><span class="s1">(</span><span class="s13">30</span><span class="s1">);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>make.</span><span class="s12">top</span><span class="s1">.</span><span class="s10">equalTo</span><span class="s1">(</span><span class="s4">self</span><span class="s1">.</span><span class="s8">view</span><span class="s1">.</span><span class="s12">mas_top</span><span class="s1">).</span><span class="s10">offset</span><span class="s1">(</span><span class="s13">30</span><span class="s1">);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>make.</span><span class="s12">right</span><span class="s1">.</span><span class="s10">equalTo</span><span class="s1">(</span><span class="s4">self</span><span class="s1">.</span><span class="s8">view</span><span class="s1">.</span><span class="s12">mas_right</span><span class="s1">).</span><span class="s10">offset</span><span class="s1">(-</span><span class="s13">30</span><span class="s1">);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>make.</span><span class="s12">height</span><span class="s1">.</span><span class="s14">mas_equalTo</span><span class="s1">(</span><span class="s13">50</span><span class="s1">);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>[redView </span><span class="s10">mas_makeConstraints</span><span class="s1">:^(</span><span class="s11">MASConstraintMaker</span><span class="s1"> *make) {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>make.</span><span class="s12">right</span><span class="s1">.</span><span class="s10">equalTo</span><span class="s1">(blueView.</span><span class="s12">mas_right</span><span class="s1">);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>make.</span><span class="s12">top</span><span class="s1">.</span><span class="s10">equalTo</span><span class="s1">(blueView.</span><span class="s12">mas_bottom</span><span class="s1">).</span><span class="s10">offset</span><span class="s1">(</span><span class="s13">30</span><span class="s1">);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>make.</span><span class="s12">height</span><span class="s1">.</span><span class="s10">equalTo</span><span class="s1">(blueView.</span><span class="s12">mas_height</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>make.width.equalTo(blueView.mas_);</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">//redView</span><span class="s2">宽度是</span><span class="s1">blueView</span><span class="s2">的一半</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>make.</span><span class="s12">left</span><span class="s1">.</span><span class="s10">equalTo</span><span class="s1">(blueView.</span><span class="s12">mas_centerX</span><span class="s1">);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p9"><span class="s15"><span class="Apple-converted-space">    </span></span><span class="s16">// </span><span class="s1">将之前的约束全部删除</span><span class="s16">,</span><span class="s1">添加新的约束</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// [blueView mas_remakeConstraints:&lt;#^(MASConstraintMaker *make)block#&gt;]</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p9"><span class="s15"><span class="Apple-converted-space">    </span></span><span class="s16">// </span><span class="s1">如果之前已经有约束</span><span class="s16">,</span><span class="s1">则更新新的约束</span><span class="s16">,</span><span class="s1">如果没有约束</span><span class="s16">,</span><span class="s1">则添加约束</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// blueView mas_updateConstraints:&lt;#^(MASConstraintMaker *make)block#&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">@end</span></p>
+</body>
+</html>

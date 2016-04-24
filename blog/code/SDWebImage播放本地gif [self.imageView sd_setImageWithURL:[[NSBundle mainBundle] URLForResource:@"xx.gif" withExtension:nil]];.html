@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s2 {font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">#import </span><span class="s2">"UIImage+GIF.h"</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s2">- (</span><span class="s3">void</span><span class="s2">)touchesBegan:(</span><span class="s4">NSSet</span><span class="s2"> *)touches withEvent:(</span><span class="s4">UIEvent</span><span class="s2"> *)event {</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s6">//</span><span class="s2">只显示初始图片</span></p>
+<p class="p6"><span class="s2">//<span class="Apple-converted-space">    </span>[self.imageView setImage:[UIImage imageNamed:@"bd698b0fjw1e0ph8unyg6g.gif"]];</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s6">//</span><span class="s2">显示动画(SDWebImage播放本地gif)</span></p>
+<p class="p7"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s7">.</span><span class="s8">imageView</span><span class="s7"> </span><span class="s9">sd_setImageWithURL</span><span class="s7">:[[</span><span class="s4">NSBundle</span><span class="s7"> </span><span class="s2">mainBundle</span><span class="s7">] </span><span class="s2">URLForResource</span><span class="s7">:</span><span class="s10">@"bd698b0fjw1e0ph8unyg6g.gif"</span><span class="s7"> </span><span class="s2">withExtension</span><span class="s7">:</span><span class="s3">nil</span><span class="s7">]];</span></p>
+<p class="p3"><span class="s2">}</span></p>
+</body>
+</html>

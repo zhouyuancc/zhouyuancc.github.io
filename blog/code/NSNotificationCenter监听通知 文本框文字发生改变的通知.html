@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #539aa4}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s4 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)viewDidLoad {</span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span>[</span><span class="s2">super</span><span class="s3"> </span><span class="s1">viewDidLoad</span><span class="s3">];</span></p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">// Do any additional setup after loading the view.</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">    </span>/**</span></p>
+<p class="p3"><span class="s1">// <span class="Apple-converted-space">    </span>addtarget</span><span class="s4">只能监听点击事件，不能监听文字</span></p>
+<p class="p3"><span class="s1">// <span class="Apple-converted-space">    </span></span><span class="s4">继承自</span><span class="s1">UIControl</span></p>
+<p class="p3"><span class="s1">// <span class="Apple-converted-space">    </span>*/</span></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">    </span>self.accountField.delegate = self;//</span><span class="s4">文本框代理</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s6">//</span><span class="s1">监听通知</span><span class="s6"> //</span><span class="s1">文本框文字发生改变的通知</span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span>[[</span><span class="s7">NSNotificationCenter</span><span class="s3"> </span><span class="s1">defaultCenter</span><span class="s3">] </span><span class="s1">addObserver</span><span class="s3">:</span><span class="s2">self</span><span class="s3"> </span><span class="s1">selector</span><span class="s3">:</span><span class="s2">@selector</span><span class="s3">(textChange) </span><span class="s1">name</span><span class="s3">:</span><span class="s8">UITextFieldTextDidChangeNotification</span><span class="s3"> </span><span class="s1">object</span><span class="s3">:</span><span class="s2">self</span><span class="s3">.</span><span class="s9">accountField</span><span class="s3">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span>[[</span><span class="s7">NSNotificationCenter</span><span class="s3"> </span><span class="s1">defaultCenter</span><span class="s3">] </span><span class="s1">addObserver</span><span class="s3">:</span><span class="s2">self</span><span class="s3"> </span><span class="s1">selector</span><span class="s3">:</span><span class="s2">@selector</span><span class="s3">(textChange) </span><span class="s1">name</span><span class="s3">:</span><span class="s8">UITextFieldTextDidChangeNotification</span><span class="s3"> </span><span class="s1">object</span><span class="s3">:</span><span class="s2">self</span><span class="s3">.</span><span class="s9">pwdField</span><span class="s3">];</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p3"><span class="s1">/**</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space"> </span></span><span class="s1">文本框的文字发生改变的时候调用</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p1"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)textChange</span></p>
+<p class="p1"><span class="s1">{</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s6">//</span><span class="s1">控制按钮的状态</span></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">    </span>if(self.accountField.text.length &gt; 0 &amp;&amp; self.pwdField.text.length &gt; 0)</span></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">    </span>{</span></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">        </span>self.loginBtn.enabled = YES;</span></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">    </span>}</span></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">    </span>else</span></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">    </span>{</span></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">        </span>self.loginBtn.enabled = NO;</span></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">    </span>}</span></p>
+<p class="p6"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s2">self</span><span class="s3">.</span><span class="s1">loginBtn</span><span class="s3">.</span><span class="s8">enabled</span><span class="s3"> = (</span><span class="s2">self</span><span class="s3">.</span><span class="s1">accountField</span><span class="s3">.</span><span class="s8">text</span><span class="s3">.</span><span class="s8">length</span><span class="s3"> &amp;&amp; </span><span class="s2">self</span><span class="s3">.</span><span class="s1">pwdField</span><span class="s3">.</span><span class="s8">text</span><span class="s3">.</span><span class="s8">length</span><span class="s3">);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)dealloc</span></p>
+<p class="p1"><span class="s1">{</span></p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s4">必须</span><span class="s1"> </span><span class="s4">移除监听</span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span>[[</span><span class="s7">NSNotificationCenter</span><span class="s3"> </span><span class="s1">defaultCenter</span><span class="s3">] </span><span class="s1">removeObserver</span><span class="s3">:</span><span class="s2">self</span><span class="s3">];</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">////</span><span class="s4">文本框代理开始编辑</span><span class="s1">//accountField</span><span class="s4">文本框</span></p>
+<p class="p3"><span class="s1">//- (void)textFieldDidBeginEditing:(UITextField *)textField</span></p>
+<p class="p3"><span class="s1">//{</span></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"---</span><span class="s4">开始编辑</span><span class="s1">");</span></p>
+<p class="p3"><span class="s1">//}</span></p>
+<p class="p3"><span class="s1">////</span><span class="s4">文本框代理不允许输入</span><span class="s1">//accountField</span><span class="s4">文本框</span></p>
+<p class="p3"><span class="s1">//-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string</span></p>
+<p class="p3"><span class="s1">//{</span></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">    </span>return NO;</span></p>
+<p class="p3"><span class="s1">//}</span></p>
+</body>
+</html>

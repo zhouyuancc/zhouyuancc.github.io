@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #539aa4}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; background-color: #e0edd4}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #e0edd4}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421; background-color: #e0edd4}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s5 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s12 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s13 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s15 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s16 {font-variant-ligatures: no-common-ligatures; background-color: #e0edd4}
+    span.s17 {font-variant-ligatures: no-common-ligatures; color: #6122ae; background-color: #e0edd4}
+    span.s18 {font-variant-ligatures: no-common-ligatures; color: #3c828c; background-color: #e0edd4}
+    span.s19 {font-variant-ligatures: no-common-ligatures; color: #294c50; background-color: #e0edd4}
+    span.s20 {font-variant-ligatures: no-common-ligatures; color: #000000; background-color: #e0edd4}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ZYStatusTool.m</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/10/9.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"ZYStatusTool.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"ZYHttpTool.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"ZYAccountTool.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"ZYAccount.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"ZYStatus.h"</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"ZYStatusParam.h"</span></p>
+<p class="p4"><span class="s1">————————————————————————————————————————————————————————</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"MJExtension.h"</span><span class="s4">//</span><span class="s5">模型转字典</span></p>
+<p class="p4"><span class="s1">————————————————————————————————————————————————————————</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">@implementation</span><span class="s6"> ZYStatusTool</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">+(</span><span class="s7">void</span><span class="s1">)newStatusWithSinceId:(NSString *)sinceId success:(</span><span class="s7">void</span><span class="s1"> (^)(NSArray *))success failure:(</span><span class="s7">void</span><span class="s1"> (^)(</span><span class="s8">NSError</span><span class="s1"> *))failure</span></p>
+<p class="p6"><span class="s1">{</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">创建参数模型</span></p>
+<p class="p7"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">ZYStatusParam</span><span class="s6"> *param = [[</span><span class="s1">ZYStatusParam</span><span class="s6"> </span><span class="s9">alloc</span><span class="s6">] </span><span class="s9">init</span><span class="s6">];</span></p>
+<p class="p8"><span class="s6"><span class="Apple-converted-space">    </span>param.</span><span class="s1">access_token</span><span class="s6"> = [</span><span class="s10">ZYAccountTool</span><span class="s6"> </span><span class="s11">account</span><span class="s6">].</span><span class="s1">access_token</span><span class="s6">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s12"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s1">创建一个参数字典</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">if</span><span class="s1">(sinceId)</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>param.</span><span class="s14">since_id</span><span class="s1"> = sinceId;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>success:^(id responseObject) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>//</span><span class="s2">请求成功的回调</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">void</span><span class="s1"> (^successHttp)(</span><span class="s7">id</span><span class="s1">) = ^(</span><span class="s7">id</span><span class="s1"> responseObject) {</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">        </span></span><span class="s1">/***********************/</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>HttpTool</span><span class="s2">请求成功</span><span class="s1"> </span><span class="s2">后</span><span class="s1"> </span><span class="s2">的</span><span class="s1"> </span><span class="s2">回调</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">        </span></span><span class="s1">/***********************/</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">请求成功代码</span><span class="s1"> </span><span class="s2">先保存</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s12"><span class="Apple-converted-space">        </span></span><span class="s13">//</span><span class="s1">获取到微博数据</span><span class="s13"> </span><span class="s1">转换成模型</span></p>
+<p class="p9"><span class="s6"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">获取微博字典数组</span></p>
+<p class="p10"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">NSArray</span><span class="s1"> *dictArr = responseObject[</span><span class="s15">@"statuses"</span><span class="s1">];</span></p>
+<p class="p10"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">/**</span></p>
+<p class="p11"><span class="s13"><span class="Apple-converted-space">         </span></span><span class="s1">把字典数组转换成模型那个数组</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p6"><span class="s16"><span class="Apple-converted-space">        </span></span><span class="s17">NSArray</span><span class="s16"> *statuses = (</span><span class="s17">NSMutableArray</span><span class="s16"> *)[</span><span class="s18">ZYStatus</span><span class="s16"> </span><span class="s19">objectArrayWithKeyValuesArray</span><span class="s16">:dictArr];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">if</span><span class="s1">(success)</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>success(statuses);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p4"><span class="s1">————————————————————————————————————————————————————————</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">/**</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">     </span>param.keyValues</span><span class="s2">模型转字典</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p4"><span class="s1">————————————————————————————————————————————————————————</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">发送</span><span class="s1">get</span><span class="s2">请求</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p4"><span class="s1">————————————————————————————————————————————————————————</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">    </span>[</span><span class="s10">ZYHttpTool</span><span class="s6"> </span><span class="s11">GET</span><span class="s6">:</span><span class="s1">@"https://api.weibo.com/2/statuses/friends_timeline.json"</span><span class="s6"> </span><span class="s11">parameters</span><span class="s6">:</span><span class="s20">param.</span><span class="s19">keyValues</span><span class="s6"> </span><span class="s11">success</span><span class="s6">:successHttp </span><span class="s11">failure</span><span class="s6">:^(</span><span class="s8">NSError</span><span class="s6"> *error) {</span></p>
+<p class="p4"><span class="s1">————————————————————————————————————————————————————————</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">if</span><span class="s1"> (failure) {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>failure(error);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">@end</span></p>
+</body>
+</html>

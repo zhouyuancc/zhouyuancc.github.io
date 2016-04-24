@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s7 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>TCP:</span><span class="s1">传输协议</span><span class="s2">(</span><span class="s1">用什么样的方式进行交互</span><span class="s2">)</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">  </span>HTTP:</span><span class="s3">协议（数据格式）请求头</span><span class="s4">"content-type"</span><span class="s1"> content-size </span><span class="s3">编码方式</span><span class="s1">URL</span><span class="s3">编码</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">比如从广州到北京</span><span class="s2"> </span><span class="s1">坐飞机</span><span class="s2"> </span><span class="s1">高铁</span><span class="s2"> </span><span class="s1">火车（传输协议）</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">到了北京后，进行交流用英语</span><span class="s2"> </span><span class="s1">国语，</span><span class="s2">(HTTP)</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">在开发过程中，经常发送</span><span class="s2">HTTP</span><span class="s1">请求，获取服务器返回的数据</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">访问不了数据：问题可能是</span><span class="s2"> </span><span class="s5">"</span><span class="s4">服务器没有开启</span><span class="s5">"</span></p>
+<p class="p4"><span class="s6"><span class="Apple-converted-space">  </span>http:</span><span class="s1">//192.168.0.11</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">•http</span><span class="s3">与</span><span class="s1">socket</span><span class="s3">的区别</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>&gt;http</span><span class="s3">是基本</span><span class="s1">socket</span><span class="s3">的实现</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span>&gt;http</span><span class="s1">建立的连接称为短连接</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span>&gt;socket</span><span class="s1">建立的连接为长连接</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span>&gt;http</span><span class="s1">传输的数据格式是已经</span><span class="s7">'</span><span class="s8">规定好</span><span class="s7">'</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s3">请求头</span><span class="s1"> content-type content-lengh</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">响应头</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span>&gt;socket</span><span class="s1">实现数据传输是最原始，</span><span class="s2">socket</span><span class="s1">实现的数据传输格式可</span><span class="s5">"</span><span class="s4">自定义</span><span class="s5">"</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s3">登录</span><span class="s1">:iam: </span><span class="s3">聊天消息</span><span class="s1">msg:</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>&gt;http</span><span class="s3">和</span><span class="s1">socket</span><span class="s3">都是基本</span><span class="s4">"tcp"</span></p>
+</body>
+</html>

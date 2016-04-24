@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Monaco; color: #f5f5f5; background-color: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Monaco; color: #f5f5f5; min-height: 25.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Monaco; color: #f5f5f5; background-color: #000000; min-height: 25.0px}
+    p.p4 {margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; min-height: 29.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px Times; min-height: 29.0px}
+    p.p6 {margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times}
+    p.p7 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times}
+    p.p8 {margin: 0.0px 0.0px 6.0px 0.0px; font: 12.0px Times; min-height: 14.0px}
+    p.p9 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px 'Songti SC'}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier}
+    p.p11 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Courier}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Heiti SC Light'}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier; min-height: 14.0px}
+    p.p14 {margin: 0.0px 0.0px 16.6px 0.0px; font: 10.0px Times}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-kerning: none; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; background-color: #b92d5d}
+    span.s4 {font-kerning: none}
+    span.s5 {text-decoration: underline ; font-kerning: none; color: #042eee}
+    span.s6 {font: 24.0px 'Songti SC'; text-decoration: underline ; font-kerning: none}
+    span.s7 {text-decoration: underline ; font-kerning: none}
+    span.s8 {font: 12.0px 'Songti SC'; font-kerning: none}
+    span.s9 {font: 12.0px Times; text-decoration: underline ; font-kerning: none; color: #042eee}
+    span.s10 {font: 12.0px Times; font-kerning: none}
+    span.s11 {font: 12.0px 'Heiti SC Light'; font-kerning: none}
+    span.s12 {font: 12.0px Courier; font-kerning: none}
+    span.s13 {font: 10.0px 'Songti SC'; font-kerning: none}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>./bin/mysqladmin -u root password 'new-password'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>./bin/mysqladmin -u root -h silangchideMacBook-Air.local password 'new-password'</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:mysql-5.6.24-osx10.9-x86_64 Zhou$ sudo mkdir /usr/local</span></p>
+<p class="p1"><span class="s1">mkdir: /usr/local: File exists</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:mysql-5.6.24-osx10.9-x86_64 Zhou$ sudo mv /Users/Zhou/Downloads/mysql-5.6.24-osx10.9-x86_64 /usr/local/mysql</span></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:mysql-5.6.24-osx10.9-x86_64 Zhou$ cd /usr/local</span></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:local Zhou$ sudo chown -R root:wheel mysql</span></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:local Zhou$ cd /usr/local/mysql</span></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:mysql Zhou$ sudo scripts/mysql_install_db --user=mysql</span></p>
+<p class="p1"><span class="s1">Installing MySQL system tables...2016-03-11 21:58:56 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 0 [Note] ./bin/mysqld (mysqld 5.6.24) starting as process 762 ...</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Using atomics to ref count buffer pool pages</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: The InnoDB memory heap is disabled</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Memory barrier is not used</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Compressed tables use zlib 1.2.3</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Using CPU crc32 instructions</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Initializing buffer pool, size = 128.0M</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Completed initialization of buffer pool</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: The first specified data file ./ibdata1 did not exist: a new database to be created!</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Setting file ./ibdata1 size to 12 MB</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Database physically writes the file full: wait...</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Setting log file ./ib_logfile101 size to 48 MB</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Setting log file ./ib_logfile1 size to 48 MB</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Renaming log file ./ib_logfile101 to ./ib_logfile0</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Warning] InnoDB: New log files created, LSN=45781</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Doublewrite buffer not found: creating new</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Doublewrite buffer created</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: 128 rollback segment(s) are active.</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Warning] InnoDB: Creating foreign key constraint system tables.</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Foreign key constraint system tables created</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Creating tablespace and datafile system tables.</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Tablespace and datafile system tables created.</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: Waiting for purge to start</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:56 762 [Note] InnoDB: 5.6.24 started; log sequence number 0</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:57 762 [Note] Binlog end</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:57 762 [Note] InnoDB: FTS optimize thread exiting.</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:57 762 [Note] InnoDB: Starting shutdown...</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 762 [Note] InnoDB: Shutdown completed; log sequence number 1625977</span></p>
+<p class="p1"><span class="s1">OK</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">Filling help tables...2016-03-11 21:58:59 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 0 [Note] ./bin/mysqld (mysqld 5.6.24) starting as process 763 ...</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: Using atomics to ref count buffer pool pages</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: The InnoDB memory heap is disabled</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: Memory barrier is not used</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: Compressed tables use zlib 1.2.3</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: Using CPU crc32 instructions</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: Initializing buffer pool, size = 128.0M</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: Completed initialization of buffer pool</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: Highest supported file format is Barracuda.</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: 128 rollback segment(s) are active.</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: Waiting for purge to start</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: 5.6.24 started; log sequence number 1625977</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] Binlog end</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: FTS optimize thread exiting.</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:58:59 763 [Note] InnoDB: Starting shutdown...</span></p>
+<p class="p1"><span class="s1">2016-03-11 21:59:00 763 [Note] InnoDB: Shutdown completed; log sequence number 1625987</span></p>
+<p class="p1"><span class="s1">OK</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">To start mysqld at boot time you have to copy</span></p>
+<p class="p1"><span class="s1">support-files/mysql.server to the right place for your system</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !</span></p>
+<p class="p1"><span class="s1">To do so, start the server, then issue the following commands:</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>./bin/mysqladmin -u root password 'new-password'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>./bin/mysqladmin -u root -h silangchideMacBook-Air.local password 'new-password'</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">Alternatively you can run:</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>./bin/mysql_secure_installation</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">which will also give you the option of removing the test</span></p>
+<p class="p1"><span class="s1">databases and anonymous user created by default.<span class="Apple-converted-space">  </span>This is</span></p>
+<p class="p1"><span class="s1">strongly recommended for production servers.</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">See the manual for more instructions.</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">You can start the MySQL daemon with:</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>cd . ; ./bin/mysqld_safe &amp;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">You can test the MySQL daemon with mysql-test-run.pl</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>cd mysql-test ; perl mysql-test-run.pl</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">Please report any problems at http://bugs.mysql.com/</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">The latest information about MySQL is available on the web at</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>http://www.mysql.com</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">Support MySQL by buying support/licenses at http://shop.mysql.com</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">New default config file was created as ./my.cnf and</span></p>
+<p class="p1"><span class="s1">will be used by default by the server when you start it.</span></p>
+<p class="p1"><span class="s1">You may edit this file to change server settings</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:mysql Zhou$ cd /usr/local/mysql/bin<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:bin Zhou$ ./mysqladmin -u root password 0000</span></p>
+<p class="p1"><span class="s1">./mysqladmin: connect to server at 'localhost' failed</span></p>
+<p class="p1"><span class="s1">error: 'Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)'</span></p>
+<p class="p1"><span class="s1">Check that mysqld is running and that the socket: '/tmp/mysql.sock' exists!</span></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:bin Zhou$ cd /usr/local/mysql</span></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:mysql Zhou$ sudo support-files/mysql.server start</span></p>
+<p class="p1"><span class="s1">Password:</span></p>
+<p class="p1"><span class="s1">Sorry, try again.</span></p>
+<p class="p1"><span class="s1">Password:</span></p>
+<p class="p1"><span class="s1">Starting MySQL</span></p>
+<p class="p1"><span class="s1">. SUCCESS!<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:mysql Zhou$ sudo support-files/mysql.server status</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>SUCCESS! MySQL running (893)</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:bin Zhou$ ls</span></p>
+<p class="p1"><span class="s1">innochecksum<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqlaccess</span></p>
+<p class="p1"><span class="s1">msql2mysql<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqlaccess.conf</span></p>
+<p class="p1"><span class="s1">my_print_defaults<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqladmin</span></p>
+<p class="p1"><span class="s1">myisam_ftdump<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqlbinlog</span></p>
+<p class="p1"><span class="s1">myisamchk<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqlbug</span></p>
+<p class="p1"><span class="s1">myisamlog<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqlcheck</span></p>
+<p class="p1"><span class="s1">myisampack<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqld</span></p>
+<p class="p1"><span class="s1">mysql<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqld-debug</span></p>
+<p class="p1"><span class="s1">mysql_client_test<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqld_multi</span></p>
+<p class="p1"><span class="s1">mysql_client_test_embedded<span class="Apple-tab-span">	</span>mysqld_safe</span></p>
+<p class="p1"><span class="s1">mysql_config<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqldump</span></p>
+<p class="p1"><span class="s1">mysql_config_editor<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqldumpslow</span></p>
+<p class="p1"><span class="s1">mysql_convert_table_format<span class="Apple-tab-span">	</span>mysqlhotcopy</span></p>
+<p class="p1"><span class="s1">mysql_embedded<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqlimport</span></p>
+<p class="p1"><span class="s1">mysql_find_rows<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqlshow</span></p>
+<p class="p1"><span class="s1">mysql_fix_extensions<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqlslap</span></p>
+<p class="p1"><span class="s1">mysql_plugin<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mysqltest</span></p>
+<p class="p1"><span class="s1">mysql_secure_installation<span class="Apple-tab-span">	</span>mysqltest_embedded</span></p>
+<p class="p1"><span class="s1">mysql_setpermission<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>perror</span></p>
+<p class="p1"><span class="s1">mysql_tzinfo_to_sql<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>replace</span></p>
+<p class="p1"><span class="s1">mysql_upgrade<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>resolve_stack_dump</span></p>
+<p class="p1"><span class="s1">mysql_waitpid<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>resolveip</span></p>
+<p class="p1"><span class="s1">mysql_zap</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:bin Zhou$ cd /usr/local/mysql</span></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:mysql Zhou$ sudo support-files/mysql.server status</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>SUCCESS! MySQL running (893)</span></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:mysql Zhou$<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s2"><b></b></span><br></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:~ Zhou$ cd /usr/local/mysql/bin</span></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:bin Zhou$ ./mysqladmin -u root </span><span class="s3">password 0</span></p>
+<p class="p1"><span class="s1">Warning: Using a password on the command line interface can be insecure.</span></p>
+<p class="p1"><span class="s1">silangchideMacBook-Air:bin Zhou$ ./mysql -u root -p</span></p>
+<p class="p1"><span class="s1">Enter password:<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">Welcome to the MySQL monitor.<span class="Apple-converted-space">  </span>Commands end with ; or \g.</span></p>
+<p class="p1"><span class="s1">Your MySQL connection id is 2</span></p>
+<p class="p1"><span class="s1">Server version: 5.6.24 MySQL Community Server (GPL)</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">Oracle is a registered trademark of Oracle Corporation and/or its</span></p>
+<p class="p1"><span class="s1">affiliates. Other names may be trademarks of their respective</span></p>
+<p class="p1"><span class="s1">owners.</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">mysql&gt;<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s4"><b></b></span><br></p>
+<p class="p6"><span class="s5"><a href="http://www.widlabs.com/article/mac-os-x-install-mysql-with-tar-gz"><b>Mac OS X </b><span class="s6"><b>下</b></span><span class="s7"><b> TAR.GZ </b></span><span class="s6"><b>方式安装</b></span><span class="s7"><b> MySQL</b></span></a></span><span class="s2"><b>http://www.widlabs.com/article/mac-os-x-install-mysql-with-tar-gz</b></span></p>
+<p class="p7"><span class="s8"><b>注意</b></span><span class="s4">: </span><span class="s8">本篇文章适用与</span><span class="s4"> MySQL 5.6 </span><span class="s8">版本的安装</span><span class="s4">, </span><span class="s8">但已<b>不</b>再适用</span><span class="s4"> 5.7 </span><span class="s8">的安装</span><span class="s4">, 5.7 </span><span class="s8">的安装方式请参见</span><span class="s4">:</span><span class="s8">《<a href="http://www.widlabs.com/article/mac-os-x-install-mysql-57-with-tar-gz"><span class="s9">Mac OS X </span><span class="s5">下</span><span class="s9"> TAR.GZ </span><span class="s5">方式安装</span><span class="s9"> MySQL 5.7</span></a>》</span></p>
+<p class="p8"><span class="s4"></span><br></p>
+<p class="p9"><span class="s4">在</span><span class="s10"> Mac </span><span class="s4">系统上</span><span class="s10">, </span><span class="s4">安装</span><span class="s10"> MySQL Server </span><span class="s4">一般是用</span><span class="s10"> DMG </span><span class="s4">包在图形化界面下按提示安装</span><span class="s10">, </span><span class="s4">此外</span><span class="s10"> MySQL </span><span class="s4">还提供了</span><span class="s10"> Compressed TAR Archive </span><span class="s4">二进制包安装方式</span><span class="s10">, </span><span class="s4">即免安装解压运行版</span><span class="s10">, </span><span class="s4">相比</span><span class="s10"> DMG </span><span class="s4">包</span><span class="s10">, </span><span class="s4">免安装版过程更为简洁</span><span class="s10">, </span><span class="s4">纯命令行操作</span><span class="s10">, </span><span class="s4">更符合码客们的折腾精神。</span></p>
+<p class="p10"><span class="s11">系统环境</span><span class="s4">: OS X Yosemite 10.10.3</span></p>
+<p class="p10"><span class="s11">登录用户</span><span class="s4">: wid (</span><span class="s11">有</span><span class="s4"> sudo </span><span class="s11">权限</span><span class="s4">)</span></p>
+<p class="p10"><span class="s4">MySQL</span><span class="s11">版本</span><span class="s4">: 5.6.24 (mysql-5.6.24-osx10.9-x86_64.tar.gz)</span></p>
+<p class="p10"><span class="s4">MySQL</span><span class="s11">下载</span><span class="s4">: http://dev.mysql.com/downloads/mysql/</span></p>
+<p class="p7"><span class="s8">找到下载的</span><span class="s4"> MySQL tar.gz </span><span class="s8">文件位置</span><span class="s4">, </span><span class="s8">浏览器下载的一般在当前用户的</span><span class="s4"> Downloads </span><span class="s8">目录</span><span class="s4">, </span><span class="s8">即</span><span class="s4"> </span><span class="s12">/Users/&lt;YourName&gt;/Downloads</span><span class="s4">, </span><span class="s8">进入终端</span><span class="s4">, </span><span class="s8">解压</span><span class="s4"> tar.gz </span><span class="s8">文件</span><span class="s4">:</span></p>
+<p class="p10"><span class="s4">cd /Users/&lt;YourName&gt;/Downloads</span></p>
+<p class="p10"><span class="s4">tar zxvf mysql-5.6.24-osx10.9-x86_64.tar.gz</span></p>
+<p class="p11"><span class="s8">解压完成后得到</span><span class="s10"> </span><span class="s4">mysql-5.6.24-osx10.9-x86_64</span><span class="s10"> </span><span class="s8">目录</span><span class="s10">, </span><span class="s8">移动解压目录到</span><span class="s10"> MySQL </span><span class="s8">默认安装路径</span><span class="s10"> </span><span class="s4">/usr/local/mysql</span><span class="s10"> </span><span class="s8">下</span><span class="s10">, </span><span class="s4">/usr/local</span><span class="s10"> </span><span class="s8">路径不存在时</span><span class="s10">, </span><span class="s8">先</span><span class="s10"> </span><span class="s4">sudo mkdir /usr/local</span><span class="s10"> </span><span class="s8">创建。</span></p>
+<p class="p12"><span class="s12"># </span><span class="s4">移动解压后的二进制包到安装目录</span></p>
+<p class="p10"><span class="s4">sudo mv mysql-5.6.24-osx10.9-x86_64 /usr/local/mysql</span></p>
+<p class="p13"><span class="s4"></span><br></p>
+<p class="p12"><span class="s12"># </span><span class="s4">更改</span><span class="s12"> mysql </span><span class="s4">安装目录所属用户与用户组</span></p>
+<p class="p10"><span class="s4">cd /usr/local</span></p>
+<p class="p10"><span class="s4">sudo chown -R root:wheel mysql</span></p>
+<p class="p13"><span class="s4"></span><br></p>
+<p class="p10"><span class="s4"># </span><span class="s11">执行</span><span class="s4"> scripts </span><span class="s11">目录下的</span><span class="s4"> mysql_install_db </span><span class="s11">脚本完成一些默认的初始化</span><span class="s4">(</span><span class="s11">创建默认配置文件、授权表等</span><span class="s4">)</span></p>
+<p class="p10"><span class="s4">cd /usr/local/mysql</span></p>
+<p class="p10"><span class="s4">sudo scripts/mysql_install_db --user=mysql</span></p>
+<p class="p13"><span class="s4"></span><br></p>
+<p class="p10"><span class="s11">注意</span><span class="s4">: MySQL 5.7.6 </span><span class="s11">以上版本取消了</span><span class="s4"> scripts </span><span class="s11">目录</span><span class="s4">, </span><span class="s11">初始化命令改成了</span></p>
+<p class="p10"><span class="s4">sudo bin/mysqld --initialize --user=mysql</span></p>
+<p class="p13"><span class="s4"></span><br></p>
+<p class="p9"><span class="s4">安装完成</span><span class="s10">, </span><span class="s4">测试启动、重启与停止</span><span class="s10">:</span></p>
+<p class="p10"><span class="s4">cd /usr/local/mysql</span></p>
+<p class="p13"><span class="s4"></span><br></p>
+<p class="p10"><span class="s4"># </span><span class="s11">启动</span></p>
+<p class="p10"><span class="s4">sudo support-files/mysql.server start</span></p>
+<p class="p13"><span class="s4"></span><br></p>
+<p class="p10"><span class="s4"># </span><span class="s11">重启</span></p>
+<p class="p10"><span class="s4">sudo support-files/mysql.server restart</span></p>
+<p class="p13"><span class="s4"></span><br></p>
+<p class="p10"><span class="s4"># </span><span class="s11">停止</span></p>
+<p class="p10"><span class="s4">sudo support-files/mysql.server stop</span></p>
+<p class="p13"><span class="s4"></span><br></p>
+<p class="p10"><span class="s4"># </span><span class="s11">检查</span><span class="s4"> MySQL </span><span class="s11">运行状态</span></p>
+<p class="p10"><span class="s4">sudo support-files/mysql.server status</span></p>
+<p class="p8"><span class="s4"></span><br></p>
+<p class="p14"><span class="s13"><b>初始化</b></span><span class="s4"><b> MySQL root </b></span><span class="s13"><b>密码</b></span></p>
+<p class="p10"><span class="s4"># </span><span class="s11">需要</span><span class="s4"> MySQL </span><span class="s11">在运行状态执行</span></p>
+<p class="p10"><span class="s4">cd /usr/local/mysql/bin</span></p>
+<p class="p10"><span class="s4">./mysqladmin -u root password &lt;your-password&gt;</span></p>
+<p class="p14"><span class="s13"><b>通过自带的</b></span><span class="s4"><b> MySQL Client </b></span><span class="s13"><b>连接数据库</b></span></p>
+<p class="p10"><span class="s4">cd /usr/local/mysql/bin</span></p>
+<p class="p10"><span class="s4">./mysql -u root -p</span></p>
+<p class="p10"><span class="s4">&lt;your-password&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+</body>
+</html>

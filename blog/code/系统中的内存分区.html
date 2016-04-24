@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s6 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #000000}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s2">//<span class="Apple-converted-space">  </span></span><span class="s1">系统中的内存分区</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">#include </span><span class="s3">&lt;stdio.h&gt;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s2">//</span><span class="s1">全局变量：放在全局区</span></p>
+<p class="p5"><span class="s4">int</span><span class="s1"> global = </span><span class="s5">20</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/*</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">   </span></span><span class="s6">总结：</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span><span class="s1">从高地址到低地址</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">栈：存放局部变量，内存是由系统管理的</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">堆：用来存放对象的，它由程序猿自己申请自己释放，它的内存需要程序猿自己管理</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">全局区：存放全局变量与静态变量，由系统管理</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">常量区：用来存放常量的，内存是由系统管理的，它是只读区</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">代码区：用来存放代码的，内存是由系统管理的，它是只读区</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p5"><span class="s4">int</span><span class="s1"> main(</span><span class="s4">int</span><span class="s1"> argc, </span><span class="s4">const</span><span class="s1"> </span><span class="s4">char</span><span class="s1"> * argv[]) {</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">// insert code here...</span></p>
+<p class="p7"><span class="s7"><span class="Apple-converted-space">    </span>printf(</span><span class="s1">"Hello, World!\n"</span><span class="s7">);</span></p>
+<p class="p2"><span class="s2">//<span class="Apple-converted-space">  </span></span><span class="s1">局部变量：栈中</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">int</span><span class="s1"> num = </span><span class="s5">10</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span></span><span class="s6">常量区</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">"abc"</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> </span><span class="s5">0</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1">}</span></p>
+</body>
+</html>

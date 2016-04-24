@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421; min-height: 19.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #c32275; min-height: 19.0px}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s3 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">#define NameFont [UIFont systemFontOfSize:</span><span class="s2">14</span></p>
+<p class="p3"><span class="s1">/**</span></p>
+<p class="p4"><span class="s3"><span class="Apple-converted-space"> </span></span><span class="s1">计算文字尺寸</span></p>
+<p class="p4"><span class="s3"><span class="Apple-converted-space"> </span>text </span><span class="s1">需要计算尺寸的文字</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>font </span><span class="s4">文字的字体</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>maxSize </span><span class="s4">文字的最大尺寸</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">//添加到分类</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p6"><span class="s1">- (</span><span class="s5">CGSize</span><span class="s1">)sizeWithText:(</span><span class="s6">NSString</span><span class="s1"> *)text font:(</span><span class="s6">UIFont</span><span class="s1"> *)font maxSize:(</span><span class="s5">CGSize</span><span class="s1">)maxSize</span></p>
+<p class="p6"><span class="s1">{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">NSDictionary</span><span class="s1"> *attrs = </span><span class="s2">@{</span><span class="s5">NSFontAttributeName</span><span class="s1">:font</span><span class="s2">}</span><span class="s1">;</span></p>
+<p class="p7"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s8">return</span><span class="s7"> [text </span><span class="s1">boundingRectWithSize</span><span class="s7">:maxSize </span><span class="s1">options</span><span class="s7">:</span><span class="s1">NSStringDrawingUsesLineFragmentOrigin</span><span class="s7"> </span><span class="s1">attributes</span><span class="s7">:attrs </span><span class="s1">context</span><span class="s7">:</span><span class="s8">nil</span><span class="s7">].</span><span class="s5">size</span><span class="s7">;</span></p>
+<p class="p8"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">//return [</span><span class="s8">self </span><span class="s1">boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p8"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p8"><span class="s1"></span><br></p>
+<p class="p6"><span class="s5">CGSize</span><span class="s1"> nameSize = [</span><span class="s8">self</span><span class="s1"> </span><span class="s9">sizeWithText</span><span class="s1">:</span><span class="s8">self</span><span class="s1">.</span><span class="s10">status</span><span class="s1">.</span><span class="s10">name</span><span class="s1"> </span><span class="s9">font</span><span class="s1">:</span><span class="s11">NameFont</span><span class="s1"> </span><span class="s9">maxSize</span><span class="s1">:</span><span class="s12">CGSizeMake</span><span class="s1">(</span><span class="s11">MAXFLOAT</span><span class="s1">, </span><span class="s11">MAXFLOAT</span><span class="s1">)];</span></p>
+<p class="p8"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">/***************************************************************************************************************/</span></p>
+<p class="p8"><span class="s1"></span><br></p>
+<p class="p9"><span class="s1">textView</span><span class="s4">控件</span></p>
+<p class="p10"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">/**</span></p>
+<p class="p4"><span class="s3"><span class="Apple-converted-space"> </span></span><span class="s1">计算textView中文字的尺寸</span></p>
+<p class="p4"><span class="s3"><span class="Apple-converted-space"> </span>text </span><span class="s1">需要计算尺寸的文字</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>font </span><span class="s4">文字的字体</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>width </span><span class="s4">最大宽度</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p6"><span class="s1">- (</span><span class="s5">CGFloat</span><span class="s1">)heightWithTextView:(</span><span class="s6">NSString</span><span class="s1"> *)text font:(</span><span class="s6">UIFont</span><span class="s1"> *)font Width:(</span><span class="s5">CGFloat</span><span class="s1">)width</span></p>
+<p class="p6"><span class="s1">{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">UITextView</span><span class="s1"> *detailTextView = [[</span><span class="s6">UITextView</span><span class="s1"> </span><span class="s12">alloc</span><span class="s1">]</span><span class="s12">initWithFrame</span><span class="s1">:</span><span class="s12">CGRectMake</span><span class="s1">(</span><span class="s2">0</span><span class="s1">, </span><span class="s2">0</span><span class="s1">, width, </span><span class="s2">0</span><span class="s1">)];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>detailTextView.</span><span class="s5">font</span><span class="s1"> = font;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>detailTextView.</span><span class="s5">text</span><span class="s1"> = text;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">CGSize</span><span class="s1"> deSize = [detailTextView </span><span class="s12">sizeThatFits</span><span class="s1">:</span><span class="s12">CGSizeMake</span><span class="s1">(width,</span><span class="s11">CGFLOAT_MAX</span><span class="s1">)];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">return</span><span class="s1"> deSize.</span><span class="s5">height</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p8"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p8"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">    </span>textview</span><span class="s4">无法使用</span></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">    </span>CGSize toNameSize = [self sizeWithText:self.editEmail.content font:NameFont maxSize:CGSizeMake(MAXFLOAT, MAXFLOAT)];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p6"><span class="s5">CGFloat</span><span class="s1"> nameFieldH = [</span><span class="s8">self</span><span class="s1"> </span><span class="s9">heightWithTextView</span><span class="s1">:</span><span class="s8">self</span><span class="s1">.</span><span class="s10">editEmail</span><span class="s1">.</span><span class="s10">content</span><span class="s1"> </span><span class="s9">font</span><span class="s1">:</span><span class="s11">NameFont</span><span class="s1"> </span><span class="s9">Width</span><span class="s1">:addToNameX - padding];</span></p>
+</body>
+</html>

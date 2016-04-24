@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #e0edd4}
+    span.s1 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s9 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #1d9421; background-color: #fff995}
+    span.s11 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #1d9421; background-color: #fff995}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s15 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span></span><span class="s2">函数式编程思想</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s2">"ViewController.h"</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s2">"Caculator.h"</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p4"><span class="s4">@interface</span><span class="s5"> </span><span class="s2">ViewController</span><span class="s5"> ()</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p5"><span class="s2">@end</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p6"><span class="s4">@implementation</span><span class="s2"> ViewController</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">// </span><span class="s2">什么是函数式思想</span><span class="s1">:</span><span class="s2">把一个操作写成一系列的方法</span><span class="s1">.</span></p>
+<p class="p1"><span class="s1">// </span><span class="s2">需求</span><span class="s1">:</span><span class="s2">写一个加法计算器</span><span class="s1">,</span><span class="s2">并且加法计算器自带判断是否等于某个值</span><span class="s1">.</span></p>
+<p class="p6"><span class="s2">- (</span><span class="s4">void</span><span class="s2">)viewDidLoad {</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s4">super</span><span class="s5"> </span><span class="s2">viewDidLoad</span><span class="s5">];</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s2">// Do any additional setup after loading the view, typically from a nib.</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s6">Caculator</span><span class="s2"> *caculator = [[</span><span class="s6">Caculator</span><span class="s2"> </span><span class="s7">alloc</span><span class="s2">] </span><span class="s7">init</span><span class="s2">];</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s2">// 10 + 20 + 30 + 40</span></p>
+<p class="p8"><span class="s2">//<span class="Apple-converted-space">    </span>[[[[caculator add:10] add:20] add:30] add:40];</span></p>
+<p class="p9"><span class="s2"><span class="Apple-converted-space">   </span></span><span class="s4">BOOL</span><span class="s2"> isEqule = [[[caculator </span><span class="s8">add</span><span class="s2">:^(</span><span class="s4">int</span><span class="s2"> result){</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">       </span></span><span class="s2">// </span><span class="s9">把计算的事情写到</span><span class="s2">Block</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s10">//</span><span class="s11">二</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span>result += </span><span class="s12">10</span><span class="s2">;</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span>result += </span><span class="s12">20</span><span class="s2">;</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span>result += </span><span class="s12">30</span><span class="s2">;</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span>result += </span><span class="s12">40</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">return</span><span class="s2"> result;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span></p>
+<p class="p9"><span class="s2"><span class="Apple-converted-space">    </span>}] </span><span class="s8">equle</span><span class="s2">:^</span><span class="s4">BOOL</span><span class="s2">(</span><span class="s4">int</span><span class="s2"> result) {</span><span class="s10">//</span><span class="s11">四</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s10">//</span><span class="s11">六</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">return</span><span class="s2"> result == </span><span class="s12">100</span><span class="s2">;</span></p>
+<p class="p9"><span class="s2"><span class="Apple-converted-space">    </span>}] </span><span class="s8">isEqule</span><span class="s2">];</span><span class="s10">//</span><span class="s11">八</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s7">NSLog</span><span class="s2">(</span><span class="s13">@"%d"</span><span class="s2">,isEqule);</span></p>
+<p class="p6"><span class="s2">}</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p6"><span class="s2">- (</span><span class="s4">void</span><span class="s2">)didReceiveMemoryWarning {</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s4">super</span><span class="s5"> </span><span class="s2">didReceiveMemoryWarning</span><span class="s5">];</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s2">// Dispose of any resources that can be recreated.</span></p>
+<p class="p6"><span class="s2">}</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p5"><span class="s2">@end</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p8"><span class="s2">//</span></p>
+<p class="p8"><span class="s2">//<span class="Apple-converted-space">  </span>Caculator.m</span></p>
+<p class="p8"><span class="s2">//<span class="Apple-converted-space">  </span>04-</span><span class="s9">函数式编程思想</span></p>
+<p class="p8"><span class="s2">//</span></p>
+<p class="p8"><span class="s2">//<span class="Apple-converted-space">  </span>Created by xiaomage on 15/9/29.</span></p>
+<p class="p8"><span class="s2">//<span class="Apple-converted-space">  </span>Copyright © 2015</span><span class="s9">年</span><span class="s2"> </span><span class="s9">小码哥</span><span class="s2">. All rights reserved.</span></p>
+<p class="p8"><span class="s2">//</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s2">"Caculator.h"</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p5"><span class="s2">@implementation</span><span class="s5"> Caculator</span></p>
+<p class="p8"><span class="s2">//- (instancetype)add:(int)num</span></p>
+<p class="p8"><span class="s2">//{</span></p>
+<p class="p8"><span class="s2">//<span class="Apple-converted-space">    </span>_result += num;</span></p>
+<p class="p8"><span class="s2">//<span class="Apple-converted-space">    </span>return self;</span></p>
+<p class="p8"><span class="s2">//}</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p6"><span class="s2">- (</span><span class="s4">instancetype</span><span class="s2">)add:(</span><span class="s4">int</span><span class="s2"> (^)(</span><span class="s4">int</span><span class="s2"> result))block</span></p>
+<p class="p6"><span class="s2">{</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s10">//</span><span class="s11">一</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s14">_result</span><span class="s2"> = block(</span><span class="s14">_result</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s10">//</span><span class="s11">三</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s2">return</span><span class="s5"> </span><span class="s2">self</span><span class="s5">;</span></p>
+<p class="p6"><span class="s2">}</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p6"><span class="s2">- (</span><span class="s4">instancetype</span><span class="s2">)equle:(</span><span class="s4">BOOL</span><span class="s2"> (^)(</span><span class="s4">int</span><span class="s2">))block</span></p>
+<p class="p6"><span class="s2">{</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s10">//</span><span class="s11">五</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s14">_isEqule</span><span class="s2"> = block(</span><span class="s14">_result</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s10">//</span><span class="s11">七</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s2">return</span><span class="s5"> </span><span class="s2">self</span><span class="s5">;</span></p>
+<p class="p6"><span class="s2">}</span></p>
+<p class="p5"><span class="s2">@end</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p8"><span class="s2">//</span></p>
+<p class="p8"><span class="s2">//<span class="Apple-converted-space">  </span>Caculator.h</span></p>
+<p class="p8"><span class="s2">//<span class="Apple-converted-space">  </span>04-</span><span class="s9">函数式编程思想</span></p>
+<p class="p8"><span class="s2">//</span></p>
+<p class="p8"><span class="s2">//<span class="Apple-converted-space">  </span>Created by xiaomage on 15/9/29.</span></p>
+<p class="p8"><span class="s2">//<span class="Apple-converted-space">  </span>Copyright © 2015</span><span class="s9">年</span><span class="s2"> </span><span class="s9">小码哥</span><span class="s2">. All rights reserved.</span></p>
+<p class="p8"><span class="s2">//<span class="Apple-converted-space">  </span></span><span class="s9">计算</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s2">&lt;Foundation/Foundation.h&gt;</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p6"><span class="s4">@interface</span><span class="s2"> Caculator : </span><span class="s15">NSObject</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p5"><span class="s2">@property</span><span class="s5"> (</span><span class="s2">nonatomic</span><span class="s5">, </span><span class="s2">assign</span><span class="s5">) </span><span class="s2">int</span><span class="s5"> result;</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p5"><span class="s2">@property</span><span class="s5"> (</span><span class="s2">nonatomic</span><span class="s5">, </span><span class="s2">assign</span><span class="s5">) </span><span class="s2">BOOL</span><span class="s5"> isEqule;</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p6"><span class="s2">- (</span><span class="s4">instancetype</span><span class="s2">)add:(</span><span class="s4">int</span><span class="s2">(^)(</span><span class="s4">int</span><span class="s2"> result))block;</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p6"><span class="s2">- (</span><span class="s4">instancetype</span><span class="s2">)equle:(</span><span class="s4">BOOL</span><span class="s2">(^)(</span><span class="s4">int</span><span class="s2"> result))block;</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p5"><span class="s2">@end</span></p>
+</body>
+</html>

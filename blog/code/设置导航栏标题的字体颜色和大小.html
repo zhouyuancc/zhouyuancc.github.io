@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #323333}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Tahoma; color: #323333; min-height: 22.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Tahoma; color: #323333}
+    span.s1 {font-kerning: none}
+    span.s2 {font-kerning: none; color: #0433ff}
+    span.s3 {font: 18.0px Tahoma; font-kerning: none}
+    span.s4 {font: 18.0px Tahoma; font-kerning: none; color: #0433ff}
+    span.s5 {font: 18.0px 'Heiti SC Light'; font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">方法一：</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">就是在<a href="http://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=1001&amp;ch=0&amp;di=128&amp;fv=20&amp;is_app=0&amp;jk=3a61acdc59c13ea2&amp;k=%B5%BC%BA%BD&amp;k0=%B5%BC%BA%BD&amp;kdi0=0&amp;luki=2&amp;mcpm=0&amp;n=10&amp;p=baidu&amp;q=48098089_cpr&amp;rb=0&amp;rs=1&amp;seller_id=1&amp;sid=a23ec159dcac613a&amp;ssp2=1&amp;stid=9&amp;t=tpclicked3_hc&amp;td=2051930&amp;tu=u2051930&amp;u=http%3A%2F%2Fwww%2Eaichengxu%2Ecom%2Fview%2F42504&amp;urlid=0"><span class="s2">导航</span></a>向上添加一个</span><span class="s3">titleView</span><span class="s1">，可以使用一个<a href="http://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=1001&amp;ch=0&amp;di=128&amp;fv=20&amp;is_app=0&amp;jk=3a61acdc59c13ea2&amp;k=label&amp;k0=label&amp;kdi0=0&amp;luki=3&amp;mcpm=0&amp;n=10&amp;p=baidu&amp;q=48098089_cpr&amp;rb=0&amp;rs=1&amp;seller_id=1&amp;sid=a23ec159dcac613a&amp;ssp2=1&amp;stid=9&amp;t=tpclicked3_hc&amp;td=2051930&amp;tu=u2051930&amp;u=http%3A%2F%2Fwww%2Eaichengxu%2Ecom%2Fview%2F42504&amp;urlid=0"><span class="s4">label</span></a>，再设置</span><span class="s3">label</span><span class="s1">的背景颜色透明，字体什么的设置就很简单了。</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s3">//</span><span class="s1">自定义标题视图</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">titleLabel.backgroundColor = [UIColor grayColor];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">titleLabel.font = [UIFont boldSystemFontOfSize:20];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">titleLabel.textColor = [UIColor greenColor];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">titleLabel.textAlignment = NSTextAlignmentCenter;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">titleLabel.text = @"</span><span class="s5">新闻</span><span class="s1">";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">self.navigationItem.titleView = titleLabel;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">方法二：（在默认显示的标题中直接修改文件的大小和颜色也是可以的）</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">[self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19],NSForegroundColorAttributeName:[UIColor redColor]}];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+</body>
+</html>

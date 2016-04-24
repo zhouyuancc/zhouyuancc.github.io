@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s8 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s14 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s15 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ZYNavigationController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>weibo</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/9/22.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">@interface</span><span class="s4"> </span><span class="s5">ZYNavigationController</span><span class="s4"> ()&lt;</span><span class="s1">UINavigationControllerDelegate</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1">@property</span><span class="s4"> (</span><span class="s1">nonatomic</span><span class="s4">,</span><span class="s1">strong</span><span class="s4">) </span><span class="s1">id</span><span class="s4"> popDelegate;</span></p>
+<p class="p4"><span class="s1">@end</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)viewDidLoad</span></p>
+<p class="p6"><span class="s1">{</span></p>
+<p class="p7"><span class="s4"><span class="Apple-converted-space">    </span>[</span><span class="s3">super</span><span class="s4"> </span><span class="s1">viewDidLoad</span><span class="s4">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p8"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s6">_popDelegate</span><span class="s4"> = </span><span class="s3">self</span><span class="s4">.</span><span class="s1">interactivePopGestureRecognizer</span><span class="s4">.</span><span class="s1">delegate</span><span class="s4">;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">self</span><span class="s1">.</span><span class="s7">delegate</span><span class="s1"> = </span><span class="s3">self</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p9"><span class="s8">//</span><span class="s1">导航控制器跳转完成的时候调用</span></p>
+<p class="p6"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)navigationController:(</span><span class="s9">UINavigationController</span><span class="s1"> *)navigationController didShowViewController:(</span><span class="s9">UIViewController</span><span class="s1"> *)viewController animated:(</span><span class="s3">BOOL</span><span class="s1">)animated</span></p>
+<p class="p6"><span class="s1">{</span></p>
+<p class="p8"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s10">NSLog</span><span class="s4">(</span><span class="s11">@"%@"</span><span class="s4">,</span><span class="s3">self</span><span class="s4">.</span><span class="s1">viewControllers</span><span class="s4">[</span><span class="s12">0</span><span class="s4">]);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s13">/**</span></p>
+<p class="p9"><span class="s8"><span class="Apple-converted-space">     </span></span><span class="s1">跳转回</span><span class="s8"> </span><span class="s1">根控制器</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">if</span><span class="s1"> (viewController == </span><span class="s3">self</span><span class="s1">.</span><span class="s7">viewControllers</span><span class="s1">[</span><span class="s12">0</span><span class="s1">]) {</span><span class="s13">//</span><span class="s14">显示根控制器</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p9"><span class="s15"><span class="Apple-converted-space">        </span></span><span class="s8">//</span><span class="s1">还原滑动返回手势的代理</span></p>
+<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">self</span><span class="s4">.</span><span class="s1">interactivePopGestureRecognizer</span><span class="s4">.</span><span class="s1">delegate</span><span class="s4"> = </span><span class="s6">_popDelegate</span><span class="s4">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span>}</span><span class="s3">else</span><span class="s1">//</span><span class="s2">不是显示根控制器</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">实现滑动返回功能</span></p>
+<p class="p9"><span class="s15"><span class="Apple-converted-space">        </span></span><span class="s8">//</span><span class="s1">清空滑动返回手势的代理，就能实现滑动功能</span></p>
+<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">self</span><span class="s4">.</span><span class="s1">interactivePopGestureRecognizer</span><span class="s4">.</span><span class="s1">delegate</span><span class="s4"> = </span><span class="s3">nil</span><span class="s4">;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">NSLog</span><span class="s1">(</span><span class="s11">@"%s"</span><span class="s1">,__func__);</span></p>
+<p class="p6"><span class="s1">}</span></p>
+</body>
+</html>

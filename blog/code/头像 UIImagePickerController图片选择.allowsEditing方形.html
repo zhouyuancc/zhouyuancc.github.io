@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #fff995}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #294c50}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; min-height: 19.0px}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81; background-color: #fff995}
+    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #539aa4}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s5 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s6 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s9 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s14 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s15 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s16 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s17 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s18 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>WCProfileViewController.m</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">@property</span><span class="s2"> (</span><span class="s1">weak</span><span class="s2">, </span><span class="s1">nonatomic</span><span class="s2">) </span><span class="s1">IBOutlet</span><span class="s2"> </span><span class="s3">UIImageView</span><span class="s2"> *avatarImgView;</span><span class="s4">//</span><span class="s5">头像</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">#pragma mark </span><span class="s6">选择图片</span></p>
+<p class="p6"><span class="s1">-(</span><span class="s7">void</span><span class="s1">)choseImg{</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s3">UIActionSheet</span><span class="s2"> *sheet = [[</span><span class="s3">UIActionSheet</span><span class="s2"> </span><span class="s1">alloc</span><span class="s2">] </span><span class="s1">initWithTitle</span><span class="s2">:</span><span class="s8">@"</span><span class="s9">请选择</span><span class="s8">"</span><span class="s2"> </span><span class="s1">delegate</span><span class="s2">:</span><span class="s7">self</span><span class="s2"> </span><span class="s1">cancelButtonTitle</span><span class="s2">:</span><span class="s8">@"</span><span class="s9">取消</span><span class="s8">"</span><span class="s2"> </span><span class="s1">destructiveButtonTitle</span><span class="s2">:</span><span class="s8">@"</span><span class="s9">照相</span><span class="s8">"</span><span class="s2"> </span><span class="s1">otherButtonTitles</span><span class="s2">:</span><span class="s8">@"</span><span class="s9">图片库</span><span class="s8">"</span><span class="s2">, </span><span class="s7">nil</span><span class="s2">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>[sheet </span><span class="s10">showInView</span><span class="s1">:</span><span class="s7">self</span><span class="s1">.</span><span class="s11">view</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">-(</span><span class="s7">void</span><span class="s1">)actionSheet:(</span><span class="s3">UIActionSheet</span><span class="s1"> *)actionSheet clickedButtonAtIndex:(</span><span class="s11">NSInteger</span><span class="s1">)buttonIndex{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s12">WCLog</span><span class="s1">(</span><span class="s8">@"%ld"</span><span class="s1">,buttonIndex);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">if</span><span class="s1"> (buttonIndex == </span><span class="s13">2</span><span class="s1">) </span><span class="s7">return</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">// </span><span class="s6">图片选择器</span></p>
+<p class="p8"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">UIImagePickerController</span><span class="s2"> *imgPC = [[</span><span class="s1">UIImagePickerController</span><span class="s2"> </span><span class="s10">alloc</span><span class="s2">] </span><span class="s10">init</span><span class="s2">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s6">设置代理</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>imgPC.</span><span class="s11">delegate</span><span class="s1"> = </span><span class="s7">self</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">   </span></span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s6">允许编辑图片</span></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">//</span><span class="s1">切成四四方方的，做头像用</span></p>
+<p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>imgPC.</span><span class="s11">allowsEditing</span><span class="s1"> = </span><span class="s7">YES</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">if</span><span class="s1"> (buttonIndex == </span><span class="s13">0</span><span class="s1">) {</span><span class="s4">//</span><span class="s5">照相</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space">        </span>imgPC.</span><span class="s11">sourceType</span><span class="s2"> =<span class="Apple-converted-space">  </span></span><span class="s1">UIImagePickerControllerSourceTypeCamera</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}</span><span class="s7">else</span><span class="s1">{</span><span class="s4">//</span><span class="s5">图片库</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space">        </span>imgPC.</span><span class="s11">sourceType</span><span class="s2"> = </span><span class="s1">UIImagePickerControllerSourceTypePhotoLibrary</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s6">显示控制器</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s2"> </span><span class="s1">presentViewController</span><span class="s2">:imgPC </span><span class="s1">animated</span><span class="s2">:</span><span class="s7">YES</span><span class="s2"> </span><span class="s1">completion</span><span class="s2">:</span><span class="s7">nil</span><span class="s2">];</span></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">#pragma mark </span><span class="s6">图片选择器的代理</span></p>
+<p class="p6"><span class="s1">-(</span><span class="s7">void</span><span class="s1">)imagePickerController:(</span><span class="s3">UIImagePickerController</span><span class="s1"> *)picker didFinishPickingMediaWithInfo:(</span><span class="s3">NSDictionary</span><span class="s1"> *)info{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s12">WCLog</span><span class="s1">(</span><span class="s8">@"%@"</span><span class="s1">,info);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">//</span><span class="s1">获取修改后的图片</span></p>
+<p class="p11"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s3">UIImage</span><span class="s2"> *editedImg = info[</span><span class="s1">UIImagePickerControllerEditedImage</span><span class="s2">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s6">更改</span><span class="s1">cell</span><span class="s6">里的图片</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">self</span><span class="s1">.</span><span class="s16">avatarImgView</span><span class="s1">.</span><span class="s11">image</span><span class="s1"> = editedImg;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">//</span><span class="s1">移除图片选择的控制器</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s2"> </span><span class="s1">dismissViewControllerAnimated</span><span class="s2">:</span><span class="s7">YES</span><span class="s2"> </span><span class="s1">completion</span><span class="s2">:</span><span class="s7">nil</span><span class="s2">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">//</span><span class="s1">把新的图片保存到服务器</span></p>
+<p class="p12"><span class="s2"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s2"> </span><span class="s1">editVCardViewController</span><span class="s2">:</span><span class="s7">nil</span><span class="s2"> </span><span class="s1">didFinishedSave</span><span class="s2">:</span><span class="s7">nil</span><span class="s2">];</span></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p13"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">#pragma mark </span><span class="s6">编辑电子名片控制器的代理</span></p>
+<p class="p6"><span class="s1">-(</span><span class="s7">void</span><span class="s1">)editVCardViewController:(</span><span class="s17">WCEditVCardViewController</span><span class="s1"> *)editVc didFinishedSave:(</span><span class="s7">id</span><span class="s1">)sender{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s12">WCLog</span><span class="s1">(</span><span class="s8">@"</span><span class="s9">完成保存</span><span class="s8">"</span><span class="s1">);</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">//</span><span class="s1">获取当前电子名片</span></p>
+<p class="p14"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">XMPPvCardTemp</span><span class="s2"> *myVCard = [</span><span class="s1">WCXMPPTool</span><span class="s2"> </span><span class="s18">sharedWCXMPPTool</span><span class="s2">].</span><span class="s16">vCard</span><span class="s2">.</span><span class="s16">myvCardTemp</span><span class="s2">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">//</span><span class="s1">重新设置头像</span><span class="s15"> //</span><span class="s1">新生成的是原来的</span><span class="s15">0.75</span><span class="s1">倍</span></p>
+<p class="p15"><span class="s2"><span class="Apple-converted-space">    </span>myVCard.</span><span class="s16">photo</span><span class="s2"> = </span><span class="s1">UIImageJPEGRepresentation</span><span class="s2">(</span><span class="s7">self</span><span class="s2">.</span><span class="s16">avatarImgView</span><span class="s2">.</span><span class="s11">image</span><span class="s2">, </span><span class="s13">0.75</span><span class="s2">);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s6">重新设置</span><span class="s1">myVCard</span><span class="s6">里的属性</span></p>
+<p class="p16"><span class="s2"><span class="Apple-converted-space">    </span>myVCard.</span><span class="s1">nickname</span><span class="s2"> = </span><span class="s7">self</span><span class="s2">.</span><span class="s1">nicknameLabel</span><span class="s2">.</span><span class="s11">text</span><span class="s2">;</span></p>
+<p class="p16"><span class="s2"><span class="Apple-converted-space">    </span>myVCard.</span><span class="s1">orgName</span><span class="s2"> = </span><span class="s7">self</span><span class="s2">.</span><span class="s1">orgNameLabel</span><span class="s2">.</span><span class="s11">text</span><span class="s2">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">if</span><span class="s1"> (</span><span class="s7">self</span><span class="s1">.</span><span class="s16">departmentLabel</span><span class="s1">.</span><span class="s11">text</span><span class="s1"> != </span><span class="s7">nil</span><span class="s1">) {</span></p>
+<p class="p16"><span class="s2"><span class="Apple-converted-space">        </span>myVCard.</span><span class="s1">orgUnits</span><span class="s2"> = </span><span class="s13">@[</span><span class="s7">self</span><span class="s2">.</span><span class="s1">departmentLabel</span><span class="s2">.</span><span class="s11">text</span><span class="s13">]</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>myVCard.</span><span class="s16">title</span><span class="s1"> = </span><span class="s7">self</span><span class="s1">.</span><span class="s16">telLabel</span><span class="s1">.</span><span class="s11">text</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>myVCard.</span><span class="s16">note</span><span class="s1"> = </span><span class="s7">self</span><span class="s1">.</span><span class="s16">telLabel</span><span class="s1">.</span><span class="s11">text</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s6">解析邮箱</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">//myVCard.mailer = self.emailLabel.text;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">if</span><span class="s1"> (</span><span class="s7">self</span><span class="s1">.</span><span class="s16">emailLabel</span><span class="s1">.</span><span class="s11">text</span><span class="s1">.</span><span class="s11">length</span><span class="s1"> &gt; </span><span class="s13">0</span><span class="s1">) {</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s1">// </span><span class="s6">只保存一个邮箱</span></p>
+<p class="p16"><span class="s2"><span class="Apple-converted-space">        </span>myVCard.</span><span class="s1">emailAddresses</span><span class="s2"> = </span><span class="s13">@[</span><span class="s7">self</span><span class="s2">.</span><span class="s1">emailLabel</span><span class="s2">.</span><span class="s11">text</span><span class="s13">]</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">//</span><span class="s1">把数据保存到服务器</span></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">// </span><span class="s1">内部实现数据上传是把整个电子名片数据都从新上传了一次，包括图片</span></p>
+<p class="p12"><span class="s2"><span class="Apple-converted-space">    </span>[[</span><span class="s17">WCXMPPTool</span><span class="s2"> </span><span class="s1">sharedWCXMPPTool</span><span class="s2">].</span><span class="s16">vCard</span><span class="s2"> </span><span class="s1">updateMyvCardTemp</span><span class="s2">:myVCard];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1">}</span></p>
+</body>
+</html>

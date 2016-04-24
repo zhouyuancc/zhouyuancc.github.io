@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #b51a00}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s10 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ViewController.m</span></p>
+<p class="p2"><span class="s2">//<span class="Apple-converted-space">  </span></span><span class="s1">地图的基本使用</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/9/7.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s3">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">#import </span><span class="s1">&lt;MapKit/MapKit.h&gt;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// 1.</span><span class="s3">请求定位需要使用</span><span class="s1">CLLocationManager,</span><span class="s3">所以这里需要创建一个</span><span class="s1">CLLocationManager</span><span class="s3">对象</span><span class="s1">(iOS8)</span></p>
+<p class="p5"><span class="s1">@property</span><span class="s5">(</span><span class="s1">nonatomic</span><span class="s5">,</span><span class="s1">strong</span><span class="s5">)</span><span class="s6">CLLocationManager</span><span class="s5"> *mgr;</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// 2.</span><span class="s3">如果是</span><span class="s1">iOS8,</span><span class="s3">需要请求授权方式</span><span class="s1">(</span><span class="s3">进行判断</span><span class="s1">,</span><span class="s3">否则在</span><span class="s1">iOS7</span><span class="s3">会崩溃</span><span class="s1">,</span><span class="s3">需要先在</span><span class="s1">info.plist</span><span class="s3">中配置</span><span class="s1">)</span></p>
+<p class="p7"><span class="s7">if</span><span class="s1"> ([</span><span class="s7">self</span><span class="s1">.</span><span class="s8">mgr</span><span class="s1"> </span><span class="s9">respondsToSelector</span><span class="s1">:</span><span class="s7">@selector</span><span class="s1">(requestAlwaysAuthorization)]) {</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s5">.</span><span class="s8">mgr</span><span class="s5"> </span><span class="s1">requestAlwaysAuthorization</span><span class="s5">];</span></p>
+<p class="p7"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// 3</span></p>
+<p class="p9"><span class="s5">- (</span><span class="s1">CLLocationManager</span><span class="s5"> *)mgr</span></p>
+<p class="p7"><span class="s1">{</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">if</span><span class="s1"> (</span><span class="s8">_mgr</span><span class="s1"> == </span><span class="s7">nil</span><span class="s1">) {</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">_mgr</span><span class="s1"> = [[</span><span class="s6">CLLocationManager</span><span class="s1"> </span><span class="s9">alloc</span><span class="s1">] </span><span class="s9">init</span><span class="s1">];</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">return</span><span class="s1"> </span><span class="s8">_mgr</span><span class="s1">;</span></p>
+<p class="p7"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// 4.info.plist</span></p>
+<p class="p10"><span class="s10">添加</span><span class="s11"> </span><span class="s1">NSLocationAlwaysUsageDescription</span><span class="s11"> String //</span><span class="s10">允许访问您的位置吗？</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"></span><br></p>
+</body>
+</html>

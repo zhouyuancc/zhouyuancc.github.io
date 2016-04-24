@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Times; color: #323333}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Arial; color: #df3434; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Verdana; color: #c0c0c0; min-height: 22.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Arial}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Arial; min-height: 21.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Verdana; color: #a0a0a0}
+    li.li5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Courier New'; color: #5c5c5c}
+    li.li9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Courier New'; color: #5c5c5c; background-color: #f8f8f8}
+    li.li10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Courier New'; color: #0433ff}
+    li.li11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #008200}
+    li.li12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Courier New'; color: #0433ff; background-color: #f8f8f8}
+    li.li13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Courier New'; color: #008200; background-color: #f8f8f8}
+    li.li14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Courier New'; color: #008200}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 18.0px 'Songti SC'; font-kerning: none}
+    span.s3 {font: 18.0px Arial; font-kerning: none}
+    span.s4 {font: 18.0px 'Heiti SC Light'; font-kerning: none}
+    span.s5 {font-kerning: none; color: #c0c0c0; background-color: #f8f8f8}
+    span.s6 {font-kerning: none; color: #a0a0a0}
+    span.s7 {font-kerning: none; color: #0433ff}
+    span.s8 {color: #006699}
+    span.s9 {font-kerning: none; color: #006699}
+    span.s10 {color: #5c5c5c}
+    span.s11 {font-kerning: none; color: #5c5c5c}
+    span.s12 {font: 18.0px 'Courier New'}
+    span.s13 {font: 18.0px 'Courier New'; font-kerning: none}
+    span.s14 {font: 18.0px 'Courier New'; font-kerning: none; color: #5c5c5c}
+    span.s15 {font-kerning: none; color: #008200}
+    span.s16 {font: 18.0px 'Heiti SC Light'; font-kerning: none; color: #008200}
+    span.s17 {font-kerning: none; color: #2f8b57}
+    ol.ol1 {list-style-type: decimal}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><a href="http://blog.csdn.net/lianbaixue/article/details/10579117">NSPredicate <span class="s2">模糊、精确、查询</span></a></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">简述：</span><span class="s3">Cocoa</span><span class="s1">框架中的</span><span class="s3">NSPredicate</span><span class="s1">用于查询，原理和用法都类似于</span><span class="s3">SQL</span><span class="s1">中的</span><span class="s3">where</span><span class="s1">，作用相当于数据库的过滤取。</span></p>
+<p class="p3"><span class="s1">定义</span><span class="s3">(</span><span class="s1">最常用到的方法</span><span class="s3">)</span><span class="s1">：</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<ol class="ol1">
+  <li class="li5"><span class="s1">NSPredicate *ca = [NSPredicate predicateWithFormat:(NSString *), ...];  </span></li>
+</ol>
+<p class="p6"><span class="s1">Format</span><span class="s4">：</span></p>
+<p class="p6"><span class="s1">(1)</span><span class="s4">比较运算符</span><span class="s1">&gt;,&lt;,==,&gt;=,&lt;=,!=</span></p>
+<p class="p3"><span class="s1">可用于数值及字符串</span></p>
+<p class="p6"><span class="s4">例：</span><span class="s1">@"number &gt; 100"</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">(2)</span><span class="s4">范围运算符：</span><span class="s1">IN</span><span class="s4">、</span><span class="s1">BETWEEN</span></p>
+<p class="p6"><span class="s4">例：</span><span class="s1">@"number BETWEEN {1,5}"</span></p>
+<p class="p6"><span class="s1">      @"address IN {'shanghai','beijing'}"</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">(3)</span><span class="s4">字符串本身</span><span class="s1">:SELF </span></p>
+<p class="p6"><span class="s4">例：</span><span class="s1">@“SELF == ‘APPLE’"</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">(4)</span><span class="s4">字符串相关：</span><span class="s1">BEGINSWITH</span><span class="s4">、</span><span class="s1">ENDSWITH</span><span class="s4">、</span><span class="s1">CONTAINS</span></p>
+<p class="p6"><span class="s4">例：</span><span class="s1">@"name CONTAIN[cd] 'ang'"   //</span><span class="s4">包含某个字符串</span></p>
+<p class="p6"><span class="s1">       @"name BEGINSWITH[c] 'sh'"     //</span><span class="s4">以某个字符串开头</span></p>
+<p class="p6"><span class="s1">       @"name ENDSWITH[d] 'ang'"      //</span><span class="s4">以某个字符串结束</span></p>
+<p class="p3"><span class="s3">        </span><span class="s1">注</span><span class="s3">:[c]</span><span class="s1">不区分大小写</span><span class="s3">[d]</span><span class="s1">不区分发音符号即没有重音符号</span><span class="s3">[cd]</span><span class="s1">既不区分大小写，也不区分发音符号。</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">(5)</span><span class="s4">通配符：</span><span class="s1">LIKE</span></p>
+<p class="p6"><span class="s4">例：</span><span class="s1">@"name LIKE[cd] '*er*'"    //*</span><span class="s4">代表通配符</span><span class="s1">,Like</span><span class="s4">也接受</span><span class="s1">[cd].</span></p>
+<p class="p6"><span class="s1">       @"name LIKE[cd] '???er*'"</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">(6)</span><span class="s4">正则表达式：</span><span class="s1">MATCHES</span></p>
+<p class="p6"><span class="s4">例：</span><span class="s1">NSString *regex = @"^A.+e$";   //</span><span class="s4">以</span><span class="s1">A</span><span class="s4">开头，</span><span class="s1">e</span><span class="s4">结尾</span></p>
+<p class="p6"><span class="s1">      @"name MATCHES %@",regex</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">实际应用：</span></p>
+<p class="p6"><span class="s1">(1)</span><span class="s4">对</span><span class="s1">NSArray</span><span class="s4">进行过滤</span><span class="s1"> </span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p8"><span class="s5"><b>[cpp]</b> <a href="http://blog.csdn.net/ztp800201/article/details/8116081#"><span class="s6">view plaincopy</span></a></span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<ol class="ol1">
+  <li class="li5"><span class="s1">NSArray *array = [[NSArray alloc]initWithObjects:@</span><span class="s7">"beijing"</span><span class="s1">,@</span><span class="s7">"shanghai"</span><span class="s1">,@</span><span class="s7">"guangzou"</span><span class="s1">,@</span><span class="s7">"wuhan"</span><span class="s1">, nil];    </span></li>
+  <li class="li9"><span class="s1">NSString *string = @</span><span class="s7">"ang"</span><span class="s1">;    </span></li>
+  <li class="li5"><span class="s1">NSPredicate *pred = [NSPredicate predicateWithFormat:@</span><span class="s7">"SELF CONTAINS %@"</span><span class="s1">,string];    </span></li>
+  <li class="li9"><span class="s1">NSLog(@</span><span class="s7">"%@"</span><span class="s1">,[array filteredArrayUsingPredicate:pred]);    </span></li>
+</ol>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">(2)</span><span class="s1">判断字符串首字母是否为字母</span><span class="s3">:</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p8"><span class="s5"><b>[cpp]</b> <a href="http://blog.csdn.net/ztp800201/article/details/8116081#"><span class="s6">view plaincopy</span></a></span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<ol class="ol1">
+  <li class="li5"><span class="s1">NSString *regex = @</span><span class="s7">"[A-Za-z]+"</span><span class="s1">;    </span></li>
+  <li class="li9"><span class="s1">NSPredicate *predicate = [NSPredicate predicateWithFormat:@</span><span class="s7">"SELF MATCHES %@"</span><span class="s1">, regex];    </span></li>
+  <li class="li5"><span class="s1">    </span></li>
+  <li class="li9"><span class="s8"><b></b></span><span class="s9"><b>if</b></span><span class="s1"> ([predicate evaluateWithObject:aString]) {    </span></li>
+  <li class="li5"><span class="s1">}    </span></li>
+</ol>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">(3)</span><span class="s1">字符串替换：</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p8"><span class="s5"><b>[cpp]</b> <a href="http://blog.csdn.net/ztp800201/article/details/8116081#"><span class="s6">view plaincopy</span></a></span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<ol class="ol1">
+  <li class="li5"><span class="s1">NSError* error = NULL;    </span></li>
+  <li class="li9"><span class="s1">NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:@</span><span class="s7">"(encoding=\")[^\"]+(\")"</span><span class="s1">    </span></li>
+  <li class="li5"><span class="s1">                                                                            options:0    </span></li>
+  <li class="li9"><span class="s1">                                                                            error:&amp;error];    </span></li>
+  <li class="li10"><span class="s10"></span><span class="s11">NSString* sample = @</span><span class="s1">"&lt;xml encoding=\"abc\"&gt;&lt;/xml&gt;&lt;xml encoding=\"def\"&gt;&lt;/xml&gt;&lt;xml encoding=\"ttt\"&gt;&lt;/xml&gt;"</span><span class="s11">;    </span></li>
+  <li class="li9"><span class="s1">NSLog(@</span><span class="s7">"Start:%@"</span><span class="s1">,sample);    </span></li>
+  <li class="li5"><span class="s1">NSString* result = [regex stringByReplacingMatchesInString:sample    </span></li>
+  <li class="li9"><span class="s1">                                                      options:0    </span></li>
+  <li class="li5"><span class="s1">                                                       range:NSMakeRange(0, sample.length)    </span></li>
+  <li class="li9"><span class="s1">                                                      withTemplate:@</span><span class="s7">"$1utf-8$2"</span><span class="s1">];    </span></li>
+  <li class="li5"><span class="s1">NSLog(@</span><span class="s7">"Result:%@"</span><span class="s1">, result);    </span></li>
+</ol>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">(4)</span><span class="s1">截取字符串如下：</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p8"><span class="s5"><b>[cpp]</b> <a href="http://blog.csdn.net/ztp800201/article/details/8116081#"><span class="s6">view plaincopy</span></a></span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<ol class="ol1">
+  <li class="li11"><span class="s12"></span><span class="s13">//</span><span class="s1">组装一个字符串，需要把里面的网址解析出来</span><span class="s13">  </span><span class="s14">  </span></li>
+  <li class="li12"><span class="s10"></span><span class="s11">NSString *urlString=@</span><span class="s1">"&lt;meta/&gt;&lt;link/&gt;&lt;title&gt;1Q84 BOOK1&lt;/title&gt;&lt;/head&gt;&lt;body&gt;"</span><span class="s11">;    </span></li>
+  <li class="li5"><span class="s1">    </span></li>
+  <li class="li13"><span class="s1">//NSRegularExpression</span><span class="s4">类里面调用表达的方法需要传递一个</span><span class="s1">NSError</span><span class="s4">的参数。下面定义一个</span><span class="s1">    </span><span class="s11">  </span></li>
+  <li class="li5"><span class="s1">NSError *error;    </span></li>
+  <li class="li9"><span class="s1">    </span></li>
+  <li class="li14"><span class="s1">//http+:[^\\s]* </span><span class="s4">这个表达式是检测一个网址的。</span><span class="s1">(?&lt;=title\&gt;).*(?=&lt;/title)</span><span class="s4">截取</span><span class="s1">html</span><span class="s4">文章中的</span><span class="s1">&lt;title&gt;&lt;/title&gt;</span><span class="s4">中内文字的正则表达式</span><span class="s1">  </span><span class="s11">  </span></li>
+  <li class="li9"><span class="s1">NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@</span><span class="s7">"(?&lt;=title\\&gt;).*(?=&lt;/title)"</span><span class="s1"> options:0 error:&amp;error];    </span></li>
+  <li class="li5"><span class="s1">    </span></li>
+  <li class="li9"><span class="s8"><b></b></span><span class="s9"><b>if</b></span><span class="s1"> (regex != nil) {    </span></li>
+  <li class="li5"><span class="s1">    NSTextCheckingResult *firstMatch=[regex firstMatchInString:urlString options:0 range:NSMakeRange(0, [urlString length])];    </span></li>
+  <li class="li9"><span class="s1">        </span></li>
+  <li class="li5"><span class="s1">    </span><span class="s9"><b>if</b></span><span class="s1"> (firstMatch) {    </span></li>
+  <li class="li9"><span class="s1">        NSRange resultRange = [firstMatch rangeAtIndex:0];    </span></li>
+  <li class="li5"><span class="s1">            </span></li>
+  <li class="li13"><span class="s10"></span><span class="s11">        </span><span class="s1">//</span><span class="s4">从</span><span class="s1">urlString</span><span class="s4">当中截取数据</span><span class="s1">  </span><span class="s11">  </span></li>
+  <li class="li5"><span class="s1">        NSString *result=[urlString substringWithRange:resultRange];    </span></li>
+  <li class="li9"><span class="s1">        </span><span class="s15">//</span><span class="s16">输出结果</span><span class="s15">  </span><span class="s1">  </span></li>
+  <li class="li5"><span class="s1">        NSLog(@</span><span class="s7">"-&gt;%@&lt;-"</span><span class="s1">,result);    </span></li>
+  <li class="li9"><span class="s1">    }    </span></li>
+  <li class="li5"><span class="s1">        </span></li>
+  <li class="li9"><span class="s1">}    </span></li>
+</ol>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">(5)</span><span class="s1">判断手机号码，电话号码函数</span><span class="s3">  </span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p8"><span class="s5"><b>[cpp]</b> <a href="http://blog.csdn.net/ztp800201/article/details/8116081#"><span class="s6">view plaincopy</span></a></span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<ol class="ol1">
+  <li class="li11"><span class="s12"></span><span class="s13">// </span><span class="s1">正则判断手机号码地址格式</span><span class="s14">  </span></li>
+  <li class="li9"><span class="s1">- (</span><span class="s17"><b>BOOL</b></span><span class="s1">)isMobileNumber:(NSString *)mobileNum  </span></li>
+  <li class="li5"><span class="s1">{  </span></li>
+  <li class="li9"><span class="s1">       </span><span class="s15">/**</span><span class="s1"> </span></li>
+  <li class="li14"><span class="s1">        * </span><span class="s4">手机号码</span><span class="s11"> </span></li>
+  <li class="li13"><span class="s1">        * </span><span class="s4">移动：</span><span class="s1">134[0-8],135,136,137,138,139,150,151,157,158,159,182,187,188</span><span class="s11"> </span></li>
+  <li class="li14"><span class="s1">        * </span><span class="s4">联通：</span><span class="s1">130,131,132,152,155,156,185,186</span><span class="s11"> </span></li>
+  <li class="li13"><span class="s1">        * </span><span class="s4">电信：</span><span class="s1">133,1349,153,180,189</span><span class="s11"> </span></li>
+  <li class="li14"><span class="s1">        */</span><span class="s11">  </span></li>
+  <li class="li12"><span class="s10"></span><span class="s11">       NSString * MOBILE = @</span><span class="s1">"^1(3[0-9]|5[0-35-9]|8[025-9])\\d{8}$"</span><span class="s11">;  </span></li>
+  <li class="li5"><span class="s1">       </span><span class="s15">/**</span><span class="s1"> </span></li>
+  <li class="li13"><span class="s1">        10         * </span><span class="s4">中国移动：</span><span class="s1">China Mobile</span><span class="s11"> </span></li>
+  <li class="li14"><span class="s1">        11         * 134[0-8],135,136,137,138,139,150,151,157,158,159,182,187,188</span><span class="s11"> </span></li>
+  <li class="li13"><span class="s1">        12         */</span><span class="s11">  </span></li>
+  <li class="li10"><span class="s10"></span><span class="s11">       NSString * CM = @</span><span class="s1">"^1(34[0-8]|(3[5-9]|5[017-9]|8[278])\\d)\\d{7}$"</span><span class="s11">;  </span></li>
+  <li class="li9"><span class="s1">       </span><span class="s15">/**</span><span class="s1"> </span></li>
+  <li class="li14"><span class="s1">        15         * </span><span class="s4">中国联通：</span><span class="s1">China Unicom</span><span class="s11"> </span></li>
+  <li class="li13"><span class="s1">        16         * 130,131,132,152,155,156,185,186</span><span class="s11"> </span></li>
+  <li class="li14"><span class="s1">        17         */</span><span class="s11">  </span></li>
+  <li class="li12"><span class="s10"></span><span class="s11">       NSString * CU = @</span><span class="s1">"^1(3[0-2]|5[256]|8[56])\\d{8}$"</span><span class="s11">;  </span></li>
+  <li class="li5"><span class="s1">       </span><span class="s15">/**</span><span class="s1"> </span></li>
+  <li class="li13"><span class="s1">        20         * </span><span class="s4">中国电信：</span><span class="s1">China Telecom</span><span class="s11"> </span></li>
+  <li class="li14"><span class="s1">        21         * 133,1349,153,180,189</span><span class="s11"> </span></li>
+  <li class="li13"><span class="s1">        22         */</span><span class="s11">  </span></li>
+  <li class="li10"><span class="s10"></span><span class="s11">       NSString * CT = @</span><span class="s1">"^1((33|53|8[09])[0-9]|349)\\d{7}$"</span><span class="s11">;  </span></li>
+  <li class="li9"><span class="s1">       </span><span class="s15">/**</span><span class="s1"> </span></li>
+  <li class="li14"><span class="s1">        25         * </span><span class="s4">大陆地区固话及小灵通</span><span class="s11"> </span></li>
+  <li class="li13"><span class="s1">        26         * </span><span class="s4">区号：</span><span class="s1">010,020,021,022,023,024,025,027,028,029</span><span class="s11"> </span></li>
+  <li class="li14"><span class="s1">        27         * </span><span class="s4">号码：七位或八位</span><span class="s11"> </span></li>
+  <li class="li13"><span class="s1">        28         */</span><span class="s11">  </span></li>
+  <li class="li14"><span class="s10"></span><span class="s11">      </span><span class="s1">// NSString * PHS = @"^0(10|2[0-5789]|\\d{3})\\d{7,8}$";</span><span class="s11">  </span></li>
+  <li class="li9"><span class="s1">      </span></li>
+  <li class="li5"><span class="s1">     NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@</span><span class="s7">"SELF MATCHES %@"</span><span class="s1">, MOBILE];  </span></li>
+  <li class="li9"><span class="s1">     NSPredicate *regextestcm = [NSPredicate predicateWithFormat:@</span><span class="s7">"SELF MATCHES %@"</span><span class="s1">, CM];  </span></li>
+  <li class="li5"><span class="s1">     NSPredicate *regextestcu = [NSPredicate predicateWithFormat:@</span><span class="s7">"SELF MATCHES %@"</span><span class="s1">, CU];  </span></li>
+  <li class="li9"><span class="s1">     NSPredicate *regextestct = [NSPredicate predicateWithFormat:@</span><span class="s7">"SELF MATCHES %@"</span><span class="s1">, CT];  </span></li>
+  <li class="li5"><span class="s1">      </span></li>
+  <li class="li9"><span class="s1">    </span><span class="s9"><b>if</b></span><span class="s1"> (([regextestmobile evaluateWithObject:mobileNum] == YES)  </span></li>
+  <li class="li5"><span class="s1">    || ([regextestcm evaluateWithObject:mobileNum] == YES)  </span></li>
+  <li class="li9"><span class="s1">    || ([regextestct evaluateWithObject:mobileNum] == YES)  </span></li>
+  <li class="li5"><span class="s1">    || ([regextestcu evaluateWithObject:mobileNum] == YES))  </span></li>
+  <li class="li9"><span class="s1">    {  </span></li>
+  <li class="li5"><span class="s1">        </span><span class="s9"><b>if</b></span><span class="s1">([regextestcm evaluateWithObject:mobileNum] == YES) {  </span></li>
+  <li class="li9"><span class="s1">          NSLog(@</span><span class="s7">"China Mobile"</span><span class="s1">);  </span></li>
+  <li class="li5"><span class="s1">        } </span><span class="s9"><b>else</b></span><span class="s1"> </span><span class="s9"><b>if</b></span><span class="s1">([regextestct evaluateWithObject:mobileNum] == YES) {  </span></li>
+  <li class="li9"><span class="s1">          NSLog(@</span><span class="s7">"China Telecom"</span><span class="s1">);  </span></li>
+  <li class="li5"><span class="s1">        } </span><span class="s9"><b>else</b></span><span class="s1"> </span><span class="s9"><b>if</b></span><span class="s1"> ([regextestcu evaluateWithObject:mobileNum] == YES) {  </span></li>
+  <li class="li9"><span class="s1">          NSLog(@</span><span class="s7">"China Unicom"</span><span class="s1">);  </span></li>
+  <li class="li5"><span class="s1">        } </span><span class="s9"><b>else</b></span><span class="s1"> {  </span></li>
+  <li class="li9"><span class="s1">          NSLog(@</span><span class="s7">"Unknow"</span><span class="s1">);  </span></li>
+  <li class="li5"><span class="s1">        }  </span></li>
+  <li class="li9"><span class="s1">          </span></li>
+  <li class="li5"><span class="s1">        </span><span class="s9"><b>return</b></span><span class="s1"> YES;  </span></li>
+  <li class="li9"><span class="s1">    }  </span></li>
+  <li class="li5"><span class="s1">    </span><span class="s9"><b>else</b></span><span class="s1">   </span></li>
+  <li class="li9"><span class="s1">    {  </span></li>
+  <li class="li5"><span class="s1">        </span><span class="s9"><b>return</b></span><span class="s1"> NO;  </span></li>
+  <li class="li9"><span class="s1">    }  </span></li>
+  <li class="li5"><span class="s1">}  </span></li>
+</ol>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">(6)</span><span class="s1">邮箱验证、电话号码验证</span><span class="s3">:</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p8"><span class="s5"><b>[cpp]</b> <a href="http://blog.csdn.net/ztp800201/article/details/8116081#"><span class="s6">view plaincopy</span></a></span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<ol class="ol1">
+  <li class="li11"><span class="s12"></span><span class="s13">//</span><span class="s1">是否是有效的正则表达式</span><span class="s14">  </span></li>
+  <li class="li9"><span class="s1">  </span></li>
+  <li class="li5"><span class="s1">+(</span><span class="s17"><b>BOOL</b></span><span class="s1">)isValidateRegularExpression:(NSString *)strDestination byExpression:(NSString *)strExpression  </span></li>
+  <li class="li9"><span class="s1">  </span></li>
+  <li class="li5"><span class="s1">{  </span></li>
+  <li class="li9"><span class="s1">  </span></li>
+  <li class="li5"><span class="s1">   NSPredicate *predicate = [NSPredicatepredicateWithFormat:@</span><span class="s7">"SELF MATCHES %@"</span><span class="s1">, strExpression];    </span></li>
+  <li class="li9"><span class="s1">  </span></li>
+  <li class="li5"><span class="s1">   </span><span class="s9"><b>return</b></span><span class="s1"> [predicate evaluateWithObject:strDestination];  </span></li>
+  <li class="li9"><span class="s1">  </span></li>
+  <li class="li5"><span class="s1">}  </span></li>
+  <li class="li9"><span class="s1">  </span></li>
+  <li class="li14"><span class="s1">//</span><span class="s4">验证</span><span class="s1">email</span><span class="s11">  </span></li>
+  <li class="li9"><span class="s1">+(</span><span class="s17"><b>BOOL</b></span><span class="s1">)isValidateEmail:(NSString *)email {  </span></li>
+  <li class="li5"><span class="s1">  </span></li>
+  <li class="li12"><span class="s10"></span><span class="s11">   NSString *strRegex = @</span><span class="s1">"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,5}"</span><span class="s11">;  </span></li>
+  <li class="li5"><span class="s1">  </span></li>
+  <li class="li9"><span class="s1">   </span><span class="s17"><b>BOOL</b></span><span class="s1"> rt = [CommonTools isValidateRegularExpression:email byExpression:strRegex];  </span></li>
+  <li class="li5"><span class="s1">  </span></li>
+  <li class="li9"><span class="s1">   </span><span class="s9"><b>return</b></span><span class="s1"> rt;  </span></li>
+  <li class="li5"><span class="s1">  </span></li>
+  <li class="li9"><span class="s1">}  </span></li>
+  <li class="li5"><span class="s1">  </span></li>
+  <li class="li13"><span class="s1">//</span><span class="s4">验证电话号码</span><span class="s11">  </span></li>
+  <li class="li5"><span class="s1">+(</span><span class="s17"><b>BOOL</b></span><span class="s1">)isValidateTelNumber:(NSString *)number {  </span></li>
+  <li class="li9"><span class="s1">  </span></li>
+  <li class="li5"><span class="s1">   NSString *strRegex = @</span><span class="s7">"[0-9]{1,20}"</span><span class="s1">;  </span></li>
+  <li class="li9"><span class="s1">  </span></li>
+  <li class="li5"><span class="s1">   </span><span class="s17"><b>BOOL</b></span><span class="s1"> rt = [CommonTools isValidateRegularExpression:number byExpression:strRegex];  </span></li>
+  <li class="li9"><span class="s1">  </span></li>
+  <li class="li5"><span class="s1">   </span><span class="s9"><b>return</b></span><span class="s1"> rt;  </span></li>
+  <li class="li9"><span class="s1">  </span></li>
+  <li class="li5"><span class="s1">}  </span></li>
+</ol>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">(7)NSDate</span><span class="s4">进行筛选</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p8"><span class="s5"><b>[cpp]</b> <a href="http://blog.csdn.net/ztp800201/article/details/8116081#"><span class="s6">view plaincopy</span></a></span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<ol class="ol1">
+  <li class="li14"><span class="s1">//</span><span class="s4">日期在十天之内</span><span class="s1">:</span><span class="s11">  </span></li>
+  <li class="li9"><span class="s1">NSDate *endDate = [[NSDate date] retain];  </span></li>
+  <li class="li5"><span class="s1">NSTimeInterval timeInterval= [endDate timeIntervalSinceReferenceDate];  </span></li>
+  <li class="li9"><span class="s1">timeInterval -=3600*24*10;  </span></li>
+  <li class="li5"><span class="s1">NSDate *beginDate = [[NSDate dateWithTimeIntervalSinceReferenceDate:timeInterval] retain];  </span></li>
+  <li class="li13"><span class="s1">//</span><span class="s4">对</span><span class="s1">coredata</span><span class="s4">进行筛选</span><span class="s1">(</span><span class="s4">假设有</span><span class="s1">fetchRequest)</span><span class="s11">  </span></li>
+  <li class="li5"><span class="s1">NSPredicate *predicate_date =  </span></li>
+  <li class="li9"><span class="s1">[NSPredicate predicateWithFormat:@</span><span class="s7">"date &gt;= %@ AND date &lt;= %@"</span><span class="s1">, beginDate,endDate];  </span></li>
+  <li class="li5"><span class="s1">      </span></li>
+  <li class="li9"><span class="s1">[fetchRequest setPredicate:predicate_date];  </span></li>
+  <li class="li14"><span class="s1">//</span><span class="s4">释放</span><span class="s1">retained</span><span class="s4">的对象</span><span class="s11">  </span></li>
+  <li class="li9"><span class="s1">[endDate release];  </span></li>
+  <li class="li5"><span class="s1">[beginDate release];  </span></li>
+</ol>
+</body>
+</html>

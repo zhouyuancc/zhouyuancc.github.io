@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: #1d9421}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #669c35}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s4 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s9 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}
+    span.s10 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>HMViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>01-</span><span class="s2">多线程网络</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 14-8-21.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2014</span><span class="s2">年</span><span class="s1"> heima. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1">———KVO—————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>HMPerson *p = [[HMPerson alloc] init];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>p.age = </span><span class="s3">20</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-tab-span">	</span></span><span class="s5">// </span><span class="s1">通过</span><span class="s5">KVO</span><span class="s1">来监听用户状态的改变</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>[p addObserver:</span><span class="s6">self</span><span class="s1"> forKeyPath:</span><span class="s7">@"age"</span><span class="s1"> options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:</span><span class="s6">nil</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">self</span><span class="s1">.p = p;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">// </span><span class="s9">只要</span><span class="s1">p</span><span class="s9">的</span><span class="s1">age</span><span class="s9">属性一改变</span><span class="s1">,</span><span class="s9">就会调用观察者的</span><span class="s1">observeValueForKeyPath</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">// KVO</span><span class="s9">底层实现</span><span class="s1">:</span></p>
+<p class="p1"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">// 1.</span><span class="s9">动态创建</span><span class="s1">NSKVONotifying_Person,NSKVONotifying_Person</span><span class="s9">是</span><span class="s1">Person</span><span class="s9">子类</span><span class="s1">,</span><span class="s9">做</span><span class="s1">KVO</span></p>
+<p class="p1"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">// 2.</span><span class="s9">修改当前对象的</span><span class="s1">isa</span><span class="s9">指针</span><span class="s1">-&gt;NSKVONotifying_Person</span></p>
+<p class="p1"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">// 3.</span><span class="s9">只要调用对象的</span><span class="s1">set,</span><span class="s9">就会调用</span><span class="s1">NSKVONotifying_Person</span><span class="s9">的</span><span class="s1">set</span><span class="s9">方法</span></p>
+<p class="p1"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">// 4.</span><span class="s9">重写</span><span class="s1">NSKVONotifying_Person</span><span class="s9">的</span><span class="s1">set</span><span class="s9">方法</span><span class="s1">,1.[super set:] 2.</span><span class="s9">通知观察者</span><span class="s1">,</span><span class="s9">告诉你属性改变</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s5">// </span><span class="s1">就是去判断有没有调用一个对象的</span><span class="s5">set</span><span class="s1">方法</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)dealloc</span></p>
+<p class="p2"><span class="s1">{</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s1">.p removeObserver:</span><span class="s6">self</span><span class="s1"> forKeyPath:</span><span class="s7">@"age"</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">当监控的某个属性的值改变了就会调用</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param keyPath </span><span class="s2">属性名（哪个属性改了？）</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param object<span class="Apple-converted-space">  </span></span><span class="s2">哪个对象的属性被改了？</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param change<span class="Apple-converted-space">  </span></span><span class="s1">属性的修改情况（属性原来的值、属性最新的值）</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param context void * == id</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p2"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)observeValueForKeyPath:(NSString *)keyPath ofObject:(</span><span class="s6">id</span><span class="s1">)object change:(NSDictionary *)change context:(</span><span class="s6">void</span><span class="s1"> *)context</span></p>
+<p class="p2"><span class="s1">{</span></p>
+<p class="p6"><span class="s4"><span class="Apple-tab-span">	</span></span><span class="s5">//</span><span class="s1">获取最新改变的值</span></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span>[object valueForKeyPath:keyPath];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>NSLog(</span><span class="s7">@"%@</span><span class="s10">对象的</span><span class="s7">%@</span><span class="s10">属性改变了：</span><span class="s7">%@"</span><span class="s1">, object, keyPath, change);</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">————KVC————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p2"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)testKvc</span></p>
+<p class="p2"><span class="s1">{</span></p>
+<p class="p1"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">// key value coding : </span><span class="s2">间接通过字符串类型的</span><span class="s1">key</span><span class="s2">取出对应的属性值</span></p>
+<p class="p1"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">// KVC</span><span class="s2">的价值</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s5">// 1.</span><span class="s1">可以访问私有成员变量的值</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s5">// 2.</span><span class="s1">可以间接修改私有成员变量的值（替换系统自带的导航栏、</span><span class="s5">tabbar</span><span class="s1">）</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>HMPerson *p = [[HMPerson alloc] init];</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>p.age = 20;</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"</span><span class="s2">年龄</span><span class="s1">=%d", p.age);</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"</span><span class="s2">年龄</span><span class="s1">=%d", [p age]);</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>int age = [[p valueForKey:@"age"] intValue];</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"</span><span class="s2">年龄</span><span class="s1">=%d", age);</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"%f", [[p valueForKey:@"height"] floatValue]);</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>float h1 = [[p valueForKey:@"height"] floatValue];</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>float h2 = [[p valueForKeyPath:@"height"] floatValue];</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"%f %f", h1, h2);</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>p.dog = [[HMDog alloc] init];</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>p.dog.name = @"wangcai";</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"%@", [p valueForKeyPath:@"dog.name"]);</span></p>
+<p class="p1"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">// keyPath</span><span class="s2">包含了</span><span class="s1">key</span><span class="s2">的功能</span></p>
+<p class="p1"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">// key:</span><span class="s2">只能访问当前对象的属性</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s5">// keyPath:</span><span class="s1">能利用</span><span class="s5">.</span><span class="s1">运算符一层一层往内部访问属性</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>HMBook *b1 = [[HMBook alloc] init];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>b1.name = </span><span class="s7">@"kuihua"</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>b1.price = </span><span class="s3">100.6</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>HMBook *b2 = [[HMBook alloc] init];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>b2.name = </span><span class="s7">@"pixie"</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>b2.price = </span><span class="s3">5.6</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>HMBook *b3 = [[HMBook alloc] init];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>b3.name = </span><span class="s7">@"jiuyin"</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>b3.price = </span><span class="s3">50.6</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>p.books = </span><span class="s3">@[</span><span class="s1">b1, b2, b3</span><span class="s3">]</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"%@", [p valueForKeyPath:@"books.@count"]); // </span><span class="s2">计算数组的长度</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>NSArray *names = [p valueForKeyPath:@"books.name"];</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>NSArray *names = [p.books valueForKeyPath:@"name"];</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"%@", names);</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">double</span><span class="s1"> sumPrice = [[p valueForKeyPath:</span><span class="s7">@"books.@sum.price"</span><span class="s1">] doubleValue];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>NSLog(</span><span class="s7">@"%f"</span><span class="s1">, sumPrice);</span></p>
+<p class="p2"><span class="s1">}</span></p>
+</body>
+</html>

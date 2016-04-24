@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #294c50}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #539aa4}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s9 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s15 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s16 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s17 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s18 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>MainViewController.m</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 16/2/4.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright © 2016</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"MainViewController.h"</span></p>
+<p class="p4"><span class="s1">#import </span><span class="s4">"Dock.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"TabBar.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"IconButton.h"</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">#define RandomColor [UIColor colorWithRed:arc4random()%</span><span class="s5">255</span><span class="s1">/</span><span class="s5">255.0</span><span class="s1"> green:arc4random()%</span><span class="s5">255</span><span class="s1">/</span><span class="s5">255.0</span><span class="s1"> blue:arc4random()%</span><span class="s5">255</span><span class="s1">/</span><span class="s5">255.0</span><span class="s1"> alpha:</span><span class="s5">1.0</span><span class="s1">]</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s6">@interface</span><span class="s7"> </span><span class="s1">MainViewController</span><span class="s7"> ()&lt;</span><span class="s1">TabBarDelegate</span><span class="s7">&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@property</span><span class="s7"> (</span><span class="s1">nonatomic</span><span class="s7">,</span><span class="s1">weak</span><span class="s7">) </span><span class="s8">Dock</span><span class="s7"> *dock;</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space"> </span></span><span class="s1">存放右边子控制器的</span><span class="s9">view</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p6"><span class="s1">@property</span><span class="s7"> (</span><span class="s1">nonatomic</span><span class="s7">,</span><span class="s1">weak</span><span class="s7">) </span><span class="s10">UIView</span><span class="s7"> *contenView;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p8"><span class="s6">@implementation</span><span class="s1"> MainViewController</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)viewDidLoad {</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">super</span><span class="s7"> </span><span class="s1">viewDidLoad</span><span class="s7">];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//1.</span><span class="s2">初始化</span><span class="s1">Dock</span></p>
+<p class="p10"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">setupDock</span><span class="s7">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//2.</span><span class="s2">初始化</span><span class="s1">contentView</span></p>
+<p class="p10"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">setupContentView</span><span class="s7">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//2.</span><span class="s2">初始化子控制器</span></p>
+<p class="p10"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">setupChildViewControllers</span><span class="s7">];</span></p>
+<p class="p8"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space"> </span></span><span class="s1">屏幕旋转</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p8"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)viewWillTransitionToSize:(</span><span class="s11">CGSize</span><span class="s1">)size withTransitionCoordinator:(</span><span class="s6">id</span><span class="s1">&lt;</span><span class="s10">UIViewControllerTransitionCoordinator</span><span class="s1">&gt;)coordinator</span></p>
+<p class="p8"><span class="s1">{</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s10">UIView</span><span class="s7"> </span><span class="s1">animateWithDuration</span><span class="s7">:</span><span class="s5">0.2</span><span class="s7"> </span><span class="s1">animations</span><span class="s7">:^{</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s6">self</span><span class="s1">.</span><span class="s12">dock</span><span class="s1"> </span><span class="s13">rotate</span><span class="s1">:(size.</span><span class="s11">width</span><span class="s1"> &gt; size.</span><span class="s11">height</span><span class="s1">)];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p11"><span class="s7"><span class="Apple-converted-space">        </span></span><span class="s6">self</span><span class="s7">.</span><span class="s1">contenView</span><span class="s7">.</span><span class="s1">x</span><span class="s7"> = </span><span class="s6">self</span><span class="s7">.</span><span class="s1">dock</span><span class="s7">.</span><span class="s1">width</span><span class="s7">;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p8"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s2">初始化</span><span class="s1">contentView</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p8"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)setupContentView</span></p>
+<p class="p8"><span class="s1">{</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">UIView</span><span class="s1"> *contentView = [[</span><span class="s10">UIView</span><span class="s1"> </span><span class="s14">alloc</span><span class="s1">] </span><span class="s14">init</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s11">CGFloat</span><span class="s1"> contentViewY = </span><span class="s5">0</span><span class="s1">;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s11">CGFloat</span><span class="s1"> contentViewX = </span><span class="s6">self</span><span class="s1">.</span><span class="s12">dock</span><span class="s1">.</span><span class="s12">width</span><span class="s1">;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s11">CGFloat</span><span class="s1"> contentViewW = </span><span class="s5">600</span><span class="s1">;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s11">CGFloat</span><span class="s1"> contentViewH = </span><span class="s6">self</span><span class="s1">.</span><span class="s11">view</span><span class="s1">.</span><span class="s12">height</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">// </span><span class="s2">在</span><span class="s1">iPhone\iPad</span><span class="s2">开发，控制器的</span><span class="s1">view</span><span class="s2">的</span><span class="s1">autoresizingMask</span><span class="s2">，默认是伸缩宽度和高度</span><span class="s1">;</span><span class="s2">但是</span><span class="s1">view</span><span class="s2">不会默认伸缩宽高</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s15">/**</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">     </span></span><span class="s1">先设置自动伸缩，再创建出控制器的</span><span class="s9">view</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>contentView.</span><span class="s11">autoresizingMask</span><span class="s7"> = </span><span class="s1">UIViewAutoresizingFlexibleHeight</span><span class="s7">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>contentView.</span><span class="s11">frame</span><span class="s1"> = </span><span class="s14">CGRectMake</span><span class="s1">(contentViewX, contentViewY, contentViewW, contentViewH);</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s1">.</span><span class="s11">view</span><span class="s1"> </span><span class="s14">addSubview</span><span class="s1">:contentView];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">self</span><span class="s1">.</span><span class="s12">contenView</span><span class="s1"> = contentView;</span></p>
+<p class="p8"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space"> </span></span><span class="s1">初始化子控制器</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p8"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)setupChildViewControllers</span></p>
+<p class="p8"><span class="s1">{</span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UIViewController</span><span class="s7"> *v0 = [[</span><span class="s1">UIViewController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">init</span><span class="s7">];</span></p>
+<p class="p13"><span class="s7"><span class="Apple-converted-space">    </span>v0.</span><span class="s1">view</span><span class="s7">.</span><span class="s1">backgroundColor</span><span class="s7"> = </span><span class="s16">RandomColor</span><span class="s7">;</span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UINavigationController</span><span class="s7"> *nav0 = [[</span><span class="s1">UINavigationController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">initWithRootViewController</span><span class="s7">:v0];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s15">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">系统自带控制器数组</span><span class="s1">self.childViewControllers</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">只要调用</span><span class="s1">addChildViewController:</span><span class="s2">方法，就能将子控制器扔到</span><span class="s1">childViewControllers</span><span class="s2">数组中</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">addChildViewController</span><span class="s7">:nav0];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UIViewController</span><span class="s7"> *vc1 = [[</span><span class="s1">UIViewController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">init</span><span class="s7">];</span></p>
+<p class="p13"><span class="s7"><span class="Apple-converted-space">    </span>vc1.</span><span class="s1">view</span><span class="s7">.</span><span class="s1">backgroundColor</span><span class="s7"> = </span><span class="s16">RandomColor</span><span class="s7">;</span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UINavigationController</span><span class="s7"> *nav1 = [[</span><span class="s1">UINavigationController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">initWithRootViewController</span><span class="s7">:vc1];</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">addChildViewController</span><span class="s7">:nav1];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UIViewController</span><span class="s7"> *vc2 = [[</span><span class="s1">UIViewController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">init</span><span class="s7">];</span></p>
+<p class="p13"><span class="s7"><span class="Apple-converted-space">    </span>vc2.</span><span class="s1">view</span><span class="s7">.</span><span class="s1">backgroundColor</span><span class="s7"> = </span><span class="s16">RandomColor</span><span class="s7">;</span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UINavigationController</span><span class="s7"> *nav2 = [[</span><span class="s1">UINavigationController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">initWithRootViewController</span><span class="s7">:vc2];</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">addChildViewController</span><span class="s7">:nav2];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UIViewController</span><span class="s7"> *vc3 = [[</span><span class="s1">UIViewController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">init</span><span class="s7">];</span></p>
+<p class="p13"><span class="s7"><span class="Apple-converted-space">    </span>vc3.</span><span class="s1">view</span><span class="s7">.</span><span class="s1">backgroundColor</span><span class="s7"> = </span><span class="s16">RandomColor</span><span class="s7">;</span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UINavigationController</span><span class="s7"> *nav3 = [[</span><span class="s1">UINavigationController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">initWithRootViewController</span><span class="s7">:vc3];</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">addChildViewController</span><span class="s7">:nav3];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UIViewController</span><span class="s7"> *vc4 = [[</span><span class="s1">UIViewController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">init</span><span class="s7">];</span></p>
+<p class="p13"><span class="s7"><span class="Apple-converted-space">    </span>vc4.</span><span class="s1">view</span><span class="s7">.</span><span class="s1">backgroundColor</span><span class="s7"> = </span><span class="s16">RandomColor</span><span class="s7">;</span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UINavigationController</span><span class="s7"> *nav4 = [[</span><span class="s1">UINavigationController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">initWithRootViewController</span><span class="s7">:vc4];</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">addChildViewController</span><span class="s7">:nav4];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UIViewController</span><span class="s7"> *vc5 = [[</span><span class="s1">UIViewController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">init</span><span class="s7">];</span></p>
+<p class="p13"><span class="s7"><span class="Apple-converted-space">    </span>vc5.</span><span class="s1">view</span><span class="s7">.</span><span class="s1">backgroundColor</span><span class="s7"> = </span><span class="s16">RandomColor</span><span class="s7">;</span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UINavigationController</span><span class="s7"> *nav5 = [[</span><span class="s1">UINavigationController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">initWithRootViewController</span><span class="s7">:vc5];</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">addChildViewController</span><span class="s7">:nav5];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UIViewController</span><span class="s7"> *home = [[</span><span class="s1">UIViewController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">init</span><span class="s7">];</span></p>
+<p class="p13"><span class="s7"><span class="Apple-converted-space">    </span>home.</span><span class="s1">view</span><span class="s7">.</span><span class="s1">backgroundColor</span><span class="s7"> = [</span><span class="s10">UIColor</span><span class="s7"> </span><span class="s14">whiteColor</span><span class="s7">];</span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UINavigationController</span><span class="s7"> *homeNav = [[</span><span class="s1">UINavigationController</span><span class="s7"> </span><span class="s14">alloc</span><span class="s7">] </span><span class="s14">initWithRootViewController</span><span class="s7">:home];</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">addChildViewController</span><span class="s7">:homeNav];</span></p>
+<p class="p8"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s2">初始化</span><span class="s1">Dock</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p8"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)setupDock</span></p>
+<p class="p8"><span class="s1">{</span></p>
+<p class="p13"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s6">self</span><span class="s7">.</span><span class="s1">view</span><span class="s7">.</span><span class="s1">backgroundColor</span><span class="s7"> = </span><span class="s16">Color</span><span class="s7">(</span><span class="s5">55</span><span class="s7">, </span><span class="s5">55</span><span class="s7">, </span><span class="s5">55</span><span class="s7">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">添加</span><span class="s1">dock</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">Dock</span><span class="s1"> *dock = [[</span><span class="s8">Dock</span><span class="s1"> </span><span class="s14">alloc</span><span class="s1">] </span><span class="s14">init</span><span class="s1">];</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>dock.backgroundColor = [UIColor yellowColor];</span></p>
+<p class="p13"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">CGFloat</span><span class="s7"> dockH = </span><span class="s6">self</span><span class="s7">.</span><span class="s1">view</span><span class="s7">.</span><span class="s1">frame</span><span class="s7">.</span><span class="s1">size</span><span class="s7">.</span><span class="s1">height</span><span class="s7">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1">#warning </span><span class="s2">一定要添加</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s15">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">自动伸缩</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">     </span></span><span class="s1">跟随父控件的高度</span><span class="s9"> </span><span class="s1">拉伸</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>dock.</span><span class="s11">autoresizingMask</span><span class="s7"> = </span><span class="s1">UIViewAutoresizingFlexibleHeight</span><span class="s7">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>dock.</span><span class="s11">frame</span><span class="s1"> = </span><span class="s14">CGRectMake</span><span class="s1">(</span><span class="s5">0</span><span class="s1">, </span><span class="s5">0</span><span class="s1">, </span><span class="s5">0</span><span class="s1">, dockH);</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s1">.</span><span class="s11">view</span><span class="s1"> </span><span class="s14">addSubview</span><span class="s1">:dock];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">self</span><span class="s1">.</span><span class="s12">dock</span><span class="s1"> = dock;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s17"><span class="Apple-converted-space">    </span></span><span class="s9">//</span><span class="s1">根据当前的屏幕方向设置</span><span class="s9">dock</span><span class="s1">的属性</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">viewWillTransitionToSize</span><span class="s7">:</span><span class="s6">self</span><span class="s7">.</span><span class="s11">view</span><span class="s7">.</span><span class="s11">bounds</span><span class="s7">.</span><span class="s11">size</span><span class="s7"> </span><span class="s1">withTransitionCoordinator</span><span class="s7">:</span><span class="s6">nil</span><span class="s7">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">设置</span><span class="s1">tabbar</span><span class="s2">的代理</span></p>
+<p class="p11"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s6">self</span><span class="s7">.</span><span class="s1">dock</span><span class="s7">.</span><span class="s1">tabBar</span><span class="s7">.</span><span class="s1">delegate</span><span class="s7"> = </span><span class="s6">self</span><span class="s7">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s17"><span class="Apple-converted-space">    </span></span><span class="s9">//</span><span class="s1">设置头像的点击</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7">.</span><span class="s12">dock</span><span class="s7">.</span><span class="s12">iconButton</span><span class="s7"> </span><span class="s1">addTarget</span><span class="s7">:</span><span class="s6">self</span><span class="s7"> </span><span class="s1">action</span><span class="s7">:</span><span class="s6">@selector</span><span class="s7">(iconClick) </span><span class="s1">forControlEvents</span><span class="s7">:</span><span class="s1">UIControlEventTouchUpInside</span><span class="s7">];</span></p>
+<p class="p8"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space"> </span></span><span class="s1">监听头像的点击</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p8"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)iconClick</span></p>
+<p class="p8"><span class="s1">{</span></p>
+<p class="p7"><span class="s17"><span class="Apple-converted-space">    </span></span><span class="s9">//</span><span class="s1">子控制器的个数</span></p>
+<p class="p13"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s6">long</span><span class="s7"> count = </span><span class="s6">self</span><span class="s7">.</span><span class="s1">childViewControllers</span><span class="s7">.</span><span class="s1">count</span><span class="s7">;</span><span class="s15">//7</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s17"><span class="Apple-converted-space">    </span></span><span class="s9">//</span><span class="s1">切换主页控制器（最后一个子控制器）</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">long</span><span class="s1"> index = count - </span><span class="s5">1</span><span class="s1">;</span><span class="s15">//6</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s17"><span class="Apple-converted-space">    </span></span><span class="s9">//</span><span class="s1">获取当前正在显示的控制器的索引</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">int</span><span class="s1"> from = </span><span class="s5">0</span><span class="s1">;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">for</span><span class="s1"> (</span><span class="s6">int</span><span class="s1"> i = </span><span class="s5">0</span><span class="s1">; i &lt; count; i++)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">UIViewController</span><span class="s1"> *vc = </span><span class="s6">self</span><span class="s1">.</span><span class="s11">childViewControllers</span><span class="s1">[i];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">if</span><span class="s1"> (vc.</span><span class="s11">view</span><span class="s1">.</span><span class="s11">superview</span><span class="s1">) {</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">            </span>from = i;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s6">break</span><span class="s1">;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">切换控制器</span></p>
+<p class="p10"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s7"> </span><span class="s1">tabBar</span><span class="s7">:</span><span class="s6">nil</span><span class="s7"> </span><span class="s1">didSelectButtonFrom</span><span class="s7">:from </span><span class="s1">to</span><span class="s7">:index];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">让</span><span class="s1">tabBar</span><span class="s2">里面的所有按钮取消选中</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s1">.</span><span class="s12">dock</span><span class="s1">.</span><span class="s12">tabBar</span><span class="s1"> </span><span class="s13">unselect</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p8"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">#pragma mark - TabBarDelegate</span></p>
+<p class="p8"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)tabBar:(</span><span class="s8">TabBar</span><span class="s1"> *)tabBar didSelectButtonFrom:(</span><span class="s11">NSInteger</span><span class="s1">)from to:(</span><span class="s11">NSInteger</span><span class="s1">)to</span></p>
+<p class="p8"><span class="s1">{</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//1.</span><span class="s2">新控制器</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">UIViewController</span><span class="s1"> *newVc = </span><span class="s6">self</span><span class="s1">.</span><span class="s11">childViewControllers</span><span class="s1">[to];</span></p>
+<p class="p7"><span class="s17"><span class="Apple-converted-space">    </span></span><span class="s9">//</span><span class="s1">如果现在展示的</span><span class="s9">view</span><span class="s1">已经在父控件上</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">if</span><span class="s1">(newVc.</span><span class="s11">view</span><span class="s1">.</span><span class="s11">superview</span><span class="s1">) </span><span class="s6">return</span><span class="s1">;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>newVc.</span><span class="s11">view</span><span class="s1">.</span><span class="s11">frame</span><span class="s1"> = </span><span class="s6">self</span><span class="s1">.</span><span class="s12">contenView</span><span class="s1">.</span><span class="s11">bounds</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//2.</span><span class="s2">旧控制器</span></p>
+<p class="p12"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">UIViewController</span><span class="s7"> *oldVc;</span></p>
+<p class="p7"><span class="s17"><span class="Apple-converted-space">    </span></span><span class="s9">//</span><span class="s1">取出最后一个字控制器</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">UIViewController</span><span class="s1"> *lastVc = [</span><span class="s6">self</span><span class="s1">.</span><span class="s11">childViewControllers</span><span class="s1"> </span><span class="s14">lastObject</span><span class="s1">];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">if</span><span class="s1"> (lastVc.</span><span class="s11">view</span><span class="s1">.</span><span class="s11">superview</span><span class="s1">) {</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>oldVc = lastVc;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">else</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>oldVc = </span><span class="s6">self</span><span class="s1">.</span><span class="s11">childViewControllers</span><span class="s1">[from];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">翻转的是</span><span class="s1">oldVc.view</span><span class="s2">和</span><span class="s1">newVc.view</span><span class="s2">的父控件</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">if</span><span class="s1"> (oldVc.</span><span class="s11">view</span><span class="s1">.</span><span class="s11">superview</span><span class="s1">) {</span><span class="s15">//</span><span class="s18">正在显示旧控制器</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">        </span>[oldVc.</span><span class="s11">view</span><span class="s7"> </span><span class="s1">removeFromSuperview</span><span class="s7">];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s6">self</span><span class="s1">.</span><span class="s12">contenView</span><span class="s1"> </span><span class="s14">addSubview</span><span class="s1">:newVc.</span><span class="s11">view</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s15">//3.</span><span class="s18">转场动画</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">CATransition</span><span class="s1"> *transition = [</span><span class="s10">CATransition</span><span class="s1"> </span><span class="s14">animation</span><span class="s1">];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>transition.</span><span class="s11">type</span><span class="s1"> = </span><span class="s4">@"rippleEffect"</span><span class="s1">;</span><span class="s15">//push</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">        </span></span><span class="s1">//cube,fade,push,moveIn,reveal,oglFlip,suckEffect(</span><span class="s2">收缩</span><span class="s1">),rippleEffect(</span><span class="s2">滴水效果</span><span class="s1">)</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">        </span></span><span class="s1">//pageCurl,pageUnCurl,cameraIrisHollowOpen,cameraIrisHollowClose</span></p>
+<p class="p13"><span class="s7"><span class="Apple-converted-space">        </span>transition.</span><span class="s1">subtype</span><span class="s7"> = </span><span class="s1">kCATransitionFromRight</span><span class="s7">;</span><span class="s15">//</span><span class="s18">从右侧进入</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>transition.</span><span class="s11">duration</span><span class="s1"> = </span><span class="s5">1.0</span><span class="s1">;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s6">self</span><span class="s1">.</span><span class="s12">contenView</span><span class="s1">.</span><span class="s11">layer</span><span class="s1"> </span><span class="s14">addAnimation</span><span class="s1">:transition </span><span class="s14">forKey</span><span class="s1">:</span><span class="s6">nil</span><span class="s1">];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s15">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>3.</span><span class="s2">转场动画</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span></span><span class="s2">自动执行了</span><span class="s1">[oldVc.view removeFromSuperview];[self.contenView addSubview:newVc.view];</span><span class="s2">功能</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">         </span></span><span class="s1">导航栏的导航显示有问题</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>[UIView transitionFromView:oldVc.view toView:newVc.view duration:1.0 options:UIViewAnimationOptionTransitionCrossDissolve completion:nil];</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s6">else</span><span class="s1">//</span><span class="s2">没有显示任何控制器</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s6">self</span><span class="s1">.</span><span class="s12">contenView</span><span class="s1"> </span><span class="s14">addSubview</span><span class="s1">:newVc.</span><span class="s11">view</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p8"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)didReceiveMemoryWarning {</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s6">super</span><span class="s7"> </span><span class="s1">didReceiveMemoryWarning</span><span class="s7">];</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">// Dispose of any resources that can be recreated.</span></p>
+<p class="p8"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+</body>
+</html>

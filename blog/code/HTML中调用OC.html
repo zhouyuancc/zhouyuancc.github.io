@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #b1dd8c}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #c32275; min-height: 19.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s5 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s6 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">var</span><span class="s1"> username = document.getElementById(</span><span class="s3">'username'</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">var</span><span class="s1"> pwd = document.getElementById(</span><span class="s3">'pwd'</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">var</span><span class="s1"> btn = document.getElementById(</span><span class="s3">'btn'</span><span class="s1">);</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>btn.onclick = </span><span class="s2">function</span><span class="s1">(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">var</span><span class="s1"> name = username.value; </span><span class="s4">// </span><span class="s5">拿到用户名</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">var</span><span class="s1"> password = pwd.value;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>window.location.href = </span><span class="s3">'xmg://'</span><span class="s1"> + name + </span><span class="s3">'?'</span><span class="s1"> + password;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">//</span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">  </span>ViewController.m</span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">  </span>03-</span><span class="s6">在</span><span class="s1">HTML</span><span class="s6">中调用</span><span class="s1">OC</span></p>
+<p class="p6"><span class="s1">//</span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 16/3/16.</span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2016</span><span class="s6">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p6"><span class="s1">//</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p7"><span class="s7">#import </span><span class="s1">"ViewController.h"</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p8"><span class="s2">@interface</span><span class="s8"> </span><span class="s9">ViewController</span><span class="s8"> ()&lt;</span><span class="s1">UIWebViewDelegate</span><span class="s8">&gt;</span></p>
+<p class="p1"><span class="s1">@property</span><span class="s8"> (</span><span class="s1">weak</span><span class="s8">, </span><span class="s1">nonatomic</span><span class="s8">) </span><span class="s1">IBOutlet</span><span class="s8"> </span><span class="s10">UIWebView</span><span class="s8"> *webView;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">@end</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">- (void)viewDidLoad {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>[super </span><span class="s11">viewDidLoad</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p9"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s10">NSURL</span><span class="s8"> *url = [[</span><span class="s10">NSBundle</span><span class="s8"> </span><span class="s1">mainBundle</span><span class="s8">] </span><span class="s1">URLForResource</span><span class="s8">:</span><span class="s12">@"index"</span><span class="s8"> </span><span class="s1">withExtension</span><span class="s8">:</span><span class="s12">@"html"</span><span class="s8">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">NSURLRequest</span><span class="s1"> *request = [</span><span class="s10">NSURLRequest</span><span class="s1"> </span><span class="s11">requestWithURL</span><span class="s1">:url];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s2">self</span><span class="s1">.</span><span class="s13">webView</span><span class="s1"> </span><span class="s11">loadRequest</span><span class="s1">:request];</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">- (</span><span class="s2">BOOL</span><span class="s1">)webView:(</span><span class="s10">UIWebView</span><span class="s1"> *)webView shouldStartLoadWithRequest:(</span><span class="s10">NSURLRequest</span><span class="s1"> *)request navigationType:(</span><span class="s14">UIWebViewNavigationType</span><span class="s1">)navigationType</span></p>
+<p class="p2"><span class="s1">{</span></p>
+<p class="p6"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s6">截取请求路径</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">NSString</span><span class="s1"> *str = request.</span><span class="s14">URL</span><span class="s1">.</span><span class="s14">absoluteString</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s14">NSRange</span><span class="s1"> range = [str </span><span class="s11">rangeOfString</span><span class="s1">:</span><span class="s12">@"xmg://"</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (range.</span><span class="s14">location</span><span class="s1"> != </span><span class="s11">NSNotFound</span><span class="s1">) {</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">NSString</span><span class="s1"> *method = [str </span><span class="s11">substringFromIndex</span><span class="s1">:range.</span><span class="s14">location</span><span class="s1"> + range.</span><span class="s14">length</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">NSLog</span><span class="s1">(</span><span class="s12">@"%@"</span><span class="s1">,method);</span><span class="s4">//www?www</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">        </span>SEL sel = NSSelectorFromString(method);</span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">        </span>[self performSelector:sel withObject:nil];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return </span><span class="s2">YES</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"></span><br></p>
+</body>
+</html>

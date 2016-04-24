@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s11 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>MobileVerificationViewController.m</span></p>
+<p class="p1"><span class="s1">// <span class="Apple-converted-space">  </span></span><span class="s2">首钢机电</span><span class="s1">OA</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/10/29.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> </span><span class="s2">锐牛科技有限公司</span><span class="s1">. All rights reserved.</span></p>
+<p class="p2"><span class="s3">//<span class="Apple-converted-space">  </span></span><span class="s1">手机验证页面</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">获取验证码</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">CGFloat</span><span class="s1"> getVH = phoneW - </span><span class="s6">20</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">CGFloat</span><span class="s1"> getVX = (</span><span class="s7">screenSize</span><span class="s1">.</span><span class="s5">width</span><span class="s1"> - getVH) * </span><span class="s6">0.5</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">UIButton</span><span class="s1"> *getVerification = [[</span><span class="s8">UIButton</span><span class="s1"> </span><span class="s9">alloc</span><span class="s1">] </span><span class="s9">initWithFrame</span><span class="s1">:</span><span class="s9">CGRectMake</span><span class="s1">(getVX, </span><span class="s9">CGRectGetMaxY</span><span class="s1">(cue.</span><span class="s5">frame</span><span class="s1">), getVH, </span><span class="s6">42</span><span class="s1">)];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">UIImage</span><span class="s1"> *image = [</span><span class="s8">UIImage</span><span class="s1"> </span><span class="s9">imageNamed</span><span class="s1">:</span><span class="s10">@"login_button"</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">UIImage</span><span class="s1"> *imageHigh = [</span><span class="s8">UIImage</span><span class="s1"> </span><span class="s9">imageNamed</span><span class="s1">:</span><span class="s10">@"login_bt"</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>image = [image </span><span class="s9">stretchableImageWithLeftCapWidth</span><span class="s1">:image.</span><span class="s5">size</span><span class="s1">.</span><span class="s5">width</span><span class="s1"> * </span><span class="s6">0.5</span><span class="s1"> </span><span class="s9">topCapHeight</span><span class="s1">:image.</span><span class="s5">size</span><span class="s1">.</span><span class="s5">height</span><span class="s1"> * </span><span class="s6">0.5</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>imageHigh = [imageHigh </span><span class="s9">stretchableImageWithLeftCapWidth</span><span class="s1">:imageHigh.</span><span class="s5">size</span><span class="s1">.</span><span class="s5">width</span><span class="s1"> * </span><span class="s6">0.5</span><span class="s1"> </span><span class="s9">topCapHeight</span><span class="s1">:imageHigh.</span><span class="s5">size</span><span class="s1">.</span><span class="s5">height</span><span class="s1"> * </span><span class="s6">0.5</span><span class="s1">];</span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span>[getVerification </span><span class="s1">setBackgroundImage</span><span class="s4">:image </span><span class="s1">forState</span><span class="s4">:</span><span class="s1">UIControlStateNormal</span><span class="s4">];</span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span>[getVerification </span><span class="s1">setBackgroundImage</span><span class="s4">:imageHigh </span><span class="s1">forState</span><span class="s4">:</span><span class="s1">UIControlStateHighlighted</span><span class="s4">];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span>[getVerification </span><span class="s1">setTitle</span><span class="s4">:</span><span class="s10">@"</span><span class="s11">获取验证码</span><span class="s10">"</span><span class="s4"> </span><span class="s1">forState</span><span class="s4">:</span><span class="s1">UIControlStateNormal</span><span class="s4">];</span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span>[getVerification </span><span class="s1">setTitleColor</span><span class="s4">:[</span><span class="s8">UIColor</span><span class="s4"> </span><span class="s1">whiteColor</span><span class="s4">] </span><span class="s1">forState</span><span class="s4">:</span><span class="s1">UIControlStateNormal</span><span class="s4">];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span>[getVerification </span><span class="s1">addTarget</span><span class="s4">:</span><span class="s12">self</span><span class="s4"> </span><span class="s1">action</span><span class="s4">:</span><span class="s12">@selector</span><span class="s4">(getV) </span><span class="s1">forControlEvents</span><span class="s4">:</span><span class="s1">UIControlEventTouchUpInside</span><span class="s4">];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s12">self</span><span class="s1">.</span><span class="s5">view</span><span class="s1"> </span><span class="s9">addSubview</span><span class="s1">:getVerification];</span></p>
+</body>
+</html>

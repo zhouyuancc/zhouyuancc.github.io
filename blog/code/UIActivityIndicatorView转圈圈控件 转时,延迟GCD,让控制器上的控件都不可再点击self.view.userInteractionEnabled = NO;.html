@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s7 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s14 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>LoginViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>QQZone</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 16/2/3.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright © 2016</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>Activity Indicator View</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p3"><span class="s1">@property</span><span class="s3"> (</span><span class="s1">weak</span><span class="s3">, </span><span class="s1">nonatomic</span><span class="s3">) </span><span class="s1">IBOutlet</span><span class="s3"> </span><span class="s4">UIActivityIndicatorView</span><span class="s3"> *loadingView;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s3"><span class="Apple-converted-space"> </span></span><span class="s1">//3.</span><span class="s2">发送请求</span></p>
+<p class="p5"><span class="s3"><span class="Apple-converted-space">    </span>[</span><span class="s5">self</span><span class="s3">.</span><span class="s6">loadingView</span><span class="s3"> </span><span class="s1">startAnimating</span><span class="s3">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s8">//</span><span class="s1">控制器上的控件都不可再点击</span></p>
+<p class="p7"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s5">self</span><span class="s3">.</span><span class="s1">view</span><span class="s3">.</span><span class="s1">userInteractionEnabled</span><span class="s3"> = </span><span class="s5">NO</span><span class="s3">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9">CGFloat</span><span class="s1"> delay = </span><span class="s10">2.0</span><span class="s1">;</span></p>
+<p class="p5"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">dispatch_after</span><span class="s3">(</span><span class="s1">dispatch_time</span><span class="s3">(</span><span class="s11">DISPATCH_TIME_NOW</span><span class="s3">, (</span><span class="s9">int64_t</span><span class="s3">)(delay * </span><span class="s11">NSEC_PER_SEC</span><span class="s3">)), </span><span class="s1">dispatch_get_main_queue</span><span class="s3">(), ^{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s3"><span class="Apple-converted-space">        </span></span><span class="s1">//4.</span><span class="s2">登录完毕（请求完毕）</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s5">self</span><span class="s1">.</span><span class="s6">loadingView</span><span class="s1"> </span><span class="s12">stopAnimating</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p7"><span class="s3"><span class="Apple-converted-space">        </span></span><span class="s5">self</span><span class="s3">.</span><span class="s1">view</span><span class="s3">.</span><span class="s1">userInteractionEnabled</span><span class="s3"> = </span><span class="s5">YES</span><span class="s3">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s3"><span class="Apple-converted-space">        </span></span><span class="s1">//5.</span><span class="s2">帐号密码同时为</span><span class="s1">123</span><span class="s2">才是正确</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s13">//6.</span><span class="s14">登录成功</span></p>
+<p class="p9"><span class="s1">#warning </span><span class="s2">跳转到主页</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+</body>
+</html>

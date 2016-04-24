@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #539aa4}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s14 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s15 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s16 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s17 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ZYStatus.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>weibo</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/10/8.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space"> </span></span><span class="s1">微博创建时间处理</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">NSString</span><span class="s1"> *)created_at</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">字符串转换</span><span class="s1">NSDate</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s3">//</span><span class="s1">日期格式字符串</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">NSDateFormatter</span><span class="s5"> *fmt = [[</span><span class="s1">NSDateFormatter</span><span class="s5"> </span><span class="s7">alloc</span><span class="s5">] </span><span class="s7">init</span><span class="s5">];</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span>fmt.</span><span class="s8">dateFormat</span><span class="s5"> = </span><span class="s1">@"EEE MMM d HH:mm:ss Z yyyy"</span><span class="s5">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s3">//</span><span class="s1">设置格式本地化，让日期格式字符串知道是哪个国家的日期</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">    </span>fmt.</span><span class="s8">locale</span><span class="s5"> = [</span><span class="s4">NSLocale</span><span class="s5"> </span><span class="s1">localeWithLocaleIdentifier</span><span class="s5">:</span><span class="s9">@"en_us"</span><span class="s5">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSDate</span><span class="s1"> *created_at = [fmt </span><span class="s7">dateFromString</span><span class="s1">:</span><span class="s10">_created_at</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s11">if</span><span class="s1"> ([created_at </span><span class="s12">isThisYear</span><span class="s1">]) {</span><span class="s13">//</span><span class="s14">今年</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">if</span><span class="s1"> ([created_at </span><span class="s12">isToday</span><span class="s1">]) {</span><span class="s13">//</span><span class="s14">今天</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s13">//</span><span class="s14">计算跟当前时间的差距</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">NSDateComponents</span><span class="s1"> *cmp = [created_at </span><span class="s12">deltaWithNow</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s15">ZYLog</span><span class="s1">(</span><span class="s9">@"%ld -- %ld -- %ld"</span><span class="s1">,cmp.</span><span class="s8">hour</span><span class="s1">,cmp.</span><span class="s8">minute</span><span class="s1">,cmp.</span><span class="s8">second</span><span class="s1">);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">if</span><span class="s1"> (cmp.</span><span class="s8">hour</span><span class="s1"> &gt;= </span><span class="s16">1</span><span class="s1">) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">return</span><span class="s1"> [</span><span class="s4">NSString</span><span class="s1"> </span><span class="s7">stringWithFormat</span><span class="s1">:</span><span class="s9">@"%ld</span><span class="s17">小时之前</span><span class="s9">"</span><span class="s1">,cmp.</span><span class="s8">hour</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">else</span><span class="s1"> </span><span class="s11">if</span><span class="s1"> (cmp.</span><span class="s8">minute</span><span class="s1"> &gt; </span><span class="s16">1</span><span class="s1">)</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">return</span><span class="s1"> [</span><span class="s4">NSString</span><span class="s1"> </span><span class="s7">stringWithFormat</span><span class="s1">:</span><span class="s9">@"%ld</span><span class="s17">分钟之前</span><span class="s9">"</span><span class="s1">,cmp.</span><span class="s8">minute</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">else</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">return</span><span class="s1"> </span><span class="s9">@"</span><span class="s17">刚刚</span><span class="s9">"</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">else</span><span class="s1"> </span><span class="s11">if</span><span class="s1">([created_at </span><span class="s12">isYesterday</span><span class="s1">])</span><span class="s13">//</span><span class="s14">昨天</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>fmt.</span><span class="s8">dateFormat</span><span class="s1"> = </span><span class="s9">@"</span><span class="s17">昨天</span><span class="s9"> HH:mm"</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">return</span><span class="s1"> [fmt </span><span class="s7">stringFromDate</span><span class="s1">:created_at];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">else</span><span class="s13">//2</span><span class="s14">天前</span><span class="s13"> </span><span class="s14">前天</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>fmt.</span><span class="s8">dateFormat</span><span class="s1"> = </span><span class="s9">@"MM-dd HH:mm"</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">return</span><span class="s1"> [fmt </span><span class="s7">stringFromDate</span><span class="s1">:created_at];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s11">else</span><span class="s1">//</span><span class="s2">不是今年</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">        </span>fmt.</span><span class="s8">dateFormat</span><span class="s5"> = </span><span class="s1">@"yyyy-MM-dd HH:mm"</span><span class="s5">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">return</span><span class="s1"> [fmt </span><span class="s7">stringFromDate</span><span class="s1">:created_at];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p9"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s11">return</span><span class="s5"> </span><span class="s1">_created_at</span><span class="s5">;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+</body>
+</html>

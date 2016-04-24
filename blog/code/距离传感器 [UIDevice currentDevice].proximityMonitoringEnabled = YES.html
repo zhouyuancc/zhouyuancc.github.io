@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #ffb5af}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font-variant-ligatures: no-common-ligatures; background-color: #ffb5af}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s10 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>01-</span><span class="s2">距离传感器</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 15/2/9.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> apple. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"ViewController.h"</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@interface</span><span class="s1"> ViewController ()</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@implementation</span><span class="s1"> ViewController</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)viewDidLoad {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s4">super</span><span class="s1"> viewDidLoad];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s6">// </span><span class="s1">距离传感器默认是关闭</span><span class="s6">(</span><span class="s1">实时的检测是否有物品靠近</span><span class="s6">,</span><span class="s1">所有非常耗电</span><span class="s6">)</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">// [UIApplication sharedApplication].proximitySensingEnabled</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>[UIDevice currentDevice].proximityMonitoringEnabled = </span><span class="s4">YES</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s6">// </span><span class="s1">通过通知</span><span class="s6">(</span><span class="s1">一旦有物品靠近或者离开的时候</span><span class="s6">,</span><span class="s1">都会发出通知</span><span class="s6">)</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[[NSNotificationCenter defaultCenter] addObserver:</span><span class="s4">self</span><span class="s1"> selector:</span><span class="s4">@selector</span><span class="s1">(proximityStateDidChange) name:</span><span class="s8">UIDeviceProximityStateDidChangeNotification</span><span class="s1"> object:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s6"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">当有物品靠近或者离开的时候会调用该方法</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)proximityStateDidChange</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1"> ([UIDevice currentDevice].proximityState) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>NSLog(</span><span class="s9">@"</span><span class="s10">有物品靠近</span><span class="s9">"</span><span class="s1">);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>} </span><span class="s4">else</span><span class="s1"> {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>NSLog(</span><span class="s9">@"</span><span class="s10">有物品离开</span><span class="s9">"</span><span class="s1">);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)dealloc</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[[NSNotificationCenter defaultCenter] removeObserver:</span><span class="s4">self</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">@end</span></p>
+</body>
+</html>

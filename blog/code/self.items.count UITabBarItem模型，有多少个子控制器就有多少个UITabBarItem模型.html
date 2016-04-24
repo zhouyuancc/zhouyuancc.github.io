@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s8 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s9 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s10 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ZYTabBar.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>weibo</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/9/10.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>self.items UITabBarItem</span><span class="s2">模型，有多少个子控制器就有多少个</span><span class="s1">UITabBarItem</span><span class="s2">模型</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p1"><span class="s1">//</span><span class="s2">调整子控件</span><span class="s1">Subviews</span><span class="s2">的位置</span></p>
+<p class="p3"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)layoutSubviews</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span>[</span><span class="s3">super</span><span class="s4"> </span><span class="s1">layoutSubviews</span><span class="s4">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">CGFloat</span><span class="s1"> btnX = </span><span class="s6">0</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">CGFloat</span><span class="s1"> btnY = </span><span class="s6">0</span><span class="s1">;</span></p>
+<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">CGFloat</span><span class="s4"> btnW = </span><span class="s3">self</span><span class="s4">.</span><span class="s1">bounds</span><span class="s4">.</span><span class="s1">size</span><span class="s4">.</span><span class="s1">width</span><span class="s4">/(</span><span class="s3">self</span><span class="s4">.</span><span class="s1">items</span><span class="s4">.</span><span class="s1">count</span><span class="s4"> + </span><span class="s6">1</span><span class="s4">);</span><span class="s7">//</span><span class="s8">加一个中间按钮</span></p>
+<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">CGFloat</span><span class="s4"> btnH = </span><span class="s3">self</span><span class="s4">.</span><span class="s1">bounds</span><span class="s4">.</span><span class="s1">size</span><span class="s4">.</span><span class="s1">height</span><span class="s4">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">int</span><span class="s1"> i = </span><span class="s6">0</span><span class="s1">;</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">//</span><span class="s1">调整系统自带的</span><span class="s10">tabBar</span><span class="s1">上的按钮位置</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">for</span><span class="s1">(</span><span class="s11">UIView</span><span class="s1"> *tabBarButton </span><span class="s3">in</span><span class="s1"> </span><span class="s3">self</span><span class="s1">.</span><span class="s5">subviews</span><span class="s1">)</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">判断是否是</span><span class="s1">UITabBarButon</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">if</span><span class="s1"> ([tabBarButton </span><span class="s12">isKindOfClass</span><span class="s1">:</span><span class="s12">NSClassFromString</span><span class="s1">(</span><span class="s13">@"UITabBarButton"</span><span class="s1">)]) {</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s12">NSLog</span><span class="s1">(</span><span class="s13">@"%@"</span><span class="s1">,tabBarButton);</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">if</span><span class="s1">(i == </span><span class="s6">2</span><span class="s1">)</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>i = </span><span class="s6">3</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>btnX = i*btnW;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>tabBarButton.</span><span class="s5">frame</span><span class="s1"> = </span><span class="s12">CGRectMake</span><span class="s1">(btnX, btnY, btnW, btnH);</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>i++;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1">}</span></p>
+</body>
+</html>

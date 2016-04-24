@@ -2490,28 +2490,28 @@
 
         /* Logo */
 
-        #logo {
+        #logo #navBack {
             display: none;
         }
 
         /* Nav */
 
-        #nav {
-            margin-top: 0 !important;
-        }
+        /*#nav {*/
+            /*margin-top: 0 !important;*/
+        /*}*/
 
-        #nav:before {
-            display: none !important;
-        }
+        /*#nav:before {*/
+            /*display: none !important;*/
+        /*}*/
 
-        #nav li:hover a {
-            background: none;
-        }
+        /*#nav li:hover a {*/
+            /*background: none;*/
+        /*}*/
 
         /* Sidebar */
-        #sidebar {
-            padding: 30px 20px 30px 20px;
-        }
+        /*#sidebar {*/
+            /*padding: 30px 20px 30px 20px;*/
+        /*}*/
 
 		/* Box */
 
@@ -2624,33 +2624,35 @@
 			input, textarea, select {
 				font-size: 11pt;
 			}
-        /* Logo */
 
-        #logo {
+        /* Logo */
+        #logo #navBack {
             display: none;
         }
 
+        /*#logo {*/
+            /*display: none;*/
+        /*}*/
+
         /* Nav */
 
-        #nav {
-            margin-top: 0 !important;
-        }
+        /*#nav {*/
+            /*margin-top: 0 !important;*/
+        /*}*/
 
-        #nav:before {
-            display: none !important;
-        }
+        /*#nav:before {*/
+            /*display: none !important;*/
+        /*}*/
 
-        #nav li:hover a {
-            background: none;
-        }
+        /*#nav li:hover a {*/
+            /*background: none;*/
+        /*}*/
 
         /* Sidebar */
 
-        #sidebar {
-            padding: 30px 20px 30px 20px;
-        }
-
-
+        /*#sidebar {*/
+            /*padding: 30px 20px 30px 20px;*/
+        /*}*/
 
         /* Box */
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; background-color: #fff995}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; background-color: #ffd877}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: #1d9421}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s6 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s2">#import </span><span class="s1">&lt;Foundation/Foundation.h&gt;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">@interface</span><span class="s1"> HMFileDownloader : </span><span class="s4">NSObject</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">       </span>//downloading属性是readonly的，继承自</span><span class="s5">HMFileDownloader</span><span class="s1">的子类需要加</span><span class="s6">BOOL</span><span class="s5"> _downloading;</span><span class="s1">才能调用；C语言知识</span></p>
+<p class="p5"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">//@protected//</span><span class="s8">子类能访问</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">BOOL</span><span class="s1"> _downloading;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1">/**</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space"> </span>* </span><span class="s1">是否正在下载</span><span class="s5">(</span><span class="s1">有没有在下载</span><span class="s5">, </span><span class="s1">只有下载器内部才知道</span><span class="s5">)</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p3"><span class="s3">@property</span><span class="s1"> (</span><span class="s3">nonatomic</span><span class="s1">, </span><span class="s3">readonly</span><span class="s1">, </span><span class="s3">getter</span><span class="s1"> = isDownloading) </span><span class="s3">BOOL</span><span class="s1"> downloading;</span></p>
+</body>
+</html>

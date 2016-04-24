@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s8 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s10 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s11 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">#pragma mark - alertView</span><span class="s2">代理方法</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)alertView:(</span><span class="s4">UIAlertView</span><span class="s1"> *)alertView clickedButtonAtIndex:(</span><span class="s5">NSInteger</span><span class="s1">)buttonIndex</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">if</span><span class="s1">(buttonIndex == </span><span class="s6">0</span><span class="s1">)</span><span class="s7">//</span><span class="s8">取消按钮</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">return</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">点击确定按钮</span></p>
+<p class="p6"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s11">//</span><span class="s1">取得文本框最后的文字</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSString</span><span class="s1"> *name = [alertView </span><span class="s12">textFieldAtIndex</span><span class="s1">:</span><span class="s6">0</span><span class="s1">].</span><span class="s5">text</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"%@",name);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">long</span><span class="s1"> row = alertView.</span><span class="s5">tag</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s13">Hero</span><span class="s1"> *hero = </span><span class="s3">self</span><span class="s1">.</span><span class="s14">heroGroup</span><span class="s1">[row];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>hero.</span><span class="s14">name</span><span class="s1"> = name;</span></p>
+<p class="p5"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">全局刷新</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s9">.</span><span class="s14">tableView</span><span class="s9"> </span><span class="s1">reloadData</span><span class="s9">];</span></p>
+<p class="p5"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">局部刷新</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s4">NSIndexPath</span><span class="s9"> *path = [</span><span class="s4">NSIndexPath</span><span class="s9"> </span><span class="s1">indexPathForRow</span><span class="s9">:row </span><span class="s1">inSection</span><span class="s9">:</span><span class="s6">0</span><span class="s9">];</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s9">.</span><span class="s14">tableView</span><span class="s9"> </span><span class="s1">reloadRowsAtIndexPaths</span><span class="s9">:</span><span class="s6">@[</span><span class="s9">path</span><span class="s6">]</span><span class="s9"> </span><span class="s1">withRowAnimation</span><span class="s9">:</span><span class="s1">UITableViewRowAnimationBottom</span><span class="s9">];</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">}</span></p>
+</body>
+</html>

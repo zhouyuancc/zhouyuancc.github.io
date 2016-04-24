@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; background-color: #fff995}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81; background-color: #fff995}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #fff995}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa; background-color: #fff995}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275; background-color: #fff995}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa; background-color: #e0edd4}
+    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81; background-color: #e0edd4}
+    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #294c50}
+    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s12 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s14 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s15 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s16 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s17 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s18 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>WCProfileViewController.m</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">#pragma mark </span><span class="s2">表格选择</span></p>
+<p class="p4"><span class="s1">-(</span><span class="s3">void</span><span class="s1">)tableView:(</span><span class="s4">UITableView</span><span class="s1"> *)tableView didSelectRowAtIndexPath:(</span><span class="s4">NSIndexPath</span><span class="s1"> *)indexPath{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">根据</span><span class="s1">cell</span><span class="s2">不同</span><span class="s1">tag</span><span class="s2">进行相应的操作</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">/*</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*tag = 0,</span><span class="s2">换头像</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">     </span>*tag = 1,</span><span class="s2">进行到下一个控制器</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*tag = 2,</span><span class="s2">不做任何操作</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">获取</span><span class="s1">cell</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">UITableViewCell</span><span class="s1"> *selectedCell = [tableView </span><span class="s7">cellForRowAtIndexPath</span><span class="s1">:indexPath];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">switch</span><span class="s1"> (selectedCell.</span><span class="s8">tag</span><span class="s1">) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">case</span><span class="s1"> </span><span class="s9">0</span><span class="s1">:</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">WCLog</span><span class="s1">(</span><span class="s11">@"</span><span class="s12">换头像</span><span class="s11">"</span><span class="s1">);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>[</span><span class="s3">self</span><span class="s1"> </span><span class="s13">choseImg</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">break</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">case</span><span class="s1"> </span><span class="s9">1</span><span class="s1">:</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">WCLog</span><span class="s1">(</span><span class="s11">@"</span><span class="s12">进入下一个控制器</span><span class="s11">"</span><span class="s1">);</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">            </span>[</span><span class="s3">self</span><span class="s5"> </span><span class="s1">performSegueWithIdentifier</span><span class="s5">:</span><span class="s11">@"toEditVcSegue"</span><span class="s5"> </span><span class="s1">sender</span><span class="s5">:selectedCell];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">break</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">case</span><span class="s1"> </span><span class="s9">2</span><span class="s1">:</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">WCLog</span><span class="s1">(</span><span class="s11">@"</span><span class="s12">不做任何操作</span><span class="s11">"</span><span class="s1">);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">break</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">default</span><span class="s1">:</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">break</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span><span class="s2">传递到下一个</span><span class="s1">tableView</span><span class="s2">中去</span></p>
+<p class="p8"><span class="s1">-(</span><span class="s3">void</span><span class="s1">)prepareForSegue:(</span><span class="s4">UIStoryboardSegue</span><span class="s1"> *)segue sender:(</span><span class="s3">id</span><span class="s1">)sender{</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">//</span><span class="s1">获取目标控制器</span></p>
+<p class="p10"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">id</span><span class="s5"> destVc = segue.</span><span class="s1">destinationViewController</span><span class="s5">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">//</span><span class="s1">设置编辑电子名片控制器的</span><span class="s15">cell</span><span class="s1">属性</span></p>
+<p class="p11"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">if</span><span class="s5"> ([destVc </span><span class="s7">isKindOfClass</span><span class="s5">:[</span><span class="s1">WCEditVCardViewController</span><span class="s5"> </span><span class="s7">class</span><span class="s5">]]) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s16">WCEditVCardViewController</span><span class="s1"> *editVc = destVc;</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">//sender:</span><span class="s2">传过来的</span><span class="s1">cell</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>editVc.</span><span class="s17">cell</span><span class="s1"> = sender;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">//</span><span class="s18">设置代理</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>editVc.</span><span class="s17">delegate</span><span class="s1"> = </span><span class="s3">self</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>WCEditVCardViewController.h</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>WeChat</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 15-3-27.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> apple. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p9"><span class="s15"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">上一个控制器</span><span class="s15">(</span><span class="s1">个人信息控制器</span><span class="s15">)</span><span class="s1">传入的</span><span class="s15">cell</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p12"><span class="s1">@property</span><span class="s5">(</span><span class="s1">strong</span><span class="s5">,</span><span class="s1">nonatomic</span><span class="s5">)</span><span class="s4">UITableViewCell</span><span class="s5"> *cell;</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>WCEditVCardViewController.m</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">-(</span><span class="s3">void</span><span class="s1">)viewDidLoad{</span></p>
+<p class="p13"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s3">super</span><span class="s5"> </span><span class="s1">viewDidLoad</span><span class="s5">];</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//WCLog(@"%@",self.cell.detailTextLabel);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">设置标题</span></p>
+<p class="p14"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">self</span><span class="s5">.</span><span class="s1">title</span><span class="s5"> = </span><span class="s3">self</span><span class="s5">.</span><span class="s17">cell</span><span class="s5">.</span><span class="s1">textLabel</span><span class="s5">.</span><span class="s1">text</span><span class="s5">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">//</span><span class="s1">设置输入框默认数值</span></p>
+<p class="p14"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">self</span><span class="s5">.</span><span class="s17">textField</span><span class="s5">.</span><span class="s1">text</span><span class="s5"> = </span><span class="s3">self</span><span class="s5">.</span><span class="s17">cell</span><span class="s5">.</span><span class="s1">detailTextLabel</span><span class="s5">.</span><span class="s1">text</span><span class="s5">;</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s3">IBAction</span><span class="s1">)saveBtnClick:(</span><span class="s3">id</span><span class="s1">)sender {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//1.</span><span class="s2">把</span><span class="s1">cell</span><span class="s2">的</span><span class="s1">detailTextLabel</span><span class="s2">的值更改</span></p>
+<p class="p14"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">self</span><span class="s5">.</span><span class="s17">cell</span><span class="s5">.</span><span class="s1">detailTextLabel</span><span class="s5">.</span><span class="s1">text</span><span class="s5"> = </span><span class="s3">self</span><span class="s5">.</span><span class="s17">textField</span><span class="s5">.</span><span class="s1">text</span><span class="s5">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">//</span><span class="s1">重新布局</span><span class="s15"> </span><span class="s1">上一个控制器传过来的</span><span class="s15">cell</span></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">//</span><span class="s1">修复</span><span class="s15">bug </span><span class="s1">如</span><span class="s15">:</span><span class="s1">电话为空，保存电话后，仍为空</span></p>
+<p class="p15"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s5">.</span><span class="s17">cell</span><span class="s5"> </span><span class="s1">layoutSubviews</span><span class="s5">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//2.</span><span class="s2">当前控制器销毁</span></p>
+<p class="p13"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s5">.</span><span class="s8">navigationController</span><span class="s5"> </span><span class="s1">popViewControllerAnimated</span><span class="s5">:</span><span class="s3">YES</span><span class="s5">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p9"><span class="s14"><span class="Apple-converted-space">    </span></span><span class="s15">//3.</span><span class="s1">通过上一个控制器更新数据库</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">if</span><span class="s1"> ([</span><span class="s3">self</span><span class="s1">.</span><span class="s17">delegate</span><span class="s1"> </span><span class="s7">respondsToSelector</span><span class="s1">:</span><span class="s3">@selector</span><span class="s1">(editVCardViewController:didFinishedSave:)]) {</span></p>
+<p class="p16"><span class="s5"><span class="Apple-converted-space">        </span>[</span><span class="s3">self</span><span class="s5">.</span><span class="s17">delegate</span><span class="s5"> </span><span class="s1">editVCardViewController</span><span class="s5">:</span><span class="s3">self</span><span class="s5"> </span><span class="s1">didFinishedSave</span><span class="s5">:sender];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p17"><span class="s1">@end</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+</body>
+</html>

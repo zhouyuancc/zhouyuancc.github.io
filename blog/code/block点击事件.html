@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s3 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s9 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s10 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s14 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s15 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s16 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s17 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s18 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>CellItem.h</span></p>
+<p class="p2"><span class="s2">typedef</span><span class="s1"> </span><span class="s2">void</span><span class="s1"> (^CellItemOption)();</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p4"><span class="s3"><span class="Apple-converted-space"> </span></span><span class="s1">点击那个</span><span class="s3">cell</span><span class="s1">需要做的事情</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p5"><span class="s1">@property</span><span class="s4"> (</span><span class="s1">nonatomic</span><span class="s4">,</span><span class="s1">copy</span><span class="s4">) </span><span class="s5">CellItemOption</span><span class="s4"> option;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>SettingTableViewController.m</span></p>
+<p class="p5"><span class="s1">@property</span><span class="s4"> (</span><span class="s1">nonatomic</span><span class="s4">,</span><span class="s1">strong</span><span class="s4">) </span><span class="s6">NSMutableArray</span><span class="s4"> *data;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p6"><span class="s4">- (</span><span class="s1">NSMutableArray</span><span class="s4"> *)data</span></p>
+<p class="p2"><span class="s1">{</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">if</span><span class="s1">(</span><span class="s5">_data</span><span class="s1"> == </span><span class="s2">nil</span><span class="s1">)</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">_data</span><span class="s1"> = [</span><span class="s6">NSMutableArray</span><span class="s1"> </span><span class="s7">array</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">//0</span><span class="s9">组</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>CellItem</span><span class="s10">指向</span><span class="s1">CellArrowItem<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span></span><span class="s10">父类指向子类</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span></span><span class="s10">多态</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">CellItem</span><span class="s1"> *PushNotice = [</span><span class="s11">CellArrowItem</span><span class="s1"> </span><span class="s12">itemWithIcon</span><span class="s1">:</span><span class="s13">@"MorePush"</span><span class="s1"> </span><span class="s12">title</span><span class="s1">:</span><span class="s13">@"</span><span class="s14">推送和提醒</span><span class="s13">"</span><span class="s12">destVcClass</span><span class="s1">:[</span><span class="s11">MJTest1ViewController</span><span class="s1"> </span><span class="s7">class</span><span class="s1">]]; <span class="Apple-converted-space">       </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s11">CellItem</span><span class="s1"> *handShake = [</span><span class="s11">CellSwitchItem</span><span class="s1"> </span><span class="s12">itemWithIcon</span><span class="s1">:</span><span class="s13">@"handShake"</span><span class="s1"> </span><span class="s12">title</span><span class="s1">:</span><span class="s13">@"</span><span class="s14">摇一摇机选</span><span class="s13">"</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">CellItem</span><span class="s1"> *sound_Effect = [</span><span class="s11">CellSwitchItem</span><span class="s1"> </span><span class="s12">itemWithIcon</span><span class="s1">:</span><span class="s13">@"sound_Effect"</span><span class="s1"> </span><span class="s12">title</span><span class="s1">:</span><span class="s13">@"</span><span class="s14">声音效果</span><span class="s13">"</span><span class="s1">];</span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">//<span class="Apple-converted-space">        </span>NSArray *array0 = @[item00,item01];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">CellGroup</span><span class="s1"> *group0 = [[</span><span class="s11">CellGroup</span><span class="s1"> </span><span class="s7">alloc</span><span class="s1">] </span><span class="s7">init</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>group0.</span><span class="s5">items</span><span class="s1"> = </span><span class="s15">@[</span><span class="s1">PushNotice,handShake,sound_Effect</span><span class="s15">]</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>group0.</span><span class="s5">header</span><span class="s1"> = </span><span class="s13">@"</span><span class="s14">头部文字</span><span class="s13">"</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>group0.</span><span class="s5">footer</span><span class="s1"> = </span><span class="s13">@"</span><span class="s14">底部文字</span><span class="s13">"</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s5">_data</span><span class="s1"> </span><span class="s7">addObject</span><span class="s1">:group0];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">//1</span><span class="s9">组</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">CellItem</span><span class="s1"> *update = [</span><span class="s11">CellItem</span><span class="s1"> </span><span class="s12">itemWithIcon</span><span class="s1">:</span><span class="s13">@"MoreUpdate"</span><span class="s1"> </span><span class="s12">title</span><span class="s1">:</span><span class="s13">@"</span><span class="s14">检查新版本</span><span class="s13">"</span><span class="s1"> ];</span><span class="s8">//</span><span class="s9">不显示箭头，也不显示开关</span></p>
+<p class="p2"><span class="s1">—————————————————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>update.</span><span class="s5">option</span><span class="s1"> = ^{</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">//</span><span class="s9">弹框提示</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">NSLog</span><span class="s1">(</span><span class="s13">@"</span><span class="s14">检查新版本</span><span class="s13">"</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>[</span><span class="s11">MBProgressHUD</span><span class="s1"> </span><span class="s12">showMessage</span><span class="s1">:</span><span class="s13">@"</span><span class="s14">正在检查</span><span class="s13">..."</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p7"><span class="s1">#warning </span><span class="s10">发送网络请求</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">//</span><span class="s9">几秒后消失</span></p>
+<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">dispatch_after</span><span class="s4">(</span><span class="s1">dispatch_time</span><span class="s4">(</span><span class="s16">DISPATCH_TIME_NOW</span><span class="s4">, (</span><span class="s17">int64_t</span><span class="s4">)(</span><span class="s15">1.0</span><span class="s4"> * </span><span class="s16">NSEC_PER_SEC</span><span class="s4">)), </span><span class="s1">dispatch_get_main_queue</span><span class="s4">(), ^{</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s8">//</span><span class="s9">移除</span><span class="s8">HUD</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>[</span><span class="s11">MBProgressHUD</span><span class="s1"> </span><span class="s12">hideHUD</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s8">//</span><span class="s9">提醒没有新版本</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>[</span><span class="s11">MBProgressHUD</span><span class="s1"> </span><span class="s12">showError</span><span class="s1">:</span><span class="s13">@"</span><span class="s14">没有新版本</span><span class="s13">"</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s8">//</span><span class="s9">有新版本</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s8">//alert</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>};—————————————————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p9"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">CellItem</span><span class="s4"> *help = [</span><span class="s1">CellArrowItem</span><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s12">itemWithIcon</span><span class="s4">:</span><span class="s13">@"MoreHelp"</span><span class="s4"> </span><span class="s12">title</span><span class="s4">:</span><span class="s13">@"</span><span class="s14">帮助</span><span class="s13">"</span><span class="s4"> </span><span class="s12">destVcClass</span><span class="s4">:[</span><span class="s1">MJTest1ViewController</span><span class="s4"> </span><span class="s7">class</span><span class="s4">]];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>NSArray *array1 = @[item10];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">CellGroup</span><span class="s1"> *group1 = [[</span><span class="s11">CellGroup</span><span class="s1"> </span><span class="s7">alloc</span><span class="s1">] </span><span class="s7">init</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>group1.</span><span class="s5">items</span><span class="s1"> = </span><span class="s15">@[</span><span class="s1">update,help</span><span class="s15">]</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>group1.</span><span class="s5">header</span><span class="s1"> = </span><span class="s13">@"header"</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>group1.</span><span class="s5">footer</span><span class="s1"> = </span><span class="s13">@"footer"</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s5">_data</span><span class="s1"> </span><span class="s7">addObject</span><span class="s1">:group1];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>[_data addObject:array0];</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>[_data addObject:array1];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">return</span><span class="s1"> </span><span class="s5">_data</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)tableView:(</span><span class="s6">UITableView</span><span class="s1"> *)tableView didSelectRowAtIndexPath:(</span><span class="s6">NSIndexPath</span><span class="s1"> *)indexPath</span></p>
+<p class="p2"><span class="s1">{</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>CellItem *item = self.data[indexPath.section][indexPath.row];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s11">CellGroup</span><span class="s1"> *group = </span><span class="s2">self</span><span class="s1">.</span><span class="s5">data</span><span class="s1">[indexPath.</span><span class="s17">section</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s11">CellItem</span><span class="s1"> *item = group.</span><span class="s5">items</span><span class="s1">[indexPath.</span><span class="s17">row</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">—————————————————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">if</span><span class="s4">(item.</span><span class="s5">option</span><span class="s4">){</span><span class="s1">//block</span><span class="s10">有值（点击这个</span><span class="s1">cell</span><span class="s10">，有特定的操作需要执行）</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">//</span><span class="s9">调用</span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s10">无参数，无需传参</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>item.</span><span class="s5">option</span><span class="s1">();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1">—————————————————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">else</span><span class="s1"> </span><span class="s2">if</span><span class="s1">([item </span><span class="s7">isKindOfClass</span><span class="s1">:[</span><span class="s11">CellArrowItem</span><span class="s1"> </span><span class="s7">class</span><span class="s1">]])</span><span class="s8">//</span><span class="s9">箭头</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">CellArrowItem</span><span class="s1"> *arrowItem = (</span><span class="s11">CellArrowItem</span><span class="s1"> *)item;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s18"><span class="Apple-converted-space">        </span></span><span class="s3">//</span><span class="s1">如果没有需要调转的控制器</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">if</span><span class="s1">(arrowItem.</span><span class="s5">destVcClass</span><span class="s1"> == </span><span class="s2">nil</span><span class="s1">)</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">return</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">UIViewController</span><span class="s1"> *vc = [[arrowItem.</span><span class="s5">destVcClass</span><span class="s1"> </span><span class="s7">alloc</span><span class="s1">] </span><span class="s7">init</span><span class="s1">];</span></p>
+<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span>[</span><span class="s2">self</span><span class="s4">.</span><span class="s17">navigationController</span><span class="s4"> </span><span class="s1">pushViewController</span><span class="s4">:vc </span><span class="s1">animated</span><span class="s4">:</span><span class="s2">YES</span><span class="s4">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"></span><br></p>
+</body>
+</html>

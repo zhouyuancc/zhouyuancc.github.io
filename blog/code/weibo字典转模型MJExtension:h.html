@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #539aa4}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #294c50}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e; min-height: 21.0px}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s10 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s12 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s13 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s15 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s16 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s17 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ZYHomeViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>weibo</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/9/22.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"ZYHomeViewController.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"MJExtension.h"</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">@property</span><span class="s4"> (</span><span class="s1">nonatomic</span><span class="s4">,</span><span class="s1">strong</span><span class="s4">) </span><span class="s5">NSMutableArray</span><span class="s4"> *statuses;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">- (</span><span class="s5">NSMutableArray</span><span class="s1"> *)statuses</span></p>
+<p class="p6"><span class="s1">{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">if</span><span class="s1">(</span><span class="s7">_statuses</span><span class="s1"> == </span><span class="s6">nil</span><span class="s1">)</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">_statuses</span><span class="s1"> = [</span><span class="s5">NSMutableArray</span><span class="s1"> </span><span class="s8">array</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p7"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s6">return</span><span class="s4"> </span><span class="s1">_statuses</span><span class="s4">;</span></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">//</span><span class="s10">结束下拉刷新</span></p>
+<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span>[</span><span class="s6">self</span><span class="s4">.</span><span class="s11">tableView</span><span class="s4"> </span><span class="s1">headerEndRefreshing</span><span class="s4">];</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p10"><span class="s12"><span class="Apple-converted-space">        </span></span><span class="s13">//</span><span class="s1">获取到微博数据</span><span class="s13"> </span><span class="s1">转换成模型</span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">获取微博字典数组</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">NSArray</span><span class="s1"> *dictArr = responseObject[</span><span class="s14">@"statuses"</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">/**</span></p>
+<p class="p10"><span class="s13"><span class="Apple-converted-space">         </span></span><span class="s1">把字典数组转换成模型那个数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">NSArray</span><span class="s1"> *statuses = (</span><span class="s5">NSMutableArray</span><span class="s1"> *)[</span><span class="s15">ZYStatus</span><span class="s1"> </span><span class="s16">objectArrayWithKeyValuesArray</span><span class="s1">:dictArr];</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">NSIndexSet</span><span class="s1"> *indexSet = [</span><span class="s5">NSIndexSet</span><span class="s1"> </span><span class="s8">indexSetWithIndexesInRange</span><span class="s1">:</span><span class="s8">NSMakeRange</span><span class="s1">(</span><span class="s17">0</span><span class="s1">, statuses.</span><span class="s11">count</span><span class="s1">)];</span></p>
+<p class="p10"><span class="s12"><span class="Apple-converted-space">        </span></span><span class="s13">//</span><span class="s1">把</span><span class="s13"> </span><span class="s1">最新的微博数</span><span class="s13"> </span><span class="s1">插入到最前面</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s6">self</span><span class="s1">.</span><span class="s7">statuses</span><span class="s1"> </span><span class="s8">insertObjects</span><span class="s1">:statuses</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                           </span></span><span class="s8">atIndexes</span><span class="s1">:indexSet];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">//</span><span class="s10">刷新表格</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s6">self</span><span class="s1">.</span><span class="s11">tableView</span><span class="s1"> </span><span class="s8">reloadData</span><span class="s1">];</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p10"><span class="s12"><span class="Apple-converted-space">    </span></span><span class="s13">//</span><span class="s1">创建一个参数字典</span></p>
+<p class="p11"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">NSMutableDictionary</span><span class="s4"> *params = [</span><span class="s1">NSMutableDictionary</span><span class="s4"> </span><span class="s8">dictionary</span><span class="s4">];</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>params[</span><span class="s14">@"access_token"</span><span class="s1">] = [</span><span class="s15">ZYAccountTool</span><span class="s1"> </span><span class="s16">account</span><span class="s1">].</span><span class="s7">access_token</span><span class="s1">;</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s6">if</span><span class="s4"> (</span><span class="s6">self</span><span class="s4">.</span><span class="s7">statuses</span><span class="s4">.</span><span class="s11">count</span><span class="s4">) {</span><span class="s1">//</span><span class="s2">有微博数据，才需要下拉刷新</span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">//<span class="Apple-converted-space">    </span>since_id<span class="Apple-tab-span">	</span>false<span class="Apple-tab-span">	</span>int64<span class="Apple-tab-span">	</span></span><span class="s2">若指定此参数，则返回</span><span class="s1">ID</span><span class="s2">比</span><span class="s1">since_id</span><span class="s2">大的微博（即比</span><span class="s1">since_id</span><span class="s2">时间晚的微博），默认为</span><span class="s1">0</span><span class="s2">。</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span></span><span class="s2">返回最新的几条数据</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">//<span class="Apple-converted-space">        </span>params[@"since_id"] = [self.statuses[0] idstr];</span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">//<span class="Apple-converted-space">        </span>max_id<span class="Apple-tab-span">	</span>false<span class="Apple-tab-span">	</span>int64<span class="Apple-tab-span">	</span></span><span class="s2">若指定此参数，则返回</span><span class="s1">ID</span><span class="s2">小于或等于</span><span class="s1">max_id</span><span class="s2">的微博，默认为</span><span class="s1">0</span><span class="s2">。</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">long</span><span class="s1"> </span><span class="s6">long</span><span class="s1"> maxId = [[[</span><span class="s6">self</span><span class="s1">.</span><span class="s7">statuses</span><span class="s1"> </span><span class="s8">lastObject</span><span class="s1">] </span><span class="s16">idstr</span><span class="s1">] </span><span class="s8">longLongValue</span><span class="s1">] - </span><span class="s17">1</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>params[</span><span class="s14">@"max_id"</span><span class="s1">] = [</span><span class="s5">NSString</span><span class="s1"> </span><span class="s8">stringWithFormat</span><span class="s1">:</span><span class="s14">@"%lld"</span><span class="s1">,maxId];</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p12"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">//</span><span class="s10">结束上拉刷新</span></p>
+<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span>[</span><span class="s6">self</span><span class="s4">.</span><span class="s11">tableView</span><span class="s4"> </span><span class="s1">footerEndRefreshing</span><span class="s4">];</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p10"><span class="s12"><span class="Apple-converted-space">        </span></span><span class="s13">//</span><span class="s1">获取到微博数据</span><span class="s13"> </span><span class="s1">转换成模型</span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">获取微博字典数组</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">NSArray</span><span class="s1"> *dictArr = responseObject[</span><span class="s14">@"statuses"</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">/**</span></p>
+<p class="p10"><span class="s13"><span class="Apple-converted-space">         </span></span><span class="s1">把字典数组转换成模型那个数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p10"><span class="s12"><span class="Apple-converted-space">        </span></span><span class="s13">//</span><span class="s1">直接等于的话，数据更新加载时，全部加载</span><span class="s13">//</span><span class="s1">修改为添加</span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">//<span class="Apple-converted-space">        </span>self.statuses = (NSMutableArray *)[ZYStatus objectArrayWithKeyValuesArray:dictArr];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">NSArray</span><span class="s1"> *statuses = (</span><span class="s5">NSMutableArray</span><span class="s1"> *)[</span><span class="s15">ZYStatus</span><span class="s1"> </span><span class="s16">objectArrayWithKeyValuesArray</span><span class="s1">:dictArr];</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">//</span><span class="s10">下拉</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">/**</span></p>
+<p class="p10"><span class="s13"><span class="Apple-converted-space">         </span></span><span class="s1">把数组中的元素添加进去</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s6">self</span><span class="s1">.</span><span class="s7">statuses</span><span class="s1"> </span><span class="s8">addObjectsFromArray</span><span class="s1">:statuses];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">//</span><span class="s10">刷新表格</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s6">self</span><span class="s1">.</span><span class="s11">tableView</span><span class="s1"> </span><span class="s8">reloadData</span><span class="s1">];</span></p>
+</body>
+</html>

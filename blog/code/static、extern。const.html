@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s4 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s7 {font-variant-ligatures: no-common-ligatures; background-color: #fff995}
+    span.s8 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; background-color: #fff995}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #b51a00; background-color: #fff995}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s13 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>main.c</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>05-static </span><span class="s2">与</span><span class="s1"> extern</span><span class="s2">对局部变量的作用</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by Apple on 14/11/15.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2014</span><span class="s2">年</span><span class="s1"> itcast. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">#include </span><span class="s3">&lt;stdio.h&gt;</span></p>
+<p class="p1"><span class="s1">/*</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">   </span>static </span><span class="s2">对局部变量的作用：</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span>1</span><span class="s1">、延长变量的生命周期，从第一次执行开始直到文件程序退出</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span>2</span><span class="s1">、定义的这一行代码仅仅会执行一次</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span>3</span><span class="s1">、它不会改变局部变量的作用域</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">   </span>extern:</span><span class="s1">放在函数内部，它仅仅是对全局变量的声明</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>main.c</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>06-static</span><span class="s2">与</span><span class="s1">extern</span><span class="s2">对全局变量的作用</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by Apple on 14/11/15.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2014</span><span class="s2">年</span><span class="s1"> itcast. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">#include </span><span class="s3">&lt;stdio.h&gt;</span></p>
+<p class="p1"><span class="s1">/*</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">   </span></span><span class="s1">全局变量</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">       </span></span><span class="s1">内部变量：仅能在本文件中访问的变量</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">       </span></span><span class="s1">外部变量：可以在所有文件中被访问的变量</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">   </span>static</span><span class="s1">：声明或定义一个内部变量</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">           </span></span><span class="s1">不同文件中可以有同名内部变量</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">   </span></span><span class="s2">格式：</span><span class="s1">static </span><span class="s2">数据类型</span><span class="s1"> </span><span class="s2">变量名称</span><span class="s1">;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">   </span>extern: </span><span class="s1">完整声明或定义一个外部变量（废物）</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">           </span></span><span class="s1">如果你使用</span><span class="s4">extern</span><span class="s1">声明一个外部变量，那么系统不会自动帮你定义并初始化变量</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">           </span></span><span class="s1">外部变量在整个项目中都可以重复定义</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">   </span></span><span class="s2">格式：</span><span class="s1">extern </span><span class="s2">数据类型</span><span class="s1"> </span><span class="s2">变量名称</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s5">static</span><span class="s1"> </span><span class="s5">int</span><span class="s1"> inner = </span><span class="s6">10</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>main.c</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>07-static</span><span class="s2">与</span><span class="s1">extern</span><span class="s2">对函数的作用</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by Apple on 14/11/15.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2014</span><span class="s2">年</span><span class="s1"> itcast. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">#include </span><span class="s3">&lt;stdio.h&gt;</span></p>
+<p class="p1"><span class="s1">/*</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">   </span></span><span class="s2">函数：</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">   </span></span><span class="s1">内部函数：仅能在本文件中使用函数</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">   </span></span><span class="s1">外部函数：可以其他文件使用函数，默认所有函数都是外部函数</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span>extern </span><span class="s1">完整定义或声明一个外部函数（没有用的家伙）</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span>static </span><span class="s1">定义或声明一个内部函数</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p6"><span class="s1">———————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>main.c</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>03-const</span><span class="s2">关键字</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by Apple on 14/11/12.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2014</span><span class="s2">年</span><span class="s1"> itcast. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">#include </span><span class="s3">&lt;stdio.h&gt;</span></p>
+<p class="p1"><span class="s1">/*</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">   </span>const </span><span class="s1">说明定义的变量是</span><span class="s7">只读</span><span class="s1">的</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">   </span>const</span><span class="s1">修饰一个普通变量，表示这个变量是只读的，不可以修改的</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">   </span>const</span><span class="s1">的位置与其类型的位置是可以调换的</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">   </span>const </span><span class="s1">修饰数组，表示数组是只读的，必须定义的时候进行初始化</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">   </span>const </span><span class="s1">修饰指针的时候，如果</span><span class="s8">const</span><span class="s7">放在</span><span class="s8">*</span><span class="s7">前面</span><span class="s1">，表示</span><span class="s7">指针</span><span class="s9">指向的内容</span><span class="s7">是只读的</span><span class="s1">，</span><span class="s7">不可以</span><span class="s1">通过指针</span><span class="s7">修改</span><span class="s1">它所指向的</span><span class="s7">存储内容</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">         </span></span><span class="s1">如果</span><span class="s8">const</span><span class="s7">在</span><span class="s8">*</span><span class="s7">后面</span><span class="s1">说明</span><span class="s7">指针</span><span class="s9">本身</span><span class="s7">是只读</span><span class="s1">的，</span><span class="s7">不能改变</span><span class="s1">指针的</span><span class="s7">指向？？</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">   </span>const </span><span class="s1">修饰形参：保证这个形参不会被函数修改</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space"> </span></span><span class="s1">同时也可以告诉函数的调用者，本函数不会修改它里面的内容</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space"> </span></span><span class="s1">可以提高函数可读性</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span>const</span><span class="s1">修饰函数返回值说明它的返回值不能修改</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s5">void</span><span class="s1"> test()</span></p>
+<p class="p6"><span class="s1">{</span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">  </span>const </span><span class="s2">修饰普通变量</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s1"> </span><span class="s5">int</span><span class="s1"> a = </span><span class="s6">10</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">int</span><span class="s1"> </span><span class="s5">const</span><span class="s1"> b = </span><span class="s6">20</span><span class="s1">;</span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>b = 20;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>const int c;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">  </span>const </span><span class="s2">修饰数组</span><span class="s1">,</span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>const int<span class="Apple-converted-space">  </span>nums[] = {1,2,3};</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">int</span><span class="s1"> </span><span class="s5">const</span><span class="s1"> nums[] = {</span><span class="s6">1</span><span class="s1">,</span><span class="s6">2</span><span class="s1">,</span><span class="s6">3</span><span class="s1">};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>nums[1] = 10;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">  </span>const </span><span class="s2">修饰指针</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">int</span><span class="s1"> num = </span><span class="s6">10</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">int</span><span class="s1"> num1 = </span><span class="s6">20</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s11">//</span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>const int *p = &amp;num;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">int</span><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s1"><span class="Apple-converted-space">  </span>*p = &amp;num;</span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>*p = 40;</span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>printf("%d\n",*p);</span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>*p = 20;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>p = &amp;num1;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>printf(</span><span class="s3">"%d\n"</span><span class="s1">,*p);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">int</span><span class="s1"> * </span><span class="s5">const</span><span class="s1"> pp = &amp;num;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>pp = &amp;num1;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s1"> </span><span class="s5">int</span><span class="s1"> * </span><span class="s5">const</span><span class="s1"> ppp = &amp;num;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>ppp = &amp;num1;</span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>*ppp = 60;</span></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//const </span><span class="s2">可以修饰形参</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">//argc </span><span class="s1">说明当程序启动时候，从控制台传入的参数的个数</span></p>
+<p class="p4"><span class="s4">//argv </span><span class="s1">从控制台传入的参数的值</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p7"><span class="s12">#include </span><span class="s1">&lt;string.h&gt;</span></p>
+<p class="p1"><span class="s1">/*</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span>1</span><span class="s1">、修饰形参：保证这个形参不会被函数修改</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">               </span></span><span class="s1">同时也可以告诉函数的调用者，本函数不会修改它里面的内容</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">               </span></span><span class="s2">可以提高函数可读性</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>strcpy(char * dest, const char *src);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">//const </span><span class="s1">作为函数返回值说明它的返回值不能修改</span></p>
+<p class="p6"><span class="s5">const</span><span class="s1"> </span><span class="s5">char</span><span class="s1"> * week(</span><span class="s5">int</span><span class="s1"> day)</span></p>
+<p class="p6"><span class="s1">{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">switch</span><span class="s1"> (day) {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">case</span><span class="s1"> </span><span class="s6">1</span><span class="s1">:</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">return</span><span class="s1"> </span><span class="s3">"</span><span class="s13">星期一</span><span class="s3">"</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">case</span><span class="s1"> </span><span class="s6">2</span><span class="s1">:</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">return</span><span class="s1"> </span><span class="s3">"</span><span class="s13">星期二</span><span class="s3">"</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">case</span><span class="s1"> </span><span class="s6">3</span><span class="s1">:</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">return</span><span class="s1"> </span><span class="s3">"</span><span class="s13">星期三</span><span class="s3">"</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">case</span><span class="s1"> </span><span class="s6">4</span><span class="s1">:</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">return</span><span class="s1"> </span><span class="s3">"</span><span class="s13">星期四</span><span class="s3">"</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">case</span><span class="s1"> </span><span class="s6">5</span><span class="s1">:</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">return</span><span class="s1"> </span><span class="s3">"</span><span class="s13">星期五</span><span class="s3">"</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">case</span><span class="s1"> </span><span class="s6">6</span><span class="s1">:</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">return</span><span class="s1"> </span><span class="s3">"</span><span class="s13">星期六</span><span class="s3">"</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">case</span><span class="s1"> </span><span class="s6">7</span><span class="s1">:</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">return</span><span class="s1"> </span><span class="s3">"</span><span class="s13">星期日</span><span class="s3">"</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">default</span><span class="s1">:</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">return</span><span class="s1"> </span><span class="s3">"</span><span class="s13">输入非法</span><span class="s3">\n"</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">break</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p6"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s5">int</span><span class="s1"> main(</span><span class="s5">int</span><span class="s1"> argc, </span><span class="s5">const</span><span class="s1"> </span><span class="s5">char</span><span class="s1"> * argv[]) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s1"> </span><span class="s5">char</span><span class="s1"> *w = week(</span><span class="s6">1</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span>printf(</span><span class="s3">"%s"</span><span class="s1">,w);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">return</span><span class="s1"> </span><span class="s6">0</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1">}</span></p>
+</body>
+</html>

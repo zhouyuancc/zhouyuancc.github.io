@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #294c50}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #31595d}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #539aa4}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s5 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s8 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s2">[</span><span class="s1">MBProgressHUD</span><span class="s2"> </span><span class="s3">showMessage</span><span class="s2">:</span><span class="s4">@"</span><span class="s5">加载中</span><span class="s4">..."</span><span class="s2">];</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">-(</span><span class="s6">void</span><span class="s1">)webViewDidFinishLoad:(</span><span class="s7">UIWebView</span><span class="s1"> *)webView{</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>[</span><span class="s1">MBProgressHUD</span><span class="s2"> </span><span class="s3">hideHUD</span><span class="s2">];</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">-(</span><span class="s6">void</span><span class="s1">)webView:(</span><span class="s7">UIWebView</span><span class="s1"> *)webView didFailLoadWithError:(</span><span class="s7">NSError</span><span class="s1"> *)error{</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>[</span><span class="s6">self</span><span class="s2"> </span><span class="s1">showHudTipStr</span><span class="s2">:</span><span class="s4">@"</span><span class="s5">加载失败</span><span class="s4">!"</span><span class="s2">];</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">/**</span></p>
+<p class="p6"><span class="s8"><span class="Apple-converted-space"> </span></span><span class="s1">文本提示</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p3"><span class="s1">- (</span><span class="s6">void</span><span class="s1">)showHudTipStr:(</span><span class="s7">NSString</span><span class="s1"> *)tipStr{</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">if</span><span class="s1"> (tipStr &amp;&amp; tipStr.</span><span class="s9">length</span><span class="s1"> &gt; </span><span class="s10">0</span><span class="s1">) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s1">MBProgressHUD</span><span class="s2"> *hud = [</span><span class="s1">MBProgressHUD</span><span class="s2"> </span><span class="s3">showHUDAddedTo</span><span class="s2">:</span><span class="s11">kKeyWindow</span><span class="s2"> </span><span class="s3">animated</span><span class="s2">:</span><span class="s6">YES</span><span class="s2">];</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space">        </span>hud.</span><span class="s12">mode</span><span class="s2"> = </span><span class="s1">MBProgressHUDModeText</span><span class="s2">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>hud.</span><span class="s12">labelText</span><span class="s1"> = tipStr;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>hud.</span><span class="s12">margin</span><span class="s1"> = </span><span class="s10">10.f</span><span class="s1">;</span></p>
+<p class="p8"><span class="s2"><span class="Apple-converted-space">        </span>hud.</span><span class="s1">removeFromSuperViewOnHide</span><span class="s2"> = </span><span class="s6">YES</span><span class="s2">;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>[hud </span><span class="s3">hide</span><span class="s1">:</span><span class="s6">YES</span><span class="s1"> </span><span class="s3">afterDelay</span><span class="s1">:</span><span class="s10">1.0</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p3"><span class="s1">}</span></p>
+</body>
+</html>

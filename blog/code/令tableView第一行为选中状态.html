@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s7 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s9 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s12 {font-variant-ligatures: no-common-ligatures; background-color: #fff995}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>FoodTypesViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>UISplitViewController</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 16/2/1.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright © 2016</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)viewDidLoad {</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span>[</span><span class="s3">super</span><span class="s4"> </span><span class="s1">viewDidLoad</span><span class="s4">];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">self</span><span class="s1">.</span><span class="s5">title</span><span class="s1"> = </span><span class="s6">@"</span><span class="s7">菜系</span><span class="s6">"</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">/**</span></p>
+<p class="p5"><span class="s9"><span class="Apple-converted-space">     </span></span><span class="s1">主动调代理方法</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s4"> </span><span class="s1">tableView</span><span class="s4">:</span><span class="s3">self</span><span class="s4">.</span><span class="s5">tableView</span><span class="s4"> </span><span class="s1">didSelectRowAtIndexPath</span><span class="s4">:[</span><span class="s10">NSIndexPath</span><span class="s4"> </span><span class="s1">indexPathForRow</span><span class="s4">:</span><span class="s11">0</span><span class="s4"> </span><span class="s1">inSection</span><span class="s4">:</span><span class="s11">0</span><span class="s4">]];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">选择第一行</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s4">.</span><span class="s5">tableView</span><span class="s4"> </span><span class="s12">selectRowAtIndexPath</span><span class="s4">:[</span><span class="s10">NSIndexPath</span><span class="s4"> </span><span class="s1">indexPathForRow</span><span class="s4">:</span><span class="s11">0</span><span class="s4"> </span><span class="s1">inSection</span><span class="s4">:</span><span class="s11">0</span><span class="s4">] </span><span class="s1">animated</span><span class="s4">:</span><span class="s3">YES</span><span class="s4"> </span><span class="s1">scrollPosition</span><span class="s4">:</span><span class="s1">UITableViewScrollPositionTop</span><span class="s4">];</span></p>
+<p class="p1"><span class="s1">// Selects and deselects rows. These methods </span><span class="s12">will not call the delegate methods</span><span class="s1"> (-tableView:willSelectRowAtIndexPath: or tableView:didSelectRowAtIndexPath:), nor will it send out a notification.</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s2">选中的第一行隐藏之前</span><span class="s1"> </span><span class="s2">重写</span><span class="s1">viewWillAppear</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p3"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)viewWillAppear:(</span><span class="s3">BOOL</span><span class="s1">)animated</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">——————</span><span class="s2">尝试修改的方法</span><span class="s1">—————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p3"><span class="s1">- (</span><span class="s10">UITableViewCell</span><span class="s1"> *)tableView:(</span><span class="s10">UITableView</span><span class="s1"> *)tableView cellForRowAtIndexPath:(</span><span class="s10">NSIndexPath</span><span class="s1"> *)indexPath</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">//1.</span><span class="s2">创建</span><span class="s1">cell</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">static</span><span class="s1"> </span><span class="s10">NSString</span><span class="s1"> *ID = </span><span class="s6">@"food_type"</span><span class="s1">;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s10">UITableViewCell</span><span class="s4"> *cell = [tableView </span><span class="s1">dequeueReusableCellWithIdentifier</span><span class="s4">:ID];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">if</span><span class="s1"> (cell == </span><span class="s3">nil</span><span class="s1">) {</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span>cell = [[</span><span class="s10">UITableViewCell</span><span class="s4"> </span><span class="s1">alloc</span><span class="s4">] </span><span class="s1">initWithStyle</span><span class="s4">:</span><span class="s1">UITableViewCellStyleDefault</span><span class="s4"> </span><span class="s1">reuseIdentifier</span><span class="s4">:ID];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>/**</span></p>
+<p class="p5"><span class="s9">// <span class="Apple-converted-space">    </span></span><span class="s1">令第一行为选中状态</span></p>
+<p class="p1"><span class="s1">// <span class="Apple-converted-space">    </span>*/</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>if(indexPath.row == 0)</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>{</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>cell.selected = YES;</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">//2.</span><span class="s2">设置</span><span class="s1">cell</span><span class="s2">的数据</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s13">FoodType</span><span class="s1"> *foodType = </span><span class="s3">self</span><span class="s1">.</span><span class="s14">foodTypes</span><span class="s1">[indexPath.</span><span class="s5">row</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>cell.</span><span class="s5">textLabel</span><span class="s1">.</span><span class="s5">text</span><span class="s1"> = foodType.</span><span class="s14">name</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">return</span><span class="s1"> cell;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: #1d9421}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s7 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s9 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s11 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>NSObject+MJKeyValue.h</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>MJExtension</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by mj on 13-8-24.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2013</span><span class="s2">年</span><span class="s1"> itcast. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">&lt;Foundation/Foundation.h&gt;</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"MJConst.h"</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>KeyValue</span><span class="s2">协议</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s4">@protocol</span><span class="s1"> MJKeyValue &lt;NSObject&gt;</span></p>
+<p class="p5"><span class="s1">@optional</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">这个数组中的属性名将会被忽略：不进行字典和模型的转换</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (NSArray *)ignoredPropertyNames;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">将属性名换为其他</span><span class="s5">key</span><span class="s1">去字典中取值</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@return </span><span class="s2">字典中的</span><span class="s1">key</span><span class="s2">是属性名，</span><span class="s1">value</span><span class="s2">是从字典中取值用的</span><span class="s1">key</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (NSDictionary *)replacedKeyFromPropertyName;</span></p>
+<p class="p4"><span class="s1">- (NSDictionary *)replacedKeyFromPropertyName MJDeprecated(</span><span class="s6">"</span><span class="s7">请使用</span><span class="s6">+ (NSDictionary *)replacedKeyFromPropertyName</span><span class="s7">方法</span><span class="s6">"</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">将属性名换为其他</span><span class="s5">key</span><span class="s1">去字典中取值</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param propertyName </span><span class="s2">属性名</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@return </span><span class="s2">字典中的</span><span class="s1">key</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (NSString *)replacedKeyFromPropertyName:(NSString *)propertyName;</span></p>
+<p class="p1"><span class="s1">// </span><span class="s2">方法优先级：</span><span class="s1">replacedKeyFromPropertyName: &gt; replacedKeyFromPropertyName</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">数组中需要转换的模型类</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@return </span><span class="s2">字典中的</span><span class="s1">key</span><span class="s2">是数组属性名，</span><span class="s1">value</span><span class="s2">是数组中存放模型的</span><span class="s1">Class</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (NSDictionary *)objectClassInArray;</span></p>
+<p class="p4"><span class="s1">- (NSDictionary *)objectClassInArray MJDeprecated(</span><span class="s6">"</span><span class="s7">请使用</span><span class="s6">+ (NSDictionary *)objectClassInArray</span><span class="s7">方法</span><span class="s6">"</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">当字典转模型完毕时调用</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)keyValuesDidFinishConvertingToObject;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">当模型转字典完毕时调用</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)objectDidFinishConvertingToKeyValues;</span></p>
+<p class="p5"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@interface</span><span class="s1"> NSObject (MJKeyValue) &lt;MJKeyValue&gt;</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">将字典的键值对转成模型属性</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param keyValues </span><span class="s2">字典</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">instancetype</span><span class="s1">)setKeyValues:(NSDictionary *)keyValues;</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">instancetype</span><span class="s1">)setKeyValues:(NSDictionary *)keyValues error:(NSError **)error;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">将模型转成字典</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@return </span><span class="s2">字典</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (NSDictionary *)keyValues;</span></p>
+<p class="p4"><span class="s1">- (NSDictionary *)keyValuesWithError:(NSError **)error;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">通过模型数组来创建一个字典数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param objectArray </span><span class="s2">模型数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@return </span><span class="s2">字典数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (NSArray *)keyValuesArrayWithObjectArray:(NSArray *)objectArray;</span></p>
+<p class="p4"><span class="s1">+ (NSArray *)keyValuesArrayWithObjectArray:(NSArray *)objectArray error:(NSError **)error;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1">#pragma mark - </span><span class="s2">字典转模型</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">通过</span><span class="s5">JSON</span><span class="s1">数据来创建一个模型</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param data JSON</span><span class="s2">数据</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@return </span><span class="s2">新建的对象</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithJSONData:(NSData *)data;</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithJSONData:(NSData *)data error:(NSError **)error;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">通过字典来创建一个模型</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param keyValues </span><span class="s2">字典</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@return </span><span class="s2">新建的对象</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithKeyValues:(NSDictionary *)keyValues;</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithKeyValues:(NSDictionary *)keyValues error:(NSError **)error;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s2">通过</span><span class="s1">plist</span><span class="s2">来创建一个模型</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param filename </span><span class="s2">文件名</span><span class="s1">(</span><span class="s2">仅限于</span><span class="s1">mainBundle</span><span class="s2">中的文件</span><span class="s1">)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@return </span><span class="s2">新建的对象</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithFilename:(NSString *)filename;</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithFilename:(NSString *)filename error:(NSError **)error;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s2">通过</span><span class="s1">plist</span><span class="s2">来创建一个模型</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param file </span><span class="s2">文件全路径</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@return </span><span class="s2">新建的对象</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithFile:(NSString *)file;</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithFile:(NSString *)file error:(NSError **)error;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1">#pragma mark - </span><span class="s2">字典数组转模型数组</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">通过</span><span class="s5">JSON</span><span class="s1">数据来创建一个模型数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param data JSON</span><span class="s2">数据</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@return </span><span class="s2">新建的对象</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithJSONData:(NSData *)data;</span></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithJSONData:(NSData *)data error:(NSError **)error;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">通过字典数组来创建一个模型数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param keyValuesArray </span><span class="s2">字典数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@return </span><span class="s2">模型数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithKeyValuesArray:(NSArray *)keyValuesArray;</span></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithKeyValuesArray:(NSArray *)keyValuesArray error:(NSError **)error;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">通过</span><span class="s5">plist</span><span class="s1">来创建一个模型数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param filename </span><span class="s2">文件名</span><span class="s1">(</span><span class="s2">仅限于</span><span class="s1">mainBundle</span><span class="s2">中的文件</span><span class="s1">)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@return </span><span class="s2">模型数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithFilename:(NSString *)filename;</span></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithFilename:(NSString *)filename error:(NSError **)error;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span></span><span class="s1">通过</span><span class="s5">plist</span><span class="s1">来创建一个模型数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@param file </span><span class="s2">文件全路径</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*<span class="Apple-converted-space">  </span>@return </span><span class="s2">模型数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithFile:(NSString *)file;</span></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithFile:(NSString *)file error:(NSError **)error;</span></p>
+<p class="p5"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>NSObject+MJKeyValue.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>MJExtension</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by mj on 13-8-24.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2013</span><span class="s2">年</span><span class="s1"> itcast. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"NSObject+MJKeyValue.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"NSObject+MJIvar.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"MJIvar.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"MJType.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"MJConst.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"MJFoundation.h"</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@implementation</span><span class="s1"> NSObject (MJKeyValue)</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1">#pragma mark - --</span><span class="s2">常用的对象</span><span class="s1">--</span></p>
+<p class="p4"><span class="s4">static</span><span class="s1"> NSNumberFormatter *_numberFormatter;</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">void</span><span class="s1">)load</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>_numberFormatter = [[NSNumberFormatter alloc] init];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1">#pragma mark - --</span><span class="s2">公共方法</span><span class="s1">--</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithJSONData:(NSData *)data</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectWithJSONData:data error:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithJSONData:(NSData *)data error:(NSError *</span><span class="s4">__autoreleasing</span><span class="s1"> *)error</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>MJAssertError(data != </span><span class="s4">nil</span><span class="s1">, </span><span class="s4">nil</span><span class="s1">, error, </span><span class="s6">@"JSONData</span><span class="s7">参数为</span><span class="s6">nil"</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectWithKeyValues:[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:</span><span class="s4">nil</span><span class="s1">] error:error];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithKeyValues:(NSDictionary *)keyValues</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectWithKeyValues:keyValues error:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithKeyValues:(NSDictionary *)keyValues error:(NSError *</span><span class="s4">__autoreleasing</span><span class="s1"> *)error</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [[[</span><span class="s4">self</span><span class="s1"> alloc] init] setKeyValues:keyValues error:error];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithFilename:(NSString *)filename</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectWithFilename:filename error:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithFilename:(NSString *)filename error:(NSError *</span><span class="s4">__autoreleasing</span><span class="s1"> *)error</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>MJAssertError(filename != </span><span class="s4">nil</span><span class="s1">, </span><span class="s4">nil</span><span class="s1">, error, </span><span class="s6">@"filename</span><span class="s7">参数为</span><span class="s6">nil"</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectWithFile:[[NSBundle mainBundle] pathForResource:filename ofType:</span><span class="s4">nil</span><span class="s1">] error:error];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithFile:(NSString *)file</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectWithFile:file error:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">instancetype</span><span class="s1">)objectWithFile:(NSString *)file error:(NSError *</span><span class="s4">__autoreleasing</span><span class="s1"> *)error</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>MJAssertError(file != </span><span class="s4">nil</span><span class="s1">, </span><span class="s4">nil</span><span class="s1">, error, </span><span class="s6">@"file</span><span class="s7">参数为</span><span class="s6">nil"</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectWithKeyValues:[NSDictionary dictionaryWithContentsOfFile:file] error:error];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">instancetype</span><span class="s1">)setKeyValues:(NSDictionary *)keyValues</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> setKeyValues:keyValues error:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">instancetype</span><span class="s1">)setKeyValues:(NSDictionary *)keyValues error:(NSError *</span><span class="s4">__autoreleasing</span><span class="s1"> *)error</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>MJAssertError([keyValues isKindOfClass:[NSDictionary class]], </span><span class="s4">self</span><span class="s1">, error, </span><span class="s6">@"keyValues</span><span class="s7">参数不是一个字典</span><span class="s6">"</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">@try</span><span class="s1"> {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>NSArray *ignoredPropertyNames = </span><span class="s4">nil</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1"> ([[</span><span class="s4">self</span><span class="s1"> class] respondsToSelector:</span><span class="s4">@selector</span><span class="s1">(ignoredPropertyNames)]) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>ignoredPropertyNames = [[</span><span class="s4">self</span><span class="s1"> class] ignoredPropertyNames];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>[[</span><span class="s4">self</span><span class="s1"> class] enumerateIvarsWithBlock:^(MJIvar *ivar, </span><span class="s4">BOOL</span><span class="s1"> *stop) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">// 0.</span><span class="s9">检测是否被忽略</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">if</span><span class="s1"> ([ignoredPropertyNames containsObject:ivar.propertyName]) </span><span class="s4">return</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">// 1.</span><span class="s9">取出属性值</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">id</span><span class="s1"> value = keyValues ;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>NSArray *keys = [ivar keysFromClass:[</span><span class="s4">self</span><span class="s1"> class]];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">for</span><span class="s1"> (NSString *key </span><span class="s4">in</span><span class="s1"> keys) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s4">if</span><span class="s1"> (![value isKindOfClass:[NSDictionary class]]) </span><span class="s4">continue</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>value = value[key];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">if</span><span class="s1"> (!value || value == [NSNull null]) </span><span class="s4">return</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">// 2.</span><span class="s9">如果是模型属性</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>MJType *type = ivar.type;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>Class typeClass = type.typeClass;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">if</span><span class="s1"> (!type.isFromFoundation &amp;&amp; typeClass) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>value = [typeClass objectWithKeyValues:value];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>} </span><span class="s4">else</span><span class="s1"> </span><span class="s4">if</span><span class="s1"> (typeClass == [NSString class]) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s4">if</span><span class="s1"> ([value isKindOfClass:[NSNumber class]]) {</span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">                    </span></span><span class="s1">// NSNumber -&gt; NSString</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>value = [value description];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>} </span><span class="s4">else</span><span class="s1"> </span><span class="s4">if</span><span class="s1"> ([value isKindOfClass:[NSURL class]]) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s8">// NSURL -&gt; NSString</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>value = [value absoluteString];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>} </span><span class="s4">else</span><span class="s1"> </span><span class="s4">if</span><span class="s1"> ([value isKindOfClass:[NSString class]]) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s4">if</span><span class="s1"> (typeClass == [NSNumber class]) {</span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">                    </span></span><span class="s1">// NSString -&gt; NSNumber</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>value = [_numberFormatter numberFromString:value];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>} </span><span class="s4">else</span><span class="s1"> </span><span class="s4">if</span><span class="s1"> (typeClass == [NSURL class]) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s8">// NSString -&gt; NSURL</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>value = [NSURL URLWithString:value];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>} </span><span class="s4">else</span><span class="s1"> {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>Class objectClass = [ivar objectClassInArrayFromClass:[</span><span class="s4">self</span><span class="s1"> class]];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s4">if</span><span class="s1"> (objectClass) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s8">// 3.</span><span class="s9">字典数组</span><span class="s8">--&gt;</span><span class="s9">模型数组</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>value = [objectClass objectArrayWithKeyValuesArray:value];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">// 4.</span><span class="s9">赋值</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>[ivar setValue:value forObject:</span><span class="s4">self</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">// </span><span class="s9">转换完毕</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1"> ([</span><span class="s4">self</span><span class="s1"> respondsToSelector:</span><span class="s4">@selector</span><span class="s1">(keyValuesDidFinishConvertingToObject)]) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>[</span><span class="s4">self</span><span class="s1"> keyValuesDidFinishConvertingToObject];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>} </span><span class="s4">@catch</span><span class="s1"> (NSException *exception) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>MJBuildError(error, exception.reason);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p5"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">return</span><span class="s10"> </span><span class="s1">self</span><span class="s10">;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithJSONData:(NSData *)data</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectArrayWithJSONData:data error:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithJSONData:(NSData *)data error:(NSError *</span><span class="s4">__autoreleasing</span><span class="s1"> *)error</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>MJAssertError(data != </span><span class="s4">nil</span><span class="s1">, </span><span class="s4">nil</span><span class="s1">, error, </span><span class="s6">@"JSONData</span><span class="s7">参数为</span><span class="s6">nil"</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectArrayWithKeyValuesArray:[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:</span><span class="s4">nil</span><span class="s1">] error:error];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithKeyValuesArray:(NSArray *)keyValuesArray</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectArrayWithKeyValuesArray:keyValuesArray error:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithKeyValuesArray:(NSArray *)keyValuesArray error:(NSError *</span><span class="s4">__autoreleasing</span><span class="s1"> *)error</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">// 1.</span><span class="s2">判断真实性</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>MJAssertError([keyValuesArray isKindOfClass:[NSArray class]], </span><span class="s4">nil</span><span class="s1">, error, </span><span class="s6">@"keyValuesArray</span><span class="s7">参数不是一个数组</span><span class="s6">"</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">// 2.</span><span class="s2">创建数组</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>NSMutableArray *modelArray = [NSMutableArray array];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">// 3.</span><span class="s2">遍历</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">for</span><span class="s1"> (NSDictionary *keyValues </span><span class="s4">in</span><span class="s1"> keyValuesArray) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">id</span><span class="s1"> model = [</span><span class="s4">self</span><span class="s1"> objectWithKeyValues:keyValues error:error];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1"> (model) [modelArray addObject:model];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> modelArray;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithFilename:(NSString *)filename</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectArrayWithFilename:filename error:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithFilename:(NSString *)filename error:(NSError *</span><span class="s4">__autoreleasing</span><span class="s1"> *)error</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>MJAssertError(filename != </span><span class="s4">nil</span><span class="s1">, </span><span class="s4">nil</span><span class="s1">, error, </span><span class="s6">@"filename</span><span class="s7">参数为</span><span class="s6">nil"</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectArrayWithFile:[[NSBundle mainBundle] pathForResource:filename ofType:</span><span class="s4">nil</span><span class="s1">] error:error];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithFile:(NSString *)file</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectArrayWithFile:file error:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (NSArray *)objectArrayWithFile:(NSString *)file error:(NSError *</span><span class="s4">__autoreleasing</span><span class="s1"> *)error</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>MJAssertError(file != </span><span class="s4">nil</span><span class="s1">, </span><span class="s4">nil</span><span class="s1">, error, </span><span class="s6">@"file</span><span class="s7">参数为</span><span class="s6">nil"</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> objectArrayWithKeyValuesArray:[NSArray arrayWithContentsOfFile:file] error:error];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (NSDictionary *)keyValues</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> keyValuesWithError:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (NSDictionary *)keyValuesWithError:(NSError *</span><span class="s4">__autoreleasing</span><span class="s1"> *)error</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p6"><span class="s11"><span class="Apple-converted-space">    </span></span><span class="s5">// </span><span class="s1">如果自己不是模型类</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1"> ([MJFoundation isClassFromFoundation:[</span><span class="s4">self</span><span class="s1"> class]]) </span><span class="s4">return</span><span class="s1"> (NSDictionary *)</span><span class="s4">self</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">__block</span><span class="s1"> NSMutableDictionary *keyValues = [NSMutableDictionary dictionary];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">@try</span><span class="s1"> {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>NSArray *ignoredPropertyNames = </span><span class="s4">nil</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1"> ([[</span><span class="s4">self</span><span class="s1"> class] respondsToSelector:</span><span class="s4">@selector</span><span class="s1">(ignoredPropertyNames)]) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>ignoredPropertyNames = [[</span><span class="s4">self</span><span class="s1"> class] ignoredPropertyNames];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>[[</span><span class="s4">self</span><span class="s1"> class] enumerateIvarsWithBlock:^(MJIvar *ivar, </span><span class="s4">BOOL</span><span class="s1"> *stop) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">// 0.</span><span class="s9">检测是否被忽略</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">if</span><span class="s1"> ([ignoredPropertyNames containsObject:ivar.propertyName]) </span><span class="s4">return</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">// 1.</span><span class="s9">取出属性值</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">id</span><span class="s1"> value = [ivar valueFromObject:</span><span class="s4">self</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">if</span><span class="s1"> (!value) </span><span class="s4">return</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">// 2.</span><span class="s9">如果是模型属性</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>MJType *type = ivar.type;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>Class typeClass = type.typeClass;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">if</span><span class="s1"> (!type.isFromFoundation &amp;&amp; typeClass) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>value = [value keyValues];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>} </span><span class="s4">else</span><span class="s1"> </span><span class="s4">if</span><span class="s1"> (typeClass == [NSURL class]) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>value = [value absoluteString];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>} </span><span class="s4">else</span><span class="s1"> {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>Class objectClass = [ivar objectClassInArrayFromClass:[</span><span class="s4">self</span><span class="s1"> class]];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s4">if</span><span class="s1"> (objectClass) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s8">// 3.</span><span class="s9">处理数组里面有模型的情况</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>value = [objectClass keyValuesArrayWithObjectArray:value];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">// 4.</span><span class="s9">赋值</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>NSArray *keys = [ivar keysFromClass:[</span><span class="s4">self</span><span class="s1"> class]];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>NSUInteger keyCount = keys.count;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">// </span><span class="s9">创建字典</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">__block</span><span class="s1"> NSMutableDictionary *innerDict = keyValues;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>[keys enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, </span><span class="s4">BOOL</span><span class="s1"> *stop) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s4">if</span><span class="s1"> (idx == keyCount - </span><span class="s12">1</span><span class="s1">) { </span><span class="s8">// </span><span class="s9">最后一个属性</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>innerDict[key] = value;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>} </span><span class="s4">else</span><span class="s1"> { </span><span class="s8">// </span><span class="s9">字典</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>NSMutableDictionary *tempDict = innerDict[key];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s4">if</span><span class="s1"> (tempDict == </span><span class="s4">nil</span><span class="s1">) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>tempDict = [NSMutableDictionary dictionary];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>innerDict[key] = tempDict;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>innerDict = tempDict;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>}];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">// </span><span class="s9">转换完毕</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1"> ([</span><span class="s4">self</span><span class="s1"> respondsToSelector:</span><span class="s4">@selector</span><span class="s1">(objectDidFinishConvertingToKeyValues)]) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>[</span><span class="s4">self</span><span class="s1"> objectDidFinishConvertingToKeyValues];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>} </span><span class="s4">@catch</span><span class="s1"> (NSException *exception) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>MJBuildError(error, exception.reason);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> keyValues;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (NSArray *)keyValuesArrayWithObjectArray:(NSArray *)objectArray</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> [</span><span class="s4">self</span><span class="s1"> keyValuesArrayWithObjectArray:objectArray error:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">+ (NSArray *)keyValuesArrayWithObjectArray:(NSArray *)objectArray error:(NSError *</span><span class="s4">__autoreleasing</span><span class="s1"> *)error</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">// 0.</span><span class="s2">判断真实性</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>MJAssertError([objectArray isKindOfClass:[NSArray class]], </span><span class="s4">nil</span><span class="s1">, error, </span><span class="s6">@"objectArray</span><span class="s7">参数不是一个数组</span><span class="s6">"</span><span class="s1">);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s10"><span class="Apple-converted-space">    </span></span><span class="s1">// 1.</span><span class="s2">创建数组</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>NSMutableArray *keyValuesArray = [NSMutableArray array];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">for</span><span class="s1"> (</span><span class="s4">id</span><span class="s1"> object </span><span class="s4">in</span><span class="s1"> objectArray) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>[keyValuesArray addObject:[object keyValuesWithError:error]];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> keyValuesArray;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p5"><span class="s1">@end</span></p>
+</body>
+</html>

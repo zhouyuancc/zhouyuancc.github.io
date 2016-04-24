@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275; min-height: 21.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s6 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s10 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>RedView.h</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Block</span><span class="s2">传值</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 15-3-10.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> apple. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">&lt;UIKit/UIKit.h&gt;</span></p>
+<p class="p1"><span class="s1">// name:block</span><span class="s2">类型的别名</span></p>
+<p class="p4"><span class="s4">typedef</span><span class="s1"> </span><span class="s4">void</span><span class="s1">(^RedViewBlock)(</span><span class="s5">NSString</span><span class="s1"> *str);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s6">// </span><span class="s1">代理：打电话叫别人做事情</span></p>
+<p class="p5"><span class="s6">// block: </span><span class="s1">小弟，可以随时让小弟做事情</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s6">// </span><span class="s1">利用</span><span class="s6">block</span><span class="s1">传值，不需要返回值</span><span class="s6">,</span><span class="s1">需要传递什么出去，就写在</span><span class="s6">Block</span><span class="s1">里面</span></p>
+<p class="p1"><span class="s1">// void(^)(NSString *str)</span></p>
+<p class="p1"><span class="s1">// block</span><span class="s2">只有在方法中才是</span><span class="s1"> (void(^)(NSString *str)) myBlock</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s6">// block</span><span class="s1">不能乱用，一般用来传值</span></p>
+<p class="p5"><span class="s6">// </span><span class="s1">代理：一般封装控件的时候用代理</span><span class="s6">,</span><span class="s1">为了代码的扩展性</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@interface</span><span class="s1"> RedView : </span><span class="s5">UIView</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">// void(^)(NSString *str) </span><span class="s2">没有返回，参数字符串的</span><span class="s1">block</span></p>
+<p class="p1"><span class="s1">//@property (nonatomic, strong) void(^myBlock)(NSString *str);</span></p>
+<p class="p6"><span class="s1">@property</span><span class="s7"> (</span><span class="s1">nonatomic</span><span class="s7">, </span><span class="s1">strong</span><span class="s7">) </span><span class="s8">RedViewBlock</span><span class="s7"> myBlock;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>RedView.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Block</span><span class="s2">传值</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 15-3-10.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> apple. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"RedView.h"</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@implementation</span><span class="s7"> RedView</span></p>
+<p class="p1"><span class="s1">/*</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">传值的条件：</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">接收方必须要有一个属性接收</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">什么时候传值：点击</span><span class="s6">view</span><span class="s1">，通知控制器接收值</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)touchesBegan:(</span><span class="s5">NSSet</span><span class="s1"> *)touches withEvent:(</span><span class="s5">UIEvent</span><span class="s1"> *)event{</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1"> (</span><span class="s8">_myBlock</span><span class="s1">) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">_myBlock</span><span class="s1">(</span><span class="s9">@"</span><span class="s10">红色</span><span class="s9">"</span><span class="s1">);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>block();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ViewController.h</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Block</span><span class="s2">传值</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 15-3-10.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> apple. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">&lt;UIKit/UIKit.h&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@interface</span><span class="s1"> ViewController : </span><span class="s5">UIViewController</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@property</span><span class="s7"> (</span><span class="s1">nonatomic</span><span class="s7">, </span><span class="s1">copy</span><span class="s7">) </span><span class="s5">NSString</span><span class="s7"> *str;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Block</span><span class="s2">传值</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 15-3-10.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> apple. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"ViewController.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"RedView.h"</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p8"><span class="s4">@interface</span><span class="s7"> </span><span class="s1">ViewController</span><span class="s7"> ()</span></p>
+<p class="p6"><span class="s1">@property</span><span class="s7"> (</span><span class="s1">weak</span><span class="s7">, </span><span class="s1">nonatomic</span><span class="s7">) </span><span class="s1">IBOutlet</span><span class="s7"> </span><span class="s11">RedView</span><span class="s7"> *redView;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@implementation</span><span class="s1"> ViewController</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)viewDidLoad {</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s4">super</span><span class="s7"> </span><span class="s1">viewDidLoad</span><span class="s7">];</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">// Do any additional setup after loading the view, typically from a nib.</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">_redView</span><span class="s1">.</span><span class="s8">myBlock</span><span class="s1"> = ^(</span><span class="s5">NSString</span><span class="s1"> *str){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">self</span><span class="s1">.</span><span class="s8">str</span><span class="s1"> = str;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)setStr:(</span><span class="s5">NSString</span><span class="s1"> *)str</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">_str</span><span class="s1"> = [str </span><span class="s12">copy</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s12">NSLog</span><span class="s1">(</span><span class="s9">@"%@"</span><span class="s1">,</span><span class="s8">_str</span><span class="s1">);</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)didReceiveMemoryWarning {</span></p>
+<p class="p9"><span class="s7"><span class="Apple-converted-space">    </span>[</span><span class="s4">super</span><span class="s7"> </span><span class="s1">didReceiveMemoryWarning</span><span class="s7">];</span></p>
+<p class="p1"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s1">// Dispose of any resources that can be recreated.</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+</body>
+</html>

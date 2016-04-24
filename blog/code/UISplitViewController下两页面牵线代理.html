@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275; min-height: 21.0px}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #294c50}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>MainViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>02-UISplitViewController</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 16/2/2.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright © 2016</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1">——————</span><span class="s2">主页面</span><span class="s1">—————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"MainViewController.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"FoodsViewController.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"FoodTypesViewController.h"</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)viewDidLoad {</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s4">super</span><span class="s5"> </span><span class="s1">viewDidLoad</span><span class="s5">];</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//1.</span><span class="s2">取出</span><span class="s1">foodTypes</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">UINavigationController</span><span class="s1"> *foodTypesNav = [</span><span class="s4">self</span><span class="s1">.</span><span class="s7">viewControllers</span><span class="s1"> </span><span class="s8">firstObject</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9">FoodTypesViewController</span><span class="s1"> *foodTypesVc = [foodTypesNav.</span><span class="s7">viewControllers</span><span class="s1"> </span><span class="s8">firstObject</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//2.</span><span class="s2">取出</span><span class="s1">foods</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">UINavigationController</span><span class="s5"> *foosNav = [</span><span class="s4">self</span><span class="s5">.</span><span class="s7">viewControllers</span><span class="s5"> </span><span class="s8">lastObject</span><span class="s5">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span>——————————————————————————————————————————————————————————</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s9">FoodsViewController</span><span class="s2">遵守</span><span class="s1">FoodTypesViewControllerDelegate</span><span class="s2">协议</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">FoodsViewController</span><span class="s5">&lt;</span><span class="s1">FoodTypesViewControllerDelegate</span><span class="s5">&gt; *foodsVc = [foosNav.</span><span class="s7">viewControllers</span><span class="s5"> </span><span class="s8">firstObject</span><span class="s5">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//3.</span><span class="s2">设置代理</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>foodTypesVc.</span><span class="s11">delegate</span><span class="s1"> = foodsVc;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span>——————————————————————————————————————————————————————————</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">——————</span><span class="s2">左侧页面</span><span class="s1">—————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>FoodTypesViewController.h</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>02-UISplitViewController</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 16/2/1.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright © 2016</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">&lt;UIKit/UIKit.h&gt;</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p8"><span class="s4">@class</span><span class="s5"> </span><span class="s1">FoodTypesViewController</span><span class="s5">,</span><span class="s1">FoodType</span><span class="s5">;</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p2"><span class="s4">@protocol</span><span class="s1"> FoodTypesViewControllerDelegate&lt;</span><span class="s6">NSObject</span><span class="s1">&gt;</span></p>
+<p class="p9"><span class="s1">@optional</span></p>
+<p class="p2"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)foodTypesViewController:(</span><span class="s9">FoodTypesViewController</span><span class="s1"> *)foodTypesVc didSelectedFoodType:(</span><span class="s9">FoodType</span><span class="s1"> *)type;</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p9"><span class="s1">@end</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p2"><span class="s4">@interface</span><span class="s1"> FoodTypesViewController : </span><span class="s6">UITableViewController</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p8"><span class="s4">@property</span><span class="s5"> (</span><span class="s4">nonatomic</span><span class="s5">,</span><span class="s4">weak</span><span class="s5">) </span><span class="s4">id</span><span class="s5">&lt;</span><span class="s1">FoodTypesViewControllerDelegate</span><span class="s5">&gt; delegate;</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p9"><span class="s1">@end</span></p>
+<p class="p10"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>FoodTypesViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>02-UISplitViewController</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 16/2/1.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright © 2016</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)tableView:(</span><span class="s6">UITableView</span><span class="s1"> *)tableView didSelectRowAtIndexPath:(</span><span class="s6">NSIndexPath</span><span class="s1"> *)indexPath</span></p>
+<p class="p2"><span class="s1">{</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1"> ([</span><span class="s4">self</span><span class="s1">.</span><span class="s11">delegate</span><span class="s1"> </span><span class="s8">respondsToSelector</span><span class="s1">:</span><span class="s4">@selector</span><span class="s1">(foodTypesViewController:didSelectedFoodType:)]) {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">FoodType</span><span class="s1"> *foodType = </span><span class="s4">self</span><span class="s1">.</span><span class="s11">foodTypes</span><span class="s1">[indexPath.</span><span class="s7">row</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p11"><span class="s5"><span class="Apple-converted-space">        </span>[</span><span class="s4">self</span><span class="s5">.</span><span class="s11">delegate</span><span class="s5"> </span><span class="s1">foodTypesViewController</span><span class="s5">:</span><span class="s4">self</span><span class="s5"> </span><span class="s1">didSelectedFoodType</span><span class="s5">:foodType];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">——————</span><span class="s2">右侧页面</span><span class="s1">———</span><span class="s2">添加代理</span><span class="s1">————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>FoodsViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>02-UISplitViewController</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 16/2/1.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright © 2016</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"FoodsViewController.h"</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"FoodTypesViewController.h”</span><span class="s2">//添加代理</span></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"FoodType.h"</span></p>
+<p class="p2"><span class="s1">——————————————————————————————————————————————————————————</span></p>
+<p class="p8"><span class="s4">@interface</span><span class="s5"> </span><span class="s1">FoodsViewController</span><span class="s5"> ()&lt;</span><span class="s1">FoodTypesViewControllerDelegate</span><span class="s5">&gt;</span></p>
+<p class="p2"><span class="s1">——————————————————————————————————————————————————————————</span></p>
+<p class="p9"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1">——————————————————————————————————————————————————————————</span></p>
+<p class="p12"><span class="s1">#pragma mark - FoodTypesViewControllerDelegate</span></p>
+<p class="p2"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)foodTypesViewController:(</span><span class="s9">FoodTypesViewController</span><span class="s1"> *)foodTypesVc didSelectedFoodType:(</span><span class="s9">FoodType</span><span class="s1"> *)type</span></p>
+<p class="p2"><span class="s1">{</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1">}</span></p>
+<p class="p2"><span class="s1">——————————————————————————————————————————————————————————</span></p>
+</body>
+</html>

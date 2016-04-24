@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s5 {font-variant-ligatures: no-common-ligatures; background-color: #ffc677}
+    span.s6 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; background-color: #fff995}
+    span.s8 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #b51a00}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s11 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s12 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">UIImageView</span><span class="s1"> *imageV = [[</span><span class="s2">UIImageView</span><span class="s1"> </span><span class="s3">alloc</span><span class="s1">] </span><span class="s3">init</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">/**</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">         </span>UIViewContentModeScale</span><span class="s5">ToFill</span><span class="s1"> </span><span class="s6">填充整个控件</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">         </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">         </span>UIViewContentModeScale</span><span class="s7">Aspect</span><span class="s5">Fit</span><span class="s1"> </span><span class="s6">按比例缩放，并且</span><span class="s8">宽高！都不！超出控件</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">         </span>UIViewContentModeScale</span><span class="s7">Aspect</span><span class="s5">Fill</span><span class="s1"> </span><span class="s6">按比例缩放，直到！有一个！宽度或高度不超过控件就可以，自动调节中心点</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">         </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">         </span>UIViewContentModeCenter </span><span class="s6">不会缩放图片，只会把图片的</span><span class="s8">中心点对齐</span><span class="s6">控件</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p5"><span class="s9"><span class="Apple-converted-space">        </span>imageV.</span><span class="s10">contentMode</span><span class="s9"> = </span><span class="s1">UIViewContentModeScaleAspectFill</span><span class="s9">;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p6"><span class="s11"><span class="Apple-converted-space">        </span></span><span class="s12">//</span><span class="s1">裁剪图片，超出控件的部分裁剪掉</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>imageV.</span><span class="s10">clipsToBounds</span><span class="s1"> = </span><span class="s13">YES</span><span class="s1">;</span></p>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Verdana; color: #0433ff; min-height: 18.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Verdana; color: #555555}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Verdana; color: #ff2500}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Verdana; color: #0433ff}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Heiti SC Light'; color: #555555}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 18.0px 'Songti SC'; font-kerning: none}
+    span.s3 {font-kerning: none; color: #0433ff}
+    span.s4 {font: 15.0px 'Heiti SC Light'; font-kerning: none; color: #0433ff}
+    span.s5 {font-kerning: none; color: #ff2500}
+    span.s6 {font: 15.0px 'Heiti SC Light'; font-kerning: none; color: #ff2500}
+    span.s7 {font: 15.0px 'Heiti SC Light'; font-kerning: none}
+    span.s8 {font: 15.0px 'Heiti SC Light'; font-kerning: none; color: #555555}
+    span.s9 {font: 15.0px Verdana; font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><a href="http://blog.csdn.net/bailu66/article/details/7665357"><b>Object-C </b><span class="s2"><b>中各数据类型转换</b></span><b> NSData</b><span class="s2"><b>转</b></span><b>NSString</b><span class="s2"><b>，</b></span><b>Byte</b><span class="s2"><b>，</b></span><b>UIImage</b></a></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">1</span><span class="s4">，</span><span class="s3">NSData </span><span class="s4">与</span><span class="s3"> NSString<br>
+</span><span class="s4">　　</span><span class="s5">NSData --&gt; NSString<br>
+</span><span class="s6">　　</span><span class="s1">NSString *aString = [[NSString alloc] initWithData:adata encoding:NSUTF8StringEncoding];</span></p>
+<p class="p3"><span class="s7">　　</span><span class="s5">NSString --&gt; NSData<br>
+</span><span class="s6">　　</span><span class="s1">NSString *aString = @"1234";</span></p>
+<p class="p3"><span class="s7">　　</span><span class="s1">NSData *aData = [aString dataUsingEncoding: NSUTF8StringEncoding];</span></p>
+<p class="p3"><span class="s3">2</span><span class="s4">，</span><span class="s3">NSData </span><span class="s4">与</span><span class="s3"> Byte<br>
+</span><span class="s4">　　</span><span class="s5">NSData --&gt; Byte<br>
+</span><span class="s6">　　</span><span class="s1">NSString *testString = @"1234567890";</span></p>
+<p class="p3"><span class="s7">　　</span><span class="s1">NSData *testData = [testString dataUsingEncoding: NSUTF8StringEncoding];</span></p>
+<p class="p3"><span class="s7">　　</span><span class="s1">Byte *testByte = (Byte *)[testData bytes];</span></p>
+<p class="p4"><span class="s8">　　</span><span class="s1">Byte --&gt; NSData<br>
+</span><span class="s7">　　</span><span class="s1">Byte byte[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};<br>
+</span><span class="s7">　　</span><span class="s1">NSData *adata = [[NSData alloc] initWithBytes:byte length:24];</span></p>
+<p class="p5"><span class="s1">3</span><span class="s7">，</span><span class="s1">NSData </span><span class="s7">与</span><span class="s1"> UIImage</span></p>
+<p class="p3"><span class="s6">　　</span><span class="s5">NSData --&gt; UIImage<br>
+</span><span class="s6">　　</span><span class="s1">UIImage *aimage = [UIImage imageWithData: imageData];</span></p>
+<p class="p6"><span class="s1">　　</span><span class="s9">//</span><span class="s1">例：从本地文件沙盒中取图片并转换为</span><span class="s9">NSData</span></p>
+<p class="p3"><span class="s7">　　</span><span class="s1">NSString *path = [[NSBundle mainBundle] bundlePath];</span></p>
+<p class="p3"><span class="s7">　　</span><span class="s1">NSString *name = [NSString stringWithFormat:@"ceshi.png"];</span></p>
+<p class="p3"><span class="s7">　　</span><span class="s1">NSString *finalPath = [path stringByAppendingPathComponent:name];</span></p>
+<p class="p3"><span class="s7">　　</span><span class="s1">NSData *imageData = [NSData dataWithContentsOfFile: finalPath];</span></p>
+<p class="p3"><span class="s7">　　</span><span class="s1">UIImage *aimage = [UIImage imageWithData: imageData];</span></p>
+<p class="p4"><span class="s8">　　</span><span class="s1">UIImage</span><span class="s7">－</span><span class="s1">&gt; NSData</span></p>
+<p class="p3"><span class="s7">　　</span><span class="s1">NSData *imageData = UIImagePNGRepresentation(aimae);</span></p>
+<p class="p5"><span class="s1">4</span><span class="s7">，</span><span class="s1">NSData </span><span class="s7">与</span><span class="s1"> NSMutableData</span></p>
+<p class="p4"><span class="s7">　　</span><span class="s1">NSData --&gt; MSMutableData</span></p>
+<p class="p4"><span class="s7">　　</span><span class="s1">NSData *data=[[NSData alloc]init];</span></p>
+<p class="p4"><span class="s7">　　</span><span class="s1">NSMutableData *mdata=[[NSMutableData alloc]init];   </span></p>
+<p class="p4"><span class="s7">　　</span><span class="s1">mdata=[NSData dataWithData:data];</span></p>
+<p class="p5"><span class="s1">5</span><span class="s7">，</span><span class="s1">NSData</span><span class="s7">合并为一个</span><span class="s1">NSMutableData</span></p>
+<p class="p5"><span class="s1">- (NSString *)filePathWithName:(NSString *)filename<br>
+ {<br>
+         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);<br>
+         NSString *documentsDirectory = [paths objectAtIndex:0];<br>
+         return [documentsDirectory stringByAppendingPathComponent:filename];<br>
+ }<br>
+ <br>
+ - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    <br>
+     //</span><span class="s7">音频文件路径</span><span class="s1"><br>
+         NSString *mp3Path1 = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"mp3"];<br>
+         NSString *mp3Path2 = [[NSBundle mainBundle] pathForResource:@"2" ofType:@"mp3"];<br>
+         //</span><span class="s7">音频数据</span><span class="s1"><br>
+         NSData *sound1Data = [[NSData alloc] initWithContentsOfFile: mp3Path1];<br>
+         NSData *sound2Data = [[NSData alloc] initWithContentsOfFile: mp3Path2];<br>
+         //</span><span class="s7">合并音频</span><span class="s1"><br>
+         NSMutableData *sounds = [NSMutableData alloc];<br>
+         [sounds appendData:sound1Data];<br>
+         [sounds appendData:sound2Data];<br>
+         //</span><span class="s7">保存音频</span><span class="s1"><br>
+ <br>
+         NSLog(@"data length:%d", [sounds length]);<br>
+ <br>
+         [sounds writeToFile:[self filePathWithName:@"tmp.mp3"] atomically:YES];<br>
+         <br>
+         [window makeKeyAndVisible];<br>
+     <br>
+     return YES;<br>
+ }</span></p>
+</body>
+</html>

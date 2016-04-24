@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>EditEmailTableViewController.m</span></p>
+<p class="p2"><span class="s2">//<span class="Apple-converted-space">  </span></span><span class="s1">写邮件页面</span></p>
+<p class="p3"><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">将分号隔开的中文姓名</span><span class="s2"> </span><span class="s1">转换为</span><span class="s2"> </span><span class="s1">分号隔开的英文姓名</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">-(</span><span class="s3">NSString</span><span class="s1"> *)getEmpCodesByEmpNames:(</span><span class="s3">NSString</span><span class="s1"> *)EmpNames</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">NSArray</span><span class="s1"> * NamesArray = [EmpNames </span><span class="s4">componentsSeparatedByString</span><span class="s1">:</span><span class="s5">@";"</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">NSMutableString</span><span class="s1"> *result = [</span><span class="s3">NSMutableString</span><span class="s1"> </span><span class="s4">stringWithCapacity</span><span class="s1">:[NamesArray </span><span class="s4">count</span><span class="s1">]];</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">AddRessbookAppdataStore</span><span class="s6"> *addrStore = [</span><span class="s1">AddRessbookAppdataStore</span><span class="s6"> </span><span class="s7">sharedStore</span><span class="s6">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">for</span><span class="s1">(</span><span class="s3">NSString</span><span class="s1"> *name </span><span class="s8">in</span><span class="s1"> NamesArray)</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">NSString</span><span class="s1"> *code = [addrStore </span><span class="s7">getEmpCodeByRealName</span><span class="s1">:name];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>[result </span><span class="s4">appendString</span><span class="s1">:[</span><span class="s3">NSString</span><span class="s1"> </span><span class="s4">stringWithFormat</span><span class="s1">:</span><span class="s5">@"%@;"</span><span class="s1">,code]];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">return</span><span class="s1"><span class="Apple-converted-space">  </span>result;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+</body>
+</html>

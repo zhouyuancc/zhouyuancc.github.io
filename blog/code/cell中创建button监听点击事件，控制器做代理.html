@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275; min-height: 21.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #294c50}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #539aa4}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s6 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s11 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s12 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">//<span class="Apple-converted-space">  </span>EditTableViewCell.h</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p3"><span class="s2">@class</span><span class="s3"> </span><span class="s1">EmpButton</span><span class="s3">;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p5"><span class="s2">@protocol</span><span class="s1"> EditTableViewCellDelegate &lt;</span><span class="s4">NSObject</span><span class="s1">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@optional</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)editTableViewCellDidClickEmpBtn:(</span><span class="s5">EmpButton</span><span class="s1"> *)button;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s2">@class</span><span class="s3"> </span><span class="s1">EmailInfo</span><span class="s3">,</span><span class="s1">EditEmailFrame</span><span class="s3">;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p5"><span class="s2">@interface</span><span class="s1"> EditTableViewCell : </span><span class="s4">UITableViewCell</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s2">@property</span><span class="s3"> (</span><span class="s2">nonatomic</span><span class="s3">,</span><span class="s2">weak</span><span class="s3">) </span><span class="s2">id</span><span class="s3">&lt;</span><span class="s1">EditTableViewCellDelegate</span><span class="s3">&gt; delegate;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">//<span class="Apple-converted-space">  </span>EditTableViewCell.m</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p7"><span class="s6">//</span><span class="s1">人员按钮代理</span></p>
+<p class="p5"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)clickEmpButton:(</span><span class="s5">EmpButton</span><span class="s1"> *)button</span></p>
+<p class="p5"><span class="s1">{</span></p>
+<p class="p8"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s7">NSLog</span><span class="s3">(</span><span class="s1">@"clickEmpButton %@"</span><span class="s3">,button.</span><span class="s8">code</span><span class="s3">);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">if</span><span class="s1">([</span><span class="s2">self</span><span class="s1">.</span><span class="s8">delegate</span><span class="s1"> </span><span class="s7">respondsToSelector</span><span class="s1">:</span><span class="s2">@selector</span><span class="s1">(editTableViewCellDidClickEmpBtn:)])</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p9"><span class="s3"><span class="Apple-converted-space">        </span>[</span><span class="s2">self</span><span class="s3">.</span><span class="s8">delegate</span><span class="s3"> </span><span class="s1">editTableViewCellDidClickEmpBtn</span><span class="s3">:button];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p5"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)addTextToButton</span></p>
+<p class="p5"><span class="s1">{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">EmpButton</span><span class="s1"> *button = [[</span><span class="s5">EmpButton</span><span class="s1"> </span><span class="s7">alloc</span><span class="s1">] </span><span class="s7">init</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSString</span><span class="s1"> *name = [</span><span class="s4">NSString</span><span class="s1"> </span><span class="s7">stringWithFormat</span><span class="s1">:</span><span class="s9">@"%@"</span><span class="s1">,data[i]];</span></p>
+<p class="p10"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>button.</span><span class="s8">name</span><span class="s1"> = name;</span><span class="s10">//</span><span class="s11">姓名</span></p>
+<p class="p9"><span class="s3"><span class="Apple-converted-space">    </span>button.</span><span class="s8">code</span><span class="s3"> = [[</span><span class="s5">AddRessbookAppdataStore</span><span class="s3"> </span><span class="s1">sharedStore</span><span class="s3">] </span><span class="s1">getEmpCodeByRealName</span><span class="s3">:name];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">// </span><span class="s12">监听</span></p>
+<p class="p11"><span class="s3"><span class="Apple-converted-space">    </span>[button </span><span class="s1">addTarget</span><span class="s3">:</span><span class="s2">self</span><span class="s3"> </span><span class="s1">action</span><span class="s3">:</span><span class="s2">@selector</span><span class="s3">(clickEmpButton:) </span><span class="s1">forControlEvents</span><span class="s3">:</span><span class="s1">UIControlEventTouchUpInside</span><span class="s3">];</span></p>
+<p class="p5"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">//<span class="Apple-converted-space">  </span>EditEmailTableViewController.m</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s2">@interface</span><span class="s3"> </span><span class="s1">EditEmailTableViewController</span><span class="s3"> ()&lt;</span><span class="s1">EditTableViewCellDelegate</span><span class="s3">&gt;</span></p>
+<p class="p6"><span class="s1">@end</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">- (</span><span class="s4">UITableViewCell</span><span class="s1"> *)tableView:(</span><span class="s4">UITableView</span><span class="s1"> *)tableView cellForRowAtIndexPath:(</span><span class="s4">NSIndexPath</span><span class="s1"> *)indexPath</span></p>
+<p class="p5"><span class="s1">{</span></p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">EditTableViewCell</span><span class="s3"> *cell = [</span><span class="s1">EditTableViewCell</span><span class="s3"> </span><span class="s13">cellWithTableView</span><span class="s3">:tableView];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">   </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>cell.</span><span class="s8">delegate</span><span class="s1"> = </span><span class="s2">self</span><span class="s1">;</span><span class="s10">//</span><span class="s11">代理</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p11"><span class="s3"><span class="Apple-converted-space">    </span>cell.</span><span class="s14">selectionStyle</span><span class="s3"> = </span><span class="s1">UITableViewCellSelectionStyleNone</span><span class="s3">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//2.</span><span class="s12">设置</span><span class="s1">cell</span><span class="s12">的数据</span></p>
+<p class="p12"><span class="s3"><span class="Apple-converted-space">    </span>cell.</span><span class="s1">editEmailFrame</span><span class="s3"> = </span><span class="s2">self</span><span class="s3">.</span><span class="s1">editEmailFrame</span><span class="s3">[indexPath.</span><span class="s14">row</span><span class="s3">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">   </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">return</span><span class="s1"> cell;</span></p>
+<p class="p5"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">- (</span><span class="s2">void</span><span class="s1">)editTableViewCellDidClickEmpBtn:(</span><span class="s5">EmpButton</span><span class="s1"> *)button</span></p>
+<p class="p5"><span class="s1">{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">NSLog</span><span class="s1">(</span><span class="s9">@"1233"</span><span class="s1">);</span></p>
+<p class="p5"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"></span><br></p>
+</body>
+</html>

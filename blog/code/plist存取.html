@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s4 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s10 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">- (</span><span class="s2">IBAction</span><span class="s1">)save {</span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//1.</span><span class="s4">获取沙盘根路径</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">NSString</span><span class="s1"> *home = </span><span class="s6">NSHomeDirectory</span><span class="s1">();</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//2.document</span><span class="s4">路径</span></p>
+<p class="p4"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s5">NSString</span><span class="s3"> *docPath = [home </span><span class="s1">stringByAppendingPathComponent</span><span class="s3">:</span><span class="s7">@"Documents"</span><span class="s3">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//3.</span><span class="s4">新建数据</span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//writeToFile : NSString\</span><span class="s4">数组</span><span class="s1">\NSData\</span><span class="s4">字典</span><span class="s1">\NSNumber</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">NSArray</span><span class="s1"> *data = </span><span class="s8">@[</span><span class="s7">@"jack"</span><span class="s1">,</span><span class="s8">@10</span><span class="s1">,</span><span class="s7">@"aaaa"</span><span class="s8">]</span><span class="s1">;</span></p>
+<p class="p2"><span class="s1">//<span class="Apple-converted-space">    </span>NSDictionary *dict = @{@"name":@"jack",@"age":@10};</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s5">NSString</span><span class="s3"> *filePath = [docPath </span><span class="s1">stringByAppendingPathComponent</span><span class="s3">:</span><span class="s7">@"data.plist"</span><span class="s3">];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>[data </span><span class="s6">writeToFile</span><span class="s1">:filePath </span><span class="s6">atomically</span><span class="s1">:</span><span class="s2">YES</span><span class="s1">];</span><span class="s9">//YES</span><span class="s10">安全写入</span><span class="s9"> </span><span class="s10">原则性操作</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"%@",docPath);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">- (</span><span class="s2">IBAction</span><span class="s1">)read {</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//1.</span><span class="s4">获取沙盘根路径</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">NSString</span><span class="s1"> *home = </span><span class="s6">NSHomeDirectory</span><span class="s1">();</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//2.document</span><span class="s4">路径</span></p>
+<p class="p4"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s5">NSString</span><span class="s3"> *docPath = [home </span><span class="s1">stringByAppendingPathComponent</span><span class="s3">:</span><span class="s7">@"Documents"</span><span class="s3">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//3.</span><span class="s4">文件路径</span></p>
+<p class="p4"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s5">NSString</span><span class="s3"> *filePath = [docPath </span><span class="s1">stringByAppendingPathComponent</span><span class="s3">:</span><span class="s7">@"data.plist"</span><span class="s3">];</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">//4.</span><span class="s4">读取数据</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">NSArray</span><span class="s1"> *array = [</span><span class="s5">NSArray</span><span class="s1"> </span><span class="s6">arrayWithContentsOfFile</span><span class="s1">:filePath];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">NSLog</span><span class="s1">(</span><span class="s7">@"%@"</span><span class="s1">,array);</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1">}</span></p>
+</body>
+</html>

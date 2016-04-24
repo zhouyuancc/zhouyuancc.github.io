@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    span.s1 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s4 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; background-color: #fff995}
+    span.s6 {font-variant-ligatures: no-common-ligatures; background-color: #fff995}
+    span.s7 {font-variant-ligatures: no-common-ligatures; background-color: #b1dd8c}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s9 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; background-color: #fff995}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s12 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #822e0e}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">什么是</span><span class="s2">runtime</span><span class="s1">？</span></p>
+<p class="p2"><span class="s3">1</span><span class="s4">&gt; runtime</span><span class="s2">是一套底层的</span><span class="s5">C</span><span class="s6">语言</span><span class="s5">API</span><span class="s2">（包含很多强大实用的</span><span class="s4">C</span><span class="s2">语言数据类型、</span><span class="s4">C</span><span class="s2">语言函数）</span></p>
+<p class="p2"><span class="s3">2</span><span class="s4">&gt; </span><span class="s2">实际上，平时我们编写的</span><span class="s4">OC</span><span class="s2">代码，底层都是基于</span><span class="s4">runtime</span><span class="s2">实现的</span></p>
+<p class="p2"><span class="s4">* </span><span class="s2">也就是说，平时我们编写的</span><span class="s4">OC</span><span class="s2">代码，最终都是转成了底层的</span><span class="s4">runtime</span><span class="s2">代码（</span><span class="s4">C</span><span class="s2">语言代码）</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s2">runtime</span><span class="s1">有啥用？</span></p>
+<p class="p2"><span class="s3">1</span><span class="s4">&gt; </span><span class="s2">能动态</span><span class="s6">产生</span><span class="s7">一个类、一个成员变量、一个方法</span></p>
+<p class="p2"><span class="s3">2</span><span class="s4">&gt; </span><span class="s2">能动态</span><span class="s6">修改</span><span class="s2">一个类、一个成员变量、一个方法</span></p>
+<p class="p2"><span class="s3">3</span><span class="s4">&gt; </span><span class="s2">能动态</span><span class="s6">删除</span><span class="s2">一个类、一个成员变量、一个方法</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2">常见的函数、头文件</span></p>
+<p class="p4"><span class="s2">#import </span><span class="s8">&lt;objc/runtime.h&gt;</span><span class="s2"> : </span><span class="s1">成员变量、类、方法</span></p>
+<p class="p1"><span class="s2">Ivar * class_copyIvarList : </span><span class="s1">获得某个类内部的所有成员变量</span></p>
+<p class="p1"><span class="s2">Method * class_copyMethodList : </span><span class="s1">获得某个类内部的所有方法</span></p>
+<p class="p1"><span class="s2">Method class_get</span><span class="s6">Instance</span><span class="s2">Method : </span><span class="s1">获得某个实例方法（</span><span class="s9">对象方法</span><span class="s1">，减号</span><span class="s2">-</span><span class="s1">开头）</span></p>
+<p class="p1"><span class="s2">Method class_getClassMethod : </span><span class="s1">获得某个类方法（加号</span><span class="s2">+</span><span class="s1">开头）</span></p>
+<p class="p1"><span class="s2">method_</span><span class="s6">exchange</span><span class="s2">Implementations : </span><span class="s9">交换</span><span class="s10">2</span><span class="s1">个方法的具体实现</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p5"><span class="s11">#import </span><span class="s2">&lt;objc/message.h&gt;</span><span class="s11"> : </span><span class="s12">消息机制</span></p>
+<p class="p1"><span class="s2">objc_msgSend(....)</span></p>
+</body>
+</html>

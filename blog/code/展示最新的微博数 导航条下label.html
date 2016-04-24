@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s5 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s13 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s14 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s15 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ZYHomeViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>weibo</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/9/22.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">#pragma mark - </span><span class="s2">展示最新的微博数</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s3">void</span><span class="s1">)showNewStatusCount:(</span><span class="s3">int</span><span class="s1">)count</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">if</span><span class="s1"> (count == </span><span class="s4">0</span><span class="s1">) </span><span class="s3">return</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s6">//</span><span class="s1">展示最新的微博数</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">CGFloat</span><span class="s1"> h = </span><span class="s4">35</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">/**</span></p>
+<p class="p6"><span class="s6"><span class="Apple-converted-space">     </span></span><span class="s1">获取导航条最大的</span><span class="s6">Y</span><span class="s1">值</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>navigationController</span><span class="s2">导航控制器的</span><span class="s1">navigationBar</span><span class="s2">导航条</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s1">CGFloat</span><span class="s9"> y = </span><span class="s10">CGRectGetMaxY</span><span class="s9">(</span><span class="s3">self</span><span class="s9">.</span><span class="s1">navigationController</span><span class="s9">.</span><span class="s1">navigationBar</span><span class="s9">.</span><span class="s1">frame</span><span class="s9">) - h;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">CGFloat</span><span class="s1"> x = </span><span class="s4">0</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">CGFloat</span><span class="s1"> w = </span><span class="s3">self</span><span class="s1">.</span><span class="s7">view</span><span class="s1">.</span><span class="s11">width</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s12">UILabel</span><span class="s1"> *label = [[</span><span class="s12">UILabel</span><span class="s1"> </span><span class="s10">alloc</span><span class="s1">] </span><span class="s10">initWithFrame</span><span class="s1">:</span><span class="s10">CGRectMake</span><span class="s1">(x, y, w, h)];</span></p>
+<p class="p8"><span class="s9"><span class="Apple-converted-space">    </span>label.</span><span class="s7">backgroundColor</span><span class="s9"> = [</span><span class="s12">UIColor</span><span class="s9"> </span><span class="s10">colorWithPatternImage</span><span class="s9">:[</span><span class="s12">UIImage</span><span class="s9"> </span><span class="s10">imageNamed</span><span class="s9">:</span><span class="s1">@"timeline_new_status_background"</span><span class="s9">]];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>label.</span><span class="s7">text</span><span class="s1"> = [</span><span class="s12">NSString</span><span class="s1"> </span><span class="s10">stringWithFormat</span><span class="s1">:</span><span class="s13">@"</span><span class="s14">最新微博数</span><span class="s13">%d</span><span class="s14">条</span><span class="s13">"</span><span class="s1">,count];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>label.</span><span class="s7">textColor</span><span class="s1"> = [</span><span class="s12">UIColor</span><span class="s1"> </span><span class="s10">whiteColor</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>[self.view addSubview:label];</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s6">//</span><span class="s1">插入到导航控制器下导航条下面</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s9">.</span><span class="s1">navigationController</span><span class="s9">.</span><span class="s1">view</span><span class="s9"> </span><span class="s10">insertSubview</span><span class="s9">:label </span><span class="s10">belowSubview</span><span class="s9">:</span><span class="s3">self</span><span class="s9">.</span><span class="s1">navigationController</span><span class="s9">.</span><span class="s1">navigationBar</span><span class="s9">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">动画平移</span></p>
+<p class="p9"><span class="s9"><span class="Apple-converted-space">    </span>[</span><span class="s12">UIView</span><span class="s9"> </span><span class="s1">animateWithDuration</span><span class="s9">:</span><span class="s4">0.25</span><span class="s9"> </span><span class="s1">animations</span><span class="s9">:^{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s9"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">动画往下面平移</span></p>
+<p class="p9"><span class="s9"><span class="Apple-converted-space">        </span>label.</span><span class="s7">transform</span><span class="s9"> = </span><span class="s1">CGAffineTransformMakeTranslation</span><span class="s9">(</span><span class="s4">0</span><span class="s9">, h);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>} </span><span class="s10">completion</span><span class="s1">:^(</span><span class="s3">BOOL</span><span class="s1"> finished) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s9"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">还原</span><span class="s1"> </span><span class="s2">往上面平移</span></p>
+<p class="p9"><span class="s9"><span class="Apple-converted-space">        </span>[</span><span class="s12">UIView</span><span class="s9"> </span><span class="s1">animateWithDuration</span><span class="s9">:</span><span class="s4">0.25</span><span class="s9"> </span><span class="s1">delay</span><span class="s9">:</span><span class="s4">2</span><span class="s9"> </span><span class="s1">options</span><span class="s9">:</span><span class="s1">UIViewAnimationOptionCurveLinear</span><span class="s9"> </span><span class="s1">animations</span><span class="s9">:^{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">//</span><span class="s15">还原</span></p>
+<p class="p7"><span class="s9"><span class="Apple-converted-space">            </span>label.</span><span class="s1">transform</span><span class="s9"> = </span><span class="s1">CGAffineTransformIdentity</span><span class="s9">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>} </span><span class="s10">completion</span><span class="s1">:^(</span><span class="s3">BOOL</span><span class="s1"> finished) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>[label </span><span class="s10">removeFromSuperview</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">}</span></p>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; background-color: #ffb5af}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; background-color: #ffb5af}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s7 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s11 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s12 {font-variant-ligatures: no-common-ligatures; background-color: #ff8647}
+    span.s13 {font-variant-ligatures: no-common-ligatures; background-color: #ffb5af}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #c32275; background-color: #ffb5af}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>HMViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>06-UIWebView02-</span><span class="s2">其他用法</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by apple on 14-7-1.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2014</span><span class="s2">年</span><span class="s1"> heima. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">#import </span><span class="s1">"HMViewController.h"</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@interface</span><span class="s1"> HMViewController () &lt;UIWebViewDelegate&gt;</span></p>
+<p class="p5"><span class="s1">@property</span><span class="s5"> (</span><span class="s1">weak</span><span class="s5">, </span><span class="s1">nonatomic</span><span class="s5">) </span><span class="s1">IBOutlet</span><span class="s5"> UIWebView *webView;</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">IBAction</span><span class="s1">)clearAd;</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">IBAction</span><span class="s1">)getHtmlTitle;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">@end</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s4">@implementation</span><span class="s1"> HMViewController</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)viewDidLoad</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s4">super</span><span class="s1"> viewDidLoad];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">self</span><span class="s1">.view.backgroundColor = [UIColor redColor];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>NSURL *url = [[NSBundle mainBundle] URLForResource:</span><span class="s6">@"test.html"</span><span class="s1"> withExtension:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>NSURL *url = [[NSBundle mainBundle] URLForResource:@"</span><span class="s2">关于</span><span class="s1">.txt" withExtension:nil];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>NSURLRequest *request = [NSURLRequest requestWithURL:url];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s8">// </span><span class="s1">设置需要检测的数据类型</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">self</span><span class="s1">.webView.dataDetectorTypes = UIDataDetectorTypeAll;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">self</span><span class="s1">.webView.delegate = </span><span class="s4">self</span><span class="s1">;</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>self.webView.scalesPageToFit = YES;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s1">.webView loadRequest:request];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">IBAction</span><span class="s1">)clearAd {</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// </span><span class="s2">清除广告</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// </span><span class="s2">执行</span><span class="s1">JavaScript</span><span class="s2">代码</span><span class="s1">, </span><span class="s2">把</span><span class="s1">header</span><span class="s2">和</span><span class="s1">footer</span><span class="s2">给删掉</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// document.getElementsByTagName('header')[0].remove();</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s1">.webView stringByEvaluatingJavaScriptFromString:</span><span class="s6">@"document.getElementsByTagName('header')[0].remove();"</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s1">.webView stringByEvaluatingJavaScriptFromString:</span><span class="s6">@"document.getElementsByTagName('footer')[0].remove();"</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// HTML5 : </span><span class="s2">跨平台</span><span class="s1">(</span><span class="s2">网页</span><span class="s1">) JavaScript</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// PhoneGap</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// Sencha-touch</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">// jQuery-Mobile</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">IBAction</span><span class="s1">)getHtmlTitle {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>NSString *title = [</span><span class="s4">self</span><span class="s1">.webView stringByEvaluatingJavaScriptFromString:</span><span class="s6">@"document.title;"</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>NSLog(</span><span class="s6">@"%@"</span><span class="s1">, title);</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)openMyAlbum</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>UIImagePickerController *ipc = [[UIImagePickerController alloc] init];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s1"> presentViewController:ipc animated:</span><span class="s4">YES</span><span class="s1"> completion:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)openMyCamera</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span>NSLog(</span><span class="s1">@"-------------openMyCamera"</span><span class="s5">);</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1">#pragma mark - UIWebViewDelegate</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p6"><span class="s8"><span class="Apple-converted-space"> </span></span><span class="s1">当</span><span class="s8">webView</span><span class="s1">发送一个请求之前都会调用这个方法</span><span class="s8">, </span><span class="s1">返回</span><span class="s8">YES, </span><span class="s1">可以加载这个请求</span><span class="s8">, </span><span class="s1">返回</span><span class="s8">NO, </span><span class="s1">代表禁止加载这个请求</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">BOOL</span><span class="s1">)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>NSString *url = request.URL.absoluteString;</span><span class="s9">// ios://openMyAlbum</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>NSRange range = [url rangeOfString:</span><span class="s6">@"ios://“</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1"> (range.length != </span><span class="s10">0</span><span class="s1">) {</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">// </span><span class="s11">截取方法名</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>NSString *method = [url substringFromIndex:</span><span class="s12">range.location + range.length</span><span class="s1">];</span></p>
+<p class="p9"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">// </span><span class="s2">将方法名转为</span><span class="s1">SEL</span><span class="s2">类型</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">SEL</span><span class="s1"> selector = NSSelectorFromString(method);</span></p>
+<p class="p4"><span class="s13"><span class="Apple-converted-space">        </span>[</span><span class="s14">self</span><span class="s13"> performSelector:selector withObject:</span><span class="s14">nil</span><span class="s13">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">return</span><span class="s5"> </span><span class="s1">YES</span><span class="s5">;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p5"><span class="s1">@end</span></p>
+</body>
+</html>

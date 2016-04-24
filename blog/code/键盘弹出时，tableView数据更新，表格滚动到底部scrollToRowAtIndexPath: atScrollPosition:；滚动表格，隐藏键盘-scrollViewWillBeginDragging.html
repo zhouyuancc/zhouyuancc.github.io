@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: #1d9421}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s7 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s13 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">#pragma mark </span><span class="s2">数据库内容改变调用</span></p>
+<p class="p3"><span class="s1">-(</span><span class="s3">void</span><span class="s1">)controllerDidChangeContent:(</span><span class="s4">NSFetchedResultsController</span><span class="s1"> *)controller{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s5">.</span><span class="s6">tableView</span><span class="s5"> </span><span class="s1">reloadData</span><span class="s5">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s8">//</span><span class="s1">表格滚动到底部</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">NSIndexPath</span><span class="s1"> *lastIndex = [</span><span class="s4">NSIndexPath</span><span class="s1"> </span><span class="s9">indexPathForRow</span><span class="s1">:</span><span class="s6">_resultContr</span><span class="s1">.</span><span class="s10">fetchedObjects</span><span class="s1">.</span><span class="s10">count</span><span class="s1"> - </span><span class="s11">1</span><span class="s1"> </span><span class="s9">inSection</span><span class="s1">:</span><span class="s11">0</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s12">//</span><span class="s13">滚动</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s5">.</span><span class="s6">tableView</span><span class="s5"> </span><span class="s1">scrollToRowAtIndexPath</span><span class="s5">:lastIndex </span><span class="s1">atScrollPosition</span><span class="s5">:</span><span class="s1">UITableViewScrollPositionBottom</span><span class="s5"> </span><span class="s1">animated</span><span class="s5">:</span><span class="s3">YES</span><span class="s5">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">#pragma mark </span><span class="s2">表格滚动，隐藏键盘</span></p>
+<p class="p3"><span class="s1">-(</span><span class="s3">void</span><span class="s1">)scrollViewWillBeginDragging:(</span><span class="s4">UIScrollView</span><span class="s1"> *)scrollView{</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s3">self</span><span class="s1">.</span><span class="s10">view</span><span class="s1"> </span><span class="s9">endEditing</span><span class="s1">:</span><span class="s3">YES</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">}</span></p>
+</body>
+</html>

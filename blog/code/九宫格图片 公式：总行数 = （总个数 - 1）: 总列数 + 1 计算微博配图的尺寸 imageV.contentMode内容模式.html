@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #294c50}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #822e0e}
+    span.s11 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s13 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s15 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s16 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s17 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s18 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ZYStatusFrame.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>weibo</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/11/3.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span></span><span class="s2">模型</span><span class="s1"> + </span><span class="s2">对应控件的</span><span class="s1">frame</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">#pragma mark - </span><span class="s2">计算微博配图的尺寸</span><span class="s1"> </span><span class="s2">公式：总行数</span><span class="s1"> = </span><span class="s2">（总个数</span><span class="s1"> - 1</span><span class="s2">）</span><span class="s1">/ </span><span class="s2">总列数</span><span class="s1"> + 1</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s3">CGSize</span><span class="s1">)photosSizeWithCount:(</span><span class="s4">int</span><span class="s1">)count</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">//5</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//1 2 3</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//4 5</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//4</span><span class="s2">幅图</span><span class="s1"> 2</span><span class="s2">行</span><span class="s1">2</span><span class="s2">列</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">其他</span><span class="s1"><span class="Apple-converted-space">  </span>n</span><span class="s2">行</span><span class="s1">3</span><span class="s2">列</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//count : </span><span class="s2">图片总数</span></p>
+<p class="p4"><span class="s1">—————————————————————————————————————————————————————————————————————————————————————————————————————— <span class="Apple-converted-space">   </span></span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">获取总列数</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">int</span><span class="s1"> cols = count == </span><span class="s7">4</span><span class="s1">?</span><span class="s7">2</span><span class="s1">:</span><span class="s7">3</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">获取总行数</span><span class="s1"> 5</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">总行数</span><span class="s1"> = </span><span class="s2">（总个数</span><span class="s1"> - 1</span><span class="s2">）</span><span class="s1">/ </span><span class="s2">总列数</span><span class="s1"> + 1</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">int</span><span class="s1"> rols = (count - </span><span class="s7">1</span><span class="s1">) / cols + </span><span class="s7">1</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">CGFloat</span><span class="s1"> photoWH = </span><span class="s7">70</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">CGFloat</span><span class="s1"> w = cols * photoWH + (cols - </span><span class="s7">1</span><span class="s1">) * </span><span class="s8">ZYStatusCellMargin</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">CGFloat</span><span class="s1"> h = rols * photoWH + (rols - </span><span class="s7">1</span><span class="s1">) * </span><span class="s8">ZYStatusCellMargin</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s1"> </span><span class="s9">CGSizeMake</span><span class="s1">(w, h);</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>ZYPhotosView.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>weibo</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/12/20.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p6"><span class="s10">#import </span><span class="s1">"ZYPhotosView.h"</span></p>
+<p class="p6"><span class="s10">#import </span><span class="s1">"ZYPhoto.h"</span></p>
+<p class="p6"><span class="s10">#import </span><span class="s1">"UIImageView+WebCache.h"</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1">@implementation</span><span class="s6"> ZYPhotosView</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">instancetype</span><span class="s1">)initWithFrame:(</span><span class="s3">CGRect</span><span class="s1">)frame</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1"> (</span><span class="s4">self</span><span class="s1"> = [</span><span class="s4">super</span><span class="s1"> </span><span class="s9">initWithFrame</span><span class="s1">:frame]) {</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>self.backgroundColor = [UIColor redColor];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">添加</span><span class="s1">9</span><span class="s2">个子控件</span></p>
+<p class="p8"><span class="s6"><span class="Apple-converted-space">        </span>[</span><span class="s4">self</span><span class="s6"> </span><span class="s1">setUpAllChildView</span><span class="s6">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p7"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">return</span><span class="s6"> </span><span class="s1">self</span><span class="s6">;</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p9"><span class="s11"><span class="Apple-converted-space"> </span></span><span class="s1">添加</span><span class="s11">9</span><span class="s1">个子控件</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)setUpAllChildView</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">for</span><span class="s1"> (</span><span class="s4">int</span><span class="s1"> i = </span><span class="s7">0</span><span class="s1">; i &lt; </span><span class="s7">9</span><span class="s1">; i++) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s12">UIImageView</span><span class="s1"> *imageV = [[</span><span class="s12">UIImageView</span><span class="s1"> </span><span class="s9">alloc</span><span class="s1">] </span><span class="s9">init</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>UIViewContentModeScaleToFill </span><span class="s2">填充整个控件</span></p>
+<p class="p10"><span class="s1"><span class="Apple-converted-space">         </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>UIViewContentModeScaleAspectFit </span><span class="s2">按比例缩放，并且宽高！都不！超出控件</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>UIViewContentModeScaleAspectFill </span><span class="s2">按比例缩放，直到！有一个！宽度或高度不超过控件就可以，自动调节中心点</span></p>
+<p class="p10"><span class="s1"><span class="Apple-converted-space">         </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>UIViewContentModeCenter </span><span class="s2">不会缩放图片，只会把图片的中心点对齐控件</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p11"><span class="s6"><span class="Apple-converted-space">        </span>imageV.</span><span class="s3">contentMode</span><span class="s6"> = </span><span class="s1">UIViewContentModeScaleAspectFill</span><span class="s6">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p9"><span class="s13"><span class="Apple-converted-space">        </span></span><span class="s11">//</span><span class="s1">裁剪图片，超出控件的部分裁剪掉</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>imageV.</span><span class="s3">clipsToBounds</span><span class="s1"> = </span><span class="s4">YES</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1">—————————————————————————————————————————————————————————————————————————————————————————————————————— <span class="Apple-converted-space">       </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s4">self</span><span class="s1"> </span><span class="s9">addSubview</span><span class="s1">:imageV];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)setPic_urls:(</span><span class="s12">NSArray</span><span class="s1"> *)pic_urls</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s14">_pic_urls</span><span class="s1"> = pic_urls;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">int</span><span class="s1"> count = (</span><span class="s4">int</span><span class="s1">)</span><span class="s4">self</span><span class="s1">.</span><span class="s3">subviews</span><span class="s1">.</span><span class="s3">count</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">for</span><span class="s1">(</span><span class="s4">int</span><span class="s1"> i = </span><span class="s7">0</span><span class="s1">;i &lt; count;i++)</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s12">UIImageView</span><span class="s1"> *imageV = </span><span class="s4">self</span><span class="s1">.</span><span class="s3">subviews</span><span class="s1">[i];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1"> (i &lt; </span><span class="s14">_pic_urls</span><span class="s1">.</span><span class="s3">count</span><span class="s1">) {</span><span class="s5">//</span><span class="s15">显示</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>imageV.</span><span class="s3">hidden</span><span class="s1"> = </span><span class="s4">NO</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">            </span></span><span class="s1">//</span><span class="s2">获取</span><span class="s1">ZYPhoto</span><span class="s2">模型</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s16">ZYPhoto</span><span class="s1"> *photo = </span><span class="s14">_pic_urls</span><span class="s1">[i];</span></p>
+<p class="p4"><span class="s1">—————————————————————————————————————————————————————————————————————————————————————————————————————— <span class="Apple-converted-space">           </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">//</span><span class="s15">赋值</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>[imageV </span><span class="s17">sd_setImageWithURL</span><span class="s1">:photo.</span><span class="s14">thumbnail_pic</span><span class="s1"> </span><span class="s17">placeholderImage</span><span class="s1">:[</span><span class="s12">UIImage</span><span class="s1"> </span><span class="s9">imageNamed</span><span class="s1">:</span><span class="s18">@"timeline_image_placeholder"</span><span class="s1">]];</span></p>
+<p class="p4"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">else</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>imageV.</span><span class="s3">hidden</span><span class="s1"> = </span><span class="s4">YES</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p9"><span class="s11"><span class="Apple-converted-space"> </span></span><span class="s1">计算尺寸</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)layoutSubviews</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p11"><span class="s6"><span class="Apple-converted-space">    </span>[</span><span class="s4">super</span><span class="s6"> </span><span class="s1">layoutSubviews</span><span class="s6">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">CGFloat</span><span class="s1"> x = </span><span class="s7">0</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">CGFloat</span><span class="s1"> y = </span><span class="s7">0</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">CGFloat</span><span class="s1"> w = </span><span class="s7">70</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">CGFloat</span><span class="s1"> h = </span><span class="s7">70</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">CGFloat</span><span class="s1"> margin = </span><span class="s7">10</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">int</span><span class="s1"> col = </span><span class="s7">0</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">int</span><span class="s1"> rol = </span><span class="s7">0</span><span class="s1">;</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">总列数</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">int</span><span class="s1"> cols = </span><span class="s14">_pic_urls</span><span class="s1">.</span><span class="s3">count</span><span class="s1"> == </span><span class="s7">4</span><span class="s1">?</span><span class="s7">2</span><span class="s1">:</span><span class="s7">3</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">计算显示出来的</span><span class="s1">imageView</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">for</span><span class="s1"> (</span><span class="s4">int</span><span class="s1"> i = </span><span class="s7">0</span><span class="s1">; i &lt; </span><span class="s14">_pic_urls</span><span class="s1">.</span><span class="s3">count</span><span class="s1">; i++) {</span></p>
+<p class="p4"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————————————<span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">当前图片所在的列数</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>col = i % cols;</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">当前图片所在的行数</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>rol = i /cols;</span></p>
+<p class="p4"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————————————<span class="Apple-converted-space">       </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s12">UIImageView</span><span class="s1"> *imageV = </span><span class="s4">self</span><span class="s1">.</span><span class="s3">subviews</span><span class="s1">[i];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>x = col * (w + margin);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>y = rol * (h + margin);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>imageV.</span><span class="s3">frame</span><span class="s1"> = </span><span class="s9">CGRectMake</span><span class="s1">(x, y, w, h);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1">@end</span></p>
+</body>
+</html>

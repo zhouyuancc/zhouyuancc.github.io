@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #d95000}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #4f7a28}
+    span.s5 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #4f7a28}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #e32400}
+    span.s8 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>SQLiteTool.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>01-SQLite</span><span class="s2">的基本使用</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 16/1/17.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2016</span><span class="s2">年</span><span class="s1"> ZhouYuan. All rights reserved.</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">NSString </span><span class="s2">转</span><span class="s1"> </span><span class="s3">const</span><span class="s1"> </span><span class="s3">char</span><span class="s1"> *<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1">——————————————————————————————————————————————————</span></p>
+<p class="p3"><span class="s3">const</span><span class="s1"> </span><span class="s3">char</span><span class="s1"> *filename </span><span class="s4">C</span><span class="s5">语言</span></p>
+<p class="p3"><span class="s1">NSString *filenameString </span><span class="s4">OC </span><span class="s5">转</span><span class="s4"> C</span><span class="s5">语言</span></p>
+<p class="p4"><span class="s6">filename<span class="Apple-converted-space">  </span>= </span><span class="s1">filenam</span><span class="s7">eString.UT</span><span class="s1">F8String;</span></p>
+<p class="p3"><span class="s1">——————————————————————————————————————————————————</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">const</span><span class="s6"> </span><span class="s1">unsigned char</span><span class="s6"> * </span><span class="s8">转</span><span class="s6"> NSString</span></p>
+<p class="p3"><span class="s1">——————————————————————————————————————————————————</span></p>
+<p class="p3"><span class="s3">const</span><span class="s1"> </span><span class="s3">unsigned</span><span class="s1"> </span><span class="s3">char</span><span class="s1"> *sname = </span><span class="s9">sqlite3_column_text</span><span class="s1">(stmt, </span><span class="s10">1</span><span class="s1">);</span></p>
+<p class="p3"><span class="s1">student.</span><span class="s11">name</span><span class="s1"> = [</span><span class="s12">NSString</span><span class="s1"> </span><span class="s9">stringWithUTF8String</span><span class="s1">:(</span><span class="s3">const</span><span class="s1"> </span><span class="s3">char</span><span class="s1"> *)sname];</span></p>
+</body>
+</html>

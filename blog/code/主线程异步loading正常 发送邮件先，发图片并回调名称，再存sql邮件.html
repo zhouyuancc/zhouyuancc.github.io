@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421; min-height: 19.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3c828c}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #294c50}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #703daa}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #294c50}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s13 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s15 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s16 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s17 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>EditEmailTableViewController.m</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>RniuOA_iOS</span></p>
+<p class="p1"><span class="s1">//</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Created by ZhouYuan on 15/7/9.</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">  </span>Copyright (c) 2015</span><span class="s2">年</span><span class="s1"> </span><span class="s2">锐牛科技有限公司</span><span class="s1">. All rights reserved.</span></p>
+<p class="p2"><span class="s3">//<span class="Apple-converted-space">  </span></span><span class="s1">写邮件页面</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">#pragma mark - </span><span class="s2">发送</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span><span class="s2">发送</span><span class="s1">,</span><span class="s2">主线程异步获取新附件名称或旧附件</span><span class="s1">emailId</span><span class="s2">，保证</span><span class="s1">[MBProgressHUD showMessage:@"</span><span class="s2">发送中</span><span class="s1">..."];</span><span class="s2">即时显示</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p5"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)sendEmail</span></p>
+<p class="p5"><span class="s1">{</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">结束编辑</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s1">.</span><span class="s6">view</span><span class="s1"> </span><span class="s7">endEditing</span><span class="s1">:</span><span class="s4">YES</span><span class="s1">];</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">/****</span><span class="s2">判断是否能发送</span><span class="s1">**************************/</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">收件人</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">NSString</span><span class="s1"> *receiveEmpCodes = [[</span><span class="s4">self</span><span class="s1">.</span><span class="s9">editEmailFrame</span><span class="s1">[</span><span class="s10">0</span><span class="s1">] </span><span class="s11">editEmail</span><span class="s1">] </span><span class="s11">code</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s12">//</span><span class="s13">主题</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">NSString</span><span class="s1"> *titles = [[</span><span class="s4">self</span><span class="s1">.</span><span class="s9">editEmailFrame</span><span class="s1">[</span><span class="s10">2</span><span class="s1">] </span><span class="s11">editEmail</span><span class="s1">] </span><span class="s11">content</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1">((!receiveEmpCodes) || [receiveEmpCodes </span><span class="s7">isEqualToString</span><span class="s1">:</span><span class="s14">@""</span><span class="s1">])</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s4">self</span><span class="s1"> </span><span class="s11">showHudTipStr</span><span class="s1">:</span><span class="s14">@"</span><span class="s15">收件人不能为空！</span><span class="s14">"</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">return</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s1">((!titles )|| [titles </span><span class="s7">isEqualToString</span><span class="s1">:</span><span class="s14">@""</span><span class="s1">])</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s4">self</span><span class="s1"> </span><span class="s11">showHudTipStr</span><span class="s1">:</span><span class="s14">@"</span><span class="s15">邮件主题不能为空</span><span class="s14">!"</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">return</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">/******************************/</span></p>
+<p class="p5"><span class="s1">———————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s1">MBProgressHUD</span><span class="s5"> </span><span class="s11">showMessage</span><span class="s5">:</span><span class="s14">@"</span><span class="s15">发送中</span><span class="s14">..."</span><span class="s5">];</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s6">dispatch_queue_t</span><span class="s5"> q = </span><span class="s1">dispatch_get_main_queue</span><span class="s5">();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s12">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span><span class="s2">主线程异步</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>*/</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">dispatch_async</span><span class="s5">(q, ^{</span></p>
+<p class="p5"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————— <span class="Apple-converted-space">       </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s12">//</span><span class="s13">发件人</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s16">EditEmailFrame</span><span class="s1"> *editFrame1 = </span><span class="s4">self</span><span class="s1">.</span><span class="s9">editEmailFrame</span><span class="s1">[</span><span class="s10">1</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">NSString</span><span class="s1"> *sendEmpCode = editFrame1.</span><span class="s9">editEmail</span><span class="s1">.</span><span class="s9">code</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s12">//</span><span class="s13">邮件内容</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s16">EditEmailFrame</span><span class="s1"> *editFrame3 = </span><span class="s4">self</span><span class="s1">.</span><span class="s9">editEmailFrame</span><span class="s1">[</span><span class="s10">3</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">NSString</span><span class="s1"> *content = editFrame3.</span><span class="s9">editEmail</span><span class="s1">.</span><span class="s9">content</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">NSString</span><span class="s1"> *webContent = editFrame3.</span><span class="s9">editEmail</span><span class="s1">.</span><span class="s9">webViewContent</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s12">//</span><span class="s13">收件人</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s16">EditEmailFrame</span><span class="s1"> *editFrame0 = </span><span class="s4">self</span><span class="s1">.</span><span class="s9">editEmailFrame</span><span class="s1">[</span><span class="s10">0</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">NSString</span><span class="s1"> *receiveEmpCode = editFrame0.</span><span class="s9">editEmail</span><span class="s1">.</span><span class="s9">code</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">NSString</span><span class="s1"> *receiveEmpName = editFrame0.</span><span class="s9">editEmail</span><span class="s1">.</span><span class="s9">content</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s12">//</span><span class="s13">主题</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s16">EditEmailFrame</span><span class="s1"> *editFrame2 = </span><span class="s4">self</span><span class="s1">.</span><span class="s9">editEmailFrame</span><span class="s1">[</span><span class="s10">2</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">NSString</span><span class="s1"> *title = editFrame2.</span><span class="s9">editEmail</span><span class="s1">.</span><span class="s9">content</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1">(webContent)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>content = [content </span><span class="s7">stringByAppendingString</span><span class="s1">:</span><span class="s14">@"&lt;br/&gt;"</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>content = [content </span><span class="s7">stringByAppendingString</span><span class="s1">:webContent];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p9"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s17">ZYLog</span><span class="s5">(</span><span class="s1">@"[NSThread currentThread]</span><span class="s2">线程</span><span class="s1"> %@ main"</span><span class="s5">, [</span><span class="s8">NSThread</span><span class="s5"> </span><span class="s7">currentThread</span><span class="s5">]);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1">(!content)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>content = </span><span class="s14">@" "</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>receiveEmpCode = [receiveEmpCode </span><span class="s7">stringByReplacingOccurrencesOfString</span><span class="s1">:</span><span class="s14">@","</span><span class="s1"> </span><span class="s7">withString</span><span class="s1">:</span><span class="s14">@";"</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>receiveEmpName = [receiveEmpName </span><span class="s7">stringByReplacingOccurrencesOfString</span><span class="s1">:</span><span class="s14">@","</span><span class="s1"> </span><span class="s7">withString</span><span class="s1">:</span><span class="s14">@";"</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">        </span>content = [content </span><span class="s1">stringByReplacingOccurrencesOfString</span><span class="s5">:</span><span class="s14">@"&lt;"</span><span class="s5"> </span><span class="s1">withString</span><span class="s5">:</span><span class="s14">@"&amp;lt;"</span><span class="s5">];</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">        </span>content = [content </span><span class="s1">stringByReplacingOccurrencesOfString</span><span class="s5">:</span><span class="s14">@"&gt;"</span><span class="s5"> </span><span class="s1">withString</span><span class="s5">:</span><span class="s14">@"&amp;gt;"</span><span class="s5">];</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">/******************************/</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s12">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span></span><span class="s2">旧附件</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">NSString</span><span class="s1"> *oldAttachId = </span><span class="s14">@"|"</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1">([</span><span class="s4">self</span><span class="s1">.</span><span class="s9">type</span><span class="s1"> </span><span class="s7">isEqualToString</span><span class="s1">:</span><span class="s14">@"</span><span class="s15">转发</span><span class="s14">"</span><span class="s1">]&amp;&amp;</span><span class="s4">self</span><span class="s1">.</span><span class="s9">FujArray</span><span class="s1">.</span><span class="s6">count</span><span class="s1"> &gt; </span><span class="s10">0</span><span class="s1">)</span><span class="s12">//</span><span class="s13">转发时有原始附件</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s12">//</span><span class="s13">旧附件的</span><span class="s12">id</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>oldAttachId = [oldAttachId </span><span class="s7">stringByAppendingString</span><span class="s1">:</span><span class="s4">self</span><span class="s1">.</span><span class="s9">myEmailInfo</span><span class="s1">.</span><span class="s9">emailid</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1">(</span><span class="s4">self</span><span class="s1">.</span><span class="s9">assets</span><span class="s1">.</span><span class="s6">count</span><span class="s1"> &gt; </span><span class="s10">0</span><span class="s1">)</span><span class="s12">//</span><span class="s13">添加图片数据</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">NSString</span><span class="s1"> *imagesStr = </span><span class="s14">@""</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">for</span><span class="s1"> (</span><span class="s4">int</span><span class="s1"> i = </span><span class="s10">0</span><span class="s1">; i &lt; </span><span class="s4">self</span><span class="s1">.</span><span class="s9">assets</span><span class="s1">.</span><span class="s6">count</span><span class="s1">; i++) {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s16">ZLPhotoAssets</span><span class="s1"> *imageObj = [</span><span class="s4">self</span><span class="s1">.</span><span class="s9">assets</span><span class="s1"> </span><span class="s7">objectAtIndex</span><span class="s1">:i];</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s1">ZLPhotoPickerBrowserPhoto</span><span class="s5"> *photo = [</span><span class="s1">ZLPhotoPickerBrowserPhoto</span><span class="s5"> </span><span class="s11">photoAnyImageObjWith</span><span class="s5">:imageObj];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">            </span>NSLog(@"photo.photoImage %@",photo.photoImage);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s12">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span></span><span class="s2">转二进制</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>*/</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s8">NSData</span><span class="s1"> *data = </span><span class="s7">UIImagePNGRepresentation</span><span class="s1">(photo.</span><span class="s9">photoImage</span><span class="s1">);</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s8">NSString</span><span class="s5"> *dataString = [data </span><span class="s1">base64EncodedStringWithOptions</span><span class="s5">:</span><span class="s1">NSDataBase64Encoding64CharacterLineLength</span><span class="s5">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s12">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span></span><span class="s2">将二进制存入数组</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>*/</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>imagesStr = [imagesStr </span><span class="s7">stringByAppendingString</span><span class="s1">:dataString];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>imagesStr = [imagesStr </span><span class="s7">stringByAppendingString</span><span class="s1">:</span><span class="s14">@";"</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">/***</span><span class="s2">发送图片附件</span><span class="s1">***************************/</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">NSDictionary</span><span class="s1"> *imageSend = </span><span class="s10">@{</span><span class="s14">@"flag"</span><span class="s1"> : </span><span class="s14">@"IosInsertFuJian"</span><span class="s1">,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span></span><span class="s14">@"FuJInfo"</span><span class="s1"> : imagesStr,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                               </span></span><span class="s10">}</span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s12">/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span></span><span class="s2">添加新增附件</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>*/</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>[[</span><span class="s16">SCHttpClient</span><span class="s1"> </span><span class="s7">new</span><span class="s1">] </span><span class="s11">PostRequest</span><span class="s1">:imageSend :[</span><span class="s8">NSString</span><span class="s1"> </span><span class="s7">stringWithFormat</span><span class="s1">:</span><span class="s14">@"%@/Webservice/WebService.asmx"</span><span class="s1">,[</span><span class="s4">self</span><span class="s1"> </span><span class="s11">getRealUrl</span><span class="s1">]] </span><span class="s11">andBlock</span><span class="s1">:^(</span><span class="s8">NSString</span><span class="s1"> *soapResults) {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s4">if</span><span class="s1">(soapResults)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">                    </span></span><span class="s1">//<span class="Apple-converted-space">            </span>NSLog(@"soapResults %@",soapResults);</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">                    </span></span><span class="s1">//<span class="Apple-converted-space">            </span>NSLog(@"oldAttachId %@",oldAttachId);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s8">NSString</span><span class="s1"> *fujianInfo = [</span><span class="s8">NSString</span><span class="s1"> </span><span class="s7">stringWithFormat</span><span class="s1">:</span><span class="s14">@"%@%@"</span><span class="s1">,soapResults,oldAttachId];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">                    </span></span><span class="s1">/*****</span><span class="s2">发送邮件</span><span class="s1">*************************/</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s8">NSDictionary</span><span class="s1"> *send = </span><span class="s10">@{</span><span class="s14">@"flag"</span><span class="s1"> : </span><span class="s14">@"InsertEmail"</span><span class="s1">,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                           </span></span><span class="s14">@"Empcode"</span><span class="s1"> : sendEmpCode,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                           </span></span><span class="s14">@"ToCode"</span><span class="s1"> : receiveEmpCode,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                           </span></span><span class="s14">@"ToName"</span><span class="s1"> : receiveEmpName,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                           </span></span><span class="s14">@"Title"</span><span class="s1"> : title,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                           </span></span><span class="s14">@"Contents"</span><span class="s1"> : [</span><span class="s8">NSString</span><span class="s1"> </span><span class="s7">stringWithFormat</span><span class="s1">:</span><span class="s14">@" %@ "</span><span class="s1">,content],</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                           </span></span><span class="s14">@"FuJInfo"</span><span class="s1"> : fujianInfo,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                           </span></span><span class="s10">}</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>[</span><span class="s4">self</span><span class="s1"> </span><span class="s11">sendWithDic</span><span class="s1">:send];</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">                    </span></span><span class="s1">/******************************/</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span><span class="s4">else</span><span class="s1">{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>[</span><span class="s16">MBProgressHUD</span><span class="s1"> </span><span class="s11">hideHUD</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>[</span><span class="s16">MBProgressHUD</span><span class="s1"> </span><span class="s11">showError</span><span class="s1">:</span><span class="s14">@"</span><span class="s15">图片发送失败</span><span class="s14">"</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">         </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">else</span><span class="s12">//</span><span class="s13">无新附件</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">/*****</span><span class="s2">发送邮件</span><span class="s1">*************************/</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">NSDictionary</span><span class="s1"> *sendWithoutAttach = </span><span class="s10">@{</span><span class="s14">@"flag"</span><span class="s1"> : </span><span class="s14">@"InsertEmail"</span><span class="s1">,</span><span class="s12">//IosInsertEmail</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                   </span></span><span class="s14">@"Empcode"</span><span class="s1"> : sendEmpCode,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                   </span></span><span class="s14">@"ToCode"</span><span class="s1"> : receiveEmpCode,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                   </span></span><span class="s14">@"ToName"</span><span class="s1"> : receiveEmpName,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                   </span></span><span class="s14">@"Title"</span><span class="s1"> : title,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                   </span></span><span class="s14">@"Contents"</span><span class="s1"> : [</span><span class="s8">NSString</span><span class="s1"> </span><span class="s7">stringWithFormat</span><span class="s1">:</span><span class="s14">@" %@ "</span><span class="s1">,content],</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                   </span></span><span class="s14">@"FuJInfo"</span><span class="s1"> : oldAttachId,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                   </span></span><span class="s10">}</span><span class="s1">;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">//<span class="Apple-converted-space">            </span>NSLog(@"------------------------------------------------------------------------------------self.toParams:%@",send);</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">//<span class="Apple-converted-space">            </span>return;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>[</span><span class="s4">self</span><span class="s1"> </span><span class="s11">sendWithDic</span><span class="s1">:sendWithoutAttach];</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">/******************************/</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1">———————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p5"><span class="s1">———————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p5"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space"> </span></span><span class="s1">获取新附件名称或旧附件</span><span class="s3">emailId</span><span class="s1">后，发送邮件</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p5"><span class="s1">-(</span><span class="s4">void</span><span class="s1">)sendWithDic:(</span><span class="s8">NSDictionary</span><span class="s1"> *)send</span></p>
+<p class="p5"><span class="s1">{</span></p>
+<p class="p9"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s17">ZYLog</span><span class="s5">(</span><span class="s1">@"sdfasdf send %@"</span><span class="s5">,send);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>[[</span><span class="s16">SCHttpClient</span><span class="s1"> </span><span class="s7">new</span><span class="s1">] </span><span class="s11">PostRequest</span><span class="s1">:send :[</span><span class="s8">NSString</span><span class="s1"> </span><span class="s7">stringWithFormat</span><span class="s1">:</span><span class="s14">@"%@/Webservice/WebService.asmx"</span><span class="s1">,[</span><span class="s4">self</span><span class="s1"> </span><span class="s11">getRealUrl</span><span class="s1">]] </span><span class="s11">andBlock</span><span class="s1">:^(</span><span class="s8">NSString</span><span class="s1"> *soapResults) {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">if</span><span class="s1">(soapResults)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">NSString</span><span class="s1"> *data = soapResults;</span></p>
+<p class="p9"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s7">NSLog</span><span class="s5">(</span><span class="s1">@"SCHttpClientSCHttpClientdata:%@"</span><span class="s5">,data);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">if</span><span class="s1">(data)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p9"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s17">ZYLog</span><span class="s5">(</span><span class="s1">@"------------------------------------"</span><span class="s5">);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s8">NSDictionary</span><span class="s1"> *dict = [</span><span class="s4">self</span><span class="s1"> </span><span class="s11">dictionaryWithJsonString</span><span class="s1">:data];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>[</span><span class="s4">self</span><span class="s1"> </span><span class="s11">updateUIWithDict</span><span class="s1">:dict];</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">                </span>[self performSelectorOnMainThread:@selector(updateUIWithDict:) withObject:dict waitUntilDone:NO];//</span><span class="s2">后台线程更新</span><span class="s1">UI</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">else</span><span class="s1">{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>[</span><span class="s16">MBProgressHUD</span><span class="s1"> </span><span class="s11">hideHUD</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>[</span><span class="s16">MBProgressHUD</span><span class="s1"> </span><span class="s11">showError</span><span class="s1">:</span><span class="s14">@"</span><span class="s15">发送失败</span><span class="s14">"</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">NSLog</span><span class="s1">(</span><span class="s14">@"</span><span class="s15">获取失败</span><span class="s14">"</span><span class="s1">);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span><span class="s4">else</span><span class="s1">{</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">//<span class="Apple-converted-space">            </span>block(nil,nil);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>[</span><span class="s16">MBProgressHUD</span><span class="s1"> </span><span class="s11">hideHUD</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>[</span><span class="s16">MBProgressHUD</span><span class="s1"> </span><span class="s11">showError</span><span class="s1">:</span><span class="s14">@"</span><span class="s15">发送失败</span><span class="s14">"</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">NSLog</span><span class="s1">(</span><span class="s14">@"send:%@"</span><span class="s1">,send);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}];</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space"> </span></span><span class="s1">发送邮件成功后的回调</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p5"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)updateUIWithDict:(</span><span class="s8">NSDictionary</span><span class="s1"> *)dict</span></p>
+<p class="p5"><span class="s1">{</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>ZYLog(@"[NSThread currentThread] %@", [NSThread currentThread]);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">NSLog</span><span class="s1">(</span><span class="s14">@"dict%@"</span><span class="s1">,dict);</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s1">MBProgressHUD</span><span class="s5"> </span><span class="s11">hideHUD</span><span class="s5">];</span></p>
+<p class="p10"><span class="s5"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s5"> </span><span class="s1">showHudTipStr</span><span class="s5">:</span><span class="s14">@"</span><span class="s15">邮件发送成功</span><span class="s14">!"</span><span class="s5">];</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p10"><span class="s5"><span class="Apple-converted-space">    </span>[[</span><span class="s16">EmailAppdataStore</span><span class="s5"> </span><span class="s1">EmailsharedStore</span><span class="s5">:</span><span class="s14">@"Send"</span><span class="s5">] </span><span class="s1">insertAllItems</span><span class="s5">:[dict </span><span class="s7">objectForKey</span><span class="s5">:</span><span class="s14">@"Data"</span><span class="s5">] ];</span></p>
+<p class="p5"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————— <span class="Apple-converted-space">   </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">延迟</span><span class="s1">1s</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">dispatch_after</span><span class="s5">(</span><span class="s1">dispatch_time</span><span class="s5">(</span><span class="s17">DISPATCH_TIME_NOW</span><span class="s5">, (</span><span class="s6">int64_t</span><span class="s5">)(</span><span class="s10">1.0</span><span class="s5"> * </span><span class="s17">NSEC_PER_SEC</span><span class="s5">)), </span><span class="s1">dispatch_get_main_queue</span><span class="s5">(), ^{</span></p>
+<p class="p5"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————— <span class="Apple-converted-space">       </span></span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s2">返回到控制器</span><span class="s1">EmailTabBarController</span></p>
+<p class="p11"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s4">for</span><span class="s5"> (</span><span class="s8">UIViewController</span><span class="s5"> *vcHome </span><span class="s4">in</span><span class="s5"> </span><span class="s4">self</span><span class="s5">.</span><span class="s1">navigationController</span><span class="s5">.</span><span class="s1">viewControllers</span><span class="s5">) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s4">if</span><span class="s1"> ([vcHome </span><span class="s7">isKindOfClass</span><span class="s1">:[</span><span class="s16">EmailTabBarController</span><span class="s1"> </span><span class="s7">class</span><span class="s1">]]) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>[</span><span class="s4">self</span><span class="s1">.</span><span class="s6">navigationController</span><span class="s1"> </span><span class="s7">popToViewController</span><span class="s1">:vcHome </span><span class="s7">animated</span><span class="s1">:</span><span class="s4">YES</span><span class="s1">];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————— <span class="Apple-converted-space">       </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p5"><span class="s1">———————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p5"><span class="s1">}</span></p>
+</body>
+</html>

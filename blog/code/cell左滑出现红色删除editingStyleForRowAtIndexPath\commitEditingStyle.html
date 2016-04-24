@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #822e0e}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: #1d9421}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s6 {font-variant-ligatures: no-common-ligatures; background-color: #fff995}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s10 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s13 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s14 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s15 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+    span.s16 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}
+    span.s17 {font-variant-ligatures: no-common-ligatures; color: #3c828c}
+    span.s18 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s19 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">制作删除</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">如果实现了这个方法，就自动实现了滑动删除的功能</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">提交一个编辑操作就会调用（删除、添加）</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>editingStyle</span><span class="s3">编辑的行为</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>indexPath</span><span class="s3">操作行号</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p3"><span class="s1">#pragma mark - tableView</span><span class="s3">的代理方法</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)tableView:(</span><span class="s5">UITableView</span><span class="s1"> *)tableView </span><span class="s6">commitEditingStyle</span><span class="s1">:(</span><span class="s7">UITableViewCellEditingStyle</span><span class="s1">)editingStyle forRowAtIndexPath:(</span><span class="s5">NSIndexPath</span><span class="s1"> *)indexPath</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">    </span>NSLog(@"%ld",editingStyle);//</span><span class="s3">枚举</span><span class="s1"> </span><span class="s3">整数</span><span class="s1"> delete 1</span></p>
+<p class="p5"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s4">if</span><span class="s8">(editingStyle == </span><span class="s1">UITableViewCellEditingStyleDelete</span><span class="s8">)</span><span class="s9">//</span><span class="s10">提交删除操作</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">//1.</span><span class="s10">删除模型</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s4">self</span><span class="s1">.</span><span class="s11">contacts</span><span class="s1"> </span><span class="s12">removeObjectAtIndex</span><span class="s1">:indexPath.</span><span class="s7">row</span><span class="s1">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>//2.</span><span class="s3">全局刷新表格</span><span class="s1"> //</span><span class="s3">每一行都会重新刷新</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>[self.tableView reloadData];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s13"><span class="Apple-converted-space">         </span></span><span class="s2">//</span><span class="s1">局部刷新某些行（使用前提：模型数据的行数不变，模型数据的个数不变）</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>[self.tableView reloadRowsAtIndexPaths:&lt;#(NSArray *)#&gt; withRowAnimation:&lt;#(UITableViewRowAnimation)#&gt;];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s8"><span class="Apple-converted-space">        </span></span><span class="s1">//2.</span><span class="s3">刷新删除行后面的数据</span><span class="s1"> //</span><span class="s3">性能</span></p>
+<p class="p1"><span class="s8"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s3">模型数据删除的数据</span><span class="s1"> == indexPath</span><span class="s3">的长度</span><span class="s1"> //1</span><span class="s3">行</span><span class="s1"> == 1</span><span class="s3">行</span></p>
+<p class="p5"><span class="s8"><span class="Apple-converted-space">        </span>[</span><span class="s4">self</span><span class="s8">.</span><span class="s7">tableView</span><span class="s8"> </span><span class="s1">deleteRowsAtIndexPaths</span><span class="s8">:</span><span class="s14">@[</span><span class="s8">indexPath</span><span class="s14">]</span><span class="s8"> </span><span class="s1">withRowAnimation</span><span class="s8">:</span><span class="s1">UITableViewRowAnimationTop</span><span class="s8">];</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">//3.</span><span class="s10">归档</span></p>
+<p class="p5"><span class="s8"><span class="Apple-converted-space">        </span>[</span><span class="s5">NSKeyedArchiver</span><span class="s8"> </span><span class="s1">archiveRootObject</span><span class="s8">:</span><span class="s4">self</span><span class="s8">.</span><span class="s11">contacts</span><span class="s8"> </span><span class="s1">toFile</span><span class="s8">:</span><span class="s15">ContactsFilepath</span><span class="s8">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p5"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s4">else</span><span class="s8"> </span><span class="s4">if</span><span class="s8">(editingStyle == </span><span class="s1">UITableViewCellEditingStyleInsert</span><span class="s8">) </span><span class="s9">//+</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p1"><span class="s8"><span class="Apple-converted-space">        </span></span><span class="s1">//1.</span><span class="s16">修改模型数据</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s17">Contact</span><span class="s1"> *contact = [[</span><span class="s17">Contact</span><span class="s1"> </span><span class="s12">alloc</span><span class="s1">] </span><span class="s12">init</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>contact.</span><span class="s11">name</span><span class="s1"> = </span><span class="s18">@"jack"</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>contact.</span><span class="s11">phone</span><span class="s1"> = </span><span class="s18">@"10086"</span><span class="s1">;</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>[self.contacts addObject:contact];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>[</span><span class="s4">self</span><span class="s1">.</span><span class="s11">contacts</span><span class="s1"> </span><span class="s12">insertObject</span><span class="s1">:contact </span><span class="s12">atIndex</span><span class="s1">:indexPath.</span><span class="s7">row</span><span class="s1"> + </span><span class="s14">1</span><span class="s1">];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9">//2.</span><span class="s19">刷新表格</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">NSIndexPath</span><span class="s1"> *nextPath = [</span><span class="s5">NSIndexPath</span><span class="s1"> </span><span class="s12">indexPathForRow</span><span class="s1">:indexPath.</span><span class="s7">row</span><span class="s1"> + </span><span class="s14">1</span><span class="s1"> </span><span class="s12">inSection</span><span class="s1">:</span><span class="s14">0</span><span class="s1">];</span></p>
+<p class="p5"><span class="s8"><span class="Apple-converted-space">        </span>[</span><span class="s4">self</span><span class="s8">.</span><span class="s7">tableView</span><span class="s8"> </span><span class="s1">insertRowsAtIndexPaths</span><span class="s8">:</span><span class="s14">@[</span><span class="s8">nextPath</span><span class="s14">]</span><span class="s8"> </span><span class="s1">withRowAnimation</span><span class="s8">:</span><span class="s1">UITableViewRowAnimationTop</span><span class="s8">];</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>[self.tableView reloadData];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/**</span></p>
+<p class="p7"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">当</span><span class="s2">tableView</span><span class="s1">进入编辑状态的时候会调用，询问每一行进行怎样的操作（添加、删除）</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">- (</span><span class="s7">UITableViewCellEditingStyle</span><span class="s1">)tableView:(</span><span class="s5">UITableView</span><span class="s1"> *)tableView </span><span class="s6">editingStyleForRowAtIndexPath</span><span class="s1">:(</span><span class="s5">NSIndexPath</span><span class="s1"> *)indexPath</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p5"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s4">return</span><span class="s8"> indexPath.</span><span class="s7">row</span><span class="s8"> %</span><span class="s14">2</span><span class="s8"> ?</span><span class="s1">UITableViewCellEditingStyleDelete</span><span class="s8">:</span><span class="s1">UITableViewCellEditingStyleInsert</span><span class="s8">;</span><span class="s9">//</span><span class="s19">返回</span><span class="s9">+//</span><span class="s19">默认是</span><span class="s9">-</span></p>
+<p class="p4"><span class="s1">}</span></p>
+</body>
+</html>

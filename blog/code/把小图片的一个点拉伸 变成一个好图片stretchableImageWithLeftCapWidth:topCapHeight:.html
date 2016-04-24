@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c32275}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s7 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s8 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s11 {font-variant-ligatures: no-common-ligatures; color: #539aa4}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">@property</span><span class="s2"> (</span><span class="s1">weak</span><span class="s2">, </span><span class="s1">nonatomic</span><span class="s2">) </span><span class="s1">IBOutlet</span><span class="s2"> </span><span class="s3">UIButton</span><span class="s2"> *loginButton;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">- (</span><span class="s4">void</span><span class="s1">)viewDidLoad</span></p>
+<p class="p3"><span class="s1">{</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>[</span><span class="s4">super</span><span class="s2"> </span><span class="s1">viewDidLoad</span><span class="s2">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">UIImage</span><span class="s1"> *image = [</span><span class="s3">UIImage</span><span class="s1"> </span><span class="s5">imageNamed</span><span class="s1">:</span><span class="s6">@"RedButton"</span><span class="s1">];</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">UIImage</span><span class="s1"> *imageHigh = [</span><span class="s3">UIImage</span><span class="s1"> </span><span class="s5">imageNamed</span><span class="s1">:</span><span class="s6">@"RedButtonPressed"</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p5"><span class="s7"><span class="Apple-converted-space">    </span></span><span class="s8">//</span><span class="s1">把小图片的一个点拉伸</span><span class="s8"> </span><span class="s1">变成一个好图片</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>image = [image </span><span class="s5">stretchableImageWithLeftCapWidth</span><span class="s1">:image.</span><span class="s9">size</span><span class="s1">.</span><span class="s9">width</span><span class="s1"> * </span><span class="s10">0.5</span><span class="s1"> </span><span class="s5">topCapHeight</span><span class="s1">:image.</span><span class="s9">size</span><span class="s1">.</span><span class="s9">height</span><span class="s1"> * </span><span class="s10">0.5</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>imageHigh = [imageHigh </span><span class="s5">stretchableImageWithLeftCapWidth</span><span class="s1">:imageHigh.</span><span class="s9">size</span><span class="s1">.</span><span class="s9">width</span><span class="s1"> * </span><span class="s10">0.5</span><span class="s1"> </span><span class="s5">topCapHeight</span><span class="s1">:imageHigh.</span><span class="s9">size</span><span class="s1">.</span><span class="s9">height</span><span class="s1"> * </span><span class="s10">0.5</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">    </span>[image resizableImageWithCapInsets:&lt;#(UIEdgeInsets)#&gt;];</span></p>
+<p class="p6"><span class="s1">//<span class="Apple-converted-space">    </span>[image resizableImageWithCapInsets:&lt;#(UIEdgeInsets)#&gt; resizingMode:&lt;#(UIImageResizingMode)#&gt;];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s2">.</span><span class="s11">loginButton</span><span class="s2"> </span><span class="s1">setBackgroundImage</span><span class="s2">:image </span><span class="s1">forState</span><span class="s2">:</span><span class="s1">UIControlStateNormal</span><span class="s2">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>[</span><span class="s4">self</span><span class="s2">.</span><span class="s11">loginButton</span><span class="s2"> </span><span class="s1">setBackgroundImage</span><span class="s2">:imageHigh </span><span class="s1">forState</span><span class="s2">:</span><span class="s1">UIControlStateHighlighted</span><span class="s2">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p3"><span class="s1">}</span></p>
+</body>
+</html>

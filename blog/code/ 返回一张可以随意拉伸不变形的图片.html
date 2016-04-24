@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421; min-height: 21.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Heiti SC Light'; color: #1d9421}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">/**</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space"> </span></span><span class="s1">返回一张可以随意拉伸不变形的图片</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>@name </span><span class="s3">图片名称</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space"> </span>//</span><span class="s1">添加到分类</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>*/</span></p>
+<p class="p4"><span class="s1">+ (</span><span class="s4">UIImage</span><span class="s1"> *)resizableImage:(</span><span class="s4">NSString</span><span class="s1"> *)name</span></p>
+<p class="p4"><span class="s1">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">UIImage</span><span class="s1"> *normal = [</span><span class="s4">UIImage</span><span class="s1"> </span><span class="s5">imageNamed</span><span class="s1">:name];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">CGFloat</span><span class="s1"> w = normal.</span><span class="s6">size</span><span class="s1">.</span><span class="s6">width</span><span class="s1"> * </span><span class="s7">0.5</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">CGFloat</span><span class="s1"> h = normal.</span><span class="s6">size</span><span class="s1">.</span><span class="s6">height</span><span class="s1"> * </span><span class="s7">0.5</span><span class="s1">;</span></p>
+<p class="p5"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s9">return</span><span class="s8"> [normal </span><span class="s1">resizableImageWithCapInsets</span><span class="s8">:</span><span class="s1">UIEdgeInsetsMake</span><span class="s8">(h,w, h, w)];</span></p>
+<p class="p4"><span class="s1">}</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">[</span><span class="s9">self</span><span class="s1">.textView setBackGroundImage:[UIImage resizableImage:</span><span class="s10">@"chat_send_nor"</span><span class="s1">] forState:UIControlStateNormal];</span></p>
+</body>
+</html>

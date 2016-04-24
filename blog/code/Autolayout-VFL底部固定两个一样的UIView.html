@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #3d1d81}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #c91b13}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #703daa}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s8 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s9 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s10 {font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s11 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures; color: #1d9421}
+    span.s12 {font-variant-ligatures: no-common-ligatures; color: #78492a}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>//1.</span><span class="s2">添加控件</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">UIView</span><span class="s1"> *blueView = [[</span><span class="s3">UIView</span><span class="s1"> </span><span class="s4">alloc</span><span class="s1">] </span><span class="s4">init</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>blueView.</span><span class="s5">backgroundColor</span><span class="s1"> = [</span><span class="s3">UIColor</span><span class="s1"> </span><span class="s4">blueColor</span><span class="s1">];</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">    </span>blueView.</span><span class="s1">translatesAutoresizingMaskIntoConstraints</span><span class="s6"> = </span><span class="s7">NO</span><span class="s6">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s1">.</span><span class="s5">view</span><span class="s1"> </span><span class="s4">addSubview</span><span class="s1">:blueView];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">UIView</span><span class="s1"> *redView = [[</span><span class="s3">UIView</span><span class="s1"> </span><span class="s4">alloc</span><span class="s1">] </span><span class="s4">init</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>redView.</span><span class="s5">backgroundColor</span><span class="s1"> = [</span><span class="s3">UIColor</span><span class="s1"> </span><span class="s4">redColor</span><span class="s1">];</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">    </span>redView.</span><span class="s1">translatesAutoresizingMaskIntoConstraints</span><span class="s6"> = </span><span class="s7">NO</span><span class="s6">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s1">.</span><span class="s5">view</span><span class="s1"> </span><span class="s4">addSubview</span><span class="s1">:redView];</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//2.VFL</span><span class="s2">生成约束</span><span class="s1"> //metrics</span><span class="s2">参数</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">NSDictionary</span><span class="s1"> *metrics1 = </span><span class="s8">@{</span><span class="s9">@"margin"</span><span class="s1">:</span><span class="s8">@20}</span><span class="s1">;</span><span class="s10">//</span><span class="s11">参数</span><span class="s10">\</span><span class="s11">数值</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">NSDictionary</span><span class="s1"> *views = </span><span class="s12">NSDictionaryOfVariableBindings</span><span class="s1">(blueView,redView);</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//NSDictionary *views = @{@"blueView":blueView,@"redView":redView};</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//</span><span class="s2">顶部与底部分别对齐</span><span class="s1">options:NSLayoutFormatAlignAllTop | NSLayoutFormatAlignAllBottom</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s3">NSArray</span><span class="s6"> *conts1 = [</span><span class="s3">NSLayoutConstraint</span><span class="s6"> </span><span class="s1">constraintsWithVisualFormat</span><span class="s6">:</span><span class="s9">@"H:|-margin-[blueView]-margin-[redView(==blueView)]-margin-|"</span><span class="s6"> </span><span class="s1">options</span><span class="s6">:</span><span class="s1">NSLayoutFormatAlignAllTop</span><span class="s6"> | </span><span class="s1">NSLayoutFormatAlignAllBottom</span><span class="s6"> </span><span class="s1">metrics</span><span class="s6">:metrics1 </span><span class="s1">views</span><span class="s6">:views];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s1">.</span><span class="s5">view</span><span class="s1"> </span><span class="s4">addConstraints</span><span class="s1">:conts1];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s3">NSDictionary</span><span class="s6"> *metrics2 = </span><span class="s8">@{</span><span class="s1">@"blueHeight"</span><span class="s6">:</span><span class="s8">@40</span><span class="s6">,</span><span class="s1">@"margin"</span><span class="s6">:</span><span class="s8">@20}</span><span class="s6">;</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s3">NSArray</span><span class="s6"> *conts2 = [</span><span class="s3">NSLayoutConstraint</span><span class="s6"> </span><span class="s1">constraintsWithVisualFormat</span><span class="s6">:</span><span class="s9">@"V:[blueView(==blueHeight)]-margin-|"</span><span class="s6"> </span><span class="s1">options</span><span class="s6">:</span><span class="s8">0</span><span class="s6"> </span><span class="s1">metrics</span><span class="s6">:metrics2 </span><span class="s1">views</span><span class="s6">:views];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s1">.</span><span class="s5">view</span><span class="s1"> </span><span class="s4">addConstraints</span><span class="s1">:conts2];</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//-----------------</span></p>
+<p class="p1"><span class="s1">//<span class="Apple-converted-space">        </span>---------</span></p>
+<p class="p2"><span class="s1">- (</span><span class="s7">void</span><span class="s1">)halfCenter</span></p>
+<p class="p2"><span class="s1">{</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//1.</span><span class="s2">添加控件</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">UIView</span><span class="s1"> *blueView = [[</span><span class="s3">UIView</span><span class="s1"> </span><span class="s4">alloc</span><span class="s1">] </span><span class="s4">init</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>blueView.</span><span class="s5">backgroundColor</span><span class="s1"> = [</span><span class="s3">UIColor</span><span class="s1"> </span><span class="s4">blueColor</span><span class="s1">];</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">    </span>blueView.</span><span class="s1">translatesAutoresizingMaskIntoConstraints</span><span class="s6"> = </span><span class="s7">NO</span><span class="s6">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s1">.</span><span class="s5">view</span><span class="s1"> </span><span class="s4">addSubview</span><span class="s1">:blueView];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">UIView</span><span class="s1"> *redView = [[</span><span class="s3">UIView</span><span class="s1"> </span><span class="s4">alloc</span><span class="s1">] </span><span class="s4">init</span><span class="s1">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>redView.</span><span class="s5">backgroundColor</span><span class="s1"> = [</span><span class="s3">UIColor</span><span class="s1"> </span><span class="s4">redColor</span><span class="s1">];</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">    </span>redView.</span><span class="s1">translatesAutoresizingMaskIntoConstraints</span><span class="s6"> = </span><span class="s7">NO</span><span class="s6">;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s1">.</span><span class="s5">view</span><span class="s1"> </span><span class="s4">addSubview</span><span class="s1">:redView];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//2.VFL</span><span class="s2">生成约束</span><span class="s1"> //options</span><span class="s2">左对齐右对齐</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">  </span>!!! NSLayoutConstraint !!! *a = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-blueView-20-|" options:0 metrics:nil views:@{@"blueView":blueView}];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">//</span><span class="s11">水平</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s3">NSArray</span><span class="s6"> *conts1 = [</span><span class="s3">NSLayoutConstraint</span><span class="s6"> </span><span class="s1">constraintsWithVisualFormat</span><span class="s6">:</span><span class="s9">@"H:|-20-[blueView]-20-|"</span><span class="s6"> </span><span class="s1">options</span><span class="s6">:</span><span class="s8">0</span><span class="s6"> </span><span class="s1">metrics</span><span class="s6">:</span><span class="s7">nil</span><span class="s6"> </span><span class="s1">views</span><span class="s6">:</span><span class="s8">@{</span><span class="s9">@"blueView"</span><span class="s6">:blueView</span><span class="s8">}</span><span class="s6">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s1">.</span><span class="s5">view</span><span class="s1"> </span><span class="s4">addConstraints</span><span class="s1">:conts1];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">//</span><span class="s11">垂直</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//options:NSLayoutFormatAlignAllRight</span><span class="s2">右对齐</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s3">NSArray</span><span class="s6"> *conts2 = [</span><span class="s3">NSLayoutConstraint</span><span class="s6"> </span><span class="s1">constraintsWithVisualFormat</span><span class="s6">:</span><span class="s9">@"V:|-20-[blueView(40)]-20-[redView(==blueView)]"</span><span class="s6"> </span><span class="s1">options</span><span class="s6">:</span><span class="s1">NSLayoutFormatAlignAllRight</span><span class="s6"> </span><span class="s1">metrics</span><span class="s6">:</span><span class="s7">nil</span><span class="s6"> </span><span class="s1">views</span><span class="s6">:</span><span class="s8">@{</span><span class="s9">@"blueView"</span><span class="s6">:blueView,</span><span class="s9">@"redView"</span><span class="s6">:redView</span><span class="s8">}</span><span class="s6">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s1">.</span><span class="s5">view</span><span class="s1"> </span><span class="s4">addConstraints</span><span class="s1">:conts2];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">//</span><span class="s11">红色</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//VFL </span><span class="s2">无法使用</span><span class="s1"> </span><span class="s2">乘法</span><span class="s1"> H:[redView(==(blueView*0.5))]</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>NSArray *conts3 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[redView(==(blueView*0.5))]" options:0 metrics:nil views:@{@"blueView":blueView,@"redView":redView}];</span></p>
+<p class="p1"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>[self.view addConstraints:conts3];</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">    </span></span><span class="s3">NSLayoutConstraint</span><span class="s6"> *redWidth = [</span><span class="s3">NSLayoutConstraint</span><span class="s6"> </span><span class="s1">constraintWithItem</span><span class="s6">:redView </span><span class="s1">attribute</span><span class="s6">:</span><span class="s1">NSLayoutAttributeWidth</span><span class="s6"> </span><span class="s1">relatedBy</span><span class="s6">:</span><span class="s1">NSLayoutRelationEqual</span><span class="s6"> </span><span class="s1">toItem</span><span class="s6">:blueView </span><span class="s1">attribute</span><span class="s6">:</span><span class="s1">NSLayoutAttributeWidth</span><span class="s6"> </span><span class="s1">multiplier</span><span class="s6">:</span><span class="s8">0.5</span><span class="s6"> </span><span class="s1">constant</span><span class="s6">:</span><span class="s8">0.0</span><span class="s6">];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>[</span><span class="s7">self</span><span class="s1">.</span><span class="s5">view</span><span class="s1"> </span><span class="s4">addConstraint</span><span class="s1">:redWidth];</span></p>
+<p class="p2"><span class="s1">}</span></p>
+</body>
+</html>

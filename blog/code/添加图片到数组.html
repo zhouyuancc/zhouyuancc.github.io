@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #6122ae}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: #1d9421}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; min-height: 21.0px}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.s2 {font-variant-ligatures: no-common-ligatures; color: #000000}
+    span.s3 {font-variant-ligatures: no-common-ligatures; color: #3d1d81}
+    span.s4 {font-variant-ligatures: no-common-ligatures; color: #c32275}
+    span.s5 {font-variant-ligatures: no-common-ligatures; color: #0435ff}
+    span.s6 {font-variant-ligatures: no-common-ligatures; color: #6122ae}
+    span.s7 {font-variant-ligatures: no-common-ligatures; color: #c91b13}
+    span.s8 {font: 18.0px 'Heiti SC Light'; font-variant-ligatures: no-common-ligatures}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">—————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p2"><span class="s2"><span class="Apple-tab-span">	</span> </span><span class="s1">NSMutableArray</span><span class="s2"> *images = [</span><span class="s1">NSMutableArray</span><span class="s2"> </span><span class="s3">array</span><span class="s2">];</span></p>
+<p class="p1"><span class="s1">—————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">//<span class="Apple-converted-space">    </span>int count;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s4">for</span><span class="s1">(</span><span class="s4">int</span><span class="s1"> i = </span><span class="s5">0</span><span class="s1">;i &lt; count;i++)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">NSString</span><span class="s1"> *filename = [</span><span class="s6">NSString</span><span class="s1"> </span><span class="s3">stringWithFormat</span><span class="s1">:</span><span class="s7">@"%@_%02d.jpg"</span><span class="s1">,name,i];</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s8">创建图片，调用某图片</span></p>
+<p class="p3"><span class="s1">//<span class="Apple-converted-space">        </span>UIImage *photo = [UIImage imageNamed:filename];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">NSBundle</span><span class="s1"> *bundle = [</span><span class="s6">NSBundle</span><span class="s1"> </span><span class="s3">mainBundle</span><span class="s1">];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">NSString</span><span class="s1"> *path = [bundle </span><span class="s3">pathForResource</span><span class="s1">:filename </span><span class="s3">ofType</span><span class="s1">:</span><span class="s4">nil</span><span class="s1">];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">UIImage</span><span class="s1"> *photo = [</span><span class="s6">UIImage</span><span class="s1"> </span><span class="s3">imageWithContentsOfFile</span><span class="s1">:path];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>—————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s1">//</span><span class="s8">将图片放到数组中</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>[images </span><span class="s3">addObject</span><span class="s1">:photo];</span></p>
+<p class="p1"><span class="s1">—————————————————————————————————————————————————————————————————————————————————————————</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+</body>
+</html>
