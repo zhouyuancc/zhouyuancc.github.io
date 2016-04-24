@@ -2036,6 +2036,7 @@
 		.box.search form input {
 			position: relative;
 			padding-right: 34px;
+            color:#565656;
 		}
 
 		.box.search form:before {
@@ -2058,7 +2059,7 @@
 			top: 0.25em;
 			z-index: 1;
 			text-shadow: none;
-			color: #c8ccce;
+			/*color: #c8ccce;*/
 		}
 
 	.box.text-style1 .inner {
