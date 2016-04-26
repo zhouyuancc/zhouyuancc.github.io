@@ -1,0 +1,30 @@
+
+
+<td style="visibility:<%#Eval("IsDelete") %>;" >
+   <asp:LinkButton ID="lbtnDel"  runat="server" Text="删除" OnClientClick="return confirm('您确定删除吗？');"
+             CommandArgument='<%#Eval("Id") %>' OnCommand="lbtnDel_OnClick" />
+</td>
+
+
+
+ // 绑定数据
+        public void PageShowInitList(int currtPage)
+        {
+            try
+            {
+                SqlExec sqlexec = new SqlExec();
+                StringBuilder Builder = new StringBuilder();
+                Builder.Append("SELECT [Id],[RoleCode],[RoleNo],[RoleName],(case when RoleCode ='role0002' then '1' end) IsAdmin,(case when RoleCode ='role0002' then 'hidden' else 'visible' end) IsDelete FROM PubRoleInfo  ");
+                if (this.txtRemark.Text.Trim() != "")
+                {
+                    Builder.Append("WHERE " + this.drpQueryType.SelectedValue + " LIKE '%' + @txtRemark + '%'");
+                }
+                SqlParameter[] sqlParm = { sqlexec.CreateInParam("@txtRemark", SqlDbType.NVarChar, 20, this.txtRemark.Text.Trim()) };
+                PageShow.initList(rptDataList, "[Id]", currtPage, Builder.ToString(), "ORDER BY [RoleNo]", sqlParm, CommandType.Text);
+                sqlexec = null;
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+        }

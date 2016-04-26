@@ -1,0 +1,1 @@
+$("#imgEmpPic", window.opener.document).attr("src", "../PubAff/FastSignature/Image/" + str[1].toString());

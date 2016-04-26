@@ -1,0 +1,18 @@
+$("#BtnCrt").css("display", "none");
+document.getElementById("del_btn").style.display = "none";
+
+$("tr[class='TableContent TableData']").each(function () {
+                    $(this).remove();
+                })
+
+//            detach()
+
+<td width="20%">
+    第 <b><font color="red">1</font></b> 步：（当前步骤）
+</td>
+
+
+if (getQueryString("authority") == "admin") {
+       document.getElementById("state").style.visibility = "hidden";
+       document.getElementById("stateDrp").style.visibility = "hidden";
+}

@@ -1,0 +1,8 @@
+创建表，表中插入数据
+create table #sss(name varchar(500))
+insert into #sss
+exec (@sqlBase)
+
+打印
+select @Base_User=name from #sss
+print @Base_User

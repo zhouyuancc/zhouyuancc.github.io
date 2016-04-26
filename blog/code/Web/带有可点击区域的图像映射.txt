@@ -1,0 +1,15 @@
+
+前台
+
+http://www.w3school.com.cn/tags/tag_area.asp
+
+实例
+带有可点击区域的图像映射：
+
+<img src="planets.jpg" border="0" usemap="#planetmap" alt="Planets" />
+
+<map name="planetmap" id="planetmap">
+  <area shape="circle" coords="180,139,14" href ="venus.html" alt="Venus" />
+  <area shape="circle" coords="129,161,10" href ="mercur.html" alt="Mercury" />
+  <area shape="rect" coords="0,0,110,260" href ="sun.html" alt="Sun" />
+</map>

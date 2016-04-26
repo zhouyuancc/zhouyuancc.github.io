@@ -1,0 +1,95 @@
+
+后台
+
+ /// <summary>
+        /// 判断开票金额是否大于合同金额
+        /// </summary>
+        /// <returns></returns>
+         private bool IsKpje()
+          {
+            bool result = false;
+            decimal Htje;
+            string strsql = "select Htje from jx_httz where Htbh = '" + txtHtbh.Text + "'";
+            IDataReader rs = SqlExec.ExecuteReader(strsql);
+            if (rs.Read())
+            {
+                Htje = Convert.ToDecimal(rs["Htje"]);
+                if (Convert.ToDecimal(txtKpje.Text)>Htje) {
+                    result = true;
+                }
+            }
+            return result;
+        
+         }
+
+
+
+/// <summary>         
+        /// 保存操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            btnSave.Visible = true;
+            if (flag == "add")
+            {
+                
+                if (IsKpje() == true)
+                {
+                    UserValue.Alert(this, "开票金额大于合同金额");
+                    return;
+                
+                }
+
+                if (Convert.ToDecimal(txtBhsje.Text) > Convert.ToDecimal(txtKpje.Text))
+                {
+                    UserValue.Alert(this, "开票金额（不含税）不能大于开票金额！");
+                    return;
+                }
+
+
+                SaveData("add");
+            }
+            else
+            {
+
+                SaveData("edit");
+            }
+            Response.Redirect("jx_kfp.aspx");
+            
+        }
+
+
+        /// <summary>
+        /// 保存到数据库
+        /// </summary>
+        void SaveData(string flag)
+        {
+            try
+            {
+
+                string sql = "";
+
+                if (flag == "add")
+                {
+                    sql = "INSERT INTO jx_kfp( Htbh,Fpbh, Kprq,Kpje,Bhsje,Dw,Bz,CreateUser,CreateDate)";
+                    sql += " VALUES(@Htbh,@Fpbh,@Kprq,@Kpje,@Bhsje,@Dw,@Bz,@CreateUser,getdate()) ";
+
+
+                }
+                else
+                {
+                    sql = " UPDATE jx_kfp SET [Htbh] = @Htbh,[Fpbh] = @Fpbh,[Kprq] = @Kprq,[Kpje] = @Kpje,[Bhsje] = @Bhsje,[Dw] = @Dw,[Bz] = @Bz,EditUser=@CreateUser,EditDate=getdate() ";
+                    sql += " WHERE id = @id";
+
+                }
+
+                SqlExec.ExecuteNonQuery(sql, CommandType.Text, GetPara(txtHtbh.Text.Substring(0, txtHtbh.Text.Length - 1)));
+                btnSave.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+        }

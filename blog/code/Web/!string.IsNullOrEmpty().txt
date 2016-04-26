@@ -1,0 +1,4 @@
+
+if (     !string.IsNullOrEmpty(myCell[m, 4].StringValue)     )
+{
+}

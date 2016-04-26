@@ -1,0 +1,66 @@
+http://blog.csdn.net/zxstone/article/details/6732876
+
+C# 截取带路径的文件名字,扩展名,等等 的几种方法.
+
+string filePath = @"E:\Randy0528\中文目录\JustTest.rar";
+Response.Write("文件路径："+filePath);
+
+Response.Write("<br/>更改路径字符串的扩展名。<br/>");
+Response.Write(System.IO.Path.ChangeExtension(filePath, "txt"));
+
+Response.Write("<br/>返回指定路径字符串的目录信息。。<br/>");
+Response.Write(System.IO.Path.GetDirectoryName(filePath));
+
+Response.Write("<br/>返回指定的路径字符串的扩展名。<br/>");
+Response.Write(System.IO.Path.GetExtension(filePath));
+
+Response.Write("<br/>返回指定路径字符串的文件名和扩展名。<br/>");
+Response.Write(System.IO.Path.GetFileName(filePath));
+
+Response.Write("<br/>返回不具有扩展名的指定路径字符串的文件名。<br/>");
+Response.Write(System.IO.Path.GetFileNameWithoutExtension(filePath));
+
+Response.Write("<br/>获取指定路径的根目录信息。<br/>");
+Response.Write(System.IO.Path.GetPathRoot(filePath));
+
+Response.Write("<br/>返回随机文件夹名或文件名。<br/>");
+Response.Write(System.IO.Path.GetRandomFileName());
+
+Response.Write("<br/>创建磁盘上唯一命名的零字节的临时文件并返回该文件的完整路径。<br/>");
+Response.Write(System.IO.Path.GetTempFileName());
+
+Response.Write("<br/>返回当前系统的临时文件夹的路径。<br/>");
+Response.Write(System.IO.Path.GetTempPath());
+
+Response.Write("<br/>确定路径是否包括文件扩展名。<br/>");
+Response.Write(System.IO.Path.HasExtension(filePath));
+
+Response.Write("<br/>获取一个值，该值指示指定的路径字符串是包含绝对路径信息还是包含相对路径信息。<br/>");
+Response.Write(System.IO.Path.IsPathRooted(filePath));
+
+
+
+执行结果
+文件路径：E:\Randy0528\中文目录\JustTest.rar
+更改路径字符串的扩展名。
+E:\Randy0528\中文目录\JustTest.txt
+返回指定路径字符串的目录信息。。
+E:\Randy0528\中文目录
+返回指定的路径字符串的扩展名。
+.rar
+返回指定路径字符串的文件名和扩展名。
+JustTest.rar
+返回不具有扩展名的指定路径字符串的文件名。
+JustTest
+获取指定路径的根目录信息。
+E:\
+返回随机文件夹名或文件名。
+ct2h5b2h.sed
+创建磁盘上唯一命名的零字节的临时文件并返回该文件的完整路径。
+C:\Documents and Settings\Randy\Local Settings\Temp\tmpAD.tmp
+返回当前系统的临时文件夹的路径。
+C:\Documents and Settings\Randy\Local Settings\Temp\
+确定路径是否包括文件扩展名。
+True
+获取一个值，该值指示指定的路径字符串是包含绝对路径信息还是包含相对路径信息。
+True

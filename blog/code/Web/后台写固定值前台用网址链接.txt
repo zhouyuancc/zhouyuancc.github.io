@@ -1,0 +1,32 @@
+  
+<a href="../EmpManage/frmEmpInfoAdd.aspx?flag=emprole&empcode=<% =adminzy()%>&type=edit&date=<% =date()%>" target="c_main">Œ“µƒ’ ªß</a>
+        
+
+
+
+
+
+
+
+protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            {
+
+            }
+        }
+
+            public string adminzy()
+            {
+        
+                string EmpCode = Session["empcode"].ToString();
+                return EmpCode;
+            }
+          
+            public string date()
+            {
+                string date = DateTime.Now.ToString("yyyy-MM-dd");
+                return date;
+
+            }
+

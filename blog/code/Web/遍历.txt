@@ -1,0 +1,9 @@
+
+var url = document.location.href; 
+////http://localhost:2616/PubAff/AffWorkPlan.aspx?flag=
+
+var str1 = url.split("?");//±éÀú
+
+var str = str1[0].toString() + "?" + str1[1].toString(); //
+
+var flag = str1[1].toString(); //flag=

@@ -1,0 +1,10 @@
+http://www.jb51.net/article/14397.htm
+
+history.go(0) 
+location.reload() 
+location=location 
+location.assign(location) 
+document.execCommand('Refresh') 
+window.navigate(location) 
+location.replace(location) 
+document.URL=location.href

@@ -1,0 +1,286 @@
+ /// <summary>
+        /// 生成小标题
+        /// </summary>
+        /// <returns></returns>
+        public string Menu()
+        {
+            DataSet ds = new DataSet();
+            string strSql = "";
+            string a = "";
+            strSql = @"select replace(Pic_Path,'~','..')as photo,* from PubMenuTree where len(nodeid)=6 order by NodeId";
+
+            ds = SqlExec.ExecuteDataSet(strSql);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    OnliceUser user = new OnliceUser();
+                    user.NodeName = dr["NodeName"].ToString();
+                    user.NodeId = dr["NodeId"].ToString();
+                    user.sur = dr["photo"].ToString();
+                    userList.Add(user);
+                }
+            }
+
+            for (int i = 0; i < userList.Count; i++)
+            {
+                if (userList[i].NodeName != "")
+                {
+                    //a += "<option value=" + userList[i].NodeId + ">" + userList[i].NodeName + "</option>";
+                    //a += "<option>" + userList[i].NodeId + "</option>";
+                    //<label for=\"MENU_01_1\">
+
+                    a += "<td valign=\"top\">";
+                    a += "<table class=\"TableBlock\" align=\"center\">";
+                    a += "<tr class=\"TableHeader\" title=" + userList[i].NodeName + ">";
+                    a += "<td nowrap>";
+                    if (isChecked(userList[i].NodeId) == true)
+                    {
+                        a += "<input type=\"checkbox\" checked=checked runat=\"server\" value=" + userList[i].NodeId + " name=\"MENU_0" + i + "\" id=\"check\" onClick=\"check_all(this,'0" + i + "');\">";
+                    }
+                    else
+                    {
+                        a += "<input type=\"checkbox\" runat=\"server\" value=" + userList[i].NodeId + " name=\"MENU_0" + i + "\" id=\"check\" onClick=\"check_all(this,'0" + i + "');\">";
+                    }
+                    a += "<img src=\"" + userList[i].sur + "\"  width=\"16\" height=\"16\"><b>" + userList[i].NodeName + "</b>";
+
+                    a += "</td>";
+
+                    a += Circle(userList[i].NodeId, i);
+
+
+                    a += "</tr>";
+                    a += "</table>";
+                    a += "</td>";
+
+                }
+            }
+            return a;
+        }
+
+
+        private string Circle(object NodeId, int i)
+        {
+
+            string a = "";
+            DataSet ds = new DataSet();
+
+            string str = @"select replace(Pic_Path,'~','..')as photo,* from PubMenuTree where [NodeId] LIKE @NodeId+'%' and [NodeId]<>@NodeId and len(nodeid)=len(@NodeId)+3 and Type ='0' ";
+
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] para ={
+               sqlexec.CreateInParam("@NodeId",SqlDbType.VarChar,20,NodeId.ToString())
+                        };
+            ds = SqlExec.ExecuteDataSet(str, CommandType.Text, para);
+            //无数据
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    OnliceUser user1 = new OnliceUser();
+                    user1.NodeName = dr["NodeName"].ToString();
+                    user1.NodeId = dr["NodeId"].ToString();
+                    user1.sur = dr["photo"].ToString();
+                    userList1.Add(user1);
+                }
+            }
+            int x = userList1.Count;
+            int n = 0;
+            for (int j = 0; j < x; j++)
+            {
+                if (userList1[j - n].NodeName != "")
+                {
+                    a += "<tr title=" + userList1[j - n].NodeName + ">";
+                    a += "<td class=\"TableData\" nowrap style=\"border-left-style: solid; border-left-width: 1px; border-left-color: #CCCCCC\">";
+                    if (isChecked(userList1[j - n].NodeId) == true)
+                    {
+                        a += "<input type=\"checkbox\" checked=checked value=" + userList1[j - n].NodeId + " name=\"0" + i + "\"  id=\"check\"  >";
+                    }
+                    else
+                    {
+                        a += "<input type=\"checkbox\" value=" + userList1[j - n].NodeId + " name=\"0" + i + "\"  id=\"check\"  >";
+                    }
+                    a += "<img src=\"" + userList1[j - n].sur + "\"  width=\"16\" height=\"16\">" + userList1[j - n].NodeName + "";
+
+                    a += Circle2(userList1[j - n].NodeId, j - n, i);
+
+                    a += "</td>";
+                    a += "</tr>";
+                    userList1.RemoveAt(j - n);
+                    n++;
+                }
+            }
+            return a;
+        }
+
+
+        private string Circle2(object NodeId, int m, int i)
+        {
+            string a = "";
+
+            DataSet ds = new DataSet();
+
+            string strc = @"select replace(Pic_Path,'~','..')as photo,* from PubMenuTree where [NodeId] LIKE @NodeId+'%' and [NodeId]<>@NodeId and len(nodeid)=len(@NodeId)+3 and Type ='0' ";
+
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] para ={
+               sqlexec.CreateInParam("@NodeId",SqlDbType.VarChar,20,NodeId.ToString())
+                        };
+            ds = SqlExec.ExecuteDataSet(strc, CommandType.Text, para);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    OnliceUser user2 = new OnliceUser();
+                    user2.NodeName = dr["NodeName"].ToString();
+                    user2.NodeId = dr["NodeId"].ToString();
+                    user2.sur = dr["photo"].ToString();
+                    userList2.Add(user2);
+                }
+            }
+            int x = userList2.Count;
+            int n = 0;
+            for (int j = 0; j < x; j++)
+            {
+                if (userList2[j - n].NodeName != "")
+                {
+                    a += "<br>&nbsp";
+                    if (isChecked(userList2[j - n].NodeId) == true)
+                    {
+                        a += "<input type=\"checkbox\" checked value=" + userList2[j - n].NodeId + " name=\"0" + i + "\" id=\"check\" >";
+                    }
+                    else 
+                    {
+                        a += "<input type=\"checkbox\" value=" + userList2[j - n].NodeId + " name=\"0" + i + "\" id=\"check\" >";
+                    }
+
+                    a += "<img src=" + userList2[j - n].sur + " width=\"16\" height=\"16\"> " + userList2[j - n].NodeName + "";
+                    a += Circle3(userList2[j - n].NodeId, j - n, i);
+                    userList2.RemoveAt(j - n);
+                    n++;
+                }
+            }
+            return a;
+        }
+
+
+        private string Circle3(object NodeId, int m, int i)
+        {
+            string a = "";
+
+            DataSet ds = new DataSet();
+
+            string strc = @"select replace(Pic_Path,'~','..')as photo,* from PubMenuTree where [NodeId] LIKE @NodeId+'%' and [NodeId]<>@NodeId and len(nodeid)=len(@NodeId)+3 and Type ='0' ";
+
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] para ={
+               sqlexec.CreateInParam("@NodeId",SqlDbType.VarChar,20,NodeId.ToString())
+                        };
+            ds = SqlExec.ExecuteDataSet(strc, CommandType.Text, para);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    OnliceUser user3 = new OnliceUser();
+                    user3.NodeName = dr["NodeName"].ToString();
+                    user3.NodeId = dr["NodeId"].ToString();
+                    user3.sur = dr["photo"].ToString();
+                    userList3.Add(user3);
+                }
+            }
+            int x = userList3.Count;
+            int n = 0;
+            for (int j = 0; j < x; j++)
+            {
+                if (userList3[j - n].NodeName != "")
+                {
+                    a += "<br>&nbsp&nbsp";
+                    if (isChecked(userList3[j - n].NodeId) == true)
+                    {
+                        a += "<input type=\"checkbox\" checked value=" + userList3[j - n].NodeId + " name=\"0" + i + "\" id=\"check\" >";
+                    }
+                    else
+                    {
+                        a += "<input type=\"checkbox\"  value=" + userList3[j - n].NodeId + " name=\"0" + i + "\" id=\"check\" >";
+                    }
+
+                    a += "<img src=" + userList3[j - n].sur + " width=\"16\" height=\"16\">" + userList3[j - n].NodeName + "";
+                    a += Circle4(userList3[j - n].NodeId, j - n, i);
+                    userList3.RemoveAt(j - n);
+                    n++;
+                }
+            }
+            return a;
+        }
+
+        private string Circle4(object NodeId, int m, int i)
+        {
+            string a = "";
+
+            DataSet ds = new DataSet();
+
+            string strc = @"select replace(Pic_Path,'~','..')as photo,* from PubMenuTree where [NodeId] LIKE @NodeId+'%' and [NodeId]<>@NodeId and len(nodeid)=len(@NodeId)+3 and Type ='0' ";
+
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] para ={
+               sqlexec.CreateInParam("@NodeId",SqlDbType.VarChar,20,NodeId.ToString())
+                        };
+            ds = SqlExec.ExecuteDataSet(strc, CommandType.Text, para);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    OnliceUser user4 = new OnliceUser();
+                    user4.NodeName = dr["NodeName"].ToString();
+                    user4.NodeId = dr["NodeId"].ToString();
+                    user4.sur = dr["photo"].ToString();
+                    userList4.Add(user4);
+                }
+            }
+            int x = userList4.Count;
+            int n = 0;
+            //value=\"97\"
+            for (int j = 0; j < x; j++)
+            {
+                if (userList4[j - n].NodeName != "")
+                {
+                    a += "<br>&nbsp&nbsp&nbsp";
+
+                    if (isChecked(userList4[j - n].NodeId) == true)
+                    {
+                        a += "<input type=\"checkbox\"  checked=checked  value=" + userList4[j - n].NodeId + " name=\"0" + i + "\" id=\"check\" >";
+                    }
+                    else
+                    {
+                        a += "<input type=\"checkbox\"  value=" + userList4[j - n].NodeId + " name=\"0" + i + "\" id=\"check\" >";
+                    }
+                    a += "<img src=" + userList4[j - n].sur + " width=\"16\" height=\"16\"> <label for=\"20_2020_33\">" + userList4[j - n].NodeName + "</label>";
+                    //c += Circle4(userList2[j - n].NodeId, j - n, i);
+                    userList4.RemoveAt(j - n);
+                    n++;
+                }
+            }
+            return a;
+        }
+
+        private bool isChecked(string id)
+        {
+            bool result = false;
+            //string strsql = @"select count(NodeId) from PubRoleMenu where RoleCode=@RoleCode and NodeId=@NodeId";
+            string strsql = @"select count(NodeId) from Table_1 where RoleCode=@RoleCode and NodeId=@NodeId";
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] sqlpara = {
+                sqlexec.CreateInParam("@RoleCode",SqlDbType.VarChar,50,hid_id),
+                sqlexec.CreateInParam("@NodeId",SqlDbType.VarChar,50,id)
+                                     };
+            string i = SqlExec.ExecuteScalar(strsql, CommandType.Text, sqlpara);
+            if (Convert.ToInt32(i) > 0)
+            {
+                result = true;
+            }
+            return result;
+        }

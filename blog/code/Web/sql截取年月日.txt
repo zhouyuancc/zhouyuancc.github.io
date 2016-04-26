@@ -1,0 +1,3 @@
+select convert(varchar,datepart(year,[日期字段]))--年
+select convert(varchar,datepart(month,[日期字段]))--月
+select convert(varchar,datepart(day,[日期字段]))--日

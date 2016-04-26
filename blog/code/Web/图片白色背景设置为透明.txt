@@ -1,0 +1,17 @@
+C#繍夕頭易弼嘘尚譜崔葎邑苧 
+
+
+Image image = System.Drawing.Image.FromFile(@"C:\A.JPG");
+Bitmap pbitmap = new Bitmap(image);
+pbitmap.MakeTransparent(Color.White);
+
+pictureBox1.Image = pbitmap;
+
+！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+D:\2015-1-5\JD_OA\JD_OA\SelSet\CutPhotoHelp.cs
+
+Bitmap partImg = new Bitmap(pPartWidth, pPartHeight);
+///////////////////////////////////
+partImg.MakeTransparent(Color.White);
+///////////////////////////////////
+partImg.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);

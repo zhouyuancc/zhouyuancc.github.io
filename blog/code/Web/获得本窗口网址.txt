@@ -1,0 +1,1 @@
+var url = document.location.href; //获得本窗口属性名

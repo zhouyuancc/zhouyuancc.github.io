@@ -1,0 +1,133 @@
+﻿
+
+前台
+
+onKeyUp="clearNoNum(event,this)"
+
+
+
+后台
+
+位数为0.00
+
+
+txtHtje.Text = Convert.ToDouble(dr["Htje"]).ToString("0.00");
+
+日期格式的转换
+txtQdrq.Text = dr["Qdrq"].ToString() == "" ? "" : Convert.ToDateTime(dr["Qdrq"].ToString()).ToString("yyyy-MM-dd");
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+lc_ygdd_mx.cs
+
+        /// <summary>
+        /// 主表填充数据
+        /// </summary>
+        /// <param name="type">add代表新增；edit代表编辑</param>
+        void BindData(string flag)
+        {
+            try
+            {
+                string sql = "Select *,dbo.F_ZjqFlowCurrEmpName(c.servercode) as qmren,z.initpeople,z.safeplane from lc_ygdd c inner join zjqinitiate z on c.servercode=z.servercode where c.servercode=@servercode";
+                SqlExec MySql = new SqlExec();
+                SqlParameter[] para = { MySql.CreateInParam("@servercode", SqlDbType.VarChar, 20, this.txtServerCode.Text) };
+                using (System.Data.SqlClient.SqlDataReader dr = SqlExec.ExecuteReader(sql, CommandType.Text, para))
+                {
+                    while (dr.Read())
+                    {
+                        txt_disposal.Text = dr["qmren"].ToString() == null ? "" : dr["qmren"].ToString();
+                        txtServerCode.Text = dr["ServerCode"].ToString();
+                        txtygxm.Text = dr["ygxm"].ToString();
+                        txtygbh.Text = dr["ygbh"].ToString();
+                        txtrcsj.Text = dr["rcsj"] is DBNull ? "" : Convert.ToDateTime(dr["rcsj"]).ToString("yyyy-MM-dd");
+                        txtsxrq.Text = Convert.ToDateTime(dr["sxrq"]).ToString("yyyy-MM-dd");
+                      
+                        txtdcbm.Text = dr["dcbm"].ToString();
+                        txtdcgw.Text = dr["dcgw"].ToString();
+                        txtdczw.Text = dr["dczw"].ToString();
+                        txtdcgz.Text = dr["dcgz"] is DBNull ? "" : Convert.ToDouble(dr["dcgz"]).ToString("0.00"); 
+                        txtdcjt.Text = dr["dcjt"].ToString();
+
+                        txtdrbm.Text = dr["drbm"].ToString();
+                        txtdrgw.Text = dr["drgw"].ToString();
+                        txtdrzw.Text = dr["drzw"].ToString();
+                        txtdrgz.Text = dr["drgz"] is DBNull ? "" : Convert.ToDouble(dr["drgz"]).ToString("0.00"); 
+                        txtdrjt.Text = dr["drjt"].ToString();
+
+
+                        txtddyy.Text = dr["ddyy"].ToString();
+                        txtbz.Text = dr["bz"].ToString();
+
+                        this.RadSafePlane.SelectedIndex = Convert.ToInt16(dr["safeplane"]);
+                        if (flag != "add" && flag != "edit")
+                        {
+                            conFlow.cnnStr = SqlExec.myConnentionString;
+                            conFlow.ServerCode = dr["servercode"].ToString();
+                            conFlow.EmpCode = Session["empcode"].ToString();
+                            conFlow.InitEmpCode = dr["initpeople"].ToString();
+                            string result = conFlow.ExmaError;
+                        }
+                    }
+                    dr.Close();
+                }
+                dgrZjqAffix.DataSource = flow.LookFujian(this.txtServerCode.Text);
+                dgrZjqAffix.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+        }
+ /// <summary>
+        /// 保存数据
+        /// </summary>
+        /// <param name="flag">add代表新增；edit代表编辑</param>
+        void SaveData(string flag)
+        {
+            try
+            {
+                string drbm = txtdrbm.Text.Substring(0, txtdrbm.Text.Length - 1);
+                string str;
+                if (flag == "add")
+                    str = "P_lc_ygdd_ADD";
+                else
+                    str = "P_lc_ygdd_Update";
+                SqlExec sqlexec = new SqlExec();
+                SqlParameter[] para = new SqlParameter[]{
+                sqlexec.CreateInParam("@ServerCode",SqlDbType.VarChar,20,txtServerCode.Text),
+                sqlexec.CreateInParam("@ygxm",SqlDbType.VarChar,30,txtygxm.Text),
+                sqlexec.CreateInParam("@ygbh",SqlDbType.VarChar,80,txtygbh.Text),
+                sqlexec.CreateInParam("@rcsj",SqlDbType.DateTime,20,txtrcsj.Text==""?null:Convert.ToDateTime(txtrcsj.Text).ToString("yyyy-MM-dd")),
+                sqlexec.CreateInParam("@sxrq",SqlDbType.DateTime,20,txtsxrq.Text),
+             
+
+                sqlexec.CreateInParam("@dcbm",SqlDbType.VarChar,60,txtdcbm.Text),
+                sqlexec.CreateInParam("@dcgw",SqlDbType.VarChar,60,txtdcgw.Text),
+                sqlexec.CreateInParam("@dczw",SqlDbType.VarChar,60,txtdczw.Text),
+                sqlexec.CreateInParam("@dcgz",SqlDbType.Money,20,txtdcgz.Text ==""?null:Convert.ToDouble(txtrcsj.Text).ToString("0.00")),
+                sqlexec.CreateInParam("@dcjt",SqlDbType.VarChar,60,txtdcjt.Text),
+
+                sqlexec.CreateInParam("@drbm",SqlDbType.VarChar,60,drbm),
+                sqlexec.CreateInParam("@drgw",SqlDbType.VarChar,60,hidDeptId.Value),
+                sqlexec.CreateInParam("@drzw",SqlDbType.VarChar,60,txtdrzw.Text),
+                sqlexec.CreateInParam("@drgz",SqlDbType.Money,20,txtdrgz.Text ==""?null:Convert.ToDouble(txtdrgz.Text).ToString("0.00")),
+                sqlexec.CreateInParam("@drjt",SqlDbType.VarChar,60,txtdrjt.Text),
+
+            
+                sqlexec.CreateInParam("@ddyy",SqlDbType.VarChar,500,txtddyy.Text),
+                sqlexec.CreateInParam("@bz",SqlDbType.VarChar,500,txtbz.Text),
+               
+                sqlexec.CreateInParam("@CreateUser",SqlDbType.VarChar,50,Session["empname"].ToString()),
+                sqlexec.CreateInParam("@CreateDate",SqlDbType.VarChar,50,DateTime.Now.ToString("yyyy-MM-dd HH:MM"))
+            };
+                SqlExec.ExecuteNonQuery(str, CommandType.StoredProcedure, para);
+                if (flag == "edit")
+                    flow.UpSafePlane(Convert.ToInt16(this.RadSafePlane.SelectedIndex), this.txtServerCode.Text);
+
+                flow.UploadFuJian(this.txtServerCode.Text, this, "../../");
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+        }

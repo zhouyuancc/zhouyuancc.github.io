@@ -1,0 +1,39 @@
+  protected void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //先删除
+                string sqlstrd = "delete SelShortCuts where EmpCode=@EmpCode";
+                SqlExec sqlexecd = new SqlExec();
+                SqlParameter[] sqlparad ={                 
+                sqlexecd.CreateInParam("@EmpCode",SqlDbType.VarChar,30,Session["EmpCode"].ToString())
+                                        };
+
+                SqlExec.ExecuteNonQuery(sqlstrd, CommandType.Text, sqlparad);
+
+
+               //保存
+                string sql = "";
+                sql = @"INSERT INTO [SelShortCuts] (EmpCode,NodeId,ShortCuts,Zt,CreateUser,CreateDate) VALUES ('" + Session["empcode"].ToString() + "',@NodeId,@ShortCuts,'1',@CreateUser,@CreateDate)";
+
+                for (Int16 i = 0; i < this.yxzwlb.Items.Count; i++)
+                {
+                    
+                        SqlExec sqlexec = new SqlExec();
+                        SqlParameter[] para = new SqlParameter[]{
+               sqlexec.CreateInParam("@NodeId",SqlDbType.VarChar,20,this.yxzwlb.Items[i].Value),//编号//this.yxzwlb.Text
+               sqlexec.CreateInParam("@ShortCuts",SqlDbType.VarChar,20,this.yxzwlb.Items[i].Text ),//功能//this.yxzwlb.SelectedItem.Text
+               sqlexec.CreateInParam("@CreateUser",SqlDbType.VarChar,30,Session["empname"].ToString()),
+               sqlexec.CreateInParam("@CreateDate",SqlDbType.DateTime,8,DateTime.Now.ToString("yyyy-MM-dd HH:MM"))
+                        
+                        };
+                        SqlExec.ExecuteNonQuery(sql, CommandType.Text, para);
+                }
+            UserValue.Alert(this, "保存成功！");
+             }
+            catch (Exception ex) 
+            {
+                Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+        }

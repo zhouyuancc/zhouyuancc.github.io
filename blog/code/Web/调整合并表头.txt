@@ -1,0 +1,19 @@
+
+前台
+
+<td align="right" //左中右
+
+valign="middle" //top上middle中bottom下baseline基线对齐
+
+ width="10%" //在表格里所占比例
+
+colspan="5" //跨列个数>
+
+外委厂家：
+
+</td>
+
+<asp:TextBox ID="txtContent" runat="server" width="99%" > //文本框
+
+</asp:TextBox>
+                        

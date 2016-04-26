@@ -1,0 +1,59 @@
+
+上传附件后，页面刷新，添加人员form1.txtRy.value数据刷新后为空
+问题解决方法：<form id="form1" runat="server" enctype="multipart/form-data">
+
+<%@ Register Src="../PubWeb/wucAttUpload.ascx" TagName="wucAttUpload" TagPrefix="uc1" %>
+
+    <script language="javascript" type="text/javascript">
+        function openTopic_ztry() {
+            var k = window.showModalDialog("../../../../PubWeb/frmEmpSelect.aspx?show=allUser,depUser,rolUser", "seltopic", "toolbar=no;copyhistory=no;location=no;status=no;menubar=no;scrollbars=no;resizable=no;fullscreen=no;dialogWidth=503px; dialogHeight=405px;left=280;top=200; status=1; help=0");
+            if (k != null) {
+
+                var id = k.split("|");
+                if (id.length >= 2) {
+                    form1.txtRy.value = id[0];
+                    form1.hdEmpCodeRy.value = id[1];
+//                    alert(form1.txtRy.value)
+                }
+            }
+        }
+
+    </script>
+
+///////////////////////////////////////////////////////////////////////////////////
+    <form id="form1" runat="server" enctype="multipart/form-data">
+///////////////////////////////////////////////////////////////////////////////////
+
+                <tr>
+                    <td style="text-align: right;" width="10%" align="right">
+                        授权人员：
+                    </td>
+                    <td align="left">
+                        <asp:TextBox ID="txtRy" runat="server" Width="99%" CssClass="SmallInput" TextMode="MultiLine"
+                            TabIndex="4"  Height="70px" MaxLength="500"></asp:TextBox>
+                     <input id="hdEmpCodeRy" runat="server" type="hidden" />
+                    </td>
+                    <td width="10%" align="left" valign="top">
+                        <asp:Panel ID="Panel1" runat="server" CssClass="buttonStyle" Font-Size="Medium">
+                            <a href="javascript:;" class="orgAdd" onclick="openTopic_ztry();window.event.returnValue=false;return;">
+                                添加</a>
+                        </asp:Panel>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: right;" width="10%" align="right">
+                        上传模板：
+                    </td>
+                    <td align="left" style="height: 23px">
+                        <uc1:wucAttUpload ID="wucAttUpload1" runat="server" ModuleType="RedTemplate" />
+                    </td>
+                </tr>
+
+    </form>
+
+//////////////////////////////////////////////////////////////////////////////
+  
+ txtRy.Attributes.Add("readonly", "true");
+
+//////////////////////////////////////////////////////////////////////////////

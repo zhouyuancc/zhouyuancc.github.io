@@ -1,0 +1,26 @@
+    //发送公文确认
+    function mysubmit() {
+        $.ajax({
+            type: "POST",
+            url: "gw_fwng.aspx",
+            data: "type=Send&dept_list=" + form2.hdDept_list.value + "&sid=" + $("#hdsid").val() + "&printNum=" + $("#pnum").val(),
+            cache: false,
+            async: false,
+            success: function (data) {
+                alert(data)
+            }
+        })
+        location.reload();
+    }
+
+ <input class="buttonStyle" type="button" value="确定" onclick="mysubmit();" />
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+if (!string.IsNullOrEmpty(Request["type"]))
+                {
+                    switch (Request["type"].ToString())
+                    {
+                        case "Send": SendRec(sid, dept_list, printNum); break;
+                    }
+                }

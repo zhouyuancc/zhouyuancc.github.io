@@ -1,0 +1,10 @@
+<script language="javascript" type="text/javascript"  >
+        function closeWindow() {
+                window.opener = null;
+                window.open('', '_self', '');
+                window.close();
+            }
+</script>
+
+
+<asp:Button ID="btnClose" runat="server" CssClass="buttonStyle" Text="¹Ø±Õ" OnClientClick="javascript:closeWindow();" />

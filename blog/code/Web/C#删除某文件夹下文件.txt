@@ -1,0 +1,89 @@
+//清理缓存
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            //Directory.CreateDirectory(Server.MapPath("~/PubAff/FastSignature/Image/cache/cache"));//新建一个空的文件夹
+            //File.Delete(Server.MapPath("~/AttachFile/Signature/20150402162428.jpg"));//转相对路径
+
+
+            string[] strFileName = Directory.GetFiles(Server.MapPath("~/PubAff/FastSignature/Image/cache"));
+            foreach (var item in strFileName)
+            {
+                File.Delete(item);
+            }
+            UserValue.Alert(this, "清理完毕！");
+
+
+        }
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+C# 删除某一个目录中所有的txt文件
+1.思路，可使用directory和File文件相互结合。
+
+代码如下：
+1  string path = Environment.CurrentDirectory;
+2             string pattern = "*.txt";
+3             string[] strFileName = Directory.GetFiles(path, pattern);
+4             foreach (var item in strFileName)
+5             {
+6                 File.Delete(item);
+7                 Console.WriteLine("{0}文件被删除了",item);
+8             }
+9             Console.ReadLine();
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+递归 删除 某个文件夹 下所有的内容，包括子文件夹 2013-06-04     /// <summary>    
+     /// 用递归方法删除文件夹目录及文件    
+     /// </summary>    
+     /// <param name="dir">带文件夹名的路径</param>     
+     public void DeleteFolder(string dir) 
+     { 
+         if (Directory.Exists(dir)) //如果存在这个文件夹删除之     
+         { 
+             foreach (string d in Directory.GetFileSystemEntries(dir)) 
+             { 
+                 if (File.Exists(d)) 
+                 { 
+                     FileInfo fi = new FileInfo(d); 
+                     if (fi.Attributes.ToString().IndexOf("ReadOnly") != -1) 
+                         fi.Attributes = FileAttributes.Normal; 
+  
+                     File.Delete(d); //直接删除其中的文件    
+                 } 
+                 else 
+                     DeleteFolder(d); //递归删除子文件夹     
+             } 
+             Directory.Delete(dir, true); //删除已空文件夹                     
+         } 
+     }   
+      
+
+    /// <summary> 
+         /// 用递归方法删除文件夹目录及文件 
+         /// </summary> 
+         /// <param name="dir">带文件夹名的路径</param>  
+         public void DeleteFolder(string dir)
+         {
+             if (Directory.Exists(dir)) //如果存在这个文件夹删除之  
+             {
+                 foreach (string d in Directory.GetFileSystemEntries(dir))
+                 {
+                     if (File.Exists(d))
+                     {
+                         FileInfo fi = new FileInfo(d);
+                         if (fi.Attributes.ToString().IndexOf("ReadOnly") != -1)
+                             fi.Attributes = FileAttributes.Normal;
+
+                        File.Delete(d); //直接删除其中的文件 
+                     }
+                     else
+                         DeleteFolder(d); //递归删除子文件夹  
+                 }
+                 Directory.Delete(dir, true); //删除已空文件夹                  
+             }
+         } 
+        
+
+
+特别强调：Directory.Delete 方法只能删除 空文件夹，否则 会报错。

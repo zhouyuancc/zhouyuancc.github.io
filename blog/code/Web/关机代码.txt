@@ -1,0 +1,128 @@
+其实这个程序是调用了C:\windows\system32\shutdown.exe 
+这个文件的
+
+Windows XP系统通过一个名为Shutdown.exe的程序来完成关机操作(位置在Windows\System32下)，一般情况下XP的关机是由关机程序shutdown.exe来实现的，关机的时候调用shutdown.exe。由此可知要阻止强行关机就是要取消对shutdown.exe的调用。 
+　　shutdown.exe -a　　　　　　　　 取消关机
+
+　　shutdown.exe -f　　　　　　　　 强行关闭应用程序。
+
+　　shutdown.exe -l　　　　　　　　 注销当前用户。
+
+　　shutdown.exe -s -t 时间　　　　 设置关机倒计时。
+
+　　shutdown.exe -c"消息内容"　 　　输入关机对话框中的消息内容(不能超127个字符)。
+
+　　比如你的电脑要在23:00关机，可以选择“开始→运行”，输入“at 23:00 Shutdown -s”，这样，到了23点，电脑就会出现“系统关机”对话框，默认有30秒钟的倒计时并提示你保存工作。如果你想以倒计时的方式关机，可以输入“Shutdown.exe -s -t 3600”，这里表示60分钟后自动关机，“3600”代表60分钟。
+
+　　如果想取消的话，可以在运行中输入“shutdown -a”。另外输入“shutdown -i”，则可以打开设置自动关机对话框，对自动关机进行设置。
+
+Windows XP的关机是由Shutdown.exe程序来控制的，位于WindowsSystem32文件夹中。如果想让Windows 2000也实现同样的效果，可以把Shutdown.exe复制到系统目录System32下
+
+代码:
+main()
+{
+    system("shutdown -s -t 3600");
+}
+
+----------------------------------------------------------------------------------------------------------------------------
+
+C语言中命令如下： 
+重启 
+
+#include <stdlib.h> 
+main() 
+{ 
+system("shutdown /r"); 
+} 
+
+关机 
+
+#include <stdlib.h> 
+main() 
+{ 
+system("shutdown /s"); 
+} 
+
+XP系统下 
+用shutdown 命令 
+用法: SHUTDOWN [-i | -l | -s | -r | -a] [-f] [-m \\computername] [-t xx] [-c "co 
+mment"] [-d up:xx:yy] 
+
+没有参数 显示此消息(与 ? 相同) 
+-i 显示 GUI 界面，必须是第一个选项 
+-l 注销(不能与选项 -m 一起使用) 
+-s 关闭此计算机 
+-r 关闭并重启动此计算机 
+-a 放弃系统关机 
+-m \\computername 远程计算机关机/重启动/放弃 
+-t xx 设置关闭的超时为 xx 秒 
+-c "comment" 关闭注释(最大 127 个字符) 
+-f 强制运行的应用程序关闭而没有警告 
+-d [u][p]:xx:yy 关闭原因代码 
+u 是用户代码 
+p 是一个计划的关闭代码 
+xx 是一个主要原因代码(小于 256 的正整数) 
+yy 是一个次要原因代码(小于 65536 的正整数)
+
+----------------------------------------------------------------------------------------------------------------------------
+
+#include "stdafx.h"
+#include <stdio.h> 
+#include <windows.h> 
+int main() 
+{ 
+//定义关机的时候发送给所有用户的消息 
+LPSTR msg="Reboot "; 
+//尝试用最简单的API函数关机 
+if(ExitWindowsEx(EWX_REBOOT, 0))return TRUE; 
+if(ExitWindowsEx(EWX_REBOOT | EWX_FORCE, 0))return TRUE; 
+//因为上面的关机不成功，所以需要调整本进程的特权 
+HANDLE hToken; 
+TOKEN_PRIVILEGES tkp; 
+if (!OpenProcessToken(GetCurrentProcess(),TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &hToken)) return FALSE; 
+//获取关机的特权SE_SHUTDOWN_NAME 
+LookupPrivilegeValue(NULL, SE_SHUTDOWN_NAME, &tkp.Privileges[0].Luid); 
+tkp.PrivilegeCount = 1; 
+tkp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED; 
+AdjustTokenPrivileges(hToken, FALSE, &tkp, 0, (PTOKEN_PRIVILEGES)NULL, 0); 
+//判断是NT内核还是9x内核,选择用不同的方式 
+if(!(GetVersion() & 0x80000000)) 
+InitiateSystemShutdown(NULL, msg, 20, TRUE, TRUE); 
+else if (!ExitWindowsEx(EWX_POWEROFF, 0)) 
+if(!ExitWindowsEx(EWX_POWEROFF|EWX_FORCE, 0)) 
+return FALSE; 
+return TRUE; 
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+我举个例子给你吧.. 
+这个是.. 
+打开了..倒数60秒关机.. 
+显示"快说你是猪!不然就关机".. 
+如果输入的是"我是猪"..那么就取消关机.. 
+如果输入的不是"我是猪"..那么就不取消.. 
+
+#include"stdio.h" 
+#include"stdlib.h" 
+
+void main() 
+{ 
+
+char write[100]; 
+
+system("shutdown -s -t 60"); //关机命令,这个60是秒数,可以自己设定. 
+printf("快说你是猪!不然就关机!\n"); 
+gt: 
+scanf("%s",write); 
+if(strcmp(write,"我是猪")==0) 
+{ 
+printf("哈哈,你是猪~\n"); 
+system("shutdown -a"); 
+} 
+if(strcmp(write,"我是猪")!=0) 
+{ 
+printf("还不说是吧?不说就等关机!\n"); 
+goto gt; 
+} 
+}

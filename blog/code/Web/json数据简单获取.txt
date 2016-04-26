@@ -1,0 +1,24 @@
+            //获取status
+            $.ajax({
+                type: "GET",
+                url: "https://a1.easemob.com/sgjd/sgjd/users/" + getQueryString("chatWithEmpcode") + "/status?access_token=" + token,
+                cache: false,
+                async: false,
+                success: function (data) {
+
+                    //用[]可以使用变量自变量
+                    alert(data.data[getQueryString("chatWithEmpcode")]);
+
+                    //获取data中的变量名称
+//                    var msg;
+//                    for (var a in data.data) {
+//                        msg += a + '   ';
+//                    }
+//                    alert(msg);
+
+                }
+            })
+
+
+
+

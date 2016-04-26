@@ -1,0 +1,316 @@
+ 
+单独日期
+ <td style="text-align: right;" width="10%" align="right">
+                     入住日期：
+                 </td>
+                 <td>
+                 <asp:TextBox ID="txtRzsj"  CssClass="f-textTime Wdate" 
+                      style="TEXT-ALIGN: center" Width="77%" onFocus="WdatePicker({readOnly:true})"
+                      runat="server" ></asp:TextBox>
+                 </td>
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ if (!IsPostBack)
+            {
+                txtBeginTime.Text ="";
+                txtEndTime.Text = "";
+                
+                //txtBeginTime.Text = DateTime.Now.ToString("yyyy-MM-01");
+                //txtEndTime.Text = DateTime.Now.ToString("yyyy-MM-dd");
+               
+                 BindGrid(false);
+
+            }
+默认日期为空，为本年本月01日——本年本月本日
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<td width="8%" align="right" valign="middle">
+                            借用日期：</td>
+                        <td width="12%" align="left" valign="middle">
+                            <asp:TextBox ID="txtJyrq1" runat="server" Style="text-align: center" Width="89%" CssClass="f-textTime Wdate"
+                                        onFocus="WdatePicker({readOnly:true,maxDate:'#F{$dp.$D(\'txtJyrq2\')}'})"></asp:TextBox>
+                        </td>
+                        <td width="8%" style="text-align: center" valign="middle">
+                            至</td>
+                        <td width="12%" align="left" valign="middle">
+                            <asp:TextBox ID="txtJyrq2" runat="server" Style="text-align: center" Width="89%" CssClass="f-textTime Wdate"
+                                         onFocus="WdatePicker({readOnly:true,minDate:'#F{$dp.$D(\'txtJyrq1\')}'})"></asp:TextBox>
+                        </td>
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+<td align="left" valign="middle" class="style3">
+                                             <asp:TextBox ID="Txtrq" runat="server" CssClass="f-textTime Wdate" 
+                                                 onFocus="WdatePicker({readOnly:true})" style="TEXT-ALIGN: center" Width="80%"></asp:TextBox>
+                                                </td>
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+前台
+
+显示当天日期的不可更改的文本框
+<asp:TextBox ID="txtsxrq" runat="server" Style="text-align: left" TabIndex="1" 
+                                                            Enabled="False" Width="95%"></asp:TextBox>
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+后台
+
+
+在前台显示出当前时间
+
+  if (!IsPostBack)
+            {
+
+              txtKprq.Text = DateTime.Now.ToString("yyyy-MM-dd");
+           
+          }
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+sql convert(varchar(10),getdate(),120) 
+Sqlserver中经常 要操作一些时间类型的字段转换，我又不太记得住，所以搜集了以下的一些SqlserverConvert DateTime相关的资料发表在自己的小站里，方便自己以后要用的时候寻找，望对大家也有帮助．
+
+将sqlserver中table表的［datetime］字段值‘2007-11-07 16:41:35.033’ 改为‘2007-11-07 00：00：00‘去除了时分秒．［datetime］字段要为datetime类型的哦． UPDATE table SET [datetime]= Convert(char(11),[datetime],120) 
+
+获取当前日期利用　convert　来转换成我们需要的datetime格式． 
+select CONVERT(varchar(12) , getdate(), 112 )
+20040912
+------------------------------------------------------------
+select CONVERT(varchar(12) , getdate(), 102 )
+2004.09.12
+------------------------------------------------------------
+select CONVERT(varchar(12) , getdate(), 101 )
+09/12/2004
+------------------------------------------------------------
+select CONVERT(varchar(12) , getdate(), 103 )
+12/09/2004
+------------------------------------------------------------
+select CONVERT(varchar(12) , getdate(), 104 )
+12.09.2004
+------------------------------------------------------------
+select CONVERT(varchar(12) , getdate(), 105 )
+12-09-2004
+------------------------------------------------------------
+select CONVERT(varchar(12) , getdate(), 106 )
+12 09 2004
+------------------------------------------------------------
+select CONVERT(varchar(12) , getdate(), 107 )
+09 12, 2004
+------------------------------------------------------------
+select CONVERT(varchar(12) , getdate(), 108 )
+11:06:08
+------------------------------------------------------------
+select CONVERT(varchar(12) , getdate(), 109 )
+09 12 2004 1
+------------------------------------------------------------
+select CONVERT(varchar(12) , getdate(), 110 )
+09-12-2004
+------------------------------------------------------------
+select CONVERT(varchar(12) , getdate(), 113 )
+12 09 2004 1
+------------------------------------------------------------
+select CONVERT(varchar(12) , getdate(), 114 )
+11:06:08.177
+------------------------------------------------------------
+
+declare @dateTime DateTime--定义一个datetime的变量
+set @dateTime=getdate();　--获取系统当前时间，并赋值给@dateTime字段
+
+--短日期格式：yyyy-m-d
+SELECT REPLACE(CONVERT(varchar(10),@dateTime,120),N'-0','-')
+
+--长日期格式：yyyy年mm月dd日 
+SELECT STUFF(STUFF(CONVERT(char(8),@dateTime,112),5,0,N'年'),8,0,N'月')+N'日'
+
+--长日期格式：yyyy年m月d日
+SELECT DATENAME(Year,@dateTime)+N'年'+CAST(DATEPART(Month,@dateTime) AS varchar)+N'月'+DATENAME(Day,@dateTime)+N'日'
+
+--完整日期+时间格式：yyyy-mm-dd hh:mi:ss:mmm
+SELECT CONVERT(char(11),@dateTime,120)+CONVERT(char(12),@dateTime,114)
+
+------------------------------------------------------------------------------------------------
+
+2、日期推算处理
+DECLARE @dt datetime
+SET @dt=GETDATE()
+DECLARE @number int
+SET @number=3
+--1．指定日期该年的第一天或最后一天
+--A. 年的第一天
+SELECT CONVERT(char(5),@dt,120)+'1-1'
+--B. 年的最后一天
+SELECT CONVERT(char(5),@dt,120)+'12-31'
+--2．指定日期所在季度的第一天或最后一天
+--A. 季度的第一天
+SELECT CONVERT(datetime,
+CONVERT(char(8),
+DATEADD(Month,
+DATEPART(Quarter,@dt)*3-Month(@dt)-2,
+@dt),
+120)+'1')
+--B. 季度的最后一天（CASE判断法）
+SELECT CONVERT(datetime,
+CONVERT(char(8),
+DATEADD(Month,
+DATEPART(Quarter,@dt)*3-Month(@dt),
+@dt),
+120)
++CASE WHEN DATEPART(Quarter,@dt) in(1,4)
+THEN '31'ELSE '30' END)
+--C. 季度的最后一天（直接推算法）
+SELECT DATEADD(Day,-1,
+CONVERT(char(8),
+DATEADD(Month,
+1+DATEPART(Quarter,@dt)*3-Month(@dt),
+@dt),
+120)+'1')
+--3．指定日期所在月份的第一天或最后一天
+--A. 月的第一天
+SELECT CONVERT(datetime,CONVERT(char(8),@dt,120)+'1')
+--B. 月的最后一天
+SELECT DATEADD(Day,-1,CONVERT(char(8),DATEADD(Month,1,@dt),120)+'1')
+--C. 月的最后一天（容易使用的错误方法）
+SELECT DATEADD(Month,1,DATEADD(Day,-DAY(@dt),@dt))
+--4．指定日期所在周的任意一天
+SELECT DATEADD(Day,@number-DATEPART(Weekday,@dt),@dt)
+--5．指定日期所在周的任意星期几
+--A. 星期天做为一周的第1天
+SELECT DATEADD(Day,@number-(DATEPART(Weekday,@dt)+@@DATEFIRST-1)%7,@dt)
+--B. 星期一做为一周的第1天
+SELECT DATEADD(Day,@number-(DATEPART(Weekday,@dt)+@@DATEFIRST-2)%7-1,@dt)
+
+转自：http://hi.baidu.com/fengfage/blog/item/1429fda1b9ec3d9b46106453.html
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//2008年4月24日
+     System.DateTime.Now.ToString("D");
+     //2008-4-24
+     System.DateTime.Now.ToString("d");
+     //2008年4月24日 16:30:15
+     System.DateTime.Now.ToString("F");
+     //2008年4月24日 16:30
+     System.DateTime.Now.ToString("f");
+     //2008-4-24 16:30:15
+     System.DateTime.Now.ToString("G");
+     //2008-4-24 16:30
+     System.DateTime.Now.ToString("g");
+     //16:30:15
+     System.DateTime.Now.ToString("T");
+     //16:30
+     System.DateTime.Now.ToString("t");
+     //2008年4月24日 8:30:15
+     System.DateTime.Now.ToString("U");
+     //2008-04-24 16:30:15Z
+     System.DateTime.Now.ToString("u");
+     //4月24日
+     System.DateTime.Now.ToString("m");
+     System.DateTime.Now.ToString("M");
+     //Tue, 24 Apr 2008 16:30:15 GMT
+     System.DateTime.Now.ToString("r");
+     System.DateTime.Now.ToString("R");
+     //2008年4月
+     System.DateTime.Now.ToString("y");
+     System.DateTime.Now.ToString("Y");
+     //2008-04-24T15:52:19.1562500+08:00
+     System.DateTime.Now.ToString("o");
+     System.DateTime.Now.ToString("O");
+     //2008-04-24T16:30:15
+     System.DateTime.Now.ToString("s");
+     //2008-04-24 15:52:19
+     System.DateTime.Now.ToString("yyyy-MM-dd HH：mm：ss：ffff");
+     //2008年04月24 15时56分48秒
+     System.DateTime.Now.ToString("yyyy年MM月dd HH时mm分ss秒");
+     //星期二, 四月 24 2008
+     System.DateTime.Now.ToString("dddd, MMMM dd yyyy");
+     //二, 四月 24 ’08
+     System.DateTime.Now.ToString("ddd, MMM d \"’\"yy");
+     //星期二, 四月 24
+     System.DateTime.Now.ToString("dddd, MMMM dd");
+     //4-08
+     System.DateTime.Now.ToString("M/yy");
+     //24-04-08
+     System.DateTime.Now.ToString("dd-MM-yy");
+    //字符型转换转为字符串
+    12345.ToString("n");  //生成 12,345.00
+    12345.ToString("C"); //生成 ￥12,345.00
+    12345.ToString("e"); //生成 1.234500e+004
+    12345.ToString("f4"); //生成 12345.0000
+    12345.ToString("x"); //生成 3039 (16进制)
+    12345.ToString("p"); //生成 1,234,500
+     //本年度销售额、本季度利润、本月新增客户 
+  　//今天
+     DateTime.Now.Date.ToShortDateString();
+     //昨天，就是今天的日期减一
+     DateTime.Now.AddDays(-1).ToShortDateString();
+     //明天，同理，加一
+     DateTime.Now.AddDays(1).ToShortDateString();
+     //本周(要知道本周的第一天就得先知道今天是星期几，从而得知本周的第一天就是几天前的那一天，要注意的是这里的每一周是从周日始至周六止
+     DateTime.Now.AddDays(Convert.ToDouble((0 - Convert.ToInt16(DateTime.Now.DayOfWeek)))).ToShortDateString();
+     DateTime.Now.AddDays(Convert.ToDouble((6 - Convert.ToInt16(DateTime.Now.DayOfWeek)))).ToShortDateString();
+     //如果你还不明白，再看一下中文显示星期几的方法就应该懂了
+     //由于DayOfWeek返回的是数字的星期几，我们要把它转换成汉字方便我们阅读，有些人可能会用switch来一个一个地对照，其实不用那么麻烦的             
+     string[] Day = new string[]{ "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
+     Day[Convert.ToInt16(DateTime.Now.DayOfWeek)];
+     //上周，同理，一个周是7天，上周就是本周再减去7天，下周也是一样
+     DateTime.Now.AddDays(Convert.ToDouble((0 - Convert.ToInt16(DateTime.Now.DayOfWeek))) - 7).ToShortDateString();
+     DateTime.Now.AddDays(Convert.ToDouble((6 - Convert.ToInt16(DateTime.Now.DayOfWeek))) - 7).ToShortDateString();
+     //下周
+     DateTime.Now.AddDays(Convert.ToDouble((0 - Convert.ToInt16(DateTime.Now.DayOfWeek))) + 7).ToShortDateString();
+     DateTime.Now.AddDays(Convert.ToDouble((6 - Convert.ToInt16(DateTime.Now.DayOfWeek))) + 7).ToShortDateString();
+     //本月,很多人都会说本月的第一天嘛肯定是1号，最后一天就是下个月一号再减一天。当然这是对的
+     //一般的写法
+     DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + "1"; //第一天
+     DateTime.Parse(DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + "1").AddMonths(1).AddDays(-1).ToShortDateString();//最后一天
+     //巧用C#里ToString的字符格式化更简便
+     DateTime.Now.ToString("yyyy-MM-01");
+     DateTime.Parse(DateTime.Now.ToString("yyyy-MM-01")).AddMonths(1).AddDays(-1).ToShortDateString();
+     //上个月，减去一个月份
+     DateTime.Parse(DateTime.Now.ToString("yyyy-MM-01")).AddMonths(-1).ToShortDateString();
+     DateTime.Parse(DateTime.Now.ToString("yyyy-MM-01")).AddDays(-1).ToShortDateString();
+     //下个月，加去一个月份
+     DateTime.Parse(DateTime.Now.ToString("yyyy-MM-01")).AddMonths(1).ToShortDateString();
+     DateTime.Parse(DateTime.Now.ToString("yyyy-MM-01")).AddMonths(2).AddDays(-1).ToShortDateString();
+     //7天后
+     DateTime.Now.Date.ToShortDateString();
+     DateTime.Now.AddDays(7).ToShortDateString();
+     //7天前
+     DateTime.Now.AddDays(-7).ToShortDateString();
+     DateTime.Now.Date.ToShortDateString();
+     //本年度，用ToString的字符格式化我们也很容易地算出本年度的第一天和最后一天
+     DateTime.Parse(DateTime.Now.ToString("yyyy-01-01")).ToShortDateString();
+     DateTime.Parse(DateTime.Now.ToString("yyyy-01-01")).AddYears(1).AddDays(-1).ToShortDateString();
+     //上年度，不用再解释了吧
+     DateTime.Parse(DateTime.Now.ToString("yyyy-01-01")).AddYears(-1).ToShortDateString();
+     DateTime.Parse(DateTime.Now.ToString("yyyy-01-01")).AddDays(-1).ToShortDateString();
+     //下年度
+     DateTime.Parse(DateTime.Now.ToString("yyyy-01-01")).AddYears(1).ToShortDateString();
+     DateTime.Parse(DateTime.Now.ToString("yyyy-01-01")).AddYears(2).AddDays(-1).ToShortDateString();
+     //本季度，很多人都会觉得这里难点，需要写个长长的过程来判断。其实不用的，我们都知道一年四个季度，一个季度三个月
+     //首先我们先把日期推到本季度第一个月，然后这个月的第一天就是本季度的第一天了
+     DateTime.Now.AddMonths(0 - ((DateTime.Now.Month - 1) % 22)).ToString("yyyy-MM-01");
+     //同理，本季度的最后一天就是下季度的第一天减一
+     DateTime.Parse(DateTime.Now.AddMonths(22 - ((DateTime.Now.Month - 1) % 22)).ToString("yyyy-MM-01")).AddDays(-1).ToShortDateString();
+     //下季度，相信你们都知道了。。。。收工
+     DateTime.Now.AddMonths(22 - ((DateTime.Now.Month - 1) % 22)).ToString("yyyy-MM-01");
+     DateTime.Parse(DateTime.Now.AddMonths(6 - ((DateTime.Now.Month - 1) % 22)).ToString("yyyy-MM-01")).AddDays(-1).ToShortDateString();
+     //上季度
+     DateTime.Now.AddMonths(-22 - ((DateTime.Now.Month - 1) % 22)).ToString("yyyy-MM-01");
+     DateTime.Parse(DateTime.Now.AddMonths(0 - ((DateTime.Now.Month - 1) % 22)).ToString("yyyy-MM-01")).AddDays(-1).ToShortDateString();

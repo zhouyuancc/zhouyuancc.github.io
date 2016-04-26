@@ -1,0 +1,217 @@
+
+        /// <summary>
+        /// 查询数据，绑定结果集
+        /// </summary>
+        // 绑定数据列表
+        public void PageShowInitList(int currtPage)
+        {
+
+            try
+            {
+                SqlExec sqlexec = new SqlExec();
+                System.Text.StringBuilder sql = new  System.Text.StringBuilder("select * from V_gd_zctz_jy v");
+
+                List<string> wheres = new List<string>();
+                List<SqlParameter> listParameter = new List<SqlParameter>();
+
+
+                if (!string.IsNullOrEmpty(this.cboJybm.SelectedValue))
+                {
+                    wheres.Add("[jydw] like '%'+ @Jybm +'%'");
+                    listParameter.Add(sqlexec.CreateInParam("@Jybm", SqlDbType.VarChar, 20, this.cboJybm.SelectedValue));
+                }
+
+                if (!string.IsNullOrEmpty(this.cboGlbm.SelectedValue))
+                {
+                    wheres.Add("[glbm] like '%'+ @glbm +'%'");
+                    listParameter.Add(sqlexec.CreateInParam("@glbm", SqlDbType.VarChar, 20, this.cboGlbm.SelectedValue));
+                }
+
+
+
+
+     if (!string.IsNullOrEmpty(this.DrpDept.SelectedValue))
+                    {
+                        wheres.Add("Dept=isnull(@Dept,Dept)");
+                        listParameter.Add(sqlexec.CreateInParam("@Dept", SqlDbType.VarChar, 20, this.DrpDept.SelectedValue == "全部" ? null : this.DrpDept.SelectedValue));
+                    }
+
+
+
+
+
+下拉菜单有全部的可选择项查询
+ if (this.cbo_Fjh.SelectedItem.Text.Length > 0)
+                {
+                    wheres.Add("Fjh=isnull(@Fjh,Fjh)");
+                    listParameter.Add(sqlexec.CreateInParam("@Fjh", SqlDbType.VarChar, 20, this.cbo_Fjh.SelectedValue == "全部" ? null  : this.cbo_Fjh.SelectedValue));
+                }
+
+
+
+
+
+
+
+   if (true)
+                    {
+                        wheres.Add("r.[Nlzrq] between @Nlzrq_ks and @Nlzrq_js");
+                        listParameter.Add(sqlexec.CreateInParam("@Nlzrq_ks", SqlDbType.VarChar, 10, txtNlzrq_ks.Text == string.Empty ? "1900-01-01" : txtNlzrq_ks.Text));
+                        listParameter.Add(sqlexec.CreateInParam("@Nlzrq_js", SqlDbType.VarChar, 10, txtNlzrq_js.Text == string.Empty ? "2222-01-01" : txtNlzrq_js.Text));
+                    }
+
+
+                    if (true)
+                    {
+                        wheres.Add("r.[Sjlzrq] between @Sjlzrq_ks and @Sjlzrq_js");
+                        listParameter.Add(sqlexec.CreateInParam("@Sjlzrq_ks", SqlDbType.VarChar, 10, txtSjlzrq_ks.Text == string.Empty ? "1900-01-01" : txtSjlzrq_ks.Text));
+                        listParameter.Add(sqlexec.CreateInParam("@Sjlzrq_js", SqlDbType.VarChar, 10, txtSjlzrq_js.Text == string.Empty ? "2222-01-01" : txtSjlzrq_js.Text));
+
+                    }
+
+
+
+
+
+
+
+
+
+                //if (this.cboGlbm.SelectedItem.Text.Length > 0)
+                //{
+                //    wheres.Add("[glbm] = @glbm");
+                //    listParameter.Add(sqlexec.CreateInParam("@glbm", SqlDbType.VarChar, 20, this.cboGlbm.SelectedValue == "全部" ? "" : this.cboGlbm.SelectedValue));
+                //}
+
+                if (this.txtZcmc.Text.Length > 0)
+                {
+                    wheres.Add("[zcmc] like '%'+ @zcmc +'%' ");
+                    listParameter.Add(sqlexec.CreateInParam("@zcmc", SqlDbType.VarChar, 80, this.txtZcmc.Text));
+                }
+                if (this.txtJyr.Text.Length > 0)
+                {
+                    wheres.Add(" [jyr] like '%'+ @jyr +'%'");
+                    listParameter.Add(sqlexec.CreateInParam("@jyr", SqlDbType.VarChar, 80, this.txtJyr.Text));
+                }
+文本框模糊查询
+                if (this.txtGhr.Text.Length > 0)
+                {
+                    wheres.Add(" [jsr] like '%'+ @ghr +'%'");
+                    listParameter.Add(sqlexec.CreateInParam("@ghr", SqlDbType.VarChar, 80, this.txtGhr.Text));
+                }
+                if (this.txtJyrq1.Text.Length > 0)
+                {
+                    wheres.Add("[jyrq] >= @jyrq1");
+                    listParameter.Add(sqlexec.CreateInParam("@jyrq1", SqlDbType.DateTime, 20, this.txtJyrq1.Text == "" ? Convert.ToDateTime("1900-01-01") : Convert.ToDateTime(this.txtJyrq1.Text)));
+                }
+                if (this.txtJyrq2.Text.Length > 0)
+                {
+                    wheres.Add("[jyrq]<= @jyrq2");
+                    listParameter.Add(sqlexec.CreateInParam("@jyrq2", SqlDbType.DateTime, 20, this.txtJyrq2.Text == "" ? Convert.ToDateTime("1900-01-01 ") : Convert.ToDateTime(this.txtJyrq2.Text)));
+                }
+
+两个日期查询
+                if (this.txtGhrq1.Text.Length > 0)
+                {
+                    wheres.Add("[ghrq] >= @ghrq1");
+                    listParameter.Add(sqlexec.CreateInParam("@ghrq1", SqlDbType.DateTime, 20, this.txtGhrq1.Text == "" ? Convert.ToDateTime("1900-01-01") : Convert.ToDateTime(this.txtGhrq1.Text)));
+                }
+                if (this.txtGhrq2.Text.Length > 0)
+                {
+                    wheres.Add("[ghrq] <= @ghrq2");
+                    listParameter.Add(sqlexec.CreateInParam("@ghrq2", SqlDbType.DateTime, 20, this.txtGhrq2.Text == "" ? Convert.ToDateTime("1900-01-01") : Convert.ToDateTime(this.txtGhrq2.Text)));
+                }
+
+
+一个日期查询
+ //if (this.txtRzsj.Text.Length > 0)
+                //{
+                //    wheres.Add("[Rzsj] = @Rzsj");
+                //    listParameter.Add(sqlexec.CreateInParam("@Rzsj", SqlDbType.DateTime, 20, Convert.ToDateTime(txtRzsj.Text).ToString("yyyy-MM-dd")));
+                //}
+
+
+
+
+
+
+                //判断用户是否选择了条件
+                if (wheres.Count > 0)
+                {
+                    string wh = string.Join(" and ", wheres.ToArray());
+                    sql.Append(" where " + wh);
+                }
+                sqlexec = null;
+              PageShow.initList(rptDataList, "[id]", currtPage, sql.ToString(), "order by id", listParameter.ToArray(), CommandType.Text);
+
+
+
+
+                //string sql;
+                //string Jybm = cboJybm.SelectedValue;
+                //if (Jybm == "全部")
+                //{
+                //    Jybm = "";
+                //}
+                //string Glbm = cboGlbm.SelectedValue;
+
+                //string Jyrq1 = "";
+                //string Jyrq2 = "";
+                //if (txtJyrq1.Text != "" && txtJyrq2.Text != "")
+                //{
+                //    Jyrq1 = txtJyrq1.Text;
+                //    Jyrq2 = txtJyrq2.Text;
+                //}
+                //else
+                //{
+                //    Jyrq1 = "1900-01-01";
+                //    Jyrq2 = "2022-12-31";
+                //}
+
+                //string Ghrq1 = "";
+                //string Ghrq2 = "";
+                //if (txtGhrq1.Text != "" && txtGhrq2.Text != "")
+                //{
+                //    Ghrq1 = txtGhrq1.Text;
+                //    Ghrq2 = txtGhrq2.Text;
+                //}
+                //else
+                //{
+                //    Ghrq1 = "1900-01-01";
+                //    Ghrq2 = "2022-12-31";
+                //}
+
+                //sql = "select * from V_gd_zctz_jy v where 1=1 and jydw like '%'+ @Jybm +'%' and zcmc like '%'+ @zcmc +'%' and jyr like '%'+ @jyr +'%' and jsr like '%'+ @ghr +'%' and jyrq between ''+ @jyrq1 +'' and ''+ @jyrq2 +''";
+                //if (Ghrq1 != "1900-01-01" && Ghrq2 != "2022-12-31")
+                //{
+                //    sql += " and ghrq between ''+ @ghrq1 +'' and ''+ @ghrq2 +''";
+                //}
+
+                //if (Glbm != "全部")
+                //{
+                //    //sql += " and (Select deptcode from ZjqFlowEmpDept where deptcode=(select glbm from gd_zctz where Zcbh=v.Zcbh))='" + Glbm + "'";
+                //    sql += " and glbm='" + Glbm + "'";
+                //}
+                //SqlExec sqlexec = new SqlExec();
+                //SqlParameter[] sqlpara = {
+                //sqlexec.CreateInParam("@jybm",SqlDbType.VarChar,50,Jybm),
+                ////sqlexec.CreateInParam("@glbm",SqlDbType.VarChar,50,Glbm),
+                //sqlexec.CreateInParam("@zcmc",SqlDbType.VarChar,50,txtZcmc.Text),
+                //sqlexec.CreateInParam("@jyr",SqlDbType.VarChar,20,txtJyr.Text),
+                //sqlexec.CreateInParam("@ghr",SqlDbType.VarChar,20,txtGhr.Text),
+                //sqlexec.CreateInParam("@jyrq1",SqlDbType.DateTime,20,Jyrq1),
+                //sqlexec.CreateInParam("@jyrq2",SqlDbType.DateTime,20,Jyrq2),
+                //sqlexec.CreateInParam("@ghrq1",SqlDbType.DateTime,20,Ghrq1),
+                //sqlexec.CreateInParam("@ghrq2",SqlDbType.DateTime,20,Ghrq2)};
+
+                //sqlexec = null;
+                //PageShow.initList(rptDataList, "[zcmc]", currtPage, sql.ToString(), "order by zcmc", sqlpara, CommandType.Text);
+
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+
+        }
+     

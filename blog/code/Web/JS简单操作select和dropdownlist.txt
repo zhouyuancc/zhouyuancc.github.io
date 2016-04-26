@@ -1,0 +1,69 @@
+   <select id="selectID" onchange="return showMessage()">
+             <option value="0">==请选择==</option>
+             <option value="1">是</option>
+             <option value="2">否</option>
+   </select>
+
+
+
+
+
+  <script type="text/javascript" language="javascript">
+          function showMessage() {
+              if (document.getElementById("selectID").options[document.getElementById("selectID").selectedIndex].value == 1) {
+                  alert("你好，你选择了第 1 个");
+                  document.getElementById("txtContractName").setAttribute("enable",false);
+              }
+              else if (document.getElementById("selectID").options[document.getElementById("selectID").selectedIndex].value == 2) {
+                  alert("你好，你选择了第 2 个");
+              }
+          }
+    </script>
+
+
+
+//js操作服务器控件dropdownlist
+
+    <asp:DropDownList ID="ddlFolder" runat="server" SkinID="ddlSkin" AutoPostBack="false" OnSelectedIndexChanged="ddlFolder_SelectedIndexChanged">    
+        <asp:ListItem Value="0">选项0</asp:ListItem>   
+  	<asp:ListItem Value="1">选项1</asp:ListItem>  
+    </asp:DropDownList>    
+    <asp:DropDownList ID="ddlFolder" runat="server" SkinID="ddlSkin" AutoPostBack="false" OnSelectedIndexChanged="ddlFolder_SelectedIndexChanged"> 
+	 <asp:ListItem Value="0">选项0</asp:ListItem>
+	 <asp:ListItem Value="1">选项1</asp:ListItem> 
+    </asp:DropDownList> 
+JS代码：
+
+document.getElementById("ddlFolder").value="0";//0为你要选中的项的value  
+
+
+
+2.根据Text值设置选中某项
+
+
+var DropDownListCurrencyNew 
+    =  document.getElementById("ddlFolder");
+for(i = 0; i < DropDownListCurrencyNew.options.length; i++)
+   {
+          if(DropDownListCurrencyNew.options[i].text == "选项0")    
+           {
+               DropDownListCurrencyNew.options[i].selected = true; 
+          }
+   }
+
+
+
+
+二：js读取DropDownList选中项的value和text
+
+
+Value：
+
+var selValue = document.getElementById("DropDownList1").options[document.getElementById("DropDownList1").selectedIndex].value;
+
+
+
+Text：
+
+var selText = document.getElementById("DropDownList1").options[document.getElementById("DropDownList1").selectedIndex].text; 
+

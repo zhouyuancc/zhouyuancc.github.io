@@ -1,0 +1,18 @@
+//判断页面上是否有name为objName的checkbox选中，如果没有则提示信息
+        function hasCheck(objName, msg) {
+            var box = document.getElementsByName(objName);
+
+            for (var i = 0; i < box.length; i++) {
+                if (box[i].checked) {
+                    return true;
+                }
+            }
+
+            if (msg) window.alert(msg);
+            window.event.returnValue = false;
+            return false;
+        }
+
+
+<asp:Button ID="btnDel" runat="server" class="FuncBtn" Text="删除" OnClientClick="return hasCheck('dgSelect','请选择一条记录！')"  
+                OnClick="btnDel_Click" />

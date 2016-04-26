@@ -1,0 +1,44 @@
+---游标
+declare @priv_type varchar(10)
+declare @user varchar(8000)
+declare @dept varchar(8000)
+declare @role varchar(8000)
+
+declare @table table(prive_type varchar(10),[user] varchar(8000),dept varchar(8000),[role] varchar(8000))
+
+declare emp_cur cursor for
+
+select priv_type,[user],dept,[role] from Zjq_Flow_Priv where flow_id=59
+
+open emp_cur
+--读取游标
+fetch emp_cur into @priv_type,@user,@dept,@role
+----------------------------------------------------------------------------
+--遍历，按遍历顺序码放
+while @@fetch_status = 0
+begin
+		insert into @table(prive_type,[user],dept,role)
+		select @priv_type,@user,@dept,col from dbo.F_ZjqSplitSTR(@role,';')
+fetch emp_cur into @priv_type,@user,@dept,@role
+end
+----------------------------------------------------------------------------
+close emp_cur
+--释放游标
+deallocate emp_cur
+
+select * from @table
+
+--select distinct min(prive_type)prive_type from @table 
+--where 
+--';'+[user] like '%;'+ 'zhouyuan' +';'+'%' 
+--or
+-- ';'+Dept like '%;'+(select deptcode from PubEmpInfo where EmpCode='zhouyuan')+';'+'%'
+-- or
+--role in(select distinct convert(varchar,b.rolecode) from PubEmpInfo a inner join
+-- PubEmpRole b on a.empcode = b.empcode where a.empcode='zhouyuan')
+
+--where role in(select distinct convert(varchar,b.rolecode) from PubEmpInfo a inner join
+-- PubEmpRole b on a.empcode = b.empcode where a.empcode='zhouyuan') or dept like '000001%'
+		
+--select * from @table where (role in(select convert(varchar,b.rolecode) from PubEmpInfo a inner join
+-- PubEmpRole b on a.empcode = b.empcode where a.empcode='zhouyuan') and role<>'') or dept like '000001%'

@@ -1,0 +1,23 @@
+
+<asp:TextBox ID="txtPName" runat="server" Width="80%" 
+
+onkeypress="if(event.keyCode==13){return false;}"
+
+></asp:TextBox>
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<input type="text" name="输入框ID" id="输入框ID" 
+
+onkeypress="if(event.keyCode==13) {btn.click();return false;}"
+
+/>
+
+//////////////////
+
+<input type="submit" name="btn" id="btn" value="提交" 
+
+onclick="alert(输入框ID.value);return false;" 
+
+/>

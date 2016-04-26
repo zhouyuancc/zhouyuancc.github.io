@@ -1,0 +1,104 @@
+Sql中判断“数据库＂、＂表＂、＂临时表＂、＂存储过程＂和列”是否存在
+http://blog.csdn.net/linux7985/article/details/5999297
+
+--判断数据库是否存在   
+IF EXISTS (SELECT * FROM MASTER..sysdatabases WHERE NAME = '库名')  
+    PRINT 'exists '   
+else   
+    PRINT 'not exists'   
+  
+--   判断要创建的表名是否存在   
+IF EXISTS (Select * From sysObjects Where Name ='表名' And Type In ('S','U'))  
+ PRINT 'exists'  
+ELSE  
+ PRINT 'not exists'  
+GO   
+  
+  
+--判断要创建临时表是否存在   
+If   Object_Id( 'Tempdb.dbo.#Test')   Is   Not   NULL--#Test 为临时表名   
+        Begin   
+            print   '存在 '   
+        End   
+Else   
+        Begin   
+            print   '不存在 '   
+        End   
+  
+---------------   
+--   判断要创建的存储过程名是否存在   
+IF EXISTS (Select * From sysObjects Where Name ='存储过程名' And Type In ('S','P'))   
+ PRINT 'exists'  
+ELSE  
+ PRINT 'not exists'  
+GO   
+--   判断列名是否存在  
+IF  EXISTS (SELECT   O.NAME AS 表名,C.NAME AS 列名  
+FROM SYSOBJECTS O INNER JOIN SYSCOLUMNS C ON O.ID=C.ID   
+WHERE O.NAME= '表名' AND C.NAME   = '列名')  
+ SELECT 'EXISTS'  
+ELSE   
+ SELECT 'NOT EXISTS'  
+  
+判断表名存在的一个函数  
+  
+   
+  
+ IF COL_LENGTH( '表名','列名') IS NULL  
+    PRINT 'not exists'  
+ELSE  
+ PRINT 'exists'  
+  
+   
+  
+注：a 是一个表，U代表是数据表类型  
+  
+类似于U的类型代码，如下所示  
+  
+对象类型：  
+  
+AF = 聚合函数 (CLR)  
+  
+C = CHECK 约束  
+  
+D = DEFAULT（约束或独立）  
+  
+F = FOREIGN KEY 约束  
+  
+PK = PRIMARY KEY 约束  
+  
+P = SQL 存储过程  
+  
+PC = 程序集 (CLR) 存储过程  
+  
+FN = SQL 标量函数  
+  
+FS = 程序集 (CLR) 标量函数  
+  
+FT = 程序集 (CLR) 表值函数  
+  
+R = 规则（旧式，独立）  
+  
+RF = 复制筛选过程  
+  
+SN = 同义词  
+  
+SQ = 服务队列  
+  
+TA = 程序集 (CLR) DML 触发器  
+  
+TR = SQL DML 触发器  
+  
+IF = SQL 内联表值函数  
+  
+TF = SQL 表值函数  
+  
+U = 表（用户定义类型）  
+  
+UQ = UNIQUE 约束  
+  
+V = 视图  
+  
+X = 扩展存储过程  
+  
+IT = 内部表  

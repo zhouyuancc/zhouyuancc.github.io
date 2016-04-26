@@ -1,0 +1,51 @@
+ 
+居中
+window.open('Index_mx_update.aspx?Name=' + name + '&bs=' + nmarking, 'newwindow', 'height=200, width=700, top='+(screen.height-500)/2+', left='+(screen.width-800)/2+', toolbar=no, menubar=no, scrollbars=yes, resizable=no,location=no, status=no');
+  
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+window.open("../../WorkFlow/New/Input.aspx?Flow_Id=" + getQueryString("Flow_id") + "&Form_id=" + getQueryString("Form_id") + "&Run_Id=" + data, "_self", "menubar=0,toolbar=0,scrollbars=no,status=0,resizable=1")
+
+
+
+frmEmpInfoAdd
+
+$(document).ready(function () {
+            //alert('<%=IsShow %>');
+            if ('<%=IsShow %>' == "yes") {
+                $("#Fzjs").show();
+            }
+            else {
+                $("#Fzjs").hide();
+            }
+        });
+
+
+
+
+<input type="button" value="全屏" language="JavaScript" onClick="window.open('List/<%=Request.QueryString["flag"].ToString()%>.swf','newwindow','width='+(window.screen.availWidth-10)+',height='+(window.screen.availHeight-30)+ ',top=0,left=0,status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes')" class="SmallButton">&nbsp;&nbsp;
+
+<input type="button" value="重新开始" language="JavaScript" onClick="location.reload()" class="BigButton">&nbsp;&nbsp;
+
+<input type="button" value="返回" language="JavaScript" onClick="location='index.php'" class="BigButton">
+
+<input type="button" value="返回" class="SmallButton" onclick="javascript:window.location.href='Game.aspx';">
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ window.open全屏
+
+1. window.open(url,'资金计划项超支提醒','width='+(window.screen.availWidth-10)+',height='+(window.screen.availHeight-30)+ ',top=0,left=0,resizable=yes,status=yes,menubar=no,scrollbars=yes');
+
+2.window.open   弹出新窗口的命令；  
+  'page.html'   弹出窗口的文件名；  
+  'newwindow'   弹出窗口的名字（不是文件名），非必须，可用空''代替；  
+  height=100   窗口高度；  
+  width=400   窗口宽度；  
+  top=0   窗口距离屏幕上方的象素值；  
+  left=0   窗口距离屏幕左侧的象素值；  
+  toolbar=no   是否显示工具栏，yes为显示；  
+  menubar，scrollbars   表示菜单栏和滚动栏。  
+  resizable=no   是否允许改变窗口大小，yes为允许；  
+  location=no   是否显示地址栏，yes为允许；  
+  status=no   是否显示状态栏内的信息（通常是文件已经打开），yes为允许；

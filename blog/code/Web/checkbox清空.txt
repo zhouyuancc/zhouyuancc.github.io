@@ -1,0 +1,14 @@
+
+催报管理
+Cbgl/Proselect
+
+function clearAll() {
+                var objList = document.getElementsByName("dgSelect");
+                for (i = 0; i < objList.length; i++) {
+                    objList[i].checked = false;
+                }
+            }
+
+
+
+<input type="button" onclick="clearAll()" value="清空" class="buttonStyle" />

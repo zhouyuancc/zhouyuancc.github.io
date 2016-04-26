@@ -1,0 +1,12 @@
+data[0].EmpName    /////XX1;XX2;XX3;XX4;
+var str = data[0].EmpName.split(";");
+
+/////XX2;XX3;XX4;
+var Jbrname = data[0].EmpName.replace(str[0].toString() + ";", "")
+
+///str[0].toString()//////XX1;
+
+Àý
+var str = "Visit Microsoft!"
+var a = "Microsoft";
+alert(str.replace(a, "W3School"))

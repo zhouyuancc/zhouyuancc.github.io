@@ -1,0 +1,27 @@
+
+文本框如何初始化的时候清空里面的历史记录？
+
+<input   id= "T1 "   class= "bbox "   type= "text "   name= "T1 "   size= "24 "  
+
+
+ autocomplete=off  
+
+ > 
+
+
+
+
+<td width="5%" align="right" valign="middle">
+<asp:Label ID="lblMenuPno" runat="server" Text="编号："></asp:Label>
+</td>
+
+<td width="15%" align="left" valign="middle">
+<asp:TextBox ID="txtParaCode" runat="server" Width="95%" TabIndex="1"
+
+
+ Autocomplete=off
+
+
+
+></asp:TextBox>
+</td>

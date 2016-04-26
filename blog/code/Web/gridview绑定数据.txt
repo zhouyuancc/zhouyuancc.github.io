@@ -1,0 +1,56 @@
+private DataSet GetData()
+        {
+
+            //string sql = "select (case when Lb ='0' then '项目' when lb='1' then'专业' end) lx,b.Id as rwid,* from Rs_Jx_rwxx_kh a inner join Rs_Jx_rwxx b on a.Rwxx_id=b.Id";
+             string sql = "Select * from (";
+
+             sql += "select (select b.DeptName from PubDeptInfo  b where c.bm=b.DeptId) as DeptName ,";
+             sql += "(select d.EmpName from PubEmpInfo d where b.Xm=d.EmpCode) as Empname, ";
+
+             sql += "isnull(a.Khr,'') mykhr, ";
+
+             sql += "(case when a.Khlx ='0' then '未按时提交工作单' when a.Khlx='1' then'审批过程超时' when a.Khlx='2' then'领导考核' end) myKhlx, ";
+             sql += "(case when a.Zt ='0' then '考核' when a.Zt='1' then'不考核' end) myzt, ";
+             sql += "(case when b.Lb ='0' then '项目' when b.lb='1' then'专业' end) lx, ";
+             sql += "b.Id as rwid,  a.Id ,Khlx ,Khsm ,a.Khje ,a.Khfs ,a.Rq,a.Khr,a.Zt,a.Wkhyy,a.Whr,a.Whrq,c.bm as bm,b.Rwdbh ";
+             sql += " from Rs_Jx_rwxx_kh a,Rs_Jx_rwxx b,Rs_Jx_rwmb c ";
+             sql += " where a.Rwxx_id=b.Id and b.Rwdbh=c.Rwdbh";
+
+             sql += " ) e where ";
+
+             sql += " mykhr  like '%' + @Khr + '%' and bm like '%' + @Bm + '%'";
+             //sql += " bm like '%' + @Bm + '%'";
+
+             if (Drplx.SelectedValue == "1")
+                 sql += " and (lx<>'1' or lx is null)";
+
+             else if (Drplx.SelectedValue == "2")
+                 sql += " and lx='1'";
+            
+             if (txtQdrq1.Text != "" && txtQdrq2.Text != "")
+             {
+                 sql += " and Rq between @Qdrq1 and @Qdrq2";
+             }
+             else if (txtQdrq1.Text != "" && txtQdrq2.Text == "")
+             {
+                 sql += " and Rq >= @Qdrq1 ";
+             }
+             else if (txtQdrq1.Text == "" && txtQdrq2.Text != "")
+             {
+                 sql += " and Rq <= @Qdrq1 ";
+             }
+
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] parms = 
+                {
+             //==""?null:txtName.Text
+                    sqlexec.CreateInParam("@Khr",SqlDbType.VarChar,50,txtName.Text),
+                    sqlexec.CreateInParam("@Bm",SqlDbType.VarChar,50,DrpBm.SelectedValue=="全部"?"":this.DrpBm.SelectedValue),
+                    sqlexec.CreateInParam("@Qdrq1",SqlDbType.VarChar,50,txtQdrq1.Text),
+                    sqlexec.CreateInParam("@Qdrq2",SqlDbType.VarChar,50,txtQdrq2.Text),
+                    sqlexec.CreateInParam("@lx",SqlDbType.VarChar,1,Drplx.SelectedValue=="全部"?"":this.Drplx.SelectedValue)
+                };
+            DataSet ds = SqlExec.ExecuteDataSet(sql, CommandType.Text, parms);
+            //Response.Write(sql);
+            return ds;
+        }

@@ -1,0 +1,17 @@
+      
+   //根据id="buttons" 强制执行 css样式 !important
+
+   #buttons
+   {
+      background:transparent !important;
+    }
+
+
+            <td id="buttons" align="right" style="float: right;">
+                <input type="button" id="cb" onclick="javascript:cuiBan();" value="催办" class="SmallButton" />
+                <input type="button" value="刷新" class="SmallButton" onclick="main.window.location.reload();" />
+                <input type="button" value="打印" class="SmallButton" onclick="window.print();" />
+                <input type="button" value="关闭" class="SmallButton" onclick="javascript:closeWindow();" />
+                &nbsp;&nbsp;&nbsp;
+                <input type="hidden" id="smssage" runat="server" />
+            </td>

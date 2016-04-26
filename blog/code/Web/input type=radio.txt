@@ -1,0 +1,21 @@
+http://www.w3school.com.cn/tags/att_input_type.asp
+////////////////////////////////////////////////////////
+<td align="left">
+                                <input type="radio" name="RadioList" value="0" style="width: auto; height: auto;
+                                    border: none; float: left;" checked="checked" />
+                                送领导批阅
+                            </td>
+                            <td align="left">
+                                <input type="radio" name="RadioList" value="1" style="width: auto; height: auto;
+                                    border: none; float: left;" />
+                                直接分发传阅
+                            </td>
+
+
+////////////////////////////////////////////////////////
+ var RadioList = document.getElementsByName("RadioList");
+            for (var i = 0; i < RadioList.length; i++) {
+                if (RadioList[i].checked)
+                    Radio = RadioList[i].value;
+            }
+//            alert(Radio)

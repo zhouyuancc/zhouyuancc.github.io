@@ -1,0 +1,19 @@
+js  —个按钮点击(onclick)后，来触发另一个按钮的onclick事件 
+
+方法之一：
+<a href="#" name="aa" id="aa" onClick="alert('haha')">点击</a>
+<br><br><br>
+<a href="#" onClick="document.getElementById('aa').click();">fff</a>
+
+
+方法之二：
+<a href="#" name="aa" id="aa" onClick="alert('haha')">点击</a>
+<br><br><br>
+<a href="#" onClick="document.getElementById('aa').onclick();">fff</a>
+
+
+方法之三：
+<a href="#" name="aa" id="aa" onClick="alert('haha')">点击</a>
+<br><br><br>
+<a href="#" onClick="setTimeout(document.getElementById('aa').onclick,0);">fff</a>
+ 

@@ -1,0 +1,43 @@
+  function formsubmit() {
+            if (document.getElementById("txtHtbh").value == "") {
+                alert("合同编号不能为空，请选择！ ");
+                document.getElementById("txtHtbh").focus();
+                return false;
+            }
+            if (document.getElementById("txtFpbh").value == "") {
+                alert("发票编号不能为空！ ");
+                document.getElementById("txtScbh").focus();
+                return false;
+            }
+          if (document.getElementById("txtKprq").value == "") {
+                alert("开票日期不能为空！ ");
+                document.getElementById("txtKprq").focus();
+                return false;
+            }
+           
+
+            if (document.getElementById("txtDw").value == "") {
+                alert("单位不能为空！ ");
+                document.getElementById("txtDw").focus();
+                return false;
+            }
+           
+            if (document.getElementById("txtKpje").value == "") {
+                alert("开票金额不能为空！");
+                document.getElementById("txtKpje").focus();
+                return false;
+            }
+            if (document.getElementById("txtBhsje").value == "") {
+                alert("开票金额（不含税）不能为空！ ");
+                document.getElementById("txtBhsje").focus();
+                return false;
+            }
+            
+             if (document.getElementById("txtBhsje").value < document.getElementById("txtKpje").value ) 
+             {
+                alert("开票金额（不含税）不能大于开票金额");
+                document.getElementById("txtKpje").focus();
+                return false;
+            }
+            
+        }    

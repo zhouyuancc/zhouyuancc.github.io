@@ -1,0 +1,243 @@
+
+
+前台 
+
+
+
+
+                                        <td width="8%" align="right" valign="middle">
+                                            <asp:Label ID="lblMenuPno" runat="server" Text="材料大类编号："></asp:Label>
+                                        </td>
+                                        <td width="15%" align="left" valign="middle">
+                      
+                                            <asp:DropDownList ID="DrpCldlbh" runat="server" Width="95%" AutoPostBack="True" 
+                                                onselectedindexchanged="DrpCldlbh_SelectedIndexChanged" >
+                                        
+                                                
+                                            </asp:DropDownList>
+
+                                        </td>
+                                        
+                                         
+                                        <td width="8%" align="right" valign="middle">
+                                        
+                                            <asp:Label ID="lblMenuPname" runat="server" Text="材料大类名称："></asp:Label>
+                                        </td>
+                                        <td width="15%" align="left" valign="middle">
+                                            <asp:TextBox ID="txtCldl" runat="server" Width="95%" TabIndex="2"></asp:TextBox>
+                                        </td>
+                                        
+
+
+
+后台
+
+
+
+if (!Page.IsPostBack)
+            {
+                DrpBind();
+                this.BindData();
+            }
+
+
+
+
+
+
+        //从另一个表中绑定添加下拉框的数据
+        private void DrpBind()
+        {
+            string strsql = "select ParaCode,ParaName from PubParameter where ParaType='材料大类'";
+            DataSet rs = SqlExec.ExecuteDataSet(strsql);
+            DrpCldlbh.DataSource = rs;
+            DrpCldlbh.DataValueField = "ParaCode";//后台
+            DrpCldlbh.DataTextField = "ParaName";//显示            
+            DrpCldlbh.DataBind();
+            DrpCldlbh.Items.Insert(0, " ");
+        }
+
+
+
+
+ //绑定数据
+        protected void DrpCldlbh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string strsql = "select ParaCode,ParaName from PubParameter where ParaType='材料大类' and ParaCode= '" + DrpCldlbh.SelectedItem.Text + "'";
+            IDataReader rs = SqlExec.ExecuteReader(strsql);
+                if (rs.Read())
+                {
+                 
+
+                    txtCldl.Text = rs["ParaName"].ToString();
+ 
+                }
+                rs.Close();
+               
+            
+
+        }
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+前台
+
+
+SelfAffair.djqk.aspx 点击情况
+
+
+ <td width="5%" align="right" valign="middle">
+                                            <asp:Label ID="mkmc" runat="server" Text="模块名称："></asp:Label>
+                                        </td>
+                                        <td width="10%" align="left" valign="middle">
+                      
+                                            <asp:DropDownList ID="Drpmkmc" runat="server" Width="95%" AutoPostBack="True" 
+                                                onselectedindexchanged="Drpmkmc_SelectedIndexChanged" > 
+                                                 
+                                                <asp:ListItem >全部</asp:ListItem>
+                                        
+                                                
+                                            </asp:DropDownList>
+
+                                        </td>
+                                          <td width="5%" align="right" valign="middle">
+                                            <asp:Label ID="czmc" runat="server" Text="操作名称："></asp:Label>
+                                        </td>
+                                        <td width="10%" align="left" valign="middle">
+                      
+                                            <asp:DropDownList ID="Drpczmc" runat="server" Width="95%" > 
+                                                 
+                                                <asp:ListItem>全部</asp:ListItem>
+                                        
+                                                
+                                            </asp:DropDownList>
+
+                                        </td>
+                                          <td width="5%" align="right" valign="middle">
+                                            <asp:Label ID="ry" runat="server" Text="姓名："></asp:Label>
+                                        </td>
+                                        <td width="10%" align="left" valign="middle">
+                      
+                                            <asp:DropDownList ID="Drpry" runat="server" Width="95%" > 
+                                                 
+                                                <asp:ListItem>全部</asp:ListItem>
+                                        
+                                                
+                                            </asp:DropDownList>
+
+                                        </td>
+
+
+
+后台
+
+
+ protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                DrpBind();
+                Drpcz();
+                Drpxm();
+                BindGrid(false);
+            }
+        }
+
+
+  //从pubhistory表中绑定下拉框mkmc的数据
+        private void DrpBind()
+        {
+            string strsql = "select mkmc from dbo.pubhistory group by mkmc";
+            DataSet rs = SqlExec.ExecuteDataSet(strsql);
+            Drpmkmc.DataSource = rs;
+            Drpmkmc.DataValueField = "mkmc";//后台
+            Drpmkmc.DataTextField = "mkmc";//显示            
+            Drpmkmc.DataBind();
+            Drpmkmc.Items.Insert(0, "全部");
+        }
+
+
+        //从另一个表中绑定添加下拉框的数据
+        private void Drpcz()
+        {
+            string strsql = "select czmc from dbo.pubhistory group by czmc";
+            DataSet rs = SqlExec.ExecuteDataSet(strsql);
+            Drpczmc.DataSource = rs;
+            Drpczmc.DataValueField = "czmc";//后台
+            Drpczmc.DataTextField = "czmc";//显示            
+            Drpczmc.DataBind();
+            Drpczmc.Items.Insert(0, "全部");
+        }
+       
+
+
+        protected void Drpmkmc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Drpmkmc.SelectedItem.Text == "全部")
+            {
+                Drpcz();
+            }
+            else 
+            {
+           
+                string sql = "select czmc from pubhistory where mkmc='" + Drpmkmc.SelectedValue + "'group by czmc";
+            
+                    DataSet ds = SqlExec.ExecuteDataSet(sql);
+                    this.Drpczmc.DataSource = ds;
+                    this.Drpczmc.DataMember = ds.Tables[0].TableName;
+                    this.Drpczmc.DataTextField = "czmc";
+                    this.Drpczmc.DataValueField = "czmc";
+                    this.Drpczmc.DataBind();
+                    this.Drpczmc.Items.Insert(0, "全部");
+            }
+        }
+       
+    
+
+        //从pubhistory表中绑定添加下拉框的数据
+        private void Drpxm()
+        {
+            string strsql = "select ry from dbo.pubhistory group by ry";
+            DataSet rs = SqlExec.ExecuteDataSet(strsql);
+            Drpry.DataSource = rs;
+            Drpry.DataValueField = "ry";//后台
+            Drpry.DataTextField = "ry";//显示            
+            Drpry.DataBind();
+            Drpry.Items.Insert(0, "全部");
+        }
+
+
+        /// <summary>
+        /// 从数据库中获取数据
+        /// </summary>
+        private DataSet GetData()
+        {
+
+            string sql = @"select * from pubhistory where ";
+
+
+            sql += "  mkmc=isnull(@mkmc,mkmc)";
+            sql += " and czmc=isnull(@czmc,czmc)";
+            sql += " and ry=isnull(@ry,ry)";
+            sql += " order by clickcount desc";
+
+
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] parms = 
+                {
+                    
+                    sqlexec.CreateInParam("@mkmc",SqlDbType.VarChar,100,Drpmkmc.SelectedItem.Text=="全部" ? null :Drpmkmc.SelectedItem.Text),
+                    sqlexec.CreateInParam("@czmc",SqlDbType.VarChar,100,Drpczmc.SelectedItem.Text=="全部" ? null :Drpczmc.SelectedItem.Text),
+                    sqlexec.CreateInParam("@ry",SqlDbType.VarChar,100,Drpry.SelectedItem.Text=="全部" ? null :Drpry.SelectedItem.Text),
+
+                };
+            DataSet ds = SqlExec.ExecuteDataSet(sql, CommandType.Text, parms);
+            return ds;
+        }
+
+
+
+

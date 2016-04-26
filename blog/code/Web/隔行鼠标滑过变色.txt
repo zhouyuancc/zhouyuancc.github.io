@@ -1,0 +1,55 @@
+ 
+<table id="datatable"> 
+<tr> 
+<td>重云岻社</td> 
+</tr> 
+<tr> 
+<td>www.jb51.net</td> 
+</tr> 
+<tr> 
+<td>重云岻社</td> 
+</tr> 
+<tr> 
+<td>www.jb51.net</td> 
+</tr> 
+<tr> 
+<td>重云岻社</td> 
+</tr> 
+<tr> 
+<td>www.jb51.net</td> 
+</tr> 
+<tr> 
+<td>重云岻社</td> 
+</tr> 
+<tr> 
+<td>www.jb51.net</td> 
+</tr> 
+</table> 
+<script> 
+function showtable(){ 
+var color1 = "rgb(234,240,255)"; 
+var color2 = "rgb(255,255,255)"; 
+var bgColor = "rgb(255,255,193)"; 
+var trs = document.getElementById("datatable").getElementsByTagName("tr"); 
+for (var i=0;i<trs.length-1;i++){ 
+if (i%2==0) { 
+trs[i].style.backgroundColor=color1; 
+trs[i].onmouseover = function(){ 
+this.style.backgroundColor = bgColor; 
+} 
+trs[i].onmouseout = function(){ 
+this.style.backgroundColor = color1; 
+} 
+} else { 
+trs[i].style.backgroundColor=color2; 
+trs[i].onmouseover = function(){ 
+this.style.backgroundColor = bgColor; 
+} 
+trs[i].onmouseout = function(){ 
+this.style.backgroundColor = color2; 
+} 
+} 
+} 
+} 
+showtable() 
+</script> 

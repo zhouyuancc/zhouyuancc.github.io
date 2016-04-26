@@ -1,0 +1,47 @@
+
+http://pylqy.blog.163.com/blog/static/985732452012626102413714/
+
+iframe之局部刷新  
+
+例如: <iframe src="1.htm" name="ifrmname" id="ifrmid"></iframe>
+
+方案一:用iframe的name属性定位
+<input type="button" name="Button" value="Button" onclick="document.frames('ifrmname').location.reload()">
+或
+<input type="button" name="Button" value="Button" onclick="document.all.ifrmname.document.location.reload()">
+
+方案二:用iframe的id属性定位
+<input type="button" name="Button" value="Button" onclick="ifrmid.window.location.reload()">
+
+方案三:当iframe的src为其它网站地址(跨域操作时)
+<input type="button" name="Button" value="Button" onclick="window.open(document.all.ifrmname.src,'ifrmname','')">
+
+方案四:通过和替换iframe的src来实现局部刷新
+可以用document.getElementById("iframname").src=""来进行iframe得重定向；
+
+>>>>>test.html>>>>>>>>>>>
+<html>
+<head>
+<title>iframe test</title>
+<script type="text/javascript">
+function partRefresh() {
+document.getElementById("iframe1Id").src="2.html"; // 方法一: 通过和替换iframe的src来实现局部刷新
+}
+</script>
+</head>
+<body>
+<table border="1" width="90%" align="center">
+<tr style="background:#F0F0E4">
+<td>方格1</td>
+<td>方格2</td>
+<td>方格3</td>
+</tr>
+<tr>
+<td><iframe src="1.html" id="iframe1Id" name="iframe1Name" width="100%"></iframe></td>
+<td><iframe src="2.html" id="iframe2Id" name="iframe2Name" width="100%"></iframe></td>
+<td><iframe src="3.html" id="iframe3Id" name="iframe3Name" width="100%"></iframe></td>
+</tr>
+</table><br><br>
+<input type="button" value="IFRAME局部刷新" style="margin-left:70px;" onclick="partRefresh();">
+</body>
+</html>

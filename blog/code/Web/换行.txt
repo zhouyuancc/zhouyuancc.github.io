@@ -1,0 +1,21 @@
+
+单独一列换行
+
+在RowDataBound中添加上了一句
+e.Row.Cells[2].Style.Add("word-break", "break-all")
+
+
+
+所有列换行（不局限于GridView）
+
+protected void Page_Load(object sender, EventArgs e)
+ 2  {
+ 3     //正常换行
+ 4     GridView1.Attributes.Add("style", "word-break:keep-all;word-wrap:normal");
+ 5     //下面这行是自动换行（强制）
+ 6     GridView1.Attributes.Add("style", "word-break:break-all;word-wrap:break-word");
+ 7     if (!IsPostBack)
+ 8      {
+ 9          bind();//调用数据绑定即可
+10     }
+11 }

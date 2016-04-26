@@ -1,0 +1,26 @@
+ 
+///数据库获取表后取其中一行一列对应的值ds.Rows[0]["code"].ToString()
+
+           DataTable ds = new DataTable();
+            int NewFlowd_id = int.Parse(Flow_id);
+            string sql = "";
+
+            sql = @"exec P_Select_Auto @Flow_Id,@User,@Prcs_id,@Run_Id,@Flow_prcs";
+            SqlExec sqlexecTurn_Next = new SqlExec();
+            SqlParameter[] parmsTurn_Next = {
+                        sqlexecTurn_Next.CreateInParam("@Flow_id", SqlDbType.Int,6, NewFlowd_id),
+                        sqlexecTurn_Next.CreateInParam("@User",SqlDbType.VarChar,20,Empcode),
+                        sqlexecTurn_Next.CreateInParam("@Prcs_id", SqlDbType.Int, 6, Prcs_id),
+                        sqlexecTurn_Next.CreateInParam("@Run_Id", SqlDbType.Int, 6, Run_Id),
+                        sqlexecTurn_Next.CreateInParam("@Flow_prcs", SqlDbType.Int, 6, Flow_prcs)
+                                                   };
+            ds = SqlExec.ExecuteDataSet(sql, CommandType.Text, parmsTurn_Next).Tables[0];
+
+            if (ds.Rows[0]["code"].ToString() != "")//自动选人有值
+            {
+                return WebUtil.ToJsonResult(0, "success", ds);
+            }
+            else
+            {
+
+            }

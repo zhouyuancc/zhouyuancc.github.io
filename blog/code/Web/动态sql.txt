@@ -1,0 +1,84 @@
+--动态语句语法
+/******************************************************************************************************************************************************
+动态语句语法:exec\sp_executesql语法
+
+整理人：中国风(Roy)
+
+日期:2008.06.06
+******************************************************************************************************************************************************/
+--动态语句语法:
+
+--方法1查询表改为动态
+select * from sysobjects
+exec('select ID,Name from sysobjects')
+exec sp_executesql N'select ID,Name from sysobjects'--多了一个N为unicode
+
+--方法2:字段名，表名，数据库名之类作为变量时,用动态SQL 
+declare @FName varchar(20)
+set @FName='ID'
+exec('select '+@FName+' from sysobjects where '+@FName+'=5' )
+
+
+declare @s varchar(1000)
+set @s=N'select '+@FName+' from sysobjects where '+@FName+'=5'
+exec sp_executesql @s--会报错
+
+
+declare @s nvarchar(1000)--改为nvarchar
+set @s=N'select '+@FName+' from sysobjects where '+@FName+'=5'
+exec sp_executesql @s--成功
+
+
+--方法3:输入参数
+
+declare @i int,@s nvarchar(1000)
+set @i=5
+exec('select ID,Name from sysobjects where ID='+@i)
+
+set @s='select ID,Name from sysobjects where ID=@i'
+exec sp_executesql @s,N'@i int',@i--此处输入参数要加上N
+
+--方法4:输出参数
+
+declare @i int,@s nvarchar(1000)
+set @s='select @i=count(1) from sysobjects'
+
+--用exec
+exec('declare @i int '+@s+' select @i')--把整个语句用字符串加起来执行
+
+--用sp_executesql
+exec sp_executesql @s,N'@i int output',@i output--此处输出参数要加上N
+select @i
+
+
+--方法5:输入输出
+
+--用sp_executesql
+declare @i int,@con int,@s nvarchar(1000)
+set @i=5
+select @s='select @con=count(1) from sysobjects where ID>@i'
+exec sp_executesql @s,N'@con int output,@i int',@con output ,@i 
+select @con
+
+--用exec
+declare @i int,@s nvarchar(1000)
+set @i=5
+select @s='declare @con int select @con=count(1) from sysobjects where ID>'+rtrim(@i)+' select @con'
+exec(@s)
+
+
+
+
+
+
+
+--try
+declare @tablename varchar(20)
+declare @name varchar(370) 
+declare @addr varchar(20) 
+declare @adddate varchar(20) 
+declare @sql nvarchar(2000)
+declare @id int
+set @sql= 'select @name=tname,@addr=address,@adddate=adddate from '+@tablename+' where id='+@id 
+exec sp_executesql @sql,N'@name varchar(370) output,@addr varchar(20) output,@adddate varchar(20),output'
+,@name output,@addr output,@adddate output

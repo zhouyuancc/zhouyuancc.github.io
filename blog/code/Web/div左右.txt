@@ -1,0 +1,73 @@
+.wrapper{
+margin: 0;
+line-height:45px;
+padding:4px 0px;
+clear:both;
+}
+
+.divleft {
+float: left;
+padding:0px 15px; width:85px; text-align:right; color:#000;
+margin-right: -100%;
+}
+
+.divright {
+float: left;
+width: 100%;
+margin:0 auto;
+}
+
+.divrightcontent 
+{
+padding:4px 0px;
+margin-left: 115px;/*==等于左边栏宽度值==*/
+}
+
+//会议纪要
+<div class="wrapper">
+                                <div class="divleft">
+                                    内容</div>
+                                <div class="divright">
+                                    <div class="divrightcontent">
+---------------------------------------------------------------------------------------------
+                                        <textarea name="myContent" id="txtContent" runat="server" rows="8" cols="60" class="textArea"></textarea>
+                                            <script type="text/javascript">    //<![CDATA[
+                                                window.CKEDITOR_BASEPATH = '../editor/';
+                                                    //]]></script>
+                                            <script type="text/javascript">    //<![CDATA[
+                                                window.HTML_MODEL_TYPE = '14';
+                                                    //]]></script>
+                                            <script type="text/javascript" src="../editor/ckeditor.js?t=B5GJ5GG"></script>
+                                            <script type="text/javascript">    //<![CDATA[
+                                                CKEDITOR.replace('txtContent', { "model_type": "14", "width": "100%", "height": "350", "toolbar": "Default", "language": "zh-CN" });
+                                                    //]]></script>
+---------------------------------------------------------------------------------------------
+                                    </div>
+                                </div>
+                            </div>
+/////////////////////////////////////////////////////////////////////////////////////////////
+                            <div class="wrapper">
+                                <div class="divleft">
+                                    附件</div>
+                                <div class="divright">
+                                    <div class="divrightcontent">
+---------------------------------------------------------------------------------------------
+                                        <div class="panel panel-default" style="width: 100%; border-color: Gray;">
+                                            <div class="panel-heading" style="text-align: left">
+                                                <font style="font-size: small; font-weight: bold; color: Black">
+                                                    <label>
+                                                        <a style="cursor: hand; color: #428BCA;" onclick="attachAction.openWin()">上传附件</a></label></font>
+                                            </div>
+                                            <div class="panel-body">
+                                                <table class="table table-bordered" width="100%">
+                                                    <tbody id="tbody">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <a href="#" onclick='deleteAttach();'></a>
+---------------------------------------------------------------------------------------------
+                                    </div>
+                                </div>
+                            </div>
+

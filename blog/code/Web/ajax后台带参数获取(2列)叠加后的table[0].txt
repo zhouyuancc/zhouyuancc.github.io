@@ -1,0 +1,99 @@
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            ListCss.Attributes.Add("href", "/App_Themes/" + UiCss.CssName);
+
+
+            string concurrent = Request["type"] != null ? Request["type"].ToString() : "";
+            switch (concurrent)
+            {
+                case "Concurrent": Concurrent(); break;
+                case "GetPrcsName": GetPrcsName(); break;
+                case "GatherNode": GatherNode(); break;
+                case "SendBack": SendBack(); break;
+                default: break;
+            }
+
+        }
+
+        //判断是否是退回操作
+        private void SendBack()
+        {
+            int Prcs_id = Request["Prcs_id"] != null ? Convert.ToInt16(Request["Prcs_id"].ToString()) : 0;
+            string Run_Id = Request["Run_Id"] != null ? Request["Run_Id"].ToString() : "";
+            int flow_prcs = Request["flow_prcs"] != null ? Convert.ToInt16(Request["flow_prcs"].ToString()) : 0;
+
+            string sql = @"declare @test varchar(max)
+                        set @test=''
+                        declare @EmpName varchar(max)
+                        set @EmpName=''
+                        select @test=@test+ user_id+',',@EmpName=@EmpName+ EmpName+';' from( select distinct a.user_id,b.EmpName,a.op_flag from Zjq_Flow_Run_Prcs a inner join V_EmpInfoLogin b on a.User_id=b.EmpCode where a.run_id=@Run_id and a.prcs_id < @Prcs_id and a.flow_prcs = @Flow_prcs)z order by op_flag desc
+                        select @test Code,@EmpName EmpName";
+
+            SqlExec sqlexecSendBack = new SqlExec();
+            SqlParameter[] parm = {
+                                   sqlexecSendBack.CreateInParam("@Run_id", SqlDbType.Int, 4,  Run_Id),
+                                   sqlexecSendBack.CreateInParam("@Prcs_id", SqlDbType.Int, 4,  Prcs_id),
+                                   sqlexecSendBack.CreateInParam("@Flow_prcs",SqlDbType.VarChar,1,flow_prcs)
+                                  };
+            //string ZJbr = SqlExec.ExecuteScalar(sql, CommandType.Text, parm);
+            DataTable dt = SqlExec.ExecuteDataSet(sql,CommandType.Text,parm).Tables[0];
+
+            string data = "[";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                data += "{";
+                for (int j = 0; j < dt.Columns.Count; j++)
+                {
+                    data += "\"";
+                    data += dt.Columns[j].ColumnName;
+                    data += "\":\"";
+                    data += dt.Rows[i][j].ToString();
+                    data += "\",";
+                }
+                data = data.Substring(0, data.Length - 1);
+                data += "},";
+            }
+            data = data.Substring(0, data.Length - 1) + "]";
+
+            Response.Write(data);
+            Response.End();
+        
+        }
+
+
+
+//////判断 退回操作 自动选人/////////////////////////////////////////////////////////////////////////////
+//                        alert("prcs_id " + getQueryString("Prcs_id") + "flow_prcs " + id + "run_id " + getQueryString("run_id"));
+                        //判断这一步是否是退回
+                        $.ajax({
+                            type: "POST",
+                            url: "Turn_Next_Concurrent.aspx?type=SendBack&run_id=" + getQueryString("run_id") + "&Prcs_id=" + getQueryString("Prcs_id") + "&flow_prcs=" + id,
+                            cache: false,
+                            async: false,
+                            dataType: "json",
+                            success: function (data) {
+                                //                                alert(data[0].Code.length);
+
+                                if (data[0].Code.length > 0) {
+                                    var str = data[0].EmpName.split(";");
+                                    var Zbrname = str[0].toString();
+                                    var Jbrname = data[0].EmpName.replace(Zbrname + ";", "")
+                                  
+                                    var strCode = data[0].Code.split(",");
+                                    var ZbrCode = strCode[0].toString();
+                                    var JbrCode = data[0].Code.replace(ZbrCode + ",", "")
+
+//                                    alert("ZbrCode "+ZbrCode);
+//                                    alert("JbrCode " + JbrCode);
+
+                                    $("#Zbr" + id + "").html("&nbsp;主办人：" + Zbrname);
+                                    $("#Val" + id + "").val(ZbrCode);
+                                    ////
+                                    $("#Agent" + id + "").html("&nbsp;经办人：" + Jbrname);
+                                    $("#Text" + id + "").val(JbrCode);
+
+                                }
+
+                            }
+                        })
+////////////////////////////////////////////////////////////////////////////////////////////////////////////

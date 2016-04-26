@@ -1,0 +1,321 @@
+http://blog.csdn.net/baiduandxunlei/article/details/9180075
+
+Sql 中常用日期转换Convert(Datetime)
+
+CONVERT(data_type,expression[,style]) 
+convert(varchar(10),字段名,转换格式)
+
+说明:
+此样式一般在时间类型(datetime,smalldatetime)与字符串类型(nchar,nvarchar,char,varchar)
+相互转换的时候才用到.
+
+语句 结果
+SELECT CONVERT(varchar(100), GETDATE(), 0) 07 15 2009 4:06PM
+SELECT CONVERT(varchar(100), GETDATE(), 1) 07/15/09
+SELECT CONVERT(varchar(100), GETDATE(), 2) 09.07.15
+SELECT CONVERT(varchar(100), GETDATE(), 3) 15/07/09
+SELECT CONVERT(varchar(100), GETDATE(), 4) 15.07.09
+SELECT CONVERT(varchar(100), GETDATE(), 5) 15-07-09
+SELECT CONVERT(varchar(100), GETDATE(), 6) 15 07 09
+SELECT CONVERT(varchar(100), GETDATE(), 7) 07 15, 09
+SELECT CONVERT(varchar(100), GETDATE(), 8) 16:06:26
+SELECT CONVERT(varchar(100), GETDATE(), 9) 07 15 2009 4:06:26:513PM
+SELECT CONVERT(varchar(100), GETDATE(), 10) 07-15-09
+SELECT CONVERT(varchar(100), GETDATE(), 11) 09/07/15
+SELECT CONVERT(varchar(100), GETDATE(), 12) 090715
+SELECT CONVERT(varchar(100), GETDATE(), 13) 15 07 2009 16:06:26:513
+SELECT CONVERT(varchar(100), GETDATE(), 14) 16:06:26:513
+SELECT CONVERT(varchar(100), GETDATE(), 20) 2009-07-15 16:06:26
+SELECT CONVERT(varchar(100), GETDATE(), 21) 2009-07-15 16:06:26.513
+SELECT CONVERT(varchar(100), GETDATE(), 22) 07/15/09 4:06:26 PM
+SELECT CONVERT(varchar(100), GETDATE(), 23) 2009-07-15
+SELECT CONVERT(varchar(100), GETDATE(), 24) 16:06:26
+SELECT CONVERT(varchar(100), GETDATE(), 25) 2009-07-15 16:06:26.513
+SELECT CONVERT(varchar(100), GETDATE(), 100) 07 15 2009 4:06PM
+SELECT CONVERT(varchar(100), GETDATE(), 101) 07/15/2009
+SELECT CONVERT(varchar(100), GETDATE(), 102) 2009.07.15
+SELECT CONVERT(varchar(100), GETDATE(), 103) 15/07/2009
+SELECT CONVERT(varchar(100), GETDATE(), 104) 15.07.2009
+SELECT CONVERT(varchar(100), GETDATE(), 105) 15-07-2009
+SELECT CONVERT(varchar(100), GETDATE(), 106) 15 07 2009
+SELECT CONVERT(varchar(100), GETDATE(), 107) 07 15, 2009
+SELECT CONVERT(varchar(100), GETDATE(), 108) 16:06:26
+SELECT CONVERT(varchar(100), GETDATE(), 109) 07 15 2009 4:06:26:513PM
+SELECT CONVERT(varchar(100), GETDATE(), 110) 07-15-2009
+SELECT CONVERT(varchar(100), GETDATE(), 111) 2009/07/15
+SELECT CONVERT(varchar(100), GETDATE(), 112) 20090715
+SELECT CONVERT(varchar(100), GETDATE(), 113) 15 07 2009 16:06:26:513
+SELECT CONVERT(varchar(100), GETDATE(), 114) 16:06:26:513
+SELECT CONVERT(varchar(100), GETDATE(), 120) 2009-07-15 16:06:26
+SELECT CONVERT(varchar(100), GETDATE(), 121) 2009-07-15 16:06:26.513
+SELECT CONVERT(varchar(100), GETDATE(), 126) 2009-07-15T16:06:26.513
+SELECT CONVERT(varchar(100), GETDATE(), 130) 23 ??? 1430 4:06:26:513PM
+SELECT CONVERT(varchar(100), GETDATE(), 131) 23/07/1430 4:06:26:513PM
+
+style数字在转换时间时的含义如下:
+
+------------------------------------------------------------------------------------------------------------
+Style(2位表示年份) | Style(4位表示年份) | 输入输出格式 
+------------------------------------------------------------------------------------------------------------
+0 | 100 | mon dd yyyy hh:miAM(或PM) 
+------------------------------------------------------------------------------------------------------------
+1 | 101 美国 | mm/dd/yy 
+------------------------------------------------------------------------------------------------------------
+2 | 102 ANSI | yy-mm-dd 
+------------------------------------------------------------------------------------------------------------
+3 | 103 英法 | dd/mm/yy 
+------------------------------------------------------------------------------------------------------------
+4 | 104 德国 | dd.mm.yy 
+------------------------------------------------------------------------------------------------------------
+5 | 105 意大利 | dd-mm-yy 
+------------------------------------------------------------------------------------------------------------
+6 | 106 | dd mon yy 
+------------------------------------------------------------------------------------------------------------
+7 | 107 | mon dd,yy 
+------------------------------------------------------------------------------------------------------------
+8 | 108 | hh:mm:ss 
+------------------------------------------------------------------------------------------------------------
+9 | 109 | mon dd yyyy hh:mi:ss:mmmmAM(或PM)
+------------------------------------------------------------------------------------------------------------
+10 | 110 美国 | mm-dd-yy 
+------------------------------------------------------------------------------------------------------------
+11 | 111 日本 | yy/mm/dd 
+------------------------------------------------------------------------------------------------------------
+12 | 112 ISO | yymmdd 
+------------------------------------------------------------------------------------------------------------
+13 | 113 欧洲默认值 | dd mon yyyy hh:mi:ss:mmm(24小时制) 
+------------------------------------------------------------------------------------------------------------
+14 | 114 | hh:mi:ss:mmm(24小时制) 
+------------------------------------------------------------------------------------------------------------
+20 | 120 ODBC 规范 | yyyy-mm-dd hh:mi:ss(24小时制) 
+------------------------------------------------------------------------------------------------------------
+21 | 121 | yyyy-mm-dd hh:mi:ss:mmm(24小时制) 
+------------------------------------------------------------------------------------------------------------
+
+说明:
+使用 CONVERT：
+
+CONVERT ( data_type [ ( length ) ] , expression [ , style ] )
+
+expression
+
+是任何有效的 Microsoft? SQL Server? 表达式。。
+
+data_type
+
+目标系统所提供的数据类型，包括 bigint 和 sql_variant。不能使用用户定义的数据类型。
+length
+
+nchar、nvarchar、char、varchar、binary 或 varbinary 数据类型的可选参数。
+
+style
+
+日期格式样式，借以将 datetime 或 smalldatetime 数据转换为字符数据（nchar、nvarchar、char、varchar、nchar 或 nvarchar 数据类型）；或者字符串格式样式，借以将 float、real、money 或 smallmoney 数据转换为字符数据（nchar、nvarchar、char、varchar、nchar 或 nvarchar 数据类型）。
+
+SQL Server 支持使用科威特算法的阿拉伯样式中的数据格式。
+
+在表中，左侧的两列表示将 datetime 或 smalldatetime 转换为字符数据的 style 值。给 style 值加 100，可获得包括世纪数位的四位年份 (yyyy)。
+
+ 
+
+不带世纪数位 (yy)	 带世纪数位 (yyyy)	
+标准	
+输入/输出**
+-	 0 或 100 (*)	 默认值	 mon dd yyyy hh:miAM（或 PM）
+1	 101	 美国	 mm/dd/yyyy
+2	 102	 ANSI	 yy.mm.dd
+3	 103	 英国/法国	 dd/mm/yy
+4	 104	 德国	 dd.mm.yy
+5	 105	 意大利	 dd-mm-yy
+6	 106	 -	 dd mon yy
+7	 107	 -	 mon dd, yy
+8	 108	 -	 hh:mm:ss
+-	 9 或 109 (*)	 默认值 + 毫秒	 mon dd yyyy hh:mi:ss:mmmAM（或 PM）
+10	 110	 美国	 mm-dd-yy
+11	 111	 日本	 yy/mm/dd
+12	 112	 ISO	 yymmdd
+-	 13 或 113 (*)	 欧洲默认值 + 毫秒	 dd mon yyyy hh:mm:ss:mmm(24h)
+14	 114	 -	 hh:mi:ss:mmm(24h)
+-	 20 或 120 (*)	 ODBC 规范	 yyyy-mm-dd hh:mm:ss[.fff]
+-	 21 或 121 (*)	 ODBC 规范（带毫秒）	 yyyy-mm-dd hh:mm:ss[.fff]
+-	 126(***)	 ISO8601	 yyyy-mm-dd Thh:mm:ss.mmm（不含空格）
+-	 130*	 Hijri****	 dd mon yyyy hh:mi:ss:mmmAM
+-	 131*	 Hijri****	 dd/mm/yy hh:mi:ss:mmmAM
+* 默认值（style 0 或 100、9 或 109、13 或 113、20 或 120、21 或 121）始终返回世纪数位 (yyyy)。
+** 当转换为 datetime时输入；当转换为字符数据时输出。
+*** 专门用于 XML。对于从 datetime或 smalldatetime 到 character 数据的转换，输出格式如表中所示。对于从 float、money 或 smallmoney 到 character 数据的转换，输出等同于 style 2。对于从 real 到 character 数据的转换，输出等同于 style 1。
+****Hijri 是具有几种变化形式的日历系统，Microsoft? SQL Server? 2000 使用其中的科威特算法。
+
+重要 默认情况下，SQL Server 根据截止年份 2049 解释两位数字的年份。即，两位数字的年份 49 被解释为 2049，而两位数字的年份 50 被解释为 1950。许多客户端应用程序（例如那些基于 OLE 自动化对象的客户端应用程序）都使用 2030 作为截止年份。SQL Server 提供一个配置选项（"两位数字的截止年份"），借以更改 SQL Server 所使用的截止年份并对日期进行一致性处理。然而最安全的办法是指定四位数字年份。
+
+当从 smalldatetime 转换为字符数据时，包含秒或毫秒的样式将在这些位置上显示零。当从 datetime 或 smalldatetime 值进行转换时，可以通过使用适当的 char 或 varchar 数据类型长度来截断不需要的日期部分。
+
+PS：结合datediff()函数用来比较时间特别有用。
+
+ 
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+1. 当前系统日期、时间
+select getdate()
+
+
+2. dateadd 在向指定日期加上一段时间的基础上，返回新的 datetime 值
+例如：向日期加上2天
+select dateadd(day,2,'2004-10-15') --返回：2004-10-17 00:00:00.000
+
+3. datediff 返回跨两个指定日期的日期和时间边界数。
+select datediff(day,'2004-09-01','2004-09-18') --返回：17
+
+4. datepart 返回代表指定日期的指定日期部分的整数。
+SELECT DATEPART(month, '2004-10-15') --返回 10
+
+5. datename 返回代表指定日期的指定日期部分的字符串
+SELECT datename(weekday, '2004-10-15') --返回：星期五
+
+6. day(), month(),year() --可以与datepart对照一下
+
+select 当前日期=convert(varchar(10),getdate(),120)
+,当前时间=convert(varchar(8),getdate(),114)
+
+select datename(dw,'2004-10-15')
+
+select 本年第多少周=datename(week,'2004-10-15')
+,今天是周几=datename(weekday,'2004-10-15')
+
+函数 参数/功能 
+GetDate( ) 返回系统目前的日期与时间 
+DateDiff (interval,date1,date2) 
+以interval 指定的方式，返回date2 与date1两个日期之间的差值 date2-date1 
+DateAdd (interval,number,date) 以interval指定的方式，加上number之后的日期 
+DatePart (interval,date) 返回日期date中，interval指定部分所对应的整数值 
+DateName (interval,date) 返回日期date中，interval指定部分所对应的字符串名称
+
+参数 interval的设定值如下：
+
+值 缩 写（Sql Server） Access 和 ASP 说明 
+Year Yy yyyy 年 1753 ~ 9999 
+Quarter Qq q 季 1 ~ 4 
+Month Mm m 月1 ~ 12 
+Day of year Dy y 一年的日数,一年中的第几日 1-366 
+Day Dd d 日，1-31 
+Weekday Dw w 一周的日数，一周中的第几日 1-7 
+Week Wk ww 周，一年中的第几周 0 ~ 51 
+Hour Hh h 时0 ~ 23 
+Minute Mi n 分钟0 ~ 59 
+Second Ss s 秒 0 ~ 59 
+Millisecond Ms - 毫秒 0 ~ 999
+
+access 和 asp 中用date()和now()取得系统日期时间；其中DateDiff,DateAdd,DatePart也同是能用于Access和asp中，这些函数的用法也类似
+
+举例：
+1.GetDate() 用于sql server :select GetDate()
+
+2.DateDiff('s','2005-07-20','2005-7-25 22:56:32')返回值为 514592 秒
+DateDiff('d','2005-07-20','2005-7-25 22:56:32')返回值为 5 天
+
+3.DatePart('w','2005-7-25 22:56:32')返回值为 2 即星期一(周日为1，周六为7)
+DatePart('d','2005-7-25 22:56:32')返回值为 25即25号
+DatePart('y','2005-7-25 22:56:32')返回值为 206即这一年中第206天
+DatePart('yyyy','2005-7-25 22:56:32')返回值为 2005即2005年
+
+SQL Server DATEPART() 函数返回 SQLServer datetime 字段的一部分。
+
+SQL Server DATEPART() 函数的语法是： 
+DATEPART(portion, datetime)
+其中 datetime 是 SQLServer datetime 字段和部分的名称是下列之一： Ms for Milliseconds
+Yy for Year
+Qq for Quarter of the Year
+Mm for Month
+Dy for the Day of the Year
+Dd for Day of the Month
+Wk for Week
+Dw for the Day of the Week
+Hh for Hour
+Mi for Minute
+Ss for Second
+
+详细的说明:
+
+通常，你需要获得当前日期和计算一些其他的日期，例如，你的程序可能需要判断一个月的第一天或者最后一天。你们大部分人大概都知道怎样把日期进行分割（年、月、日等），然后仅仅用分割出来的年、月、日等放在几个函数中计算出自己所需要的日期！在这篇文章里，我将告诉你如何使用DATEADD和 DATEDIFF函数来计算出在你的程序中可能你要用到的一些不同日期。 
+在使用本文中的例子之前，你必须注意以下的问题。大部分可能不是所有例子在不同的机器上执行的结果可能不一样，这完全由哪一天是一个星期的第一天这个设置决定。第一天（DATEFIRST）设定决定了你的系统使用哪一天作为一周的第一天。所有以下的例子都是以星期天作为一周的第一天来建立，也就是第一天设置为7。假如你的第一天设置不一样，你可能需要调整这些例子，使它和不同的第一天设置相符合。你可以通过@@DATEFIRST函数来检查第一天设置。
+
+为了理解这些例子，我们先复习一下DATEDIFF和DATEADD函数。DATEDIFF函数计算两个日期之间的小时、天、周、月、年等时间间隔总数。 DATEADD函数计算一个日期通过给时间间隔加减来获得一个新的日期。要了解更多的DATEDIFF和DATEADD函数以及时间间隔可以阅读微软联机帮助。
+
+使用DATEDIFF和DATEADD函数来计算日期，和本来从当前日期转换到你需要的日期的考虑方法有点不同。你必须从时间间隔这个方面来考虑。比如，从当前日期到你要得到的日期之间有多少时间间隔，或者，从今天到某一天（比如1900-1-1）之间有多少时间间隔，等等。理解怎样着眼于时间间隔有助于你轻松的理解我的不同的日期计算例子。
+
+一个月的第一天
+
+第一个例子，我将告诉你如何从当前日期去这个月的最后一天。请注意：这个例子以及这篇文章中的其他例子都将只使用DATEDIFF和DATEADD函数来计算我们想要的日期。每一个例子都将通过计算但前的时间间隔，然后进行加减来得到想要计算的日期。
+
+这是计算一个月第一天的SQL 脚本： 
+SELECT DATEADD(mm, DATEDIFF(mm,0,getdate()), 0)
+
+我们把这个语句分开来看看它是如何工作的。最核心的函数是getdate()，大部分人都知道这个是返回当前的日期和时间的函数。下一个执行的函数 DATEDIFF(mm,0,getdate())是计算当前日期和“1900-01-01 00:00:00.000”这个日期之间的月数。记住：时期和时间变量和毫秒一样是从“1900-01-01 00:00:00.000”开始计算的。这就是为什么你可以在DATEDIFF函数中指定第一个时间表达式为“0”。下一个函数是DATEADD，增加当前日期到“1900-01-01”的月数。通过增加预定义的日期“1900-01-01”和当前日期的月数，我们可以获得这个月的第一天。另外，计算出来的日期的时间部分将会是“00:00:00.000”。
+
+这个计算的技巧是先计算当前日期到“1900-01-01”的时间间隔数，然后把它加到“1900-01-01”上来获得特殊的日期，这个技巧可以用来计算很多不同的日期。下一个例子也是用这个技巧从当前日期来产生不同的日期。
+
+
+本周的星期一
+
+这里我是用周(wk)的时间间隔来计算哪一天是本周的星期一。
+
+SELECT DATEADD(wk, DATEDIFF(wk,0,getdate()), 0)
+
+一年的第一天
+
+现在用年(yy)的时间间隔来显示这一年的第一天。
+
+SELECT DATEADD(yy, DATEDIFF(yy,0,getdate()), 0)
+
+季度的第一天
+
+假如你要计算这个季度的第一天，这个例子告诉你该如何做。
+
+SELECT DATEADD(qq, DATEDIFF(qq,0,getdate()), 0)
+
+当天的半夜
+
+曾经需要通过getdate()函数为了返回时间值截掉时间部分，就会考虑到当前日期是不是在半夜。假如这样，这个例子使用DATEDIFF和DATEADD函数来获得半夜的时间点。
+
+SELECT DATEADD(dd, DATEDIFF(dd,0,getdate()), 0)
+
+深入DATEDIFF和DATEADD函数计算
+
+你可以明白，通过使用简单的DATEDIFF和DATEADD函数计算，你可以发现很多不同的可能有意义的日期。
+
+目前为止的所有例子只是仅仅计算当前的时间和“1900-01-01”之间的时间间隔数量，然后把它加到“1900-01-01”的时间间隔上来计算出日期。假定你修改时间间隔的数量，或者使用不同的时间间隔来调用DATEADD函数，或者减去时间间隔而不是增加，那么通过这些小的调整你可以发现和多不同的日期。
+
+这里有四个例子使用另外一个DATEADD函数来计算最后一天来分别替换DATEADD函数前后两个时间间隔。
+
+上个月的最后一天
+
+这是一个计算上个月最后一天的例子。它通过从一个月的最后一天这个例子上减去3毫秒来获得。有一点要记住，在Sql Server中时间是精确到3毫秒。这就是为什么我需要减去3毫秒来获得我要的日期和时间。
+
+SELECT dateadd(ms,-3,DATEADD(mm, DATEDIFF(mm,0,getdate()), 0))
+
+计算出来的日期的时间部分包含了一个Sql Server可以记录的一天的最后时刻(“23:59:59:997”)的时间。
+
+去年的最后一天
+
+连接上面的例子，为了要得到去年的最后一天，你需要在今年的第一天上减去3毫秒。
+
+SELECT dateadd(ms,-3,DATEADD(yy, DATEDIFF(yy,0,getdate()), 0))
+
+本月的最后一天
+
+现在，为了获得本月的最后一天，我需要稍微修改一下获得上个月的最后一天的语句。修改需要给用DATEDIFF比较当前日期和“1900-01-01”返回的时间间隔上加1。通过加1个月，我计算出下个月的第一天，然后减去3毫秒，这样就计算出了这个月的最后一天。这是计算本月最后一天的SQL脚本。
+
+SELECT dateadd(ms,-3,DATEADD(mm, DATEDIFF(m,0,getdate())+1, 0))
+
+本年的最后一天
+
+你现在应该掌握这个的做法，这是计算本年最后一天脚本
+
+SELECT dateadd(ms,-3,DATEADD(yy, DATEDIFF(yy,0,getdate())+1, 0))
+
+本月的第一个星期一
+
+好了，现在是最后一个例子。这里我要计算这个月的第一个星期一，这是计算的脚本。
+
+select DATEADD(wk, DATEDIFF(wk,0,dateadd(dd,6-datepart(day,getdate()),getdate())), 0)

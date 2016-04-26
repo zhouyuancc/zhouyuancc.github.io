@@ -1,0 +1,47 @@
+   
+  <td align="left"  title="<%#Eval("Title")%>">
+  <%#strSub(Eval("Title").ToString(), 25, "...")%>
+   </td>
+
+
+
+
+
+     /// <summary>
+        /// 当字符串超过输入的长度时，将超过长度的部分用.代替
+        /// </summary>
+        /// <param name="str">原字符串</param>
+        /// <param name="length">长度</param>
+        /// <param name="length">超出长度显示的字符串</param>
+        /// <returns></returns>
+        public string strSub(string str, int length, string strReplace)
+        {
+            if (str == "")
+            {
+                str = "";
+            }
+            else
+            {
+                int i = 0, j = 0;
+                foreach (char chr in str)
+                {
+                    if ((int)chr > 127)
+                    {
+                        i += 2;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                    if (i > length)
+                    {
+                        str = str.Substring(0, j) + strReplace;
+                        break;
+                    }
+                    j++;
+                }
+
+            }
+            return str;
+
+        }

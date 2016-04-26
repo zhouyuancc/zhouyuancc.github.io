@@ -1,0 +1,20 @@
+    //收文情况
+    function detail(sid) {
+        URL = "send_view.aspx?sid=" + sid;
+        myleft = (screen.availWidth - 800) / 2;
+        window.open(URL, "", "height=500,width=800,status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,top=150,left=" + myleft + ",resizable=yes");
+    }
+
+  <a href="javascript:detail('<%#Eval("sid") %>');">收文情况</a>
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+//弹出签章管理页
+    function SignM() {
+        URL = "send_view.aspx?sid=" + sid;
+        myleft = (screen.availWidth - 800) / 2;
+        window.open(URL, "", "height=500,width=800,status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,top=150,left=" + myleft + ",resizable=yes");
+    }
+
+ <input type=button class=SideButton value="签章管理" onClick="SignM();" >
+

@@ -1,0 +1,178 @@
+http://jingyan.baidu.com/article/cdddd41c637b3c53cb00e1ef.html
+
+CREATE function [dbo].[split]
+
+(
+
+ @str varchar(4500),
+
+ @sep varchar(1)
+
+)
+
+returns @t  table(id int identity(1,1),col   varchar(4500))
+
+as
+
+
+begin
+
+--分别定义了 目前位置，分隔符开始和字符串长度和，当前获取的字符串
+
+declare @posi int,@start int,@str_leg int,@gchar varchar(2),@mingzhong int
+
+
+set @str_leg=len(@str)
+
+set @posi=0
+
+set @start=0
+
+set @mingzhong=0
+
+
+while(@posi<=@str_leg)
+
+    begin
+
+    set @gchar=substring(@str,@posi,1)
+
+     if(@gchar=@sep)
+
+         begin
+
+             insert into @t  values(substring(@str,@start+1,@posi-@start-1))
+
+             set @start=@posi
+
+         end
+
+      set @posi=@posi+1
+
+     end
+
+ return
+
+end 
+
+
+注意 2个参数 第一个是要分割的string，另外一个是 分隔字符
+
+select * from dbo.split('234;32423;;2342;a;b;234234;23;',';')
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+http://www.cnblogs.com/aierong/archive/2008/11/19/sqlserver_split.html
+
+sqlserver字符串拆分(split)方法汇总 
+
+--方法0：动态SQL法
+declare @s varchar(100),@sql varchar(1000)
+set @s='1,2,3,4,5,6,7,8,9,10'
+set @sql='select col='''+ replace(@s,',',''' union all select ''')+''''
+PRINT @sql
+exec (@sql)
+
+ 
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[f_splitSTR]') and xtype in (N'FN', N'IF', N'TF'))
+drop function [dbo].[f_splitSTR]
+GO
+--方法1：循环截取法
+CREATE FUNCTION f_splitSTR(
+@s   varchar(8000),   --待分拆的字符串
+@split varchar(10)     --数据分隔符
+)RETURNS @re TABLE(col varchar(100))
+AS
+BEGIN
+ DECLARE @splitlen int
+ SET @splitlen=LEN(@split+'a')-2
+ WHILE CHARINDEX(@split,@s)>0
+ BEGIN
+  INSERT @re VALUES(LEFT(@s,CHARINDEX(@split,@s)-1))
+  SET @s=STUFF(@s,1,CHARINDEX(@split,@s)+@splitlen,'')
+ END
+ INSERT @re VALUES(@s)
+ RETURN
+END
+GO
+
+ 
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[f_splitSTR]') and xtype in (N'FN', N'IF', N'TF'))
+drop function [dbo].[f_splitSTR]
+GO
+--方法2：使用临时性分拆辅助表法
+CREATE FUNCTION f_splitSTR(
+@s   varchar(8000),  --待分拆的字符串
+@split varchar(10)     --数据分隔符
+)RETURNS @re TABLE(col varchar(100))
+AS
+BEGIN
+ --创建分拆处理的辅助表(用户定义函数中只能操作表变量)
+ DECLARE @t TABLE(ID int IDENTITY,b bit)
+ INSERT @t(b) SELECT TOP 8000 0 FROM syscolumns a,syscolumns b
+
+ INSERT @re SELECT SUBSTRING(@s,ID,CHARINDEX(@split,@s+@split,ID)-ID)
+ FROM @t
+ WHERE ID<=LEN(@s+'a') 
+  AND CHARINDEX(@split,@split+@s,ID)=ID
+ RETURN
+END
+GO
+
+ 
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[f_splitSTR]') and xtype in (N'FN', N'IF', N'TF'))
+drop function [dbo].[f_splitSTR]
+GO
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tb_splitSTR]') and objectproperty(id,N'IsUserTable')=1)
+drop table [dbo].[tb_splitSTR]
+GO
+--方法3：使用永久性分拆辅助表法
+--字符串分拆辅助表
+SELECT TOP 8000 ID=IDENTITY(int,1,1) INTO dbo.tb_splitSTR
+FROM syscolumns a,syscolumns b
+GO
+--字符串分拆处理函数
+CREATE FUNCTION f_splitSTR(
+@s     varchar(8000),  --待分拆的字符串
+@split  varchar(10)     --数据分隔符
+)RETURNS TABLE
+AS
+RETURN(
+ SELECT col=CAST(SUBSTRING(@s,ID,CHARINDEX(@split,@s+@split,ID)-ID) as varchar(100))
+ FROM tb_splitSTR
+ WHERE ID<=LEN(@s+'a') 
+  AND CHARINDEX(@split,@split+@s,ID)=ID)
+GO
+
+ 
+
+--方法4：利用sql server2005的OUTER APPLY
+
+CREATE FUNCTION [dbo].[ufn_SplitStringToTable]
+(
+  @str VARCHAR(MAX) ,
+  @split VARCHAR(10)
+)
+RETURNS TABLE
+    AS 
+RETURN
+    ( SELECT    B.id
+      FROM      ( SELECT    [value] = CONVERT(XML , '<v>' + REPLACE(@str , @split , '</v><v>')
+                            + '</v>')
+                ) A
+      OUTER APPLY ( SELECT  id = N.v.value('.' , 'varchar(100)')
+                    FROM    A.[value].nodes('/v') N ( v )
+                  ) B
+    )
+
+ 
+
+备注说明：
+
+方法4必须在sql server2005下才可以运行
+
+
+http://aierong.cnblogs.com/
+

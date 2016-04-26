@@ -1,0 +1,8 @@
+ <td width="10%" align="right" valign="middle">
+                                            ≈≈–Ú£∫</td>
+                                        <td width="10%" align="left" valign="middle">
+                                      
+                                           <asp:TextBox ID="txtOrderCol" runat="server" Width="95%" onkeypress="return event.keyCode>=48&&event.keyCode<=57||event.keyCode==46"
+                                                                onpaste="return !clipboardData.getData('text').match(/\D/)" ondragenter="return false"
+                                                                MaxLength="8" Style="ime-mode: Disabled; text-align: right;" TabIndex="2">0</asp:TextBox>
+                                        </td>

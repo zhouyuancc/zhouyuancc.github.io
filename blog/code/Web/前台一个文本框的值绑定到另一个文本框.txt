@@ -1,0 +1,10 @@
+
+前台
+
+
+前台有两个文本框 要求 一个文本框的值 绑定 另一个文本框 的值 
+
+<asp:TextBox ID="TextBox1" runat="server" onkeypress="document.getElementById('TextBox2').value=this.value">
+</asp:TextBox>
+<asp:TextBox ID="TextBox2"        runat="server">
+</asp:TextBox>

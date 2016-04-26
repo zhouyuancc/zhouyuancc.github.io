@@ -1,0 +1,43 @@
+$("#manual_tr span").each(function () {
+                //                            alert(jQuery(this).attr("id"))
+                receiver += jQuery(this).attr("id") + ";";
+            })
+
+
+ComAddressBook 行政办公-公司通讯录
+/////////////////////////////遍历背景色，iframe刷新
+ $(function () {
+            $("#btnQuery").click(function () {
+                alert("234")
+
+                var name = $("#txtPName").val();
+                var deptname = $("#DrpDept").val();
+                name = encodeURI(name);
+                deptname = encodeURI(deptname);
+                main.location.href = "AddressList.aspx?hdSurName=qb&name=" + name + "&deptname=" + deptname;
+
+                $("#surname li a").each(function () {
+
+                    if ($(this).css("background-color") == "rgb(146, 201, 242)") {
+                        id = jQuery(this).attr("id");
+                        main.location.href = "AddressList.aspx?hdSurName=" + id + "&name=" + name + "&deptname=" + deptname;
+                    }
+                })
+
+            });
+        })
+
+
+        function backc(id) {
+            $("." + id + "").css({
+                "background-color": "#92C9F2"
+            });
+            $("." + id + "").parents().siblings().children().css({
+                "background-color": "#FFFFFF"
+            });
+              var name = $("#txtPName").val();
+              var deptname = $("#DrpDept").val();
+              name = encodeURI(name);
+              deptname = encodeURI(deptname);
+            document.getElementById("" + id + "").href = "AddressList.aspx?hdSurName=" + id + "&name=" + name + "&deptname=" + deptname;
+        }

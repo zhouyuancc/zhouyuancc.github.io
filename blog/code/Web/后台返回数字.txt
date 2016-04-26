@@ -1,0 +1,19 @@
+      
+        //公告通知待审核
+        public int GetAnnouncement()
+        {
+            string cboSource = "";
+            if (shara.HavePurview("公告通知管理-编辑全部", Session["empcode"].ToString()) == false)
+            {
+                cboSource = Session["deptcode"].ToString();
+            }
+            string sql = @" select count(*) from PubAffNotice a,V_PubEmpInfo b where a.CreateUser=b.EmpCode and DeleteType = '0' and
+                            a.Source like '%'+@Source+'%' and a.IsAudit='0' and a.NoticeType<>'Rules'";
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] parms = 
+                {
+                    sqlexec.CreateInParam("@Source",SqlDbType.VarChar,100,cboSource)
+                };
+            string Announcement = SqlExec.ExecuteScalar(sql, CommandType.Text, parms);
+            return Convert.ToInt32(Announcement);
+        }

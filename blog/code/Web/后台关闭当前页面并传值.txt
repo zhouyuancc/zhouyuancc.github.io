@@ -1,0 +1,13 @@
+Asp.net 后台关闭当前页面并传值
+
+第一种：
+Response.Write("<script>window.close();</script>");// 会弹出对话框询问是否关闭
+
+第二种：          
+Response.Write("<script>window.opener=null;window.close();</script>");// 不会弹出询问
+
+传值给父页面：
+
+string value; 
+value = Request.Form["myRadio"].ToString();
+Response.Write("<script>window.opener.document.all.TextBox1.value='" + value + "';opener=null;self.close();</script>");

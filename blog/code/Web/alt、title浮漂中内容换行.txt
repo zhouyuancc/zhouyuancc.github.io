@@ -1,0 +1,32 @@
+
+&#10;换行
+
+数据库
+
+
+select*,('★主题：'+Q_Note+'&#10;★最近评论日期：'+DATENAME(year, releasetime)+'-'+ 
+DATENAME(month,releasetime)+'-'+DATENAME(DAY,releasetime)+'&#10;★最近评论人
+ ：'+ISNULL(answerMan,'无评论')) as title 
+ 
+ from
+(select top 5 *,(case when releasetime between Convert(datetime,Convert(varchar,getdate(),112)
+ + ' 00:01')and Convert(datetime,Convert(varchar,getdate(),112) + ' 23:59') 
+
+then 0 else 1 end) 
+as Status,
+
+(select top 1 Ans_Man from SBD_BBS.dbo.Answers 
+where Question_ID=SBD_BBS.dbo.Questions.Q_ID order by Ans_Time desc)
+ as answerMan
+ 
+from SBD_BBS.dbo.Questions order by releasetime desc) A 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<td>
+
+<a href="<%#Eval("WebSite")%>" title="<%#Eval("WebSite")%>" target="_blank"><%#Eval("WebName")%>
+</a>
+
+</td>

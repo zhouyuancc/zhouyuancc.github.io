@@ -1,0 +1,25 @@
+
+前台
+
+<asp:GridView  OnRowCreated="myDataGV_RowCreated" >
+
+
+
+后台
+ 
+
+        protected void myDataGV_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+
+            e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor=currentcolor;this.style.cursor='default';");//当鼠标移开时还原背景色
+            e.Row.Attributes.Add("onmouseover", "currentcolor=this.style.backgroundColor;this.style.backgroundColor='#9EC9C2';");//当鼠标停留时更改背景色
+        }
+
+
+
+
+
+//鼠标经过时，行背景色变 
+e.Row.Attributes.Add("onmouseover", "this.style.backgroundColor='#E6F5FA'");
+//鼠标移出时，行背景色变 
+e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor='#FFFFFF'");

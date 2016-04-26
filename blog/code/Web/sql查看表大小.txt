@@ -1,0 +1,61 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+declare @result table
+	(name varchar(200),
+	 [rows] varchar(200),
+	 reserved varchar(200),
+	 data varchar(200),
+	 index_size varchar(200),
+	 unused varchar(200)
+	 ) 
+declare @tableName varchar(200)
+declare @curcount int=1
+declare @total int
+
+select @total= (select COUNT(*) from Zjq_Flow_Data_Src)
+
+while(@curcount<=@total)
+begin
+    select @tableName=(select Name from (select *,ROW_NUMBER()over(order by id) as rowIndex from Zjq_Flow_Data_Src ) a where rowIndex=@curcount)
+    insert @result exec sp_spaceused  @tableName
+    set @curcount=@curcount+1   
+   
+end
+
+select  * from [Zjq_Flow_Data_Src] a inner join @result b on a.Name=b.name
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+SQL Server查看所有表大小，所占空间 2012-01-12 15:15:19
+
+--主要原理： 
+exec sp_spaceused '表名' --取得表占用空間 
+exec sp_spaceused ''--數據庫所有空間 
+ 
+ 
+create table #Data(name varchar(100),row varchar(100),reserved varchar(100),data varchar(100),index_size varchar(100),unused varchar(100)) 
+ 
+declare @name varchar(100) 
+declare cur cursor  for 
+    select name from sysobjects where xtype='u' order by name 
+open cur 
+fetch next from cur into @name 
+while @@fetch_status=0 
+begin 
+    insert into #data 
+    exec sp_spaceused   @name 
+    print @name 
+ 
+    fetch next from cur into @name 
+end 
+close cur 
+deallocate cur 
+ 
+create table #DataNew(name varchar(100),row int,reserved int,data int,index_size int,unused int) 
+ 
+insert into #dataNew 
+select name,convert(int,row) as row,convert(int,replace(reserved,'KB','')) as reserved,convert(int,replace(data,'KB','')) as data, 
+convert(int,replace(index_size,'KB','')) as index_size,convert(int,replace(unused,'KB','')) as unused from #data  
+ 
+select * from #dataNew order by data desc    

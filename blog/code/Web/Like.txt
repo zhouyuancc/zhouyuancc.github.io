@@ -1,0 +1,29 @@
+例1，查询name字段中包含有“明”字的。 　　
+
+select * from table1 where name like ‘%明%’ 　
+
+这里不要使用*来代替,一般在使用0个或者任意个字符构成的字符串的时候最好使用%
+
+不过在首或尾使用可以相互替换,如果在头尾同时使用的话,就必须要使用%　
+
+例2，查询name字段中以“李”字开头。 　　
+
+select * from table1 where name like ‘李*’ 　
+
+或者
+
+select * from table1 where name like ‘李%’ 　
+
+例3，查询name字段中含有数字的。 　　
+
+select * from table1 where name like ‘%[0-9]%’ 　　
+
+例4，查询name字段中含有小写字母的。 　　
+
+select * from table1 where name like ‘%[a-z]%’ 　　
+
+例5，查询name字段中不含有数字的。 　　
+
+select * from table1 where name like ‘%[!0-9]%’
+
+补充一点,?或者_表示单个字符

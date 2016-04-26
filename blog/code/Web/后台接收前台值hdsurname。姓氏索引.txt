@@ -1,0 +1,116 @@
+ <script type="text/javascript">
+        $(function () {
+            $(".li").click(function () {
+
+                var id = $(this).children("a").attr("id");
+
+                $("#hdSurName").val(id)
+                $("#<%=btnQuery.ClientID%>").click();
+                return false;
+            });
+        })
+    </script>
+
+
+/////////////////////////////////////////////////////////////////
+
+  <ul id="surname" style="border-style: none solid solid solid; overflow-y: auto; overflow-x: auto;
+                        border-width: 1px; border-color: #79ACD9; width: 60%; height: 100%; background-color: #ffffff;
+                        text-align: center; margin-left: auto; margin-right: auto; margin-bottom: 5px;
+                        margin-top: 5px;">
+                        <table style="border-style: solid none solid none; border-width: 1px; border-color: #7F9DB9;
+                            width: 100%; text-align: center; margin-left: auto; margin-right: auto;background-color: #E2F0FB;">
+                            <tr height="100%">
+                                <%--<TD style="width: 5px;"></TD>--%>
+                                <td align="CENTER" style="padding-top: 4px">
+                                    <span class="indexArea_title">姓氏索引</span>
+                                </td>
+                                <%--<TD style="width: 5px;"></TD>--%>
+                            </tr>
+                        </table>
+                        <%for (int i = 0; i < userList.Count; i++)
+                          {%>
+                        <li style="padding-top: 5px; padding-bottom: 5px; cursor: pointer;" class="li">
+                            <img border="0" src="../Images/索引图标.JPG" />
+                            <%-- <a onclick="js_callpage('ComAddressBook.aspx?flag=<% =userList[i].sur%>', '1050', '590'); window.parent.ymPrompt.doHandler('error', true);">--%>
+                            <%--  href="ComAddressBook.aspx?flag=<% =userList[i].sur%>"--%>
+                            <%--href="javascript:void(0)"--%>
+                            <a id="<% =userList[i].sur%>">
+                                <% =userList[i].surname%>
+                            </a></li>
+                        <% } %>
+                    </ul>
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+ <asp:Button ID="btnQuery" runat="server" CssClass="buttonStyle" Text="查询" OnClick="btnQuery_Click" />
+                   <input id="hdSurName" runat="server" type="hidden" value="" />
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /// <summary>
+        /// 查询数据，绑定结果集
+        /// </summary>
+        // 绑定数据列表
+        public void PageShowInitList(int currtPage)
+        {
+     
+                try
+                {
+                    SqlExec sqlexec = new SqlExec();
+
+                    StringBuilder sql = new StringBuilder("select *,(case when Zt='0' then Phone when Zt is null then Phone when Zt='1' then null end)as Telephone from   V_PubEmpInfo ");
+                    List<string> wheres = new List<string>();
+                    List<SqlParameter> listParameter = new List<SqlParameter>();
+
+
+                    ////string flag = Request["flag"] == null ? string.Empty : Request["flag"].ToString();
+                 
+                    ////if (flag == "" + flag + "")
+                    ////{
+                    ////    wheres.Add("substring(OnlySpell,1,1) like '" + flag + "%'");
+                    //////}
+                  
+                    wheres.Add(" empcode<>'admin' ");
+                    if (!string.IsNullOrEmpty(this.DrpDept.SelectedValue))
+                    {
+                        wheres.Add("DeptName=isnull(@Dept,DeptName)");
+                        listParameter.Add(sqlexec.CreateInParam("@Dept", SqlDbType.VarChar, 20, this.DrpDept.SelectedValue == "全部" ? null : this.DrpDept.SelectedValue));
+                    }
+
+                    if (this.txtPName.Text.Length > 0)
+                    {
+                        wheres.Add("[EmpName] like '%' + @PName + '%' ");
+                        listParameter.Add(sqlexec.CreateInParam("@PName", SqlDbType.VarChar, 80, this.txtPName.Text));
+                        this.txtPName.Text = "";
+                    }
+////////////////////////////////////////////////////////////////////////////////////////
+                    if (hdSurName.Value.Length > 0)
+                    {
+                        var name = hdSurName.Value;
+                        wheres.Add("substring(OnlySpell,1,1) like '" + name + "%'");
+                        hdSurName.Value = "";
+                    }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+                    //判断用户是否选择了条件
+                    if (wheres.Count > 0)
+                    {
+                        string wh = string.Join(" and ", wheres.ToArray());
+                        sql.Append(" where " + wh);
+                    }
+                    PageShow.initList(rptDataList, "[EmpName]", currtPage, sql.ToString(), " ORDER BY [EmpName] ", listParameter.ToArray(), CommandType.Text);
+                    BindData();
+                }
+                catch (Exception ex)
+                {
+                    Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+                }
+           
+        }
+
+
+
+

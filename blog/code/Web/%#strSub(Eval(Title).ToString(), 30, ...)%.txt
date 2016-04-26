@@ -1,0 +1,1 @@
+<%#strSub(Eval("Title").ToString(), 30, "...")%>

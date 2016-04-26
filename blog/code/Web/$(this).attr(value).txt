@@ -1,0 +1,2 @@
+$(this).attr("value")
+$(this).val()

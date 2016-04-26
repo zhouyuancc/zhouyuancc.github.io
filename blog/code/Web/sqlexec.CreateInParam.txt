@@ -1,0 +1,125 @@
+
+sqlexec.CreateInParam("@Xm",SqlDbType.VarChar,20,txtXm.Text),
+sqlexec.CreateInParam("@Qh",SqlDbType.VarChar,20,cbo_Qh.SelectedValue),
+sqlexec.CreateInParam("@Rzsj",SqlDbType.DateTime,8,txtRzsj.Text==""?null:Convert.ToDateTime(txtRzsj.Text).ToString("yyyy-MM-dd")),
+
+sqlexec.CreateInParam("@sydw",SqlDbType.VarChar,80,this.Drp_sydw.SelectedValue=="全部"?"":this.Drp_sydw.SelectedValue),
+
+sqlexec.CreateInParam("@zt",SqlDbType.VarChar,5,this.DrpBff.SelectedValue=="1"? "1":"0")
+
+
+
+
+ sqlexec.CreateInParam("@drgz",SqlDbType.Decimal,2,txtdrgz.Text ==""? DBNull.Value:(object)txtdrgz.Text),
+
+
+ /// <summary>
+        /// 查询数据，绑定结果集
+        /// </summary>
+        // 绑定数据列表
+        public void PageShowInitList(int currtPage)
+        {
+
+            try
+            {
+
+
+                SqlExec sqlexec = new SqlExec();
+                System.Text.StringBuilder sql = new System.Text.StringBuilder("select *,case when Zszt ='0' then '住宿'  when Zszt ='1' then '退宿' when Zszt ='2' then '换出此房' when Zszt ='3' then '换入此房' end as myZszt from dc_Rzdj");
+
+                List<string> wheres = new List<string>();
+                List<SqlParameter> listParameter = new List<SqlParameter>();
+
+
+                if (this.cbo_Qh.SelectedItem.Text.Length > 0)
+                {
+                    wheres.Add("Qh=isnull(@Qh,Qh)");
+                    listParameter.Add(sqlexec.CreateInParam("@Qh", SqlDbType.VarChar, 20, this.cbo_Qh.SelectedValue == "全部" ? null : this.cbo_Qh.SelectedValue));
+                }
+                if (this.cbo_Cs.SelectedItem.Text.Length > 0)
+                {
+                    wheres.Add("Ch=isnull(@Cs,Ch)");
+                    listParameter.Add(sqlexec.CreateInParam("@Cs", SqlDbType.VarChar, 20, this.cbo_Cs.SelectedValue == "全部" ? null : this.cbo_Cs.SelectedValue));
+                }
+                if (this.cbo_Fjh.SelectedItem.Text.Length > 0)
+                {
+                    wheres.Add("Fjh=isnull(@Fjh,Fjh)");
+                    listParameter.Add(sqlexec.CreateInParam("@Fjh", SqlDbType.VarChar, 20, this.cbo_Fjh.SelectedValue == "全部" ? null  : this.cbo_Fjh.SelectedValue));
+                }
+
+                if (this.txtXm.Text.Length > 0)
+                {
+                    wheres.Add("[Xm] like '%' + @Xm + '%' ");
+                    listParameter.Add(sqlexec.CreateInParam("@Xm", SqlDbType.VarChar, 80, this.txtXm.Text));
+                }
+
+                if (this.txtRzsj.Text.Length > 0)
+                {
+                    wheres.Add("[Rzsj] >= @Rzsj");
+                    listParameter.Add(sqlexec.CreateInParam("@Rzsj", SqlDbType.DateTime, 20, this.txtRzsj.Text == "" ? Convert.ToDateTime("1900-01-01") : Convert.ToDateTime(this.txtRzsj.Text)));
+                }
+                if (this.txtRzsj1.Text.Length > 0)
+                {
+                    wheres.Add("[Rzsj]<= @Rzsj1");
+                    listParameter.Add(sqlexec.CreateInParam("@Rzsj1", SqlDbType.DateTime, 20, this.txtRzsj1.Text == "" ? Convert.ToDateTime("2022-12-31") : Convert.ToDateTime(this.txtRzsj1.Text)));
+                }
+                //if (this.txtRzsj.Text.Length > 0)
+                //{
+                //    wheres.Add("[Rzsj] = @Rzsj");
+                //    listParameter.Add(sqlexec.CreateInParam("@Rzsj", SqlDbType.DateTime, 20, Convert.ToDateTime(txtRzsj.Text).ToString("yyyy-MM-dd")));
+                //}
+
+                //判断用户是否选择了条件
+                if (wheres.Count > 0)
+                {
+                    string wh = string.Join(" and ", wheres.ToArray());
+                    sql.Append(" where " + wh);
+                }
+                sqlexec = null;
+                PageShow.initList(rptDataList, "[Id]", currtPage, sql.ToString(), " ORDER BY [Id] ", listParameter.ToArray(), CommandType.Text);
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+                //string Rzsj1 = "";
+                //string Rzsj = "";
+                //if (txtRzsj1.Text != "" && txtRzsj.Text != "")
+                //{
+                //    Rzsj1 = txtRzsj1.Text;
+                //    Rzsj = txtRzsj.Text;
+                //}
+                //else
+                //{
+                //    Rzsj1 = "1900-01-01";
+                //    Rzsj = "2022-12-31";
+                //}
+
+                //string sql = @"select *,case when Zszt ='0' then '住宿'  when Zszt ='1' then '退宿' when Zszt ='2' then '换出此房' when Zszt ='3' then '换入此房' end as myZszt from dc_Rzdj where [Xm] like '%' + @Xm + '%' and Qh=isnull(@Qh,Qh) and Ch=isnull(@Ch,Ch) and Fjh=isnull(@Fjh,Fjh) and  Rzsj between @Rzsj1 and @Rzsj";
+               
+                //SqlExec sqlexec = new SqlExec();
+                //SqlParameter[] parms = 
+                //{
+                //   sqlexec.CreateInParam("@Xm",SqlDbType.VarChar,20,txtXm.Text),
+                //   sqlexec.CreateInParam("@Qh",SqlDbType.VarChar,20,cbo_Qh.SelectedItem.Text=="全部" ? null :cbo_Qh.SelectedItem.Text),
+                
+                //sqlexec.CreateInParam("@Ch",SqlDbType.VarChar,20,cbo_Cs.SelectedItem.Text=="全部" ? null :cbo_Cs.SelectedItem.Text),
+        
+                //sqlexec.CreateInParam("@Fjh",SqlDbType.VarChar,50,cbo_Fjh.SelectedItem.Text=="全部" ? null :cbo_Fjh.SelectedItem.Text),
+            
+                //sqlexec.CreateInParam("@Rzsj",SqlDbType.DateTime,8,Rzsj),
+                //sqlexec.CreateInParam("@Rzsj1",SqlDbType.DateTime,8,Rzsj1),
+              
+
+                //};
+                ////sqlexec = null;
+                //PageShow.initList(rptDataList, "[Id]", currtPage, sql.ToString(), "order by CreateDate", parms, CommandType.Text);
+
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+
+        }

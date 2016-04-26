@@ -1,0 +1,29 @@
+http://www.cnblogs.com/Clivia/archive/2011/08/18/aspnet012.html
+
+ASP.Net TextBox只读时不能通过后台赋值取值 
+
+今天在开发一个asp.net的页面遇到了TextBox设置了ReadOnly属性，在js中赋值后，后台代码取不到值的情况
+
+1、不设置ReadOnly,设置onfocus=this.blur()
+C#代码 
+<asp:TextBox ID="TextBox1" runat="server" onfocus=this.blur()></asp:TextBox> 
+<asp:TextBox ID="TextBox1" runat="server" onfocus=this.blur()></asp:TextBox>
+文本框不变灰色,但也无法手动修改内容,可以在后台通过Text属性正常赋值取值
+
+2、设置了ReadOnly属性后，通过Request来取值，如下：
+前台代码:
+<asp:TextBox ID="TextBox1" runat="server" ReadOnly="True" ></asp:TextBox> 
+<asp:TextBox ID="TextBox1" runat="server" ReadOnly="True" ></asp:TextBox>
+后台代码：
+string Text = Request.Form["TextBox1"].Trim(); 
+string Text = Request.Form["TextBox1"].Trim();
+
+3、在Page_Load()正设置文本框的只读属性，能正常读取，如下：
+C#代码 
+protected void Page_Load(object sender, EventArgs e)  
+{  
+    if (!Page.IsPostBack)  
+    {  
+        TextBox1.Attributes.Add("readonly","true");  
+    }  
+}

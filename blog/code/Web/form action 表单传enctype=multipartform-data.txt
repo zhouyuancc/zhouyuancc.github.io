@@ -1,0 +1,70 @@
+ $('#leadin').form({
+            url: "/PubAff/SelAddressBook.aspx?lead=leadin",
+            success: function (data) {
+                alert(data)
+                refresh();///刷新
+            }
+          });
+
+
+等价于
+
+<form id="leadin" action="/PubAff/SelAddressBook.aspx?lead=leadin" method="post" name="leadin" 
+enctype="multipart/form-data"
+
+onsubmit="return IsFile()">
+   
+
+<input type="submit" value="导入" />
+
+
+</form>
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+easyUI个人通讯录
+
+<script type="text/javascript">
+    $(function () {
+        var url = window.location.search;
+        var getflag = url.substring(url.lastIndexOf('=') + 1, url.length);///获取最后一位
+
+        $("#getflag").val(getflag)
+
+        refresh();
+        //导入传入表单
+        $('#leadin').form({
+            url: "/PubAff/SelAddressBook.aspx?lead=leadin&flag=" + getflag,
+            success: function (data) {
+                $.messager.alert(data)
+                refresh();
+                $('#leadin').form('clear');
+            }
+        });
+
+    });
+
+
+    function InportExcel() {
+        $("#leadin").submit();
+    }
+
+</script>
+
+<form id="leadin" method="post" name="leadin" enctype="multipart/form-data">
+        <tr>
+
+            <td colspan="5" align="left" valign="middle">
+                <input id="MyFile" runat="server" name="MyFile" style="width: 300px; background-color: transparent"
+                    type="file" />
+                <a href="../AttachFile/SelfAffair/通讯录导入模板.xls" target="_blank">下载模板</a>
+            </td>
+            <td align="center" style="width: 20%">
+              
+                <a href="#" id="export" class="easyui-linkbutton" iconcls="icon-standard-page-excel" style="width: 80px" onclick="InportExcel()">
+                    导入</a>
+            </td>
+        </tr>
+        </form>

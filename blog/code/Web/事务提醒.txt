@@ -1,0 +1,59 @@
+ /// <summary>
+        /// 发送事务提醒，初始化PubAffSms
+        /// </summary>
+        /// <param name="rCode">接收人编号</param>
+        /// <param name="sCode">发送人编号</param>
+        /// <param name="sType">发送类型</param>
+        /// <param name="sValue">发送文本(内容or标题)</param>
+        /// <param name="sUrl">事务提醒详情链接地址</param>
+        ///<param name="sTime">提醒时间</param> 
+        public static void InitPubAffSms(string rCode, SendType sType, string sValue, string sUrl,DateTime sTime)
+        {
+
+            int sTypeVal = (int)Enum.Parse(typeof(SendType), sType.ToString());
+            string myContent = string.Empty;
+            //DateTime sTime = DateTime.Now;
+            string sCode = HttpContext.Current.Session["empcode"].ToString();
+
+            switch (sType)
+            {
+                case SendType.Email:
+                    myContent = string.Format("<p>请查收我的邮件！</p><p>主题:{0}</p>", sValue);
+                    break;
+                case SendType.Calendar:
+                    myContent = string.Format("<p>请查看日程安排！</p><p>内容:{0}</p>", sValue.Length > 30 ? sValue.Substring(0, 30) + "..." : sValue);
+                    break;
+                case SendType.TimeOut:
+                    myContent = string.Format("<p>您有已超时或未接收的待办工作，请及时办理！</p>");
+                    break;
+                case SendType.Audit:
+                    myContent = string.Format("<p>请审核公告！</p><p>标题:{0}</p>", sValue.Length > 30 ? sValue.Substring(0, 30) + "..." : sValue);
+                    break;
+            }
+
+            string strSql = "insert into PubAffSms(SendCode,SendContent,SendTime,SendType,SmsUrl)";
+            strSql += "values(@SendCode,@SendContent,@SendTime,@SendType,@SmsUrl) select @@IDENTITY ";
+            SqlExec MySql = new SqlExec();
+            SqlParameter[] parm = { 
+                                    MySql.CreateInParam("@SendCode", SqlDbType.VarChar,50,sCode),
+                                    MySql.CreateInParam("@SendContent", SqlDbType.VarChar,200,myContent),
+                                    MySql.CreateInParam("@SendTime", SqlDbType.DateTime,8,sTime),
+                                    MySql.CreateInParam("@SendType", SqlDbType.Int,4,sTypeVal),
+                                    MySql.CreateInParam("@SmsUrl", SqlDbType.VarChar,100,sUrl)
+                                  };
+            string id = SqlExec.ExecuteScalar(strSql, CommandType.Text, parm);
+            InitPubAffSmsto(id, rCode, sTime);
+        }
+
+
+
+
+
+
+    public enum SendType
+    {
+        Email = 1, //站内信
+        Calendar = 2, //日程安排
+        TimeOut = 3,//超时催办提醒
+        Audit = 4,//公告通知待审核
+    } ;

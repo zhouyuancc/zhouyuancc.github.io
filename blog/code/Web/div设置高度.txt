@@ -1,0 +1,5 @@
+div设置高度为1的问题 
+
+<div style='position:absolute;width:1; line-height:1px; height:1px; margin-left:40;margin-top:80;background:red;'></div>
+
+因为自动给撑大了，style中在加上一个属性：overflow:hidden

@@ -1,0 +1,43 @@
+ private void BindGrid(bool IsShowAudit)
+        {
+            int ColCount = myDataGV.Columns.Count;
+            try
+            {
+
+
+                DataSet ds = new DataSet();
+                ds = GetData();
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    this.myDataGV.DataSource = ds;
+                    this.myDataGV.DataMember = ds.Tables[0].TableName;
+                    this.myDataGV.DataBind();
+
+                    //myDataGV.Columns[myDataGV.Columns.Count - 1].Visible = true;
+                }
+
+前台
+
+<asp:CheckBox ID="CheckBox1" runat="server" AutoPostBack="True" Font-Size="12px"
+27             OnCheckedChanged="CheckBox1_CheckedChanged" Text="显示隐藏家庭住址" />
+
+
+后台
+
+public void bind()
+ {
+    GridView1.Columns[3].Visible = false;//一开始隐藏
+    CheckBox1.Checked = false;//如果不这样后面的代码会把他True
+73     }
+74     protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+75      {
+76          GridView1.Columns[3].Visible=! GridView1.Columns[3].Visible;
+77          Response.Write("GridView1的第4列现在的显示隐藏状态是："+GridView1.Columns[3].Visible.ToString());
+78     }
+79 }
+
+
+
+
+Response.Write("GridView1的第4列现在的显示隐藏状态是："+GridView1.Columns[3].Visible.ToString());//显示
+

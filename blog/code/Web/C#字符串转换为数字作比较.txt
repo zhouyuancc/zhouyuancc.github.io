@@ -1,0 +1,12 @@
+if (int.Parse(Prcs_id) == int.Parse(dt.Rows[i]["Prcs_id"].ToString()))
+                    {
+                        CrtStep = "（当前步骤）";
+                    }
+else if (int.Parse(dt.Rows[i]["Prcs_id"].ToString()) == int.Parse(Prcs_id) + 1)
+                    {
+                        CrtStep = "（下一步骤）<font color=\"red\">本步骤为预设步骤</font>";
+                    }
+else if (int.Parse(dt.Rows[i]["Prcs_id"].ToString()) > int.Parse(Prcs_id) + 1)
+                    {
+                        CrtStep = "<font color=\"red\">本步骤为预设步骤</font>";
+                    }

@@ -1,0 +1,70 @@
+ var str = document.form1.imgphoto.src.split("PubAff/FastSignature/Image/");
+
+$("#Upload", window.opener.document).val(str[1].toString());
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+用js获取字符串中最后一个字符的几种方法
+
+总结四种可以获取字符串中最后一个字符的实现方法，我们这里综合讲了charAt()，substr(),split()三个函数，还有用正则搞定，后面还总结了几个在js中常用到的字符处理的函数如 indexOf等
+
+方法一：运用String对象下的charAt方法
+
+charAt() 方法可返回指定位置的字符。
+
+ 代码如下 复制代码
+
+str.charAt(str.length – 1)
+
+请注意，JavaScript 并没有一种有别于字符串类型的字符数据类型，所以返回的字符是长度为 1 的字符串
+
+
+
+
+方法二：运用String对象下的substr方法
+
+substr() 方法可在字符串中抽取从 start 下标开始的指定数目的字符。
+
+ 代码如下 复制代码
+
+str.substr(str.length-1,1)
+
+重要事项：ECMAscript 没有对该方法进行标准化，因此反对使用它。
+
+重要事项：在 IE 4 中，参数 start 的值无效。在这个 BUG 中，start 规定的是第 0 个字符的位置。在之后的版本中，此 BUG 已被修正。
+
+方法三：运用String对象下的split方法
+
+split() 方法用于把一个字符串分割成字符串数组。
+
+ 代码如下 复制代码
+
+var str = “123456″;
+
+spstr = str.split(“”);
+
+spstr[spstr.length-1];
+
+方法四：正则搞定
+
+ 代码如下 复制代码
+
+<script type="text/javascript">
+
+  //<![CDATA[
+
+    var s = "nasofj;n234n41;v";
+
+    alert("String: "+s+"nn"+"LastOne: "+s.replace(/^(.*[n])*.*(.|n)$/g, "$2"));
+
+  //]]>
+
+</script>
+
+
+
+
+
+
+indexOf 方法
+??返回 String 对象内第一次出现子字符串的字符位置。
+

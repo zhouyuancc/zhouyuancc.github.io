@@ -1,0 +1,30 @@
+前台
+
+<asp:DropDownList ID="dropQueryType" runat="server"  Width="93%">                                
+                                <asp:ListItem Value="Htbh">合同编号</asp:ListItem>
+                                <asp:ListItem Value="Gcbh">生产编号</asp:ListItem>
+                            </asp:DropDownList>
+后台
+
+ private DataSet GetData()
+        {
+       
+            string conditionType = this.dropQueryType.SelectedValue;
+            string sql = @"select *,CASE WHEN len(Cj) > 10 THEN LEFT(Cj, 10) + '...' ELSE Cj END AS VCj from lc_cghtsp a inner join ZjqInitiate b on a.ServerCode=b.servercode where b.state=2";
+            
+            sql += " and Sqrq between @Sqrq1 and @Sqrq2";
+            sql += " and Cj like '%' +@Cj+ '%'";
+            sql += " and " + conditionType + " like '%'+@ConditionText+'%' ";
+
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] parms = 
+                {
+                    sqlexec.CreateInParam("@ConditionText",SqlDbType.VarChar,100,txtContent.Text),
+                    sqlexec.CreateInParam("@Cj",SqlDbType.VarChar,100,txtCj.Text),
+                    sqlexec.CreateInParam("@Sqrq1",SqlDbType.DateTime,20,txtSqrq1.Text==""?"1900-01-01":txtSqrq1.Text),
+                    sqlexec.CreateInParam("@Sqrq2",SqlDbType.DateTime,20,txtSqrq2.Text==""?"2022-12-31":txtSqrq2.Text),
+                };
+            DataSet ds = SqlExec.ExecuteDataSet(sql, CommandType.Text, parms);
+            return ds;
+
+        }

@@ -1,0 +1,46 @@
+jquery大于、小于、等于、不等于等区间代码
+
+jQuery区间操作常常会结合起来使用，下面分享一些常用代码：
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>5</li>
+<li>6</li>
+</ul>
+
+获取序号2-5之间的数，序号从0开始。以下的代码得到相同结果。
+$("li:lt(5)").filter(":gt(2)").prependTo('ul');
+$("li:lt(5):gt(2)").prependTo('ul');
+
+相等操作，以下代码结果相同
+$("li:eq(1)").prependTo('ul');
+$('li').eq(1).prependTo('ul');
+
+不等于
+$('li:not(:first)').prependTo('ul');
+$('li:not(:last)').appendTo('ul');
+
+小于和大于
+$('li:lt(2)').appendTo('ul');
+$('li:gt(4)').prependTo('ul');
+-----------------------------------------------------------------------------------------
+Greater than > 大于
+Less than < 小于
+
+
+appendTo() 方法
+在每个 p 元素结尾插入内容：
+$("button").click(function(){
+  $("<b>Hello World!</b>").appendTo("p");
+});
+
+prependTo() 方法
+在每个 p 元素的开头插入内容：
+$(".btn1").click(function(){
+  $("<b>Hello World!</b>").prependTo("p");
+});
+
+Hello World!Hello World!<p>This is a paragraph.<p>
+

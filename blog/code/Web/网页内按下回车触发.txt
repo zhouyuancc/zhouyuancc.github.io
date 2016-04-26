@@ -1,0 +1,18 @@
+///////回车锁定键 
+function document.onkeydown()                //网页内按下
+        {
+            if (event.keyCode == 13) {       //回车触发       
+                search()       
+                //alert("OK");             
+                return false;
+            }
+        }
+
+///兼容火狐
+        $("body").keydown(function (e) {
+            var curKey = e.which;
+            if (curKey == 13) {
+                search()       
+                return false;
+            }
+        });

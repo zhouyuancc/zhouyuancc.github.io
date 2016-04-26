@@ -2,9 +2,324 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="838d39a1-b21a-4edf-b30a-083ad55e6a9e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blog/cs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/index.html" afterPath="$PROJECT_DIR$/blog/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/assets/css/main.css" afterPath="$PROJECT_DIR$/blog/assets/css/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blog/indexCM.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blog/indexWeb.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/blog/code/NSDate转换NSString\NSString转换NSDate.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/blog/code/cell左滑出现红色删除editingStyleForRowAtIndexPath\commitEditingStyle.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/blog/code/按钮的内容左对齐contentHorizontalAlignment\\contentEdgeInsets\\textAlignment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/blog/cs.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/blog/备份index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/css/index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/aple.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/apple.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/apple1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/apples.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/bg1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/bg2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/body-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/dock_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/download-button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/facebook-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/file.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/github-button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/google-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/header-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/highlight-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/lastfm-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/linkedin-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/notable-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/play-button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/sidebar-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/zurb-divider.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desk/images/zurb-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/.idea/rtf.js-master.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/rtf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/1.11.3/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/1.11.3/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/cptable.full.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/hyperlink.rtf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/jquery.binarytransport.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/jquery.svg.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/jquery.svg.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/jquery.svgfilter.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/rtf.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/rtf.js.wmf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/simple1.rtf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/simple2.rtf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/simple3.rtf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/simple4.rtf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/simple5.rtf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/simplepict.rtf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/simplepng.rtf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/simplepngbin.rtf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/samples/wmf.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rtf.js-master/wmf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/.spmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/dist/runtime-debug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/dist/runtime.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/dist/sea-debug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/dist/sea.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/dist/standalone-debug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/dist/standalone.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/lib/sandbox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/lib/sea.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/lib/winos.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/src/config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/src/intro.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/src/module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/src/outro.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/src/sea.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/src/standalone.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/src/util-cs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/src/util-deps.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/src/util-events.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/src/util-lang.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/src/util-path.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/seajs-master/src/util-request.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/stylesheets/github-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/stylesheets/print.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/stylesheets/stylesheet.css" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/ 返回一张可以随意拉伸不变形的图片.html" afterPath="$PROJECT_DIR$/blog/code/iOS/ 返回一张可以随意拉伸不变形的图片.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/60s倒计时.html" afterPath="$PROJECT_DIR$/blog/code/iOS/60s倒计时.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/AppDelegate、m.html" afterPath="$PROJECT_DIR$/blog/code/iOS/AppDelegate、m.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/Autolayout-VFL底部固定两个一样的UIView.html" afterPath="$PROJECT_DIR$/blog/code/iOS/Autolayout-VFL底部固定两个一样的UIView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/Block __weak typeof (self) selfVc = self;.html" afterPath="$PROJECT_DIR$/blog/code/iOS/Block __weak typeof (self) selfVc = self;.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/Block传值.html" afterPath="$PROJECT_DIR$/blog/code/iOS/Block传值.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/Bundle文件加载、URL加载.html" afterPath="$PROJECT_DIR$/blog/code/iOS/Bundle文件加载、URL加载.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/CGRectGetMaxY.html" afterPath="$PROJECT_DIR$/blog/code/iOS/CGRectGetMaxY.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/CocoaPods安装.html" afterPath="$PROJECT_DIR$/blog/code/iOS/CocoaPods安装.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/C语言知识大总结.html" afterPath="$PROJECT_DIR$/blog/code/iOS/C语言知识大总结.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/Get&amp;Post.html" afterPath="$PROJECT_DIR$/blog/code/iOS/Get&amp;Post.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/HTML5.html" afterPath="$PROJECT_DIR$/blog/code/iOS/HTML5.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/HTML中调用OC.html" afterPath="$PROJECT_DIR$/blog/code/iOS/HTML中调用OC.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/HTTP协议.html" afterPath="$PROJECT_DIR$/blog/code/iOS/HTTP协议.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/IOS8地图定位（询问用户是否允许访问）.html" afterPath="$PROJECT_DIR$/blog/code/iOS/IOS8地图定位（询问用户是否允许访问）.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/JavaScript.html" afterPath="$PROJECT_DIR$/blog/code/iOS/JavaScript.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/KVO(key value observe)KVC(key value coding).html" afterPath="$PROJECT_DIR$/blog/code/iOS/KVO(key value observe)KVC(key value coding).html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/MJCodingImplementation归档解档.html" afterPath="$PROJECT_DIR$/blog/code/iOS/MJCodingImplementation归档解档.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/MJExtension用法.html" afterPath="$PROJECT_DIR$/blog/code/iOS/MJExtension用法.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/Masonry(autoLayout的第三方框架).html" afterPath="$PROJECT_DIR$/blog/code/iOS/Masonry(autoLayout的第三方框架).html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSData转NSString，Byte，UIImage.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSData转NSString，Byte，UIImage.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSDate转NSString.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSDate转NSString.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSLayoutConstraint.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSLayoutConstraint.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSNotificationCenter监听通知 文本框文字发生改变的通知.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSNotificationCenter监听通知 文本框文字发生改变的通知.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSNotificationCenter通知.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSNotificationCenter通知.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSObject+MJKeyValue:h.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSObject+MJKeyValue:h.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSPredicate 模糊、精确、查询.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSPredicate 模糊、精确、查询.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSRange截取字符串.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSRange截取字符串.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSString与const char *相互转换UTF8String.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSString与const char *相互转换UTF8String.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSString与int和float的相互转换 .html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSString与int和float的相互转换 .html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSString拼接、替换.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSString拼接、替换.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSURLConnection sendAsynchronousRequest.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSURLConnection sendAsynchronousRequest.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSURLConnection.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSURLConnection.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSUrl -&gt; NSString photo.thumbnail_pic.absoluteString.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSUrl -&gt; NSString photo.thumbnail_pic.absoluteString.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/NSUserDefaults存储switch状态.html" afterPath="$PROJECT_DIR$/blog/code/iOS/NSUserDefaults存储switch状态.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/OC新特性.html" afterPath="$PROJECT_DIR$/blog/code/iOS/OC新特性.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/Preferences偏好设置存储.html" afterPath="$PROJECT_DIR$/blog/code/iOS/Preferences偏好设置存储.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/RAC.html" afterPath="$PROJECT_DIR$/blog/code/iOS/RAC.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/RGB.html" afterPath="$PROJECT_DIR$/blog/code/iOS/RGB.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/SDWebImage播放本地gif [self.imageView sd_setImageWithURL:[[NSBundle mainBundle] URLForResource:@&quot;xx.gif&quot; withExtension:nil]];.html" afterPath="$PROJECT_DIR$/blog/code/iOS/SDWebImage播放本地gif [self.imageView sd_setImageWithURL:[[NSBundle mainBundle] URLForResource:@&quot;xx.gif&quot; withExtension:nil]];.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/Segment、tabBar自定义按钮，从外部控制器设置选中的按钮.html" afterPath="$PROJECT_DIR$/blog/code/iOS/Segment、tabBar自定义按钮，从外部控制器设置选中的按钮.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/TableView去掉多余行数、IOS最后一行Cell系统分割线顶头.webarchive" afterPath="$PROJECT_DIR$/blog/code/iOS/TableView去掉多余行数、IOS最后一行Cell系统分割线顶头.webarchive" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/TableView取得选中的行号indexPathForSelectedRow.html" afterPath="$PROJECT_DIR$/blog/code/iOS/TableView取得选中的行号indexPathForSelectedRow.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UIActionSheet通过buttonIndex获取网络名称.html" afterPath="$PROJECT_DIR$/blog/code/iOS/UIActionSheet通过buttonIndex获取网络名称.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UIActivityIndicatorView转圈圈控件 转时,延迟GCD,让控制器上的控件都不可再点击self.view.userInteractionEnabled = NO;.html" afterPath="$PROJECT_DIR$/blog/code/iOS/UIActivityIndicatorView转圈圈控件 转时,延迟GCD,让控制器上的控件都不可再点击self.view.userInteractionEnabled = NO;.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UIButton设置属性 .html" afterPath="$PROJECT_DIR$/blog/code/iOS/UIButton设置属性 .html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UICollectionViewController.html" afterPath="$PROJECT_DIR$/blog/code/iOS/UICollectionViewController.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UIDatePicker-UIToolbar.html" afterPath="$PROJECT_DIR$/blog/code/iOS/UIDatePicker-UIToolbar.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UIPopoverController的passthroughViews属性.html" afterPath="$PROJECT_DIR$/blog/code/iOS/UIPopoverController的passthroughViews属性.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UIScrollViewDelegate.html" afterPath="$PROJECT_DIR$/blog/code/iOS/UIScrollViewDelegate.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UISplitViewController下两页面牵线代理.html" afterPath="$PROJECT_DIR$/blog/code/iOS/UISplitViewController下两页面牵线代理.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UIStatusBarStyle设置状态栏为白色.html" afterPath="$PROJECT_DIR$/blog/code/iOS/UIStatusBarStyle设置状态栏为白色.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UITableViewController—数据源方法.html" afterPath="$PROJECT_DIR$/blog/code/iOS/UITableViewController—数据源方法.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UIViewController中添加UITabelView.html" afterPath="$PROJECT_DIR$/blog/code/iOS/UIViewController中添加UITabelView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UIWebView 截取string方法名转为SEL.html" afterPath="$PROJECT_DIR$/blog/code/iOS/UIWebView 截取string方法名转为SEL.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UIWebView修改图片宽度.html" afterPath="$PROJECT_DIR$/blog/code/iOS/UIWebView修改图片宽度.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/UIWebView浏览器.html" afterPath="$PROJECT_DIR$/blog/code/iOS/UIWebView浏览器.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/WebView点击图片看大图效果.html" afterPath="$PROJECT_DIR$/blog/code/iOS/WebView点击图片看大图效果.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/XML.html" afterPath="$PROJECT_DIR$/blog/code/iOS/XML.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/XMPP.html" afterPath="$PROJECT_DIR$/blog/code/iOS/XMPP.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/XMPP截取XML的&lt;attachment&gt;，string转成image；解析email地址 .html" afterPath="$PROJECT_DIR$/blog/code/iOS/XMPP截取XML的&lt;attachment&gt;，string转成image；解析email地址 .html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/Xcode插件的安装路径 UIView自带的方法.html" afterPath="$PROJECT_DIR$/blog/code/iOS/Xcode插件的安装路径 UIView自带的方法.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/[PushNoticeViewController class].html" afterPath="$PROJECT_DIR$/blog/code/iOS/[PushNoticeViewController class].html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/[vc isKindOfClass:[AddViewController class]]判断类型.html" afterPath="$PROJECT_DIR$/blog/code/iOS/[vc isKindOfClass:[AddViewController class]]判断类型.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/block.html" afterPath="$PROJECT_DIR$/blog/code/iOS/block.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/block外面定义值__block UIImage *image = nil;(C语言).html" afterPath="$PROJECT_DIR$/blog/code/iOS/block外面定义值__block UIImage *image = nil;(C语言).html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/block快捷键inlineBlock.html" afterPath="$PROJECT_DIR$/blog/code/iOS/block快捷键inlineBlock.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/block执行顺序.html" afterPath="$PROJECT_DIR$/blog/code/iOS/block执行顺序.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/block点击事件.html" afterPath="$PROJECT_DIR$/blog/code/iOS/block点击事件.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/bounds子控件占据父控件.html" afterPath="$PROJECT_DIR$/blog/code/iOS/bounds子控件占据父控件.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/cell-group导航根控制器 背景平铺。修改cell选中颜色.html" afterPath="$PROJECT_DIR$/blog/code/iOS/cell-group导航根控制器 背景平铺。修改cell选中颜色.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/cell中创建button监听点击事件，控制器做代理.html" afterPath="$PROJECT_DIR$/blog/code/iOS/cell中创建button监听点击事件，控制器做代理.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/cell中设置UISwitch开关、self.accessoryView.html" afterPath="$PROJECT_DIR$/blog/code/iOS/cell中设置UISwitch开关、self.accessoryView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/cell点击不变色 cell.selectionStyle = UITableViewCellSelectionStyleNone.html" afterPath="$PROJECT_DIR$/blog/code/iOS/cell点击不变色 cell.selectionStyle = UITableViewCellSelectionStyleNone.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/cell选中状态快速消失（令选中时 显示的灰色 消失）.html" afterPath="$PROJECT_DIR$/blog/code/iOS/cell选中状态快速消失（令选中时 显示的灰色 消失）.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/dispatch_after模拟2s后执行跳转 延迟.html" afterPath="$PROJECT_DIR$/blog/code/iOS/dispatch_after模拟2s后执行跳转 延迟.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/git.html" afterPath="$PROJECT_DIR$/blog/code/iOS/git.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/http与socket的区别.html" afterPath="$PROJECT_DIR$/blog/code/iOS/http与socket的区别.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/init 必须写 if(self = [super init]).html" afterPath="$PROJECT_DIR$/blog/code/iOS/init 必须写 if(self = [super init]).html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/initWithCoder（storyboard、xib、文件 创建）initWithFrame（代码）.html" afterPath="$PROJECT_DIR$/blog/code/iOS/initWithCoder（storyboard、xib、文件 创建）initWithFrame（代码）.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/int--&gt;NSNumber,NSNumber--&gt;nsinteger,string --&gt;double,CGFloat --&gt; dobule.html" afterPath="$PROJECT_DIR$/blog/code/iOS/int--&gt;NSNumber,NSNumber--&gt;nsinteger,string --&gt;double,CGFloat --&gt; dobule.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/int:CGPoint:CATransform3D转换为NSValue.html" afterPath="$PROJECT_DIR$/blog/code/iOS/int:CGPoint:CATransform3D转换为NSValue.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/ipad 右侧控制器放一个父UIView，再放入n个导航控制器的view.html" afterPath="$PROJECT_DIR$/blog/code/iOS/ipad 右侧控制器放一个父UIView，再放入n个导航控制器的view.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/ipad自动伸缩bottomMenu.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;.html" afterPath="$PROJECT_DIR$/blog/code/iOS/ipad自动伸缩bottomMenu.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/jQuery.html" afterPath="$PROJECT_DIR$/blog/code/iOS/jQuery.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/label设置动画转场效果UIView transitionWithView.html" afterPath="$PROJECT_DIR$/blog/code/iOS/label设置动画转场效果UIView transitionWithView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/mysql终端配置.html" afterPath="$PROJECT_DIR$/blog/code/iOS/mysql终端配置.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/param.keyValues模型转字典.html" afterPath="$PROJECT_DIR$/blog/code/iOS/param.keyValues模型转字典.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/plist存取.html" afterPath="$PROJECT_DIR$/blog/code/iOS/plist存取.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/push到第2个控制器.html" afterPath="$PROJECT_DIR$/blog/code/iOS/push到第2个控制器.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/readonly属性，子类需要加@interface HMFileDownloader : NSObject {BOOL _downloading;}.html" afterPath="$PROJECT_DIR$/blog/code/iOS/readonly属性，子类需要加@interface HMFileDownloader : NSObject {BOOL _downloading;}.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/runtime总结.html" afterPath="$PROJECT_DIR$/blog/code/iOS/runtime总结.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/scrollview滚动到底部.html" afterPath="$PROJECT_DIR$/blog/code/iOS/scrollview滚动到底部.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/self.items.count UITabBarItem模型，有多少个子控制器就有多少个UITabBarItem模型.html" afterPath="$PROJECT_DIR$/blog/code/iOS/self.items.count UITabBarItem模型，有多少个子控制器就有多少个UITabBarItem模型.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/self.plusButton.currentBackgroundImage.size.html" afterPath="$PROJECT_DIR$/blog/code/iOS/self.plusButton.currentBackgroundImage.size.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/sqlite 存blob,要把NSDictionary转换为NSData[NSKeyedArchiver archivedDataWithRootObject:dict].html" afterPath="$PROJECT_DIR$/blog/code/iOS/sqlite 存blob,要把NSDictionary转换为NSData[NSKeyedArchiver archivedDataWithRootObject:dict].html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/static、extern。const.html" afterPath="$PROJECT_DIR$/blog/code/iOS/static、extern。const.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/stringWithFormat.html" afterPath="$PROJECT_DIR$/blog/code/iOS/stringWithFormat.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/swift创建UIButton、UIImageView、字符串插值、转类型、..&lt;、...、元组、for-in、switch.html" afterPath="$PROJECT_DIR$/blog/code/iOS/swift创建UIButton、UIImageView、字符串插值、转类型、..&lt;、...、元组、for-in、switch.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/tabBar单选事件（三步）.html" afterPath="$PROJECT_DIR$/blog/code/iOS/tabBar单选事件（三步）.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/tableView中的cell点击时不显示样式.html" afterPath="$PROJECT_DIR$/blog/code/iOS/tableView中的cell点击时不显示样式.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/tableView从cell中添加分割线.html" afterPath="$PROJECT_DIR$/blog/code/iOS/tableView从cell中添加分割线.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/tableView刷新.html" afterPath="$PROJECT_DIR$/blog/code/iOS/tableView刷新.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/tableView的刷新、@property属性的用法（文字描述）.html" afterPath="$PROJECT_DIR$/blog/code/iOS/tableView的刷新、@property属性的用法（文字描述）.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/textField密码模式.html" afterPath="$PROJECT_DIR$/blog/code/iOS/textField密码模式.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/textField点击return调动-textFieldShouldReturn.html" afterPath="$PROJECT_DIR$/blog/code/iOS/textField点击return调动-textFieldShouldReturn.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/textField限制数字字数.html" afterPath="$PROJECT_DIR$/blog/code/iOS/textField限制数字字数.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/textView判断结束编辑.html" afterPath="$PROJECT_DIR$/blog/code/iOS/textView判断结束编辑.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/v.superclass.class测试出control里面的控件.html" afterPath="$PROJECT_DIR$/blog/code/iOS/v.superclass.class测试出control里面的控件.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/webView添加m.baidu.com.html" afterPath="$PROJECT_DIR$/blog/code/iOS/webView添加m.baidu.com.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/weibo字典转模型MJExtension:h.html" afterPath="$PROJECT_DIR$/blog/code/iOS/weibo字典转模型MJExtension:h.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/xib类方法[[[NSBundle mainBundle] loadNibNamed:@&quot;FlagView&quot; owner:nil options:nil] lastObject].html" afterPath="$PROJECT_DIR$/blog/code/iOS/xib类方法[[[NSBundle mainBundle] loadNibNamed:@&quot;FlagView&quot; owner:nil options:nil] lastObject].html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/两个日期倒计时展示.html" afterPath="$PROJECT_DIR$/blog/code/iOS/两个日期倒计时展示.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/中文姓名字符串组 转换为 英文组.html" afterPath="$PROJECT_DIR$/blog/code/iOS/中文姓名字符串组 转换为 英文组.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/中途改变状态栏uiapplication.html" afterPath="$PROJECT_DIR$/blog/code/iOS/中途改变状态栏uiapplication.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/主线程异步loading正常 发送邮件先，发图片并回调名称，再存sql邮件.html" afterPath="$PROJECT_DIR$/blog/code/iOS/主线程异步loading正常 发送邮件先，发图片并回调名称，再存sql邮件.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/九宫格图片 公式：总行数 = （总个数 - 1）: 总列数 + 1 计算微博配图的尺寸 imageV.contentMode内容模式.html" afterPath="$PROJECT_DIR$/blog/code/iOS/九宫格图片 公式：总行数 = （总个数 - 1）: 总列数 + 1 计算微博配图的尺寸 imageV.contentMode内容模式.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/从大图片中裁剪小图片.html" afterPath="$PROJECT_DIR$/blog/code/iOS/从大图片中裁剪小图片.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/从模型数组中筛选包含关键字NSString *的模型数组，并赋值给另一个数组.html" afterPath="$PROJECT_DIR$/blog/code/iOS/从模型数组中筛选包含关键字NSString *的模型数组，并赋值给另一个数组.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/代理 协议.html" afterPath="$PROJECT_DIR$/blog/code/iOS/代理 协议.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/令tableView第一行为选中状态.html" afterPath="$PROJECT_DIR$/blog/code/iOS/令tableView第一行为选中状态.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/侧滑菜单.html" afterPath="$PROJECT_DIR$/blog/code/iOS/侧滑菜单.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/修改下一个界面返回按钮的文字navigationItem.html" afterPath="$PROJECT_DIR$/blog/code/iOS/修改下一个界面返回按钮的文字navigationItem.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/偏好设置NSUserDefaults保存到沙盒.html" afterPath="$PROJECT_DIR$/blog/code/iOS/偏好设置NSUserDefaults保存到沙盒.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/停止view进行UI交互self.view.userInteractionEnabled = NO;.html" afterPath="$PROJECT_DIR$/blog/code/iOS/停止view进行UI交互self.view.userInteractionEnabled = NO;.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/内存分析工具 动态分析Profile 静态分析Analyze.html" afterPath="$PROJECT_DIR$/blog/code/iOS/内存分析工具 动态分析Profile 静态分析Analyze.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/分页.html" afterPath="$PROJECT_DIR$/blog/code/iOS/分页.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/创建一个按钮.html" afterPath="$PROJECT_DIR$/blog/code/iOS/创建一个按钮.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/创建导航控制器并从下至上弹出[[UINavigationController alloc] initWithRootViewController:detail];.html" afterPath="$PROJECT_DIR$/blog/code/iOS/创建导航控制器并从下至上弹出[[UINavigationController alloc] initWithRootViewController:detail];.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/删除提示UIAlerView.html" afterPath="$PROJECT_DIR$/blog/code/iOS/删除提示UIAlerView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/判断一个对象是否存在在数组里if([self.items indexOfObject:vc.tabBarItem]== NSNotFound):不在.html" afterPath="$PROJECT_DIR$/blog/code/iOS/判断一个对象是否存在在数组里if([self.items indexOfObject:vc.tabBarItem]== NSNotFound):不在.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/判断某一时间yyyy-MM-dd HH:mm:ss与当前时间的差值.html" afterPath="$PROJECT_DIR$/blog/code/iOS/判断某一时间yyyy-MM-dd HH:mm:ss与当前时间的差值.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/判断网络的调用[Reachability IsEnableWIFI].html" afterPath="$PROJECT_DIR$/blog/code/iOS/判断网络的调用[Reachability IsEnableWIFI].html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/利用KVC把readOnly属性改掉.html" afterPath="$PROJECT_DIR$/blog/code/iOS/利用KVC把readOnly属性改掉.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/制作button按钮.html" afterPath="$PROJECT_DIR$/blog/code/iOS/制作button按钮.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/前后插入数组.html" afterPath="$PROJECT_DIR$/blog/code/iOS/前后插入数组.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/加载本地url[[NSBundle mainBundle] URLForResource:@&quot;index&quot; withExtension:@&quot;html&quot;];.html" afterPath="$PROJECT_DIR$/blog/code/iOS/加载本地url[[NSBundle mainBundle] URLForResource:@&quot;index&quot; withExtension:@&quot;html&quot;];.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/加载网页.html" afterPath="$PROJECT_DIR$/blog/code/iOS/加载网页.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/单例 兼容ARC和非ARC 宏.html" afterPath="$PROJECT_DIR$/blog/code/iOS/单例 兼容ARC和非ARC 宏.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/单例 非ARC 宏的写法 验证 调用.html" afterPath="$PROJECT_DIR$/blog/code/iOS/单例 非ARC 宏的写法 验证 调用.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/单例.html" afterPath="$PROJECT_DIR$/blog/code/iOS/单例.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/反射机制 判断 类名是否一致isKindOfClass:NSClassFromString(@&quot;UITabBarButton&quot;).html" afterPath="$PROJECT_DIR$/blog/code/iOS/反射机制 判断 类名是否一致isKindOfClass:NSClassFromString(@&quot;UITabBarButton&quot;).html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/发送照片(压缩)NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.5);.html" afterPath="$PROJECT_DIR$/blog/code/iOS/发送照片(压缩)NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.5);.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/取中文的第一个字.html" afterPath="$PROJECT_DIR$/blog/code/iOS/取中文的第一个字.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/取出用户点击的点 [[touches anyObject] locationInView:self.view].html" afterPath="$PROJECT_DIR$/blog/code/iOS/取出用户点击的点 [[touches anyObject] locationInView:self.view].html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/取消选中cell行的灰色样式.html" afterPath="$PROJECT_DIR$/blog/code/iOS/取消选中cell行的灰色样式.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/图片内容模式imageV.contentMode = UIViewContentModeScaleAspectFill;.html" afterPath="$PROJECT_DIR$/blog/code/iOS/图片内容模式imageV.contentMode = UIViewContentModeScaleAspectFill;.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/多线程方法总结pthread、NSThread、GCD、NSOperation、SDWebImage.html" afterPath="$PROJECT_DIR$/blog/code/iOS/多线程方法总结pthread、NSThread、GCD、NSOperation、SDWebImage.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/大写uppercaseString小写lowercaseString开头大写，其余小写capitalizedString.html" afterPath="$PROJECT_DIR$/blog/code/iOS/大写uppercaseString小写lowercaseString开头大写，其余小写capitalizedString.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/头像 UIImagePickerController图片选择.allowsEditing方形.html" afterPath="$PROJECT_DIR$/blog/code/iOS/头像 UIImagePickerController图片选择.allowsEditing方形.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/如何利用xib封装一个view.html" afterPath="$PROJECT_DIR$/blog/code/iOS/如何利用xib封装一个view.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/子类数组的每个下载器都调用父类中的方法[self.singleDownloaders makeObjectsPerformSelector:@selector(start)];.html" afterPath="$PROJECT_DIR$/blog/code/iOS/子类数组的每个下载器都调用父类中的方法[self.singleDownloaders makeObjectsPerformSelector:@selector(start)];.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/字符串存储.html" afterPath="$PROJECT_DIR$/blog/code/iOS/字符串存储.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/导航控制器 清除 系统自带tabBarButton.html" afterPath="$PROJECT_DIR$/blog/code/iOS/导航控制器 清除 系统自带tabBarButton.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/将webView格式的内容转换为NSString.html" afterPath="$PROJECT_DIR$/blog/code/iOS/将webView格式的内容转换为NSString.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/将图片保存到相册当中UIImageWriteToSavedPhotosAlbum.html" afterPath="$PROJECT_DIR$/blog/code/iOS/将图片保存到相册当中UIImageWriteToSavedPhotosAlbum.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/将字符串 用;号分隔 成数组componentsSeparatedByString.html" afterPath="$PROJECT_DIR$/blog/code/iOS/将字符串 用;号分隔 成数组componentsSeparatedByString.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/展示最新的微博数 导航条下label.html" afterPath="$PROJECT_DIR$/blog/code/iOS/展示最新的微博数 导航条下label.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/延迟1s.html" afterPath="$PROJECT_DIR$/blog/code/iOS/延迟1s.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/当push时 hidesBottomBarWhenPushed 隐藏底部条Bar.html" afterPath="$PROJECT_DIR$/blog/code/iOS/当push时 hidesBottomBarWhenPushed 隐藏底部条Bar.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/微博创建时间处理.html" afterPath="$PROJECT_DIR$/blog/code/iOS/微博创建时间处理.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/懒加载 从plist中获取NSArray.html" afterPath="$PROJECT_DIR$/blog/code/iOS/懒加载 从plist中获取NSArray.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/截取字符串.html" afterPath="$PROJECT_DIR$/blog/code/iOS/截取字符串.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/截图分类调用方法.html" afterPath="$PROJECT_DIR$/blog/code/iOS/截图分类调用方法.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/所有子控件执行removeFromSuperview从父控件移除操作[self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)].html" afterPath="$PROJECT_DIR$/blog/code/iOS/所有子控件执行removeFromSuperview从父控件移除操作[self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)].html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/打电话:发短信:发邮件:应用评分:打开其他应用 __weak typeof(self) share = self;.html" afterPath="$PROJECT_DIR$/blog/code/iOS/打电话:发短信:发邮件:应用评分:打开其他应用 __weak typeof(self) share = self;.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/把NSString作为JavaScript执行.html" afterPath="$PROJECT_DIR$/blog/code/iOS/把NSString作为JavaScript执行.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/把小图片的一个点拉伸 变成一个好图片stretchableImageWithLeftCapWidth:topCapHeight:.html" afterPath="$PROJECT_DIR$/blog/code/iOS/把小图片的一个点拉伸 变成一个好图片stretchableImageWithLeftCapWidth:topCapHeight:.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/按钮内部图片居中不拉伸contentMode、不需裁剪clipsToBounds.html" afterPath="$PROJECT_DIR$/blog/code/iOS/按钮内部图片居中不拉伸contentMode、不需裁剪clipsToBounds.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/按钮单选 定式（1定义3步骤）.html" afterPath="$PROJECT_DIR$/blog/code/iOS/按钮单选 定式（1定义3步骤）.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/控制器的view为UIWebView.html" afterPath="$PROJECT_DIR$/blog/code/iOS/控制器的view为UIWebView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/控制器的生命周期方法.html" afterPath="$PROJECT_DIR$/blog/code/iOS/控制器的生命周期方法.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/控制器间连线传递数据 storyboard Segue Identifier.html" afterPath="$PROJECT_DIR$/blog/code/iOS/控制器间连线传递数据 storyboard Segue Identifier.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/改变按钮可用状态.html" afterPath="$PROJECT_DIR$/blog/code/iOS/改变按钮可用状态.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/数据模型self.name = dict[@&quot;name&quot;];.html" afterPath="$PROJECT_DIR$/blog/code/iOS/数据模型self.name = dict[@&quot;name&quot;];.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/数据源方法 模型 嵌套 模型.html" afterPath="$PROJECT_DIR$/blog/code/iOS/数据源方法 模型 嵌套 模型.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/文字居中self.titleLabel.textAlignment = NSTextAlignmentCenter;.html" afterPath="$PROJECT_DIR$/blog/code/iOS/文字居中self.titleLabel.textAlignment = NSTextAlignmentCenter;.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/文本提示MBProgressHUD.html" afterPath="$PROJECT_DIR$/blog/code/iOS/文本提示MBProgressHUD.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/文本框代理.html" afterPath="$PROJECT_DIR$/blog/code/iOS/文本框代理.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/时间 NSDate-&gt;NSString, NSString-&gt; NSDate,getNowDate.html" afterPath="$PROJECT_DIR$/blog/code/iOS/时间 NSDate-&gt;NSString, NSString-&gt; NSDate,getNowDate.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/普通页面Modal导航页（线程放到主线程）.html" afterPath="$PROJECT_DIR$/blog/code/iOS/普通页面Modal导航页（线程放到主线程）.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/根据字符切割字符串componentsSeparatedByString.html" afterPath="$PROJECT_DIR$/blog/code/iOS/根据字符切割字符串componentsSeparatedByString.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/模型 嵌套 特殊处理.html" afterPath="$PROJECT_DIR$/blog/code/iOS/模型 嵌套 特殊处理.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/沙盒路径 po NSHomeDirectory().html" afterPath="$PROJECT_DIR$/blog/code/iOS/沙盒路径 po NSHomeDirectory().html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/没有进行适配的iOS6iOS7如果要改整个程序都要改，在分类中runtime底层替换系统imageWithName方法 swizzle调换方法.html" afterPath="$PROJECT_DIR$/blog/code/iOS/没有进行适配的iOS6iOS7如果要改整个程序都要改，在分类中runtime底层替换系统imageWithName方法 swizzle调换方法.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/添加一个删除item到导航栏的右边.html" afterPath="$PROJECT_DIR$/blog/code/iOS/添加一个删除item到导航栏的右边.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/添加分割线.html" afterPath="$PROJECT_DIR$/blog/code/iOS/添加分割线.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/添加图片到数组.html" afterPath="$PROJECT_DIR$/blog/code/iOS/添加图片到数组.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/滑动返回功能 清空代理interactivePopGestureRecognizer.html" afterPath="$PROJECT_DIR$/blog/code/iOS/滑动返回功能 清空代理interactivePopGestureRecognizer.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/点 -&gt; 像素.html" afterPath="$PROJECT_DIR$/blog/code/iOS/点 -&gt; 像素.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/点击屏幕任何地方，退出键盘.html" afterPath="$PROJECT_DIR$/blog/code/iOS/点击屏幕任何地方，退出键盘.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/监听屏幕旋转 willRotateToInterfaceOrientation: duration:.html" afterPath="$PROJECT_DIR$/blog/code/iOS/监听屏幕旋转 willRotateToInterfaceOrientation: duration:.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/移除当前控制器、返回到某个控制器.html" afterPath="$PROJECT_DIR$/blog/code/iOS/移除当前控制器、返回到某个控制器.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/系统中的内存分区.html" afterPath="$PROJECT_DIR$/blog/code/iOS/系统中的内存分区.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/结束编辑.html" afterPath="$PROJECT_DIR$/blog/code/iOS/结束编辑.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/联网图标 safari打开网址 打电话发短信发邮件.html" afterPath="$PROJECT_DIR$/blog/code/iOS/联网图标 safari打开网址 打电话发短信发邮件.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/背景平铺[UIColor colorWithPatternImage.html" afterPath="$PROJECT_DIR$/blog/code/iOS/背景平铺[UIColor colorWithPatternImage.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/自动弹出键盘.html" afterPath="$PROJECT_DIR$/blog/code/iOS/自动弹出键盘.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/自动根据布局计算cell的行高elf.tableView.rowHeight = UITableViewAutomaticDimension.html" afterPath="$PROJECT_DIR$/blog/code/iOS/自动根据布局计算cell的行高elf.tableView.rowHeight = UITableViewAutomaticDimension.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/获得沙盒中的数据库文件名.html" afterPath="$PROJECT_DIR$/blog/code/iOS/获得沙盒中的数据库文件名.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/蓝牙.html" afterPath="$PROJECT_DIR$/blog/code/iOS/蓝牙.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/覆盖箭头的状态:缓存池可能影响箭头open状态.html" afterPath="$PROJECT_DIR$/blog/code/iOS/覆盖箭头的状态:缓存池可能影响箭头open状态.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/角度--&gt;弧度.html" afterPath="$PROJECT_DIR$/blog/code/iOS/角度--&gt;弧度.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/计算文字尺寸 - (CGSize)sizeWithText:(NSString *)text font:(UIFont *)font maxSize:(CGSize)maxSize.html" afterPath="$PROJECT_DIR$/blog/code/iOS/计算文字尺寸 - (CGSize)sizeWithText:(NSString *)text font:(UIFont *)font maxSize:(CGSize)maxSize.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/设置导航栏标题的字体颜色和大小.html" afterPath="$PROJECT_DIR$/blog/code/iOS/设置导航栏标题的字体颜色和大小.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/调用AppDelegate.h中的方法.html" afterPath="$PROJECT_DIR$/blog/code/iOS/调用AppDelegate.h中的方法.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/距离传感器 [UIDevice currentDevice].proximityMonitoringEnabled = YES.html" afterPath="$PROJECT_DIR$/blog/code/iOS/距离传感器 [UIDevice currentDevice].proximityMonitoringEnabled = YES.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/跟踪当前线程[NSThread currentThread].html" afterPath="$PROJECT_DIR$/blog/code/iOS/跟踪当前线程[NSThread currentThread].html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/退出到storyboard页面.html" afterPath="$PROJECT_DIR$/blog/code/iOS/退出到storyboard页面.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/选中三部曲.html" afterPath="$PROJECT_DIR$/blog/code/iOS/选中三部曲.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/选择照片UIImagePickerController.html" afterPath="$PROJECT_DIR$/blog/code/iOS/选择照片UIImagePickerController.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/键盘弹出时，tableView数据更新，表格滚动到底部scrollToRowAtIndexPath: atScrollPosition:；滚动表格，隐藏键盘-scrollViewWillBeginDragging.html" afterPath="$PROJECT_DIR$/blog/code/iOS/键盘弹出时，tableView数据更新，表格滚动到底部scrollToRowAtIndexPath: atScrollPosition:；滚动表格，隐藏键盘-scrollViewWillBeginDragging.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/闭源库（静态库.a 和 .framework、动态库）.html" afterPath="$PROJECT_DIR$/blog/code/iOS/闭源库（静态库.a 和 .framework、动态库）.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/随机数arc4random().html" afterPath="$PROJECT_DIR$/blog/code/iOS/随机数arc4random().html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/随机颜色.html" afterPath="$PROJECT_DIR$/blog/code/iOS/随机颜色.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/随机颜色arc4random_uniform(255):255.0.html" afterPath="$PROJECT_DIR$/blog/code/iOS/随机颜色arc4random_uniform(255):255.0.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/静态单元格.html" afterPath="$PROJECT_DIR$/blog/code/iOS/静态单元格.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/静态变量 static NSString *host.html" afterPath="$PROJECT_DIR$/blog/code/iOS/静态变量 static NSString *host.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/非ARC项目中设置部分文件ARC支持.html" afterPath="$PROJECT_DIR$/blog/code/iOS/非ARC项目中设置部分文件ARC支持.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/code/（终端）显示、隐藏 隐藏文件.html" afterPath="$PROJECT_DIR$/blog/code/iOS/（终端）显示、隐藏 隐藏文件.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blog/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="zhouyuancc.github.io.iws" />
@@ -30,13 +345,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/blog/index.html">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5488722" vertical-offset="10641" max-vertical-offset="12075">
-              <caret line="724" column="0" selection-start-line="724" selection-start-column="0" selection-end-line="724" selection-end-column="0" />
+            <state vertical-scroll-proportion="-16.25" vertical-offset="240" max-vertical-offset="2070">
+              <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#article#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="tag#div#0;tag#article#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="n#style#0;n#a#1;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#form#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -45,31 +361,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="备份index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/备份index.html">
+      <file leaf-file-name="indexWeb.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/blog/indexWeb.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-47.833332" vertical-offset="292" max-vertical-offset="3720">
-              <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
-              <folding />
+            <state vertical-scroll-proportion="0.48387095" vertical-offset="375" max-vertical-offset="2025">
+              <caret line="757" column="0" selection-start-line="757" selection-start-column="0" selection-end-line="757" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#article#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="tag#div#0;tag#article#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="n#style#0;n#a#1;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#form#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/assets/css/main.css">
+      <file leaf-file-name="indexCM.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/indexCM.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.607143" vertical-offset="30424" max-vertical-offset="45000">
-              <caret line="2035" column="19" selection-start-line="2035" selection-start-column="13" selection-end-line="2035" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cs.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/cs.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.7916665" vertical-offset="173" max-vertical-offset="585">
-              <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+            <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="225">
+              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -108,18 +420,24 @@
         <option value="$PROJECT_DIR$/indexDesk.html" />
         <option value="$PROJECT_DIR$/blog/备份index.html" />
         <option value="$PROJECT_DIR$/blog/assets/sass/main.scss" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/desk/css/index.css" />
         <option value="$PROJECT_DIR$/blog/code/view底部添加两个按钮，push页面.html" />
         <option value="$PROJECT_DIR$/blog/code/NSRange截取字符串.html" />
-        <option value="$PROJECT_DIR$/blog/cs.html" />
         <option value="$PROJECT_DIR$/blog/assets/css/main.css" />
+        <option value="$PROJECT_DIR$/blog/indexCM.html" />
+        <option value="$PROJECT_DIR$/blog/cs.html" />
+        <option value="$PROJECT_DIR$/resume/ios开发工程师_周园.html" />
         <option value="$PROJECT_DIR$/blog/index.html" />
+        <option value="$USER_HOME$/Library/Application Support/Mou/CSS/GitHub2.css" />
+        <option value="$PROJECT_DIR$/desk/index.html" />
+        <option value="$PROJECT_DIR$/blog/indexWeb.html" />
+        <option value="$PROJECT_DIR$/blog/iOS.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="46" />
+    <option name="x" value="204" />
     <option name="y" value="23" />
     <option name="width" value="952" />
     <option name="height" value="873" />
@@ -150,6 +468,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -178,85 +497,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="desk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="desk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhouyuancc.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,11 +539,11 @@
       <recent name="$PROJECT_DIR$/blog" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/blog" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/desk" />
+      <recent name="$PROJECT_DIR$/blog/code/iOS" />
+      <recent name="$PROJECT_DIR$/blog" />
       <recent name="$PROJECT_DIR$/resume/iOS_ZY_files" />
-      <recent name="$PROJECT_DIR$/resume/QQ_iOS_files" />
     </key>
   </component>
   <component name="RunManager">
@@ -377,13 +623,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="46" y="23" width="952" height="873" extended-state="0" />
+    <frame x="204" y="23" width="952" height="873" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.4995141" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.49856734" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.49856734" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40204865" sideWeight="0.49856734" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24928367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2863294" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -394,9 +639,10 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40204865" sideWeight="0.49856734" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -440,131 +686,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/seajs-master/src/util-lang.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/seajs-master/src/util-path.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3795">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/seajs-master/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="285">
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resume/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="140278" max-vertical-offset="154710">
-          <caret line="9358" column="0" selection-start-line="9358" selection-start-column="0" selection-end-line="9358" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="101400">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rtf.js-master/LICENSE">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rtf.js-master/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="737">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desk/images/aple.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desk/images/apple.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desk/images/file.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desk/images/bg1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desk/images/apples.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desk/images/apple1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rtf.js-master/wmf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59375" vertical-offset="38040" max-vertical-offset="38520">
-          <caret line="2579" column="47" selection-start-line="2579" selection-start-column="47" selection-end-line="2579" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rtf.js-master/rtf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31458333" vertical-offset="2009" max-vertical-offset="29250">
-          <caret line="168" column="15" selection-start-line="168" selection-start-column="15" selection-end-line="168" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resume/Chart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0020833334" vertical-offset="11444" max-vertical-offset="52275">
           <caret line="763" column="27" selection-start-line="763" selection-start-column="16" selection-end-line="763" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rtf.js-master/samples/1.11.3/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="142982" max-vertical-offset="155415">
-          <caret line="10354" column="0" selection-start-line="10354" selection-start-column="0" selection-end-line="10354" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rtf.js-master/samples/1.11.3/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rtf.js-master/samples/simple4.rtf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="484">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rtf.js-master/samples/simple2.rtf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="484">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -575,24 +700,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rtf.js-master/samples/wmf.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.541667" vertical-offset="1850" max-vertical-offset="2310">
-          <caret line="137" column="10" selection-start-line="137" selection-start-column="10" selection-end-line="137" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/面试/QQ邮箱 - iOS开发工程师_周园.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36011904" vertical-offset="16318" max-vertical-offset="20625">
           <caret line="205" column="47" selection-start-line="205" selection-start-column="47" selection-end-line="205" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rtf.js-master/samples/rtf.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34922862" vertical-offset="1911" max-vertical-offset="3060">
-          <caret line="144" column="16" selection-start-line="144" selection-start-column="16" selection-end-line="144" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -624,31 +735,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resume/ResumeIndex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.125" vertical-offset="2739" max-vertical-offset="3960">
-          <caret line="194" column="70" selection-start-line="194" selection-start-column="70" selection-end-line="194" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="724">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/工作练习/21-HTML5/21-HTML5+CSS3/12-宠物网首页/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1723" max-vertical-offset="2460">
           <caret line="131" column="5" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resume/iOS_ZY_resume.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-135.625" vertical-offset="15" max-vertical-offset="23475">
-          <caret line="218" column="130" selection-start-line="218" selection-start-column="130" selection-end-line="218" selection-end-column="130" />
         </state>
       </provider>
     </entry>
@@ -715,54 +805,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/params.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="165">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desk/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1933" max-vertical-offset="2685">
-          <caret line="166" column="25" selection-start-line="166" selection-start-column="25" selection-end-line="166" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67321175" vertical-offset="0" max-vertical-offset="720">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog/code/[PushNoticeViewController class].html">
+    <entry file="file://$PROJECT_DIR$/blog/code/iOS/[PushNoticeViewController class].html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.90462834" vertical-offset="0" max-vertical-offset="735">
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/code/NSRange截取字符串.html">
+    <entry file="file://$PROJECT_DIR$/blog/code/iOS/NSRange截取字符串.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.63113606" vertical-offset="0" max-vertical-offset="855">
           <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog/备份index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-47.833332" vertical-offset="292" max-vertical-offset="3720">
-          <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog/cs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.7916665" vertical-offset="173" max-vertical-offset="585">
-          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,24 +823,110 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12195122" vertical-offset="0" max-vertical-offset="369">
           <caret line="3" column="3188" selection-start-line="3" selection-start-column="3185" selection-end-line="3" selection-end-column="3188" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blog/assets/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.607143" vertical-offset="30424" max-vertical-offset="45000">
+        <state vertical-scroll-proportion="0.0" vertical-offset="30424" max-vertical-offset="45000">
           <caret line="2035" column="19" selection-start-line="2035" selection-start-column="13" selection-end-line="2035" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Application Support/Mou/CSS/Clearness.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39633286" vertical-offset="844" max-vertical-offset="2280">
+          <caret line="75" column="11" selection-start-line="73" selection-start-column="0" selection-end-line="75" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/code/Web/Sql中判断“数据库＂、＂表＂、＂临时表＂、＂存储过程＂和列”是否存在.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4008439" vertical-offset="0" max-vertical-offset="1635">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/index.html">
+    <entry file="file://$PROJECT_DIR$/resume/ResumeIndex.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5488722" vertical-offset="10641" max-vertical-offset="12075">
-          <caret line="724" column="0" selection-start-line="724" selection-start-column="0" selection-end-line="724" selection-end-column="0" />
+        <state vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="3960">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resume/iOS_ZY_resume.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.25" vertical-offset="3255" max-vertical-offset="5490">
+          <caret line="243" column="19" selection-start-line="243" selection-start-column="19" selection-end-line="243" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/assets/css/images/bg02.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/assets/css/images/bg01.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Application Support/Mou/CSS/GitHub2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67164177" vertical-offset="0" max-vertical-offset="4680">
+          <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/params.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10518934" vertical-offset="0" max-vertical-offset="713">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/indexCM.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="225">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.25" vertical-offset="240" max-vertical-offset="2070">
+          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#article#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="tag#div#0;tag#article#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="n#style#0;n#a#1;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/indexWeb.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48387095" vertical-offset="375" max-vertical-offset="2025">
+          <caret line="757" column="0" selection-start-line="757" selection-start-column="0" selection-end-line="757" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#article#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="tag#div#0;tag#article#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
             <element signature="n#style#0;n#a#1;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#form#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />

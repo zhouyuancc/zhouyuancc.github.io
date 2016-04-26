@@ -1,0 +1,15 @@
+<td align="right" style="width: 20%;">
+                        ²ÎÊýÃû³Æ£º
+                    </td>
+                    <td align="left" style="width: 30%;">
+                        <asp:TextBox runat="server" ID="txtDDName" Width="160px" 
+
+
+
+MaxLength="20" 
+
+
+
+
+Style="padding-left: 2px;"></asp:TextBox>
+                    </td>

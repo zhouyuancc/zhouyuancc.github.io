@@ -1,0 +1,90 @@
+https://a1.easemob.com/sgjd/sgjd/token?grant_type=client_credentials&client_id=YXA6dI9YQCY9EeWQNdPW0j2DKA&client_secret=YXA6BDRHKYEngoNNselq9tDIkBcicVQ
+
+
+token:YWMtiflVaj8eEeWxNZ2SxXpZDgAAAVBLBLD5aArkSbzdJKNBg-qCwXtqObS89OQ
+
+application:748f5840-263d-11e5-9035-d3d6d23d8328
+
+
+https://a1.easemob.com/sgjd/sgjd/users/dc-zhouyuan/status?
+Content-Type=application/json&Authorization=Bearer
+&access_token=YWMtiflVaj8eEeWxNZ2SxXpZDgAAAVBLBLD5aArkSbzdJKNBg-qCwXtqObS89OQ
+
+//在线与否
+https://a1.easemob.com/sgjd/sgjd/users/dc-zhouyuan/status?access_token=YWMtiflVaj8eEeWxNZ2SxXpZDgAAAVBLBLD5aArkSbzdJKNBg-qCwXtqObS89OQ
+
+//离线消息数
+https://a1.easemob.com/sgjd/sgjd/users/dc-zhouyuan/offline_msg_count?access_token=YWMtiflVaj8eEeWxNZ2SxXpZDgAAAVBLBLD5aArkSbzdJKNBg-qCwXtqObS89OQ
+
+
+//聊天记录
+https://a1.easemob.com/sgjd/sgjd/chatmessages?access_token=YWMtiflVaj8eEeWxNZ2SxXpZDgAAAVBLBLD5aArkSbzdJKNBg-qCwXtqObS89OQ&limit=2000000&cursor=MTYxOTcyOTYyNDpnR2tBQVFNQWdHa0FCZ0ZHczBKN0F3Q0FkUUFRYUdpdkt2ZU1FZU9vNU4zVllyT2pqUUNBZFFBUWFHaXZJUGVNRWVPMjdMRWo5b0w4dEFB
+
+ql=select * where timestamp=1439343482688
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+http://www.easemob.com/docs/rest/userapi/#status
+////////////////////////////////////////////////////////////////////////////////////////////////////
+使用app的client_id和client_secret获取授权管理员token
+
+    接口限流说明: 同一个IP每秒最多可调用30次, 超过的部分会返回503错误, 所以在调用程序中, 如果碰到了这样的错误, 需要稍微暂停一下并且重试。如果该限流控制不满足需求，请联系商务经理开放更高的权限。
+
+client_id 和 client_secret可以在环信管理后台的app详情页面看到
+
+    Path : /{org_name}/{app_name}/token
+    HTTP Method : POST
+    URL Params ： 无
+    Request Headers : {“Content-Type”:”application/json”}
+    Request Body ： {“grant_type”: “client_credentials”,”client_id”: “{app的client_id}”,”client_secret”: “{app的client_secret}”}
+
+    Response Body ：
+    key 	value
+    access_token 	token值
+    expires_in 	有效时间,秒为单位, 默认是七天,在有效期内是不需要重复获取的
+    application 	当前app的UUID值
+
+
+    curl -X POST "https://a1.easemob.com/easemob-demo/chatdemoui/token" -d '{"grant_type":"client_credentials","client_id":"YXA6wDs-MARqEeSO0VcBzaqg11","client_secret":"YXA6JOMWlLap_YbI_ucz77j-4-mI0dd"}'
+
+Response 示例：
+
+{
+  "access_token":"YWMtWY779DgJEeS2h9OR7fw4QgAAAUmO4Qukwd9cfJSpkWHiOa7MCSk0MrkVIco",
+  "expires_in":5184000,
+  "application":"c03b3e30-046a-11e4-8ed1-5701cdaaa0e4"
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+请求头
+
+查看用户在线状态
+
+    查看一个用户的在线状态
+
+    接口限流说明: 同一个IP每秒最多可调用30次, 超过的部分会返回503错误, 所以在调用程序中, 如果碰到了这样的错误, 需要稍微暂停一下并且重试。如果该限流控制不满足需求，请联系商务经理开放更高的权限。
+
+    Path : /{org_name}/{app_name}/users/{username}/status
+    HTTP Method : GET
+    URL Params ： 无
+    Request Headers : {“Content-Type”:”application/json”,”Authorization”:”Bearer ${token}”}
+    Request Body ： 无
+    Response Body ： 详情参见示例返回值, 返回的json数据中会包含除上述属性之外的一些其他信息，均可以忽略。
+
+
+curl -X GET -i -H "Authorization: Bearer YWMtxc6K0L1aEeKf9LWFzT9xEAAAAT7MNR_9OcNq-GwPsKwj_TruuxZfFSC2eIQ" "https://a1.easemob.com/easemob-demo/chatdemoui/users/zw123/status"
+
+
+{
+    "action": "get",
+    "application": "4d7e4ba0-dc4a-11e3-90d5-e1ffbaacdaf5",
+    "params": {},
+    "uri": "https://a1.easemob.com/easemob-demo/chatdemoui",
+    "entities": [],
+    "data": {
+        "stliu": "online"  //注意, 这里返回的是用户名和在线状态的键值对, 值为 online 或者 offline
+    },
+    "timestamp": 1404932199220,
+    "duration": 743,
+    "organization": "easemob-demo",
+    "applicationName": "chatdemoui"
+}

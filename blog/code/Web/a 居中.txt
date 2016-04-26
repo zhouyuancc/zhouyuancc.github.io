@@ -1,0 +1,1 @@
+<center><a href="javascript:;" class="orgAdd"  onClick="openTopic_zt();window.event.returnValue=false;return;">ักิ๑</a></center>

@@ -1,0 +1,10 @@
+this.hdEmpCode.Value = ds.Tables[0].Rows[0]["Attendee"].ToString();
+                    string[] idList = ds.Tables[0].Rows[0]["Attendee"].ToString().Split(';');
+                    for (int i = 0; i < idList.Length; i++)
+                    {
+                        if (idList[i] != "")
+                        {
+                            sql = "select empname from PubEmpInfo where empcode='" + idList[i] + "'";
+                            this.txtAttend.Text = this.txtAttend.Text + SqlExec.ExecuteScalar(sql) + ";";
+                        }
+                    }

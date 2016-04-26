@@ -1,0 +1,89 @@
+
+ if(confirm("经办人尚未办理完毕，确认要转交下一步骤吗？")) {   
+                                alert("yes");  
+                                }
+                            else {   
+                                alert("no");  
+                                return;
+                                }
+
+//////////////////////////////////////////////////////////////////////////////////////
+    
+   <script type="text/javascript" language="javascript">
+        
+        //注销
+        function imgBtnLoginOut() {
+            if (confirm("您确定重新登录吗？")) {
+
+                $.post("/ui_index.aspx?Action=logout&Radom=" + Math.random, {}, function (data) {
+                    window.location = data;
+                })
+
+            }
+            else {
+                return;
+            }
+        }
+
+    </script>
+
+<div class="desc fl">
+<h3>
+欢迎：<a href="#"><%=Session["empname"].ToString() %></a>&nbsp;</h3>
+<span>
+<a runat="server" onclick="imgBtnLoginOut()">注销</a> 
+<a href="/ui_login.html">退出</a>&nbsp;&nbsp;
+</span>
+</div>
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+a href confirm记录的用法 
+http://www.c114.net ( 2009/4/7 14:00 )小东西confirm记录下,小错误总结方便下次用 
+
+１成功的 
+
+<a href='地址' onclick="return confirm('删除后无法恢复,确定要删除吗')">删除</a> 
+
+<a href="网址" onclick="{if(confirm('确定要删除吗?')){return true;}return false;}">删除</a> 
+
+２以下没调成功的不知道为什么 
+<a href="javascript:if(confirm("确实要删除吗?")){window.location=网址}" >删除</a> 
+
+３代码编辑器不能用,贴以下代码　看几个删除不行,原来中间用了中文空格 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+<title>无标题文档</title> 
+</head> 
+
+<body> 
+<a href="javascript:if(confirm("确实要删除吗?")){window.location=http://www.sina.com.cn}" >删除</a> 
+<a href="javascript:if(confirm("确实要删除吗?"))window.location=http://www.sina.com.cn">删除</a> 
+<a href="http://www.sina.com.cn" onclick="{if(confirm('确定删除吗?')){return true;}return false;}">删除</a> 
+
+<a href="http://www.sina.com.cn" onclick="return confirm('该删除操作将无法恢复！是否继续？')">删除</a> 
+
+<a href='aaaaaaaa?pp=delete&id=2' onclick="return confirm('删除后无法恢复,确定要删除吗')">删除</a> 
+
+<a href="bbbbbbbbbbbbb?pp=delete&id=6"　onclick="return confirm('删除后无法恢复,确定要删除吗')"　>删除</a> 
+
+<a href='bbbbbbbbbbbbb?pp=delete&id=6'　onclick="return confirm('删除后无法恢复,确定要删除吗')"　>删除</a> 
+
+<a href="bbbbbbbbbbbbb?pp=delete&id=6"　onclick="return confirm('删除后无法恢复,确定要删除吗')">删除</a> 
+
+<a href='aaaaaaaa?pp=delete&id=2' onclick="return confirm('删除后无法恢复,确定要删除吗')">删除</a> 
+
+<a href='aaaaaaaa?pp=delete&id=2' onclick="return confirm('删除后无法恢复,确定要删除吗')">删除</a> 
+
+</body> 
+
+</html> 
+
+４在编辑列中的 
+
+<%# <a href=\"aaaaaaaaaa?pp=delete&id=" + Eval("ID") + "\" onclick=\"return confirm('删除后无法恢复,确定要删除吗')\">删除</a>%>  
+
+

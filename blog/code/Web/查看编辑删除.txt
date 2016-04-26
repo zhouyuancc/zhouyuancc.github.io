@@ -1,0 +1,79 @@
+前台 
+
+<asp:TemplateField HeaderText="">
+                            <ItemTemplate>
+                                <a title='查看' style= "cursor:hand" target="_blank" onclick="js_callpage('Sc_jdfk_cn_ck.aspx?infoid=<%#DES.EncryptDES(Eval("Id").ToString()) %>','1000','810')" >
+                                    查看</a>
+
+                            </ItemTemplate>
+                            <HeaderStyle  HorizontalAlign="Center" VerticalAlign="Middle"
+                                CssClass="table_top" />
+                            <ItemStyle Width="6%" HorizontalAlign="Center" VerticalAlign="Middle"
+                                CssClass="table_inside" />
+                        </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="lbtnEdit" Text="编辑" runat="server" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"Id") %>'
+                                    OnClick="lbtnEdit_Click" />
+                            </ItemTemplate>
+                            <HeaderStyle  HorizontalAlign="Center" VerticalAlign="Middle"
+                                CssClass="table_top" />
+                            <ItemStyle Width="6%" HorizontalAlign="Center" VerticalAlign="Middle"
+                                CssClass="table_inside" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="lbtnDel" OnClientClick="return confirm('您确定要删除吗？')" runat="server" Text="删除" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"Id") %>'
+                                    OnClick="lbtnDel_Click" />
+                            </ItemTemplate>
+                            <HeaderStyle  HorizontalAlign="Center" VerticalAlign="Middle"
+                                CssClass="table_top" />
+                            <ItemStyle Width="6%" HorizontalAlign="Center" VerticalAlign="Middle"
+                                CssClass="table_inside" />
+                        </asp:TemplateField>
+
+
+
+
+后台
+
+
+  /// <summary>
+        /// 编辑权限-判断
+        /// </summary>
+        private void Pur_bj()
+        {
+            Boolean bj = new ShareValue().HavePurview(GetBt()+"-编辑", Session["empcode"].ToString());
+            if (bj != true)
+            {
+                btnAdd.Visible = false;
+                myDataGV.Columns[myDataGV.Columns.Count - 2].Visible = false;
+                myDataGV.Columns[myDataGV.Columns.Count - 1].Visible = false;
+            }
+        }
+
+后台传网址加密
+Response.Redirect("FlowRuleAdd.aspx?type=edit&h_id=" + DES.EncryptDES(e.CommandArgument.ToString())); 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+查看
+  <script src="../PubJS/jquery-1.3.2.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+
+
+        function openAdd() {
+            var v = $("#LabelBh").text();
+            window.open('../rlzy/rs/rs_rsda_mx.aspx?type=see&infoid=' + v, 'newwindow', 'height=800, width=1000, top=140, left=140, toolbar=no, menubar=no, scrollbars=yes, resizable=no,location=no, status=no');
+        }
+  </script>
+
+
+//////////////////////////
+<asp:Button ID="btnBack" runat="server" CssClass="buttonStyle" Text="查看档案" />
+
+
+////////////////////////
+btnBack.Attributes.Add("onclick", "javascript:return openAdd();");
+
+
+

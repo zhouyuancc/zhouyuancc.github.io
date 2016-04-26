@@ -1,0 +1,5 @@
+//JD_OA.SelSet.SignatureUpload
+
+$("#imgphoto").attr("src", "../Images/CutPhoto/man45.GIF");
+
+$("#Canvas").css({ "width": "210px", "height": "200px" });

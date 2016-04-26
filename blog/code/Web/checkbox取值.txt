@@ -1,0 +1,180 @@
+
+另一个页面接收值
+
+//传来员工编号，默认发送人
+        private void SendInfo()
+        {
+            string empcode = Request.QueryString["empcode"].ToString();
+
+            string[] empcodes;
+            char SplitChar = Convert.ToChar(",");
+            empcodes = empcode.Split(SplitChar);
+
+            if (empcodes.Length > 0)
+            {
+                empcode = "";
+                for (int i = 0; i < empcodes.Length; i++)
+                {
+                    empcode += "'" + empcodes[i] + "',";
+                }
+                empcode = empcode.Substring(0, empcode.Length-1);
+            }
+            string sql = "Select EmpName,DeptName from V_PubEmpInfo where empcode in ("+ empcode +")";
+
+            JD_OA.SysManage.WorkFlow.Flow_Form.test_sql mytest = new SysManage.WorkFlow.Flow_Form.test_sql();
+            if (mytest.Danger(sql) == false)
+            {
+                mytest = null;
+                mytest.Dispose();
+                return;
+            }
+
+            DataSet ds = SqlExec.ExecuteDataSet(sql);
+            foreach (DataRow rs in ds.Tables[0].Rows)
+            {
+                txtReceiver.Text += rs["EmpName"].ToString() + "|" + rs["DeptName"].ToString()+",";
+            }
+            ds.Dispose();
+            ds = null;
+        }
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<script type="text/javascript">
+        $(function () {
+            $(".li").click(function () {
+               
+                var id = $(this).children("a").attr("id");
+               
+                $("#hdSurName").val(id)
+                $("#<%=btnQuery.ClientID%>").click();
+                return false;
+            });
+        })
+
+ function createOrder() {
+        ////获取empcode
+//            dgSelect = document.form1.dgSelect
+//  
+//            txt = ""
+//            for (i = 0; i < dgSelect.length; ++i) {
+//                if (dgSelect[i].checked) {
+//                    txt = txt + dgSelect[i].value + ";"
+//                      }
+//            }
+//             alert(txt)
+//            if (txt.length > 0) {
+//                txt = txt.substring(0, txt.length - 1);
+//            }
+            //            alert(txt)
+
+             /////获取empname
+             v=""
+             v = $("#dgSelect:checked").closest("tr").find("td:eq(1)").map(function () {
+                 return v = $(this).text().toString().trim()
+             }).get().join(";") + ";";
+
+             //             alert(v)
+             /////获取empcode
+             userids = ""
+             userids = $("#dgSelect:checked").closest("tr").find("td:eq(1)").map(function () {
+             
+                 return userids = $(this).siblings().find("#dgSelect").attr("value").toString().trim()//去空格
+             }).get().join(";") + ";";
+             //             alert(userids)
+
+             /////获取empname;empname;|empcode;empcode;
+             returnValue = ""
+             returnValue = v + "|" + userids;
+             alert(returnValue);
+//            window.open('../SelfAffair/MessageManage/frmMessageSend.aspx?Type=sendinfo&empcode=adminzy&adminCR','newwindow', 'height=800, width=1000, top=140, left=140, toolbar=no, menubar=no, scrollbars=yes, resizable=no,location=no, status=no');
+     
+              return false
+                }
+
+
+
+    </script>
+
+
+
+
+
+
+
+ <tr id="tr">
+                                <td style="width: 5%;">
+                            <span title="点击选中">
+                                <input type="checkbox" id="dgSelect" name ="dgSelect" value="<%#Eval("EmpCode")%>" /></span>
+                                </td>
+
+                                  <td id="username">
+                                    <%#Eval("EmpName")%>
+                                </td>
+                                <td>
+                                    <%#Eval("xb")%>
+                                </td>
+
+
+
+
+
+
+
+    <input type="button"  onclick="createOrder()" value="发送站内信" />
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<HTML>
+<HEAD>
+<script>
+    function getValue() {
+        var v = $("input[type='checkbox'][name='test']:checked").closest('tr').find('td:eq(3)').map(function () { return this.innerHTML }).get().join();
+        alert(v)
+    }
+</script>
+</HEAD>
+<body>
+<table>
+ <tr>
+<td><input type="checkbox" name="test" value="1"></td>
+<td>值11</td>
+<td>值12</td>
+<td>值13</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="test" value="1"></td>
+<td>值21</td>
+<td>值22</td>
+<td>值23</td>
+</tr>
+ <tr>
+<td><input type="checkbox" name="test" value="1"></td>
+<td>值31</td>
+<td>值32</td>
+<td>值33</td>
+</tr>
+</table>
+<input type="button" value="获取选择行的值" onclick="getValue()"/>
+<script type="text/javascript" src="http://www.coding123.net/js/jquery.js"></script>
+
+
+
+</body>
+</HTML>
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+前台：
+<input id="CheckBox1" name="GetValue" type="checkbox" />
+后台：
+string myValue=Request.Form["GetValue"];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+if($("input[type='checkbox'][name='q3']:checked").attr("checked")){
+//选中了
+}else{
+//没有选中
+}
+

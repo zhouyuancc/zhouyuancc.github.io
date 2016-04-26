@@ -1,0 +1,86 @@
+        /////搜索
+        function search() {
+            var kword = "";
+            if ($("#kword").val() != "按用户名或姓名搜索..." && $("#kword").val()) {
+                kword = $("#kword").val();
+            }
+                //清空
+                $("#AllUserName option").each(function () {
+                    $(this).remove();
+                })
+                $.ajax({
+                    type: "POST",
+                    url: "User_Select.ashx?Random=" + Math.random(),
+                    dataType: "json",
+                    data: "type=Select_OpLoad&Flow_Id=" + getQueryString("Flow_id") + "&Prcs_name=" + getQueryString("Prcs_name") + "&kword=" + kword + "&line=" + getQueryString("line"),
+                    success: function (data) {
+                    var html = "";
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].EmpCode != "" && data[i].EmpName != "")
+                                $("#AllUserName").append("<option value='" + data[i].EmpCode + "'>" + data[i].EmpName + "</option>");
+                        }
+                    }
+                })
+            
+        }
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+            string strType = context.Request["type"] != null ? context.Request["type"].ToString() : "";
+            switch (strType)
+            {
+                case "Select_OpLoad":
+                    string Flow_id = context.Request["Flow_id"] != null ? context.Request["Flow_id"].ToString() : "";
+                    string Prcs_name = context.Request["Prcs_name"] != null ? context.Request["Prcs_name"].ToString() : "";
+                    ////////////////
+                    string kword = context.Request["kword"] != null ? context.Request["kword"].ToString() : "";
+
+                   
+                    string Flow_type = SqlExec.ExecuteScalar(string.Format("select Flow_type from Zjq_Flow_Type where Flow_id='{0}'", Flow_id));
+                    ///1固定流程2自由流程
+                    if (Flow_type == "2")///自由流程
+                    {
+                        sql = @"select EmpCode,EmpName,DeptCode,RoleNo from(select (select sfzz from V_PubEmpInfo a where z.empcode=a.EmpCode) sfzz,(select Islogin from V_PubEmpInfo b where z.empcode=b.EmpCode) login,* from PubEmpInfo z)y
+ where EmpCode<>'admin' and sfzz<>'1' and login='0' and (dbo.fGetPy(EmpName) like @kword+'%' or EmpName like '%'+@kword+'%') ";
+                    }
+                    else///固定流程
+                    {
+                        sql = @"exec P_Select_Op @Flow_Id,@Prcs_name,@DeptCode,@empcode,@kword";
+                    }
+                    SqlExec sqlexecUser = new SqlExec();
+                    SqlParameter[] sqlparaUser = { 
+                                    sqlexecUser.CreateInParam("@Flow_Id",SqlDbType.Int,6,Flow_id),
+                                    sqlexecUser.CreateInParam("@Prcs_name",SqlDbType.VarChar,50,Prcs_name),
+                                    sqlexecUser.CreateInParam("@empcode",SqlDbType.VarChar,50,context.Session["empcode"]),
+                                    sqlexecUser.CreateInParam("@DeptCode",SqlDbType.VarChar,50,context.Session["deptcode"]),
+                                    sqlexecUser.CreateInParam("@kword",SqlDbType.VarChar,-1,kword)
+
+                                                 };
+                    DataTable dtUser = SqlExec.ExecuteDataSet(sql, CommandType.Text, sqlparaUser).Tables[0];
+
+
+                    data = "[";
+                    for (int i = 0; i < dtUser.Rows.Count; i++)
+                    {
+                        data += "{";
+                        for (int j = 0; j < dtUser.Columns.Count; j++)
+                        {
+                            data += "\"";
+                            data += dtUser.Columns[j].ColumnName;
+                            data += "\":\"";
+                            data += dtUser.Rows[i][j].ToString();
+                            data += "\",";
+
+                        }
+                        if (dtUser.Rows.Count == 1)
+                        {
+                            data += "\"num\":\"1\",";
+                        }
+                        data = data.Substring(0, data.Length - 1);
+                        data += "},";
+                    }
+                    data = data.Substring(0, data.Length - 1) + "]";
+
+                    context.Response.Write(data);
+                    break;
+            }

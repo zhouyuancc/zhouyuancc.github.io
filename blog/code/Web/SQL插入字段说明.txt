@@ -1,0 +1,91 @@
+
+Oracle
+
+通过 COMMENT ON TABLE / COMMENT ON COLUMN 追加表/字段的备注。
+CREATE TABLE "MR_DEPT" (
+"DEPT_ID" NUMBER NOT NULL ,
+"PARENT_ID" NUMBER,
+"DEPT_NAME" CHAR(20) NOT NULL ,
+"STATUS" NUMBER DEFAULT 1 NOT NULL ,
+PRIMARY KEY ("DEPT_ID") 
+) 
+/
+COMMENT ON TABLE "MR_DEPT" IS '部门表'
+/
+COMMENT ON COLUMN "MR_DEPT"."DEPT_ID" IS '部门编号'
+/
+COMMENT ON COLUMN "MR_DEPT"."PARENT_ID" IS '上级部门编号'
+/
+COMMENT ON COLUMN "MR_DEPT"."DEPT_NAME" IS '部门名'
+/
+COMMENT ON COLUMN "MR_DEPT"."STATUS" IS '状态'
+/
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+SQL Server 通过存储过程追加
+
+CREATE TABLE test_table(
+Test_ID int IDENTITY(1,1) PRIMARY KEY NOT NULL ,
+Test_Key varchar(10) NOT NULL ,
+Test_Value varchar(20) NOT NULL 
+);
+go
+
+/////表说明
+EXECUTE sp_addextendedproperty N'MS_Description', '测试表', N'user', N'dbo', N'Table', N'test_table', NULL, NULL;
+go
+
+////列说明
+EXECUTE sp_addextendedproperty N'MS_Description', '主键(自增长)', N'user', N'dbo', N'Table', N'test_table', N'column' , N'Test_ID';
+go
+
+EXECUTE sp_addextendedproperty N'MS_Description', '种类', N'user', N'dbo', N'Table', N'test_table', N'column' , N'Test_Key';
+go
+
+EXECUTE sp_addextendedproperty N'MS_Description', '数值', N'user', N'dbo', N'Table', N'test_table', N'column' , N'Test_Value';
+go
+
+
+MySQL 包含在建表语句中。
+CREATE TABLE test_table(
+Test_ID int NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '主键(自增长)' ,
+Test_Key varchar(10) NOT NULL COMMENT '种类' ,
+Test_Value varchar(20) NOT NULL COMMENT '数值' 
+)
+COMMENT = '测试表'
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+--表及字段描述信息处理示例
+
+--创建表
+create table 表(a1 varchar(10),a2 char(2))
+
+--为表添加描述信息
+EXECUTE sp_addextendedproperty N'MS_Description', '人员信息表', N'user', N'dbo', N'table', N'表', NULL, NULL
+
+--为字段a1添加描述信息
+EXECUTE sp_addextendedproperty N'MS_Description', '姓名', N'user', N'dbo', N'table', N'表', N'column', N'a1'
+
+--为字段a2添加描述信息
+EXECUTE sp_addextendedproperty N'MS_Description', '性别', N'user', N'dbo', N'table', N'表', N'column', N'a2'
+
+--更新表中列a1的描述属性：
+EXEC sp_updateextendedproperty 'MS_Description','字段1','user',dbo,'table','表','column',a1
+
+--显示表的描述属性
+SELECT  *
+FROM  ::fn_listextendedproperty (NULL, 'user', 'dbo', 'table', '表', 'column', NULL)
+SELECT  *
+FROM  ::fn_listextendedproperty (NULL, 'user', 'dbo', 'table', '表', 'column', default)
+
+--删除表中列a1的描述属性：
+EXEC sp_dropextendedproperty 'MS_Description','user',dbo,'table','表','column',a1
+
+--删除测试
+drop table 表
+

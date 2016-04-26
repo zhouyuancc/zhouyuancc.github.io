@@ -1,0 +1,85 @@
+/// <summary>
+/// 新建自动生成Run_Name
+/// http://localhost:15686/Webservice/Web.aspx?flag=AutoLoadName&Flow_id=79
+/// </summary>
+        private void AutoLoadName()
+        {
+            int Flow_id = Request["Flow_id"] != null ? Convert.ToInt16(Request["Flow_id"].ToString()) : 0;
+            ////名称/文号
+            string data = "";
+            string sqlauto = @"select * from (select Auto_Name,a.Auto_Len,a.Auto_Edit,Flow_name F,b.Sort_name L,right(100000000+(select count(Flow_id) from Zjq_Flow_Run
+                            where Flow_id=@Flow_id)+a.Auto_Num,a.Auto_Len) N from Zjq_Flow_Type a inner join Zjq_Flow_Sort b on a.Sort_no=b.Sort_no where Flow_id=@Flow_id) a,
+                            (select b.EmpName U,b.DeptName B,c.RoleName R from PubEmpRole a left join V_EmpInfoLogin b on a.EmpCode=b.EmpCode left join PubRoleInfo c on a.RoleCode=c.RoleCode
+                            where flag='1' and a.EmpCode=@EmpCode) b";
+            SqlExec sqlexecAutoLoad = new SqlExec();
+            SqlParameter[] parmsAutoLoad = {
+                        sqlexecAutoLoad.CreateInParam("@Flow_id",SqlDbType.Int,6,Flow_id),
+                        sqlexecAutoLoad.CreateInParam("@EmpCode",SqlDbType.VarChar,30,Session["empcode"].ToString())
+                                                   };
+            DataTable dtAutoLoad = SqlExec.ExecuteDataSet(sqlauto, CommandType.Text, parmsAutoLoad).Tables[0];
+            //data = "[";
+            for (int i = 0; i < dtAutoLoad.Rows.Count; i++)
+            {
+                string Auto_Name = "";                
+                data += "{";
+                for (int j = 0; j < dtAutoLoad.Columns.Count; j++)
+                {
+                    data += "\"";
+                    data += dtAutoLoad.Columns[j].ColumnName;////列名
+                    data += "\":\"";
+
+                    Auto_Name = dtAutoLoad.Rows[i][j].ToString();
+                    Auto_Name = Auto_Name.Replace("{Y}", DateTime.Now.Year.ToString());
+                    Auto_Name = Auto_Name.Replace("{M}", DateTime.Now.Month.ToString());
+                    Auto_Name = Auto_Name.Replace("{D}", DateTime.Now.Day.ToString());
+                    Auto_Name = Auto_Name.Replace("{H}", DateTime.Now.Hour.ToString());
+                    Auto_Name = Auto_Name.Replace("{I}", DateTime.Now.Minute.ToString());
+                    Auto_Name = Auto_Name.Replace("{S}", DateTime.Now.Second.ToString());
+                    Auto_Name = Auto_Name.Replace("{LD}", DateTime.Now.ToLongDateString().ToString());
+                    Auto_Name = Auto_Name.Replace("{T}", DateTime.Now.ToLongTimeString().ToString());
+                    Auto_Name = Auto_Name.Replace("{F}", dtAutoLoad.Rows[i]["F"].ToString());
+                    Auto_Name = Auto_Name.Replace("{L}", dtAutoLoad.Rows[i]["L"].ToString());
+                    Auto_Name = Auto_Name.Replace("{U}", dtAutoLoad.Rows[i]["U"].ToString());
+                    Auto_Name = Auto_Name.Replace("{B}", dtAutoLoad.Rows[i]["B"].ToString());
+                    Auto_Name = Auto_Name.Replace("{R}", dtAutoLoad.Rows[i]["R"].ToString());
+                    Auto_Name = Auto_Name.Replace("{N}", dtAutoLoad.Rows[i]["N"].ToString());
+                    Auto_Name = Auto_Name.Replace("{NUM}", "");///此时未生成流水号
+                    data += Auto_Name;
+                    //data += dtAutoLoad.Rows[i][j].ToString();
+
+                    data += "\",";
+                }
+                data = data.Substring(0, data.Length - 1);
+                data += "},";
+            }
+            data = data.Substring(0, data.Length - 1);
+            ////
+            string jsonString = string.Empty;
+            // 序列化
+            //jsonString = SerializeDataTable(dtTree);
+            jsonString = "{\"Flag\":1,\"recordsTotal\":1,\"Data\":[" + data + "]}";
+            // 输出JSON处理结果
+            Response.ContentType = "application/json";
+            Response.Write(jsonString);
+            Response.End();
+        }
+
+///////////////////////////////////////////////////////////////////////////
+数据库 1行数据 循环出 列名和该列下的值
+{
+    "Flag": 1,
+    "recordsTotal": 1,
+    "Data": [
+        {
+            "Auto_Name": "企业管理办公室3月耗材领用明细",
+            "Auto_Len": "0",
+            "Auto_Edit": "1",
+            "F": "zy",
+            "L": "计算机",
+            "N": "",
+            "U": "周园",
+            "B": "企业管理办公室",
+            "R": "公共权限"
+        }
+    ]
+}

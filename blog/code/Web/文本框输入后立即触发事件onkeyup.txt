@@ -1,0 +1,91 @@
+http://blog.csdn.net/meizhiyun/article/details/16982613
+
+//////////////////////////////////////////////////////////////////////// 
+ onkeyup="search()"      
+////////////////////////////////////////////////////////////////////////
+文本框输入后立即触发事件  
+
+
+文本框输入事件：onchange 、onkeyup 、onblur
+
+onchange在用于文本框输入框时,有一个明显的不足. 事件不会随着文字的输入而触发,而是等到文本框失去焦点(onblur)时才会触发. 也就是没有即时性!
+
+为了达到在文本框中输入内容后，立即触发事件，可以用onkeyup事件，
+
+在IE下,可以用onpropertychange来代替onchange事件,当文本框有任何变化时,能立即触发此事件.
+
+兼容浏览器可以用oninput事件，谷歌浏览器、IE10测试没问题 没测试是否兼容其他浏览器
+
+下面附上我自己做的一个例子
+
+需求：输入文本框后，检索下拉框选项，匹配则设为选中项，不匹配则把选中项改成默认第一个
+
+
+
+
+方法一：使用onkeyup
+
+<script language="javascript">
+
+
+//因为是嵌套在母板页中，所以获取下拉框这样写：$("#<%=ddlCountry.ClientID%>")，如果不嵌套在母板页，可以这样写：$("#ddlCountry")
+
+
+function Search() {
+             var countryCount = 0; //国家总个数
+            var notEqualCount = 0;//输入内容与国家不匹配的个数
+            $("#<%=ddlCountry.ClientID%>").each(function () {
+                 $(this).find("option").each(function () {
+                     countryCount++;
+                     if ($(this).val() == $("#txtTest").val() || $(this).text() == $("#txtTest").val()) {//文本框的值与下拉框的value、text对比
+                        $(this).attr("selected", "selected"); //选中
+                    } else {
+                         notEqualCount++;
+                     }
+                 });
+             });
+             if (countryCount != 0 && notEqualCount != 0 && countryCount == notEqualCount) {//输入的值与下拉框的值不匹配
+                $("#<%=ddlCountry.ClientID%>").get(0).selectedIndex = 0;
+             }
+         }
+     </script>
+
+
+国家：<asp:DropDownList ID="ddlCountry" runat="server"></asp:DropDownList>
+         <input type="text" id="txtTest" onkeyup="Search()"  />
+
+
+方法二：使用oninput事件
+
+    <script language="javascript">
+         $(document).ready(function () {
+             $('#txtTest').bind('input', function () {//给文本框绑定input事件
+                if ($('#txtTest').val().trim() != "") {
+                     var countryCount = 0; //国家总个数
+                    var notEqualCount = 0; //输入内容与国家不匹配的个数
+                    $("#<%=ddlCountry.ClientID%>").each(function() {
+                         $(this).find("option").each(function() {
+                             countryCount++;
+                             if ($(this).val() == $("#txtTest").val() || $(this).text() == $("#txtTest").val()) {
+                                 $(this).attr("selected", "selected");
+                             } else {
+                                 notEqualCount++;
+                             }
+                         });
+                     });
+                     if (countryCount != 0 && notEqualCount != 0 && countryCount == notEqualCount) {
+                         $("#<%=ddlCountry.ClientID%>").get(0).selectedIndex = 0;
+                         alert("没有您输入的国家");
+                     }
+                 }
+             });
+         });
+
+
+国家：<asp:DropDownList ID="ddlCountry" runat="server"></asp:DropDownList>
+        <input type="text" id="txtTest"  />
+
+
+参考文章：http://koyoz.com/blog/?action=show&id=225 
+
+                   http://calefy.org/2012/11/12/javascript-key-events-and-input-control.html

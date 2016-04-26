@@ -1,0 +1,27 @@
+<script type="text/jscript"> 
+document.body.onbeforeunload = function() 
+{ 
+   window.event.returnValue = '您即将离开本页面,确定继续吗?'; 
+} 
+function cancelWarn() 
+{ 
+   document.body.onbeforeunload = null; 
+} 
+</script> 
+
+<span onclick="cancelWarn()">点击这里取消警告</span>  
+
+///////////////////////////////////////////////////////////////////////
+环信 聊天<script type="text/javascript" src="jquery-1.11.1.js"></script>
+
+   beforeunload: {
+      postDispatch: function (event) {
+
+      // Support: Firefox 20+
+      // Firefox doesn't alert if the returnValue field is not set.
+      if (event.result !== undefined && event.originalEvent) {
+           //弹出本页面要求您确认您要离开 - 您输入的数据可能不会被保存。
+           event.originalEvent.returnValue = event.result;
+           }
+      }
+  }

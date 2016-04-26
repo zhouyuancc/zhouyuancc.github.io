@@ -1,0 +1,12 @@
+
+string Process = 
+
+SqlExec.ExecuteScalar(string.Format("
+
+select (SELECT TOP 1 [Prcs_id] FROM Zjq_Flow_Process where Flow_id =b.Flow_id ORDER BY [Prcs_id] DESC) Process from Zjq_Flow_Run_Prcs a inner join Zjq_Flow_Run b on a.Run_id=b.Run_id where a.id='{0}'
+
+", id.CommandArgument));
+
+
+
+int lastP = Convert.ToInt32(Process) - 1;

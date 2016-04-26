@@ -1,0 +1,48 @@
+	if(@auto_type=2)
+
+
+	begin
+	
+	declare @User_id varchar(8000)
+	declare @DeptHead varchar(8000)
+	set @User_id=''
+	set @DeptHead=''
+	
+select @User_id=[User_id] from Zjq_Flow_Run_Prcs where run_id=@run_id and Op_flag='1' and Prcs_id=@Prcs_id
+SELECT @DeptHead=[DeptHead] FROM PubDeptInfo where DeptId=(select DeptCode from V_PubEmpInfo a where a.EmpCode=@User_id) and [IsShow]='1'
+
+	--set @DeptHead= SUBSTRING(@DeptHead,0,LEN(@DeptHead))
+	--print @DeptHead
+	set @DeptHead=' '''+Replace(@DeptHead,';',''',''')+''' '
+	--print @DeptHead
+
+
+declare @sql2 varchar(2000)
+set @sql2='select distinct EmpCode,EmpName,DeptCode,RoleCode from #result where EmpCode in ('+@DeptHead+')'
+exec (@sql2)
+
+
+	--print @sql2	
+
+
+
+
+	end
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+declare @ss varchar(20)
+
+select @ss=form_sort from sc_faxx where form_id=74
+
+print @ss
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ declare @num varchar(8000),@sqls nvarchar(4000) 
+ set @sqls='select @a=count(*) from Zjq_Flow_Run_Prcs ' 
+ exec sp_executesql @sqls,N'@a varchar(8000) output',@num output 
+ select @num  
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

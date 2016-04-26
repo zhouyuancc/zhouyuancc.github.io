@@ -1,0 +1,31 @@
+"window.location.href"、"location.href"是本页面跳转 
+
+"parent.location.href"是上一层页面跳转 
+
+"top.location.href"是最外层的页面跳转 
+
+举例说明： 
+
+如果A,B,C,D都是jsp，D是C的iframe，C是B的iframe，B是A的iframe，如果D中js这样写 
+
+"window.location.href"、"location.href"：D页面跳转 
+
+"parent.location.href"：C页面跳转 
+
+"top.location.href"：A页面跳转 
+
+如果D页面中有form的话, 
+
+<form>: form提交后D页面跳转 
+
+<form target="_blank">: form提交后弹出新页面 
+
+<form target="_parent">: form提交后C页面跳转 
+
+<form target="_top"> : form提交后A页面跳转 
+
+关于页面刷新，D 页面中这样写： 
+
+"parent.location.reload();": C页面刷新 （当然，也可以使用子窗口的 opener 对象来获得父窗口的对象：window.opener.document.location.reload(); ） 
+
+"top.location.reload();": A页面刷新 

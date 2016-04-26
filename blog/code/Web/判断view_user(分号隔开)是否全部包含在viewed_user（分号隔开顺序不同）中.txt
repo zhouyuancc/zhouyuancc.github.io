@@ -1,0 +1,36 @@
+SqlExec sqlexec = new SqlExec();
+            SqlParameter[] sqlpara ={
+                                       sqlexec.CreateInParam("@rid",SqlDbType.VarChar,20,rid),
+                                       sqlexec.CreateInParam("@user",SqlDbType.VarChar,-1,Session["empcode"].ToString())
+                                   };
+
+            sql = @"update [doc_recv_data] set viewed_user=viewed_user+@user+';' where rid=@rid";
+            SqlExec.ExecuteNonQuery(sql, CommandType.Text, sqlpara);
+
+//////////////////////////////////////////////////////////////////////////////////
+
+view_user            viewed_user
+admin;zhouyuan;       zhouyuan;admin; 
+
+判断view_user是否全部包含在viewed_user中
+////////////////////////////////////////////////////////////////////////
+
+            string view_user = SqlExec.ExecuteScalar(string.Format("select view_user from doc_recv_data where rid='{0}'", rid));//可以阅读的成员
+            string viewed_user = SqlExec.ExecuteScalar(string.Format("select viewed_user from doc_recv_data where rid='{0}'", rid));//已阅成员
+
+            string[] view = view_user.Split(';');
+            string viewed = "";
+            int count = 0;
+            for (int i = 0; i < view.Length - 1; i++)
+            {
+                viewed = viewed_user.Replace("" + view[i].ToString() + ";", "*");//将view_user中的成员切割后，依次将每一位成员替换为*
+                if (viewed.IndexOf('*') == -1)
+                {
+                    count++;//若该成员不存在，+1
+                }
+            }
+            if (count == 0)
+            {
+                sql = @"update [doc_recv_data] set status='7' where rid=@rid";
+                SqlExec.ExecuteNonQuery(sql, CommandType.Text, sqlpara);
+            }

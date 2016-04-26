@@ -1,0 +1,30 @@
+var exp = null;
+
+if (!exp && typeof exp != "undefined" && exp != 0)
+
+{
+
+    alert("is null");
+
+}
+
+typeof exp != "undefined" 排除了 undefined； 
+
+exp != 0 排除了数字零和 false。
+
+ 
+
+更简单的正确的方法：
+
+ 
+
+var exp = null;
+
+if (exp === null)
+
+{
+
+    alert("is null");
+
+}
+

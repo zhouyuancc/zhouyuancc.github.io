@@ -1,0 +1,31 @@
+C# int转成string，string转成int 
+
+1. int转成string
+用toString
+或者Convert.toString()如下
+
+例如：
+int varInt = 1;
+string varString = Convert.ToString(varInt);
+string varString2 = varInt.ToString();
+
+2. string转成int
+如果确定字符串中是可以转成数字的字符，可以用int.Parse(string s)，该语句返回的是转换得到的int值;
+如果不能确定字符串是否可以转成数字，可以用int.TryParse(string s, out int result),该语句返回的是bool值，指示转换操作是否成功，参数result是存放转换结果的变量。
+
+int intA = 0;
+1.intA =int.Parse(str);
+2.int.TryParse(str, out intA);
+3.intA = Convert.ToInt32(str);
+以上都可以，其中 1和3 需要try｛｝异常，2不需要。
+
+
+例如：
+string str = string.Empty;
+str = "123";
+int result=int.Parse(str);
+
+string str = string.Empty;
+str = "xyz";
+int result;
+int.TryParse(str, out result);

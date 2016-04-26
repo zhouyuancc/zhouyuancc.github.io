@@ -1,0 +1,48 @@
+ public static void Main()
+        {
+            string path = @"E:\text\text\1.txt";
+
+            // Delete the file if it exists.
+            if (!File.Exists(path))
+            {
+                // Create the file.
+                using (FileStream fs = File.Create(path))
+                {
+                    Byte[] info =
+                        new UTF8Encoding(true).GetBytes("This is some text in the file.");
+
+                    // Add some information to the file.
+                    fs.Write(info, 0, info.Length);
+                }
+            }
+
+            // Open the stream and read it back.
+            using (StreamReader sr = File.OpenText(path))
+            {
+                string s = "";
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+
+            Console.ReadKey();
+        }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+显示text文档中内容
+
+static void Main(string[] args)
+        {
+            StreamReader sr = new StreamReader(@"E:\text\text\1.txt", System.Text.Encoding.Default);
+            //StreamReader sr = File.OpenText(@"E:\text\text\1.txt");//中文会出现乱码
+            string str;
+            while ((str = sr.ReadLine()) != null)
+            {
+                Console.WriteLine(str);
+            }
+
+            sr.Close();
+            Console.ReadKey();
+        }

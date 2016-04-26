@@ -1,0 +1,90 @@
+ /// <summary>
+        /// 绑定数据到数据库
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void txtHtbh_TextChanged(object sender, EventArgs e)
+        {
+            string strsql = "select Htje from jx_httz where Htbh = '" + txtHtbh.Text + "'";
+
+            IDataReader rs = SqlExec.ExecuteReader(strsql);
+        
+            if (rs.Read())
+            {
+
+                txtKpje.Text = rs["Htje"].ToString();
+                Double Bhsje = Convert.ToDouble(txtKpje.Text) / 1.17;
+                txtBhsje.Text = Bhsje.ToString("0.00");
+            }
+            rs.Close();
+        }
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+lc_ygdd_mx.aspx.cs
+
+/// <summary>
+        /// 绑定员工编号、调出部门
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void txtygxm_TextChanged(object sender, EventArgs e)
+        {
+            string strsql = "select b.*,a.DeptName from PubDeptInfo a inner join PubEmpInfo b on a.DeptId =b.DeptCode where empname = '" + txtygxm.Text + "'";
+
+            IDataReader rs = SqlExec.ExecuteReader(strsql);
+        
+            if (rs.Read())
+            {
+                txtdcbm.Text = rs["DeptName"].ToString();
+                txtygbh.Text = rs["EmpCode"].ToString();
+               
+            }
+            rs.Close();
+          
+            if (txtygxm.Text == "")//如果txtygxm.Text员工姓名为空，txtdcbm.Text调出部门和txtygbh.Text员工编号 则 清空
+                txtygbh.Text
+            {
+                txtdcbm.Text = "";
+                txtygbh.Text = "";
+            }
+        }
+
+
+----------------------------------------------------------------------------------------------------
+
+  /// <summary>
+        /// 绑定员工编号、调出部门
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void txtygxm_TextChanged(object sender, EventArgs e)
+        {
+            string strsql = "select b.*,a.DeptName from PubDeptInfo a inner join PubEmpInfo b on a.DeptId =b.DeptCode where empname = '" + txtygxm.Text + "'";
+
+            IDataReader rs = SqlExec.ExecuteReader(strsql);
+
+            if (rs.Read())
+            {
+                txtdcbm.Text = rs["DeptName"].ToString();
+                txtygbh.Text = rs["EmpCode"].ToString();
+
+            }
+            else//如果txtygxm.Text员工姓名为不存在的人名，txtdcbm.Text调出部门和txtygbh.Text员工编号 则 清空
+            {
+                txtdcbm.Text = string.Empty;
+                txtygbh.Text = string.Empty;
+            }
+            rs.Close();
+
+            if (string.IsNullOrEmpty(txtygxm.Text))
+            {
+                txtdcbm.Text = string.Empty;
+                txtygbh.Text = string.Empty;
+            }
+        }
+
+
+

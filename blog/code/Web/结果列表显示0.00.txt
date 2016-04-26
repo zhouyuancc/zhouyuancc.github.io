@@ -1,0 +1,5 @@
+ <%#Eval("Yz","{0:0.00}")%>
+
+<td align="center">
+<%#Eval("sxrq", "{0:yyyy-MM-dd}")%>
+</td>

@@ -1,0 +1,12 @@
+
+id = $(this).attr("id").split("PRCS_CHECK_");
+id = id[1].toString();
+
+
+//curChatUserId "dc-zhouyuan"
+
+string[] code;
+char SplitChar = Convert.ToChar("-");
+code = curChatUserId.Split(SplitChar);
+
+string curChatUserName = SqlExec.ExecuteScalar(string.Format("select empname from PubEmpInfo where empcode='{0}'", code[1]));

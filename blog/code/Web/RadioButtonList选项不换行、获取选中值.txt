@@ -1,0 +1,68 @@
+<asp:RadioButtonList ID="RadioBtnList" runat="server" RepeatDirection="Horizontal" class="ControlAuto" >
+
+      <asp:ListItem Value="0" Selected="True">上传签名</asp:ListItem>
+      <asp:ListItem Value="1">上传盖章</asp:ListItem>
+
+</asp:RadioButtonList>
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+$("#UpSign").click(function () {
+--------------------------------------------------------------------------------------
+                var RadioBtnList = document.getElementsByName("RadioBtnList");
+                for (var i = 0; i < RadioBtnList.length; i++) {
+                    if (RadioBtnList[i].checked)
+                        flag = RadioBtnList[i].value;/////0或1
+                }
+--------------------------------------------------------------------------------------
+                var URL = "SignatureUpload.aspx?flag=" + flag;
+                myleft = (screen.availWidth - 1000) / 2;
+                mytop = (screen.availHeight - 550) / 2;
+                window.open(URL, "", "status=0,toolbar=no,menubar=no,width=1000,height=550,location=no,scrollbars=yes,resizable=yes,left=" + myleft + ",top=" + mytop);
+            })
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+$(function () {
+            if (getQueryString("authority") == "admin") {
+                document.getElementById("txtSignUser").style.display = "block";
+                document.getElementById("LabelSignUser").style.display = "none";
+            }
+            if (getQueryString("type") == "see") {
+                document.getElementById("PasswordDiv").style.display = "none";
+                document.getElementById("UpStamp").style.display = "none";
+            }
+            if (getQueryString("type") == "add") {
+                $("#old").hide();
+            }
+            else {
+                $("#old").show();
+            }
+            /////////////
+            radio();
+            $("#UpSign").click(function () {
+                var URL = "SignatureUpload.aspx?flag=" + radio();
+                myleft = (screen.availWidth - 1000) / 2;
+                mytop = (screen.availHeight - 550) / 2;
+                window.open(URL, "", "status=0,toolbar=no,menubar=no,width=1000,height=550,location=no,scrollbars=yes,resizable=yes,left=" + myleft + ",top=" + mytop);
+            })
+            $("#RadioBtnList").click(function () {
+                radio();
+            })
+        });
+        function radio() {
+            var flag;
+            var RadioBtnList = document.getElementsByName("RadioBtnList");
+            for (var i = 0; i < RadioBtnList.length; i++) {
+                if (RadioBtnList[i].checked)
+                    flag = RadioBtnList[i].value;
+            }
+            if (flag == "1") {
+                $("#imgEmpPic").css({ "width": "108px", "height": "108px" });
+            }
+            else {
+                $("#imgEmpPic").css({ "width": "152px", "height": "70px" });
+            }
+//            alert(flag)
+            return flag;
+        }

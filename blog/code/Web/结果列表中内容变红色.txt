@@ -1,0 +1,60 @@
+  <div class="listLable">
+            结果列表</div>
+    </div>
+    <div class="divList">
+        <asp:Repeater ID="rptDataList" runat="server" >
+            <HeaderTemplate>
+                <table class="tblList">
+                    <tr>
+ 
+                        <th style="width: 25%;">
+                            角色名称
+                        </th>
+      
+            </HeaderTemplate>
+            <ItemTemplate>
+                <tr>
+                 
+
+
+
+   <td style="<%# Eval("IsAdmin").ToString()=="1"?"color:red":"" %>">
+                    
+
+
+
+                          <%#Eval("RoleName")%>
+                    </td>
+        
+            </ItemTemplate>
+            <FooterTemplate>
+                </table>
+            </FooterTemplate>
+        </asp:Repeater>
+        <uc1:Pager ID="PageShow" runat="server" PageSize="10" />
+    </div>
+
+
+
+
+ // 绑定数据
+        public void PageShowInitList(int currtPage)
+        {
+            try
+            {
+                SqlExec sqlexec = new SqlExec();
+                StringBuilder Builder = new StringBuilder();
+                Builder.Append("SELECT [Id],[RoleCode],[RoleNo],[RoleName],(case when RoleCode ='role0002' then '1' end) IsAdmin,(case when RoleCode ='role0002' then 'hidden' else 'visible' end) IsDelete FROM PubRoleInfo  ");
+                if (this.txtRemark.Text.Trim() != "")
+                {
+                    Builder.Append("WHERE " + this.drpQueryType.SelectedValue + " LIKE '%' + @txtRemark + '%'");
+                }
+                SqlParameter[] sqlParm = { sqlexec.CreateInParam("@txtRemark", SqlDbType.NVarChar, 20, this.txtRemark.Text.Trim()) };
+                PageShow.initList(rptDataList, "[Id]", currtPage, Builder.ToString(), "ORDER BY [RoleNo]", sqlParm, CommandType.Text);
+                sqlexec = null;
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+        }

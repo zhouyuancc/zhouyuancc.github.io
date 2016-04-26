@@ -1,0 +1,46 @@
+
+gridview其中一列超链接
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<asp:TemplateField HeaderText="任务单编号">
+                            <ItemTemplate>
+
+<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='../Rs_Jx_rwmb_mx.aspx?type=see&h_id=JX-02-03'>
+ <%# Eval("Rwdbh")%>
+</asp:HyperLink> 
+
+                            </ItemTemplate>
+                            <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" CssClass="table_top"
+                                Height="23px" Width="5%" />
+                            <ItemStyle HorizontalAlign="Center" Height="31px" Width="8%" VerticalAlign="Middle"
+                                CssClass="table_inside" />
+                        </asp:TemplateField>
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<asp:TemplateField HeaderText="任务单编号">
+                            <ItemTemplate>
+
+                             <a href="#" onclick="js_callpage('../Rs_Jx_rwmb_mx.aspx?type=see&amp;h_id=<%#Eval("Rwdbh")%>','1000','620')"><%# Eval("Rwdbh")%></a>
+                             
+                            </ItemTemplate>
+                            <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" CssClass="table_top"
+                                Height="23px" Width="5%" />
+                            <ItemStyle HorizontalAlign="Center" Height="31px" Width="8%" VerticalAlign="Middle"
+                                CssClass="table_inside" />
+                        </asp:TemplateField>
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ <asp:BoundField DataField="Rq" HeaderText="考核日期" DataFormatString ="{0:d}">
+                            <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" CssClass="table_top"/>
+                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" CssClass="table_inside" />
+                        </asp:BoundField>
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  <asp:BoundField DataField="Khje" HeaderText="考核金额" DataFormatString ="{0:0.00}">
+                            <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" CssClass="table_top"/>
+                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" CssClass="table_inside" />
+                        </asp:BoundField>

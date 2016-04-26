@@ -1,0 +1,86 @@
+// 自动生成角色编号
+        private void GetAutoRoleCode()
+        {
+            string strMaxRoleCode = SqlExec.ExecuteScalar("SELECT TOP 1 [RoleCode] FROM PubRoleInfo ORDER BY [RoleCode] DESC");
+            if (strMaxRoleCode != "")
+            {
+                int intMaxCode = Convert.ToInt32(strMaxRoleCode.Substring(4)) + 1;
+                string strNewMaxCode = intMaxCode.ToString();
+                while (strNewMaxCode.Length < 4)
+                {
+                    strNewMaxCode = "0" + strNewMaxCode;
+                }
+                this.txtRoleCode.Text = "role" + strNewMaxCode;
+            }
+            else
+            {
+                this.txtRoleCode.Text = "role0001";
+            }
+        }
+
+
+神样自增
+        /// <summary>
+        /// 自动生成自增001编号---新增
+        /// </summary>
+        private void GetAutoRoleCode()
+        {
+            string strMaxRoleCode = SqlExec.ExecuteScalar("SELECT TOP 1 No FROM AffWorkPlan  where len(No)=3  ORDER BY [No] DESC");
+            if (strMaxRoleCode != "")
+            {
+                int intMaxCode = Convert.ToInt32(strMaxRoleCode.Substring(2)) + 1;
+                string strNewMaxCode = intMaxCode.ToString();
+                while (strNewMaxCode.Length < 3)
+                {
+                    strNewMaxCode = "0" + strNewMaxCode;
+                }
+                this.txtNopx.Text = strNewMaxCode;
+            }
+            else
+            {
+                this.txtNopx.Text = "001";
+            }
+        }
+
+
+/// <summary>
+        /// 自动生成自增001编号---新增+任务分解（工作计划）
+        /// </summary>
+        private void GetAutoRoleCode()
+        {
+            string strMaxRoleCode = "";
+
+            if (type == "add")
+            {
+                strMaxRoleCode = SqlExec.ExecuteScalar("SELECT TOP 1 No FROM AffWorkPlan  where len(No)=3  ORDER BY [No] DESC");
+            }
+            else if (type == "Split")//任务分解自增001
+            {
+                strMaxRoleCode = SqlExec.ExecuteScalar("SELECT TOP 1 No FROM AffWorkPlan  where  No LIKE '" + txtNopx.Text + "'+'%' and  len(No)=len('" + txtNopx.Text + "')+3  ORDER BY [No] DESC");
+
+            }
+            
+            if (strMaxRoleCode != "")
+            {
+                ///Substring字符位置的开始
+                int intMaxCode = Convert.ToInt32(strMaxRoleCode.Substring(0)) + 1;
+                string strNewMaxCode = intMaxCode.ToString();
+                while (strNewMaxCode.Length < strMaxRoleCode.Length)
+                {
+                    ///在 2002 这类数字前填 0 ，变成 002002 格式
+                    strNewMaxCode = "0" + strNewMaxCode;
+                }
+                this.txtNopx.Text = strNewMaxCode;
+            }
+            else
+            {
+                if (type == "add")
+                {
+                    this.txtNopx.Text = "001";
+                }
+                else if (type == "Split")
+                {
+                    this.txtNopx.Text = txtNopx.Text + "001";
+                }
+            }
+        }

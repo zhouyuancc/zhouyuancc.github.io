@@ -1,0 +1,315 @@
+
+        /// <summary>
+        /// 判断数据在库中是否存在
+        /// </summary>
+        /// <returns></returns>
+        private Boolean xjyf(string Yf)
+        {
+            Boolean result = false;
+            string strsql = "select count(*) from rs_nxj_ybzt where Nf=@nf  and Zt='1' and Yf=@Yf ";
+            SqlExec sqlex = new SqlExec();
+            SqlParameter[] sqlpa = {
+               sqlex.CreateInParam("@Nf",SqlDbType.VarChar,30,txtNf.Text) ,
+               sqlex.CreateInParam("@Yf",SqlDbType.VarChar,30,Yf) ,
+                };
+            string n = SqlExec.ExecuteScalar(strsql, CommandType.Text, sqlpa);
+            if (Convert.ToInt32(n) > 0)
+            {
+                result = true;
+            }
+            return result;
+        }
+
+
+        /// <summary>
+        /// 判断能否输入数据
+        /// </summary>
+        /// <returns></returns>
+        private void yb()
+        {
+
+            if (xjyf("1") == true)
+            {
+                txtJanD5.Enabled = false;
+                txtJanD10.Enabled = false;
+                txtJanD15.Enabled = false;
+            }
+            if (xjyf("2") == true)
+            {
+                txtJanD5.Enabled = false;
+                txtJanD10.Enabled = false;
+                txtJanD15.Enabled = false;
+                txtFebD5.Enabled = false;
+                txtFebD10.Enabled = false;
+                txtFebD15.Enabled = false;
+            }
+            if (xjyf("3") == true)
+            {
+                txtJanD5.Enabled = false;
+                txtJanD10.Enabled = false;
+                txtJanD15.Enabled = false;
+                txtFebD5.Enabled = false;
+                txtFebD10.Enabled = false;
+                txtFebD15.Enabled = false;
+                txtMarD5.Enabled = false;
+                txtMarD10.Enabled = false;
+                txtMarD15.Enabled = false;
+
+            }
+            if (xjyf("4") == true)
+            {
+                txtJanD5.Enabled = false;
+                txtJanD10.Enabled = false;
+                txtJanD15.Enabled = false;
+                txtFebD5.Enabled = false;
+                txtFebD10.Enabled = false;
+                txtFebD15.Enabled = false;
+                txtMarD5.Enabled = false;
+                txtMarD10.Enabled = false;
+                txtMarD15.Enabled = false;
+                txtAprD5.Enabled = false;
+                txtAprD10.Enabled = false;
+                txtAprD15.Enabled = false;
+            }
+            if (xjyf("5") == true)
+            {
+               txtJanD5.Enabled = false;
+                txtJanD10.Enabled = false;
+                txtJanD15.Enabled = false;
+                txtFebD5.Enabled = false;
+                txtFebD10.Enabled = false;
+                txtFebD15.Enabled = false;
+                txtMarD5.Enabled = false;
+                txtMarD10.Enabled = false;
+                txtMarD15.Enabled = false;
+                txtAprD5.Enabled = false;
+                txtAprD10.Enabled = false;
+                txtAprD15.Enabled = false;
+                txtMayD5.Enabled = false;
+                txtMayD10.Enabled = false;
+                txtMayD15.Enabled = false;
+            }
+             if (xjyf("6") == true)
+            {
+                txtJanD5.Enabled = false;
+                txtJanD10.Enabled = false;
+                txtJanD15.Enabled = false;
+                txtFebD5.Enabled = false;
+                txtFebD10.Enabled = false;
+                txtFebD15.Enabled = false;
+                txtMarD5.Enabled = false;
+                txtMarD10.Enabled = false;
+                txtMarD15.Enabled = false;
+                txtAprD5.Enabled = false;
+                txtAprD10.Enabled = false;
+                txtAprD15.Enabled = false;
+                txtMayD5.Enabled = false;
+                txtMayD10.Enabled = false;
+                txtMayD15.Enabled = false;
+                txtJunD5.Enabled = false;
+                txtJunD10.Enabled = false;
+                txtJunD15.Enabled = false;
+               
+               
+            } 
+            if (xjyf("7") == true)
+            {
+                txtJanD5.Enabled = false;
+                txtJanD10.Enabled = false;
+                txtJanD15.Enabled = false;
+                txtFebD5.Enabled = false;
+                txtFebD10.Enabled = false;
+                txtFebD15.Enabled = false;
+                txtMarD5.Enabled = false;
+                txtMarD10.Enabled = false;
+                txtMarD15.Enabled = false;
+                txtAprD5.Enabled = false;
+                txtAprD10.Enabled = false;
+                txtAprD15.Enabled = false;
+                txtMayD5.Enabled = false;
+                txtMayD10.Enabled = false;
+                txtMayD15.Enabled = false;
+                txtJunD5.Enabled = false;
+                txtJunD10.Enabled = false;
+                txtJunD15.Enabled = false;
+                txtJulD5.Enabled = false;
+                txtJulD10.Enabled = false;
+                txtJulD15.Enabled = false;
+                
+                
+            } 
+            if (xjyf("8") == true)
+            {
+                txtJanD5.Enabled = false;
+                txtJanD10.Enabled = false;
+                txtJanD15.Enabled = false;
+                txtFebD5.Enabled = false;
+                txtFebD10.Enabled = false;
+                txtFebD15.Enabled = false;
+                txtMarD5.Enabled = false;
+                txtMarD10.Enabled = false;
+                txtMarD15.Enabled = false;
+                txtAprD5.Enabled = false;
+                txtAprD10.Enabled = false;
+                txtAprD15.Enabled = false;
+                txtMayD5.Enabled = false;
+                txtMayD10.Enabled = false;
+                txtMayD15.Enabled = false;
+                txtJunD5.Enabled = false;
+                txtJunD10.Enabled = false;
+                txtJunD15.Enabled = false;
+                txtJulD5.Enabled = false;
+                txtJulD10.Enabled = false;
+                txtJulD15.Enabled = false;
+                txtAugD5.Enabled = false;
+                txtAugD10.Enabled = false;
+                txtAugD15.Enabled = false;
+               
+            }
+             if (xjyf("9") == true)
+            {
+                txtJanD5.Enabled = false;
+                txtJanD10.Enabled = false;
+                txtJanD15.Enabled = false;
+                txtFebD5.Enabled = false;
+                txtFebD10.Enabled = false;
+                txtFebD15.Enabled = false;
+                txtMarD5.Enabled = false;
+                txtMarD10.Enabled = false;
+                txtMarD15.Enabled = false;
+                txtAprD5.Enabled = false;
+                txtAprD10.Enabled = false;
+                txtAprD15.Enabled = false;
+                txtMayD5.Enabled = false;
+                txtMayD10.Enabled = false;
+                txtMayD15.Enabled = false;
+                txtJunD5.Enabled = false;
+                txtJunD10.Enabled = false;
+                txtJunD15.Enabled = false;
+                txtJulD5.Enabled = false;
+                txtJulD10.Enabled = false;
+                txtJulD15.Enabled = false;
+                txtAugD5.Enabled = false;
+                txtAugD10.Enabled = false;
+                txtAugD15.Enabled = false;
+                txtSeptD5.Enabled = false;
+                txtSeptD10.Enabled = false;
+                txtSeptD15.Enabled = false;
+               
+            }
+             if (xjyf("10") == true)
+            {
+                txtJanD5.Enabled = false;
+                txtJanD10.Enabled = false;
+                txtJanD15.Enabled = false;
+                txtFebD5.Enabled = false;
+                txtFebD10.Enabled = false;
+                txtFebD15.Enabled = false;
+                txtMarD5.Enabled = false;
+                txtMarD10.Enabled = false;
+                txtMarD15.Enabled = false;
+                txtAprD5.Enabled = false;
+                txtAprD10.Enabled = false;
+                txtAprD15.Enabled = false;
+                txtMayD5.Enabled = false;
+                txtMayD10.Enabled = false;
+                txtMayD15.Enabled = false;
+                txtJunD5.Enabled = false;
+                txtJunD10.Enabled = false;
+                txtJunD15.Enabled = false;
+                txtJulD5.Enabled = false;
+                txtJulD10.Enabled = false;
+                txtJulD15.Enabled = false;
+                txtAugD5.Enabled = false;
+                txtAugD10.Enabled = false;
+                txtAugD15.Enabled = false;
+                txtSeptD5.Enabled = false;
+                txtSeptD10.Enabled = false;
+                txtSeptD15.Enabled = false;
+                txtOctD5.Enabled = false;
+                txtOctD10.Enabled = false;
+                txtOctD15.Enabled = false;
+                
+                
+            }
+             if (xjyf("11") == true)
+            {
+                txtJanD5.Enabled = false;
+                txtJanD10.Enabled = false;
+                txtJanD15.Enabled = false;
+                txtFebD5.Enabled = false;
+                txtFebD10.Enabled = false;
+                txtFebD15.Enabled = false;
+                txtMarD5.Enabled = false;
+                txtMarD10.Enabled = false;
+                txtMarD15.Enabled = false;
+                txtAprD5.Enabled = false;
+                txtAprD10.Enabled = false;
+                txtAprD15.Enabled = false;
+                txtMayD5.Enabled = false;
+                txtMayD10.Enabled = false;
+                txtMayD15.Enabled = false;
+                txtJunD5.Enabled = false;
+                txtJunD10.Enabled = false;
+                txtJunD15.Enabled = false;
+                txtJulD5.Enabled = false;
+                txtJulD10.Enabled = false;
+                txtJulD15.Enabled = false;
+                txtAugD5.Enabled = false;
+                txtAugD10.Enabled = false;
+                txtAugD15.Enabled = false;
+                txtSeptD5.Enabled = false;
+                txtSeptD10.Enabled = false;
+                txtSeptD15.Enabled = false;
+                txtOctD5.Enabled = false;
+                txtOctD10.Enabled = false;
+                txtOctD15.Enabled = false;
+                txtNovD5.Enabled = false;
+                txtNovD10.Enabled = false;
+                txtNovD15.Enabled = false;
+                
+            }
+             if (xjyf("12") == true)
+            {
+                txtJanD5.Enabled = false;
+                txtJanD10.Enabled = false;
+                txtJanD15.Enabled = false;
+                txtFebD5.Enabled = false;
+                txtFebD10.Enabled = false;
+                txtFebD15.Enabled = false;
+                txtMarD5.Enabled = false;
+                txtMarD10.Enabled = false;
+                txtMarD15.Enabled = false;
+                txtAprD5.Enabled = false;
+                txtAprD10.Enabled = false;
+                txtAprD15.Enabled = false;
+                txtMayD5.Enabled = false;
+                txtMayD10.Enabled = false;
+                txtMayD15.Enabled = false;
+                txtJunD5.Enabled = false;
+                txtJunD10.Enabled = false;
+                txtJunD15.Enabled = false;
+                txtJulD5.Enabled = false;
+                txtJulD10.Enabled = false;
+                txtJulD15.Enabled = false;
+                txtAugD5.Enabled = false;
+                txtAugD10.Enabled = false;
+                txtAugD15.Enabled = false;
+                txtSeptD5.Enabled = false;
+                txtSeptD10.Enabled = false;
+                txtSeptD15.Enabled = false;
+                txtOctD5.Enabled = false;
+                txtOctD10.Enabled = false;
+                txtOctD15.Enabled = false;
+                txtNovD5.Enabled = false;
+                txtNovD10.Enabled = false;
+                txtNovD15.Enabled = false;
+                txtDecD5.Enabled = false;
+                txtDecD10.Enabled = false;
+                txtDecD15.Enabled = false;
+                
+            }
+
+
+
+        }

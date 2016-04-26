@@ -1,0 +1,15 @@
+
+前台
+
+<asp:GridView AllowSorting="True" AllowPaging="True" PageSize="20">
+<PagerStyle HorizontalAlign="Center" CssClass="PagerStyle" />
+
+后台
+
+ protected void myDataGV_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            Session["CurrentPage"] = e.NewPageIndex;
+            this.myDataGV.PageIndex = e.NewPageIndex;
+            BindGrid(true);
+        }
+

@@ -1,0 +1,18 @@
+
+前台
+
+上边模块不动
+
+<table width="100%" style="height: 0%;" border="0" cellspacing="0" cellpadding="0">
+ 
+</table>
+
+下边模块加滚动条
+
+ <div style="width: 99%;height:500px;padding-left: 3px; padding-top: 3px;padding-right: 3px; padding-bottom: 3px; 
+      OVERFLOW-Y: auto; OVERFLOW-X: auto;" >
+
+<asp:GridView ID="myDataGV" runat="server" CssClass="tblList" BackColor="#EFF6FE"
+              BorderWidth="0px" AutoGenerateColumns="False" Width="1800px"  CellPadding="0" 
+              AllowPaging="True" OnPageIndexChanging="myDataGV_PageIndexChanging" 
+              PageSize="15" AllowSorting="True">

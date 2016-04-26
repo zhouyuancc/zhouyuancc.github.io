@@ -1,0 +1,1136 @@
+
+顺序逆序
+ASC顺序/DESC逆序
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+sql = "INSERT INTO pubhistory(mkmc, czmc, clickcount, ry, czrq)";
+sql += " VALUES(@mkmc,@czmc,@clickcount,
+
+'" + Session["loginname"] + "'     ,getdate()) 
+
+";
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+=IF（VALUE（LEFT（dl,6)),dl,””）
+
+1、left截取d1左边6个字符串。
+
+select count(NodeId) from (select * from PubRoleMenu where NodeId=left(@NodeId ,6) and RoleCode=@RoleCode )a
+
+INSERT INTO PubRoleMenu([NodeId],[RoleCode],[CreateUser],[CreateDate]) VALUES(left(@NodeId,6),@RoleCode,@CreateUser,GETDATE())
+
+选取字符长度-3个字符
+
+select * from AffWorkPlan where No=left(@No ,len(@No)-3)
+
+2、将字符串转换为数值
+3、用if来进行判断，如果截取的字符串可以转换为数值，那么就显示该数值，否则就显示为空白
+
+--------------------------------------------------------------------------------------------------
+
+update PubEmpInfo  set deptcodecompany =  left(deptcode,6)  
+取一列 前6位 放到另一列
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+SELECT [CSId],[ParaType],[Level],[OrderCol] FROM PubParameter where 
+
+len(CSId)<7  //选择字符串长度
+
+select * from dbo.SelWeatherCity where LEN(citycode)=5 order by CityCode //长度为5
+
+select * from dbo.SelWeatherCity where CityCode like '10101%' and LEN(citycode)>5 order by CityCode 
+
+select *,SUBSTRING(citycode,1,5) as FCode from dbo.SelWeatherCity where CityCode like '10101%' and LEN(citycode)>5 order by CityCode 
+
+SUBSTRING(citycode,1,5) as FCode 这个编号是父级编号
+
+SUBSTRING(CityName,1,len(CityName)-1) 
+
+ORDER BY [OrderCol]
+
+快捷方式（value='MENU_SORT'表示“不可移动”）
+
+select *,
+(case when len(nodeid)=6 then '-----['+ nodename+']-----' else nodename end) name,
+(case when len(nodeid)=6 then 'MENU_SORT' else nodeid end) nid 
+from PubMenuTree where NodeId in (select NodeId from PubRoleMenu where RoleCode in  (select RoleCode from PubEmpRole where EmpCode='" + Session["empcode"].ToString() + "')) and IsShow='1'  and Page_Path is not null  order by NodeId 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+增加一列
+alter table dbo.lc_ccsq add Ccly varchar(50) null
+删除一列
+alter table 表名 Drop column 列名
+alter table PubParameter Drop column Level 
+
+更新
+update lc_ccsq set Ccly ='sdaf' where ServerCode ='201300000509'
+
+删除
+delete  gd_zclb where Id ='39'
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+模糊查询
+
+private DataSet GetData()
+        {
+
+            string sql = @"select * from rs_ryxx where name  like '%' + @name + '%' and sex like '%' + @sex + '%' ";
+
+
+
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] parms = 
+                {
+                    sqlexec.CreateInParam("@name",SqlDbType.VarChar,50,txtName.Text),
+                    sqlexec.CreateInParam("@sex",SqlDbType.VarChar,10,DrpJcsx.SelectedValue),
+                    //sqlexec.CreateInParam("@Ddrq2",SqlDbType.VarChar,10,TxtDdrq2.Text),
+                    //sqlexec.CreateInParam("@Ddyy",SqlDbType.VarChar,100,txtDdyy.Text),
+                    //sqlexec.CreateInParam("@Ddsxrq1",SqlDbType.VarChar,20,txtDdsxrq1.Text),
+                    //sqlexec.CreateInParam("@Ddsxrq2",SqlDbType.VarChar,20,txtDdsxrq2.Text)
+                };
+            DataSet ds = SqlExec.ExecuteDataSet(sql, CommandType.Text, parms);
+            return ds;
+        }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+内连接
+
+ private DataSet GetData()
+        {
+
+            string sql = @"select * from lc_wwhtsq a inner join ZjqInitiate b on a.ServerCode=b.servercode where b.state=2";
+            string conditionType = this.dropQueryType.SelectedValue;
+            //string sql = @"select *,CASE WHEN len(Cj) > 10 THEN LEFT(Cj, 10) + '...' ELSE Cj END AS VCj from lc_cghtsp a inner join ZjqInitiate b on a.ServerCode=b.servercode where b.state=2";
+
+            sql += " and Tbrq between @Sqrq1 and @Sqrq2";
+            sql += " and Wwcj like '%' +@Wwcj+ '%'";
+            sql += " and " + conditionType + " like '%'+@ConditionText+'%' ";
+
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] parms = 
+                {
+                    sqlexec.CreateInParam("@ConditionText",SqlDbType.VarChar,100,TextBox1.Text),
+                    sqlexec.CreateInParam("@Wwcj",SqlDbType.VarChar,100,txtContent.Text),
+                    sqlexec.CreateInParam("@Sqrq1",SqlDbType.DateTime,20,txtSqrq1.Text==""?"1900-01-01":txtSqrq1.Text),
+                    sqlexec.CreateInParam("@Sqrq2",SqlDbType.DateTime,20,txtSqrq2.Text==""?"2022-12-31":txtSqrq2.Text),
+                };
+            DataSet ds = SqlExec.ExecuteDataSet(sql, CommandType.Text, parms);
+            return ds;
+
+        }
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+带case
+
+
+select Nf,(select DeptName from PubDeptInfo where DeptId=Aa.Dw) as myDw,HjO,A,B,C,HjT,D,E,F,
+
+case when HjO=0 then 0 else HjT/(HjO*1.0)*100 end 
+
+AS Ywcl,Ljxjrs, Njh,case when Njh=0 then 0 else Ljxjrs/(Njh *1.0)*100 end AS Wcl from ( 
+ select a.Dw,a.Nf,(a.JanD5+a.JanD10+a.JanD15) as HjO,a.JanD5 as A,a.JanD10 as B,a.JanD15 as C,(b.JanD5+b.JanD10+b.JanD15) as HjT,b.JanD5 as D,b.JanD10 as E,b.JanD15 as F ,(a.JanD5+a.JanD10+a.JanD15+a.FebD5+a.FebD10+a.FebD15+a.MarD5+a.MarD10+a.MarD15+a.AprD5+a.AprD10+a.AprD15+a.MayD5+a.MayD10+a.MayD15+a.JunD5+a.JunD10+a.JunD15+a.JulD5+a.JulD10+a.JulD15+a.AugD5+a.AugD10+a.AugD15+a.SeptD5+a.SeptD10+a.SeptD15+a.OctD5+a.OctD10+a.OctD15+a.NovD5+a.NovD10+a.NovD15+a.DecD5+a.DecD10+a.DecD15 )as Ljxjrs,(b.JanD5+b.JanD10+b.JanD15+b.FebD5+b.FebD10+b.FebD15+b.MarD5+b.MarD10+b.MarD15+b.AprD5+b.AprD10+b.AprD15+b.MayD5+b.MayD10+b.MayD15+b.JunD5+b.JunD10+b.JunD15+b.JulD5+b.JulD10+b.JulD15+b.AugD5+b.AugD10+b.AugD15+b.SeptD5+b.SeptD10+b.SeptD15+b.OctD5+b.OctD10+b.OctD15+b.NovD5+b.NovD10+b.NovD15+b.DecD5+b.DecD10+b.DecD15 )as Njh  from rs_nxj a inner join rs_nxj_yb b on a.Nf=b.Nf  and a.Dw=b.Dw) 
+ Aa
+
+--------------------------------------------------------------------------------------------------------
+
+CASE
+
+当开票金额=0时，显示‘未开票’，否则，将varchar格式的‘未开票’转换为decimal格式的开票金额数，结束加end
+
+case when myKpje='0' then '未开票' else convert(varchar,myKpje) end 
+
+
+select *,
+case when Zszt ='0' then '住宿'  when Zszt ='1' then '退宿' when Zszt ='2' then '换出此房' when Zszt ='3' then '换入此房' end 
+as myZszt from dc_Rzdj 
+
+
+select *,(case when Zt='0' then Phone when Zt is null then Phone when Zt='1' then null end)as Telephone from   V_PubEmpInfo 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ISNULL 在Id_kfp=a.Id的情况下，从开发票的表中查询 开票金额的总数。若为空，则显示0
+
+select *,isnull((select Sum(Kpje) from jx_kfp where Id_kfp=a.Id),0) 
+as myKpje  from jx_httz a 
+
+
+--------------------------------------------
+null                                        |
+1. 【形容词】零的;无效的;无价值的;空的.     |
+2. 【名词】零;空;无.                        |
+3. 【及物动词】使无效.                      |
+--------------------------------------------
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+string sql = @"select * from
+(
+select *,(case when myKpje='0' then '未开票' else convert(varchar,myKpje) end )as myKp ,(case when myKpje='0' then '未开票' else '已开票' end )as myKpzt from(
+select *,isnull((select Sum(Kpje) from jx_kfp where Id_kfp=a.Id),0) as myKpje  from jx_httz a 
+
+) b
+ 
+) c 
+
+where";
+            
+            sql += " Htbh like '%' +@Htbh+ '%'";
+            sql += " and Scbh like '%' +@Scbh+ '%'";
+            sql += " and myKpzt=isnull(@Kpzt,myKpzt)";
+
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] parms = 
+                {
+                    sqlexec.CreateInParam("@Htbh",SqlDbType.VarChar,500,txtHtbh.Text),
+                    sqlexec.CreateInParam("@Scbh",SqlDbType.VarChar,500,txtScbh.Text),  
+                    sqlexec.CreateInParam("@Kpzt",SqlDbType.VarChar,500,radKpzt.SelectedItem.Text=="全部" ? null :radKpzt.SelectedItem.Text),  
+/////////////////////////////////////////////////////当 圆圈选择按钮RadioButtonList  ID="radKpzt"中选择了全部 为真，则 传入null，myKpzt=isnull(@Kpzt,myKpzt) ， 则myKpzt为null，传入 myKpzt=myKpzt ；否则，传入radKpzt.SelectedItem.Text的值/////////////////////////////////////////////////////
+               
+            DataSet ds = SqlExec.ExecuteDataSet(sql, CommandType.Text, parms);
+            return ds;
+        }
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+alt浮漂中内容换行
+
+&#10;换行
+
+select*,('★主题：'+Q_Note+'&#10;★最近评论日期：'+DATENAME(year, releasetime)+'-'+ 
+DATENAME(month,releasetime)+'-'+DATENAME(DAY,releasetime)+'&#10;★最近评论人
+ ：'+ISNULL(answerMan,'无评论')) as title 
+ 
+ from
+(select top 5 *,(case when releasetime between Convert(datetime,Convert(varchar,getdate(),112)
+ + ' 00:01')and Convert(datetime,Convert(varchar,getdate(),112) + ' 23:59') 
+
+then 0 else 1 end) 
+as Status,
+
+(select top 1 Ans_Man from SBD_BBS.dbo.Answers 
+where Question_ID=SBD_BBS.dbo.Questions.Q_ID order by Ans_Time desc)
+ as answerMan
+ 
+from SBD_BBS.dbo.Questions order by releasetime desc) A 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+取首字符，带C的模糊查询
+
+select substring(OnlySpell,1,1)+ '('+Convert(varchar,COUNT(*)) +')',substring(OnlySpell,1,1) as xx from PubEmpInfo 
+group by substring(OnlySpell,1,1) 
+
+
+select * from PubEmpInfo where OnlySpell like 'C%'
+
+
+select (substring(OnlySpell,1,1)+ '('+Convert(varchar,COUNT(*)) +')') as surname,substring(OnlySpell,1,1) as sur from V_EmpInfoLogin where empcode<>'admin' group by substring(OnlySpell,1,1)
+结果：C（1）    C
+
+http://www.w3cschool.cn/sql_groupby.html
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+dateadd(SS,60,ActiveTime)>GETDATE() 
+向 "ActiveTime" 添加 60 秒
+
+http://www.w3school.com.cn/sql/func_dateadd.asp
+
+Select DISTINCT EmpCode,DeptName,SeeCount,ActiveTime,(case when xb='男' then 'Images/C1.png' else 'Images/C2.png' End) as IsM,s.teachcode,t.empname as teachname,s.seecount,s.LastTime,s.LastIp,s.LastAddress,s.LastMac,s.ActiveTime From V_PubEmpInfo t inner join PubSeeLog s on t.EmpCode=s.teachcode where dateadd(SS,60,ActiveTime)>GETDATE() order by s.seecount desc
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+左外连接
+
+select (case when len(a.nodeid)=6 then '-----['+ a.NodeName+']-----' when b.EmpCode='adminzy' then NULL else a.NodeName end) dxname,
+(case when len(a.nodeid)=6 then 'MENU_SORT' else a.nodeid end) as nid,
+* from 
+
+PubMenuTree a 
+left outer join  
+(select * from SelShortCuts where EmpCode  ='adminzy') b 
+on a.NodeId=b.NodeId 
+
+where  a.IsShow='1' and a.Page_Path is not null and 
+a.NodeId in (select NodeId from PubRoleMenu where RoleCode in (select RoleCode from PubEmpRole where EmpCode='admin')) 
+order by a.NodeId
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+复合连接
+
+select 
+(select b.DeptName from PubDeptInfo  b where c.bm=b.DeptId) as DeptName ,
+(select d.EmpName from PubEmpInfo d where b.Xm=d.EmpCode) as Empname,
+
+(case when b.Lb ='0' then '项目' when b.lb='1' then'专业' end) lx,
+b.Id as rwid,* 
+
+from Rs_Jx_rwxx_kh a,Rs_Jx_rwxx b,Rs_Jx_rwmb c 
+where a.Rwxx_id=b.Id and b.Rwdbh=c.Rwdbh
+
+-------------------------------------------------------------------------------------------------------------------------
+
+select * from (
+
+select (select b.DeptName from PubDeptInfo  b where c.bm=b.DeptId) as DeptName ,
+(select d.EmpName from PubEmpInfo d where b.Xm=d.EmpCode) as Empname,
+
+isnull(a.Khr,'') mykhr,
+
+(case when a.Khlx ='0' then '未按时提交工作单' when a.Khlx='1' then'审批过程超时' when a.Khlx='2' then'领导考核' end) myKhlx,
+(case when a.Zt ='0' then '考核' when a.Zt='1' then'不考核' end) myzt,
+(case when b.Lb ='0' then '项目' when b.lb='1' then'专业' end) lx,
+b.Id as rwid,a.Id ,Khlx ,Khsm ,a.Khje ,a.Khfs ,a.Rq,a.Khr,a.Zt,a.Wkhyy,a.Whr,a.Whrq,c.bm as bm,b.Rwdbh 
+from Rs_Jx_rwxx_kh a,Rs_Jx_rwxx b,Rs_Jx_rwmb c where a.Rwxx_id=b.Id and b.Rwdbh=c.Rwdbh
+)e where  mykhr like '%' + '' + '%' 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+declare set
+---------------------------------------
+同一列三行的数据，如下：                |
+                                       |
+RoleName	EmpCode                |
+公共权限	        admin                  |
+管理员权限	admin                  |
+一般权限  	admin                  |
+---------------------------------------|
+表示成如下：                           |                  
+                                       |
+(无列名)                               |
+公共权限,管理员权限,一般权限,           |
+                                       |
+---------------------------------------
+declare @test varchar(max)
+set @test=''
+select @test=@test+RoleName+',' from V_PubEmpInfogrsz WHERE  [EmpCode] = 'adminzy'
+select @test
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Count选出条数
+
+select *,(case when RoleCode ='role0002' then '1' end) IsAdmin,(case when 
+RoleCode ='role0002' then 'hidden' else 'visible' end) IsDelete,Convert(varchar,ZCount)+'('+ Convert(varchar,JCount) +')/'+Convert(varchar,FCount)
+from 
+(
+
+select *,(select COUNT(EmpCode) from PubEmpRole where flag='1' and (RoleCode=p.RoleCode or  RoleCode=p.RoleNo)) as ZCount
+,(select COUNT(EmpCode) from PubEmpRole where RoleCode=p.RoleCode and flag='0') as FCount,
+(select Count(e.EmpCode) from PubEmpInfo e inner join PubEmpRole r on e.EmpCode=r.EmpCode where Islogin='1'
+and r.RoleCode=p.RoleCode) as JCount
+
+from PubRoleInfo p
+) t
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+SeeRoleList.aspx
+
+select SUM(ZCount) as Z, SUM(JCount) as J,SUM(FCount) as F 
+from (
+select DeptId,deptname,
+
+( select COUNT(e.EmpCode) from PubEmpInfo e inner join PubEmpRole r on e.EmpCode=r.EmpCode where flag='1' and e.DeptCode=d.DeptId and r.RoleCode=@hid_id) as ZCount,
+
+( select COUNT(e.EmpCode) from PubEmpInfo e inner join PubEmpRole r on e.EmpCode=r.EmpCode where Islogin='1' and e.DeptCode=d.DeptId and r.RoleCode=@hid_id) as JCount,
+
+( select COUNT(e.EmpCode) from PubEmpInfo e inner join PubEmpRole r on e.EmpCode=r.EmpCode where flag='0' and e.DeptCode=d.DeptId and r.RoleCode=@hid_id) as FCount,
+
+[dbo].[F_DeptRoleEmpStr](d.DeptId,@hid_id,'1') as ZEmpStr,
+[dbo].[F_DeptRoleEmpStr](d.DeptId,@hid_id,'2') as JEmpStr,
+[dbo].[F_DeptRoleEmpStr](d.DeptId,@hid_id,'0') as FEmpStr 
+
+from PubDeptInfo d 
+) t
+
+////////////////////
+select DeptId,
+(select DeptName  from PubDeptTree where DeptId =B.DeptId )as a 
+from PubDeptInfo B
+若选择其他表中的值，需在 as前 写出 两个表 值 相同 DeptId =B.DeptId 的关系
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+TOP选择最大值
+
+SELECT TOP 1 [RoleCode] FROM PubRoleInfo ORDER BY [RoleCode] DESC
+
+--------------------------------------------------------------------------
+select (case when State ='0' then '进行中' else '已完成' end) mystate,([Percent]+'%') mypercent,* from 
+AffWorkPlan where (CreateUser='周园' or Executor='周园' or Reviewer like '%'+ '周园;' +'%' )  and 
+
+No =(  select top 1 No 
+
+from (select left(No,3) as root,(case when State ='0' then '进行中' else '已完成' end) mystate,([Percent]+'%') mypercent,* from AffWorkPlan  where  No like '004'+'%' and [Title] like '%'+'规范'+'%' )e  ORDER BY [No] ASC )
+and [Title] like '%'+'规范'+'%' 
+
+----------------------------------------------------------------------------------------
+
+select (
+
+SELECT TOP 1 [Prcs_flag] FROM Zjq_Flow_Run_Prcs where Run_id =a.Run_id ORDER BY [Prcs_flag] DESC) Zt,
+
+case when Attachment_id<>'' then 'images/attach.gif' else 'images/attach1.gif' end as IsFJ,* from Zjq_Flow_Run a
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Replace替换
+
+select replace(Pic_Path,'~','..')as photo,* from PubMenuTree 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Convert
+
+r.RoleCode=Convert(varchar,p.Id) 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+日期格式转换
+
+将2014-01-07 00:00:00.000 转换为 2014年1月7日 格式
+SELECT DATENAME(Year,Rq)+N'年'+CAST(DATEPART(Month,Rq) AS varchar)+N'月'+
+DATENAME(Day,Rq)+N'日',* FROM Rs_Jx_jjrgl 
+
+若参数为空，则取全部值
+
+select * from Rs_Jx_jjrgl where DATENAME(Year,Rq)=isnull(@txtNf,DATENAME(Year,Rq))
+ and CAST(DATEPART(Month,Rq) AS varchar)= isnull(@Yf,CAST(DATEPART(Month,Rq) AS varchar)) 
+order by Rq
+
+sqlexec.CreateInParam("@txtNf",SqlDbType.VarChar,200,txtNf.Text==""?null:txtNf.Text),
+sqlexec.CreateInParam("@Yf",SqlDbType.VarChar,30,DrpYf.SelectedValue=="0"?null:DrpYf.SelectedValue)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+substring
+
+例如：
+"unhappy".substring(2) returns "happy"
+"Harbison".substring(3) returns "bison"
+"emptiness".substring(9) returns "" (an empty string)
+
+
+var str="Hello world!"
+document.write(str.substring(1,3));
+上面返回字符串:"el";
+str.substring(1,2) //返回e
+str.substring(1) //返回"ello world";
+
+
+substring(start,end)   or   substring(end，start)
+start值不取到，start为偏小值
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+判断权限（模糊查询）（Reviewer ---系统管理员;田晶祥;周园;张建琦;武梦婕;曲强;曹蕊;测试;）
+
+select * from AffWorkPlan  where PlanType=isnull('采购计划',PlanType) and 
+(CreateUser='' or Executor='" + Session["empname"].ToString() + "' or Reviewer like '%'+ '" + Session["empname"].ToString() + ";' +'%' )
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+select * from JD_OA.sys.sysdatabases  order by name --所有数据库名    
+select * from sysobjects where type='U' and name like '%'+'Flow_Data' +'%' order by name --数据库里所有表名
+
+SELECT 
+表名=case when a.colorder=1 then d.name else '' end, 
+表说明=case when a.colorder=1 then isnull(f.value,'') else '' end, 
+字段序号=a.colorder, 
+字段名=a.name, 
+标识=case when COLUMNPROPERTY(a.id,a.name,'IsIdentity')=1 then '1' else '' end,
+主键=case when exists(SELECT 1 FROM sysobjects where xtype='PK' and name in(
+SELECT name FROM sysindexes WHERE indid in(
+SELECT indid FROM sysindexkeys WHERE id = a.id AND colid=a.colid
+))) then '1' else '' end,
+类型=b.name,
+占用字节数=a.length,
+长度=COLUMNPROPERTY(a.id,a.name,'PRECISION'),
+小数位数=isnull(COLUMNPROPERTY(a.id,a.name,'Scale'),0),
+允许空=case when a.isnullable=1 then '1' else '' end,
+默认值=isnull(e.text,''),
+字段说明=isnull(g.[value],'')
+FROM syscolumns a
+left join systypes b on a.xtype=b.xusertype 
+inner join sysobjects d on a.id=d.id and d.xtype='U' and d.name<>'dtproperties' 
+left join syscomments e on a.cdefault=e.id 
+left join sys.extended_properties g on a.id=g.major_id and a.colid=g.minor_id 
+left join sys.extended_properties f on d.id=f.major_id and f.minor_id =0 
+where d.name='AffWorkPlan'         --如果只查询指定表,加上此条件   
+order by a.id,a.colorder
+
+select * from syscolumns a
+select * from systypes b
+select * from sysobjects d
+select * from syscomments e
+select * from sys.extended_properties g
+select * from sys.extended_properties f
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+replace + substring + len 
+
+-------------------------------------------------------------------------------------------------
+
+	declare @result varchar(8000)
+	declare @ss varchar(8000)
+	select @ss=dept from Zjq_Flow_Priv where Priv_type ='1' and Priv_scope=''
+	set @result=(select ''''+REPLACE(SUBSTRING(@ss,1,LEN(@ss)-1),';',''',''')+'''')
+
+set @result='select * from PubEmpInfo where DeptCode in ('+@result+')'
+
+exec (@result)
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+一个表的数据插入到另一个表中
+
+(1).select * into destTbl from srcTbl
+(2).insert into destTbl(fld1, fld2) select fld1, 5 from srcTbl
+
+以上两句都是将 srcTbl 的数据插入到 destTbl，但两句又有区别的：
+第一句（select into from）要求目标表（destTbl）不存在，因为在插入时会自动创建。
+第二句（insert into select from）要求目标表（destTbl）存在，由于目标表已经存在，所以我们除了插入源表（srcTbl）的字段外，还可以插入常量，如例中的：5。
+
+-----------------------------------------------------------------
+inert into table(col1,col2,…)
+select col1,col2,… 语句
+
+例如:insert into A(id,name) select id,name from emp;
+
+表示从emp表中查询出来的id,name值 插入到A表的id,name中
+
+-----------------------------------------------------------------
+
+insert into RS_KH_Inp_Zbwcqk_Mx(Imp_Id,Gwbh ,Gwmc ,Ygbh ,Qz,Jbgz ,Xygz ,Jt ,Khfd ,kk,CreateUser ,CreateDate )
+select Imp_Id,ID,Jsmc,Rybh,Qz,Jbgz ,Xygz ,Jt ,Khfd ,kk,CreateUser,CreatDate from
+(select ((Jbgz+Xygz+Jt)*Qz*Imp_Qrfd) Kk,((Jbgz+Xygz+Jt)*Qz) Khfd,* from(
+select 
+'6' as Imp_Id ,
+(select Qz from RS_KH_Zbqs where Gw=a.Id and Mb_Id ='20') Qz,
+(select Jbgz  from RS_KH_Khjs where Gw=a.Id ) Jbgz,
+(select Xygz  from RS_KH_Khjs where Gw=a.Id ) Xygz,
+(select Jt from RS_KH_Khjs where Gw=a.Id ) Jt,
+(select Imp_Qrfd from RS_KH_Inp_Zbwcqk where Id='6' ) Imp_Qrfd,
+'adminzy' CreateUser,
+getdate() CreatDate,
+* from Rs_Jx_lcjs a
+)b)z
+把表Rs_Jx_lcjs 中的一些列 插入到RS_KH_Inp_Zbwcqk_Mx中
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+将 小数的权重 用 百分数前的整数 表示
+select 
+
+convert(int,Qz*100) Q,
+
+(select Jsmc from Rs_Jx_lcjs where Id=a.Gw) Jsmc,* from dbo.RS_KH_Zbqs a
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+通过rs_mail表中的Gh更新rs_rsda表中Gh相同的[E-mail]  
+update dbo.rs_rsda  set [E-Mail]= (select b.mail from rs_mail b where b.Gh=rs_rsda.Gh)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ update pubmenutree set Nodeid=replace(Nodeid,'000001','000003') where NodeId like '000001'+'%'
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+http://blog.csdn.net/zzxian/article/details/8392940
+按name分组取val最大的值所在行的数据
+
+select a.* from quqiang a inner join (select [type] , max(datetime) datetime from quqiang group by [type]) b on a.[type] = b.[type] and a.datetime = b.datetime order by a.[type]
+
+select a.* from quqiang a where datetime = (select max(datetime) from quqiang where [type] = a.[type]) order by a.[type]
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Union all、数据类型转换
+http://www.w3school.com.cn/sql/sql_union.asp
+
+select * from sc_cptz 表
+
+select '' [Id],null [Xdrq],null [Tzg],null [Gzs],'合计' [Scbh],'' [Xmmc],null [Sl],sum(cast(Zl as money)) Zl,sum(cast(Htjg as money)) Htjg,null [Htgq],'' [Zczdw],sum(cast(Jkcz as money)) Jkcz,sum(cast(Jkcz as money)) Jklj,null [Fhsj],'' [Bz],'' [CreateUser],null [CreateDate],'' [EditUser],null [EditDate] from sc_cptz
+where scbh='2135'
+
+union all
+
+select [Id],[Xdrq],[Tzg],[Gzs],[Scbh],[Xmmc],[Sl],cast(Zl as money) Zl,cast(Htjg as money) Htjg,[Htgq],[Zczdw],cast(Jkcz as money) Jkcz,(select sum(cast(Jkcz as money)) Jklj from sc_cptz where Scbh=a.Scbh) Jklj,[Fhsj],[Bz],[CreateUser],[CreateDate],[EditUser],[EditDate] from sc_cptz a
+where scbh='2135'
+
+///数据类型须一致
+select '合计',sum(cast(Zl as bigint)) Zl,sum(cast(Htjg as bigint)) Htjg,sum(cast(Jkcz as bigint)) Jkcz from sc_cptz
+
+///产品编号Scbh相同的行 交库产值Jkcz 求和 添加为该行的 交库产值累加Jklj 列
+///某列值相同 求和 添加列
+select [Scbh],Jkcz,(select sum(cast(Jkcz as money)) Jklj from sc_cptz where Scbh=a.Scbh) Jklj from sc_cptz a
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///工作流-工作查询
+if (endrecovery == "关注")
+{
+strsql = "update Zjq_Flow_Run set Focus_user = Focus_user + @empcode +',' where Run_id=@Run_id  ";
+}
+else if (endrecovery == "取消关注")
+{
+///更新时部分删除
+strsql += "update Zjq_Flow_Run set Focus_user=replace(Focus_user,@empcode+',','') where Run_id=@Run_id ";
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///工作流-工作查询
+---------------------------------------
+Role                                   |
+2;22;33;                               |
+---------------------------------------|
+RoleCode                               |                  
+2                                      |
+22                                     |
+1                                      |
+---------------------------------------
+ select distinct(Flow_id)  from Zjq_Flow_Priv  where (Priv_type='3' or Priv_type='1') and 
+ (
+ (
+ (Priv_scope like '%'+';'+'%') and Priv_scope<>'3') ---自定义部门权限
+ or 
+ (Priv_scope = (select deptcode from V_PubEmpInfo where EmpCode='zhouyuan')+',' ) ---本部门权限
+ or ( Priv_scope='3' ) ---所有部门权限
+ ) 
+ and ---用户,部门,角色权限
+ (
+ (';'+[user] like '%;'+ 'zhouyuan' +';'+'%' or ';'+Dept like '%;'+(select deptcode from V_PubEmpInfo where EmpCode='zhouyuan')+';'+'%') 
+  or 
+—————————————————————————————————————————————————————————————————
+
+查询ROLECODE是否包含于Role中
+';'+[Role] like '%;' +'2;'+'%'  
+
+—————————————————————————————————————————————————————————————————
+or ';'+[Role] like '%;' +'1;'+'%'  or ';'+[Role] like '%;' +'22;'+'%'  
+ )
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+字段值为“当前步骤”，排在第一位
+select 
+distinct 
+(case when Id='206' then '当前步骤' else Prcs_name end) Prcsname,
+(case when Id='206' then '0' else Prcs_id end) No,
+Prcs_id from Zjq_Flow_Process where Flow_id='71' order by No
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+存储过程执行exec把结果赋值给变量
+
+ declare @num varchar(8000),
+------------------------------------
+   @sqls nvarchar(4000) 
+------------------------------------
+ set @sqls='select @a=count(*) from Zjq_Flow_Run_Prcs ' 
+ exec sp_executesql @sqls,N'@a varchar(8000) output',@num output 
+ select @num  
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+存储过程转换为in（'',''）
+
+set @Base_User=' '''+Replace(@Base_User,';',''',''')+''' '
+set @sqlBase='select distinct EmpCode,EmpName,DeptCode,RoleCode from #result where EmpCode in ('+@Base_User+')'
+exec (@sqlBase)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+按照in中数据排序（CharIndex函数 返回字符或者字符串在另一个字符串中的 起始位置）
+
+select * from(select distinct EmpCode,EmpName from V_PubEmpInfo)z 
+where 
+
+EmpCode in ( 'ql','zwg','zbh','rsg','mzs','' ) 
+
+order by CharIndex(EmpCode,' ql,zwg,zbh,rsg,mzs') 
+
+-----------------------------------------------------------------------------------------------------------
+
+Select * from tablename where id in(80731209,80606045,80606056) 
+
+Order by CharIndex(Rtrim(cast(id as nvarchar(30))),'80731209,80606045,80606056')
+
+或者可以简化为：
+
+Select * from tablename where id in(80731209,80606045,80606056) 
+
+Order by CharIndex(id,'80731209,80606045,80606056')   --id 为 nvarchar 类型
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+set @Auto_User=left(@Auto_User,len(@Auto_User)-1)
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+charindex，substring，len，left
+将zhouyuan;|000017;|1;根据|切割成 列zhouyuan;       000017;       1;      
+
+select 
+(select left(New_User,charindex('|',New_User)-1)) Prcs_user,
+
+(select left(substring(New_User,charindex('|',New_User)+1,len(New_User)),charindex('|',substring(New_User,charindex('|',New_User)+1,len(New_User)))-1)) Prcs_dept,
+
+(select substring(substring(New_User,charindex('|',New_User)+1,len(New_User)),charindex('|',substring(New_User,charindex('|',New_User)+1,len(New_User)))+1,len(New_User)) ) Prcs_priv,
+
+Flow_type,Free_Preset,New_User,* from Zjq_Flow_Type where Flow_id=79
+
+Prcs_user	Prcs_dept	Prcs_priv		New_User
+zhouyuan;        000017;            1;             zhouyuan;|000017;|1;
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+切割 mt;mzs;ql; 循环查询出中文姓名，再组成字符串 马田;秘增顺;乔梁;
+declare @Prcs_user varchar(8000)
+                            declare @Prcs_dept varchar(8000)
+                            declare @Prcs_priv varchar(8000)
+                            declare @Prcs_user_name varchar(8000)
+                            declare @Prcs_dept_name varchar(8000)
+                            declare @Prcs_priv_name varchar(8000)
+                            set @Prcs_user=''
+                            set @Prcs_dept=''
+                            set @Prcs_priv=''
+                            set @Prcs_user_name=''
+                            set @Prcs_dept_name=''
+                            set @Prcs_priv_name=''
+                            
+                            select @Prcs_user=Prcs_user,@Prcs_dept=Prcs_dept,@Prcs_priv=Prcs_priv from 
+                            (
+                            select 
+(select left(New_User,charindex('|',New_User)-1)) Prcs_user,
+(select left(substring(New_User,charindex('|',New_User)+1,len(New_User)),charindex('|',substring(New_User,charindex('|',New_User)+1,len(New_User)))-1)) Prcs_dept,
+(select substring(substring(New_User,charindex('|',New_User)+1,len(New_User)),charindex('|',substring(New_User,charindex('|',New_User)+1,len(New_User)))+1,len(New_User)) ) Prcs_priv,
+* from Zjq_Flow_Type where Flow_id=79
+                            )z
+
+                            select @Prcs_user_name=@Prcs_user_name+e.EmpName+';' from dbo.F_ZjqSplitSTR(@Prcs_user,';') f
+                            inner join PubEmpInfo e on e.EmpCode=f.col 
+                            select @Prcs_dept_name=@Prcs_dept_name+e.DeptName+';' from dbo.F_ZjqSplitSTR(@Prcs_dept,';') f
+                            inner join PubDeptInfo e on e.DeptId=f.col 
+                            select @Prcs_priv_name=@Prcs_priv_name+e.RoleName+';' from dbo.F_ZjqSplitSTR(@Prcs_priv,';') f
+                            inner join PubRoleInfo e on e.RoleCode=f.col 
+                            select @Prcs_user_name as Prcs_user_name,@Prcs_user as Prcs_user,@Prcs_dept_name as Prcs_dept_name,
+                            @Prcs_dept as Prcs_dept,@Prcs_priv_name as Prcs_priv_name,@Prcs_priv as Prcs_priv
+
+Prcs_user_name	    Prcs_user	       Prcs_dept_name	    Prcs_dept	      Prcs_priv_name	  Prcs_priv
+马田;秘增顺;乔梁;    mt;mzs;ql;    生产制造部;人力资源部;	  000008;000009;      公司领导;中层领导;	    4;17;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+参照(select left(New_User,charindex('|',New_User)-1)) Prcs_user,
+
+cur_user截取user_list前含当前登录人empcode
+1、将user_list中cur_user替换为*
+2、截取替换后的字符，*位置前的字符
+//left
+LEFT (<character_expression>， <integer_expression>)
+返回character_expression 左起 integer_expression 个字符。
+
+select (select left(replace(user_list,cur_user,'*'),charindex('*',replace(user_list,cur_user,'*'))-1)) cur,cur_user,user_list,* from [Doc_send_data]
+
+user_list                       cur_user    cur
+zhouyuan;zhc;admin;             zhouyuan    //""
+
+//cur已核稿人员cur_user当前核稿人user_list所有核稿人
+------------------------------------------
+cur_user为空值时，添加判断条件case
+select * from (select 
+----------------------------------------------------
+(case when cur_user<>'' then (select left(replace(user_list,cur_user,'*'),charindex('*',replace(user_list,cur_user,'*'))-1))
+ else user_list end) cur,
+----------------------------------------------------
+(case when status='2' then '核稿中' when status='4' then '盖章中' when status='6' then '待发送' when status='7' then '已发送' end) Zt,
+(select tname from Doc_type a where a.tid=z.tid) tname,* from [Doc_send_data] z)y
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+在查询结果中添加自增列Row_Number()
+SELECT Row_Number() over ( order by getdate() ) as number, * FROM [Doc_send_data] 
+where tid = 6
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+select * from dbo.F_SplitSTR('a,b',',')
+
+a,b ----> a
+          b
+------------------------------------------------------------------------------------------
+USE [JD_OA]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+/** 把一个字符串拆分 **/
+ALTER  FUNCTION [dbo].[F_SplitSTR]
+(
+	@s VARCHAR(8000),      --待分拆的字符串
+	@split VARCHAR(10)     --数据分隔符
+)
+RETURNS @re TABLE(col VARCHAR(100))
+AS
+BEGIN
+	DECLARE @splitlen int
+	SET @splitlen=LEN(@split+'a')-2
+	WHILE CHARINDEX(@split,@s)>0
+	BEGIN
+		INSERT @re VALUES(LEFT(@s,CHARINDEX(@split,@s)-1))
+		SET @s=STUFF(@s,1,CHARINDEX(@split,@s)+@splitlen,'')
+	END
+	INSERT @re VALUES(@s)
+	RETURN
+END
+------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////
+select Row_Number() over ( order by getdate() ) as number,(select EmpName from PubEmpInfo where EmpCode=z.col) as view_user,viewed_user from
+(
+select *,
+-----------------------------------------
+(case when ';'+(select viewed_user from doc_recv_data z where rid=38 )+';' like '%;'+col+';%' then '已阅读' else '未阅读' end)viewed_user 
+--------------------------------------------------------------------
+from dbo.F_ZjqSplitSTR((select LEFT(view_user,LEN(view_user)-1) from doc_recv_data  where rid=38 ),';')
+--------------------------------------------------------------------
+) z order by number
+
+公文管理> 收文管理> 收文分发—已分发—传阅状态
+收文详情 
+传阅人员  阅读情况  
+//////////////////////--------------
+view_user            viewed_user   |
+admin;zhouyuan;      zhouyuan;     |
+                                   |
+------------->                     |
+                                   |
+view_user       viewed_user        |
+系统管理员      未阅读              |
+周园            已阅读              |
+-----------------------------------|
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+//公文管理top、union all桌面提醒目录
+select top 7 * from
+(
+select 
+title,
+(select is_tpl from dbo.Doc_type where tid=z.tid)is_tpl,
+(case when status='2' then 'fwhg' end) flag,
+('sid='+cast(sid as nvarchar(30)))id,
+create_time 
+from [Doc_send_data] z
+where [status] = '2' and cur_user ='zhouyuan'
+union all
+select 
+title,
+(select is_tpl from dbo.Doc_type where tid=z.tid)is_tpl,
+(case when status='2' then 'swdpy' when status='6' then 'swdyd' end) flag,
+('rid='+cast(rid as nvarchar(30)))id,
+rtime as create_time
+from doc_recv_data z
+where ([status] = '2' and cur_user ='zhouyuan') 
+or
+([status] = '6' and ';'+view_user like '%;'+'zhouyuan'+';%' and (';'+viewed_user not like '%;'+'zhouyuan'+';%' or viewed_user is null))
+)y order by create_time desc
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+截取
+/AttachFile/RedTemplate/201506090923136398_%e8%87%aa%e7%94%b1%e6%b5%81%e7%a8%8b.doc
+中的
+201506090923136398
+
+--------------------------------------------------------------------------------------------------------------------
+FileN                                FileName          FilePath                                                     |
+201506090923136398_自由流程.doc      自由流程.doc      /AttachFile/RedTemplate/201506090923136398_%e8%87%aa....      |
+--------------------------------------------------------------------------------------------------------------------
+
+select (
+
+left(replace(FilePath,'/AttachFile/RedTemplate/',''),charindex('_',replace(FilePath,'/AttachFile/RedTemplate/','')))  
++[FileName]) FileN,
+
+left([FileName],charindex('.',[FileName])-1) Name,
+
+* from PubAttach where ModuleType='RedTemplate' and FileType like '.do'+'%'
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//公文批阅情况check_view.aspx 收文
+
+/////获取当前批阅人cur_user的number编号
+declare @cur_number int
+select  @cur_number =number from (
+select 
+Row_Number() over ( order by getdate() ) as number,
+*
+from dbo.F_ZjqSplitSTR((select LEFT(user_list,LEN(user_list)-1) from doc_recv_data  where rid=71 ),';') 
+) z where col = (select cur_user from doc_recv_data z where rid=71 )
+print @cur_number
+
+////
+----------------------------------|
+user_list           cur_user      |
+zhouyuan;zhc;       zhouyuan      |
+----------------------------------|
+user          zt       number     |
+周园          批阅中    1          |
+赵海川        未批阅    2          |
+----------------------------------|
+select 
+(select EmpName from PubEmpInfo where EmpCode=z.col) as [user],
+(case when number=@cur_number then '批阅中' when number<@cur_number then '已批阅' when number>@cur_number then '未批阅' end)zt,
+number from 
+(
+select 
+Row_Number() over ( order by getdate() ) as number,
+*
+from dbo.F_ZjqSplitSTR((select LEFT(user_list,LEN(user_list)-1) from doc_recv_data  where rid=71 ),';') where col is not null
+) z
+
+-----------------------------------------------------------------------------------
+--//核稿情况 发文
+declare @cur_number int
+select  @cur_number =number from (
+select 
+Row_Number() over ( order by getdate() ) as number,
+*
+from dbo.F_ZjqSplitSTR((select LEFT(user_list,LEN(user_list)-1) from [Doc_send_data]  where sid=85 ),';') 
+) z where col = (select cur_user from [Doc_send_data] z where sid=85 )
+print @cur_number
+
+select 
+(select EmpName from PubEmpInfo where EmpCode=z.col) as [user],
+--(case when number=@cur_number then '核稿中' when number<@cur_number then '已核稿' when number>@cur_number then '未核稿' end)zt,
+----改进：状态已过核稿 的审核状态为已核稿--------------------------------------------------------
+(case when (@cur_number<>'' and number=@cur_number and [status]=2) then '核稿中' when (@cur_number<>'' and number>@cur_number and [status]=2) then '未核稿' else '已核稿' end)zt,
+-----------------------------------------------------------------------------------------------
+number from 
+(
+select 
+Row_Number() over ( order by getdate() ) as number,
+-------------------------------------------------------------------------------
+(select status from [Doc_send_data] where sid =85)[status],
+-------------------------------------------------------------------------------
+*
+from dbo.F_ZjqSplitSTR((select LEFT(user_list,LEN(user_list)-1) from [Doc_send_data]  where sid=85 ),';') where col is not null
+) z
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+右外连接 会议纪要—未读条数
+
+select COUNT(DISTINCT a.rid) from PubMeetingRecord a right outer join PubAffEmpNotice b on a.rid = b.noticeid where b.empcode = 'zhouyuan' and b.status = '0' and a.rid is not null
+
+select * from(
+select a.*,
+b.EmpName,b.DeptCode,
+(select DeptName from V_PubEmpInfo v where a.CreateUser=v.EmpCode) DeptName 
+from dbo.PubMeetingRecord a,PubEmpInfo b  where a.CreateUser=b.EmpCode
+ )z
+where  
+ RID in (select rid from PubMeetingRecord a right outer join PubAffEmpNotice c on a.rid = c.noticeid
+where c.empcode = 'zhouyuan' and c.status = '0' and a.rid is not null)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+公告通知审核事务提醒
+
+----能看到公告通知审核的角色号
+SELECT * FROM PubRoleMenu WHERE 
+[NodeId] IN(SELECT [NodeId] FROM PubMenuTree WHERE [NodeName] ='公告通知审核') 
+
+-----------------------------------------------------------------------------------------------------------
+
+----能审核全部的人员
+select distinct(EmpCode) from PubEmpRole a right outer join (SELECT * FROM PubRoleMenu WHERE 
+[NodeId] IN(SELECT [NodeId] FROM PubMenuTree WHERE [NodeName] ='公告通知审核') ) b 
+on a.[RoleCode] = b.[RoleCode] 
+----能审核自己部门的人员
+where empcode in (select empcode from dbo.PubEmpInfo where deptcode='000017' ) 
+
+-----------------------------------------------------------------------------------------------------------
+叠加姓名
+declare @code varchar(max)
+set @code=''
+select @code=@code+EmpCode+';' from (select distinct(EmpCode) from PubEmpRole a right outer join (SELECT * FROM PubRoleMenu WHERE [NodeId] IN(SELECT [NodeId] FROM PubMenuTree WHERE [NodeName] ='公告通知审核') ) b on a.[RoleCode] = b.[RoleCode] )z
+select @code
+
+结果：
+admin;bjc;cmh;cr;cy;cyc;dzq;fjl;fyh;gh;gyj;hjm;jc;jjs;jmf;kfw;liqi;liuqiang;lj;ljt;ljw;ll;llz;lq;lqh;lxq;ly;lyj;mdf;mt;mzs;ph;ql;rsg;scy;sj;sjh;subo;tjx;wangsanheng;wj;wjp;wk;wlm;wsc;wsy;wxc;wyl;wyx;xw;xwg;xzq;ycx;ygl;yh;yhm;yl;yrl;yy;yyy;yzs;zbh;zc;zg;zhangmancang;zhangxiuhuai;zhc;zhouyuan;zj;zjn;zjq;zjy;zmc;zwg;zxb;zy;zyj;zzy;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//ISNULL(字段名,'自定义名') 当被判断的字段值为null的时候，select出来呈现的值是'自定义名'
+
+select ISNULL(Sync_Deal, 0) Sync_Deal,ISNULL(Gather_Node, 0) Gather_Node,turn_priv,* from dbo.Zjq_Flow_Process where flow_id = 77
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+sql group by用法
+
+id  科目  姓名   分数
+1  英语  王生   98
+2  语文  张生   83
+3  数学  王生   91
+4  英语  张生   95
+5  化学  李生   85
+
+1. 只能用一句sql语句，查询到科目成绩总和最高的那位学生
+2. 只能用一句sql语句，查询到各科成绩都大于90的那个学生
+
+1. select top 1 姓名,sum(分数) as 分数总和 from 表名 group by 姓名
+  order by 分数总和 desc
+
+2. select 姓名 from 表名 group by 姓名 having min(分数)>90 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+从相同的run_id中，取出id，比较大小，筛选run_id相等id最大的值
+
+select * from V_FlowList where id in (
+
+select max(id)[Id]
+from V_FlowList where User_id='zhouyuan' and prcs_flag in ('3','5') --已结办 
+group by run_id
+
+)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+sql 临时表
+
+use testdb
+
+--创建局部临时表 
+create table #tmpStudent(Tid int,Name varchar(50),Age int)
+
+insert into #tmpStudent values('xiaowang',25)
+
+select * from #tmpStudent
+
+--创建局部临时表 另一种写法
+
+select *  into #tmpStudent from student
+select * from #tmpStudent
+
+第二种创建方法：
+create table tempdb.MyTempTable(Tid int) --有对应权限才可以这么写
+（2）删除
+drop table #tmpStudent
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+---游标
+declare @priv_type varchar(10)
+declare @user varchar(8000)
+declare @dept varchar(8000)
+declare @role varchar(8000)
+
+declare @table table(prive_type varchar(10),[user] varchar(8000),dept varchar(8000),[role] varchar(8000))
+
+declare emp_cur cursor for
+
+select priv_type,[user],dept,[role] from Zjq_Flow_Priv where flow_id=59
+
+open emp_cur
+--读取游标
+fetch emp_cur into @priv_type,@user,@dept,@role
+
+while @@fetch_status = 0
+begin
+		insert into @table(prive_type,[user],dept,role)
+		select @priv_type,@user,@dept,col from dbo.F_ZjqSplitSTR(@role,';')
+fetch emp_cur into @priv_type,@user,@dept,@role
+end
+
+close emp_cur
+--释放游标
+deallocate emp_cur
+
+select distinct min(prive_type)prive_type from @table 
+where 
+';'+[user] like '%;'+ 'zhouyuan' +';'+'%' 
+or
+ ';'+Dept like '%;'+(select deptcode from PubEmpInfo where EmpCode='zhouyuan')+';'+'%'
+ or
+role in(select distinct convert(varchar,b.rolecode) from PubEmpInfo a inner join
+ PubEmpRole b on a.empcode = b.empcode where a.empcode='zhouyuan')
+
+--where role in(select distinct convert(varchar,b.rolecode) from PubEmpInfo a inner join
+-- PubEmpRole b on a.empcode = b.empcode where a.empcode='zhouyuan') or dept like '000001%'
+		
+--select * from @table where (role in(select convert(varchar,b.rolecode) from PubEmpInfo a inner join
+-- PubEmpRole b on a.empcode = b.empcode where a.empcode='zhouyuan') and role<>'') or dept like '000001%'
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INSERT INTO 表名称 VALUES (值1, 值2,....)
+INSERT INTO table_name (列1, 列2,...) VALUES (值1, 值2,....)
+
+INSERT INTO Persons VALUES ('Gates', 'Bill', 'Xuanwumen 10', 'Beijing')
+INSERT INTO Persons (LastName, Address) VALUES ('Wilson', 'Champs-Elysees')
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+优化select top (convert(int,10))* from V_FlowList where User_id='zjq' and id in (select max(id)[Id] from V_FlowList where User_id='zjq' group by run_id)
+////////////////////
+//清除表
+If Object_Id( 'Tempdb.dbo.#V_FlowList')   Is   Not   NULL   
+Begin   
+	drop table #V_FlowList
+End  
+//创建临时表
+select * into #V_FlowList
+from V_FlowList v where User_id='zjq' and  prcs_flag in ('3','5')//取出run_id
+-- 把 in 功能修改为 = ----------------
+select * from #V_FlowList v where ID=(select MAX(id) from #V_FlowList t where t.Run_id=v.Run_id)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//计算公告通知已阅人数
+select convert(varchar,sum(case when e.status = 1 then 1 else 0 end))+'/'+convert(varchar,count(*)) as cheked 
+
+from dbo.PubAffEmpNotice e left join dbo.PubEmpInfo g ON e.EmpCode = g.EmpCode 
+
+where e.noticeid='45a17db2252f4f9593f9d655c8117f65' and g.EmpCode !='' and e.EmpCode != ''
+
+-----------------------------------------------------------------
+SQL语句计算男女各占总人数比例
+
+select  
+
+count(*) as 人口总数,
+
+sum(case when sex=0 then 1 else 0 end) 男人数,
+
+sum(case when sex=0 then 1 else 0 end)*1.0/count(*)男所占比例,
+
+sum(case when sex=1 then 1 else 0 end) 女人数,
+
+sum(case when sex=1 then 1 else 0 end)*1.0 /count(*)女所占比例  
+
+from cj_yonghu
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////

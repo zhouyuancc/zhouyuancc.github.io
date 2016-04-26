@@ -1,0 +1,52 @@
+http://blog.csdn.net/educast/article/details/2894917
+
+IndexOf() 
+查找字串中指定字符或字串首次出现的位置,返首索引值，如： 
+str1.IndexOf("字")； //查找“字”在str1中的索引值（位置） 
+str1.IndexOf("字串")；//查找“字串”的第一个字符在str1中的索引值（位置） 
+str1.IndexOf("字",start,end)；//从str1第start+1个字符起，查找end个字符，查找“字”在字符串STR1中的位置[从第一个字符算起]注意:start+end不能大于str1的长度
+
+
+indexof参数为string,在字符串中寻找参数字符串第一次出现的位置并返回该位置。如string s="0123dfdfdf";int i=s.indexof("df");这时i==4。 
+如果需要更强大的字符串解析功能应该用Regex类，使用正则表达式对字符串进行匹配。
+
+
+
+
+
+
+indexof() ：在字符串中从前向后定位字符和字符串；所有的返回值都是指在字符串的绝对位置，如为空则为- 1
+
+string test="asdfjsdfjgkfasdsfsgfhgjgfjgdddd";
+
+   test.indexof(’d’)       =2            //从前向后 定位 d 第一次出现的位置
+   test.indexof(’d’,1)     =2           //从前向后 定位 d 从第三个字符串 第一次出现的位置
+   test.indexof(’d’,5,2)   =6      //从前向后 定位 d 从第5 位开始查，查2位，即 从第5位到第7位；
+
+lastindexof() ：在字符串中从后向前定位字符和字符串；、
+用法和 indexof() 完全相同。
+
+
+下面介绍   IndexOfAny ||lastindexofany
+
+他们接受字符数组做为变元，其他方法同上，返回数组中任何一个字符最早出现的下标位置
+
+如下
+
+         char[] bbv={’s’,’c’,’b’};
+         string abc = "acsdfgdfgchacscdsad";
+        
+         Response.Write(abc.IndexOfAny(bbv))=1
+         Response.Write(abc.IndexOfAny(bbv, 5))=9
+         Response.Write(abc.IndexOfAny(bbv, 5, 3))=9
+
+lastindexofany 同上。
+====================================================================
+substring() 用法
+
+string a="aadsfdjkfgklfdglfd"
+
+a.substring(5)      //截取从第五位以后的所有字符串
+
+a.substring(0,5)     //截取从第0到第5 以后的所有字符串
+

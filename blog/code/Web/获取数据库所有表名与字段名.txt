@@ -1,0 +1,505 @@
+
+SQL获取所有数据库名、表名、储存过程以及参数列表
+
+http://www.cnblogs.com/virusswb/articles/1259207.html
+
+ 
+1.获取所有用户名:
+SELECT name FROM Sysusers where status='2' and islogin='1'
+islogin='1'表示帐户
+islogin='0'表示角色
+status='2'表示用户帐户
+status='0'表示糸统帐户
+2.获取所有数据库名:
+SELECT Name FROM Master..SysDatabases ORDER BY Name
+3.获取所有表名
+SELECT Name FROM DatabaseName..SysObjects Where XType='U' ORDER BY Name
+XType='U':表示所有用户表;
+XType='S':表示所有系统表;
+4.获取所有字段名:
+SELECT Name FROM SysColumns WHERE id=Object_Id('TableName')
+5.获取数据库所有类型
+select name from systypes 
+6.获取主键字段
+SELECT  name FROM SysColumns WHERE id=Object_Id('表名') and colid=(select top 1 keyno from sysindexkeys where id=Object_Id('表名'))
+
+
+[综合网络资料整理]
+1.获取所有数据库名: 
+   (1)、Select Name FROM Master..SysDatabases order by Name 
+2.获取所有表名: 
+   (1)、Select Name FROM SysObjects Where XType='U' orDER BY Name 
+           XType='U':表示所有用户表; 
+           XType='S':表示所有系统表;
+   (2)、SELECT name FROM sysobjects WHERE type = 'U' AND sysstat = '83'
+           注意：一般情况只需要type = 'U'，但有时候会有系统表混在其中（不知道什么原因），加上后面一句后就能删除这些系统表了
+
+3.获取所有字段名: 
+(1)、Select Name FROM SysColumns Where id=Object_Id('TableName')
+(2)、SELECT syscolumns.name,systypes.name,syscolumns.isnullable,syscolumns.length FROM syscolumns, systypes WHERE syscolumns.xusertype = systypes.xusertype AND "syscolumns.id = object_id('tableName')
+       注意点：
+     （a）这里为了重点突出某些重要内容，选取了其中几项信息输出。
+     （b）syscolumns表中只含有数据类型编号，要获取完整的名字需要从systypes表中找，一般用户使用的数据类型用xusertype对应比较好，不会出现一对多的情况。
+     （c）syscolumns.length得到的是物理内存的长度，所以nvarchar和varchar等类型在数据库中的显示是这个的一半。
+
+
+4、得到表中主键所包含的列名:
+    SELECT syscolumns.name FROM syscolumns,sysobjects,sysindexes,sysindexkeys WHERE syscolumns.id = object_id('tablename') AND sysobjects.xtype = 'PK' AND sysobjects.parent_obj = syscolumns.id AND sysindexes.id = syscolumns.id AND sysobjects.name = sysindexes.name AND sysindexkeys.id = syscolumns.id AND sysindexkeys.indid = sysindexes.indid AND syscolumns.colid = sysindexkeys.colid
+注意：这是在4张系统表中寻找的，关系比较复杂，大致可以表示为：
+syscolumns中存有表中的列信息和表id，sysobjects表中存有主键名字（即PK_Table类似）和表id，sysindexes中存 有主键名字和表id和index编号，sysindexkeys中存有表id和index编号和列编号，一项一项对应起来后就能找到列名了。
+ 
+
+另外的SQL代码
+select syscolumns.name, systypes.name, syscolumns.length from syscolumns    
+  left join systypes on syscolumns. xusertype =systypes. xusertype  
+  where id=(select id from sysobjects where name='订货主档');
+go;
+或者用这样的写法，执行结果一样：
+select syscolumns.name, systypes.name, syscolumns.length from syscolumns,systypes 
+where (syscolumns.id=object_id('订货主档') and syscolumns.xusertype=systypes.xusertype)
+order by syscolumns.colorder;
+go
+执行结果：（字段只出现一次，正常）
+订单号码    int 4
+客户编号    nvarchar    10
+员工编号    int 4
+订单日期    datetime    8
+要货日期    datetime    8
+送货日期    datetime    8
+送货方式    int 4
+运费    money   8
+收货人  nvarchar    80
+送货地址    nvarchar    120
+送货城市    nvarchar    30
+送货行政区  nvarchar    30
+送货邮政编码    nvarchar    20
+送货国家地区    nvarchar    30
+ 
+
+ 
+
+select syscolumns.name, systypes.name, syscolumns.length from syscolumns    
+  left join systypes on syscolumns.xtype=systypes.xtype  
+  where id=(select id from sysobjects where name='订货主档');
+go;
+执行结果：（部分字段出现两次，数据类型不同）
+订单号码    int 4
+客户编号    nvarchar   10
+客户编号    sysname    10
+员工编号    int 4
+订单日期    datetime   8
+订单日期    出生日期类型    8
+要货日期    datetime   8
+要货日期    出生日期类型    8
+送货日期    datetime   8
+送货日期    出生日期类型    8
+送货方式    int 4
+运费    money  8
+运费    薪水类型    8
+收货人  nvarchar   80
+收货人  sysname    80
+送货地址    nvarchar   120
+送货地址    sysname    120
+送货城市    nvarchar   30
+送货城市    sysname    30
+送货行政区  nvarchar   30
+送货行政区  sysname    30
+送货邮政编码    nvarchar   20
+送货邮政编码    sysname    20
+送货国家地区    nvarchar   30
+送货国家地区    sysname    30
+查询存储过程DepartmentSalaryInfo所有的信息，信息包含在系统视图syscolumns，systypes中
+select syscolumns.*, systypes.* from syscolumns    
+  left join systypes on syscolumns.xusertype=systypes.xusertype  
+  where id=(select id from sysobjects where name='DepartmentSalaryInfo');
+go
+ 
+
+ 
+
+exec   sp_procedure_params_rowset   @procedure_name   =   'DepartmentSalaryInfo';
+go
+执行结果：
+北风贸易    dbo DepartmentSalaryInfo;1   @RETURN_VALUE 0   4   0   NULL   0   3   NULL   NULL   10    NULL   NULL   int int
+北风贸易    dbo DepartmentSalaryInfo;1   @department   1   1   0   NULL   1   129 10  10  NULL    NULL   NULL   varchar    varchar
+北风贸易    dbo DepartmentSalaryInfo;1   @average   2   2   0   NULL   1   6   NULL   NULL   19    NULL   NULL   money  money
+北风贸易    dbo DepartmentSalaryInfo;1   @maximum   3   2   0   NULL   1   6   NULL   NULL   19    NULL   NULL   money  money
+北风贸易    dbo DepartmentSalaryInfo;1   @minimum   4   2   0   NULL   1   6   NULL   NULL   19    NULL   NULL   money  money
+
+ 
+
+
+--存储过程中的参数名，参数类型，参数长度
+
+
+select syscolumns.name, systypes.name, syscolumns.length from syscolumns    
+  left join systypes on syscolumns.xusertype=systypes.xusertype  
+  where id=(select id from sysobjects where name='DepartmentSalaryInfo');
+
+
+1：获取当前数据库中的所有用户表
+select Name from sysobjects where xtype='u' and status>=0
+2：获取某一个表的所有字段
+select name from syscolumns where id=object_id('表名')
+3：查询用户创建的所有数据库
+select * from master..sysdatabases D where sid not in(select sid from
+master..syslogins where name='sa')
+或者
+select dbid, name AS DB_NAME from master..sysdatabases where sid ＜> 0x01
+4：查询某一个表的字段和数据类型
+select column_name,data_type from information_schema.columns
+where table_name = '表名'
+[n].[标题]:
+Select * From TableName Order By CustomerName
+[n].[标题]:
+8.如何修改数据库的名称:
+sp_renamedb 'old_name', 'new_name'
+9.只复制一个表结构，不复制数据
+select top 0 * into [t1] from [t2]
+10.连接远程数据库
+select * from OPENDATASOURCE('SQLOLEDB','Data Source=远程ip;User
+ID=sa;Password=密码').库名.dbo.表名
+11.获取当前oracle数据库中的所有表
+select table_name from user_tables
+12 .获取当前oracle表中所有字段的类型
+SELECT
+      COLUMN_NAME,DATA_TYPE,DATA_LENGTH,NULLABLE
+FROM 
+         USER_TAB_COLS where TABLE_NAME='teacher'; 
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+获取数据库所有表名与字段名 
+
+1.获取所有数据库名: 
+
+Select Name FROM Master..SysDatabases
+
+ 
+
+2.获取所有表名: 
+
+select name from sysobjects where type='U' 
+
+XType='U':表示所有用户表; 
+
+XType='S':表示所有系统表; 
+
+ 
+
+3.获取所有字段名: 
+
+Select Name from SysColumns Where id=Object_Id('TableName')  
+
+ 
+
+ 
+
+ 
+
+获取当前数据库表名：
+
+select name from sysobjects where xtype='U'and name<>'dtproperties'
+
+ 
+
+获取当前表的字段名及属性：
+
+select a.name, b.xtype,b.name
+
+from syscolumns a
+
+inner  JOIN systypes  b
+
+ON a.xtype=b.xusertype
+
+inner join sysobjects c ON
+
+a.id=c.id AND c.xtype='U' AND c.name<>'dtproperties' where c.name = 表名
+
+ 
+
+或：
+
+ 
+
+SELECT
+
+表名   = CASE a.colorder WHEN 1 THEN c.name ELSE '' END,
+
+序     = a.colorder,
+
+字段名 = a.name,
+
+标识   = CASE COLUMNPROPERTY(a.id,a.name,'IsIdentity') WHEN 1 THEN '√' ELSE '' END,
+
+主键   = CASE
+
+WHEN EXISTS (
+
+SELECT *
+
+FROM sysobjects
+
+WHERE xtype='PK' AND name IN (
+
+SELECT name
+
+FROM sysindexes
+
+WHERE id=a.id AND indid IN (
+
+SELECT indid
+
+FROM sysindexkeys
+
+WHERE id=a.id AND colid IN (
+
+SELECT colid
+
+FROM syscolumns
+
+WHERE id=a.id AND name=a.name
+
+)
+
+)
+
+)
+
+)
+
+THEN '√'
+
+ELSE ''
+
+END,
+
+类型   = b.name,
+
+字节数 = a.length,
+
+长度   = COLUMNPROPERTY(a.id,a.name,'Precision'),
+
+小数   = CASE ISNULL(COLUMNPROPERTY(a.id,a.name,'Scale'),0)
+
+WHEN 0 THEN ''
+
+ELSE CAST(COLUMNPROPERTY(a.id,a.name,'Scale') AS VARCHAR)
+
+END,
+
+允许空 = CASE a.isnullable WHEN 1 THEN '√' ELSE '' END,
+
+默认值 = ISNULL(d.[text],''),
+
+说明   = ISNULL(e.[value],'')
+
+FROM syscolumns a
+
+LEFT  JOIN systypes      b ON a.xtype=b.xusertype
+
+INNER JOIN sysobjects    c ON a.id=c.id AND c.xtype='U' AND c.name<>'dtproperties'
+
+LEFT  JOIN syscomments   d ON a.cdefault=d.id
+
+LEFT  JOIN sysproperties e ON a.id=e.id AND a.colid=e.smallid
+
+ORDER BY c.name, a.colorder 
+
+回答者： alby - 魔法师 五级   2006-7-26 11:51
+
+我找到并在ACCESS里测试通过了： 
+
+在ACCESS里，备注类型用Memo表示，所以改变字段的数据类型为备注的SQL为： 
+
+ALTER TABLE user ALTER COLUMN userinfo Memo 
+
+对了，如果user表有外键，而且你要修改的字段就是外键的话，你就不能修改啦！ 
+
+下面给出修改为其它类型的SQL(表为tb，字段为aa): 
+
+ALTER TABLE tb ALTER COLUMN aa Byte 数字[字节] 
+
+ALTER TABLE tb ALTER COLUMN aa Long 数字[长整型] 
+
+ALTER TABLE tb ALTER COLUMN aa Short 数字[整型] 
+
+ALTER TABLE tb ALTER COLUMN aa Single 数字[单精度 
+
+ALTER TABLE tb ALTER COLUMN aa Double 数字[双精度] 
+
+ALTER TABLE tb ALTER COLUMN aa Currency 货币 
+
+ALTER TABLE tb ALTER COLUMN aa Char 文本 
+
+ALTER TABLE tb ALTER COLUMN aa Text(n) 文本，其中n表示字段大小 
+
+ALTER TABLE tb ALTER COLUMN aa Binary 二进制 
+
+ALTER TABLE tb ALTER COLUMN aa Counter 自动编号 
+
+ALTER TABLE tb ALTER COLUMN aa Memo 备注 
+
+ALTER TABLE tb ALTER COLUMN aa Time 日期/时间
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+sql语句查询数据库中的表名/列名/主键/自动增长值 
+
+数据库sqlobjectjointablenull----查询数据库中用户创建的表
+----jsj01 为数据库名
+select name tablename from jsj01..sysobjects where type='U' and name not in ('dtproperties')
+
+--查询表里的字段信息 
+
+exec sp_help  对象名
+
+
+---docs为表名
+---- select * from syscolumns where id = object_id('docs')
+
+----查询数据库中所有类型
+----select name,xtype from systypes
+
+----两表联查，显示表中所有字段和对应的数据类型
+----syscolumns里字段‘xtype’ 对应 systypes里的 ‘xusertype’ ,systypes 里的‘name’字段就是字段的数据类型
+----docs 为表名 
+select a.name as fieldname,b.name as type from 
+syscolumns as a 
+join systypes as b 
+on a.xtype = b.xusertype 
+where id=object_id('docs')
+
+----docs为数据表名   ： 查询表字段、类型、说明
+
+select a.name  fieldname,b.name  type,c.value comment from 
+syscolumns as a 
+full join systypes as b 
+on a.xtype = b.xusertype
+full join ::fn_listextendedproperty(NULL, 'user', 'dbo', 'table', 'docs', 'column', default) as c ----这是2000版本，2005把user改为schema
+on a.name=c.objname COLLATE Chinese_PRC_CI_AS  -----排序规则（有时不加也可以，如果两表的排序规则不同，则会报错）
+--join sysproperties c
+--on a.id=c.major_id
+where id=object_id('docs')
+
+
+ 
+----查询表里的主键，没有主键为空，如果是多个组合主键就有多个值  pk为主键  fk为外键
+--- jsj01 为数据库名  docs为表名  fk表示外键  
+
+----sql2000
+select column_name as primarykey,*  from 
+[jsj01].INFORMATION_SCHEMA.KEY_COLUMN_USAGE 
+where Table_name='docs' and constraint_name like 'fk_%'
+
+-----sql2005
+
+SELECT @PrimaryKey =  CCU.COLUMN_NAME
+FROM     INFORMATION_SCHEMA.TABLE_CONSTRAINTS TC 
+    INNER JOIN INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE CCU ON TC.CONSTRAINT_NAME = CCU.CONSTRAINT_NAME
+WHERE TC.TABLE_NAME = 'docs' AND TC.CONSTRAINT_TYPE='PRIMARY KEY'
+
+ 
+
+--select * from sysobjects WHERE OBJECT_NAME(sysobjects.parent_obj)='docs' --and xtype='pk'
+--select * from sysconstraints  where id = object_id('docs')
+--select * from syscolumns where id = object_id('docs')
+--select * from sysindexes 
+--select * from sysindexkeys
+
+
+----查询表中自动增长的字段，没有为空，如果有就只有一个
+----docs为表名  -- sql2000
+SELECT a.name column_name,b.name  data_type
+FROM syscolumns a,systypes b
+WHERE a.id=object_id('docs') and a.xtype = b.xusertype 
+AND a.autoval is not null
+
+ 
+
+-------- sql2005
+
+select 
+    a.Name
+from 
+    syscolumns a 
+left join
+    sysobjects b on a.iD=b.parent_obj and b.xtype='PK'
+where
+    a.ID=object_id('docs') and a.status=0x80
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+ 
+
+ 
+
+----For mssql2005
+SELECT 
+表名=case when a.colorder=1 then d.name else '' end, 
+表说明=case when a.colorder=1 then isnull(f.value,'') else '' end, 
+字段序号=a.colorder, 
+字段名=a.name, 
+标识=case when COLUMNPROPERTY(a.id,a.name,'IsIdentity')=1 then '1' else '' end,
+主键=case when exists(SELECT 1 FROM sysobjects where xtype='PK' and name in(
+SELECT name FROM sysindexes WHERE indid in(
+SELECT indid FROM sysindexkeys WHERE id = a.id AND colid=a.colid
+))) then '1' else '' end,
+类型=b.name,
+占用字节数=a.length,
+长度=COLUMNPROPERTY(a.id,a.name,'PRECISION'),
+小数位数=isnull(COLUMNPROPERTY(a.id,a.name,'Scale'),0),
+允许空=case when a.isnullable=1 then '1' else '' end,
+默认值=isnull(e.text,''),
+字段说明=isnull(g.[value],'')
+FROM syscolumns a
+left join systypes b on a.xtype=b.xusertype 
+inner join sysobjects d on a.id=d.id and d.xtype='U' and d.name<>'dtproperties' 
+left join syscomments e on a.cdefault=e.id 
+left join sys.extended_properties g on a.id=g.major_id and a.colid=g.minor_id 
+left join sys.extended_properties f on d.id=f.major_id and f.minor_id =0 
+--where d.name='classinfo'         --如果只查询指定表,加上此条件   
+order by a.id,a.colorder
+
+/*
+----For mssql2000
+SELECT 
+表名=d.name,--case when a.colorder=1 then d.name else '' end,
+字段序号=a.colorder,
+字段名=a.name,
+标识=case when COLUMNPROPERTY( a.id,a.name,'IsIdentity')=1 then '√'else '' end,
+主键=case when exists(SELECT 1 FROM sysobjects where xtype='PK' and name in (
+SELECT name FROM sysindexes WHERE indid in(
+   SELECT indid FROM sysindexkeys WHERE id = a.id AND colid=a.colid
+))) then '√' else '' end,
+类型=b.name,
+占用字节数=a.length,
+长度=COLUMNPROPERTY(a.id,a.name,'PRECISION'),
+小数位数=isnull(COLUMNPROPERTY(a.id,a.name,'Scale'),0),
+允许空=case when a.isnullable=1 then '√'else '' end,
+默认值=isnull(e.text,''),
+字段说明=isnull(g.[value],'')
+FROM syscolumns a
+left join systypes b on a.xtype=b.xusertype
+inner join sysobjects d on a.id=d.id and d.xtype='U' and d.name<>'dtproperties'
+left join syscomments e on a.cdefault=e.id
+left join sysproperties g on a.id=g.id and a.colid=g.smallid 
+order by a.id,a.colorder
+
+*/
+
+
+ 
+

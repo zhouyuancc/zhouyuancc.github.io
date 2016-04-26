@@ -1,0 +1,51 @@
+jquery通过name属性取值的方法(2012-08-26 19:20:28)
+
+alert($("input[name='inputTest']").val()); 
+  alert($("input[type='text']").attr("id")); //这个是取id的值，方便记就写在这儿了
+
+$("input[name='inputTest']").each(
+
+function(){
+
+alert($(this).val());
+
+}
+
+) 
+
+alert($("input[name='inputTest']")[0].value);
+
+alert($("input[name='inputTest']")[1].value);
+
+alert($("input[name='inputTest']").get(0).value); //此处也可以得到值，等同于上面两行
+
+alert($("input[name='inputTest']").get(1).value);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                    if ($("#PRCS_CHECK_" + line_count).attr("checked")) {//选中
+
+                        $("tr[name='userSelect" + line_count + "']").each(
+                            function () {
+                                $(this).css("display", "");
+//                                $(this).style.display = "block";
+                            });
+
+                        $("span[name='userSelect" + line_count + "']").each(
+                            function () {
+                                $(this).css("display", "");
+//                                $(this).style.display = "block";
+                            });
+                    }
+                    else { //未选中
+
+                        $("tr[name='userSelect" + line_count + "']").each(
+                            function () {
+                                $(this).css("display", "none");
+                            });
+
+                        $("span[name='userSelect" + line_count + "']").each(
+                            function () {
+                                $(this).css("display", "none");
+                            });
+                    }

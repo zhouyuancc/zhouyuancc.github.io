@@ -1,0 +1,9 @@
+
+
+protected void btnBack_Click(object sender, EventArgs e)
+{
+    //Response.Redirect("SelAddressBook.aspx?flag=" + location + "");
+
+    Response.Write("<script>window.parent.location.href='SelAddressBook.aspx?flag=" + location + "';</script>"); 
+
+}

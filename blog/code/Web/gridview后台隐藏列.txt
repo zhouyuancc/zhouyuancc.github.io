@@ -1,0 +1,4 @@
+
+myDataGV.Columns[myDataGV.Columns.Count - 1].Visible = true;
+
+myDataGV.Columns[myDataGV.Columns.Count - 2].Visible = false;

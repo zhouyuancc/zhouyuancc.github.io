@@ -1,0 +1,23 @@
+在Asp.net前台和后台弹出提示框(2009-09-03 07:10:44)转载
+一、在前台弹出提示框
+1.点击“A”标记或者“控件按钮”弹出提示框
+<asp:LinkButton ID="lbtnDel" runat="server" OnClientClick='<%# "if(!confirm("你确定退订吗？"))return false;"%>' Text="删除"/>
+ 
+2.方法二：
+<asp:LinkButton ID="lbtnDel" runat="server" OnClientClick="return confirm('你确定退订吗？');" Text="删除"/>
+ 
+二、在后台弹出提示框 
+1、输出的提示框页面无刷新            
+if (!this.IsStartupScriptRegistered("订购提示"))
+{
+    this.RegisterStartupScript("订购提示", "<script>alert('"+returnStr+"');</script>");
+}
+ 
+2.输出的提示框页面刷新
+Response.write("<script>alert('操作成功');</script>");
+ 
+3、返回上一页
+response.write("<a href='javascript://history.back(0);'>返回</a>")
+ 
+注意：1、)以上代码中的分号“;”一定不能少，否则代码不能成功执行，alert（string para）方法中的参数为字符串；
+        2、)如果想在点击完提示框的确定按钮之后还想跳转到其他的页面，只需在以上代码的分号后面添加window.location.href="URL";就可以了，URL为你要跳转到的页面的URL地址。

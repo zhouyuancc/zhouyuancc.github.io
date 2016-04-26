@@ -1,0 +1,65 @@
+
+前台
+
+jx_kfp_mx.aspx
+
+
+<div class="cxtj">
+<div class="result">基本信息</div>
+<div class="xx"  style='text-align:left; height: 24px; line-height: 24px;'>
+
+合同编号：<asp:Label ID="lblHtbh" runat="server" Text="Label"  ></asp:Label>&nbsp;&nbsp;&nbsp;
+生产编号：<asp:Label ID="lblScbh" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;
+产品名称：<asp:Label ID="lblCpmc" runat="server" Text="Label"  ></asp:Label>&nbsp;&nbsp;&nbsp;
+合同金额：<asp:Label ID="lblHtje" runat="server" Text="Label"  ></asp:Label>&nbsp;&nbsp;&nbsp;
+开票金额：<asp:Label ID="lblKpje" runat="server"  Text="Label" ></asp:Label>&nbsp;&nbsp;
+
+</div>
+
+
+后台
+
+
+/// <summary>
+        /// 操作类型 
+        /// </summary>
+        private string hid_id
+        {
+            get
+            {
+                return Request.QueryString["h_id"] != null ? DES.DecryptDES(Request.QueryString["h_id"].ToString()) : "";
+            }
+        }
+
+
+
+
+ protected void Page_Load(object sender, EventArgs e)
+        {
+            btnSave.Attributes.Add("onclick", "javascript:return formsubmit();");
+            if (!IsPostBack)
+            {
+
+                Hidden1.Value = hid_id;
+                DataSet ds = new DataSet();
+                SqlExec sqlexec = new SqlExec();
+                string sql = "select*,isnull((select sum(Kpje) from jx_kfp where Id_kfp=a.Id),0) as Kpje from jx_httz a where Id=@Id ";
+                SqlParameter[] parms = { sqlexec.CreateInParam("@Id", SqlDbType.VarChar,20, Hidden1.Value)                     
+                                       };
+                ds = SqlExec.ExecuteDataSet(sql, CommandType.Text, parms);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    lblHtbh.Text = ds.Tables[0].Rows[0]["Htbh"].ToString();
+                    lblScbh.Text = ds.Tables[0].Rows[0]["Scbh"].ToString();
+                    lblCpmc.Text = ds.Tables[0].Rows[0]["Cpmc"].ToString();
+                    lblHtje.Text = ds.Tables[0].Rows[0]["Htje"].ToString();
+                    lblKpje.Text = ds.Tables[0].Rows[0]["Kpje"].ToString();
+                }
+
+                this.BindData(false);
+           
+                Server.Execute("~/PubWeb/frmJudge.aspx");
+
+               
+            }
+        }

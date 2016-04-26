@@ -1,0 +1,44 @@
+<head runat="server">
+ 4     <title>GridView固定表头 清清月儿http://blog.csdn.net/21aspnet </title>
+ 5          <style> 
+ 6  .Freezing 
+ 7     { 
+ 8     
+ 9    position:relative ; 
+10    table-layout:fixed;
+11    top:expression(this.offsetParent.scrollTop);   
+12    z-index: 10;
+13    } 
+14 
+15   .Freezing th{text-overflow:ellipsis;overflow:hidden;white-space: nowrap;padding:2px;}
+16 </style> 
+
+
+</head>
+18 <body style="font-size=12px">
+19     <form id="form1" runat="server">
+20      <div style="overflow-y: scroll; height: 200px;width:300px" id="dvBody">
+21            <asp:GridView ID="GridView1" runat="server"    AutoGenerateColumns="False" CellPadding="3" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing"
+22                 OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" Font-Size="12px" OnRowCreated="GridView1_RowCreated"  >
+23                 <FooterStyle BackColor="White" ForeColor="#000066" />
+24                 <Columns>
+25                     <asp:BoundField DataField="身份证号码" HeaderText="编号" ReadOnly="True" />
+26                     <asp:BoundField DataField="邮政编码" HeaderText="邮政编码" SortExpression="邮政编码" />
+27                     <asp:BoundField DataField="家庭住址" HeaderText="家庭住址"  />
+28                     <asp:BoundField DataField="姓名" HeaderText="姓名"  />
+29                     
+30                 </Columns>
+31                 <RowStyle ForeColor="#000066" />
+32                 <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+33                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left"  CssClass="ms-formlabel DataGridFixedHeader"/>
+34                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" CssClass="Freezing"/>
+35             </asp:GridView>
+36         </div>
+37     </form>
+38 </body>
+39 </html>
+
+
+
+
+用法：CSS设如上的样式，HeaderStyle加CssClass="Freezing，套住GridView的Div设置高度宽度 <div style="overflow-y: scroll; height: 200px;width:200px" >

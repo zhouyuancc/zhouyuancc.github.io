@@ -1,0 +1,26 @@
+sql将一个表中的数据插入到另一个表中的方法http://www.jb51.net/article/48363.htm
+
+
+---更新计量点中不存在的数据,将台帐中的信息转移到计量点中 
+insert into MetricPoints (MeterID,MetricPointName,[Description],DepartmentID,MediumID) 
+(SELECT m.MeterID,m.MetricItems+m.InstallPlace as m_MetricPointName,m.MetricItems,m.DepartmentID,m.MediumID 
+FROM Meters m WHERE NOT EXISTS (SELECT 1 FROM MetricPoints WHERE MetricPoints.MeterID = m.MeterID ) and m.MediumID =2) 
+
+
+a,b ,都是表 
+--b表存在（两表结构一样） 
+insert into b select * from a 
+
+
+若两表只是有部分（字段）相同，则 
+insert into b(col1,col2,col3,col4,...) select col1,col2,col3,col4,... from a where... 
+
+
+把表a插入到表b中去。 
+--b表不存在 
+select * into b from a 
+// 
+select (字段1，字段2，...) into b from a 
+
+
+

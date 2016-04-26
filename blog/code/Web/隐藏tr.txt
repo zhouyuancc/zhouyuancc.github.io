@@ -1,0 +1,44 @@
+
+个人、公共通讯录SelSet.SelContAdd
+
+
+<tr runat="server" id="trSY" >
+                        <td style="text-align: right;" width="10%" align="right">
+                            适用人员：
+                        </td>
+                        
+                        <td align="left">
+                        <asp:TextBox ID="txtSuitMember" runat="server" Width="99%" CssClass="SmallInput" TextMode="MultiLine"
+                                                TabIndex="4"  Height="100px"  onclick="openTopic_zt1();window.event.returnValue=false;return;"
+                                                MaxLength="500" Visible="False"></asp:TextBox>
+
+                       
+                        </td>
+                         <td width="10%" align="left" valign="top">
+                                            <asp:Panel ID="Panel2" runat="server" CssClass="buttonStyle" Font-Size="Medium" Visible="False">
+                                                <a href="javascript:;" class="orgAdd" onclick="openTopic_zt1();window.event.returnValue=false;return;">
+                                                    选择</a>
+                                            </asp:Panel>
+                                        </td>
+                        </tr>
+
+
+
+
+
+ if (!IsPostBack)
+            {
+            
+                trSY.Visible = false;
+                if (location == "1")
+                {
+                    txtSuitMember.Visible = true;
+                    Panel2.Visible = true;
+                    if (flag == "see")
+                    {
+                        Panel2.Visible = false;
+                    }
+                    trSY.Visible = true;
+                }
+
+            }

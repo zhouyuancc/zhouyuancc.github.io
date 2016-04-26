@@ -1,0 +1,403 @@
+日期控件支持平面显示功能,只要设置一下eCont属性就可以把它当作日历来使用了,无需触发条件,直接显示在页面上
+
+ 
+
+示例2-1 平面显示演示
+<div id="div1 "></div>
+<script>
+WdatePicker({eCont: 'div1' ,onpicked:function(dp){alert('你选择的日期是:'+dp.cal.getDateStr())}})
+</script>
+
+$dp.cal.getDateStr 用法详见内置函数和属性
+
+支持多种容器 
+除了可以将值返回给input以外,还可以通过配置el属性将值返回给其他的元素(如:textarea,div,span)等,带有innerHTML属性的HTML元素
+
+示例2-2 将日期返回到<span>中
+2008-01-01 
+
+代码:
+<span id="demospan ">2008-01-01</span> 
+<img onClick="WdatePicker({el: 'demospan' })" src="../../My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle" style="cursor:pointer" />
+
+起始日期功能 
+注意:日期格式必须与 realDateFmt 和 realTimeFmt 一致 
+有时在项目中需要选择生日之类的日期,而默认点开始日期都是当前日期,导致年份选择非常麻烦,你可以通过起始日期功能加上配置alwaysUseStartDate属性轻松解决此类问题
+
+示例2-3-1 起始日期简单应用 
+默认的起始日期为 1980-05-01
+当日期框为空值时 ,将使用 1980-05-01 做为起始日期
+
+ 
+<input type="text" id="d221" onFocus="WdatePicker({startDate: '1980-05-01' })"/>
+
+示例2-3-2 alwaysUseStartDate属性应用
+默认的起始日期为 1980-05-01
+当日期框无论是何值 ,始终使用 1980-05-01 做为起始日期
+
+ 
+<input type="text" id="d222" onFocus="WdatePicker({startDate: '1980-05-01' ,alwaysUseStartDate: true })"/>
+
+示例2-3-3 使用内置参数
+除了使用静态的日期值以外,还可以使用动态参数(如:%y,%M分别表示当前年和月)
+
+下例演示,年月日使用当年当月的1日,时分秒使用00:00:00作为起始时间
+
+ 
+<input type="text" id="d233" onFocus="WdatePicker({startDate: '%y-%M-01 00:00:00' ,dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate: true })"/>
+
+自定义格式 
+yMdHmswW分别代表年月日时分秒星期周,你可以任意组合这些元素来自定义你个性化的日期格式.
+
+
+日期格式表 格式 说明 
+y 将年份表示为最多两位数字。如果年份多于两位数，则结果中仅显示两位低位数。 
+yy  同上，如果小于两位数，前面补零。 
+yyy 将年份表示为三位数字。如果少于三位数，前面补零。 
+yyyy 将年份表示为四位数字。如果少于四位数，前面补零。 
+M 将月份表示为从 1 至 12 的数字 
+MM 同上，如果小于两位数，前面补零。 
+MMM 返回月份的缩写 一月 至 十二月 (英文状态下 Jan to Dec) 。 
+MMMM 返回月份的全称 一月 至 十二月 (英文状态下 January to December) 。 
+d 将月中日期表示为从 1 至 31 的数字。 
+dd 同上，如果小于两位数，前面补零。 
+H  将小时表示为从 0 至 23 的数字。 
+HH 同上，如果小于两位数，前面补零。 
+m 将分钟表示为从 0 至 59 的数字。 
+mm 同上，如果小于两位数，前面补零。 
+s 将秒表示为从 0 至 59 的数字。 
+ss 同上，如果小于两位数，前面补零。 
+w 返回星期对应的数字 0 (星期天) - 6 (星期六) 。 
+D 返回星期的缩写 一 至 六 (英文状态下 Sun to Sat) 。 
+DD 返回星期的全称 星期一 至 星期六 (英文状态下 Sunday to Saturday) 。 
+W 返回周对应的数字 (1 - 53) 。 
+WW 同上，如果小于两位数，前面补零 (01 - 53) 。
+
+示例
+格式字符串 值 
+yyyy-MM-dd HH:mm:ss 2008-03-12 19:20:00 
+yy年M月 08年3月 
+yyyyMMdd 20080312 
+今天是:yyyy年M年d HH时mm分  今天是:2008年3月12日 19时20分 
+H:m:s 19:20:0 
+y年 8年 
+MMMM d, yyyy 三月 12, 2008
+
+示例 2-4-1: 年月日时分秒
+ 
+<input type="text" id="d241" onfocus="WdatePicker({dateFmt: 'yyyy年MM月dd日 HH时mm分ss秒' })" class="Wdate" style="width:300px"/>
+
+注意: 点两次才能选择日期的原因,详见 autoPickDate 属性
+
+示例 2-4-2 时分秒
+ 
+<input type="text" id="d242" onfocus="WdatePicker({skin:'whyGreen',dateFmt: 'H:mm:ss' })" class="Wdate"/>
+
+注意: 这里提前使用了皮肤(skin)属性,所以你会看到一个不同的皮肤,皮肤属性详见自定义和动态切换皮肤
+
+示例 2-4-3 年月
+ 
+<input type="text" id="d243" onfocus="WdatePicker({skin:'whyGreen',dateFmt: 'yyyy年MM月' })" class="Wdate"/>
+
+示例 2-4-4 取得系统可识别的日期值(重要) 
+类似于 1999年7月5日 这样的日期是不能够被系统识别的,他必须转换为能够识别的类型如 1999-07-05
+
+ 真实的日期值是:  
+<input id="d244" type="text" class="Wdate" onfocus="WdatePicker({dateFmt: 'yyyy年M月d日' ,vel: 'd244_2' })"/>
+<input id="d244_2 " type="text" />
+
+注意: 在实际应用中,一般会把vel指定为一个hidden控件 ,这里是为了把真实值展示出来,所以使用文本框
+关键属性: vel 指定一个控件或控件的ID,必须具有value属性(如input),用于存储真实值(也就是realDateFmt和realTimeFmt格式化后的值)
+
+示例 2-4-5 星期, 月 日, 年(4.6Beta2新增) 
+ 
+<input type="text" id="d245" onfocus="WdatePicker({dateFmt: 'DD, MMMM d, yyyy' })" class="Wdate"/>
+
+双月日历功能(4.6Beta2新增) 
+可以同时弹出两个月的日历
+
+示例2-5 双月日历功能
+ 
+<input class="Wdate" type="text" onfocus="WdatePicker({doubleCalendar: true ,dateFmt:'yyyy-MM-dd'})"/>
+
+注意: 双月日历一般只用于包含年月日三个元素的场景,另外设置该属性时,autoPickDate自动设置为true
+
+自动纠错功能 
+纠错处理可设置为3种模式:提示(默认) 自动纠错 标记,当日期框中的值不符合格式时,系统会尝试自动修复,如果修复失败会根据您设置的纠错处理模式进行处理,错误判断功能非常智能它可以保证用户输入的值是一个合法的值
+
+示例2-6-1 不合法的日期演示
+请在下面的日期框中填入一个不合法的日期(如:1997-02-29) ,再尝试离开焦点 
+使用默认容错模式 提示模式 errDealMode = 0 在输入错误日期时,会先提示 
+ 
+
+注意: 1997年不是闰年哦
+
+示例2-6-2 超出日期限制范围的日期也被认为是一个不合法的日期
+最大日期是2000-01-10 ,如果在下框中填入的日期 大于 2000-01-10(如2000-01-12)也会被认为是不合法的日期 
+自动纠错模式 errDealMode = 1 在输入错误日期时,自动恢复前一次正确的值 
+ 
+
+示例2-6-3 使用无效天和无效日期功能限制的日期也被认为是一个不合法的日期
+如:
+2008-02-20 无效日期限制
+2008-02-02 2008-02-09 2008-02-16 2008-02-23 无效天限制
+都是无效日期
+您可以尝试在下框中输入这些日期,并离开焦点
+
+标记模式 errDealMode = 2 在输入错误日期时,不做提示和更改,只是做一个标记,但此时日期框不会马上隐藏 
+ 
+
+注意: 标记类:WdateFmtErr是在skin目录下WdatePicker.css中定义的
+
+跨无限级框架显示 
+无论你把日期控件放在哪里,你都不需要担心会被外层的iframe所遮挡进而影响客户体验,因为My97日期控件是可以跨无限级框架显示的
+
+示例2-7 跨无限级框架演示
+可无限跨越框架iframe,无论怎么嵌套框架都不必担心了,即使有滚动条也不怕
+
+民国年日历和其他特殊日历 
+当年份格式设置为yyy格式时,利用年份差量属性yearOffset(默认值1911民国元年),可实现民国年日历和其他特殊日历
+
+示例2-8 民国年演示
+ 
+<input type="text" id="d28" onClick="WdatePicker({dateFmt: 'yyy/MM/dd' })"/>
+
+注意: 年份格式设置成yyy时,真正的日期将会减去一个差量yearOffset(默认值为:1911) ,如果是民国年使用默认值即可无需另外配置,如果是其他的差量,可以通过参数的形式配置
+
+编辑功能 
+当日期框里面有值时,修改完某个属性后,只要点击这个按钮就可以实现时间和日期的编辑
+
+示例2-9 日期和时间的编辑演示
+您可以尝试对下面框中的月份改为1,然后点击更新 ,你会发现日期由 2000-02 -29 01:00:00 变为 2000-01 -29 01:00:00
+ 
+
+为编程带来方便 
+如果el的值是this,可省略,即所有的el:this都可以不写 
+日期框设置为disabled时,禁止更改日期(不弹出选择框) 
+如果没有定义onpicked事件,自动触发文本框的onchange事件 
+如果没有定义oncleared事件,清空时,自动触发onchange事件
+
+其他属性 
+设置readOnly属性,可指定日期框是否只读 
+设置highLineWeekDay属性,可指定是否高亮周末 
+设置isShowOthers属性,可指定是否显示其他月的日期 
+加上class="Wdate"就会在选择框右边出现日期图标
+
+4. 日期范围限制 
+静态限制 
+注意:日期格式必须与 realDateFmt 和 realTimeFmt 一致 
+你可以给通过配置minDate(最小日期),maxDate(最大日期)为静态日期值,来限定日期的范围
+
+示例4-1-1 限制日期的范围是 2006-09-10到2008-12-20
+ 
+<input id="d411" class="Wdate" type="text" onfocus="WdatePicker({skin:'whyGreen',minDate: '2006-09-10', maxDate: '2008-12-20' })"/>
+
+示例4-1-2 限制日期的范围是 2008-3-8 11:30:00 到 2008-3-10 20:59:30
+ 
+<input type="text" class="Wdate" id="d412" onfocus="WdatePicker({skin:'whyGreen',dateFmt: 'yyyy-MM-dd HH:mm:ss', minDate: '2008-03-08 11:30:00', maxDate: '2008-03-10 20:59:30' })" value="2008-03-09 11:00:00"/>
+
+示例4-1-3 限制日期的范围是 2008年2月 到 2008年10月
+ 
+<input type="text" class="Wdate" id="d413" onfocus="WdatePicker({dateFmt: 'yyyy年M月', minDate: '2008-2', maxDate: '2008-10' })"/>
+
+示例4-1-4 限制日期的范围是 8:00:00 到 11:30:00
+ 
+<input type="text" class="Wdate" id="d414" onfocus="WdatePicker({dateFmt: 'H:mm:ss', minDate: '8:00:00', maxDate: '11:30:00' })"/>
+
+动态限制 
+注意:日期格式必须与 realDateFmt 和 realTimeFmt 一致 
+你可以通过系统给出的动态变量,如%y(当前年),%M(当前月)等来限度日期范围,你还可以通过#{}进行表达式运算,如:#{%d+1}:表示明天
+
+动态变量表
+
+格式 说明 
+%y  当前年 
+%M  当前月 
+%d  当前日 
+%ld 本月最后一天 
+%H  当前时 
+%m  当前分 
+%s  当前秒 
+#{} 运算表达式,如:#{%d+1}:表示明天 
+#F{} {}之间是函数可写自定义JS代码
+
+示例4-2-1 只能选择今天以前的日期(包括今天)
+ 
+<input id="d421" class="Wdate" type="text" onfocus="WdatePicker({skin:'whyGreen',maxDate: '%y-%M-%d' })"/>
+
+示例4-2-2 使用了运算表达式 只能选择今天以后的日期(不包括今天)
+ 
+<input id="d422" class="Wdate" type="text" onfocus="WdatePicker({minDate: '%y-%M-#{%d+1}' })"/>
+
+示例4-2-3 只能选择本月的日期1号至本月最后一天
+ 
+<input id="d423" class="Wdate" type="text" onfocus="WdatePicker({minDate: '%y-%M-01', maxDate: '%y-%M-%ld' })"/>
+
+示例4-2-4 只能选择今天7:00:00至明天21:00:00的日期
+ 
+<input id="d424" class="Wdate" type="text" onfocus="WdatePicker({dateFmt:'yyyy-M-d H:mm:ss',minDate: '%y-%M-%d 7:00:00', maxDate: '%y-%M-#{%d+1} 21:00:00' })"/>
+
+示例4-2-5 使用了运算表达式 只能选择 20小时前 至 30小时后 的日期
+ 
+<input id="d425" class="Wdate" type="text" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate: '%y-%M-%d #{%H-20}:%m:%s' ,maxDate: '%y-%M-%d #{%H+30}:%m:%s' })"/>
+
+脚本自定义限制 
+注意:日期格式必须与 realDateFmt 和 realTimeFmt 一致 
+系统提供了$dp.$D和$dp.$DV这两个API来辅助你进行日期运算,此外你还可以通过在 #F{} 中填入你自定义的脚本,做任何你想做的日期限制
+
+示例4-3-1 前面的日期不能大于后面的日期且两个日期都不能大于 2020-10-01
+合同有效期从  到  
+<input id="d4311" class="Wdate" type="text" onFocus="WdatePicker({maxDate: '#F{$dp.$D(\'d4312\')||\'2020-10-01\'}' })"/> 
+<input id="d4312" class="Wdate" type="text" onFocus="WdatePicker({minDate: '#F{$dp.$D(\'d4311\')}' ,maxDate:'2020-10-01' })"/>
+
+注意: 
+两个日期的日期格式必须相同
+
+$dp.$ 相当于 document.getElementById 函数.
+那么为什么里面的 ' 使用 \' 呢? 那是因为 " 和 ' 都被外围的函数使用了,故使用转义符 \ ,否则会提示JS语法错误.
+所以您在其他地方使用时注意把 \' 改成 " 或者 ' 来使用.
+
+#F{$dp.$D(\'d4312\')||\'2020-10-01\'} 表示当 d4312 为空时, 采用 2020-10-01 的值作为最大值
+
+示例4-3-2 前面的日期+3天 不能大于 后面的日期
+日期从  到  
+<input type="text" class="Wdate" id="d4321" onFocus="WdatePicker({maxDate: '#F{$dp.$D(\'d4322\',{d:-3});}' })"/>
+<input type="text" class="Wdate" id="d4322" onFocus="WdatePicker({minDate: '#F{$dp.$D(\'d4321\',{d:3});}' })"/>
+
+使用 $dp.$D 函数 可以将日期框中的值,加上定义的日期差量:
+两个参数: id={字符类型}需要处理的文本框的id值 , obj={对象类型}日期差量 
+日期差量用法: 
+属性y,M,d,H,m,s分别代表年月日时分秒
+如 
+为空时,表示直接取值,不做差量(示例4-3-1中的参数就是空的)
+{M:5,d:7} 表示 五个月零7天
+{y:1,d:-3} 表示 1年少3天
+{d:1,H:1} 表示一天多1小时
+
+示例4-3-3 前面的日期+3月零2天 不能大于 后面的日期 且 前面日期都不能大于 2020-4-3减去3月零2天 后面日期 不能大于 2020-4-3
+住店日期从  到  
+<input type="text" class="Wdate" id="d4331" onFocus="WdatePicker({maxDate: '#F{$dp.$D(\'d4332\',{M:-3,d:-2})||$dp.$DV(\'2020-4-3\',{M:-3,d:-2})} '})"/>
+<input type="text" class="Wdate" id="d4332" onFocus="WdatePicker({minDate: '#F{$dp.$D(\'d4331\',{M:3,d:2});} ',maxDate: '2020-4-3 '})"/>
+
+注意:
+#F{$dp.$D(\'d4332\',{M:-3,d:-2}) || $dp.$DV(\'2020-4-3\',{M:-3,d:-2})}
+表示当 d4332 为空时, 采用 $dp.$DV(\'2020-4-3\',{M:-3,d:-2})} 的值作为最大值
+
+使用 $dp.$DV 函数 可以将显式传入的值,加上定义的日期差量:
+两个参数: value={字符类型}需要处理的值 , obj={对象类型}日期差量 
+用法同上面的 $dp.$D 类似,如 $dp.$DV(\'2020-4-3\',{M:-3,d:-2}) 表示 2020-4-3减去3月零2天
+
+示例4-3-4 发挥你的JS才能,定义任何你想要的日期限制
+自动转到随机生成的一天,当然,此示例没有实际的用途,只是为演示目的
+ 
+<script>
+//返回一个随机的日期
+function randomDate(){
+var Y = 2000 + Math.round(Math.random() * 10);
+var M = 1 + Math.round(Math.random() * 11);
+var D = 1 + Math.round(Math.random() * 27);
+return Y+'-'+M+'-'+D;
+}
+</script>
+<input type="text" class="Wdate" id="d434" onFocus="var date=randomDate();WdatePicker({minDate:date,maxDate:date}) "/>
+
+无效天 
+可以使用此功能禁用周日至周六所对应的日期,相关属性:disabledDays (0至6 分别代表 周日至周六)
+
+示例4-4-1 禁用 周六 所对应的日期
+ 
+<input id="d441" type="text" class="Wdate" onFocus="WdatePicker({disabledDays: [6] })"/>
+
+示例4-4-2 通过position属性,自定义弹出位置
+ 
+<input id="d442" type="text" class="Wdate" onFocus="WdatePicker({disabledDays: [0,6] })"/>
+
+无效日期 
+注意:日期格式必须与 realDateFmt 和 realTimeFmt 一致 
+可以使用此功能禁用,所指定的一个或多个日期,只要你熟悉正则表达式,你可以尽情发挥
+
+用法(正则匹配): 
+如果你熟悉正则表达式,会很容易理解下面的匹配用法
+如果不熟悉,可以参考下面的常用示例 
+['2008-02-01','2008-02-29'] 表示禁用 2008-02-01 和 2008-02-29
+['2008-..-01','2008-02-29'] 表示禁用 2008-所有月份-01 和 2008-02-29
+['200[0-8]]-02-01','2008-02-29'] 表示禁用 [2000至2008]-02-01 和 2008-02-29
+['^2006'] 表示禁用 2006年的所有日期
+
+此外,您还可以使用 %y %M %d %H %m %s 等变量, 用法同动态日期限制 注意:%ld不能使用 
+['....-..-01','%y-%M-%d'] 表示禁用 所有年份和所有月份的第一天和今天 
+['%y-%M-#{%d-1}','%y-%M-#{%d+1}'] 表示禁用 昨天和明天
+
+当然,除了可以限制日期以外,您还可以限制时间
+['....-..-.. 10\:00\:00'] 表示禁用 每天10点 (注意 : 需要 使用 \: )
+
+不再多举例了,尽情发挥你的正则才能吧!
+
+示例4-5-1 禁用 每个月份的 5日 15日 25日
+ 
+<input id="d451" type="text" class="Wdate" onFocus="WdatePicker({disabledDates: ['5$'] })"/>
+
+注意 : '5$' 表示以 5 结尾 注意 $ 的用法
+
+示例4-5-2 禁用 所有早于2000-01-01的日期
+ 
+<input id="d452" type="text" class="Wdate" onFocus="WdatePicker({disabledDates: ['^19'] })"/>
+
+注意: '^19' 表示以 19 开头 注意 ^ 的用法 
+当然,可以使用minDate实现类似的功能 这里主要是 在演示 ^ 的用法
+
+示例4-5-3 配合min/maxDate使用,可以把可选择的日期分隔成多段
+本示例本月可用日期分隔成五段 分别是: 1-3 8-10 16-24 26,27 29-月末
+ 
+<input id="d453" type="text" class="Wdate" onFocus="WdatePicker({minDate: '%y-%M-01' ,maxDate: '%y-%M-%ld' ,disabledDates: ['0[4-7]$','1[1-5]$','2[58]$'] })"/>
+
+示例4-5-4 min/maxDate disabledDays disabledDates 配合使用 即使在要求非常苛刻的情况下也能满足需求
+ 
+<input id="d454" type="text" class="Wdate" onFocus="WdatePicker({minDate: '%y-%M-01' ,maxDate: '%y-%M-%ld' ,disabledDates: ['0[4-7]$','1[1-5]$','2[58]$'] ,disabledDays: [1,3,6] })"/>
+
+示例4-5-5 禁用前一个小时和后一个小时内所有时间 使用 %y %M %d %H %m %s 等变量
+鼠标点击 小时输入框时,你会发现当然时间对应的前一个小时和后一个小时是灰色的
+ 
+<input id="d2a25" type="text" class="Wdate" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',disabledDates: ['%y-%M-%d #{%H-1}\:..\:..','%y-%M-%d #{%H+1}\:..\:..'] })"/>
+
+注意: %y %M %d等详见动态变量表
+
+示例4-5-6 #F{}也是可以使用的
+本示例利用自定义函数 随机禁用0-23中的任何一个小时
+打开小时选择框,你会发现有一个小时被禁用的,而且每次禁用的小时都不同
+ 
+<script>
+function randomH(){
+//产生一个随机的数字 0-23 
+var H = Math.round(Math.random() * 23);
+if(H<10) H='0'+H;
+//返回 '^' + 数字
+return '^'+H;
+}
+</script>
+<input type="text" class="Wdate" id="d456" onFocus="WdatePicker({dateFmt:'HH:mm:ss',disabledDates: ['#F{randomH()}'] })"/>
+
+有效天与有效日期 
+使用无效天和无效日期可以很方便的禁用不可用的日期,但是在只需要启用少部分日期的情况下,有效天和有效日期的功能就非常适合了.
+关键属性: opposite 默认为false, 为true时,无效天和无效日期变成有效天和有效日期
+
+示例4-6 只启用 每个月份的 5日 15日 25日
+ 
+<input id="d46" type="text" class="Wdate" onFocus="WdatePicker({opposite: true ,disabledDates: ['5$'] })"/>
+
+注意 : '5$' 表示以 5 结尾 注意 $ 的用法
+
+特殊天和特殊日期 
+特殊天和特殊日期的用法跟完全无效天和无效日期完全相同,但是opposite属性对其无效
+
+关键属性: 
+specialDays (0至6 分别代表 周日至周六) 用法同无效天 
+specialDates 用法同无效日期,但是对时分秒无效
+
+示例4-7-1 高亮每周 周一 周五
+ 
+<input id="d471" type="text" class="Wdate" onFocus="WdatePicker({specialDays: [1,5] })"/>
+
+示例4-7-2 高亮每月 1号 15号
+ 
+<input id="d472" type="text" class="Wdate" onFocus="WdatePicker({specialDates: ['....-..-01','....-..-15'] })"/>

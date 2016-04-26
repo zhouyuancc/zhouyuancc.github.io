@@ -1,0 +1,52 @@
+使用SQL语句创建和删除约束 .
+2010-08-29 21:22 2381人阅读 评论(2) 收藏 举报 
+sqlgo约束的目的就是确保表中的数据的完整性。
+
+常用的约束类型如下:
+
+主键约束:(Primary Key constraint)      要求主键列唯一，并且不允许为空
+
+唯一约束:(Unique Constraint)              要求该列唯一，允许为空，但只能出现一个空值
+
+检查约束:(Check Constraint)                某列取值范围限制、格式限制等。如有关年龄的限制
+
+默认约束:(Default Constraint)               某列的默认值，如我们的男性学员比较多，性别默认为男
+
+外键约束:(Foreign Key Constraint)       用于在两表之间建立关系，需要指定引用主表的哪一列
+
+一、添加约束
+
+在创建表时，我们可以在字段后添加各种约束，但一般不这样混用，推荐将添加约束和建表的语句分开编写。
+
+添加约束的语法如下:
+
+
+Code:
+01.Alter Table 表名   
+02.Add Constraint  约束名 约束类型 具体的约束类型  
+
+上述语法标识修改某个表，添加某个约束，其中约束名的命名规则推荐采用"约束类型_约束字段"这样的形式。
+
+Code:
+01.---添加主键约束   
+02.Alter Table stuInfo   01.Add Constraint  PK_stuNO primary Key(stuNo)   01.---添加唯一约束   01.Alter Table stuInfo   01.Add Constraint UQ_stuID unique(stuID)   01.---添加默认约束   01.Alter Table stuInfo   01.Add Constraint DF_stuAddress default('地址不详') for stuAddress   01.---添加检查约束   01.Alter Table stuInfo   01.Add Constraint CK_stuAge check(stuAge between 15 and 40)   01.---添加外键约束   01.Alter Table stuMarks   01.Add Constraint FK_stuNo foreign key(stuNo) references stuInfo(stuNo)  二、删除约束
+
+如果错误的添加了约束，则可以删除约束
+
+删除约束的语法如下:
+
+Code:
+01.Alter Table 表名   
+02.Drop Constraint  约束名  附加：在创建表的时候同时添加约束的写法:
+
+Code:
+01.use stuDB   
+02.go   
+03.if exists(select * from Sysobjects where name = 'stuInfo')   
+04.drop table stuInfo   01.go   
+02.create table stuInfo   01.(   
+02.     stuName varchar(20) not null primary key(stuName)    
+03.，stuID int not null unique(stuID)   
+04.，stuAddress varchar(20) not null default('地址不详')   
+05.，stuAge int not null check(stuAge between 15 and 40)   
+06.)  

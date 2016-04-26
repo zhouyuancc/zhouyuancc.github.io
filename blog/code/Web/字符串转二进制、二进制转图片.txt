@@ -1,0 +1,68 @@
+
+-------------------------IOS-------------------------------------------------------------------------
+    NSData *data = UIImagePNGRepresentation(self.image);
+
+    NSString *dataString = [data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+-------------------------IOS-------------------------------------------------------------------------
+
+        /// <summary>
+        /// ios上传附加
+        /// </summary>
+        /// <param name="PId"></param>
+        public string IosInsertFuJian(String FuJInfo)
+        {
+            FuJInfo = "iVBORw0KGgoAAAANSUhEUgAAAHkAAAA/CAYAAADE+2c4AAAAAXNSR0IArs4c6QAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAABxpRE9UAAAAAgAAAAAAAAAgAAAAKAAAACAAAAAfAAAG3dvXDvAAAAapSURBVHgB7JpLbFRVGMfHFz5CYqrUTqfVoMFHZ+ZOTZqYaGLEjSuNYGJMXFiXRmChC6M7FiTu6NbHllWjRkMEpJ3eDgXCWy0iIAJGiRqNEDC+gev3m7n/9ni5M3OnTplZ3CZfvnO+873O/3/O7e1MM5n0p2sQKGeHH+qaZtJGFgeBqZxX3rJixY2Lkz3N2nEEKoMP3jvV7132s6XRjjeTNrA4CBjBb5kEJscOZEZuWJwqadaOIVDOFZ8wci+GJEP0xqTNVPo8L6lv6tcBBCYHHrjdfg+/ZqT+4RAMySbF9yp9pbubtVXOlTaPFwpLmvml61cZAX+gNFjuL75rZP5zJbnVR3ZItHdpKut9NDkwfF9ci9sGC7fZIfnb7ys+Gbee2jqMQJDJXGNErzaST9ch+pepbOllP7Py+nqt2mN+XRi7tZ5Pau8CBGbu8nqMqEqE6COVXPHORu35y5ffZDFzB8QIf6SRf7rWYQSqj91+70xI9NlmBNOu3++9GTkYhzfnRm7p8FbS8o0Q8LPeiyFprzbyY81815jv5QjJ/B6fmOgZubVZfLreIQTGM89eV855s7sHH745rgU+CbM36afsrXtbDLl6UUOf4RDwdIjLk9o6jMBktpCPtuD3FrJG3EaT803IdYlm/Kef88b9wcKKaM503qUITPaXHrVbPJOI6Kx3ws8Vn1ufyVzbpdtJ22qEgP3Z9ZIR/Vcdsi/Z+oa6H47szJXur+RKH5pcMAlS6SgGFyoDpffrPWrDj0GjRF+0D0aer3tAQoLPpcR2lNi4i3V2ps+7J444u8mvuLeZGxznN2fz7QZP2+1Npfsw8HPD43NEOYP19vvWSD4cEn2q2TdXOP9mf1wHqXQfBsbNeeM29gXK3p5XQXKS76CXpOR2H7kuJ0Zy7LdM4W3eX/dFywL1szS88tG/s7pqvu+ZYlf1czUxM6KWiqyo5j9Kora4eY99nRUsVH78IB/8PjsUHBo1Epw8zLEjO4YXnp+cxzcU5nIxduu0Mt79eLHaJ71F+20lD74nxwrBz1vzVR0XO7uuGPy6tz37N9J64ohrxbasbE0nFUA+aCDJXyS7toqRem66Rj5gyHch+sgb8wRzYACW/M1yqb4OWpymZ/pjDxLqaSyNLVqPPsh5ZlP+ijV8d9mBUk0wi8a3Mjcyl7VCaJxv72S2GCSRL0LAL9gJ3bO6UI35IbzJB0Zrc/J8804NAG0yThPXrOYx5wYD6rnp2s1gvNNAbBT/9Vi+eiCoox6JJyfC+vRwcW5NPbo1XZtbi9paAxP2rryuBif83Lruupuz0dhI640jrhVb70RfMUgq39nJpXE24JfmQWKj5EhCMPEAX68meVUHX0jFxsEScOjP1tZqxuVhDXCJYd2tCTGKZ10k4QMJzKM2twY++AoDzbG1Im7ORuO2kLzdQEgqUwa2btRR26xuyX4D5rRzg/HB183LXCQR665pjF0+AEZOraHJoUcl69Sntuvj+pGLGNeXMTnc/siB3e0rzkZu7V+94UccwuHUOKrxd23RnuvN20LyJ3cUglZk96pCcPj1fDVGJH+6Nh+cDR+nrsaX3OUSLyp63A79px5rRzfMxwM25KhGtDf8T9jjFj8JfeDPGrJvtDbHjzF+1GcMEfRLb6wzlg99sE4u16YeZCMfY9nRevqQw7UzphYxYLNjZWt4t4XkbdZEqzJrIPwUkqYN77KNHDLAyHUqvNWQBRjyZY6f6n1pgGAjhwQgyE9cIyFWMdKqp3kj/b0dDPqCHOrgS05s9O/a1C8xysm67Gh61ppw0Lr2Ty3Zkur2kNxroCcQyPnKTn6UFDa27wVrPpIDoPCVP7pKsONXsVMtYPAXGLIl0dQW+JBETjRCv8rB4ZEdDSnaDznwUwy9ujb2prnyMY/uWbeZvFojJzHkLHvJsFYsui0kb7VESUSPYRrWbRMpe23DyhF3GCBh2sCXj6sP2u3XGuDg64pb17VrrFzU1RjNnP50yBiTi8OkevTNfnQYICTORj7qiWA0ftRQH2jVcG2Ko7Zrp6bbb71xW0jesiwfJJFTb9PkUHBwzbw/cza8xzaMXYAKDDb2ud2YJPnr+RwJbwI56/m4dv+xfECv+FN/59M1ciCAXOoRn4lizZce8WedXMzZj2zKwVzCnhHNW9Vg5/Zdb9wWkj+2TSWR7QZI1M8lmTXdnJMG4AEDKeq/kLlLcpJ4+X+7aShQz/R5fGyo2g82+qNX5RNZxMpG/xCHbcoODmNyiExiyCWyW9UzdvhUq5H+vyT/CwAA//9RVbHhAAAK7klEQVTtmnl0VNUdx8FGWWPAgASlLCEz7w2I2oJdrATrVpcKtWKrCFi0VA9W6xEl1kMriFhaERcUQVzYxJCFQDZCQlgSAk1I2FLcqqKVUBWxIJK/am+/H2cuecYZkpCxpOfMO+dz7pv77vL7fb/33jcZaNeuXbue+YmDzIny5hMBsz87YMpGBcf4rDJg6ncHzN9mtGxMxqBfa9g6vmFO4iKG47HtzmB7Yv94zVfjZqzGuXy6MWDWnjPoWIze+U5Uv+b0wyPRqqtnXmLANIcdDyDc8bEm1cm0ptqWjmiYl/a274mWW8Y3jMfcTY1Dm7JRgWNm0p468vT2pQ59bLz2mXe+lsbv7duU9nK39SbnnhEwzaGliVgxIpVbxn193h1pAbMu9av1tR7DGsfJszWDv9qeNraPnYMYiJ9n1PH57QUNBnNP3RtzgiW72I5B6Z3X5mPH5llLtfH29Y4d7j4qJq9SkM1huwzYrYQj4U0UkSK1s/XFMtM77+shgT/S0Vkg4+wz2tfLALB1lNYY5vK255ntQ7k5ZCrjcm+f2fnIy7bhGXnw2Vvnnbc+FAvPbb3Nnf62LlwZrm+4dt66qJicc4ZrWkv+YNcc1DvLJkG5e0bLxvWOgSE2Jsax49q6mrSGOu5tvS29fWzfxiVtyscF+1LamImDcbx1dlxKO47tS92+0OumqZzD9fWOHe4+Kiav7O6a1oDI1mDKXR5T3luqLyupzR9//Uj32DsSEYnLOx6f8wY1zMfc4WK3fSitWSwc7r3PbF/bhmfHq+OZ1yjb1prs7W+fectwfb3Pw91HxeTs7o5pCUWpjtl6p2tem9MgNsEjYunI4FjVnp1mnyFAmUS2beyc1HmhHf1t3d8XNAhr65ifevvZlsTGuIzBvNTzmft92cF76vhMG28MzamzY3nHpo6x7RyMGwnaNO5rY4hURsXkrG6OaYrVg4KJ2D8rbLCUdvc2HmPNcMe85THI24d7jKRP4/rWfEZcxqRsahza7NFCxSB7EkWq8+Zmx92kxWLrrcn2WVOlt68dI1IZFZMzJUpz8Bp2WF92+LxlkttkXxbINhm6d6lr6IcAiGrnRKBowTyMuzNkMjFy78XmYeusIR/qJCJW+9zGWajFamOltO0xytZbk+lLfSTC9bVjRCqjYnJGgt80h4LhfonlmJJrnWa1jzQm40Ck59Go3zgWo52w89g8aMO9Le28ti5SnozbeOyqtGAdY9lxwpXh+oZr562LiskrZHKMtqtBdEw+XQnGaLMaRMXkdO3kdJkco+1psKK730TF5FzXb16N98VogxrkDY6SybsfcMxyJRij7WlQO9WJzk4+ujPwn803OuaVrr4YbUiDijGOkTf/jspx/UmVU8ffb3Xprtl+r2Mqf+M3FTf7Tdlov9kw0m9KLvWZtSN8Jn+Yz+QO8Zkcv89k9kkxK5JSzLKuMZqjAVqhGdrlnhvUEk3RFo3LbghqjvY77nNM3YrgjzkHKp1/RMXk9Uv6z7N/pJ9I+XlNwByq0A8cJa45UOSaugz9uPGqa9570TVvP6sfF550zJ5HHFM7zTE7pjim+nd+U3WHkhrnN+U3BRfSuiv9pihV3wt6ppilWjgnE2IgFmLCAGKsGB+MmdjJgVzIidzeUY7kSs7kjgYH17lfaoI2J6Kp7VO8qN/caJicGB/fbnjp4gHVduCTWR6pDpi9z+uXNImanewzS7vI8P8Bmf18ZrNOr3fnu4YYTqYGdu6SRf2r4uLaXSSTE0WrrgT1/q6485qL41fNfzhpS/HLfYuqspJLduUNXP/m2pRNezf4qv5Z4a86UOnu+Ve1+9ZnOwPvfb4r8MnRXYFDNqBvqtyvnzxr9ArJv0CGx6eYJTI8WqzSq6dqkt/s02uqftc3ayxaodnh7e77B6Xhx391Xqsr929DWzSW1qWVmQPWof1z03tXXJ3adRWeiKECj1p1dVbvFPFzMV0sEUxQIApFUYi1KotFiVgnSsV66Nih/YakHnFrnOQOBee7nVZfmdo1+7rL4zMnjO6WOfm2HulTJ/VMn/uHpIyFj56VnvFUn6zCF/plbVzWf2VNTnJhbf7AgndKU0r3lTkbj+wIbNJiORJpwXy6IWD2zHTMuqv8Zlliilksw1vCEi2SwuE+s/NBR/+nK/I/YHy+M3BU8dTsLfVXvLbGV749J7l4y4oBJcUv98tfPa9P3rLZZ+fNm9Y7e3Zar9wHb++58q5buufccl231aMui8+57MIuRUPcTvm+/qcW90qM2yhtNoZ0Qi90Qz9ASzS1+qI1mqM9HuAFnuANHrXqilNvjgN2803iQTFHPCsWiOfFi+IlsUgQwFKxXLwqVogMkSmyRLZYKXJCrFaZGyJPZb6wC2iN7kmSZEm86PT4Ux6fdX/S9A+3Oi/J7PcjGc6R+u4Cx2we6zMZ/WV254FheSVxoCm9xmden+WYQ+WRd+vBbe7BgoV9d4wZmVDdpVN7DLEGEKM1gLiJnzzIidwwxeZK3uSPDoAu6JMu0GuZQLvFYpFA1xcEGs8XaI72eIAXeII3eNSqq716dxBninPF5eKXYoKYKO4QHBt3i3vEZDFF/F5MFX8U08TD4hExU8wSfxaPiccFgT8lnhbPiHniOUFyCwULiMWDIAiGmJi+cPzPuk2rLRj4ZH1toFKGfxHJ9Los/Ru0vhTlDtO3/r4ppmyMz7wz3znu+3V/uf+Dl2edXXPpD7tUtm//pZHMTQzEQkxeA4iX2OcKcnlSkNdsQZ7kS97kjw7oMU08JNAJvdLE/eJegZZ3iUkCjdEazdH+coEXeII3eNTqi0FOE93E2cInBgsm+o5gRQ0T3xPfFxeKH4nhYoT4sbhUXCGuEj8Vo8R1YrT4hWBljhXjBcn8WtwuSJJk7xMIgmAIyopnN+SLtdwPcTtOz32+76zPtru5MvtoJMMj1eu9+MUbRSlvzrqvV/U5/g7lGpPFxM5jLnYScxMDsVgDiJFYbxW/EuPEzeJGcYO4XpDnSEHe5I8Ol4lLxMUCnS4S6PYDgYYXiGECfc8XaI3maI8HeIEnUTFY43x5Mdgp4lTRUXQR8SFOV8mk0F2cIThGeoieghWXJHqLPuLbop8YIJIFgfuFKwYJkiGp8wRJkiwCIAyiIeoUMVM8IxYJdliuKBKFCfGnzP5LWtL0j7b4F9Xvdj+IZOyRnYH6yowBtffemlh91plxpeqbJzLFYvGs+JNIExMFcxMDsVgDiJFYzxHEHRCOIKcUQX79BfmSN/mjA3qgC/qgE3oB2lktE3SPtlZnNEf7UwVe4EmbuQgGCOxbIk4QKCuxQwiC7xyCZLoKkrMLCAEQB9EQldV/rWDn3yOmiyfEC2K5yBGFokQs0LH+UG3hwKcP17jbj71fr03Y1qVz+2I9Xy1YJBzBT4kZYrKYIEaJVHGeYG5iIBaMsAYQKzHb+DvpnnxsbuRJzkD+1iA0iV0eBRAEgRAO89kB7A52PkfcT8SNYpKYKh4T88VSkSXyRVGIApUsAhbDQjFHcAzfLcaKqwW7ld3JHOw45mRuYoiZIxG+6QuR2Q2cBuwejjjeU34xVFwirhcTBcf6o2KuwNAXBe90FgGLgUXB4rhC8C7klcGxym5lh54m7M7Tbew6WQpgOkchxyTHaJJIFo2PdQz9rbhNsAhYDEOFT5wl+D7BomGs2G6VCG31wpxwxzpfiPgSh6lDBIuAxZAgeH/GjJUI/49X42OdL0qYyjEce7+GHP0v0jSepYX3XaUAAAAASUVORK5CYII=";
+            Button1_Click(FuJInfo);
+
+            return "123";
+        }
+
+        #region
+
+        protected void Button1_Click(string picStr)
+        {
+
+            //字符串转二进制
+            byte[] imageBytes = Convert.FromBase64String(picStr);
+            //读入MemoryStream对象
+            MemoryStream memoryStream = new MemoryStream(imageBytes, 0, imageBytes.Length);
+            memoryStream.Write(imageBytes, 0, imageBytes.Length);
+            //二进制转成图片保存
+            System.Drawing.Image image = System.Drawing.Image.FromStream(memoryStream);
+
+
+            //附件
+            string ModuleType = "Email";
+            if (!System.IO.Directory.Exists(System.Web.HttpContext.Current.Server.MapPath("~\\AttachFile\\" + ModuleType + "\\")))
+            {
+                System.IO.Directory.CreateDirectory(System.Web.HttpContext.Current.Server.MapPath("~\\AttachFile\\" + ModuleType + "\\"));
+            }
+            string FileType = ".png";
+            //形成随机唯一文件号
+            Random r = new Random();
+            int x = r.Next();
+            //生成一个111到999之间的随机数 
+            int y = r.Next(111, 999);
+            string strTime = DateTime.Now.ToString("yyyyMMddHHmmssffff") + y.ToString();
+
+            image.Save(System.Web.HttpContext.Current.Server.MapPath("~\\AttachFile\\" + ModuleType + "\\") + strTime + FileType);
+
+
+
+
+        }
+
+        /// <summary>
+        /// 二进制流转图片
+        /// </summary>
+        /// <param name="streamByte">二进制流</param>
+        /// <returns>图片</returns>
+        public System.Drawing.Image ReturnPhoto(byte[] streamByte)
+        {
+            System.IO.MemoryStream ms = new System.IO.MemoryStream(streamByte);
+            System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+            return img;
+        }
+
+        
+        #endregion

@@ -1,0 +1,13 @@
+if (!string.IsNullOrEmpty(Request.QueryString["flag"]))
+                    {
+                        if (Request.QueryString["flag"].ToString() == "isDelete")
+                        {
+                            string a = Request.QueryString["bs"].ToString();
+                            IsDelete(a);
+                        }
+                        else if (Request.QueryString["flag"].ToString() == "delete")
+                        {
+                            string a = Request.QueryString["bs"].ToString();
+                            Delete(a);
+                        }
+                    }

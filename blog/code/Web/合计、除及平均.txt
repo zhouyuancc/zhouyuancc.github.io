@@ -1,0 +1,56 @@
+ /*合计计算**/
+        double Htje = 0;
+        protected void myDataGV_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                DataRowView myrows = (DataRowView)e.Row.DataItem;
+
+                Htje += Convert.ToDouble(myrows[9].ToString());
+
+
+           //相除
+                HjO += Convert.ToDouble(myrows[2].ToString());
+                HjT += Convert.ToDouble(myrows[6].ToString());
+                Ywcl = Convert.ToDouble(HjT / HjO * 100);
+                Sx += Convert.ToDouble(myrows[12].ToString());
+                Njh += Convert.ToDouble(myrows[11].ToString());
+                Nwcl = Convert.ToDouble(Sx/Njh  * 100);
+
+
+            }
+            // 合计
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                e.Row.Cells[0].Text = "合计";
+
+                e.Row.Cells[3].Text = Htje.ToString("0.00");
+                e.Row.Cells[3].HorizontalAlign = HorizontalAlign.Center;
+
+            }
+        }
+
+
+
+前台
+
+<asp:GridView ShowFooter="True"  >
+
+
+后台
+
+private double sum = 0;//取指定列的数据和，你要根据具体情况对待可能你要处理的是int
+ 2 protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+ 3  {
+ 4     if (e.Row.RowIndex >= 0)
+ 5      {
+ 6         sum += Convert.ToDouble(e.Row.Cells[6].Text);
+ 7     }
+ 8     else if (e.Row.RowType == DataControlRowType.Footer)
+ 9      {
+10         e.Row.Cells[5].Text = "总薪水为：";
+11         e.Row.Cells[6].Text = sum.ToString();
+12         e.Row.Cells[3].Text = "平均薪水为：";
+13         e.Row.Cells[4].Text = ((int)(sum / GridView1.Rows.Count)).ToString();
+14     }
+15 }

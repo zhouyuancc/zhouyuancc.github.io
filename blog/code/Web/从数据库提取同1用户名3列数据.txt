@@ -1,0 +1,57 @@
+/// <summary>
+        /// 绑定数据
+        /// </summary>
+        private void BindData()
+        {
+            try
+            {
+
+                ///获取辅助角色
+                //string sqlstr = "select * from V_PubEmpInfogrsz WHERE flag='0' and  [EmpName] = @EditUser";
+
+                string sqlstr = "declare @test varchar(max) set @test='' select @test=@test+RoleName+',' from V_PubEmpInfogrsz WHERE flag='0' and  [EmpCode] = '" + Session["empcode"].ToString() + "' select @test";
+                SqlExec sqlexec = new SqlExec();
+                //SqlParameter[] sqlpara ={                 
+                ////sqlexec.CreateInParam("@EditUser",SqlDbType.VarChar,30,Session["EmpName"].ToString())
+                //                        };
+                string ds = SqlExec.ExecuteScalar(sqlstr, CommandType.Text);
+
+                
+
+                if (ds.ToString().Length == 0)
+                {
+                    LabelFjs.Text = "";
+                }
+                else 
+                {
+                    LabelFjs.Text = ds.ToString().Substring(0, ds.ToString().Length - 1);
+                }
+
+
+                ///获取别名、主角色、辅助角色、管理范围、邮箱容量、文件柜容量
+                string sqlstr1 = "select *,(case when DepartmentManage='0' then '无' when  DepartmentManage='1'  then '指定部门' when  DepartmentManage='2' then '本部门'  else '全部' end)as Glfw  from V_PubEmpInfogrsz WHERE  flag='1' and  [EmpName] = @EditUser";
+                SqlExec sqlexec1 = new SqlExec();
+                SqlParameter[] sqlpara1 ={                 
+                sqlexec1.CreateInParam("@EditUser",SqlDbType.VarChar,30,Session["EmpName"].ToString())
+                                        };
+                DataSet ds1 = SqlExec.ExecuteDataSet(sqlstr1, CommandType.Text, sqlpara1);
+                foreach (DataRow dr1 in ds1.Tables[0].Rows)
+                {
+                    txtLoginName.Text = dr1["LoginName"].ToString();
+
+                    LabelZjs.Text = dr1["RoleName"].ToString();
+                    
+                    LabelGlfw.Text = dr1["Glfw"].ToString();
+
+                    LabelMailbox.Text = dr1["EmailBox"] is DBNull ? "不限制" : dr1["EmailBox"].ToString() + " M";
+                    LabelFile.Text = dr1["FileBox"] is DBNull ? "不限制" : dr1["FileBox"].ToString() + " M";
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+
+
+        }

@@ -1,0 +1,13 @@
+
+
+前台
+
+
+圆形选择按钮
+
+
+<asp:RadioButtonList  ID="radKpzt" runat="server" RepeatDirection="Horizontal" Width="200px">
+                                                <asp:ListItem Selected="True" Value="0">全部</asp:ListItem>
+                                                <asp:ListItem Value="1">已开票 </asp:ListItem>
+                                                <asp:ListItem Value="2">未开票 </asp:ListItem>
+                                            </asp:RadioButtonList>

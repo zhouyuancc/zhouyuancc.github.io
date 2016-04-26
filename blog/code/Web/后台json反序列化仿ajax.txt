@@ -1,0 +1,475 @@
+/******************************************************************
+'** name:	 事务提醒 公用类
+'** author:      quqiang
+'** createdate:    2013.7.15
+'** remark:	
+'** ver:	  2.1.01
+'******************************************************************/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Data.SqlClient;
+using System.Data;
+using System.Text;
+using System.IO;
+using System.Net;
+using System.Web.Script.Serialization;
+using JD_OA.App_Code;
+
+namespace JD_OA
+{
+
+    public enum SendType
+    {
+        Email = 1, //站内信
+        Calendar = 2, //日程安排
+        TimeOut = 3,//超时催办提醒
+        Audit = 4,//公告通知待审核
+        Chat = 5,//聊天未读通知
+    } ;
+
+    public enum RemindFlag
+    {
+        Accept = 0,   //已查看
+        Unconfirmed = 1, //未提醒
+        Remind = 2, //已提醒
+    } ;
+
+    public enum DeleteFlag
+    {
+
+        Undelete = 0, //未删除
+        Delete = 1   //已删除
+    }
+
+    public class GetClientToken
+    {
+
+        public string access_token { get; set; }
+        //public string expires_in { get; set; }
+
+        //public data data { get; set; }
+        //public string timestamp { get; set; }
+
+    }
+
+    //public class data
+    //{
+    //public string dc-zhouyuan{ get; set; }
+    //}
+
+
+
+    public static class PubAffRemind
+    {
+        /// <summary>
+        /// 发送事务提醒，初始化PubAffSms
+        /// </summary>
+        /// <param name="rCode">接收人编号</param>
+        /// <param name="sCode">发送人编号</param>
+        /// <param name="sType">发送类型</param>
+        /// <param name="sValue">发送文本(内容or标题)</param>
+        /// <param name="sUrl">事务提醒详情链接地址</param>
+        ///<param name="sTime">提醒时间</param> 
+        public static void InitPubAffSms(string rCode, SendType sType, string sValue, string sUrl,DateTime sTime)
+        {
+
+            int sTypeVal = (int)Enum.Parse(typeof(SendType), sType.ToString());
+            string myContent = string.Empty;
+            //DateTime sTime = DateTime.Now;
+            string sCode = HttpContext.Current.Session["empcode"].ToString();
+
+            switch (sType)
+            {
+                case SendType.Email:
+                    myContent = string.Format("<p>请查收我的邮件！</p><p>主题:{0}</p>", sValue);
+                    break;
+                case SendType.Calendar:
+                    myContent = string.Format("<p>请查看日程安排！</p><p>内容:{0}</p>", sValue.Length > 30 ? sValue.Substring(0, 30) + "..." : sValue);
+                    break;
+                case SendType.TimeOut:
+                    myContent = string.Format("<p>您有已超时或未接收的待办工作，请及时办理！</p>");
+                    break;
+                case SendType.Audit:
+                    myContent = string.Format("<p>请审核公告！</p><p>标题:{0}</p>", sValue.Length > 30 ? sValue.Substring(0, 30) + "..." : sValue);
+                    break;
+                case SendType.Chat:
+                    //myContent = string.Format("<p>您有一条未读会话！</p><p>内容:{0}</p>", sValue.Length > 30 ? sValue.Substring(0, 30) + "..." : sValue);
+                    myContent = string.Format("<p>您有未读会话！</p>");
+                    break;
+            }
+
+            string strSql = "insert into PubAffSms(SendCode,SendContent,SendTime,SendType,SmsUrl)";
+            strSql += "values(@SendCode,@SendContent,@SendTime,@SendType,@SmsUrl) select @@IDENTITY ";
+            SqlExec MySql = new SqlExec();
+            SqlParameter[] parm = { 
+                                    MySql.CreateInParam("@SendCode", SqlDbType.VarChar,50,sCode),
+                                    MySql.CreateInParam("@SendContent", SqlDbType.VarChar,200,myContent),
+                                    MySql.CreateInParam("@SendTime", SqlDbType.DateTime,8,sTime),
+                                    MySql.CreateInParam("@SendType", SqlDbType.Int,4,sTypeVal),
+                                    MySql.CreateInParam("@SmsUrl", SqlDbType.VarChar,100,sUrl)
+                                  };
+            string id = SqlExec.ExecuteScalar(strSql, CommandType.Text, parm);
+            InitPubAffSmsto(id, rCode, sTime);
+        }
+
+
+
+        /// <summary>
+        /// 事务提醒，初始化PubAffSmsTo（子表）
+        /// </summary>
+        /// <param name="id">PubAffSms表主键</param>
+        /// <param name="rCode">接收人编号</param>
+        /// <param name="rTime">提醒时间</param>
+        private static void InitPubAffSmsto(string id, string rCode, DateTime rTime)
+        {
+            string strSql = "insert into PubAffSmsto(ReceiveCode,SmsId,DelFlag,RemindFlag,RemindTime)";
+            strSql += "values(@ReceiveCode,@SmsId,@DelFlag,@RemindFlag,@RemindTime);";
+            SqlExec MySql = new SqlExec();
+            SqlParameter[] parm = { 
+                                    MySql.CreateInParam("@ReceiveCode", SqlDbType.VarChar,50,rCode),
+                                    MySql.CreateInParam("@SmsId", SqlDbType.Int,4,id),
+                                    MySql.CreateInParam("@DelFlag", SqlDbType.Int,4,(int)DeleteFlag.Undelete),
+                                    MySql.CreateInParam("@RemindFlag", SqlDbType.Int,4,(int)RemindFlag.Unconfirmed),
+                                    MySql.CreateInParam("@RemindTime", SqlDbType.DateTime,8,rTime)
+                                  };
+            SqlExec.ExecuteNonQuery(strSql, CommandType.Text, parm);
+        }
+
+
+        /// <summary>
+        /// 判断是否有（状态为未提醒）事务提醒
+        /// </summary>
+        /// <param name="stype">发送类型</param>
+        /// <param name="rCode">接收人编号</param>
+        public static bool IsRemindFlagNoAccept(SendType stype, string rCode)
+        {
+            int sTypeVal = (int)Enum.Parse(typeof(SendType), stype.ToString());
+            string strSql = @"select COUNT(*) from ( select *,(select SendType from PubAffSms where SmsId=p.SmsId) as sendtype,(select SendTime from PubAffSms where SmsId=p.SmsId) as sendtime from PubAffSmsto as p )as s where    ReceiveCode=@ReceiveCode and DelFlag=0 and RemindFlag<>0 and RemindTime<=GETDATE()";
+
+            SqlExec MySql = new SqlExec();
+            SqlParameter[] parms = { 
+                                        MySql.CreateInParam("@SendType", SqlDbType.Int,4,sTypeVal),
+                                        MySql.CreateInParam("@ReceiveCode", SqlDbType.VarChar,50,rCode),
+                                        MySql.CreateInParam("@ReceiveCode", SqlDbType.Int,4,(int)RemindFlag.Accept),
+                                        MySql.CreateInParam("@RemindTime", SqlDbType.DateTime,8,DateTime.Now)
+                                    };
+            int count = Int32.Parse(SqlExec.ExecuteScalar(strSql, CommandType.Text, parms));
+
+            if (count != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+
+        /// <summary>
+        /// 判断是否有（状态为未查看）事务提醒:无限制类型
+        /// </summary>
+        /// <param name="rCode">接收人编号</param>
+        /// <returns></returns>
+        public static bool IsRemindFlagNoAccept(string rCode)
+        {
+            string strSql = @"select COUNT(*) from ( select *,(select SendType from PubAffSms where SmsId=p.SmsId) as sendtype from PubAffSmsto as p )as s where ReceiveCode=@ReceiveCode and DelFlag=0 and RemindFlag<>@RemindFlag and RemindTime<=GETDATE()";
+
+            SqlExec MySql = new SqlExec();
+            SqlParameter[] parms = { 
+                                        MySql.CreateInParam("@ReceiveCode", SqlDbType.VarChar,50,rCode),
+                                        MySql.CreateInParam("@RemindFlag", SqlDbType.Int,4,(int)RemindFlag.Accept)
+                                    };
+            int count = Int32.Parse(SqlExec.ExecuteScalar(strSql, CommandType.Text, parms));
+
+            if (count != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+
+        /// <summary>
+        /// 更新事务提醒状态(全部)
+        /// </summary>
+        /// <param name="rFlag">提醒状态</param>
+        public static void UpDataRemindFlag(RemindFlag Flag)
+        {
+            string rCode = HttpContext.Current.Session["empcode"].ToString();
+            string strSql = @"update PubAffSmsto set  RemindFlag=@RemindFlag where ReceiveCode=@ReceiveCode and RemindFlag<>0 ";
+            int rFlag = (int)Enum.Parse(typeof(RemindFlag), Flag.ToString());
+            SqlExec MySql = new SqlExec();
+            SqlParameter[] parms = { 
+                                        MySql.CreateInParam("@RemindFlag", SqlDbType.Int,4,rFlag),
+                                        MySql.CreateInParam("@ReceiveCode", SqlDbType.VarChar,50,rCode),
+                                    };
+            SqlExec.ExecuteNonQuery(strSql, CommandType.Text, parms);
+
+        }
+
+        /// <summary>
+        /// 更新事务提醒状态(单条)
+        /// </summary>
+        /// <param name="rFlag">提醒状态</param>
+        /// <param name="SmsId">提醒id主键</param>
+        public static void UpDataRemindFlag(RemindFlag Flag, int SmsId)
+        {
+            //ReceiveCode=@ReceiveCode and RemindFlag<>0 and 
+            //string rCode = HttpContext.Current.Session["empcode"].ToString();
+            string strSql = @"update PubAffSmsto set  RemindFlag=@RemindFlag where SmsId=@SmsId";
+            int rFlag = (int)Enum.Parse(typeof(RemindFlag), Flag.ToString());
+            SqlExec MySql = new SqlExec();
+            SqlParameter[] parms = { 
+                                        MySql.CreateInParam("@RemindFlag", SqlDbType.Int,4,rFlag),
+                                        MySql.CreateInParam("@SmsId", SqlDbType.Int,10,SmsId),
+                                        //MySql.CreateInParam("@ReceiveCode", SqlDbType.VarChar,50,rCode),
+                                    };
+            SqlExec.ExecuteNonQuery(strSql, CommandType.Text, parms);
+
+        }
+
+
+
+        /// <summary>
+        /// 展示事务提醒数据
+        /// </summary>
+        /// <param name="sType">发送类型</param>
+        /// <param name="rCode">接收人编号</param>
+        public static string ShowPubAffSmsData()
+        {
+            //获取会话离线消息数
+            int offlineMsgCount = Convert.ToInt32(GetOfflineTokenJudge());
+
+            string strSql = "select pt.SmsId,Receivecode,SendCode,sendTime,SendType,SendContent,RemindFlag,DelFlag,SmsUrl,";
+            strSql += "(select EmpName from V_PubEmpInfo where EmpCode=p.SendCode ) as SendName,";
+            strSql += "(select EmpName from V_PubEmpInfo where EmpCode=pt.ReceiveCode ) as ReceiveName ";
+
+            strSql += " from PubAffSmsto pt join PubAffSms p on pt.SmsId=p.SmsId where DelFlag=0 and RemindFlag<>0 and ReceiveCode=@ReceiveCode and SendTime<=GETDATE()";
+
+            DataSet ds = new DataSet();
+            SqlExec MySql = new SqlExec();
+            SqlParameter[] parms = { MySql.CreateInParam("@receiveCode", SqlDbType.VarChar, 20, HttpContext.Current.Session["empcode"].ToString()) };
+            ds = SqlExec.ExecuteDataSet(strSql, CommandType.Text, parms);
+
+            StringBuilder sbHtml = new StringBuilder();
+            if (offlineMsgCount > 0)//如果有会话未读消息
+            {
+                sbHtml.AppendLine("<ul class='noc_iterm_data'>");
+
+                //插入未读会话提醒
+                sbHtml.AppendLine("<li class='noc_iterm_li' >");
+                sbHtml.AppendLine("<p><span>您有 " + offlineMsgCount + " 条未读会话</span ></p>");
+                sbHtml.AppendLine("<input type='hidden' class='SmsUrl' value='../../easymob-webim/index.html?flag=chat&chatWithEmpcode=unreadTmpUser' />");
+                sbHtml.AppendLine("</li>");
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        DateTime timeStart = Convert.ToDateTime(dr["sendTime"]);
+                        sbHtml.AppendLine("<li class='noc_iterm_li' >");
+                        sbHtml.AppendLine("<p><span>" + dr["sendname"].ToString() + "</span ><span style='float:right; color: Red; '>" + DateStringFromNow(timeStart) + "</span></p>");
+                        sbHtml.AppendLine(dr["SendContent"].ToString());
+                        sbHtml.AppendLine("<input type='hidden' class='SmsUrl' value='" + dr["SmsUrl"].ToString() + "' />");
+                        sbHtml.AppendLine("<input type='hidden' class='SmsId' value='" + dr["SmsId"].ToString() + "' />");
+                        sbHtml.AppendLine("</li>");
+
+                    }
+                }
+                sbHtml.AppendLine("</ul>");
+                sbHtml.AppendLine("<bgsound src='../../images/Ring.wav' loop=2>");
+            }
+            else {
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    sbHtml.AppendLine("<ul class='noc_iterm_data'>");
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        DateTime timeStart = Convert.ToDateTime(dr["sendTime"]);
+                        sbHtml.AppendLine("<li class='noc_iterm_li' >");
+                        sbHtml.AppendLine("<p><span>" + dr["sendname"].ToString() + "</span ><span style='float:right; color: Red; '>" + DateStringFromNow(timeStart) + "</span></p>");
+                        sbHtml.AppendLine(dr["SendContent"].ToString());
+                        sbHtml.AppendLine("<input type='hidden' class='SmsUrl' value='" + dr["SmsUrl"].ToString() + "' />");
+                        sbHtml.AppendLine("<input type='hidden' class='SmsId' value='" + dr["SmsId"].ToString() + "' />");
+                        sbHtml.AppendLine("</li>");
+
+                    }
+                    sbHtml.AppendLine("</ul>");
+                    sbHtml.AppendLine("<bgsound src='../../images/Ring.wav' loop=2>");
+                }
+
+            }
+            ds.Dispose();
+            return sbHtml.ToString();
+        }
+
+        #region //获取会话离线消息数
+        public static string GetOfflineTokenJudge()
+        {
+
+            string access_token = "YWMtiflVaj8eEeWxNZ2SxXpZDgAAAVBLBLD5aArkSbzdJKNBg-qCwXtqObS89OQ";
+            //获取离线人数
+            string offlineMsgCount = "https://a1.easemob.com/sgjd/sgjd/users/dc-zhouyuan/offline_msg_count?access_token=" + access_token;
+            string offlineMsgJson = GetPage(offlineMsgCount);
+
+            int beginIndex = offlineMsgJson.IndexOf("data");
+            if (beginIndex < 0)
+            {
+                ////获取token
+                string token = "https://a1.easemob.com/sgjd/sgjd/token?grant_type=client_credentials&client_id=YXA6dI9YQCY9EeWQNdPW0j2DKA&client_secret=YXA6BDRHKYEngoNNselq9tDIkBcicVQ";
+                string tokenJson = GetPage(token);
+                GetClientToken c1 = ScriptDeserializeClientToken(tokenJson);
+                access_token = c1.access_token;
+            }
+            return GetOfflineMsgCount(access_token);
+        }
+
+        public static string GetOfflineMsgCount(string access_token)
+        {
+            // {
+            //  "action" : "get",
+            //  "params" : {
+            //    "access_token" : [ "YWMtiflVaj8eEeWxNZ2SxXpZDgAAAVBLBLD5aArkSbzdJKNBg-qCwXtqObS89OQ" ]
+            //  },
+            //  "uri" : "http://a1.easemob.com/sgjd/sgjd/users/dc-zhouyuan/offline_msg_count",
+            //  "entities" : [ ],
+            //  "data" : {
+            //    "dc-zhouyuan" : 2
+            //  },
+            //  "timestamp" : 1439516008543,
+            //  "duration" : 6
+            //}
+
+            //获取离线人数
+            string offlineMsgCount = "https://a1.easemob.com/sgjd/sgjd/users/dc-zhouyuan/offline_msg_count?access_token=" + access_token;
+            string offlineMsgJson = GetPage(offlineMsgCount);
+
+            int beginIndex = offlineMsgJson.IndexOf("data");
+            int endIndex = offlineMsgJson.IndexOf("timestamp");
+            string strDest = offlineMsgJson.Substring(beginIndex, endIndex - beginIndex);
+            //data" : {
+            //    "dc-zhouyuan" : 2
+            //  },
+            //"
+            int b = strDest.IndexOf("{");
+            int e = strDest.IndexOf("}");
+            string content = strDest.Substring(b, e - b);
+            //    {
+            //  "dc-zhouyuan" : 2
+            string[] str;
+            char SplitChar = Convert.ToChar(":");
+            str = content.Split(SplitChar);
+            string offlineCount = str[1];
+
+            return offlineCount;
+        }
+        /// <summary>
+        /// 获取数据
+        /// </summary>
+        /// <param name="posturl"></param>
+        /// <returns></returns>
+        public static string GetPage(string posturl)
+        {
+            Stream instream = null;
+            StreamReader sr = null;
+            HttpWebResponse response = null;
+            HttpWebRequest request = null;
+            Encoding encoding = Encoding.UTF8;
+            // 准备请求...
+            try
+            {
+                // 设置参数
+                request = WebRequest.Create(posturl) as HttpWebRequest;
+                CookieContainer cookieContainer = new CookieContainer();
+                request.CookieContainer = cookieContainer;
+                request.AllowAutoRedirect = true;
+                request.Method = "GET";
+                request.ContentType = "application/x-www-form-urlencoded";
+                //发送请求并获取相应回应数据
+                response = request.GetResponse() as HttpWebResponse;
+                //直到request.GetResponse()程序才开始向目标网页发送Post请求
+                instream = response.GetResponseStream();
+                sr = new StreamReader(instream, encoding);
+                //返回结果网页（html）代码
+                string content = sr.ReadToEnd();
+                string err = string.Empty;
+                ////Response.Write(content);
+                return content;
+            }
+            catch (Exception ex)
+            {
+                string err = ex.Message;
+                return string.Empty;
+            }
+        }
+        //获取token
+        public static GetClientToken ScriptDeserializeClientToken(string strJson)
+        {
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            return js.Deserialize<GetClientToken>(strJson);
+        }
+
+        #endregion
+
+        #region 初始化时间
+        private static string DateStringFromNow(DateTime dt)
+        {
+            TimeSpan span = DateTime.Now - dt;
+            if (span.TotalDays > 60)
+            {
+                return dt.ToShortDateString();
+            }
+            else
+                if (span.TotalDays > 30)
+                {
+                    return "1个月前";
+                }
+                else
+                    if (span.TotalDays > 14)
+                    {
+                        return "2周前";
+                    }
+                    else
+                        if (span.TotalDays > 7)
+                        {
+                            return "1周前";
+                        }
+                        else
+                            if (span.TotalDays > 1)
+                            {
+                                return string.Format("{0}天前", (int)Math.Floor(span.TotalDays));
+                            }
+                            else
+                                if (span.TotalHours > 1)
+                                {
+                                    return string.Format("{0}小时前", (int)Math.Floor(span.TotalHours));
+                                }
+                                else
+                                    if (span.TotalMinutes > 1)
+                                    {
+                                        return string.Format("{0}分钟前", (int)Math.Floor(span.TotalMinutes));
+                                    }
+                                    else
+                                        if (span.TotalSeconds >= 1)
+                                        {
+                                            return string.Format("{0}秒前", (int)Math.Floor(span.TotalSeconds));
+                                        }
+                                        else
+                                        {
+                                            return "1秒前";
+                                        }
+        }
+        #endregion
+
+    }
+}

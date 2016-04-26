@@ -1,0 +1,19 @@
+ 
+前台
+
+<td width="15%" align="left" valign="middle">
+<asp:DropDownList ID="DrpHtnf" runat="server" Width="96%"/>
+</td>
+
+后台
+
+private void DrpNf()
+        { 
+
+            int i;
+            for (i = DateTime.Now.Year; i >= 2005; i += -1)
+            {
+                DrpHtnf.Items.Add(i.ToString());
+                DrpHtnf.DataBind();
+            }
+        }

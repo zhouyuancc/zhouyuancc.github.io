@@ -1,0 +1,171 @@
+            $("#BtnCrt").click(function () {
+                var Checked = ""
+                $("#Tx :checkbox:checked=[checked]").each(function () {
+                    Checked += $(this).attr("id");
+                })
+                var Save = "";
+                if ($("#Val").val() == "") {
+
+                    alert("请选择主办人！");
+                }
+                else {
+                    ////////////////////////////////////////////////////////////////////////
+
+                    //alert(getQueryString("Prcs_id"));
+                    $.ajax({
+                        type: "POST",
+                        url: "New.ashx?Random=" + Math.random(),
+                        data: "type=Turn_Priv&Run_Id=" + getQueryString("Run_Id") + "&Prcs_id=" + getQueryString("Prcs_id") + "&Form_id=" + getQueryString("Form_id") + "&Flow_id=" + getQueryString("Flow_id") + "&Prcs_name=" + Prcs_name + "&id=" + getQueryString("id") + "&Val=" + $("#Val").val() + "&Text=" + $("#Text").val() + "&Checked=" + Checked + "&Cont=" + $("#Cont").val() + "&Flow_name=" + Flow_name + "&NextPrcs=" + NextPrcs,
+                        cache: false,
+                        async: false,
+                        success: function (data) {
+                            if (data == "inadmissibility") {
+                                alert("经办人尚未办理完毕，不能转交流程！")
+                            }
+                            if (data == "finished") {
+                                Save = "PrcsSave";
+                            }
+                            if (data == "unfinished") {
+                                if (confirm("经办人尚未办理完毕，确认要转交下一步骤吗？")) {//确认
+                                    Save = "PrcsSave";
+                                }
+                                else {//取消
+                                    return;
+                                }
+                            }
+
+                            if (Save == "PrcsSave") {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "New.ashx?Random=" + Math.random(),
+                                    data: "type=PrcsSave&Run_Id=" + getQueryString("Run_Id") + "&Prcs_id=" + getQueryString("Prcs_id") + "&Form_id=" + getQueryString("Form_id") + "&Flow_id=" + getQueryString("Flow_id") + "&Prcs_name=" + Prcs_name + "&id=" + getQueryString("id") + "&Val=" + $("#Val").val() + "&Text=" + $("#Text").val() + "&Checked=" + Checked + "&Cont=" + $("#Cont").val() + "&Flow_name=" + Flow_name + "&NextPrcs=" + NextPrcs,
+                                    cache: false,
+                                    async: false,
+                                    success: function (data) {
+                                        if (data == "发送成功") {
+                                            //var Url = "window.open('../../../WorkFlow/MyWork/Menu.html?', '_self', 'menubar=0,toolbar=0,scrollbars=no,status=0,resizable=1')";
+//                                            var url = "../../../WorkFlow/MyWork/Menu.html?Random=" + Math.random();
+                                            window.location.href = "../../../WorkFlow/MyWork/Menu.html?Random=" + Math.random();
+//                                            $("#mainFrame", parent.document).attr("src", window.location.href);
+                                        }
+                                        else {
+                                            alert(data);
+                                        }
+                                    }
+                                })
+                            }
+
+
+                        }
+                    })
+                }
+
+                ///////////////////////////////////////////////////////////////////////
+            })
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+        //转交下一页保存验证 经办人未办理完毕时是否允许主办人强制转交
+        private void Turn_Priv(HttpContext context)
+        {
+            int Prcs_id = context.Request["Prcs_id"] != null ? Convert.ToInt16(context.Request["Prcs_id"].ToString()) : 0;
+            int Run_id = context.Request["Run_Id"] != null ? Convert.ToInt16(context.Request["Run_Id"].ToString()) : 0;
+            int Flow_id = context.Request["Flow_id"] != null ? Convert.ToInt16(context.Request["Flow_id"].ToString()) : 0;
+            string NextPrcs = context.Request["NextPrcs"] != null ? context.Request["NextPrcs"].ToString() : "";
+
+            ////添加 经办人 [田晶祥,系统管理员] 尚未办理完毕，确认要转交下一步骤吗？
+            ////1允许0不允许
+            string Turn_Priv = SqlExec.ExecuteScalar(string.Format("select Turn_Priv from Zjq_Flow_Process where Flow_id=" + Flow_id + " and Prcs_id='{0}'", NextPrcs));
+
+            string sql = "select count(*) from dbo.Zjq_Flow_Run_Prcs where run_id=@Run_id and Prcs_id=@Prcs_id and Op_flag='0' and (Prcs_flag='1' or Prcs_flag='2')";
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] sqlpara = {
+                sqlexec.CreateInParam("@Run_id",SqlDbType.VarChar,50,Run_id),
+                sqlexec.CreateInParam("@Prcs_id",SqlDbType.VarChar,50,Prcs_id)
+                                     };
+            string i = SqlExec.ExecuteScalar(sql, CommandType.Text, sqlpara);
+            if (Convert.ToInt32(i) > 0)///经办人尚未办理完毕unfinished
+            {
+                if (Turn_Priv == "1")//允许经办人未完成时主办人强制转交
+                {
+                    context.Response.Write("unfinished");
+                }
+                else//不允许主办人强制转交
+                {
+                    context.Response.Write("inadmissibility");
+                }
+            }
+            else {///经办人已完成
+                context.Response.Write("finished");
+            }
+        }
+
+        #region // 转交下一页保存
+        /// <summary>
+        /// 转交下一页保存
+        /// </summary>
+        /// <param name="context"></param>
+        private void PrcsSave(HttpContext context)
+        {
+            int Prcs_id = context.Request["Prcs_id"] != null ? Convert.ToInt16(context.Request["Prcs_id"].ToString()) : 0;
+            int Run_id = context.Request["Run_Id"] != null ? Convert.ToInt16(context.Request["Run_Id"].ToString()) : 0;
+            int id = context.Request["id"] != null ? Convert.ToInt16(context.Request["id"].ToString()) : 0;
+            int Form_id = context.Request["Form_id"] != null ? Convert.ToInt16(context.Request["Form_id"].ToString()) : 0;
+            int Flow_id = context.Request["Flow_id"] != null ? Convert.ToInt16(context.Request["Flow_id"].ToString()) : 0;
+            string Val = context.Request["Val"] != null ? context.Request["Val"].ToString() : "";
+            string Text = context.Request["Text"] != null ? context.Request["Text"].ToString() : "";
+            string Checked = context.Request["Checked"] != null ? context.Request["Checked"].ToString() : "";
+            string Cont = context.Request["Cont"] != null ? context.Request["Cont"].ToString() : "";
+            string Flow_name = context.Request["Flow_name"] != null ? context.Request["Flow_name"].ToString() : "";
+            string NextPrcs = context.Request["NextPrcs"] != null ? context.Request["NextPrcs"].ToString() : "";
+
+#region
+            //事务提醒
+            SendRemind(Run_id, Val, Text, Checked, Cont, Form_id, Flow_id, Prcs_id, id);
+            string resultA2 = "1";
+            string resultA5 = "1";
+            //向主办人发送短信
+            if (Checked.IndexOf("A2") > -1)
+            {
+                string sql = @"select Phone from V_PubEmpInfo where EmpCode=@EmpCode";
+                SqlExec sqlexecPrcsSave = new SqlExec();
+                SqlParameter[] parmsPrcsSave = {
+                        sqlexecPrcsSave.CreateInParam("@EmpCode", SqlDbType.VarChar, 20,  Val) };
+                string ReceiveNo = SqlExec.ExecuteScalar(sql, CommandType.Text, parmsPrcsSave);
+
+                resultA2 = user.GetHtmlFromUrl(ReceiveNo, Cont);
+            }
+            if (resultA2 != "1")
+            {
+                context.Response.Write(user.ReError(resultA2));
+                context.Response.End();
+            }
+            //向经办人发送短信
+            if (Checked.IndexOf("A5") > -1)
+            {
+                string[] ReceiverCodes;
+                char SplitChar = Convert.ToChar(",");
+                ReceiverCodes = Text.Split(SplitChar);
+                for (Int16 i = 0; i < ReceiverCodes.Length - 1; i++)
+                {
+                    string sql = @"select Phone from V_PubEmpInfo where EmpCode=@EmpCode";
+                    SqlExec sqlexecPrcsSave = new SqlExec();
+                    SqlParameter[] parmsPrcsSave = {
+                        sqlexecPrcsSave.CreateInParam("@EmpCode", SqlDbType.VarChar, 20,  ReceiverCodes[i]) };
+                    string ReceiveNo = SqlExec.ExecuteScalar(sql, CommandType.Text, parmsPrcsSave);
+
+                    resultA5 = user.GetHtmlFromUrl(ReceiveNo, Cont);
+                }
+            }
+            if (resultA5 != "1")
+            {
+                context.Response.Write(user.ReError(resultA5));
+                context.Response.End();
+            }
+
+            //转交下一步
+            NextSave(Val, Text, Prcs_id, Run_id, id, context, Flow_name, NextPrcs);
+#endregion
+            context.Response.Write("发送成功");
+        }
+        #endregion

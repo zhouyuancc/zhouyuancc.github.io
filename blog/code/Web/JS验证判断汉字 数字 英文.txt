@@ -1,0 +1,108 @@
+
+//例：大厂宿舍frmSslc_mx
+
+JS验证判断汉字 数字 英文(2012-05-16 14:21:40)转载▼标签： 杂谈  
+<html>
+    <head>
+        <title></title>
+        <script language="javascript">
+        //JS验证输入的内容
+        function checkInput()
+        {
+            var txtName=document.getElementById("txtName");
+            var lblMsg=document.getElementById("lblMsg");
+            
+            //创建正则表达式
+            var re=/^[0-9a-zA-Z]{6,20}$/; //只输入数字和字母的正则
+            //var re=/^[\u4e00-\u9fa5]{1,10}$/; //只输入汉字的正则
+               
+            if(txtName.value.search(re)==-1)
+            {
+                lblMsg.innerText = "请输入数字和字母，字符介于六到二十个。";
+                //lblMsg.innerText = "请输入汉字，字符不能超过十个。";
+                
+               alert("层数请输入汉字!");
+               
+               return false;
+            }
+            else
+            {
+                lblMsg.innerText = "√";
+                return true;
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <form id="form1" method="post">
+            
+
+
+<input id="txtName" onblur="return checkInput()" />
+            
+<div id="lblMsg">
+
+
+
+
+</div>
+        </form>
+    </body>
+</html>
+
+要说明的是div会自动换行，可以加入span他不会自动换行除非设置换行。
+
+数字的判断可以用isNaN函数
+ if(isNaN(document.myform.name.value))
+
+{ 
+
+alert("输入必须是数字");
+ return false;
+
+}
+
+
+
+注：默认FireFox是不支持innerText的，不过它有一个属性textContent的作用和innerText是一样的，使用方法如下：
+
+
+
+
+
+document.write(document.body.textContent);
+
+对于习惯使用innerText的人来说有点不舒服，于是网上有人就给FireFox也创建了一个innerText属性，代码如下：
+
+
+
+<script language="javascript">
+function isIE(){ //ie? 
+if (window.navigator.userAgent.toLowerCase().indexOf("msie")>=1) 
+     return true; 
+else 
+     return false; 
+} 
+
+if(!isIE()){ //firefox innerText define
+     HTMLElement.prototype.__defineGetter__("innerText", 
+     function(){
+         var anyString = "";
+         var childS = this.childNodes;
+         for(var i=0; i<childS.length; i++) {
+             if(childS[i].nodeType==1)
+                 //anyString += childS[i].tagName=="BR" ? "\n" : childS[i].innerText;
+                 anyString += childS[i].innerText;
+             else if(childS[i].nodeType==3)
+                 anyString += childS[i].nodeValue;
+         }
+         return anyString;
+     } 
+     ); 
+     HTMLElement.prototype.__defineSetter__("innerText", 
+     function(sText){
+         this.textContent=sText; 
+     } 
+     ); 
+}
+</script>

@@ -1,0 +1,37 @@
+ 
+前台
+
+ <script language="javascript" type="text/javascript">
+        function formsubmit() {
+            if (form1.txtLbbh.value == "") {
+                alert("类别编号不能为空!");
+                form1.txtLbbh.focus();
+                return false
+            }
+            if (form1.TxtLbmc.value == "") {
+                alert("类别名称不能为空!");
+                form1.TxtLbmc.focus();
+                return false
+            }
+            if (form1.TxtJb.value == "") {
+                alert("级别不能为空!");
+                form1.TxtJb.focus();
+                return false
+            }
+            if (isNaN(form1.TxtJb.value) || (form1.TxtJb.value == "")) {
+                alert("级别请输入数字!");
+                form1.TxtJb.focus();
+                return false
+            }
+            if (form1.TxtLbpx.value == "") {
+                alert("类别排序不能为空!");
+                form1.TxtLbpx.focus();
+                return false
+            }
+            if (isNaN(form1.TxtLbpx.value) || (form1.TxtLbpx.value == "")) {
+                alert("类别排序请输入数字!");
+                form1.TxtLbpx.focus();
+                return false
+            }
+        }
+    </script>

@@ -1,0 +1,48 @@
+//收发文管理—公文类型设置
+
+sql = @"INSERT INTO [Doc_type]([tname],category,[no_prefix],no_suffix,remark,[user_priv],[is_aip],[is_seal],[is_tpl])
+VALUES(@tname,@category,@no_prefix,@no_suffix,@remark,@user_priv,@is_aip,@is_seal,@is_tpl)
+--------------------------------------------------------------------------------
+select @@IDENTITY id";//获取刚插入的自增id作为id输出
+--------------------------------------------------------------------------------
+
+SqlExec sqlexec = new SqlExec();
+            SqlParameter[] para = new SqlParameter[]{
+                sqlexec.CreateInParam("@tid",SqlDbType.VarChar,20,tid),
+
+                sqlexec.CreateInParam("@tname",SqlDbType.VarChar,-1,txtTname.Text),
+                sqlexec.CreateInParam("@category",SqlDbType.VarChar,10,DrpCategory.SelectedValue),
+                sqlexec.CreateInParam("@no_prefix",SqlDbType.VarChar,100,txtNoPrefix.Text),
+                sqlexec.CreateInParam("@no_suffix",SqlDbType.VarChar,100,txtNoSuffix.Text),
+                sqlexec.CreateInParam("@remark",SqlDbType.VarChar,-1,txtRemark.Text),
+
+                sqlexec.CreateInParam("@user_priv",SqlDbType.VarChar,-1,txtUserPriv.Text),
+
+                sqlexec.CreateInParam("@is_aip",SqlDbType.Char,1,RadioIs_aip.SelectedValue),
+                sqlexec.CreateInParam("@is_seal",SqlDbType.Char,1,RadioIs_seal.SelectedValue),
+                sqlexec.CreateInParam("@is_tpl",SqlDbType.Char,1,RadioIs_tpl.SelectedValue)
+
+                };
+-------------------------------------------------------------------------------------
+string id = SqlExec.ExecuteScalar(sql, CommandType.Text, para);
+-------------------------------------------------------------------------------------
+
+///////////////////////////////////////////////////////////////////////
+
+select @@identity
+
+select SCOPE_IDENTITY()
+
+select IDENT_CURRENT("tablename")
+
+IDENT_CURRENT返回为任何会话和任何作用域中的特定表最后生成的标识值。IDENT_CURRENT 不受作用域和会话的限制，而受限于指定的表。IDENT_CURRENT 返回为任何会话和作用域中的特定表所生成的值。
+
+@@IDENTITY 返回为当前会话的所有作用域中的任何表最后生成的标识值。
+
+SCOPE_IDENTITY 返回为当前会话和当前作用域中的任何表最后生成的标识值
+
+ 
+SCOPE_IDENTITY 和 @@IDENTITY 返回在当前会话中的任何表内所生成的最后一个标识值。但是，SCOPE_IDENTITY 只返回插入到当前作用域中的值；@@IDENTITY 不受限于特定的作用域。
+
+
+

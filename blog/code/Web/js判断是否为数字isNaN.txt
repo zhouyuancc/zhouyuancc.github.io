@@ -1,0 +1,30 @@
+
+
+if (trim(document.getElementById("txtIqrfd").value) == "" || isNaN(trim(document.getElementById("txtIqrfd").value))) {
+            alert("重点指标确认幅度不能为空且必须为数字!");
+            form1("txtIqrfd").focus();
+            return false
+        }
+
+
+http://www.w3school.com.cn/jsref/jsref_isNaN.asp
+
+-----------------------------------------------------------------------------------------
+
+用正则表达式判断是不是实数就可以了
+正则表达式是 /^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/
+var float_num = 55.89
+if (!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(float_num)) {
+//非法
+}else{
+//通过
+}
+
+
+---------------------------------------------------------------------------------------------
+
+if(!isNaN(val)){
+   alert("是数字");
+}else{
+   alert("不是数字");
+}

@@ -1,0 +1,3 @@
+
+
+ Response.Write("<script>window.parent.location.href='SelAddressBook.aspx?flag=" + location + "';</script>");

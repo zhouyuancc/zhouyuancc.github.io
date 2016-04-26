@@ -1,0 +1,24 @@
+
+//计算公告通知已阅人数
+select convert(varchar,sum(case when e.status = 1 then 1 else 0 end))+'/'+convert(varchar,count(*)) as cheked 
+
+from dbo.PubAffEmpNotice e left join dbo.PubEmpInfo g ON e.EmpCode = g.EmpCode 
+
+where e.noticeid='45a17db2252f4f9593f9d655c8117f65' and g.EmpCode !='' and e.EmpCode != ''
+
+
+SQL语句计算男女各占总人数比例
+
+select  
+
+count(*) as 人口总数,
+
+sum(case when sex=0 then 1 else 0 end) 男人数,
+
+sum(case when sex=0 then 1 else 0 end)*1.0/count(*)男所占比例,
+
+sum(case when sex=1 then 1 else 0 end) 女人数,
+
+sum(case when sex=1 then 1 else 0 end)*1.0 /count(*)女所占比例  
+
+from cj_yonghu

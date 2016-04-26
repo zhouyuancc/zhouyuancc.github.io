@@ -1,0 +1,23 @@
+ 
+////工作流-我的工作-弹出催办
+
+    loc_x = (screen.availWidth - 600) / 2;
+    loc_y = (screen.availHeight - 350) / 2;
+
+
+//            window.open("../List/telMsg.aspx?Flow_Id=" + Flow_id + "&Run_Id=" + Run_id + "&Prcs_id=" + Prcs_id + "&id=" + id + "&Flow_prcs=" + Flow_prcs + "&Form_id=" + Form_id, "_blank", "status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes,width=600,height=350,top=" + loc_y + ",left=" + loc_x + "");
+
+  
+       $.ajax({
+                type: "post",
+                url: "../../WorkFlow/Flow_View.aspx?Run_Id=" + Run_id + "&sms=0",
+                cache: false,
+                success: function (data) {
+//                    alert(data);
+                    if (data == null)
+                        alert("无超时或者未接受的工作！");
+                    else
+                        window.open("../List/Sms.aspx?Run_Id=" + Run_id + "&sms=" + data, "_blank", "status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes,width=600,height=370,top=" + loc_y + ",left=" + loc_x + "");
+
+                }
+            });

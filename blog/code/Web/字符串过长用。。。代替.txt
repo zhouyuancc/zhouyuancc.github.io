@@ -1,0 +1,67 @@
+
+        protected void rptDataList_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            Label lbl = (Label)e.Item.FindControl("lblRecipients");
+
+            if (lbl != null)
+            {
+                string[] ids = lbl.Text.Split(';');
+                lbl.Text = "";
+                for (int i = 0; i < ids.Length; i++)
+                {
+                    string sql = "select empname from V_PubEmpInfo where empcode='" + ids[i] + "'";
+                    lbl.Text = lbl.Text + SqlExec.ExecuteScalar(sql) + ";";
+                }
+                lbl.Text = lbl.Text.TrimEnd(';');
+                lbl.ToolTip = lbl.Text;
+                lbl.Text = strSub(lbl.Text, 20, "...");
+            }
+
+            LinkButton lbtn = (LinkButton)e.Item.FindControl("lbtnDel");
+            if (lbtn != null)
+            {
+                string sql = "select AttachFile from PubAffNotice where Id='" + lbtn.CommandArgument + "'";
+                string attach = SqlExec.ExecuteScalar(sql);
+                lbtn.Attributes.Add("onclick", "doAttDel('" + lbtn.CommandName + "','" + attach + "')");
+            }
+
+        }
+
+        /// <summary>
+        /// 当字符串超过输入的长度时，将超过长度的部分用.代替
+        /// </summary>
+        /// <param name="str">原字符串</param>
+        /// <param name="length">长度</param>
+        /// <param name="length">超出长度显示的字符串</param>
+        /// <returns></returns>
+        public string strSub(string str, int length, string strReplace)
+        {
+            if (str == "")
+            {
+                str = "";
+            }
+            else
+            {
+                int i = 0, j = 0;
+                foreach (char chr in str)
+                {
+                    if ((int)chr > 127)
+                    {
+                        i += 2;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                    if (i > length)
+                    {
+                        str = str.Substring(0, j) + strReplace;
+                        break;
+                    }
+                    j++;
+                }
+
+            }
+            return str;
+
+        }

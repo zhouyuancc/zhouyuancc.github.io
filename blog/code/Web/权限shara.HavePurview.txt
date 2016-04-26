@@ -1,0 +1,11 @@
+if (shara.HavePurview("工作查询-查看", Session["empcode"].ToString()) == true)
+{
+
+}
+
+
+
+Boolean bj = new ShareValue().HavePurview("生产制造部>产品台账-编辑 ", Session["empcode"].ToString());
+if (bj != true)
+{
+}

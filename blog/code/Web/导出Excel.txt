@@ -1,0 +1,77 @@
+
+前台
+
+<td width="25%" align="right" valign="middle" colspan="3">
+<asp:Button ID="btnDr" runat="server" CssClass="ButtonStyle" Text="导入" OnClick="btnDr_Click" />
+<asp:Button ID="btnExport" runat="server" CssClass="ButtonStyle" Text="导出" OnClick="btnExport_Click" />
+<asp:Button ID="btnquery" runat="server" CssClass="ButtonStyle" Text="查询" OnClick="btnquery_Click" /> 
+、</td>
+
+
+后台
+
+public partial class lc_wwhtsq_cx : System.Web.UI.Page
+    {
+        ExcelManage myexcel = new ExcelManage();
+
+
+ /// <summary>
+        /// 导出
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnExport_Click(object sender, EventArgs e)
+        {
+
+            int ColCount = myDataGV.Columns.Count;
+            this.myDataGV.Columns[ColCount - 1].Visible = false;
+            this.myDataGV.Columns[ColCount - 2].Visible = false;
+            this.myDataGV.Columns[ColCount - 3].Visible = false;
+            myexcel.DGToAllExcel(myDataGV, GetData());
+        }
+
+        /// <summary>   
+        /// 导出为Excel   
+        /// </summary>   
+        /// <param name="control">控件ID</param>   
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            // Confirms that an HtmlForm control is rendered for   
+        }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+前台
+
+
+<asp:GridView ID="myDataGV" runat="server" CssClass="tblList" BackColor="#EFF6FE" BorderWidth="0px" 
+ 
+   onrowdatabound="myDataGV_RowDataBound"
+
+AllowPaging="True" OnPageIndexChanging="myDataGV_PageIndexChanging" PageSize="19" AllowSorting="True">
+
+
+后台
+
+        /// <summary>
+        /// 导出时所有单元格都不显示科学技术法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void myDataGV_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+          
+            for (int i = 0; i < e.Row.Cells.Count; i++)
+            {
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                    e.Row.Cells[i].Attributes.Add("style", "vnd.ms-excel.numberformat:@");
+            }
+              //格式说明：
+              ////1） 文本：vnd.ms-excel.numberformat:@
+              ////2） 日期：vnd.ms-excel.numberformat:yyyy/mm/dd
+              ////3） 数字：vnd.ms-excel.numberformat:#,##0.00
+              ////4） 货币：vnd.ms-excel.numberformat:￥#,##0.00
+              ////5） 百分比：vnd.ms-excel.numberformat: #0.00%
+
+        }

@@ -1,0 +1,19 @@
+    /// <summary>
+    /// Form.ashx.cs 的摘要说明
+    /// </summary>
+    public class Form : IHttpHandler, System.Web.SessionState.IRequiresSessionState
+    {
+
+        public void ProcessRequest(HttpContext context)
+        {
+            context.Response.Charset = "UTF-8";
+            context.Response.ContentType = "text/plain";
+            context.Response.ContentEncoding = Encoding.UTF8;
+
+            LogList s = new LogList();
+
+            string l = s.GetUserLogin(context.Session["empcode"].ToString(), "报表设置");
+
+          
+        }
+     }

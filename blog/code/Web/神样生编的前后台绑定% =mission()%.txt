@@ -1,0 +1,103 @@
+
+前台
+
+
+事例
+-------------------------------------------
+No	Title
+003002	33333333333333333333333333
+003002001	33333333
+003002001001	33333333333333333333333
+-----------------------------------------------------------------------------------------
+页面显示
+--------------------
+将事例 按No顺序 显示出Title，如下：
+
+ > 新协同办公管理平台研发 > 33333333333333333333333333 > 67 
+------------------------------------------------------------------------------------------
+代码
+
+<% =mission()%>
+
+后台
+
+public string mission()
+        {
+            string str2 = "";
+            string last = "";
+           
+            string No = SqlExec.ExecuteScalar(string.Format("select No from AffWorkPlan where id='{0}'", id));
+             
+           for (int i = 1; i < 10; i++)
+           {
+               int y = 0;
+               if (No.Length == 3 || No.Length < 3)
+                {
+                    y = 0;
+                }
+               else if (i > No.Length / 3)
+               {
+                   break;
+               }
+               else
+               {
+                   y = 3 * i;
+               }
+                str2 = "select * from AffWorkPlan where No=left(@No ,"+ y +")";
+                SqlExec sqlexec2 = new SqlExec();
+                SqlParameter[] sqlpara2 = {
+                    sqlexec2.CreateInParam("@No",SqlDbType.VarChar,20,No)};
+           
+            using(System.Data.SqlClient.SqlDataReader dr2 = SqlExec.ExecuteReader(str2, CommandType.Text, sqlpara2))
+                {
+                    while (dr2.Read())
+                    {
+                            last = last+" > "+dr2["Title"].ToString();
+                    }
+                    dr2.Close();
+                }
+              } 
+
+            string a = "";
+            if (last != "")
+            {
+                a = last;
+            }
+            else
+            {
+                a = "";
+            }
+
+            return a;
+      
+        }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+前台
+
+<% =Name()%>
+
+后台
+
+public string Name()
+        {
+            if (category == "plan")
+            {
+
+                return "我的计划";
+            }
+            else if (category == "mission")
+            {
+                return "我的任务";
+            }
+            else if (category == "review")
+            {
+                return "我的审阅";
+            }
+            else
+            {
+                return "计划和任务";
+            }
+        }

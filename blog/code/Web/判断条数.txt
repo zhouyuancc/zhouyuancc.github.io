@@ -1,0 +1,23 @@
+//判断是否以在gd_zctz表中
+                strsql = "select COUNT(*) from gd_zctz where Zcbh=ltrim(@Zcbh)";
+                SqlExec sqlexec = new SqlExec();
+                SqlParameter[] sqlpa = {
+                sqlexec.CreateInParam("@Zcbh",SqlDbType.VarChar,20,Zcbh)};
+                string n = SqlExec.ExecuteScalar(strsql, CommandType.Text, sqlpa);
+                if (Convert.ToInt32(n) > 0)
+                {
+                    UserValue.Alert(this, "第" + (Convert.ToInt16(i) + 1) + "行 " + Zcbh + " 资产编号已存在,请检查！");
+                    return "";
+                }
+
+//////////////////////////////////////////////////////////////////////
+FormDocHtml.cs
+
+string strsql = "select count(" + name + ") from Zjq_Flow_Data_Doc_" + GetFlowId + " where Run_id='" + GetRunId + "' and Type = '" + GetSFType + "' ";
+          
+ string count = SqlExec.ExecuteScalar(strsql);
+           
+ if (Convert.ToInt32(count) < 1)
+            {
+                return "0";
+            }

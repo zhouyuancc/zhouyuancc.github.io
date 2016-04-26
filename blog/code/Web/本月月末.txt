@@ -1,0 +1,6 @@
+
+ÔÂ³õ
+DateTime.Now.ToString("yyyy-MM-01")
+
+ÔÂÄ©
+DateTime.Parse(DateTime.Now.ToString("yyyy-MM-01")).AddMonths(1).AddDays(-1).ToShortDateString()

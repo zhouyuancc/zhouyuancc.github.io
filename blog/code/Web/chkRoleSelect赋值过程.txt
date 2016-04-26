@@ -1,0 +1,39 @@
+ /// <summary>
+        /// 负值的过程
+        /// </summary>
+        /// <param name="empcode"></param>
+        private void SetEmpRole(string empcode)
+        {
+            try
+            {
+                string str1 = "select rolecode from PubEmpRole where empcode=@empcode and flag='1'";
+                string strsql = "select rolecode from PubEmpRole where empcode=@empcode and flag='0'";
+                SqlExec sqlexec = new SqlExec();
+                SqlParameter[] sqlpara ={                 
+                sqlexec.CreateInParam("@empcode",SqlDbType.VarChar,20,empcode)
+                                        };
+                IDataReader rs1 = SqlExec.ExecuteReader(str1, CommandType.Text, sqlpara);
+                IDataReader rs = SqlExec.ExecuteReader(strsql, CommandType.Text, sqlpara);
+                while (rs1.Read())
+                {
+                    Drpflag.SelectedValue = rs1["rolecode"].ToString();
+                }
+                rs1.Close();
+                while (rs.Read())
+                {
+                    int i;
+                    for (i = 0; i < this.chkRoleSelect.Items.Count; i++)
+                    {
+                        if (rs["rolecode"].ToString() == chkRoleSelect.Items[i].Value)
+                        {
+                            chkRoleSelect.Items[i].Selected = true;
+                        }
+                    }
+                }
+                rs.Close();
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+        }

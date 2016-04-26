@@ -1,0 +1,17 @@
+在查询结果中添加自增列的两种方法
+
+解决办法《一》：
+
+在SQL Server数据库中表信息会用到Identity关键字来设置自增列。
+
+但是当有数据被删除的话，自增列就不连续了。
+
+如果想查询出这个表的信息，并添加一列连续自增的ID，可用如下查询语句： 
+
+SELECT Row_Number() over ( order by getdate() ) as init , * FROM 表名
+
+解决办法《二》：
+
+使用关键字IDENTITY创建临时表 
+
+SELECT IDENTITY(int,1,1) as Nid,* INTO #T FROM 表名 SELECT * FROM #T

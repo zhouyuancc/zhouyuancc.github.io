@@ -1,0 +1,59 @@
+
+工作流-流程图-列表视图
+
+private string Jg(object beginTime,object endTime)///已用工时
+        {
+            //string beginTime = "2008/05/21 9:00";
+            //string endTime = "2008/05/22 13:00";
+            //DateTime beginTime1 = DateTime.Parse(beginTime);
+            //DateTime endTime1 = DateTime.Parse(endTime);
+            //TimeSpan midTime = endTime1 - beginTime1;
+            //Console.WriteLine("时间间隔为{0}天零{1}小时。", midTime.Days, midTime.Hours);
+            //Console.ReadKey();
+
+            //string begin = beginTime.ToString();
+            string begin = "2013-9-4 14:39:29";
+            string end = endTime.ToString();
+            DateTime beginTime1 = DateTime.Parse(begin);
+            DateTime endTime1 = DateTime.Parse(end);
+            TimeSpan midTime = endTime1 - beginTime1;
+        
+            string md = "";
+            string mh = "";
+            string mm = "";
+            string ms = "";
+            if (midTime.Days != 0)
+            {
+                md = midTime.Days.ToString() + "天";
+            }
+            else
+            {
+                md = "";
+            }
+            if (midTime.Hours != 0)
+            {
+                mh = midTime.Hours.ToString() + "时";
+            }
+            else
+            {
+                mh = "";
+            }
+            if (midTime.Minutes != 0)
+            {
+                mm = midTime.Minutes.ToString() + "分";
+            }
+            else
+            {
+                mm = "";
+            }
+            if (midTime.Seconds != 0)
+            {
+                ms = midTime.Seconds.ToString() + "秒";
+            }
+            else
+            {
+                ms = "";
+            }
+            string s = md + mh + mm + ms;
+            return s;
+        }

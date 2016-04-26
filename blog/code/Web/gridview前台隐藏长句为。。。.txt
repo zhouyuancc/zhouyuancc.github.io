@@ -1,0 +1,10 @@
+<asp:TemplateField HeaderText="±¸×¢">
+                            <HeaderStyle Width="7%" Height="23" HorizontalAlign="Center" VerticalAlign="Middle"
+                                CssClass="table_top" />
+                            <ItemStyle  HorizontalAlign="Left" VerticalAlign="Middle"
+                                CssClass="table_inside" />
+                            <ItemTemplate>
+                               <a title='<%#Eval("Bz") %>' style= "cursor:hand; color: #000000;">
+                                    <%#strSub(Eval("Bz").ToString(), 10, "...")%></a>
+                            </ItemTemplate>
+                        </asp:TemplateField>

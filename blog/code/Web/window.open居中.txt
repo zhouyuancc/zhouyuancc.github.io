@@ -1,0 +1,5 @@
+ 
+loc_x = (screen.availWidth - 600) / 2;
+loc_y = (screen.availHeight - 450) / 2;
+
+window.open("../List/telMsg.aspx", "_blank", "status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes,width=600,height=450,top=" + loc_y + ",left=" + loc_x + "");

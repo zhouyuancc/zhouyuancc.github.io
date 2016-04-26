@@ -1,0 +1,5 @@
+//Ê×ÏÈÅÐ¶ÏÊÇ·ñµÇÂ¼
+                if (Session["empcode"] == null || Session["empcode"].ToString() == "")
+                {
+                    Response.Write("<script>parent.location.href='login.html';</script>");
+                }

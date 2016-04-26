@@ -1,0 +1,30 @@
+
+<a id="Zj" 
+
+style="visibility:<%#Eval("delegate")%>"
+
+ href="javascript:Zj(<%#DataBinder.Eval(Container.DataItem,"Run_id") %>,<%#DataBinder.Eval(Container.DataItem,"Prcs_id") %>,<%#DataBinder.Eval(Container.DataItem,"Flow_id") %>,<%#DataBinder.Eval(Container.DataItem,"Form_id") %>,<%#DataBinder.Eval(Container.DataItem,"id") %>)">转交</a> 
+
+
+
+
+<asp:LinkButton ID="Sc" runat="server" 
+
+style='<%#DataBinder.Eval(Container.DataItem,"Manage") %>' 
+
+OnClientClick="return confirm('您确定要删除吗？')"  CommandArgument='<%#DataBinder.Eval(Container.DataItem,"Run_id") %>' OnClick="BtnDel_Click" >删除</asp:LinkButton>
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<%#DataBinder.Eval(Container.DataItem,"Manage") %>————————display:inline
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+------------------------------------------------------------------------------------------
+2015.4.27
+公文管理—收文管理—领导批阅—已批阅
+<td id="column3" runat="server">
+<asp:LinkButton ID="lbtnUrge" Text="催办" runat="server" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"rid") %>'
+                         style='<%#DataBinder.Eval(Container.DataItem,"Urge") %>'   CommandName="urge" OnCommand="rptDataList_RowCommand" />
+/////////////////////////有催办时，显示催办；无需显示时，显示—
+<a style='<%#DataBinder.Eval(Container.DataItem,"UnUrge") %>'>—</a>
+/////////////////////////
+</td>

@@ -1,0 +1,39 @@
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            ListCss.Attributes.Add("href", "/App_Themes/" + UiCss.CssName);
+
+
+            string concurrent = Request["type"] != null ? Request["type"].ToString() : "";
+            switch (concurrent)
+            {
+                case "Concurrent": Concurrent(); break;
+                case "GetPrcsName": GetPrcsName(); break;
+                case "GatherNode": GatherNode(); break;
+                case "SendBack": SendBack(); break;
+                default: break;
+            }
+
+        }
+
+        //判断是否是退回操作
+        private void SendBack()
+        {
+            int Prcs_id = Request["Prcs_id"] != null ? Convert.ToInt16(Request["Prcs_id"].ToString()) : 0;
+            string Run_Id = Request["Run_Id"] != null ? Request["Run_Id"].ToString() : "";
+            int flow_prcs = Request["flow_prcs"] != null ? Convert.ToInt16(Request["flow_prcs"].ToString()) : 0;
+
+            string sql = @"declare @test varchar(max)
+                        set @test=''
+                        select @test=@test+ user_id+';' from( select distinct user_id,op_flag from Zjq_Flow_Run_Prcs where run_id=@Run_id and prcs_id < @Prcs_id and flow_prcs = @Flow_prcs)z order by op_flag desc
+                        select @test";
+            SqlExec sqlexecSendBack = new SqlExec();
+            SqlParameter[] parm = {
+                                   sqlexecSendBack.CreateInParam("@Run_id", SqlDbType.Int, 4,  Run_Id),
+                                   sqlexecSendBack.CreateInParam("@Prcs_id", SqlDbType.Int, 4,  Prcs_id),
+                                   sqlexecSendBack.CreateInParam("@Flow_prcs",SqlDbType.VarChar,1,flow_prcs)
+                                  };
+            string ZJbr = SqlExec.ExecuteScalar(sql, CommandType.Text, parm);
+            Response.Write(ZJbr);
+            Response.End();
+        
+        }

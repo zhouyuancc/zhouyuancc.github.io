@@ -1,0 +1,127 @@
+<tfoot>
+                    <tr>
+                        <td style="width: 2%;" align="center">
+                            <input type="checkbox" id="SelectAll" onclick="chk(this);" />
+                        </td>
+                        <td align="left" colspan="8">
+                            <label for="SelectAll"><%--OnClientClick="Mm()",form.target='_blank'--%>
+                                全选</label>&nbsp;
+                            <asp:Button ID="btnDel" runat="server" class="FuncBtn" Text="删除" OnClientClick="return hasCheck('dgSelect','请选择一条记录！')"  
+                OnClick="btnDel_Click" />
+                        </td>
+                    </tr>
+                </tfoot>
+
+
+
+
+
+<div class="listLable">
+            结果列表</div>
+    </div>
+    <div class="divList">
+        <asp:Repeater ID="rptDataList" runat="server" OnItemDataBound="rptDataList_ItemDataBound">
+            <HeaderTemplate>
+                <table class="tblList">
+                    <tr>
+                    <th style="width: 5%;">
+                                
+                            </th>
+                        <th style="width: 15%;">
+                            会议标题
+                        </th>
+                        <th style="width: 6%;">
+                            发布部门
+                        </th>
+                        <th style="width: 15%;">
+                            起止时间
+                        </th>
+                        <th style="width: 10%;">
+                            地点
+                        </th>
+                       <%-- <th style="width: 8%;">
+                            主持人
+                        </th>--%>
+                        <th style="width: 15%;">
+                            参会人
+                        </th>
+                        <th style="width: 7%;">
+                            &emsp;
+                        </th>
+                        <th style="width: 6%;">
+                            &emsp;
+                        </th>
+                        <th style="width: 6%;">
+                            &emsp;
+                        </th>
+                   <%--     <th style="width: 3%;">
+                            &emsp;
+                        </th>--%>
+                    </tr>
+            </HeaderTemplate>
+            <ItemTemplate>
+                <tr>
+                <td style="width: 5%;">
+                            <span title="点击选中">
+                                <input type="checkbox" name="dgSelect" value="<%#Eval("Rid")%>" /></span>
+                        </td>
+                    <td align="left"  title="<%#Eval("Title")%>">
+
+                  <%#strSub(Eval("Title").ToString(), 25, "...")%>
+                        
+                    </td>
+                    <td>
+                        <%#Eval("DeptId")%>
+                    </td>
+                    <td>
+                        <%#Eval("starttime","{0:yyyy-MM-dd HH:mm}")%>-<%#Eval("endtime", "{0:yyyy-MM-dd HH:mm}")%></td>
+                    <td>
+                        <%#Eval("location")%>
+                    </td>
+                   <%-- <td>
+                        <%#Eval("Moderator")%>
+                    </td>--%>
+                    <td>
+                        <asp:Label ID="lblAttend" runat="server" Text='<%#Eval("Attendee") %>' Width="100%"></asp:Label>
+                    </td>
+                    <td>
+                        <%--<a href='frmPubMeetingRecordView.aspx?Id=<%# Eval("Rid") %>' target="_blank">查看详情</a>--%>
+                        <a href="#" onclick="js_callpage('frmPubMeetingRecordView.aspx?Id=<%# Eval("Rid")%>','1000','650')">
+                                    查看详情</a>
+                    </td>
+                    <td>
+                        <%--<a href='frmMeetingRecordDetail.aspx?infoid=<%#Eval("RId") %>' target="_blank">查看</a>--%>
+                        <a href="#" onclick="js_callpage('frmMeetingRecordDetail.aspx?infoid=<%#Eval("RId")%>','1000','650')">
+                                    查看</a>
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="lbtnEdit" Text="编辑" runat="server" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"Rid") %>'
+                                                    OnClick="lbtnEdit_Click" />
+                    </td>
+                   <%-- <td>
+                        <asp:LinkButton ID="lbtnDel" runat="server" Text="删除" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"Rid") %>'
+                                                    OnClick="lbtnDel_Click" OnClientClick='return confirm("确认删除吗？");' />                            
+                    </td>--%>
+                </tr>
+            </ItemTemplate>
+            <FooterTemplate>
+--------------------------------------------------------------------------------------------------------------------------------------------
+            <tfoot>
+                    <tr>
+                        <td style="width: 2%;" align="center">
+                            <input type="checkbox" id="SelectAll" onclick="chk(this);" />
+                        </td>
+                        <td align="left" colspan="8">
+                            <label for="SelectAll"><%--OnClientClick="Mm()",form.target='_blank'--%>
+                                全选</label>&nbsp;
+                            <asp:Button ID="btnDel" runat="server" class="FuncBtn" Text="删除" OnClientClick="return hasCheck('dgSelect','请选择一条记录！')"  
+                OnClick="btnDel_Click" />
+                        </td>
+                    </tr>
+                </tfoot>
+--------------------------------------------------------------------------------------------------------------------------------------------
+                </table>
+            </FooterTemplate>
+        </asp:Repeater>
+        <uc1:Pager ID="PageShow" runat="server" PageSize="10" />
+    </div>

@@ -1,0 +1,74 @@
+/// <summary>
+        /// 主表填充数据
+        /// </summary>
+        /// <param name="type">add代表新增；edit代表编辑</param>
+        protected void BindData()
+        {
+            try
+            {
+
+                string str = "";
+
+                str = "select * from AffWorkPlan where Id=@id";
+                SqlExec sqlexec = new SqlExec();
+                SqlParameter[] sqlpara = {
+                sqlexec.CreateInParam("@id",SqlDbType.VarChar,20,id)};
+                using (System.Data.SqlClient.SqlDataReader dr = SqlExec.ExecuteReader(str, CommandType.Text, sqlpara))
+                {
+                    while (dr.Read())
+                    {
+
+                        if (flag == "Split")
+                        {
+                            txtlast.Text = dr["Title"].ToString();
+                            txtNopx.Text = dr["No"].ToString();
+                        }
+                        else
+                        {
+                            txtlast.Text = dr["Title"].ToString();
+
+                            txtNopx.Text = dr["No"].ToString();
+
+                            txtTitle.Text = dr["Title"].ToString();
+                            txtContent.Value = dr["Content"].ToString();
+                            txtExecutor.Text = dr["Executor"].ToString();
+                            txtReviewer.Text = dr["Reviewer"].ToString();
+                            txtEndTime.Text = dr["EndTime"] is DBNull ? "" : Convert.ToDateTime(dr["EndTime"]).ToString("yyyy-MM-dd");
+                            txtDeliverContent.Text = dr["DeliverContent"].ToString();
+                            DrpState.SelectedValue = dr["State"] is DBNull ? "0" : dr["State"].ToString();
+                            txtPercent.Text = dr["Percent"].ToString();
+                            DrpPlanType.SelectedValue = dr["PlanType"].ToString();
+                        }
+           
+                    }
+
+                    dr.Close();
+                }
+
+                ///显示上级任务
+                string str1 = "";
+                
+///神获取
+                string No = SqlExec.ExecuteScalar(string.Format("select No from AffWorkPlan where id='{0}'", id));
+
+                str1 = "select * from AffWorkPlan where No=left(@No ,len(@No)-3)";
+                SqlExec sqlexec1 = new SqlExec();
+                SqlParameter[] sqlpara1 = {
+                sqlexec1.CreateInParam("@No",SqlDbType.VarChar,20,No)};
+                using (System.Data.SqlClient.SqlDataReader dr1 = SqlExec.ExecuteReader(str1, CommandType.Text, sqlpara1))
+                {
+                    while (dr1.Read())
+                    {
+                        if (flag == "edit" || flag == "see")
+                        {
+                            txtlast.Text = dr1["Title"].ToString();
+                        }
+                    }
+                    dr1.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+        }

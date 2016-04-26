@@ -1,0 +1,36 @@
+protected void GridView1_Sorting(object sender, GridViewSortEventArgs e)
+27      {
+28         string sPage = e.SortExpression;
+29         if (ViewState["SortOrder"].ToString() == sPage)
+30          {
+31             if (ViewState["OrderDire"].ToString() == "Desc")
+32                 ViewState["OrderDire"] = "ASC";
+33             else
+34                 ViewState["OrderDire"] = "Desc";
+35         }
+36         else
+37          {
+38             ViewState["SortOrder"] = e.SortExpression;
+39         }
+40         bind();
+41     }
+
+
+
+ public void bind()
+44      {
+45         
+46         string sqlstr = "select top 5 * from 飞狐工作室";
+47         sqlcon = new SqlConnection(strCon);
+48         SqlDataAdapter myda = new SqlDataAdapter(sqlstr, sqlcon);
+49         DataSet myds = new DataSet();
+50         sqlcon.Open();
+51         myda.Fill(myds, "飞狐工作室");
+52         DataView view = myds.Tables["飞狐工作室"].DefaultView;
+53         string sort = (string)ViewState["SortOrder"] + " " + (string)ViewState["OrderDire"];
+54         view.Sort = sort;
+55         GridView1.DataSource = view;
+56         GridView1.DataBind();
+57         sqlcon.Close();
+58     }
+59 }

@@ -1,0 +1,32 @@
+C:\Users\Administrator\Desktop\WEB-4.27\main.html
+取地址文件名
+function Browse(value) {
+            var pos=value.lastIndexOf("\\");
+            $("#uploadurl").val(value.substring(pos + 1)); //main.html
+        }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+html:<input type="file" name="file" id="file" class="input_text80"></input>
+
+var file = $("#file").val();
+
+var strFileName=file.replace(/^.+?\([^\]+?)(.[^.\]*?)?$/gi,"$1");  //正则表达式获取文件名，不带后缀
+var FileExt=file.replace(/.+./,"");   //正则表达式获取后缀
+
+////////////////////////////////////////////////////////////////////////////////////////////
+<script> 
+var a="http://www.jb51.net/html/images/logo.gif"; 
+var b=a.split("/"); 
+var c=b.slice(b.length-1, b.length).toString(String).split("."); 
+alert("取得的文件名是:" + c.slice(0, 1)); 
+</script> 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+string strFile = @"c:\abc\e.jpg";
+string strEx = System.IO.Path.GetExtension(strFile); //  返回 .jpg
+string strName = System.IO.Path.GetFileName(strFile); //返回 e.jpg 
+
+string fname = Path.GetFileNameWithoutExtension(filename);//获取文件名的
+
+            //strFilePaht.Substring(path.LastIndexOf("\\") + 1, path.Length - 1 - path.LastIndexOf("\\"));
+            //strFilePaht.Substring(path.LastIndexOf("."), path.Length - path.LastIndexOf(".")); 

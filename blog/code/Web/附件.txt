@@ -1,0 +1,12 @@
+行政办公--公告通知管理--新增
+
+<%@ Register Src="../../PubWeb/wucAttUpload.ascx" TagName="wucAttUpload" TagPrefix="uc1" %>
+
+<tr>
+                                        <td align="right" style="padding-right: 5px;">
+                                            <asp:Label ID="Label6" runat="server" Text="附件:"></asp:Label>
+                                        </td>
+                                        <td align="left" colspan="3" class="attach">
+                                            <uc1:wucAttUpload ID="wucAttUpload1" runat="server" ModuleType="Notice" />
+                                        </td>
+                                    </tr>

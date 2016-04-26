@@ -1,0 +1,128 @@
+
+个人、公共通讯录
+SelCont\SelContAdd.asp
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+行政办公>公司通讯录
+ComAddressBook.asp
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  /// <summary>
+        /// 查询数据，绑定结果集
+        /// </summary>
+        // 绑定数据列表
+        public void PageShowInitList(int currtPage)
+        {
+            {
+                try
+                {
+                    string flag = GetFlag();
+
+                    StringBuilder sql = new StringBuilder("select * from AffAddressBook ");
+                    List<string> wheres = new List<string>();
+                    List<SqlParameter> listParameter = new List<SqlParameter>();
+
+
+                    if (flag == "" + flag + "")
+                    {
+                        wheres.Add("substring(OnlySpell,1,1) like '" + flag + "%'");
+                    }
+                    //if (flag == "3")
+                    //{
+                    //    wheres.Add("substring(OnlySpell,1,1) like '3%'");
+                    //    //listParameter.Add(sqlexec.CreateInParam("@EmpCode", SqlDbType.VarChar, 30, Session["EmpCode"].ToString()));
+                    //}
+
+                    //判断用户是否选择了条件
+                    if (wheres.Count > 0)
+                    {
+                        string wh = string.Join(" and ", wheres.ToArray());
+                        sql.Append(" where " + wh);
+                    }
+                    PageShow.initList(rptDataList, "[id]", currtPage, sql.ToString(), " ORDER BY [id] ", listParameter.ToArray(), CommandType.Text);
+                }
+                catch (Exception ex)
+                {
+                    Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+                }
+            }
+        }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+前台
+
+
+JDOA.SelfAffair.xyx.xyx.asp
+
+<a href="xyx_dg.aspx?flag=打鬼">
+
+
+加密  ////////加密后，读取名称就不会出现 数据库中数据出现？的问题
+
+<a href='xyx_dg.aspx?flag=<%=DES.EncryptDES("打鬼") %>'>
+
+
+///plantype 文字 加密 ie 读取
+
+PlanType = encodeURI(PlanType);
+
+——————————————————————————————————————————————————————————————————————
+
+
+前台
+
+JDOA.SelfAffair.xyx.xyx_dg.asp
+
+<embed src="<%=Request.QueryString["flag"].ToString()%>.swf" width="840" height="600"/>
+
+解密 
+<embed src="<%=DES.DecryptDES(Request.QueryString["flag"].ToString())%>.swf" width="840" height="600"/>
+
+
+后台
+ 
+
+protected void SaveData()
+            {
+                string sql = "";
+
+
+                sql = "INSERT INTO pubhistory(czmc, ry, czrq)";
+                sql += " VALUES(@czmc@ry,getdate()) ";
+ 
+
+                SqlExec sqlexec = new SqlExec();
+                       SqlParameter[] parms = 
+                    {
+                       
+
+                        sqlexec.CreateInParam("@czmc",SqlDbType.VarChar,500,    DES.DecryptDES(Request.QueryString["flag"].ToString())     ),
+                        
+               
+                        sqlexec.CreateInParam("@ry",SqlDbType.VarChar,20,Session["empname"].ToString()),     
+                        sqlexec.CreateInParam("@czrq",SqlDbType.VarChar,50,DateTime.Now.ToString("yyyy-MM-dd HH:MM")),
+                    };
+
+
+                       SqlExec.ExecuteNonQuery(sql, CommandType.Text, parms);
+
+
+              }
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/// <summary>
+        /// 操作类型 增加：add 修改：edit 浏览：see
+        /// </summary>
+        private string flag
+        {
+            get
+            {
+                return Request.QueryString["type"] != null ? DES.DecryptDES(Request.QueryString["type"].ToString()) : "";
+            }
+        }
+
+

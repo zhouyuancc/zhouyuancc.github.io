@@ -1,0 +1,75 @@
+
+    function backc(id) {
+//        alert(id)
+        $("." + id + "").css({
+            "background-color": "#92C9F2"
+        });
+        $("." + id + "").siblings().css({
+            "background-color": "#E2F0FB"
+        });
+    }
+
+
+ onclick="backc('view')"
+
+-------------------------------------
+
+<tr>
+
+        <td align="left" class="view"  width="20px">
+       
+   <a  href="List/Flow_View/View_Graph.aspx?<% =website()%>" target="main"  title="图形视图" onclick="backc('view')"><span style="color: #000000">
+           <img style="height:16px;" src="/images/menu/@asset.gif" border="none" /> 图形视图</span></a>
+         
+   </td> 
+
+       <td align="left" width="20px" class="list">  
+      
+     <a href="List/Flow_View/View_List.aspx?<% =website()%>" target="main" title="列表视图" onclick="backc('list')" >
+           <span style="color: #000000" ><img style="height:16px;" src="/images/form/listview.gif"  border="none" /> 列表视图</span></a>
+       
+     </td>
+     
+        </tr>
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default2.aspx.cs" Inherits="Default2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <script src="Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("a").click(function () {
+                $(this).parent().removeClass("listitem_0").addClass("listitem_1");
+                $(this).parent().siblings().addClass("listitem_0");
+
+            });
+        });
+    </script>
+    <style type="text/css">
+        .listitem_1
+        {
+            color: red;
+        }
+        .listitem_0
+        {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1">
+        This is a heading</h1>
+    <ul>
+        <li class="listitem_0"><a href="javascript:void(0)">Apple</a></li>
+        <li class="listitem_0"><a href="javascript:void(0)">IBM</a></li>
+        <li class="listitem_0"><a href="javascript:void(0)">Microsoft</a></li>
+        <li class="listitem_0"><a href="javascript:void(0)">Google</a></li>
+    </ul>
+</body>
+</html>

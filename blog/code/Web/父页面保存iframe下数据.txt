@@ -1,0 +1,78 @@
+
+////////////获取iframe下所有name属性含DATA_的控件
+jQuery(document.getElementById("main").contentWindow.document.getElementById("divMain")).find("[name^='DATA_']")
+////////////
+
+var FORM_HTML = document.getElementById("main").contentWindow.document.getElementById("divMain").innerHTML;
+
+alert(FORM_HTML)
+
+////////////////////////////////////////////////////////////////
+收发文管理—发文保存1：自定义表单 0：默认表单
+ function getIframeValue(id) {
+            var value = document.getElementById("main").contentWindow.document.getElementById(id).value;
+            if (value) {
+                return value;
+            }
+            else {
+                return "";
+            }
+        }
+        //保存发文单
+        function SaveF() {
+            if (getQueryString("is_tpl") == "1")//自定义模板
+            {
+//                alert("Save1")
+//                var FORM_HTML = jQuery("#divMain").html();
+                var FORM_HTML = document.getElementById("main").contentWindow.document.getElementById("divMain").innerHTML;
+                alert(FORM_HTML)
+                FORM_HTML = htmlEncode(FORM_HTML);
+
+                jQuery.ajax({
+                    type: "POST",
+                    url: "gw_fwd.aspx?type=SaveForm&" + $("#IdType").val() + "=" + getQueryString($("#IdType").val()),
+                    data: "FORM_HTML=" + encodeURIComponent(FORM_HTML),
+                    cache: false,
+                    async: false,
+                    success: function (data) {
+                    alert(data)
+//                        if (data) {
+//                            if (flag) history.back();
+//                            return true;
+//                        }
+
+                    }
+                });
+
+            }
+            else if(getQueryString("is_tpl") == "0")//默认模板
+            {
+                var sno = getIframeValue("sno");
+                var secret = getIframeValue("secret");
+                var title = getIframeValue("title");
+                var keywords = getIframeValue("keywords");
+                var from_unit = getIframeValue("from_unit");
+                var priority = getIframeValue("priority");
+                var main_unit = getIframeValue("main_unit");
+                var copy_to_unit = getIframeValue("copy_to_unit");
+                //            alert("type=Save&" + $("#IdType").val() + "=" + getQueryString($("#IdType").val()) + "&sno=" + sno + "&secret=" + secret + "&title=" + title + "&keywords=" + keywords + "&from_unit=" + from_unit + "&priority=" + priority + "&main_unit=" + main_unit + "&copy_to_unit=" + copy_to_unit);
+                //                data: "type=Save&sid=" + getQueryString("sid") + "&sno=" + sno + "&secret=" + secret + "&title=" + title + "&keywords=" + keywords + "&from_unit=" + from_unit + "&priority=" + priority + "&main_unit=" + main_unit + "&copy_to_unit=" + copy_to_unit,
+                $.ajax({
+                    type: "POST",
+                    url: "gw_fwd.aspx",
+                    data: "type=Save&" + $("#IdType").val() + "=" + getQueryString($("#IdType").val()) + "&sno=" + sno + "&secret=" + secret + "&title=" + title + "&keywords=" + keywords + "&from_unit=" + from_unit + "&priority=" + priority + "&main_unit=" + main_unit + "&copy_to_unit=" + copy_to_unit,
+                    cache: false,
+                    async: false,
+                    success: function (data) {
+                        alert(data)
+                    }
+                })
+            }
+
+        }
+
+        function htmlEncode(s) {
+            s = s.replace(/</g, '&lt;');
+            s = s.replace(/>/g, '&gt;');
+            return s;
+        }

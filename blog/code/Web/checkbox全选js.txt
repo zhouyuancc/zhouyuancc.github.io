@@ -1,0 +1,44 @@
+<script type="text/javascript">
+
+--------------------------checkbox全选--------------------------
+
+        function chkc(obj) {
+            var objList = document.getElementsByName("dgSelect");
+            for (i = 0; i < objList.length; i++) {
+
+--------------------------checkbox [style="display:incline"] display:none-----------
+//                alert(objList[i].style.display)
+--------------------------checkbox [style="display:incline"] display:none-----------
+
+                if (objList[i].type == "checkbox" && objList[i].style.display=="inline")
+                    objList[i].checked = obj.checked;
+            }
+
+        }
+--------------------------checkbox全选 选中为隐藏的选框--------------------------
+
+<td style="width: 5%;">
+<span title="点击选中">
+<input type="checkbox" name="dgSelect" value="<%#Eval("Rid")%>" 
+
+style='<%#DataBinder.Eval(Container.DataItem,"ED") %>'
+
+/></span>
+</td>
+
+
+<tfoot>
+                    <tr>
+                        <td style="width: 2%;" align="center">
+                            <input type="checkbox" id="SelectAll" onclick="chkc(this);" />
+                        </td>
+                        <td align="left" colspan="10">
+                            <label for="SelectAll"><%--OnClientClick="Mm()",form.target='_blank'--%>
+                                全选</label>&nbsp;
+                            <asp:Button ID="btnDel" runat="server" class="FuncBtn" Text="删除" OnClientClick="return hasCheck('dgSelect','请选择一条记录！')"  
+                OnClick="btnDel_Click" />
+                        </td>
+                    </tr>
+                </tfoot>
+                </table>
+

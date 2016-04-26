@@ -1,0 +1,1 @@
+ $("#<%=btnUpload.ClientID%>").click();

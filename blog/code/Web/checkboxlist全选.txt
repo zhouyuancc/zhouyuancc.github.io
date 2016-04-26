@@ -1,0 +1,74 @@
+
+神样全选
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>无标题页</title>
+    <script type="text/javascript">
+    function checkedAll(){
+        var container=document.getElementById("<%= CheckBoxList1.ClientID%>");
+        var cbList=container.getElementsByTagName("input");
+        for(var i=0;i<cbList.length;i++){
+            if(cbList[i].type=="checkbox"){
+                cbList[i].checked=true;
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+     <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+            <asp:ListItem Value="1" Text="CheckBox1"></asp:ListItem>
+            <asp:ListItem Value="2" Text="CheckBox2"></asp:ListItem>
+            <asp:ListItem Value="3" Text="CheckBox3"></asp:ListItem>
+            <asp:ListItem Value="4" Text="CheckBox4"></asp:ListItem>
+        </asp:CheckBoxList>
+        <input type="button" value="JS全选" onclick="checkedAll()" />
+        <asp:Button ID="Button2" runat="server" Text="后台全选" OnClick="Button1_Click" />
+    </div>
+    </form>
+</body>
+</html>
+
+
+public partial class CheckedAll : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+ 
+        }
+ 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            foreach (ListItem item in this.CheckBoxList1.Items)
+            {
+                item.Selected=true;
+            }
+        }
+    }
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+asp.net如何让CheckBox1使CheckBoxList1全选 就是说选中CheckBox1 CheckBoxList1里面的所有项全部选中
+
+
+先将CheckBox1 的AutoPostBack设置为true，然后增加CheckedChanged事件：
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (ListItem item in this.CheckBoxList1.Items)
+            {
+                item.Selected = CheckBox1.Checked;
+            }
+        }
+
+    对于集合，推荐使用foreach 遍历，也可使用for
+    for(int i=0; i<Items.Count;i++)
+    {
+    //do something
+    }

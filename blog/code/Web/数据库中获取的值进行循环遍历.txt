@@ -1,0 +1,38 @@
+/////数据库中获取的值进行循环遍历
+/////JD_OA.easymob_webim  index
+
+
+        //取消事务提醒未读状态
+        private void cancelRemind(HttpContext context)
+        {
+            string send = context.Request["send"] != null ? context.Request["send"].ToString() : "";
+            string receive = context.Request["receive"] != null ? context.Request["receive"].ToString() : "";
+            string[] s;
+            char SplitChar = Convert.ToChar("-");
+            s = send.Split(SplitChar);
+            send = s[1];
+            string[] r;
+            r = receive.Split(SplitChar);
+            receive = r[1];
+
+            string sql = @"select a.SmsId from PubAffSmsto a left outer join PubAffSms b on a.SmsId = b.SmsId 
+                            where b.SendType ='5' and RemindFlag <>'0' and a.ReceiveCode = @Receive";//b.SendCode=@Send and 
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] sqlpa = {
+            sqlexec.CreateInParam("@Send",SqlDbType.VarChar,-1,send),
+            sqlexec.CreateInParam("@Receive",SqlDbType.VarChar,-1,receive)
+                                };
+            DataSet ds = SqlExec.ExecuteDataSet(sql, CommandType.Text, sqlpa);
+
+            string SmsId = "";//SqlExec.ExecuteScalar(sql, CommandType.Text, sqlpa);
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                SmsId = ds.Tables[0].Rows[i]["SmsId"].ToString();
+                if (!string.IsNullOrEmpty(SmsId))
+                {
+                    PubAffRemind.UpDataRemindFlag(RemindFlag.Accept, int.Parse(SmsId));
+                }
+            }
+
+            context.Response.Write("已读");
+        }

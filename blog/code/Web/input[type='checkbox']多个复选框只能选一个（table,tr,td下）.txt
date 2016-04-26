@@ -1,0 +1,108 @@
+<script type="text/javascript">
+
+$(function () {
+            ////主办复选框只可选其一
+            $("input[type='checkbox']").click(function () {
+                $("input[type='checkbox']").attr("checked", false);
+                $(this).attr("checked", true);
+            });
+}）
+
+</script>
+
+<table>
+<tr>
+<input type="checkbox">主办
+</tr>
+<tr>
+<input type="checkbox">主办
+</td>
+</table>
+
+----------------------------------------------------------
+改进
+////////////////////////////////
+<script type="text/javascript">
+////主办复选框只可选其一，单击td或复选框都执行该js
+//        $("input").parents("td").
+
+        function checkone(a) {
+            $("input[type='checkbox']").attr("checked", false);
+            $(a).children().attr("checked", true);
+        }
+////////////////////////////////
+</script>
+
+<table>
+<tr>
+<td onclick="checkone(this)">
+
+<input type="checkbox">主办
+</td>
+<td>
+文字
+</td>
+</tr>
+
+<tr>
+<td onclick="checkone(this)">
+
+<input type="checkbox">主办
+</td>
+<td>
+文字
+</td>
+</tr>
+</table>
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+jquery 限制 checkbox的 选中个数
+
+$("checkbox").click( function() {    
+if ( $("checkbox:checked").length > 5 ) {
+$(this).attr("checked","");        
+alert("最多能选5个");    
+}
+} );
+
+///////////////////////////////////////////////////////////////////////////////////////////
+多选发送站内信
+
+  function createOrder() {
+
+                if ($("input[type='checkbox'][name='dgSelect']:checked").attr("checked")) {
+                    //选中了
+
+                    //获取empcode
+                    var objList = document.getElementsByName("dgSelect");
+                    txt = "";
+                    for (i = 0; i < objList.length; ++i) {
+                        if (objList[i].checked) {
+                            txt = txt + objList[i].value + ","
+                        }
+                    }
+
+                    if (txt.length > 0) {
+                        txt = txt.substring(0, txt.length - 1);
+                    }
+                    window.open('../SelfAffair/MessageManage/frmMessageSend.aspx?Type=sendinfo&empcode=' + txt, 'newwindow', 'height=800, width=1000, top=140, left=140, toolbar=no, menubar=no, scrollbars=yes, resizable=no,location=no, status=no');
+
+
+                } else {
+                    return hasCheck('dgSelect', '请选择一条记录！')
+                }
+
+                return false
+            }
+
+
+
+
+<span title="点击选中全部">
+<input type="checkbox" id="SelectAll" onclick="chk(this);" /></span>
+
+<span title="点击选中">
+<input type="checkbox" id="dgSelect" name="dgSelect" value="<%#Eval("EmpCode")%>" /></span>
+
+<input type="button" onclick="createOrder()" value="发送站内信" class="FuncBtn" />

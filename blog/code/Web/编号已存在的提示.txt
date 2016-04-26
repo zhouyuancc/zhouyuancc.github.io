@@ -1,0 +1,26 @@
+
+后台
+
+ if (this.IsHth(txtHtbh.Text) == true)
+                {
+                    UserValue.Alert(this, txtHtbh.Text + " 此合同号已存在！");
+                    return;
+                }
+
+
+ private bool IsHth(string Htbh)
+        {
+            bool result = false;
+
+            string strsql = "select COUNT(Htbh) from jx_httz where Htbh=@Htbh ";
+            SqlExec sqlex = new SqlExec();
+            SqlParameter[] sqlpa = {
+                sqlex.CreateInParam("@Htbh",SqlDbType.VarChar,20,Htbh)};
+            string n = SqlExec.ExecuteScalar(strsql, CommandType.Text, sqlpa);
+            if (Convert.ToInt32(n) > 0)
+            {
+                result = true;
+            }
+
+            return result;
+        }

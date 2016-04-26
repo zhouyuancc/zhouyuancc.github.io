@@ -1,0 +1,11 @@
+using System.IO;
+
+ //删除原图
+        public void Del()
+        {
+            File.Delete(Server.MapPath(DelPath));
+            //File.Delete(Server.MapPath("~/AttachFile/Signature/20150402162428.jpg"));
+        }
+
+
+/////Server.MapPath：转化为相对路径

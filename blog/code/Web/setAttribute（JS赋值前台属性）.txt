@@ -1,0 +1,2 @@
+
+document.getElementById(colspanInt).setAttribute(colspan, 8);

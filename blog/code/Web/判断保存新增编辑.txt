@@ -1,0 +1,96 @@
+ // 判断数据在库中角色名称是否存在
+        private bool IsExistSameName()
+        {
+            bool result = false;
+            if (flag == "add")
+            {
+                strsql = "SELECT COUNT([Id]) FROM PubRoleInfo WHERE [RoleName]=@RoleName";
+            }
+            else
+            {
+                strsql = "SELECT COUNT([Id]) FROM PubRoleInfo WHERE [RoleName]=@RoleName AND [Id]<>@Id";
+            }
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] sqlpara = { sqlexec.CreateInParam("@RoleName", SqlDbType.NVarChar, 20, this.txtRoleName.Text.Trim()),
+                                       sqlexec.CreateInParam("@Id",SqlDbType.VarChar,20,hid_id)
+                                     };
+            string i = SqlExec.ExecuteScalar(strsql, CommandType.Text, sqlpara);
+            sqlexec = null;
+            if (Convert.ToInt32(i) > 0)
+            {
+                result = true;
+            }
+            return result;
+        }
+
+        // 判断数据在库中角色名称是否存在
+        private bool IsExistSameNo()
+        {
+            bool result = false;
+            if (flag == "add")
+            {
+                strsql = "SELECT COUNT([Id]) FROM PubRoleInfo WHERE [RoleNo]=@RoleNo";
+            }
+            else
+            {
+                strsql = "SELECT COUNT([Id]) FROM PubRoleInfo WHERE [RoleNo]=@RoleNo AND [Id]<>@Id";
+            }
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] sqlpara = { 
+                                         sqlexec.CreateInParam("@RoleNo", SqlDbType.Int, 4, Convert.ToInt32(txtRoleNo.Text).ToString()),
+                                         sqlexec.CreateInParam("@Id",SqlDbType.VarChar,20,hid_id)
+                                     };
+            string i = SqlExec.ExecuteScalar(strsql, CommandType.Text, sqlpara);
+            sqlexec = null;
+            if (Convert.ToInt32(i) > 0)
+            {
+                result = true;
+            }
+            return result;
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.IsExistSameName() == true)
+                        {
+                           UserValue.Alert(this, "系统中已存在此角色名称！");
+                           return;
+                        }
+               if (this.IsExistSameNo() == true)
+                        {
+                            UserValue.Alert(this, "系统中已存在此序号！");
+                            return;
+                        }
+                else
+                {
+                    if (flag == "add")
+                    {
+                        strsql = "INSERT INTO PubRoleInfo([RoleCode],[RoleNo],[RoleName],[CreateUser],[CreateDate]) VALUES(@RoleCode,@RoleNo,@RoleName,@CreateUser,GETDATE())";
+                    }
+                    else
+                    {
+
+                        strsql = "UPDATE PubRoleInfo SET [RoleNo]=@RoleNo,[RoleName]=@RoleName,[CreateUser]=@CreateUser,[CreateDate]=GETDATE() WHERE [Id]=@Id";
+                    }
+                    SqlExec sqlexec = new SqlExec();
+                    SqlParameter[] sqlpara = 
+                    {
+                        sqlexec.CreateInParam("@Id",SqlDbType.VarChar,20,hid_id),
+                        sqlexec.CreateInParam("@RoleCode",SqlDbType.VarChar,10,txtRoleCode.Text.Trim()),
+                        sqlexec.CreateInParam("@RoleNo",SqlDbType.Int,4,Convert.ToInt32(txtRoleNo.Text).ToString()),
+                        sqlexec.CreateInParam("@RoleName",SqlDbType.NVarChar,20,txtRoleName.Text.Trim()),
+                        sqlexec.CreateInParam("@CreateUser",SqlDbType.VarChar,50,Session["empname"].ToString())
+                    };
+                    SqlExec.ExecuteNonQuery(strsql, CommandType.Text, sqlpara);
+                    sqlexec = null;
+                    Response.Redirect("frmRoleInfo.aspx");
+                }
+           }
+          
+            catch (Exception ex)
+            {
+                Server.Transfer("../PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+        }

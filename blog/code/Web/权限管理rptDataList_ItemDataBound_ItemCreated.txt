@@ -1,0 +1,216 @@
+ /// <summary>
+        /// 权限管理 (隐藏列)
+        /// </summary>
+        protected void rptDataList_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            ShareValue sv = new ShareValue();
+            foreach (RepeaterItem i in rptDataList.Items)
+            {
+              
+                HtmlTableCell htc7 = (HtmlTableCell)i.FindControl("column7");
+                htc7.Visible = false;
+                HtmlTableCell htc8 = (HtmlTableCell)i.FindControl("column8");
+                htc8.Visible = false;
+                HtmlTableCell htc9 = (HtmlTableCell)i.FindControl("column9");
+                htc9.Visible = false;
+                HtmlTableCell htc10 = (HtmlTableCell)i.FindControl("column10");
+                htc10.Visible = false;
+                HtmlTableCell htc11 = (HtmlTableCell)i.FindControl("column11");
+                htc11.Visible = false;
+                HtmlTableCell htc12 = (HtmlTableCell)i.FindControl("column12");
+                htc12.Visible = false;
+                HtmlTableCell htc13 = (HtmlTableCell)i.FindControl("column13");
+                htc13.Visible = false;
+                HtmlTableCell htc14 = (HtmlTableCell)i.FindControl("column14");
+                htc14.Visible = false;
+                HtmlTableCell htc15 = (HtmlTableCell)i.FindControl("column15");
+                htc15.Visible = false;
+                HtmlTableCell htc16 = (HtmlTableCell)i.FindControl("column16");
+                htc16.Visible = false;
+                HtmlTableCell htc17 = (HtmlTableCell)i.FindControl("column17");
+                htc17.Visible = false;
+                HtmlTableCell htc18 = (HtmlTableCell)i.FindControl("column18");
+                htc18.Visible = false;
+                HtmlTableCell htc19 = (HtmlTableCell)i.FindControl("column19");
+                htc19.Visible = false;
+                HtmlTableCell htc20 = (HtmlTableCell)i.FindControl("column20");
+                htc20.Visible = false;
+                HtmlTableCell htc21 = (HtmlTableCell)i.FindControl("column21");
+                htc21.Visible = false;
+                HtmlTableCell htc22 = (HtmlTableCell)i.FindControl("column22");
+                htc22.Visible = false;
+                HtmlTableCell htc23 = (HtmlTableCell)i.FindControl("column23");
+                htc23.Visible = false;
+                HtmlTableCell htc24 = (HtmlTableCell)i.FindControl("column24");
+                htc24.Visible = false;
+                HtmlTableCell htc25 = (HtmlTableCell)i.FindControl("column25");
+                htc25.Visible = false;
+                HtmlTableCell htc26 = (HtmlTableCell)i.FindControl("column26");
+                htc26.Visible = false;
+                HtmlTableCell htc27 = (HtmlTableCell)i.FindControl("column27");
+                htc27.Visible = false;
+                HtmlTableCell htc28 = (HtmlTableCell)i.FindControl("column28");
+                htc28.Visible = false;
+                HtmlTableCell htc29 = (HtmlTableCell)i.FindControl("column29");
+                htc29.Visible = false;
+                HtmlTableCell htc30 = (HtmlTableCell)i.FindControl("column30");
+                htc30.Visible = false;
+                HtmlTableCell htc31 = (HtmlTableCell)i.FindControl("column31");
+                htc31.Visible = false;
+            }
+
+        }
+        /// <summary>
+        /// 权限管理 (隐藏表头里的列)
+        /// </summary>
+        protected void rptDataList_ItemCreated(object sender, RepeaterItemEventArgs e)
+        {
+            ShareValue sv = new ShareValue();
+            foreach (RepeaterItem item in rptDataList.Controls)
+            {
+                if (item.ItemType == ListItemType.Header)
+                {
+                 
+                    item.FindControl("head7").Visible = false;
+                    item.FindControl("head8").Visible = false;
+                    item.FindControl("head9").Visible = false;
+                    item.FindControl("head10").Visible = false;
+                    item.FindControl("head11").Visible = false;
+                    item.FindControl("head12").Visible = false;
+                    item.FindControl("head13").Visible = false;
+                    item.FindControl("head14").Visible = false;
+                    item.FindControl("head15").Visible = false;
+                    item.FindControl("head16").Visible = false;
+                    item.FindControl("head17").Visible = false;
+                    item.FindControl("head18").Visible = false;
+                    item.FindControl("head19").Visible = false;
+                    item.FindControl("head20").Visible = false;
+                    item.FindControl("head21").Visible = false;
+                    item.FindControl("head22").Visible = false;
+                    item.FindControl("head23").Visible = false;
+                    item.FindControl("head24").Visible = false;
+                    item.FindControl("head25").Visible = false;
+                    item.FindControl("head26").Visible = false;
+                    item.FindControl("head27").Visible = false;
+                    item.FindControl("head28").Visible = false;
+                    item.FindControl("head29").Visible = false;
+                    item.FindControl("head30").Visible = false;
+                    item.FindControl("head31").Visible = false;
+                    break;
+                }
+            }
+        }
+
+ /// <summary>
+        /// 隐藏表头、表体
+        /// </summary>
+        /// <param name="flag"></param>
+        private void ViewResult(Boolean flag)
+        {
+            foreach (RepeaterItem item in rptDataList.Controls)
+            {
+                if (item.ItemType == ListItemType.Header)
+                {
+                    item.FindControl("head1").Visible = flag;
+                    item.FindControl("head2").Visible = flag;
+                    item.FindControl("head3").Visible = flag;
+                    item.FindControl("head4").Visible = flag;
+                    item.FindControl("head5").Visible = flag;
+                    item.FindControl("head6").Visible = flag;
+                    item.FindControl("head7").Visible = true;
+                    
+                    item.FindControl("head8").Visible = true;
+                    item.FindControl("head9").Visible = true;
+                    item.FindControl("head10").Visible = true;
+                    item.FindControl("head11").Visible = true;
+                    item.FindControl("head12").Visible = true;
+                    item.FindControl("head13").Visible = true;
+                    item.FindControl("head14").Visible = true;
+                    item.FindControl("head15").Visible = true;
+                    item.FindControl("head16").Visible = true;
+                    item.FindControl("head17").Visible = true;
+                    item.FindControl("head18").Visible = true;
+                    item.FindControl("head19").Visible = true;
+                    item.FindControl("head20").Visible = true;
+                    item.FindControl("head21").Visible = true;
+                    item.FindControl("head22").Visible = true;
+                    item.FindControl("head23").Visible = true;
+                    item.FindControl("head24").Visible = true;
+                    item.FindControl("head25").Visible = true;
+                    item.FindControl("head26").Visible = true;
+                    item.FindControl("head27").Visible = true;
+                    item.FindControl("head28").Visible = true;
+                    item.FindControl("head29").Visible = true;
+                    item.FindControl("head30").Visible = true;
+                    item.FindControl("head31").Visible = true;
+                    break;
+                }
+            }
+
+            foreach (RepeaterItem i in rptDataList.Items)
+            {
+                HtmlTableCell htc1 = (HtmlTableCell)i.FindControl("column1");
+                htc1.Visible = flag;
+                HtmlTableCell htc2 = (HtmlTableCell)i.FindControl("column2");
+                htc2.Visible = flag;
+                HtmlTableCell htc3 = (HtmlTableCell)i.FindControl("column3");
+                htc3.Visible = flag;
+                HtmlTableCell htc4 = (HtmlTableCell)i.FindControl("column4");
+                htc4.Visible = flag;
+                HtmlTableCell htc5 = (HtmlTableCell)i.FindControl("column5");
+                htc5.Visible = flag;
+                HtmlTableCell htc6 = (HtmlTableCell)i.FindControl("column6");
+                htc6.Visible = flag;
+                HtmlTableCell htc7 = (HtmlTableCell)i.FindControl("column7");
+                htc7.Visible = true;
+       
+                HtmlTableCell htc8 = (HtmlTableCell)i.FindControl("column8");
+                htc8.Visible = true;
+                HtmlTableCell htc9 = (HtmlTableCell)i.FindControl("column9");
+                htc9.Visible = true;
+                HtmlTableCell htc10 = (HtmlTableCell)i.FindControl("column10");
+                htc10.Visible = true;
+                HtmlTableCell htc11 = (HtmlTableCell)i.FindControl("column11");
+                htc11.Visible = true;
+                HtmlTableCell htc12 = (HtmlTableCell)i.FindControl("column12");
+                htc12.Visible = true;
+                HtmlTableCell htc13 = (HtmlTableCell)i.FindControl("column13");
+                htc13.Visible = true;
+                HtmlTableCell htc14 = (HtmlTableCell)i.FindControl("column14");
+                htc14.Visible = true;
+                HtmlTableCell htc15 = (HtmlTableCell)i.FindControl("column15");
+                htc15.Visible = true;
+                HtmlTableCell htc16 = (HtmlTableCell)i.FindControl("column16");
+                htc16.Visible = true;
+                HtmlTableCell htc17 = (HtmlTableCell)i.FindControl("column17");
+                htc17.Visible = true;
+                HtmlTableCell htc18 = (HtmlTableCell)i.FindControl("column18");
+                htc18.Visible = true;
+                HtmlTableCell htc19 = (HtmlTableCell)i.FindControl("column19");
+                htc19.Visible = true;
+                HtmlTableCell htc20 = (HtmlTableCell)i.FindControl("column20");
+                htc20.Visible = true;
+                HtmlTableCell htc21 = (HtmlTableCell)i.FindControl("column21");
+                htc21.Visible = true;
+                HtmlTableCell htc22 = (HtmlTableCell)i.FindControl("column22");
+                htc22.Visible = true;
+                HtmlTableCell htc23 = (HtmlTableCell)i.FindControl("column23");
+                htc23.Visible = true;
+                HtmlTableCell htc24 = (HtmlTableCell)i.FindControl("column24");
+                htc24.Visible = true;
+                HtmlTableCell htc25 = (HtmlTableCell)i.FindControl("column25");
+                htc25.Visible = true;
+                HtmlTableCell htc26 = (HtmlTableCell)i.FindControl("column26");
+                htc26.Visible = true;
+                HtmlTableCell htc27 = (HtmlTableCell)i.FindControl("column27");
+                htc27.Visible = true;
+                HtmlTableCell htc28 = (HtmlTableCell)i.FindControl("column28");
+                htc28.Visible = true;
+                HtmlTableCell htc29 = (HtmlTableCell)i.FindControl("column29");
+                htc29.Visible = true;
+                HtmlTableCell htc30 = (HtmlTableCell)i.FindControl("column30");
+                htc30.Visible = true;
+                HtmlTableCell htc31 = (HtmlTableCell)i.FindControl("column31");
+                htc31.Visible = true;
+            }
+        }

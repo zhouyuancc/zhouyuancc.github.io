@@ -1,0 +1,28 @@
+
+<div style="position: relative;">//这个层为外面的父层，只需设置相对位置样式即可
+  <div style="position: absolute;">//这个为里面要叠加的层，只需设置绝对样式
+    <img src="ui/images/user_pic.png"/>//这个为层里面的内容图片
+  </div>
+  <img src="images/CutPhoto/man45.gif"/>//这个为父层内容
+</div>
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+          
+<div class="thumb" style="position: relative;"><%--//这个层为外面的父层，只需设置相对位置样式即可   --%>
+<div style="position: absolute;"><%--//这个为里面要叠加的层，只需设置绝对样式 --%>
+<img src="<%=headpIc() %>" alt="">
+</div>
+<img src="images/CutPhoto/man45.gif" /><%--//这个为父层内容   --%>
+</div>
+
+-----------------------------------------------------------------------------------------------------------
+
+        public string headpIc()
+        {
+            string pic = SqlExec.ExecuteScalar(string.Format("select Photo from V_PubEmpInfogrsz where empcode = '{0}' and flag='1'", Session["empcode"].ToString()));
+            if (string.IsNullOrEmpty(pic))
+            {
+                pic = "ui/images/userpic.png";
+            }
+            return pic;
+        }

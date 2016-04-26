@@ -1,0 +1,43 @@
+
+string strs = sb.ToString().Substring(0, sb.ToString().Length - 1);
+
+jquery
+
+ if (txt.length > 0) 
+{
+     txt = txt.substring(0, txt.length - 1);
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+sqlexec.CreateInParam(
+
+"@Executor",SqlDbType.VarChar,20,txtExecutor.Text.Trim(';')
+
+),
+
+/////////////////////////////////////////////////////////////////////////////
+
+TrimEnd
+
+用途：去除尾部的指定字符。
+
+ex1:string a="c:/temp/";
+string b=a.trimEnd('/');
+此时b就是："c:/temp"
+
+ 
+
+ex2:string textStr = "";
+   foreach (ListItem item in list.Items)
+   {
+    if (item.Selected)
+    {
+     textStr += item.Text + ",";
+    }
+   }
+   if (textStr.Length > 0)
+   {
+    textStr = textStr.TrimEnd(',');
+   }
+

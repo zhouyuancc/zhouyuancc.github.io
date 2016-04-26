@@ -1,0 +1,50 @@
+ /// <summary>
+        /// ¼¶±ð
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void cbo_Sybh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            String sql = "select jb as newJb,(isnull(max(px),0)+1) newPx from gd_zclb where Sybh=@Sybh group by jb";
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] sqlpara = {
+                sqlexec.CreateInParam("@Sybh",SqlDbType.VarChar,20,cbo_Sybh.SelectedValue)};
+
+
+
+            SqlDataReader rs = SqlExec.ExecuteReader(sql, CommandType.Text, sqlpara);
+            if (rs.Read())
+            {
+                TxtJb.Text = rs["newJb"].ToString();
+                TxtLbpx.Text = rs["newPx"].ToString();
+            }
+            else
+            {
+                sql = "select jb from gd_zclb where Lbbh=@Sybh group by jb";
+                SqlExec sqlex = new SqlExec();
+                SqlParameter[] sqlpa = {
+                sqlexec.CreateInParam("@Sybh",SqlDbType.VarChar,20,cbo_Sybh.SelectedValue)};
+
+
+
+
+                SqlDataReader ds = SqlExec.ExecuteReader(sql, CommandType.Text, sqlpa);
+                if (ds.Read())
+                {
+                    if (ds["jb"] == DBNull.Value)
+                    {
+                        TxtJb.Text = "0";
+                    }
+                    else
+                    {
+                        TxtJb.Text = Convert.ToString(Convert.ToInt32(ds["jb"].ToString()) + 1);
+                    }
+                    TxtLbpx.Text = "1";
+                }
+                else
+                {
+                    TxtJb.Text = "1";
+                    TxtLbpx.Text = "1";
+                }
+            }

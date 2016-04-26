@@ -1,0 +1,22 @@
+
+
+查询语句
+
+select *,case when Qdrq='1900-01-01 00:00:00.000' then '' else
+qdrq end qdrq1 from dbo.jx_httz
+
+
+后台
+
+ protected void btnSave_Click(object sender, EventArgs e)
+        {
+            *
+            *
+            *
+        sqlexec.CreateInParam("@Csrq",SqlDbType.DateTime,8,TxtCsrq.Text==""?null:Convert.ToDateTime(TxtCsrq.Text).ToString("yyyy-MM-dd")),
+        //保存数据时，若时间为空，显示为空值，不为空则显示框中日期
+
+****
+}
+
+

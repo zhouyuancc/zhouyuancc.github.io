@@ -1,0 +1,148 @@
+
+<script language="javascript" type="text/javascript">
+$(function () {
+        $("#btnSave").click(function () {
+
+            var fld_str = "";
+            for (i = 0; i < form1.select1.options.length; i++) {
+                options_value = form1.select1.options[i].text;
+                fld_str += options_value + ",";
+            }
+            //            alert(fld_str)//已选项目,隔开
+
+            $.post("ShortCuts.aspx?flag=click", "date=" + fld_str, function () {
+
+            });
+            alert("保存成功");
+
+        });
+    })
+</script>
+
+<form name="form1">
+ <tr class='TableControl'>
+            <td align="center" valign="top" colspan="4" class="TableContent">
+                点击条目时，可以组合CTRL或SHIFT键进行多选<br>
+                <input type="button" class="BigButton" value="保存设置" id="btnSave">
+            </td>
+        </tr>
+
+    </form>
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+后台
+
+  protected void Page_Load(object sender, EventArgs e)
+        {
+
+            var flag = Request["flag"];
+
+            if (!Page.IsPostBack)
+            {
+
+                switch (flag)
+                {
+                    case "click": BtnSave(); break;
+
+                }
+            }
+        }
+
+  private void BtnSave()
+        {
+            try
+            {
+
+                ///先删除
+                string sqlstrd = "delete SelShortCuts where EmpCode=@EmpCode";
+                SqlExec sqlexecd = new SqlExec();
+                SqlParameter[] sqlparad ={                 
+                sqlexecd.CreateInParam("@EmpCode",SqlDbType.VarChar,30,Session["EmpCode"].ToString())
+                                        };
+
+                SqlExec.ExecuteNonQuery(sqlstrd, CommandType.Text, sqlparad);
+
+
+                ///保存
+                //string names = Request.QueryString["date"].ToString();//get时应用
+                string names = Request.Form["date"];//post时应用
+
+     //////////用逗号，分隔names
+                string[] s = names.Split(',');
+
+
+                string sql = "";
+                sql = @"INSERT INTO [SelShortCuts] (EmpCode,NodeId,ShortCuts,Zt,CreateUser,CreateDate) VALUES ('" + Session["empcode"].ToString() + "',@NodeId,@ShortCuts,'1',@CreateUser,getdate())";
+
+                for (Int16 i = 0; i < s.Length - 1; i++)
+                {
+
+                    string name = s[i];
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+                    string id = SqlExec.ExecuteScalar(string.Format("select NodeId from PubMenuTree where NodeName='{0}'", name));//根据id和name的关系获取id
+
+            string FreePreset = SqlExec.ExecuteScalar(string.Format("select Free_Preset from Zjq_Flow_Type where Flow_id='{0}' and Form_id='{1}' ", Flow_id, Form_id));
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+                    SqlExec sqlexec = new SqlExec();
+                    SqlParameter[] para = new SqlParameter[]{
+
+               sqlexec.CreateInParam("@NodeId",SqlDbType.VarChar,20,id),
+               sqlexec.CreateInParam("@ShortCuts",SqlDbType.VarChar,20,name),
+               sqlexec.CreateInParam("@CreateUser",SqlDbType.VarChar,30,Session["empname"].ToString()),
+                        };
+                    SqlExec.ExecuteNonQuery(sql, CommandType.Text, para);
+                //UserValue.Alert(this, "保存成功");///弹出无效
+                }
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+        }
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+另一个例子
+
+角色详情--[<% =RoleName()%>]
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+public partial class SeeRoleList : System.Web.UI.Page
+    {
+        private string hid_id
+        {
+            get
+            {
+                return Request.QueryString["detail"] != null ? DES.DecryptDES(Request.QueryString["detail"].ToString()) : "";
+            }
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!this.Page.IsPostBack)
+            {
+                PageShowInitList(1);
+                BindData();
+            }
+        }
+
+        public string RoleName()
+        {
+
+
+
+            string RoleName = SqlExec.ExecuteScalar(string.Format("select RoleName from PubRoleInfo where RoleCode='{0}'", hid_id));
+           
+
+            return RoleName;
+
+        }
+}
+
+

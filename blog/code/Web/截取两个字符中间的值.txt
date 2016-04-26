@@ -1,0 +1,29 @@
+// {
+            //  "action" : "get",
+            //  "params" : {
+            //    "access_token" : [ "YWMtiflVaj8eEeWxNZ2SxXpZDgAAAVBLBLD5aArkSbzdJKNBg-qCwXtqObS89OQ" ]
+            //  },
+            //  "uri" : "http://a1.easemob.com/sgjd/sgjd/users/dc-zhouyuan/offline_msg_count",
+            //  "entities" : [ ],
+
+-------------------------------------
+            //  "data" : {
+            //    "dc-zhouyuan" : 1
+            //  },
+
+-------------------------------------
+            //  "timestamp" : 1439516008543,
+            //  "duration" : 6
+            //}
+
+--------------------------------------------------------------------------------------
+int beginIndex = offlineMsgJson.IndexOf("data");
+int endIndex = offlineMsgJson.IndexOf("timestamp");
+
+string strDest = offlineMsgJson.Substring(beginIndex, endIndex - beginIndex);
+--------------------------------------------------------------------------------------
+
+       //data" : {
+            //    "dc-zhouyuan" : 1
+            //  },
+            //"

@@ -1,0 +1,70 @@
+加密
+if (!line) {
+                line = "";
+            }
+            else {
+                //                                   alert(encodeURI(line))
+                $.ajax({
+                    type: "POST",
+                    url: "Turn_Next_Free.aspx?Encode=" + line,
+                    cache: false,
+                    async: false,
+                    success: function (data) {
+                        line = data;
+                    }
+                })
+            }
+            URL = "../List/Turn/User_Select.html?Flow_Id=" + getQueryString("Flow_id") + "&Prcs_name=" + Prcs_name + "&line=" + line;
+      
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+解密
+   var line = getQueryString("line");
+            if (!line) {
+                line = "";
+            }
+            else {
+                $.ajax({
+                    type: "POST",
+                    url: "../../New/Turn_Next_Free.aspx?Decode=" + line,
+                    cache: false,
+                    async: false,
+                    success: function (data) {
+                        line = data;
+                    }
+                })
+            }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                if (!string.IsNullOrEmpty(Request["Encode"]))
+                {
+                    Encode(Request["Encode"].ToString());
+                }
+                if (!string.IsNullOrEmpty(Request["Decode"]))
+                {
+                    Decode(Request["Decode"].ToString());
+                }
+            }
+        }
+        /// <summary>
+        /// 加密
+        /// </summary>
+        /// <param name="value"></param>
+        public void Encode(string value)
+        {
+            Response.Write(DES.EncryptDES(value));
+            Response.End();
+        }
+        /// <summary>
+        /// 解密
+        /// </summary>
+        /// <param name="value"></param>
+        public void Decode(string value)
+        {
+            Response.Write(DES.DecryptDES(value));
+            Response.End();
+        }

@@ -1,0 +1,9 @@
+
+
+<td id="column3"  runat="server" Text='<%#Eval("SuitMember") %>'>///获取不到
+
+
+/////能获取
+  <td id="column3"  runat="server" title='<%#Eval("SuitMember") %>'>
+<td  title="<%#Eval("ContactName")%>">
+  <td title='<%#Eval("PName")%>'>

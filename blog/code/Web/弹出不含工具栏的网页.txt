@@ -1,0 +1,64 @@
+
+前台
+
+<a style="cursor:pointer" onclick="javascript:{window.open ('index.aspx', 'newwindow', 'height=1000, width=500, top=0, left=0, toolbar=no, menubar=no, scrollbars=yes, resizable=yes,location=no, status=no');}">打开一个窗口</a>
+
+
+例
+ <asp:TemplateField HeaderText="">
+                            <ItemTemplate>
+                               /////////id与type、address顺序不能倒
+                                     <a href='#'
+                                     onclick="javascript:{window.open ('frmCompanyImgAdd.aspx?id=<%#DataBinder.Eval(Container.DataItem,"Id") %>&type=see&address=1.ToString()) ','newwindow', 'height=700,width=1000,toolbar=no, menubar=no, scrollbars=yes, resizable=yes,location=no, status=no');}">查看</a>
+                                          
+                            </ItemTemplate>
+                            <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" CssClass="table_top"
+                                Height="23px" Width="5%" />
+                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Height="31px" Width="5%"
+                                CssClass="table_inside" />
+                        </asp:TemplateField>
+
+
+
+参数解释： 
+　　
+　　<SCRIPT LANGUAGE="javascript"> js脚本开始； 
+　　window.open 弹出新窗口的命令； 
+　　'page.html' 弹出窗口的文件名； 
+　　'newwindow' 弹出窗口的名字（不是文件名），非必须，可用空''代替； 
+　　height=100 窗口高度； 
+　　width=400 窗口宽度； 
+　　top=0 窗口距离屏幕上方的象素值； 
+　　left=0 窗口距离屏幕左侧的象素值； 
+　　toolbar=no 是否显示工具栏，yes为显示； 
+　　menubar，scrollbars 表示菜单栏和滚动栏。 
+　　resizable=no 是否允许改变窗口大小，yes为允许； 
+　　location=no 是否显示地址栏，yes为允许； 
+　　status=no 是否显示状态栏内的信息（通常是文件已经打开），yes为允许； 
+　　</SCRIPT> js脚本结束 
+
+
+
+
+前台
+
+ <asp:TemplateField>
+                                            <ItemTemplate>
+                                            
+                                             <a href="#" onclick="js_callpage('jx_httz_mx.aspx?type=see&amp;h_id=<%#DES.EncryptDES(Eval("id").ToString()) %>','1000','700')">查看</a>
+                                             </ItemTemplate>
+                                            <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="4%" CssClass="table_top" />
+                                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" CssClass="table_inside" />
+                                        </asp:TemplateField> 
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  <a href="#" onclick="js_callpage('jx_httz_mx.aspx?type=see&amp;h_id=<%#DES.EncryptDES(Eval("id").ToString()) %>','1000','700')">查看</a>
+
+                                     <a href='#'
+                                     onclick="javascript:{window.open ('frmCompanyImgAdd.aspx?id=<%#DataBinder.Eval(Container.DataItem,"Id") %>&type=see&address=1.ToString()) ','newwindow', 'height=700,width=1000,toolbar=no, menubar=no, scrollbars=yes, resizable=yes,location=no, status=no');}">查看</a>
+                                          
+                                             

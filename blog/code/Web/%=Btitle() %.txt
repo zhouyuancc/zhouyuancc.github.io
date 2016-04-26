@@ -1,0 +1,16 @@
+
+
+<%=Btitle() %>
+
+
+
+protected string Btitle()
+        {
+            string Title = "";
+
+            string Khnr = SqlExec.ExecuteScalar(string.Format("select Khnr from RS_KH_Mb where Id='{0}'", hid_id));
+            string Khbz = SqlExec.ExecuteScalar(string.Format("select Khbz from RS_KH_Mb where Id='{0}'", hid_id));
+
+            Title = "¿¼ºËÄÚÈÝ" + Khnr + "¿¼ºË±ê×¼" + Khbz;
+            return Title;
+        }

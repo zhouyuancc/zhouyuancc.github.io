@@ -1,0 +1,16 @@
+<asp:TemplateField HeaderText="ÐòºÅ">
+   <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle"/>
+   <ItemStyle HorizontalAlign="Center" Width="3%"></ItemStyle>
+
+<ItemTemplate>
+<asp:Label ID="Label1" runat="server" Text="<%#Container.DataItemIndex+1  %>"> 
+</asp:Label>
+</font>
+</ItemTemplate>
+
+</asp:TemplateField>
+
+
+
+//////////////////////////////////////////////////////////////////////
+<%#Container.ItemIndex+1%>

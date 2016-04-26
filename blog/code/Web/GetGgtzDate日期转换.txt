@@ -1,0 +1,21 @@
+      
+½«01/28/2015×ª»»Îª 01-28
+ 
+function GetGgtzDate(d) {
+    var myDate = d.split("/")[0] + "-" + d.split("/")[1];
+    return myDate;
+}
+
+
+select top 7 a.title,
+---------------------------------------------------------------
+CONVERT(varchar(100), a.createdate, 23) date,
+convert(varchar(10),a.createdate,101) as mydate,
+---------------------------------------------------------------
+b.EmpName,'PubAff/frmAffNoticeDetail.aspx?infoid='+a.Id url
+from PubAffNotice a,V_PubEmpInfo b where a.CreateUser=b.EmpCode and DeleteType = '0' and
+a.Source like '%'+'000017'+'%'
+and
+a.IsAudit='0'
+and a.NoticeType<>'Rules'
+

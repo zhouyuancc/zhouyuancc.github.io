@@ -1,0 +1,112 @@
+
+隔4个分号截取一次
+
+        /// <summary>
+        ///保存
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            string sql = "";
+            var str = hdSurName.Value;//长字符串
+            string[] arrStr = str.Split(';'); 
+            int arrEleCount = arrStr.Length; 
+            //分号分开的数组的元素个数
+            int i4 = arrEleCount /4; 
+            //计算一共有几个4，分成几段POST
+            if (Type == "add")
+            {
+                //sql = @" CREATE TABLE [dbo].[" + d_name.Text + "]( ";
+                string sql1 = @" CREATE TABLE [dbo].[Table_2]( ";
+                sql1 += @"[Id] [int] IDENTITY(1,1) NOT NULL,) ON [PRIMARY]";
+                SqlExec.ExecuteNonQuery(sql1);//创建id自增的表
+
+                for (int i = 0; i < i4; i++)
+                {
+
+                    string postStr = String.Join(";", arrStr, i * 4, 4);
+                    //循环获取各段   
+                    string[] sz = postStr.Split(';');
+
+                    string type = "";
+
+                    if (sz[2] == "0")//类型 文本
+                    {
+                        type = " [varchar](Max) ";
+                    }
+                    else//类型 数字 
+                    {
+                        type = " int ";
+                    }
+                    //添加列
+                    sql += @"alter table [Table_2] add [" + sz[0] + "] " + type + " NULL ";
+                    
+                    if (sz[3] != "0")//唯一约束
+                    {
+                        sql += @" alter table [Table_2] add  unique([" + sz[0] + "]) ";
+                    }
+                    SqlExec.ExecuteNonQuery(sql);
+                }
+   
+
+            }
+
+
+        //    if (i4 * 4 < arrEleCount){   
+        //        string postStr = str.Substring(i4* 4 + 1);    
+        //    //如果字符串的分号总数不是500的整数倍，将最后剩余的不足500的，算做一个，post出去（或者扔掉，你自己定）    
+        //    //这里是你post的过程，将 postStr post 出去即可。
+        //}
+
+
+        }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+我现在有个很长很长很长的字符串，里面有分号，可能有几万个分号，分号与分号之间的长度不固定。我现在要把第500个分号前面的内容截取下来post到一个页面上，然后把第500个分号到第1000个分号，截取下再post，即每500个分号之间的内容获取到。现在有点棘手，希望大牛能指点一下，如果有代码最好不过了。对于一些类似“正则啊，自己百度一下，就知道了”，我已经听到了很多。没有解决我的问题。对于这样的回答，就不要贴了。 
+
+
+这个实现起来不难，使用数组好了。 
+
+
+string str = ".....你的长字符串";
+
+string[] arrStr = str.Split(';');
+
+int arrEleCount = arrStr.Length;//分号分开的数组的元素个数
+
+int i500 = arrEleCount / 500; 
+//计算一共有几个500，分成几段POST
+
+for(int i = 0; i < i500; i++)
+{    
+string postStr = String.Join(";", arrStr, i*500, 500); 
+//循环获取各段    
+//这里是你post的过程，将 postStr post 出去即可。
+} 
+
+if (i500 * 500 < arrEleCount)
+{    
+string postStr = str.Substring(i500* 500 + 1);    
+//如果字符串的分号总数不是500的整数倍，将最后剩余的不足500的，算做一个，post出去（或者扔掉，你自己定）    
+//这里是你post的过程，将 postStr post 出去即可。
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+private string GetStringByIndex(string 你的长字符串,int start,int end)
+{
+string[] strBox=你的长字符串.split(';');string returnValue="";
+for(int i=strat;i<end;i++)
+{
+returnValue+=strBox[i];
+//这样返回的内容不存在分号
+//returnValue=return+strBox[i]+";";
+//这样返回的内容包含分号
+}
+return returnValue
+}

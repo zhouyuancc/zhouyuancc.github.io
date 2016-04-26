@@ -1,0 +1,1 @@
+$("#imgphoto").attr("src", "../Images/CutPhoto/man45.GIF");

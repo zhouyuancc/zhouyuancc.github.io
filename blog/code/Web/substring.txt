@@ -1,0 +1,99 @@
+        /// <summary>
+        /// 保存数据
+        /// </summary>
+        /// <param name="flag">add代表新增；edit代表编辑</param>
+        void SaveData(string flag)
+        {
+            try
+            {
+                string drbm = txtdrbm.Text.Substring(0, txtdrbm.Text.Length - 1);
+                string str;
+                if (flag == "add")
+                    str = "P_lc_ygdd_ADD";
+                else
+                    str = "P_lc_ygdd_Update";
+                SqlExec sqlexec = new SqlExec();
+                SqlParameter[] para = new SqlParameter[]{
+                sqlexec.CreateInParam("@ServerCode",SqlDbType.VarChar,20,txtServerCode.Text),
+               
+                sqlexec.CreateInParam("@drbm",SqlDbType.VarChar,60,drbm),
+               
+                sqlexec.CreateInParam("@CreateUser",SqlDbType.VarChar,50,Session["empname"].ToString()),
+                sqlexec.CreateInParam("@CreateDate",SqlDbType.VarChar,50,DateTime.Now.ToString("yyyy-MM-dd HH:MM"))
+            };
+                SqlExec.ExecuteNonQuery(str, CommandType.StoredProcedure, para);
+                if (flag == "edit")
+                    flow.UpSafePlane(Convert.ToInt16(this.RadSafePlane.SelectedIndex), this.txtServerCode.Text);
+
+                flow.UploadFuJian(this.txtServerCode.Text, this, "../../");
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("~/PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+        }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+string a="123456789";
+string b=a.substring(2,3);
+
+b的值就得到345
+
+意思是a中的第2位后开始取3位
+
+第2位数字可以省略,比如b=a.substring(2)
+
+就掉表从a中的第2位后开始取到结束
+
+b的值就是3456789
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+string s = comboBox2.Text + '/' + listView3.SelectedItems[0].Text;        
+    string m = s.Substring(0, s.Length - 1);         
+   comboBox2.Text = m;            listView3.Items.Clear();      
+
+       fangfa(@"ftp://hhhh@219.220.112.130"+m);
+
+
+
+s.Length 是s字符串变量的长度，
+-1的意思的截取到倒数二数，
+整个意思就是截取s字符串“得到”最后一个字符 。
+
+至于前面的那个0就是从第一个开始截取，
+
+一般索引是从0开始的。
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+SQL中substring()函数的作用是什么？
+比如：substring(@a,@b,1)=','是什么意思？
+1是做什么用的？
+
+
+
+返回字符、二进制、文本或图像表达式的一部分。 
+
+语法  
+
+SUBSTRING ( expression, start, length )   
+
+参数
+
+expression 
+字符串、二进制字符串、文本、图像、列或包含列的表达式。请勿使用包含聚合函数的表达式。
+
+start 
+整数或可以隐式转换为 int 的表达式，指定子字符串的开始位置。
+
+length 
+整数或可以隐式转换为 int 的表达式，指定子字符串的长度。
+
+返回值 
+如果 expression 是一种支持的字符数据类型，则返回字符数据。如果 expression 是一种支持的二进制数据类型，则返回二进制数据。如果 start = 1，则子字符串从表达式的第一个字符开始。

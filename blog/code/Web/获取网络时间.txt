@@ -1,0 +1,8 @@
+http://zhidao.baidu.com/link?url=g6O6OvxMdkRH6uFLMYMNt9zmrKZcFrW2TF1PW_9Km8ck9NX4mpAHGALOrEgCFWNSdOunieFqBSmKSUkd6kiNHa
+
+
+#region 获取网络时间
+///<summary>
+/// 获取中国国家授时中心网络服务器时间发布的当前时间
+///</summary>
+///<returns></returns>public static DateTime GetChineseDateTime(){    DateTime res = DateTime.MinValue;    try    {        string url = "http://www.time.ac.cn/stime.asp";        HttpHelper helper = new HttpHelper();        helper.Encoding = Encoding.Default;        string html = helper.GetHtml(url);        string patDt = @"\d{4}年\d{1,2}月\d{1,2}日";        string patHr = @"hrs\s+=\s+\d{1,2}";        string patMn = @"min\s+=\s+\d{1,2}";        string patSc = @"sec\s+=\s+\d{1,2}";        Regex regDt = new Regex(patDt);        Regex regHr = new Regex(patHr);        Regex regMn = new Regex(patMn);        Regex regSc = new Regex(patSc);        res = DateTime.Parse(regDt.Match(html).Value);        int hr = GetInt(regHr.Match(html).Value, false);        int mn = GetInt(regMn.Match(html).Value, false);        int sc = GetInt(regSc.Match(html).Value, false);        res = res.AddHours(hr).AddMinutes(mn).AddSeconds(sc);    }    catch { }    return res;}

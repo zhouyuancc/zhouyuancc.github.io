@@ -1,0 +1,18 @@
+
+前台
+
+<asp:HyperLinkField Text="查看" 
+DataNavigateUrlFields="servercode" //链接的字段名
+Target="_blank"
+DataNavigateUrlFormatString="lc_wwhtsq_mx.aspx?type=see&amp;servercode={0}">
+//路径
+<HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="10%" Height="23px" />
+                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="10%" />
+                        </asp:HyperLinkField> 
+
+
+
+
+方案二：精确控制弹出窗口大小位置
+1 <asp:HyperLinkColumn DataNavigateUrlField="EmployeeID" DataNavigateUrlFormatString="javascript:varwin=window.open('detail.aspx?ID={0}',null,'width=300,height=200');window.Close();"
+2        DataTextField="LastName" HeaderText="LastName"></asp:HyperLinkColumn>

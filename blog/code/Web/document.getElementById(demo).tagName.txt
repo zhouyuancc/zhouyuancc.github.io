@@ -1,0 +1,3 @@
+获得元素的标签名：
+
+document.getElementById("demo").tagName;

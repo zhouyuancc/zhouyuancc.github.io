@@ -1,0 +1,82 @@
+//http://localhost:3219/WorkFlow/New/Turn_Next_Concurrent.aspx?Flow_id=77&Form_id=43&Prcs_id=1&Run_Id=2476&id=3114
+
+            //Sync_Deal//是否允许并发 0禁止1允许2强制//Gather_Node并发合并选项 0非强制1强制//
+            $.ajax({
+                type: "POST",
+                url: "Turn_Next_Concurrent.aspx",
+                data: "type=Concurrent&Flow_id=" + getQueryString("Flow_id") + "&Prcs_id=" + getQueryString("Prcs_id"),
+                dataType: "json",
+                cache: false,
+                async: false,
+                success: function (data) {
+
+                    alert(data[0].Sync_Deal);
+                    alert(data[0].Gather_Node);
+
+                }
+            })
+
+
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Web;
+using System.Web.SessionState;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Configuration;
+using System.Net;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Web.Security;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Microsoft.VisualBasic;
+using Aspose.Excel;
+using MakeMD5;
+using JD_OA.SelfAffair;
+using JD_OA.Webservice;
+
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+            string concurrent = Request["type"] != null ? Request["type"].ToString() : "";
+            switch (concurrent)
+            {
+                case "Concurrent": Concurrent(); break;
+                default: break;
+            }
+
+        }
+
+        private void Concurrent()
+        {
+            //int Prcs_id = (Request["Prcs_id"] != null ? Convert.ToInt16(Request["Prcs_id"].ToString()) : 0) + 1;
+            int Prcs_id = Request["Prcs_id"] != null ? Convert.ToInt16(Request["Prcs_id"].ToString()) : 0;
+            string Flow_id = Request["Flow_id"] != null ? Request["Flow_id"].ToString() : "";
+            DataTable dt = SqlExec.ExecuteDataSet(string.Format("select ISNULL(Sync_Deal, 0) Sync_Deal,ISNULL(Gather_Node, 0) Gather_Node from Zjq_Flow_Process where Flow_id='{0}' and Prcs_id=" + Prcs_id + " ", Flow_id)).Tables[0];
+            string data = "[";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                data += "{";
+                for (int j = 0; j < dt.Columns.Count; j++)
+                {
+                    data += "\"";
+                    data += dt.Columns[j].ColumnName;
+                    data += "\":\"";
+                    data += dt.Rows[i][j].ToString();
+                    data += "\",";
+                }
+                data = data.Substring(0, data.Length - 1);
+                data += "},";
+            }
+            data = data.Substring(0, data.Length - 1) + "]";
+
+            Response.Write(data);
+            Response.End();
+        }

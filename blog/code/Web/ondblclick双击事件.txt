@@ -1,0 +1,2 @@
+<tr ondblclick = \"dbclick(this)\" onclick=\"changeBc(this)\" style=\"cursor: pointer;\">
+</tr>

@@ -1,0 +1,229 @@
+ 
+前台
+
+<div class="cxtj_down" style="width: 100%; padding-left: 10px; padding-top: 3px; padding-right: 3px;
+                                    padding-bottom: 3px;">
+                                
+
+
+<asp:Button ID="btnSave" runat="server" CssClass="ButtonStyle" Text="保存" OnClick="btnSave_Click" />&nbsp;&nbsp;
+                                
+
+
+<asp:Button ID="btnBack" runat="server" CssClass="ButtonStyle" Text="返回" OnClick="btnBack_Click" />&nbsp;&nbsp;
+                                
+
+<asp:Button ID="btnAdd" runat="server" CssClass="ButtonStyle" Text="取消" OnClick="ibtnadd_Click" />
+                                <input id="hdEmpCode" runat="server" type="hidden" />
+                                <input id="Hidden1" runat="server" type="hidden" />
+
+
+
+
+后台
+
+
+/// <summary>
+        /// 取消操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void ibtnadd_Click(object sender, EventArgs e)
+        {
+            if (btnAdd.Text == "取消")
+            {
+                btnAdd.Text = "取消";
+                textcanwrite();
+                btnSave.Visible = true;
+            }
+            else
+            {
+                btnAdd.Text = "取消";
+                textcanwrite();
+                btnSave.Visible = true;
+            }
+            this.ClearText();
+            textcanwrite();
+        }
+  
+        ///// <summary>
+        ///// 清空输入厂
+        ///// </summary>
+        private void ClearText()
+        {
+            this.txtFl.Text = "";
+            this.txtScbh.Text = "";
+            this.txtHtbh.Text = "";
+            this.txtDhcj.Text = "";
+            this.txtCpmc.Text = "";
+            this.txtSl.Text = "";
+            this.txtZl.Text = "";
+            this.txtHtje.Text = "";
+        }
+        private void textreadonly()
+        {
+            this.txtFl.ReadOnly = true;
+            this.txtScbh.ReadOnly = true;
+            this.txtHtbh.ReadOnly = true;
+            this.txtDhcj.ReadOnly = true;
+            this.txtCpmc.ReadOnly = true;
+            this.txtSl.ReadOnly = true;
+            this.txtZl.ReadOnly = true;
+            this.txtHtje.ReadOnly = true;
+        }
+        private void textcanwrite()
+        {
+            this.txtFl.ReadOnly = false;
+            this.txtScbh.ReadOnly = false;
+            this.txtHtbh.ReadOnly = false;
+            this.txtDhcj.ReadOnly = false;
+            this.txtCpmc.ReadOnly = false;
+            this.txtSl.ReadOnly = false;
+            this.txtZl.ReadOnly = false;
+            this.txtHtje.ReadOnly = false;
+        }
+
+
+//返回
+ protected void btnBack_Click(object sender, EventArgs e)
+        {
+           
+            Response.Redirect("jx_httz.aspx");
+        }
+
+
+
+
+
+
+
+
+
+///////////
+保存
+/////////////
+    private string strsql = string.Empty;
+ /// <summary>
+        /// 绑定查询数据
+        /// </summary>
+        private void BindData()
+        {
+            try
+            {
+
+                string strsql = "select * from PubParameter where ParaType='材料大类' order by OrderCol";
+                SqlExec sqlexec = new SqlExec();
+                SqlParameter[] sqlpara = {
+                sqlexec.CreateInParam("@ParaType",SqlDbType.VarChar,50,txtParaCode.Text)};
+                DataSet mydata = SqlExec.ExecuteDataSet(strsql, CommandType.Text, sqlpara);
+
+                if (mydata.Tables[0].Rows.Count == 0)
+                {
+                    DataRow rs = mydata.Tables[0].NewRow();
+                    mydata.Tables[0].Rows.Add(rs);
+                    myDataGV.Columns[myDataGV.Columns.Count - 1].Visible = false;
+                    myDataGV.Columns[myDataGV.Columns.Count - 2].Visible = false;
+                    myDataGV.Columns[myDataGV.Columns.Count - 3].Visible = false;
+                }
+                else
+                {
+                    myDataGV.Columns[myDataGV.Columns.Count - 1].Visible = true;
+                    myDataGV.Columns[myDataGV.Columns.Count - 2].Visible = true;
+                    myDataGV.Columns[myDataGV.Columns.Count - 3].Visible = true;
+                }
+                myDataGV.DataSource = mydata;
+                this.myDataGV.DataMember = mydata.Tables[0].TableName;
+                this.myDataGV.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("../PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+        }
+
+
+
+   /// <summary>
+        /// 判断数据在库中是否存在
+        /// </summary>
+        /// <returns></returns>
+        private bool IsExistSameCode()
+        {
+            bool result = false;
+            if (txtId.Text == "")
+            {
+                strsql = "select count(*) from PubParameter where ParaCode=@ParaCode";
+           
+            }
+            else
+            {
+                strsql = "select count(*) from PubParameter where ParaCode=@ParaCode and id<>'" + txtId.Text + "'";
+            }
+
+            SqlExec sqlexec = new SqlExec();
+            SqlParameter[] sqlpara = {
+                sqlexec.CreateInParam("@ParaCode",SqlDbType.VarChar,20,txtParaCode.Text)};
+            string i = SqlExec.ExecuteScalar(strsql, CommandType.Text, sqlpara);
+            if (Convert.ToInt32(i) > 0)
+            {
+                result = true;
+            }
+
+            return result;
+        }
+
+
+
+  /// <summary>
+        /// 保存操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void ibtnsave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (IsExistSameCode() == true)
+                {
+                    string message = "系统中已存在此系统编号！";
+                    //ScriptManager.RegisterStartupScript(this, Page.GetType(), "mes", "alert('" + message + "')", true);
+                    UserValue.Alert(this, message);
+                    return;
+                }
+
+
+                if (txtId.Text == "")
+                {
+                    strsql = "insert into PubParameter(ParaCode,ParaName,CreateUser,Remark,CreateDate,OrderCol,ParaType)";
+                    strsql += "values(@ParaCode,@ParaName,@CreateUser,@Remark,getdate(),@OrderCol,@ParaType)";
+                }
+                else
+                {
+                    strsql = "update PubParameter set ParaCode=@ParaCode,ParaName=@ParaName,EditUser=@CreateUser,Remark=@Remark,EditDate=getdate(),OrderCol=@OrderCol,ParaType=@ParaType where id='" + txtId.Text + "'";
+                }
+
+                SqlExec sqlexec = new SqlExec();
+                SqlParameter[] sqlpara = {
+                sqlexec.CreateInParam("@ParaCode",SqlDbType.VarChar,20,txtParaCode.Text),
+                sqlexec.CreateInParam("@ParaName",SqlDbType.VarChar,100,txtParaName.Text),
+                sqlexec.CreateInParam("@CreateUser",SqlDbType.VarChar,20,Session["empname"].ToString()),                             
+                sqlexec.CreateInParam("@Remark",SqlDbType.VarChar,200,txtRemark.Text),
+                sqlexec.CreateInParam("@OrderCol",SqlDbType.Int,4,txtOrderCol.Text),
+                sqlexec.CreateInParam("@ParaType",SqlDbType.VarChar,50,"材料大类")
+                                      };
+                SqlExec.ExecuteNonQuery(strsql, CommandType.Text, sqlpara);
+                
+                //textreadonly();
+                this.ClearText();
+                this.BindData();
+                btnAdd.Text = "取消";
+                btnSave.Visible = true  ;
+            }
+            catch (Exception ex)
+            {
+                Server.Transfer("../../PubWeb/frmError.aspx?errorinfo=" + ex.Message);
+            }
+        }
+
+
+

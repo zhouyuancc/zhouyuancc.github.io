@@ -1,0 +1,48 @@
+<script language="javascript" type="text/javascript">
+       
+        function formsubmit()
+        {
+            if (document.form1.txtExecutor.value == "") {
+                alert("执行人不能为空");
+                document.form1.txtExecutor.focus();
+                return false;
+            }
+            var s = form1.Hidden1.value
+            var n = (s.split(';')).length - 1;
+            if (n > 1) {
+                alert("不能选择多人！ ");
+                return false;
+            }
+
+        }
+
+
+        function openTopic_zt() {
+            var k = window.showModalDialog("../../PubWeb/frmEmpSelect.aspx?show=allUser,dept,depUser,role,rolUser,phonebook", "seltopic", "toolbar=no;copyhistory=no;location=no;status=no;menubar=no;scrollbars=no;resizable=no;fullscreen=no;dialogWidth=503px; dialogHeight=405px;left=280;top=200; status=1; help=0");
+            if (k != null) {
+
+                var id = k.split("|");
+                if (id.length >= 2) {
+                    form1.txtExecutor.value = id[0];
+                    form1.Hidden1.value = id[1];
+                }
+            }
+//            setUserCode()
+//            setOther()
+        }
+
+</script>
+
+
+
+<tr>
+                    <td width="20%" align="right"   height="50px">
+                        执行人：
+                    </td>
+                    <td width="80%" align="left">
+                    <asp:Panel ID="Panel1" runat="server" >
+                        <asp:TextBox ID="txtExecutor" runat="server" CssClass="SmallInput" Width="30%" onClick="openTopic_zt();window.event.returnValue=false;return;"> </asp:TextBox>
+                    <a href="javascript:;" class="orgAdd" onClick="openTopic_zt();window.event.returnValue=false;return;">选择</a>
+                            </asp:Panel>
+                    </td>
+</tr>
