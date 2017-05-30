@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--软件测试-->
+
+<html>
+<head>
+    <title>Zhou</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+
+    <style>
+        #codeDiv p a:link {
+            text-decoration:underline;font-size: 16px;
+            color: #565656;
+        }
+        #codeDiv p a:visited {
+            /*safari 中文.html a:visited无效*/
+            color:#565656;!important;
+        }
+        /*#codeDiv p a:hover {*/
+        /*color:rgb(177,45,77);*/
+        /*}*/
+
+        #codeDiv > p {
+            padding-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- 右侧Content -->
+<div id="content">
+<div class="inner">
+
+<!-- Post -->
+<article class="box post post-excerpt" style="margin-top: 20px">
+<header>
+
+    <h2 id="codeTitle">Welcome</h2>
+    <p id="codeDes">Hope this will help you</p>
+</header>
+
+<!--code-->
+<div id="codeDiv">
+
+<p>
+    <a href="http://note.youdao.com/noteshare?id=e2e95391cf4de45cc57dd90eed56b643">接口测试用例</a>
+</p>
+
+
+
+</div>
+
+</article>
+
+
+</div>
+</div>
+
+<!-- Sidebar -->
+<div id="sidebar">
+
+    <!-- Logo -->
+    <h1 id="logo">
+        <!--<a href="#">WELCOME</a>-->
+        <a href="../index.html" class="glyphicon glyphicon-home"></a>
+        <a href="../index.html" id="navBack" style="display:none;right: 10px;float:right;POSITION: absolute;line-height: 44px;" class="glyphicon glyphicon-chevron-left"></a>
+        <!--javascript:history.go(-1);-->
+        <!--<div style="right: 8px;float:right;POSITION: absolute;line-height: 44px" class="glyphicon glyphicon-menu-right"></div>-->
+
+    </h1>
+
+    <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="../index.html">iOS</a></li>
+            <li><a href="indexWeb.html">Web</a></li>
+            <li class="current"><a href="SWTest.html">软件测试</a></li>
+            <!--<li><a href="http://resume.qmail.com/jathinzy_001/xtg0skmz-is">Resume</a></li>-->
+            <li><a href="indexCM.html">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Search -->
+    <section class="box search" style="margin:15px 5px">
+        <form onsubmit ="return false;"><!--不提交index.html?search=App-->
+            <input onkeypress="EnterPress(event);" style="color: #565656" type="text" name="search" placeholder="Search"/>
+        </form>
+    </section>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+
+<script type="text/javascript">
+
+    $(function(){
+        $("#codeDiv a").attr('target','_blank');
+
+        console.log("If you have any questions, suggestions or recruitment, please contact QQ:378920096 and indicate the contact way from zhouyuancc.github.io")
+
+    });
+
+    <!-- search -->
+    function EnterPress(e){ //传入 event
+        var e = e || window.event;
+        if(e.keyCode == 13){//回车
+
+            $("#codeDiv p")
+                    .hide()//隐藏所有<p><a></a></p>
+                    .filter(":contains('" + $("input").val() + "')")//筛选包含search内容的<p>
+//                                    .css("background-color","red")//修改css
+                    .show();//展示帅选后的结果
+        }
+
+    }
+
+    <!-- 重写:contains方法,不区分大小写 -->
+    // NEW selector
+    jQuery.expr[':'].Contains = function(a, i, m) {
+        return jQuery(a).text().toUpperCase()
+                .indexOf(m[3].toUpperCase()) >= 0;
+    };
+    // OVERWRITES old selecor
+    jQuery.expr[':'].contains = function(a, i, m) {
+        return jQuery(a).text().toUpperCase()
+                .indexOf(m[3].toUpperCase()) >= 0;
+    };
+
+</script>
+
+</body>
+</html>
