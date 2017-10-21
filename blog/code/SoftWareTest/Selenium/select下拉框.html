@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4f76cb}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #e32400; background-color: #fff995}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4f76cb; background-color: #fff995}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.PingFang SC'; color: #4e9072}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #e32400}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4e9072}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; min-height: 22.0px}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; background-color: #fff995}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; background-color: #e0edd4; min-height: 22.0px}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #7e504f}
+    span.s1 {color: #000000}
+    span.s2 {font: 18.0px '.PingFang SC'}
+    span.s3 {color: #4f76cb}
+    span.s4 {font: 18.0px '.PingFang SC'; color: #4f76cb}
+    span.s5 {color: #e32400}
+    span.s6 {color: #931a68}
+    span.s7 {font: 18.0px 'Helvetica Neue'; color: #000000}
+    span.s8 {font: 18.0px 'Helvetica Neue'}
+    span.s9 {font: 18.0px '.PingFang SC'; color: #4e9072}
+    span.s10 {color: #4e9072}
+    span.s11 {font: 18.0px 'Helvetica Neue'; color: #e32400}
+    span.s12 {color: #7e504f}
+    span.s13 {color: #0326cc}
+    span.s14 {color: #3933ff}
+    span.s15 {text-decoration: underline}
+    span.s16 {color: #9293af}
+    span.s17 {font: 18.0px '.PingFang SC'; color: #9293af}
+    span.s18 {color: #91afcb}
+    span.s19 {color: #000000; background-color: #fff995}
+    span.s20 {color: #e32400; background-color: #fff995}
+    span.s21 {font: 18.0px '.PingFang SC'; color: #000000}
+    span.s22 {background-color: #fff995}
+    span.s23 {font: 18.0px '.PingFang SC'; color: #3933ff}
+    span.s24 {font: 18.0px '.PingFang SC'; background-color: #fff995}
+    span.s25 {font: 18.0px '.PingFang SC'; color: #e32400; background-color: #fff995}
+    span.s26 {font: 18.0px '.PingFang SC'; color: #e32400}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p1"><span class="Apple-tab-span">	</span> * <span class="s2">下拉框</span><span class="Apple-converted-space"> </span></p>
+<p class="p2"><span class="s3"><span class="Apple-tab-span">	</span> * </span><span class="s4">选择对应的元素</span><span class="s3">: </span>Index<span class="s2">/</span>Value<span class="s2">/</span>Text<span class="s3"><span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="Apple-tab-span">	</span> * <span class="s2">不选择对应的元素</span>: <span class="s5">de</span>selectAll<span class="s2">/</span><span class="s5">de</span>selectByValue<span class="s2">/</span><span class="s5">de</span>selectByVisibleText<span class="Apple-converted-space"> </span></p>
+<p class="p2"><span class="s3"><span class="Apple-tab-span">	</span> * </span><span class="s4">获取选择项的值</span><span class="s3">: </span>getAllSelectedOptions<span class="s2">()</span><span class="s4">/</span>getFirstSelectedOption<span class="s2">()</span>.getText</p>
+<p class="p1"><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s6"><b>public</b></span> <span class="s6"><b>void</b></span> select<span class="s2">()</span><span class="Apple-converted-space"> </span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>{</p>
+<p class="p5"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s8"> </span>下拉操作</p>
+<p class="p6"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s9">//</span><span class="s10"> </span>ElementNotInteractableException</p>
+<p class="p5"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s8"> </span>直接获取<span class="s8">job:</span>获取不到元素</p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> job<span class="s2">不止一个</span></p>
+<p class="p5"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s8"> </span><span class="s5">难点</span><span class="s11">: </span>弹窗上的控件需<span class="s5">层级定位</span>,通过<span class="s8">form</span>表单查找</p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> WebElement job = driver.findElement<span class="s2">(</span>By.id<span class="s2">(</span>"job<span class="s2">”));//</span>ElementNotInteractableException</p>
+<p class="p8"><br></p>
+<p class="p5"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s8"> </span>一级一级进行元素获取</p>
+<p class="p5"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//先获取<span class="s8">form</span>表单</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>WebElement <span class="s12">formElement</span> = <span class="s13">driver</span>.findElement<span class="s2">(</span>By.<i>id</i><span class="s2">(</span><span class="s14">"profile"</span><span class="s2">));</span></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//再获取</span>select<span class="s2">下拉框</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>WebElement <span class="s12">job</span> = <span class="s12">formElement</span>.findElement<span class="s2">(</span>By.<i>id</i><span class="s2">(</span><span class="s14">"job"</span><span class="s2">));</span></p>
+<p class="p8"><br></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> * &lt;select id="job" class="<span class="s15">moco</span>-form-control <span class="s15">rlf</span>-select" name="job" <span class="s15">hidefocus</span>="true" data<span class="s16">-</span>validate="require<span class="s16">-</span>select"&gt;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> * &lt;option value=""&gt;<span class="s2">请选择职位</span><span class="s16">&lt;</span><span class="s17">/</span><span class="s16">option&gt;</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> * &lt;option value="13"&gt;<span class="s2">学生</span><span class="s16">&lt;</span><span class="s17">/</span><span class="s16">option&gt;</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> * &lt;option value="7" selected="selected"&gt;<span class="s2">移动开发工程师</span><span class="s16">&lt;</span><span class="s17">/</span><span class="s16">option&gt;</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> * &lt;option value="9"&gt;<span class="s2">软件测试工程师</span><span class="s16">&lt;</span><span class="s17">/</span><span class="s16">option&gt;</span> <span class="s16">&lt;</span><span class="s17">/</span><span class="s16">select&gt;</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p8"><br></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> * <span class="s2">下拉框</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p9"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Select <span class="s12">downList</span> = <span class="s6"><b>new</b></span> Select<span class="s2">(</span><span class="s12">job</span><span class="s2">);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> * <span class="s2">选中</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> selectBy<span class="s2">(</span>downList<span class="s2">);</span></p>
+<p class="p8"><br></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s12">downList</span>.selectByIndex<span class="s2">(</span>1<span class="s2">);</span></p>
+<p class="p8"><br></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> * <span class="s2">不选中</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> deselectBy<span class="s2">(</span>downList<span class="s2">);</span></p>
+<p class="p8"><br></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> * <span class="s2">操作</span>get</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>getSelectOptions<span class="s2">(</span><span class="s12">downList</span><span class="s2">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p10"><br></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p2"><span class="s3"><span class="Apple-tab-span">	</span> * </span><span class="s4">选中</span><span class="s3">: </span>selectByIndex<span class="s2">/</span>selectByValue<span class="s2">/</span>selectByVisibleText</p>
+<p class="p1"><span class="Apple-tab-span">	</span> * <span class="s2">下拉框</span>: Select downList = new Select<span class="s2">(</span>job<span class="s2">);</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span> * <span class="s18"><b>@param</b></span> downList</p>
+<p class="p1"><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s6"><b>public</b></span> <span class="s6"><b>void</b></span> selectBy<span class="s2">(</span>Select <span class="s12">downList</span><span class="s2">)</span> {</p>
+<p class="p8"><br></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> Select downList = new Select<span class="s2">(</span>job<span class="s2">);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> * <span class="s2">选中</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> <span class="s2">根据</span>index<span class="Apple-converted-space"> </span></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s12">downList</span><span class="s1">.</span><span class="s19">selectBy</span><span class="s20">Index</span><span class="s21">(</span><span class="s1">0</span><span class="s21">);</span><span class="s2">//</span>&lt;option value=""&gt;<span class="s2">请选择职位</span>&lt;<span class="s2">/</span>option&gt;</p>
+<p class="p8"><br></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>sleep<span class="s2">();</span></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> <span class="s2">根据</span>value<span class="Apple-converted-space"> </span></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s12">downList</span><span class="s1">.</span><span class="s19">selectBy</span><span class="s20">Value</span><span class="s21">(</span><span class="s14">"7"</span><span class="s21">);</span><span class="s2">//</span>&lt;option <span class="s22">value="7"</span>&gt;</p>
+<p class="p8"><br></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>sleep<span class="s2">();</span></p>
+<p class="p5"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s8"> </span>根据可见文字<span class="s8"><span class="Apple-converted-space"> </span></span></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s12">downList</span><span class="s1">.</span><span class="s19">selectBy</span><span class="s20">VisibleText</span><span class="s21">(</span><span class="s14">"</span><span class="s23">软件测试工程师</span><span class="s14">"</span><span class="s21">);</span><span class="s2">//</span>&lt;option&gt;<span class="s24">软件测试工程师</span>&lt;<span class="s2">/</span>option&gt;</p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p10"><br></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p2"><span class="s3"><span class="Apple-tab-span">	</span> * </span><span class="s4">不选中</span><span class="s3">: </span>isMultiple<span class="s2">/</span>deselectByIndex</p>
+<p class="p1"><span class="Apple-tab-span">	</span> * <span class="s2">下拉框</span>: Select downList = new Select<span class="s2">(</span>job<span class="s2">);</span><span class="Apple-converted-space"> </span></p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span> * </span><span class="s15">deselect</span>: <span class="s2">只有</span><span class="s15">multi</span>-select<span class="s2">才可使用</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span> * <span class="s18"><b>@param</b></span> downList</p>
+<p class="p1"><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s6"><b>public</b></span> <span class="s6"><b>void</b></span> deselectBy<span class="s2">(</span>Select <span class="s12">downList</span><span class="s2">)</span><span class="Apple-converted-space"> </span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>{</p>
+<p class="p5"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s8"> </span>下拉框<span class="s5">是否是</span><span class="s11"> </span><span class="s5">多选</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>System.<span class="s13"><b><i>out</i></b></span>.println<span class="s2">(</span><span class="s12">downList</span>.<span class="s20">isMultiple</span><span class="s25">()</span><span class="s2">);</span></p>
+<p class="p8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> <span class="s15">deselect</span>: <span class="s2">只有下拉</span> <span class="s2">多选</span> <span class="s2">才可使用</span></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> Exception UnsupportedOperationException: You may only <span class="s15">deselect</span> options of a</p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> <span class="s15">multi</span>-select</p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> downList.<span class="s5">deselectByIndex</span><span class="s2">(</span>1<span class="s2">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p10"><br></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p2"><span class="s3"><span class="Apple-tab-span">	</span> * </span><span class="s4">操作</span><span class="s3">: </span>getAllSelectedOptions<span class="s2">()</span><span class="s3">.get</span><span class="s4">(</span><span class="s3">0</span><span class="s4">)/</span>getFirstSelectedOption<span class="s2">()</span><span class="s3">.getText</span><span class="s4">()/</span>getOptions<span class="s2">()</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span> * <span class="s2">下拉框</span>: Select downList = new Select<span class="s2">(</span>job<span class="s2">);</span><span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-tab-span">	</span> * <span class="s18"><b>@param</b></span> downList</p>
+<p class="p1"><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s6"><b>public</b></span> <span class="s6"><b>void</b></span> getSelectOptions<span class="s2">(</span>Select <span class="s12">downList</span><span class="s2">)</span><span class="Apple-converted-space"> </span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>{</p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> <span class="s2">获取</span><span class="s26">所有选中的下拉框数据的第一个</span>: getAllSelectedOptions<span class="s2">()</span>.get<span class="s2">(</span>0<span class="s2">)</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>System.<span class="s13"><b><i>out</i></b></span>.println<span class="s2">(</span><span class="s12">downList</span>.<span class="s22">getAllSelectedOptions</span><span class="s24">()</span><span class="s22">.get</span><span class="s24">(</span><span class="s22">0</span><span class="s24">)</span><span class="s2">);</span></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> [[[[[[FirefoxDriver: <span class="s15">firefox</span> on MAC <span class="s2">(</span>3603f70d-7180-3e4f-8743-5653b113eaf7<span class="s2">)</span>] -&gt; id: profile]] -&gt; id: job]] -&gt; tag name: option]</p>
+<p class="p8"><br></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> <span class="s2">获取</span><span class="s26">选中的第一个下拉框数据的文字</span>: getFirstSelectedOption<span class="s2">()</span>.getText<span class="s2">()</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>System.<span class="s13"><b><i>out</i></b></span>.println<span class="s2">(</span><span class="s12">downList</span>.<span class="s22">getFirstSelectedOption</span><span class="s24">()</span><span class="s22">.getText</span><span class="s24">()</span><span class="s2">);</span></p>
+<p class="p8"><br></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> <span class="s2">获取</span><span class="s26">所有选中的下拉框数据</span>: getAllSelectedOptions</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>List&lt;WebElement&gt; <span class="s12">selectedOptions</span> = <span class="s12">downList</span>.<span class="s22">getAllSelectedOptions</span><span class="s24">()</span><span class="s2">;</span></p>
+<p class="p5"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//遍历</p>
+<p class="p11"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s6"><b>for</b></span><span class="s1"> </span><span class="s21">(</span><span class="s1">WebElement </span>webElement<span class="s1"> : </span>selectedOptions<span class="s21">)</span><span class="s1"> {</span></p>
+<p class="p5"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//打印多选框文本</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>System.<span class="s13"><b><i>out</i></b></span>.println<span class="s2">(</span><span class="s12">webElement</span>.<span class="s22">getText</span><span class="s24">()</span><span class="s2">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p8"><br></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> <span class="s2">获取</span><span class="s26">所有下拉框数据</span>: getOptions</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>List&lt;WebElement&gt; <span class="s12">options</span> = <span class="s12">downList</span>.<span class="s22">getOptions</span><span class="s24">()</span><span class="s2">;</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s6"><b>for</b></span> <span class="s2">(</span>WebElement <span class="s12">webElement</span> : <span class="s12">options</span><span class="s2">)</span> {</p>
+<p class="p5"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//打印多选框文本</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>System.<span class="s13"><b><i>out</i></b></span>.println<span class="s2">(</span><span class="s12">webElement</span>.<span class="s22">getText</span><span class="s24">()</span><span class="s2">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p8"><br></p>
+<p class="p8"><br></p>
+<p class="p8"><span class="Apple-tab-span">	</span></p>
+<p class="p8"><br></p>
+</body>
+</html>

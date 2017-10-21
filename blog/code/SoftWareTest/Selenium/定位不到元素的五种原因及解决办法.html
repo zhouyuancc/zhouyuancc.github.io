@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Arial; background-color: #ecf3fb}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 18.0px 'PingFang SC'; color: #5b5ab4; min-height: 25.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: #0433ff}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Arial}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Arial; min-height: 21.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Arial; color: #0433ff}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Arial; color: #ff2602}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 18.0px 'PingFang SC'; font-kerning: none}
+    span.s3 {font: 18.0px Arial; font-kerning: none}
+    span.s4 {font-kerning: none; color: #000000}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><b>selenium webdriver</b></span><span class="s2"><b>定位不到元素的五种原因及解决办法</b></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">1.</span><span class="s1">动态</span><span class="s3">id</span><span class="s1">定位不到元素</span></p>
+<p class="p4"><span class="s1">for example:</span></p>
+<p class="p4"><span class="s1">        //WebElement xiexin_element = driver.findElement(By.id("_mail_component_82_82"));</span></p>
+<p class="p4"><span class="s1">        WebElement xiexin_element = driver.findElement(By.xpath("//span[contains(.,'</span><span class="s2">写</span><span class="s1"> </span><span class="s2">信</span><span class="s1">')]"));</span></p>
+<p class="p4"><span class="s1">        xiexin_element.click();</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p6"><span class="s3">   </span><span class="s1">上面一段代码注释掉的部分为通过</span><span class="s3">id</span><span class="s1">定位</span><span class="s3">element</span><span class="s1">的，但是此</span><span class="s3">id“_mail_component_82_82”</span><span class="s1">后面的数字会随着你每次登陆而变化，此时就无法通过</span><span class="s3">id</span><span class="s1">准确定位到</span><span class="s3">element</span><span class="s1">。</span></p>
+<p class="p6"><span class="s3">   </span><span class="s1">所以推荐使用</span><span class="s3">xpath</span><span class="s1">的相对路径方法查找到该元素。</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1">2.iframe</span><span class="s2">原因定位不到元素</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p6"><span class="s3">    </span><span class="s1">由于需要定位的元素在某一个</span><span class="s3">frame</span><span class="s1">里边，所以有时通过单独的</span><span class="s3">id/name/xpath</span><span class="s1">还是定位不到此元素</span></p>
+<p class="p6"><span class="s1">比如以下一段</span><span class="s3">xml</span><span class="s1">源文件：</span></p>
+<p class="p4"><span class="s1">&lt;iframe id="left_frame" scrolling="auto" frameborder="0" src="index.php?m=Index&amp;a=Menu" name="left_frame" noresize="noresize" style="height: 100%;visibility: inherit; width: 100%;z-index: 1"&gt;</span></p>
+<p class="p4"><span class="s1">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span></p>
+<p class="p4"><span class="s1">&lt;html&gt;</span></p>
+<p class="p4"><span class="s1">&lt;head&gt;</span></p>
+<p class="p4"><span class="s1">&lt;body class="menuBg"&gt;</span></p>
+<p class="p4"><span class="s1">&lt;div id="menu_node_type_0"&gt;</span></p>
+<p class="p4"><span class="s1">&lt;table width="193" cellspacing="0" cellpadding="0" border="0"&gt;</span></p>
+<p class="p4"><span class="s1">&lt;tbody&gt;</span></p>
+<p class="p4"><span class="s1">&lt;tr&gt;</span></p>
+<p class="p4"><span class="s1">&lt;tr&gt;</span></p>
+<p class="p4"><span class="s1">&lt;td id="c_1"&gt;</span></p>
+<p class="p4"><span class="s1">&lt;table class="menuSub" cellspacing="0" cellpadding="0" border="0" align="center"&gt;</span></p>
+<p class="p4"><span class="s1">&lt;tbody&gt;</span></p>
+<p class="p4"><span class="s1">&lt;tr class="sub_menu"&gt;</span></p>
+<p class="p4"><span class="s1">&lt;td&gt;</span></p>
+<p class="p4"><span class="s1">&lt;a href="index.php?m=Coupon&amp;a=SearchCouponInfo" target="right_frame"&gt;</span><span class="s2">密码重置</span><span class="s1">&lt;/a&gt;</span></p>
+<p class="p4"><span class="s1">&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1">&lt;/tr&gt;</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">原本可以通过</span></p>
+<p class="p4"><span class="s1">WebElement element = driver.findElement(By.linkText("</span><span class="s2">密码重置</span><span class="s1">"));</span></p>
+<p class="p6"><span class="s1">来定位此元素，但是由于该元素在</span><span class="s3">iframe id="left_frame"</span><span class="s1">这个</span><span class="s3">frame</span><span class="s1">里边</span><span class="s3"> </span><span class="s1">所以需要先通过定位</span><span class="s3">frame</span><span class="s1">然后再定位</span><span class="s3">frame</span><span class="s1">里边的某一个元素的方法定位此元素</span></p>
+<p class="p4"><span class="s1">WebElement element =driver.switchTo().frame("left_frame").findElement(By.linkText("</span><span class="s2">密码重置</span><span class="s1">"));</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">3.</span><span class="s1">不在同一个</span><span class="s3">frame</span><span class="s1">里边查找元素</span></p>
+<p class="p6"><span class="s1">大家可能会遇到页面左边一栏属于</span><span class="s3">left_frame</span><span class="s1">，右侧属于</span><span class="s3">right_frame</span><span class="s1">的情况，此时如果当前处在</span></p>
+<p class="p4"><span class="s1">left_frame</span><span class="s2">，就无法通过</span><span class="s1">id</span><span class="s2">定位到</span><span class="s1">right_frame</span><span class="s2">的元素。此时需要通过以下语句切换到默认的</span><span class="s1">content</span></p>
+<p class="p8"><span class="s1">driver.switchTo().defaultContent();</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p4"><span class="s2">例如当前所在的</span><span class="s1">frame</span><span class="s2">为</span><span class="s1">left_frame</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1">       WebElement xiaoshoumingxi_element = driver.switchTo().frame("left_frame").findElement(By.linkText("</span><span class="s2">销售明细</span><span class="s1">"));</span></p>
+<p class="p4"><span class="s1">       xiaoshoumingxi_element.click();</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p4"><span class="s2">需要切换到</span><span class="s1">right_frame     <span class="Apple-converted-space"> </span></span></p>
+<p class="p8"><span class="s4">       </span><span class="s1">driver.switchTo().defaultContent();</span></p>
+<p class="p4"><span class="s1">      <span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1">       Select quanzhong_select2 = new Select(driver.switchTo().frame("right_frame").findElement(By.id("coupon_type_str")));</span></p>
+<p class="p4"><span class="s1">       quanzhong_select2.selectByVisibleText("</span><span class="s2">售后</span><span class="s1">0</span><span class="s2">小时</span><span class="s1">");</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1">4. xpath</span><span class="s2">描述错误</span></p>
+<p class="p6"><span class="s1">这个是因为在描述路径的时候没有按照</span><span class="s3">xpath</span><span class="s1">的规则来写</span><span class="s3"> </span><span class="s1">造成找不到元素的情况出现</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">5.</span><span class="s1">点击速度过快</span><span class="s3"> </span><span class="s1">页面没有加载出来就需要点击页面上的元素</span></p>
+<p class="p6"><span class="s1">这个需要增加一定等待时间，显示等待时间可以通过</span><span class="s3">WebDriverWait </span><span class="s1">和</span><span class="s3">util</span><span class="s1">来实现</span></p>
+<p class="p6"><span class="s1">例如：</span></p>
+<p class="p4"><span class="s1">       //</span><span class="s2">用</span><span class="s1">WebDriverWait</span><span class="s2">和</span><span class="s1">until</span><span class="s2">实现显示等待</span><span class="s1"> </span><span class="s2">等待欢迎页的图片出现再进行其他操作</span></p>
+<p class="p4"><span class="s1">       WebDriverWait wait = (new WebDriverWait(driver,10));</span></p>
+<p class="p4"><span class="s1">       wait.until(new ExpectedCondition&lt;Boolean&gt;(){</span></p>
+<p class="p4"><span class="s1">           public Boolean apply(WebDriver d){</span></p>
+<p class="p4"><span class="s1">               boolean loadcomplete = d.switchTo().frame("right_frame").findElement(By.xpath("//center/div[@class='welco']/img")).isDisplayed();</span></p>
+<p class="p4"><span class="s1">               return loadcomplete;</span></p>
+<p class="p4"><span class="s1">           }</span></p>
+<p class="p4"><span class="s1">       });</span></p>
+<p class="p4"><span class="s2">也可以自己预估时间通过</span><span class="s1">Thread.sleep(5000);//</span><span class="s2">等待</span><span class="s1">5</span><span class="s2">秒</span><span class="s1"> </span><span class="s2">这个是强制线程休息</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">6.firefox</span><span class="s1">安全性强，不允许跨域调用出现报错</span></p>
+<p class="p4"><span class="s2">错误描述：</span><span class="s1">uncaught exception: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIDOMNSHTMLDocument.execCommand]" nsresult: "0x80004005 (NS_ERROR_FAILURE)" location:</span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1">解决办法：</span></p>
+<p class="p6"><span class="s1">这是因为</span><span class="s3">firefox</span><span class="s1">安全性强，不允许跨域调用。</span><span class="s3"><span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1">Firefox </span><span class="s2">要取消</span><span class="s1">XMLHttpRequest</span><span class="s2">的跨域限制的话，第一</span></p>
+<p class="p4"><span class="s2">是从</span><span class="s1"> about:config </span><span class="s2">里设置</span><span class="s1"> signed.applets.codebase_principal_support = true</span><span class="s2">；</span><span class="s1"> </span><span class="s2">（地址栏输入</span><span class="s1">about:config </span><span class="s2">即可进行</span><span class="s1">firefox</span><span class="s2">设置）</span></p>
+<p class="p4"><span class="s2">第二就是在</span><span class="s1">open</span><span class="s2">的代码函数前加入类似如下的代码：</span><span class="s1"> try { netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead"); } catch (e) { alert("Permission UniversalBrowserRead denied."); }<span class="Apple-converted-space"> </span></span></p>
+</body>
+</html>

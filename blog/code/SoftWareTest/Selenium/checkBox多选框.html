@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4f76cb}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4f76cb; background-color: #fff995}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; min-height: 22.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.PingFang SC'; color: #4e9072}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4e9072}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #7e504f}
+    span.s1 {color: #000000}
+    span.s2 {font: 18.0px '.PingFang SC'}
+    span.s3 {color: #931a68}
+    span.s4 {font: 18.0px 'Helvetica Neue'; color: #000000}
+    span.s5 {font: 18.0px 'Helvetica Neue'}
+    span.s6 {color: #7e504f}
+    span.s7 {color: #0326cc}
+    span.s8 {color: #3933ff}
+    span.s9 {font: 18.0px '.PingFang SC'; background-color: #fff995}
+    span.s10 {color: #000000; background-color: #fff995}
+    span.s11 {font: 18.0px '.PingFang SC'; color: #000000; background-color: #fff995}
+    span.s12 {font: 18.0px '.PingFang SC'; color: #000000}
+    span.s13 {font: 18.0px '.PingFang SC'; color: #3933ff}
+    span.s14 {color: #e32400; background-color: #fff995}
+    span.s15 {background-color: #fff995}
+    span.s16 {font: 18.0px '.PingFang SC'; color: #e32400; background-color: #fff995}
+    span.s17 {font: 18.0px '.PingFang SC'; color: #4e9072}
+    span.s18 {color: #4e9072}
+    span.s19 {font: 18.0px 'Helvetica Neue'; background-color: #fff995}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p1"><span class="Apple-tab-span">	</span> * checkBox<span class="s2">多选框</span><span class="Apple-converted-space"> </span></p>
+<p class="p2"><span class="Apple-tab-span">	</span> * click<span class="Apple-converted-space"> </span></p>
+<p class="p2"><span class="Apple-tab-span">	</span> * clear<span class="Apple-converted-space"> </span></p>
+<p class="p2"><span class="Apple-tab-span">	</span> * isSelected<span class="Apple-converted-space"> </span></p>
+<p class="p2"><span class="Apple-tab-span">	</span> * isEnabled</p>
+<p class="p1"><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="s3"><b>public</b></span> <span class="s3"><b>void</b></span> checkBox<span class="s2">()</span> {</p>
+<p class="p4"><br></p>
+<p class="p5"><span class="s4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s5"> </span>获取登录页面的自动登录多选框</p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>WebElement <span class="s6">checkElement</span> = <span class="s7">driver</span>.findElement<span class="s2">(</span>By.<i>id</i><span class="s2">(</span><span class="s8">"auto-signin"</span><span class="s2">));</span></p>
+<p class="p4"><br></p>
+<p class="p6"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> checkBox<span class="s9">是否选中</span></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s3"><b>boolean</b></span><span class="s1"> </span>checkIsSelected<span class="s1"> = </span>checkElement<span class="s1">.</span><span class="s10">isSelected</span><span class="s11">()</span><span class="s12">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> checkBox<span class="s9">是否可用</span></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s3"><b>boolean</b></span><span class="s1"> </span>checkIsEnabled<span class="s1"> = </span>checkElement<span class="s1">.</span><span class="s10">isEnabled</span><span class="s11">()</span><span class="s12">;</span></p>
+<p class="p4"><br></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>System.<span class="s7"><b><i>out</i></b></span>.println<span class="s2">(</span><span class="s8">"checkBox</span><span class="s13">是否选中</span><span class="s8">:"</span> + <span class="s6">checkIsSelected</span><span class="s2">);</span></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>System.<span class="s7"><b><i>out</i></b></span>.println<span class="s2">(</span><span class="s8">"checkBox</span><span class="s13">是否可用</span><span class="s8">:"</span> + <span class="s6">checkIsEnabled</span><span class="s2">);</span></p>
+<p class="p4"><br></p>
+<p class="p6"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> <span class="s14">clear</span><span class="s9">取消</span><span class="s15">checkBox</span><span class="s9">选中,</span><span class="s16">无用</span><span class="s9">,会报错</span></p>
+<p class="p6"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> checkElement.clear<span class="s2">();</span></p>
+<p class="p4"><br></p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s3"><b>if</b></span><span class="s1"> </span><span class="s12">(</span><span class="s1">!</span>checkIsSelected<span class="s12">)</span><span class="s1"> </span><span class="s17">//</span><span class="s18"> </span><span class="s17">未选中</span></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{</p>
+<p class="p5"><span class="s4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s5"> </span>未选中时,<span class="s15">点击</span><span class="s19">checkBox</span>,令其选中</p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s6">checkElement</span>.<span class="s15">click</span><span class="s9">()</span><span class="s2">;</span></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p3"><span class="Apple-tab-span">	</span>}</p>
+</body>
+</html>

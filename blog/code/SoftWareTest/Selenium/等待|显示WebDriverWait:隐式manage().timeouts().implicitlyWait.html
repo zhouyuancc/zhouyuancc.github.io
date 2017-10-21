@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4f76cb}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4f76cb; background-color: #fff995}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.PingFang SC'; color: #4f76cb; background-color: #fff995}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; min-height: 22.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.PingFang SC'; color: #4e9072}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; background-color: #fff995}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4e9072}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #e32400; background-color: #fff995}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.PingFang SC'; color: #4e9072; background-color: #fff995}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.PingFang SC'; background-color: #e0edd4}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.PingFang SC'; color: #4f76cb}
+    span.s1 {color: #000000}
+    span.s2 {font: 18.0px '.PingFang SC'}
+    span.s3 {font: 18.0px 'Helvetica Neue'}
+    span.s4 {color: #e32400}
+    span.s5 {color: #931a68}
+    span.s6 {font: 18.0px 'Helvetica Neue'; color: #000000}
+    span.s7 {background-color: #fff995}
+    span.s8 {color: #0326cc}
+    span.s9 {color: #3933ff}
+    span.s10 {color: #e32400; background-color: #fff995}
+    span.s11 {font: 18.0px 'Helvetica Neue'; background-color: #fff995}
+    span.s12 {font: 18.0px '.PingFang SC'; color: #e32400}
+    span.s13 {font: 18.0px '.PingFang SC'; color: #000000}
+    span.s14 {color: #7e504f}
+    span.s15 {color: #91afcb}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p1"><span class="Apple-tab-span">	</span> * <span class="s2">等待</span></p>
+<p class="p2"><span class="Apple-tab-span">	</span> * <span class="s2">强制等待</span>: Thread.sleep<span class="s2">(</span>2000<span class="s2">)</span></p>
+<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span> * </span><span class="s4">显示等待</span><span class="s3">: WebDriverWait|</span>时间内找到该元素,继续执行,若没找到,报错;<span class="s3"> </span>何时找到就直接执行下去</p>
+<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span> * </span><span class="s4">隐式等待</span><span class="s3">: manage</span>()<span class="s3">.timeouts</span>()<span class="s3">.implicitlyWait|</span><span class="s4">全局</span>,<span class="s3"> 10s</span>内每个元素都去找,找到了再执行下一步//若是测<span class="s3">inputBox</span>();<span class="s3"> </span>需把该方法写在其前面//调试时常用</p>
+<p class="p1"><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> <span class="s5"><b>void</b></span> waitFunction<span class="s2">()</span> {</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s6"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s3"> </span>强制等待</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>sleep<span class="s2">();</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>sleepWithTime<span class="s2">(</span>2000<span class="s2">);</span></p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s6"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s3"> </span><span class="s7">显示等待</span></p>
+<p class="p6"><span class="s6"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s3"> </span>时间内找到该元素,继续执行,若没找到,报错;<span class="s3"> </span>何时找到就直接执行下去</p>
+<p class="p7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5"><b>new</b></span> WebDriverWait<span class="s2">(</span><span class="s8">driver</span><span class="s2">,</span> 15<span class="s2">)</span>.until<span class="s2">(</span>ExpectedConditions.<i>presenceOfElementLocated</i><span class="s2">(</span>By.<i>cssSelector</i><span class="s2">(</span><span class="s9">"css locator"</span><span class="s2">)));</span></p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s6"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s3"> </span><span class="s10">隐式</span><span class="s7">等待</span></p>
+<p class="p6"><span class="s6"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s3"> </span>只是<span class="s10">调试</span><span class="s7">时常用</span></p>
+<p class="p6"><span class="s6"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s3"> </span><span class="s10">全局</span>,<span class="s3"> 10s</span>内每个元素都去找,找到了再执行下一步//<span class="s3"> </span><span class="s7">写在其他方法前面</span></p>
+<p class="p6"><span class="s6"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s3"> </span><span class="s7">若是测</span><span class="s11">inputBox</span><span class="s7">();</span><span class="s11"> </span><span class="s7">需把该方法写在其前面</span></p>
+<p class="p8"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> aSelenium.<span class="s4">waitElement</span><span class="s12">()</span><span class="s2">;</span></p>
+<p class="p8"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> aSelenium.<span class="s4">inputBox</span><span class="s12">()</span><span class="s2">;</span></p>
+<p class="p9"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s8">driver</span><span class="s1">.</span>manage<span class="s2">()</span>.timeouts<span class="s2">()</span>.implicitlyWait<span class="s13">(</span><span class="s1">10</span><span class="s13">,</span><span class="s1"> TimeUnit.</span><span class="s8"><b><i>SECONDS</i></b></span><span class="s13">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p5"><br></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p1"><span class="Apple-tab-span">	</span> * <span class="s2">显示等待</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> <span class="s5"><b>void</b></span> waitElement<span class="s2">()</span> {</p>
+<p class="p5"><br></p>
+<p class="p10"><span class="s6"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s3"> </span>显示等待</p>
+<p class="p9"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>WebDriverWait<span class="s1"> </span><span class="s14">wait</span><span class="s1"> = </span><span class="s5"><b>new</b></span><span class="s1"> </span>WebDriverWait<span class="s13">(</span><span class="s8">driver</span><span class="s13">,</span><span class="s1"> 10</span><span class="s13">);</span></p>
+<p class="p10"><span class="s6"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s3"> </span>在当前页面定位元素,<span class="s3"> 10s</span>内未找到会报错</p>
+<p class="p7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s14">wait</span>.until<span class="s2">(</span>ExpectedConditions.<i>presenceOfElementLocated</i><span class="s2">(</span>By.<i>id</i><span class="s2">(</span><span class="s9">"test"</span><span class="s2">)));</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p11"><span class="s3"><span class="Apple-tab-span">	</span></span>强制等待</p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p1"><span class="Apple-tab-span">	</span> * <span class="s2">等待</span>2s</p>
+<p class="p1"><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> <span class="s5"><b>void</b></span> sleep<span class="s2">()</span> {</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5"><b>try</b></span> {</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Thread.<i>sleep</i><span class="s2">(</span>2000<span class="s2">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>} <span class="s5"><b>catch</b></span> <span class="s2">(</span>InterruptedException <span class="s14">e</span><span class="s2">)</span> {</p>
+<p class="p8"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> <span class="s15"><b>TODO</b></span>: handle exception</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s14">e</span>.printStackTrace<span class="s2">();</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p5"><br></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p12"><span class="s3"><span class="Apple-tab-span">	</span> * </span>传入等待时间</p>
+<p class="p1"><span class="Apple-tab-span">	</span> * <span class="s15"><b>@param</b></span> time</p>
+<p class="p1"><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> <span class="s5"><b>void</b></span> sleepWithTime<span class="s2">(</span><span class="s5"><b>long</b></span> <span class="s14">time</span><span class="s2">)</span> {</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5"><b>try</b></span> {</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Thread.<i>sleep</i><span class="s2">(</span><span class="s14">time</span><span class="s2">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>} <span class="s5"><b>catch</b></span> <span class="s2">(</span>InterruptedException <span class="s14">e</span><span class="s2">)</span> {</p>
+<p class="p8"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> <span class="s15"><b>TODO</b></span>: handle exception</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s14">e</span>.printStackTrace<span class="s2">();</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+</body>
+</html>

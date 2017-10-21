@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4f76cb}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4f76cb; background-color: #fff995}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4e9072}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; min-height: 22.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.PingFang SC'; color: #4e9072}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #3933ff}
+    span.s1 {color: #000000}
+    span.s2 {font: 18.0px '.PingFang SC'}
+    span.s3 {color: #931a68}
+    span.s4 {text-decoration: underline}
+    span.s5 {background-color: #fff995}
+    span.s6 {font: 18.0px '.PingFang SC'; text-decoration: underline}
+    span.s7 {font: 18.0px 'Helvetica Neue'; color: #000000}
+    span.s8 {font: 18.0px 'Helvetica Neue'}
+    span.s9 {color: #0326cc}
+    span.s10 {font: 18.0px '.PingFang SC'; color: #000000}
+    span.s11 {color: #000000; background-color: #fff995}
+    span.s12 {font: 18.0px '.PingFang SC'; color: #000000; background-color: #fff995}
+    span.s13 {color: #7e504f; background-color: #fff995}
+    span.s14 {color: #3933ff}
+    span.s15 {font: 18.0px '.PingFang SC'; color: #3933ff}
+    span.s16 {color: #7e504f}
+    span.s17 {font: 18.0px '.PingFang SC'; background-color: #fff995}
+    span.s18 {font: 18.0px '.PingFang SC'; color: #4e9072}
+    span.s19 {color: #4e9072}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p1"><span class="Apple-tab-span">	</span> * radio<span class="s2">单选框</span><span class="Apple-converted-space"> </span></p>
+<p class="p2"><span class="Apple-tab-span">	</span> * click<span class="Apple-converted-space"> </span></p>
+<p class="p2"><span class="Apple-tab-span">	</span> * clear<span class="Apple-converted-space"> </span></p>
+<p class="p2"><span class="Apple-tab-span">	</span> * isSelected</p>
+<p class="p1"><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="s3"><b>public</b></span> <span class="s3"><b>void</b></span> radioBox<span class="s2">()</span><span class="Apple-converted-space"> </span></p>
+<p class="p3"><span class="Apple-tab-span">	</span>{</p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;div class="<span class="s4">moco</span>-control-input <span class="s4">rlf</span>-group <span class="s4">rlf</span>-radio-group"&gt;</p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;label&gt;</p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;input <span class="s4">hidefocus</span>="true" value="0" name="sex" type="radio"&gt;</p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s2">保密</span></p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;<span class="s2">/</span>label&gt;</p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;label&gt;</p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;input <span class="s4">hidefocus</span>="true" value="1" name="sex" type="radio"&gt;</p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s2">男</span></p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;<span class="s2">/</span>label&gt;</p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;label&gt;</p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;input <span class="s4">hidefocus</span>="true" value="2" <span class="s5">checked="checked"</span> name="sex" type="radio"&gt;</p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s2">女</span></p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;<span class="s2">/</span>label&gt;</p>
+<p class="p4"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s4">&lt;</span><span class="s6">/</span><span class="s4">div&gt;</span></p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s8"> </span>单选框内容<span class="s8">: </span>保密<span class="s8">\</span>男<span class="s8">\</span>女</p>
+<p class="p6"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s8"> </span>点击<span class="s8">[</span>女]单选框</p>
+<p class="p7"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s9">driver</span><span class="s1">.findElement</span><span class="s10">(</span><span class="s1">By.<i>xpath</i></span><span class="s10">(</span>".<span class="s2">//</span>*[@id='profile']<span class="s2">/</span>div[4]<span class="s2">/</span>div<span class="s2">/</span>label[3]<span class="s2">/</span>input"<span class="s10">))</span><span class="s1">.</span><span class="s11">click</span><span class="s12">()</span><span class="s10">;</span></p>
+<p class="p5"><br></p>
+<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> label<span class="s2">//</span>input: <span class="s2">获取所有</span>label<span class="s2">下的单选框元素</span></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5">List&lt;WebElement&gt; </span><span class="s13">elements</span> = <span class="s9">driver</span>.findElements<span class="s2">(</span>By.<i>xpath</i><span class="s2">(</span><span class="s14">".</span><span class="s15">//</span><span class="s14">*[@id='profile']</span><span class="s15">/</span><span class="s14">div[4]</span><span class="s15">/</span><span class="s14">div</span><span class="s15">/</span><span class="s14">label</span><span class="s15">//</span><span class="s14">input"</span><span class="s2">));</span></p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s8"> </span>打印单选按钮个数</p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>System.<span class="s9"><b><i>out</i></b></span>.println<span class="s2">(</span><span class="s16">elements</span>.<span class="s5">size</span><span class="s17">()</span><span class="s2">);</span></p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s8"> </span>遍历单选按钮</p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s3"><b>for</b></span> <span class="s2">(</span>WebElement <span class="s16">radio</span> : <span class="s16">elements</span><span class="s2">)</span> {</p>
+<p class="p6"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s8"> </span>判断该单选按钮<span class="s5">是否被选中</span></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s3"><b>boolean</b></span> <span class="s16">flag</span> = <span class="s16">radio</span>.<span class="s5">isSelected</span><span class="s17">()</span><span class="s2">;</span></p>
+<p class="p6"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s8"> </span>未被选中</p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s3"><b>if</b></span> <span class="s2">(</span><span class="s16">flag</span> == <span class="s3"><b>false</b></span><span class="s2">)</span> {</p>
+<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> <span class="s17">点击</span><span class="s5">radio</span></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s16">radio</span>.<span class="s5">click</span><span class="s17">()</span><span class="s2">;</span></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s3"><b>break</b></span><span class="s2">;</span></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>} <span class="s3"><b>else</b></span> {</p>
+<p class="p6"><span class="s7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s8"> </span>已被选中</p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>System.<span class="s9"><b><i>out</i></b></span>.println<span class="s2">(</span><span class="s14">"</span><span class="s15">单选框</span><span class="s14">"</span> + <span class="s16">radio</span>.<span class="s5">getText</span><span class="s17">()</span> + <span class="s14">"</span><span class="s15">已选中</span><span class="s14">"</span><span class="s2">);</span><span class="s18">//</span><span class="s19"> </span><span class="s18">保密</span><span class="s19">\</span><span class="s18">男</span><span class="s19">\</span><span class="s18">女</span></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p3"><span class="Apple-tab-span">	</span>}</p>
+<p class="p5"><br></p>
+</body>
+</html>

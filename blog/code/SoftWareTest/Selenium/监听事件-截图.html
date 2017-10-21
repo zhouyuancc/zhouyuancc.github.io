@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; min-height: 25.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; background-color: #e0edd4; min-height: 25.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; min-height: 22.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4e9072}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; background-color: #fff995}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4f76cb; background-color: #e0edd4}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4f76cb}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.PingFang SC'; color: #4e9072}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #7e504f}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; background-color: #e0edd4; min-height: 22.0px}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #777777}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #0326cc}
+    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #777777; background-color: #fff995}
+    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #3933ff}
+    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4e9072; background-color: #e0edd4}
+    span.s1 {background-color: #fff995}
+    span.s2 {font: 18.0px Helvetica}
+    span.s3 {color: #931a68}
+    span.s4 {font: 18.0px '.PingFang SC'}
+    span.s5 {color: #0326cc}
+    span.s6 {font: 18.0px '.PingFang SC'; color: #4e9072}
+    span.s7 {color: #4e9072}
+    span.s8 {color: #000000}
+    span.s9 {color: #91afcb}
+    span.s10 {font: 18.0px 'Helvetica Neue'; color: #000000}
+    span.s11 {font: 18.0px 'Helvetica Neue'}
+    span.s12 {color: #7e504f}
+    span.s13 {color: #3933ff}
+    span.s14 {font: 18.0px '.PingFang SC'; color: #3933ff}
+    span.s15 {font: 18.0px '.PingFang SC'; color: #000000}
+    span.s16 {text-decoration: underline}
+    span.s17 {font: 18.0px '.PingFang SC'; background-color: #fff995}
+    span.s18 {color: #931a68; background-color: #fff995}
+    span.s19 {color: #7e504f; background-color: #fff995}
+    span.s20 {color: #777777}
+    span.s21 {color: #9293af}
+    span.s22 {font: 18.0px '.PingFang SC'; color: #e32400}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><br></p>
+<p class="p2"><span class="s1">监听事件</span>是<span class="s2">testNG</span>里的一个功能, 运行带有<span class="s1">@Test</span>的case的时候, 若失败了, 能够检测到失败了</p>
+<p class="p1"><br></p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s3"><b>package</b></span> com.SG.ZY<span class="s4">;</span></p>
+<p class="p5"><br></p>
+<p class="p4"><span class="s3"><b>import</b></span> java.io.File<span class="s4">;</span></p>
+<p class="p5"><br></p>
+<p class="p4"><span class="s3"><b>import</b></span> org.apache.commons.io.FileUtils<span class="s4">;</span></p>
+<p class="p4"><span class="s3"><b>import</b></span> org.openqa.selenium.OutputType<span class="s4">;</span></p>
+<p class="p4"><span class="s3"><b>import</b></span> org.openqa.selenium.TakesScreenshot<span class="s4">;</span></p>
+<p class="p4"><span class="s3"><b>import</b></span> org.openqa.selenium.WebDriver<span class="s4">;</span></p>
+<p class="p4"><span class="s3"><b>import</b></span> org.openqa.selenium.firefox.FirefoxDriver<span class="s4">;</span></p>
+<p class="p5"><br></p>
+<p class="p4"><span class="s3"><b>public</b></span> <span class="s3"><b>class</b></span> BaseDriver {</p>
+<p class="p5"><span class="Apple-tab-span">	</span></p>
+<p class="p6"><span class="s4"><span class="Apple-tab-span">	</span>//</span> <span class="s1">7.</span></p>
+<p class="p7"><span class="Apple-tab-span">	</span>WebDriver <span class="s5">driver</span><span class="s4">;</span><span class="s6">//</span><span class="s7"> default</span></p>
+<p class="p8"><span class="s8"><span class="Apple-tab-span">	</span></span><span class="s4">/</span>**</p>
+<p class="p8"><span class="Apple-tab-span">	</span><span class="s4">可访问位置</span><span class="Apple-tab-span">	</span>private<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> default<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>protected<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>public</p>
+<p class="p8"><span class="Apple-tab-span">	</span><span class="s4">定义的类中</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>√<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>√<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>√<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>√</p>
+<p class="p8"><span class="Apple-tab-span">	</span><span class="s4">同一个包中</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>√<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>√<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>√</p>
+<p class="p8"><span class="Apple-tab-span">	</span><span class="s4">子类中</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>√<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>√</p>
+<p class="p8"><span class="Apple-tab-span">	</span><span class="s4">其它包中</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>√</p>
+<p class="p8"><span class="Apple-tab-span">	</span>*<span class="s4">/</span></p>
+<p class="p5"><br></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s3"><b>public</b></span> BaseDriver<span class="s4">()</span> {</p>
+<p class="p6"><span class="s8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s4">//</span> <span class="s9"><b>TODO</b></span> Auto-generated constructor stub</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5">driver</span> = <span class="s3"><b>new</b></span> FirefoxDriver<span class="s4">();</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p5"><span class="Apple-tab-span">	</span></p>
+<p class="p9"><span class="s8"><span class="Apple-tab-span">	</span></span><span class="s4">/</span>**</p>
+<p class="p9"><span class="Apple-tab-span">	</span> * <span class="s4">截图</span></p>
+<p class="p9"><span class="Apple-tab-span">	</span> *<span class="Apple-converted-space"> </span></p>
+<p class="p9"><span class="Apple-tab-span">	</span> * <span class="s9"><b>@throws</b></span> Exception</p>
+<p class="p9"><span class="Apple-tab-span">	</span> *<span class="s4">/</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s3"><b>public</b></span> <span class="s3"><b>void</b></span> takeScreenShot<span class="s4">()</span> <span class="s3"><b>throws</b></span> Exception {</p>
+<p class="p5"><br></p>
+<p class="p10"><span class="s10"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s11"> </span>获取当前时间戳</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s3"><b>long</b></span> <span class="s12">date</span> = System.<i>currentTimeMillis</i><span class="s4">();</span></p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s4">//</span> <span class="s4">时间转字符串</span>String.valueOf</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>String <span class="s12">path</span> = String.<i>valueOf</i><span class="s4">(</span><span class="s12">date</span><span class="s4">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s12">path</span> = <span class="s12">path</span> + <span class="s13">".png"</span><span class="s4">;</span></p>
+<p class="p5"><br></p>
+<p class="p10"><span class="s10"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s11"> </span>设置截图需存储的文件夹路径</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>String <span class="s12">currentPath</span> = System.<i>getProperty</i><span class="s4">(</span><span class="s13">"user.dir"</span><span class="s4">);</span></p>
+<p class="p10"><span class="s10"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s11"> </span>拼接成图片路径</p>
+<p class="p11"><span class="s8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>String </span>screenPath<span class="s8"> = </span>currentPath<span class="s8"> + </span><span class="s13">"</span><span class="s14">/</span><span class="s13">"</span><span class="s8"> + </span>path<span class="s15">;</span></p>
+<p class="p5"><br></p>
+<p class="p10"><span class="s10"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s11"> </span>截桌面//<span class="s11"> </span>图片在内存中</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>File <span class="s12">screen</span> = <span class="s4">((</span>TakesScreenshot<span class="s4">)</span> <span class="s5">driver</span><span class="s4">)</span>.getScreenshotAs<span class="s4">(</span>OutputType.<span class="s5"><b><i>FILE</i></b></span><span class="s4">);</span></p>
+<p class="p10"><span class="s10"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s11"> </span>从内存中<span class="s11"> </span>复制图片<span class="s11"> </span>到<span class="s11"> </span>拼接的路径</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>FileUtils.<i>copyFile</i><span class="s4">(</span><span class="s12">screen</span><span class="s4">,</span> <span class="s3"><b>new</b></span> File<span class="s4">(</span><span class="s12">screenPath</span><span class="s4">));</span></p>
+<p class="p5"><br></p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p4">}</p>
+<p class="p12"><br></p>
+<p class="p4"><span class="s3"><b>package</b></span> com.SG.ZY<span class="s4">;</span></p>
+<p class="p5"><br></p>
+<p class="p9"><span class="s4">/</span>**</p>
+<p class="p9"><span class="Apple-converted-space"> </span>* <span class="s4">监听类</span></p>
+<p class="p9"><span class="Apple-converted-space"> </span>* <span class="s9"><b>@author</b></span> <span class="s16">Zhou</span></p>
+<p class="p9"><span class="Apple-converted-space"> </span>*</p>
+<p class="p9"><span class="Apple-converted-space"> </span>*<span class="s4">/</span></p>
+<p class="p6"><span class="s4">// </span><span class="s17">1. </span><span class="s4">继承</span>TestListenerAdapter</p>
+<p class="p4"><span class="s3"><b>public</b></span> <span class="s3"><b>class</b></span> TestngListenerScreenShot <span class="s18"><b>extends</b></span><span class="s1"> TestListenerAdapter</span> {</p>
+<p class="p5"><br></p>
+<p class="p13"><span class="s8"><span class="Apple-tab-span">	</span></span>@Override</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s3"><b>public</b></span> <span class="s3"><b>void</b></span> onTestSuccess<span class="s4">(</span>ITestResult <span class="s12">tr</span><span class="s4">)</span> {</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s3"><b>super</b></span>.onTestSuccess<span class="s4">(</span><span class="s12">tr</span><span class="s4">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p5"><br></p>
+<p class="p9"><span class="s8"><span class="Apple-tab-span">	</span></span><span class="s4">/</span>**</p>
+<p class="p9"><span class="Apple-tab-span">	</span> * testNG<span class="s4">带有</span>@Test<span class="s4">的</span>case<span class="s17">报错时</span><span class="s4">,</span> <span class="s4">监听到并执行</span></p>
+<p class="p9"><span class="Apple-tab-span">	</span> *<span class="s4">/</span></p>
+<p class="p13"><span class="s8"><span class="Apple-tab-span">	</span></span>@Override</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s3"><b>public</b></span> <span class="s3"><b>void</b></span> onTestFailure<span class="s4">(</span>ITestResult <span class="s12">tr</span><span class="s4">)</span> {</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s3"><b>super</b></span>.onTestFailure<span class="s4">(</span><span class="s12">tr</span><span class="s4">);</span></p>
+<p class="p5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s3"><b>try</b></span> {</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>takeScreenShot<span class="s4">(</span><span class="s12">tr</span><span class="s4">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>} <span class="s3"><b>catch</b></span> <span class="s4">(</span>Exception <span class="s12">e</span><span class="s4">)</span> {</p>
+<p class="p6"><span class="s8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s4">//</span> <span class="s9"><b>TODO</b></span> Auto-generated catch block</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s12">e</span>.printStackTrace<span class="s4">();</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p5"><span class="Apple-tab-span">	</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s3"><b>private</b></span> <span class="s3"><b>void</b></span> takeScreenShot<span class="s4">(</span><span class="s1">ITestResult </span><span class="s19">tr</span><span class="s4">)</span> {</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s4">//</span> <span class="s1">2.</span> ITestResult <span class="s16">tr</span> : <span class="s4">类</span> | <span class="s4">强制转换成</span>BaseDriver<span class="s4">基类</span><span class="s8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span></p>
+<p class="p7"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> BaseDriver <span class="s12">baseDriver</span> = <span class="s4">(</span>BaseDriver<span class="s4">)</span><span class="s12">tr</span>.getInstance<span class="s4">();</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s3"><b>try</b></span> {</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s12">baseDriver</span>.takeScreenShot<span class="s4">();</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>} <span class="s3"><b>catch</b></span> <span class="s4">(</span>Exception <span class="s12">e</span><span class="s4">)</span> {</p>
+<p class="p6"><span class="s8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s4">//</span> <span class="s9"><b>TODO</b></span> Auto-generated catch block</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s12">e</span>.printStackTrace<span class="s4">();</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p5"><br></p>
+<p class="p13"><span class="s8"><span class="Apple-tab-span">	</span></span>@Override</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s3"><b>public</b></span> <span class="s3"><b>void</b></span> onTestSkipped<span class="s4">(</span>ITestResult <span class="s12">tr</span><span class="s4">)</span> {</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s3"><b>super</b></span>.onTestSkipped<span class="s4">(</span><span class="s12">tr</span><span class="s4">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p5"><br></p>
+<p class="p13"><span class="s8"><span class="Apple-tab-span">	</span></span>@Override</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s3"><b>public</b></span> <span class="s3"><b>void</b></span> onStart<span class="s4">(</span>ITestContext <span class="s12">testContext</span><span class="s4">)</span> {</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s3"><b>super</b></span>.onStart<span class="s4">(</span><span class="s12">testContext</span><span class="s4">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p5"><br></p>
+<p class="p13"><span class="s8"><span class="Apple-tab-span">	</span></span>@Override</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s3"><b>public</b></span> <span class="s3"><b>void</b></span> onFinish<span class="s4">(</span>ITestContext <span class="s12">testContext</span><span class="s4">)</span> {</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s3"><b>super</b></span>.onFinish<span class="s4">(</span><span class="s12">testContext</span><span class="s4">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p5"><br></p>
+<p class="p4">}</p>
+<p class="p12"><br></p>
+<p class="p4"><span class="s3"><b>package</b></span> com.SG.ZY<span class="s4">;</span></p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s4">//</span> <span class="s1">3.</span></p>
+<p class="p7"><span class="s20">@Listeners</span><span class="s4">(</span>{TestngListenerScreenShot.<span class="s3"><b>class</b></span>}<span class="s4">)</span><span class="s6">//添加监听</span></p>
+<p class="p6"><span class="s4">//</span> <span class="s1">4.</span></p>
+<p class="p4"><span class="s3"><b>public</b></span> <span class="s3"><b>class</b></span> ZYLogin <span class="s18"><b>extends</b></span><span class="s1"> BaseDriver</span> {</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s8"><span class="Apple-tab-span">	</span></span><span class="s4">//</span> public WebDriver driver<span class="s4">;//</span> <span class="s4">继承自</span>BaseDriver</p>
+<p class="p14"><span class="s8"><span class="Apple-tab-span">	</span></span><span class="s3"><b>public</b></span><span class="s8"> String </span>windowsHandle<span class="s15">;</span><span class="s6">//</span><span class="s7"> </span><span class="s6">当前</span><span class="s7">window</span></p>
+<p class="p5"><br></p>
+<p class="p9"><span class="s8"><span class="Apple-tab-span">	</span></span><span class="s4">/</span>**</p>
+<p class="p9"><span class="Apple-tab-span">	</span> * <span class="s4">初始化</span>WebDriver</p>
+<p class="p9"><span class="Apple-tab-span">	</span> *<span class="s4">/</span></p>
+<p class="p6"><span class="s4"><span class="Apple-tab-span">	</span>//</span> <span class="s1">5.</span></p>
+<p class="p15"><span class="s8"><span class="Apple-tab-span">	</span></span>@Test</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s3"><b>public</b></span> <span class="s3"><b>void</b></span> initDriver<span class="s4">()</span> {</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s4">//</span>driver = new FirefoxDriver<span class="s4">();</span></p>
+<p class="p16"><span class="s8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s5">driver</span><span class="s8">.get</span><span class="s15">(</span>"http:<span class="s4">//</span>222.222.117.50:8081<span class="s4">/</span>"<span class="s15">);</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5">driver</span>.manage<span class="s4">()</span>.window<span class="s4">()</span>.maximize<span class="s4">();</span></p>
+<p class="p5"><br></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>sleep<span class="s4">();</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p5"><br></p>
+<p class="p9"><span class="s8"><span class="Apple-tab-span">	</span></span><span class="s4">/</span>**</p>
+<p class="p9"><span class="Apple-tab-span">	</span> * <span class="s4">参数化</span> key<span class="s21">-</span>value<span class="Apple-converted-space"> </span></p>
+<p class="p9"><span class="Apple-tab-span">	</span> * <span class="s16">username</span><span class="s21">-</span>password</p>
+<p class="p9"><span class="Apple-tab-span">	</span> *<span class="Apple-converted-space"> </span></p>
+<p class="p9"><span class="Apple-tab-span">	</span> * <span class="s9"><b>@throws</b></span> Exception</p>
+<p class="p9"><span class="Apple-tab-span">	</span> *<span class="s4">/</span></p>
+<p class="p17"><span class="s8"><span class="Apple-tab-span">	</span></span><span class="s4">//</span> parameterize<span class="s4">()</span><span class="s22">依赖于</span>initDriver<span class="s4">()方法</span></p>
+<p class="p17"><span class="s8"><span class="Apple-tab-span">	</span></span><span class="s4">//</span> <span class="s22">先</span><span class="s4">执行</span>initDriver<span class="s4">(),</span> <span class="s22">再</span><span class="s4">执行</span>parameterize<span class="s4">()</span></p>
+<p class="p6"><span class="s4"><span class="Apple-tab-span">	</span>//</span> <span class="s1">6.</span></p>
+<p class="p7"><span class="Apple-tab-span">	</span><span class="s20">@Test</span><span class="s4">(</span>dependsOnMethods = { <span class="s13">"initDriver"</span> }<span class="s4">)</span> <span class="s6">//</span><span class="s7"> testNG</span><span class="s6">包</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s3"><b>public</b></span> <span class="s3"><b>void</b></span> parameterize<span class="s4">()</span> <span class="s3"><b>throws</b></span> Exception {</p>
+<p class="p5"><br></p>
+<p class="p10"><span class="s10"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s11"> </span>字典</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>HashMap&lt;String<span class="s4">,</span> String&gt; <span class="s12">userInfo</span> = <span class="s3"><b>new</b></span> HashMap&lt;String<span class="s4">,</span> String&gt;<span class="s4">();</span></p>
+<p class="p16"><span class="s8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s12">userInfo</span><span class="s8">.put</span><span class="s15">(</span>"zhouyuan"<span class="s15">,</span><span class="s8"> </span><span class="s4">“</span>******<span class="s4">”</span><span class="s15">);</span></p>
+<p class="p16"><span class="s8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s12">userInfo</span><span class="s8">.put</span><span class="s15">(</span>"cr"<span class="s15">,</span><span class="s8"> </span><span class="s4">“</span>******<span class="s4">”</span><span class="s15">);</span></p>
+<p class="p5"><br></p>
+<p class="p10"><span class="s10"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s11"> </span>遍历</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Iterator&lt;Entry&lt;String<span class="s4">,</span> String&gt;&gt; <span class="s12">user</span> = <span class="s12">userInfo</span>.entrySet<span class="s4">()</span>.iterator<span class="s4">();</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s3"><b>while</b></span> <span class="s4">(</span><span class="s12">user</span>.hasNext<span class="s4">())</span> {</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Map.Entry&lt;java.lang.String<span class="s4">,</span> java.lang.String&gt; <span class="s12">entry</span> = <span class="s4">(</span>Map.Entry&lt;java.lang.String<span class="s4">,</span> java.lang.String&gt;<span class="s4">)</span> <span class="s12">user</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>.next<span class="s4">();</span></p>
+<p class="p5"><br></p>
+<p class="p10"><span class="s10"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s11"> </span>获取参数化的数据</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>String <span class="s12">usernameStr</span> = <span class="s12">entry</span>.getKey<span class="s4">();</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>String <span class="s12">passwordStr</span> = <span class="s12">entry</span>.getValue<span class="s4">();</span></p>
+<p class="p5"><br></p>
+<p class="p10"><span class="s10"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s11"> </span>执行登录</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>ZYLogin <span class="s12">zyLogin</span> = <span class="s3"><b>new</b></span> ZYLogin<span class="s4">();</span></p>
+<p class="p11"><span class="s8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>zyLogin<span class="s8">.loginAction</span><span class="s15">(</span>usernameStr<span class="s15">,</span><span class="s8"> </span>passwordStr<span class="s15">);</span></p>
+<p class="p5"><br></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s12">zyLogin</span>.<span class="s5">driver</span>.quit<span class="s4">();</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p4"><span class="Apple-tab-span">	</span>}</p>
+<p class="p5"><br></p>
+<p class="p5"><br></p>
+<p class="p4">}</p>
+</body>
+</html>

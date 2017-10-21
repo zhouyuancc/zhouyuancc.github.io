@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; min-height: 22.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4e9072}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #3933ff}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #931a68; background-color: #e0edd4; min-height: 23.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #777777}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; background-color: #e0edd4; min-height: 22.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4f76cb}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4f76cb; background-color: #fff995}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.PingFang SC'; color: #4e9072}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #7e504f}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.PingFang SC'; color: #4f76cb}
+    span.s1 {color: #000000}
+    span.s2 {color: #3933ff}
+    span.s3 {text-decoration: underline}
+    span.s4 {text-decoration: underline ; color: #3933ff}
+    span.s5 {color: #931a68}
+    span.s6 {font: 18.0px '.PingFang SC'}
+    span.s7 {color: #0326cc}
+    span.s8 {color: #91afcb}
+    span.s9 {font: 18.0px '.PingFang SC'; color: #000000}
+    span.s10 {color: #7e504f}
+    span.s11 {font: 18.0px 'Helvetica Neue'; color: #000000}
+    span.s12 {font: 18.0px 'Helvetica Neue'}
+    span.s13 {font: 18.0px '.PingFang SC'; color: #3933ff}
+    span.s14 {color: #777777}
+    span.s15 {background-color: #fff995}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">element.properties</p>
+<p class="p2"><br></p>
+<p class="p3">#buyCourse</p>
+<p class="p4"><span class="s1">courseName=</span>className&gt;path</p>
+<p class="p1">courseNameNode=<span class="s2">tagName&gt;span</span></p>
+<p class="p4"><span class="s1">buyNow=</span>id&gt;buy-trigger</p>
+<p class="p4"><span class="s1">submitOrder=</span>linkText&gt;\u63D0\u4EA4\u8BA2\u5355</p>
+<p class="p4"><span class="s1">orderText=</span>className&gt;<span class="s3">num</span></p>
+<p class="p4"><span class="s1">courseName2=</span>className&gt;<span class="s3">js</span>-itemUl</p>
+<p class="p1">courseNameNode2=<span class="s2">tagName&gt;</span><span class="s4">dt</span></p>
+<p class="p5"><b></b><br></p>
+<p class="p1"><span class="s5"><b>package</b></span> com.buy.ZY.testCase<span class="s6">;</span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="s5"><b>import</b></span> org.openqa.selenium.By<span class="s6">;</span></p>
+<p class="p1"><span class="s5"><b>import</b></span> org.openqa.selenium.WebElement<span class="s6">;</span></p>
+<p class="p1"><span class="s5"><b>import</b></span> org.testng.Assert<span class="s6">;</span></p>
+<p class="p1"><span class="s5"><b>import</b></span> org.testng.annotations.Test<span class="s6">;</span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="s5"><b>import</b></span> com.SG.ZY.base.BaseDriver<span class="s6">;</span></p>
+<p class="p1"><span class="s5"><b>import</b></span> com.SG.ZY.testCase.BaseCase<span class="s6">;</span></p>
+<p class="p1"><span class="s5"><b>import</b></span> com.SG.ZY.util.GetByLocator<span class="s6">;</span></p>
+<p class="p1"><span class="s5"><b>import</b></span> com.SG.ZY.util.Tool<span class="s6">;</span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="s5"><b>public</b></span> <span class="s5"><b>class</b></span> buyLoginTestCase <span class="s5"><b>extends</b></span> BaseCase {</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> BaseDriver <span class="s7">driver</span><span class="s6">;</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> buyBussiness <span class="s7">bussiness</span><span class="s6">;</span></p>
+<p class="p2"><br></p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s6">//</span> static Logger logger = Logger.getLogger<span class="s6">(</span>buyLoginTestCase.class<span class="s6">);</span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> buyLoginTestCase<span class="s6">()</span> {</p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s6">//</span> <span class="s8"><b>TODO</b></span> Auto-generated constructor stub</p>
+<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>System.</span><span class="s7"><b><i>out</i></b></span><span class="s1">.println</span><span class="s9">(</span>"<span class="s6">构造函数</span> : buyLoginTestCase<span class="s6">()</span>"<span class="s9">);</span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5"><b>this</b></span>.<span class="s7">driver</span> = initDriver<span class="s6">(</span><span class="s2">"Firefox"</span><span class="s6">);</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5"><b>this</b></span>.<span class="s7">bussiness</span> = <span class="s5"><b>new</b></span> buyBussiness<span class="s6">(</span><span class="s7">driver</span><span class="s6">);</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span>}</p>
+<p class="p2"><br></p>
+<p class="p6"><span class="s1"><span class="Apple-tab-span">	</span></span>@Test</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> <span class="s5"><b>void</b></span> login<span class="s6">()</span> <span class="s5"><b>throws</b></span> Exception {</p>
+<p class="p2"><br></p>
+<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s7">driver</span><span class="s1">.get</span><span class="s9">(</span>"http:<span class="s6">//</span>www.imooc.com<span class="s6">/</span>"<span class="s9">);</span></p>
+<p class="p2"><br></p>
+<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>String </span><span class="s10">key</span><span class="s1"> = </span>"kamui-c@163.com"<span class="s9">;</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5"><b>this</b></span>.<span class="s7">bussiness</span>.login<span class="s6">(</span><span class="s10">key</span><span class="s6">,</span> GetByLocator.<i>getLocatorValue</i><span class="s6">(</span><span class="s10">key</span><span class="s6">));</span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Tool.<i>sleep</i><span class="s6">();</span></p>
+<p class="p2"><br></p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s6">//</span> driver.get<span class="s6">(</span>"http:<span class="s6">//</span>coding.imooc.com<span class="s6">/</span>"<span class="s6">);</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span>}</p>
+<p class="p7"><br></p>
+<p class="p8"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s6">/</span>**</p>
+<p class="p8"><span class="Apple-tab-span">	</span> * <span class="s6">下单流程</span><span class="Apple-converted-space"> </span></p>
+<p class="p9"><span class="Apple-tab-span">	</span> * <span class="s6">封装前</span></p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="s6">/</span></p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s6">//</span> @Test<span class="s6">(</span>dependsOnMethods = { "login" }<span class="s6">)</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> <span class="s5"><b>void</b></span> buyCourse<span class="s6">()</span> {</p>
+<p class="p2"><br></p>
+<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s7">driver</span><span class="s1">.get</span><span class="s9">(</span>"http:<span class="s6">//</span>coding.imooc.com<span class="s6">/</span>class<span class="s6">/</span>128.html"<span class="s9">);</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Tool.<i>sleep</i><span class="s6">();</span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>String <span class="s10">courseName1</span> = <span class="s7">driver</span>.findElement<span class="s6">(</span>By.<i>className</i><span class="s6">(</span><span class="s2">"path"</span><span class="s6">))</span>.findElement<span class="s6">(</span>By.<i>tagName</i><span class="s6">(</span><span class="s2">"span"</span><span class="s6">))</span>.getText<span class="s6">();</span></p>
+<p class="p2"><br></p>
+<p class="p10"><span class="s11"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s12"> 1.</span>点击<span class="s12">-</span>立即购买</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s7">driver</span>.findElement<span class="s6">(</span>By.<i>id</i><span class="s6">(</span><span class="s2">"buy-trigger"</span><span class="s6">))</span>.click<span class="s6">();</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Tool.<i>sleep</i><span class="s6">();</span></p>
+<p class="p2"><br></p>
+<p class="p10"><span class="s11"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s12"> 2.</span>点击提交订单</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s7">driver</span>.findElement<span class="s6">(</span>By.<i>linkText</i><span class="s6">(</span><span class="s2">"</span><span class="s13">提交订单</span><span class="s2">"</span><span class="s6">))</span>.click<span class="s6">();</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Tool.<i>sleep</i><span class="s6">();</span></p>
+<p class="p2"><br></p>
+<p class="p10"><span class="s11"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s12"> </span>支付中心</p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s6">//</span> 3.<span class="s6">订单号</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>String <span class="s10">orderText</span> = <span class="s7">driver</span>.findElement<span class="s6">(</span>By.<i>className</i><span class="s6">(</span><span class="s2">"num"</span><span class="s6">))</span>.getText<span class="s6">();</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5"><b>if</b></span> <span class="s6">(</span><span class="s10">orderText</span> != <span class="s5"><b>null</b></span><span class="s6">)</span> {</p>
+<p class="p10"><span class="s11"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s12"> 4.</span>获取支付中心商品文本信息</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>String <span class="s10">courseName2</span> = <span class="s7">driver</span>.findElement<span class="s6">(</span>By.<i>className</i><span class="s6">(</span><span class="s2">"js-itemUl"</span><span class="s6">))</span>.findElement<span class="s6">(</span>By.<i>tagName</i><span class="s6">(</span><span class="s2">"dt"</span><span class="s6">))</span>.getText<span class="s6">();</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Assert.<i>assertEquals</i><span class="s6">(</span><span class="s10">courseName1</span><span class="s6">,</span> <span class="s10">courseName2</span><span class="s6">,</span> <span class="s2">"</span><span class="s13">购买的商品信息不一致</span><span class="s2">"</span><span class="s6">);</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p1"><span class="Apple-tab-span">	</span>}</p>
+<p class="p7"><br></p>
+<p class="p8"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s6">/</span>**</p>
+<p class="p8"><span class="Apple-tab-span">	</span> * <span class="s6">下单流程</span><span class="Apple-converted-space"> </span></p>
+<p class="p9"><span class="Apple-tab-span">	</span> * <span class="s6">封装后</span></p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="Apple-converted-space"> </span></p>
+<p class="p8"><span class="Apple-tab-span">	</span> * <span class="s8"><b>@throws</b></span> Exception</p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="s6">/</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s14">@Test</span><span class="s6">(</span>dependsOnMethods = { <span class="s2">"login"</span> }<span class="s6">)</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> <span class="s5"><b>void</b></span> downOrder<span class="s6">()</span> <span class="s5"><b>throws</b></span> Exception {</p>
+<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s7">driver</span><span class="s1">.get</span><span class="s9">(</span>"http:<span class="s6">//</span>coding.imooc.com<span class="s6">/</span>class<span class="s6">/</span>138.html"<span class="s9">);</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Tool.<i>sleep</i><span class="s6">();</span></p>
+<p class="p2"><br></p>
+<p class="p10"><span class="s11"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s12"> 1.</span>立即购买,<span class="s12"> </span>返回购买信息</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>String <span class="s10">currentText</span> = <span class="s5"><b>this</b></span>.buyCourseNow<span class="s6">();</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>System.<span class="s7"><b><i>out</i></b></span>.println<span class="s6">(</span><span class="s2">"</span><span class="s13">当前购买信息</span><span class="s2">"</span> + <span class="s10">currentText</span><span class="s6">);</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Tool.<i>sleep</i><span class="s6">();</span></p>
+<p class="p2"><br></p>
+<p class="p10"><span class="s11"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s12"> 2.</span>点击提交订单</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5"><b>this</b></span>.sureOrder<span class="s6">();</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Tool.<i>sleep</i><span class="s6">();</span></p>
+<p class="p2"><br></p>
+<p class="p10"><span class="s11"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s12"> 3.</span>获取订单号</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5"><b>this</b></span>.getOrder<span class="s6">();</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Tool.<i>sleep</i><span class="s6">();</span></p>
+<p class="p2"><br></p>
+<p class="p10"><span class="s11"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s12"> 4.</span>获取支付中心商品文本信息</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>String <span class="s10">orderCourseText</span> = <span class="s5"><b>this</b></span>.getOrderCourse<span class="s6">();</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>System.<span class="s7"><b><i>out</i></b></span>.println<span class="s6">(</span><span class="s2">"</span><span class="s13">订单页面购买信息</span><span class="s2">"</span> + <span class="s10">orderCourseText</span><span class="s6">);</span></p>
+<p class="p2"><br></p>
+<p class="p11"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s5"><b>if</b></span><span class="s1"> </span><span class="s9">(</span>currentText<span class="s1">.equals</span><span class="s9">(</span>orderCourseText<span class="s9">))</span><span class="s1"> {</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>System.<span class="s7"><b><i>out</i></b></span>.println<span class="s6">(</span><span class="s2">"</span><span class="s13">下单成功</span><span class="s2">"</span><span class="s6">);</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p1"><span class="Apple-tab-span">	</span>}</p>
+<p class="p2"><br></p>
+<p class="p10"><span class="s11"><span class="Apple-tab-span">	</span></span>//<span class="s12"> </span><span class="s15">封装基本方法</span></p>
+<p class="p8"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s6">/</span>**</p>
+<p class="p8"><span class="Apple-tab-span">	</span> * <span class="s6">获取父</span>element</p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="s6">/</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> WebElement getElement<span class="s6">(</span>By <span class="s10">by</span><span class="s6">)</span> {</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5"><b>return</b></span> <span class="s7">driver</span>.findElement<span class="s6">(</span><span class="s10">by</span><span class="s6">);</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span>}</p>
+<p class="p2"><br></p>
+<p class="p8"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s6">/</span>**</p>
+<p class="p12"><span class="s12"><span class="Apple-tab-span">	</span> * </span>通过父节点获取子节点</p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="s6">/</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> WebElement getElement<span class="s6">(</span>WebElement <span class="s10">element</span><span class="s6">,</span> By <span class="s10">by</span><span class="s6">)</span> {</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5"><b>return</b></span> <span class="s10">element</span>.findElement<span class="s6">(</span><span class="s10">by</span><span class="s6">);</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span>}</p>
+<p class="p2"><br></p>
+<p class="p8"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s6">/</span>**</p>
+<p class="p12"><span class="s12"><span class="Apple-tab-span">	</span> * </span>获取商品文本信息</p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="s6">/</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> String getCourseText<span class="s6">(</span>WebElement <span class="s10">element</span><span class="s6">)</span> {</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5"><b>return</b></span> <span class="s10">element</span>.getText<span class="s6">();</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span>}</p>
+<p class="p2"><br></p>
+<p class="p10"><span class="s11"><span class="Apple-tab-span">	</span></span>//<span class="s12"> </span><span class="s15">封装购买方法</span></p>
+<p class="p8"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s6">/</span>**</p>
+<p class="p12"><span class="s12"><span class="Apple-tab-span">	</span> * 1.</span>立即购买,<span class="s12"> </span>返回购买信息</p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="Apple-converted-space"> </span></p>
+<p class="p8"><span class="Apple-tab-span">	</span> * <span class="s8"><b>@throws</b></span> Exception</p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="s6">/</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> String buyCourseNow<span class="s6">()</span> <span class="s5"><b>throws</b></span> Exception {</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>WebElement <span class="s10">element</span> = <span class="s5"><b>this</b></span>.getElement<span class="s6">(</span>GetByLocator.<i>getLocator</i><span class="s6">(</span><span class="s2">"courseName"</span><span class="s6">));</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>WebElement <span class="s10">elementNode</span> = <span class="s5"><b>this</b></span>.getElement<span class="s6">(</span><span class="s10">element</span><span class="s6">,</span> GetByLocator.<i>getLocator</i><span class="s6">(</span><span class="s2">"courseNameNode"</span><span class="s6">));</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>String <span class="s10">currentText</span> = <span class="s5"><b>this</b></span>.getCourseText<span class="s6">(</span><span class="s10">elementNode</span><span class="s6">);</span></p>
+<p class="p2"><br></p>
+<p class="p10"><span class="s11"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s12"> </span>点击立即购买</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s7">driver</span>.click<span class="s6">(</span><span class="s5"><b>this</b></span>.getElement<span class="s6">(</span>GetByLocator.<i>getLocator</i><span class="s6">(</span><span class="s2">"buyNow"</span><span class="s6">)));</span></p>
+<p class="p2"><br></p>
+<p class="p11"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s5"><b>return</b></span><span class="s1"> </span>currentText<span class="s9">;</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span>}</p>
+<p class="p2"><br></p>
+<p class="p8"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s6">/</span>**</p>
+<p class="p8"><span class="Apple-tab-span">	</span> * 2.<span class="s6">点击提交订单</span></p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="Apple-converted-space"> </span></p>
+<p class="p8"><span class="Apple-tab-span">	</span> * <span class="s8"><b>@throws</b></span> Exception</p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="s6">/</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> <span class="s5"><b>void</b></span> sureOrder<span class="s6">()</span> <span class="s5"><b>throws</b></span> Exception {</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s7">driver</span>.click<span class="s6">(</span><span class="s5"><b>this</b></span>.getElement<span class="s6">(</span>GetByLocator.<i>getLocator</i><span class="s6">(</span><span class="s2">"submitOrder"</span><span class="s6">)));</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span>}</p>
+<p class="p2"><br></p>
+<p class="p8"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s6">/</span>**</p>
+<p class="p8"><span class="Apple-tab-span">	</span> * 3.<span class="s6">获取订单号</span></p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="Apple-converted-space"> </span></p>
+<p class="p8"><span class="Apple-tab-span">	</span> * <span class="s8"><b>@throws</b></span> Exception</p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="s6">/</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> String getOrder<span class="s6">()</span> <span class="s5"><b>throws</b></span> Exception {</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>String <span class="s10">orderText</span> = <span class="s5"><b>this</b></span>.getCourseText<span class="s6">(</span><span class="s5"><b>this</b></span>.getElement<span class="s6">(</span>GetByLocator.<i>getLocator</i><span class="s6">(</span><span class="s2">"orderText"</span><span class="s6">)));</span></p>
+<p class="p11"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s5"><b>return</b></span><span class="s1"> </span>orderText<span class="s9">;</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span>}</p>
+<p class="p2"><br></p>
+<p class="p8"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s6">/</span>**</p>
+<p class="p12"><span class="s12"><span class="Apple-tab-span">	</span> * 4.</span>获取支付中心商品文本信息</p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="Apple-converted-space"> </span></p>
+<p class="p8"><span class="Apple-tab-span">	</span> * <span class="s8"><b>@throws</b></span> Exception</p>
+<p class="p8"><span class="Apple-tab-span">	</span> *<span class="s6">/</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="s5"><b>public</b></span> String getOrderCourse<span class="s6">()</span> <span class="s5"><b>throws</b></span> Exception {</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>WebElement <span class="s10">element</span> = <span class="s5"><b>this</b></span>.getElement<span class="s6">(</span>GetByLocator.<i>getLocator</i><span class="s6">(</span><span class="s2">"courseName2"</span><span class="s6">));</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>WebElement <span class="s10">elementNode</span> = <span class="s5"><b>this</b></span>.getElement<span class="s6">(</span><span class="s10">element</span><span class="s6">,</span> GetByLocator.<i>getLocator</i><span class="s6">(</span><span class="s2">"courseNameNode2"</span><span class="s6">));</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="s5"><b>return</b></span> <span class="s5"><b>this</b></span>.getCourseText<span class="s6">(</span><span class="s10">elementNode</span><span class="s6">);</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span>}</p>
+<p class="p2"><br></p>
+<p class="p1">}</p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4f76cb}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #4e9072}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; min-height: 22.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.PingFang SC'; color: #4e9072}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #3933ff}
+    span.s1 {color: #000000}
+    span.s2 {font: 18.0px '.PingFang SC'}
+    span.s3 {text-decoration: underline}
+    span.s4 {color: #931a68}
+    span.s5 {font: 18.0px 'Helvetica Neue'; color: #000000}
+    span.s6 {font: 18.0px 'Helvetica Neue'}
+    span.s7 {color: #0326cc}
+    span.s8 {font: 18.0px '.PingFang SC'; color: #000000}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span></span><span class="s2">/</span>**</p>
+<p class="p1"><span class="Apple-tab-span">	</span> * <span class="s2">上传文件</span><span class="s3">upfile</span><span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-tab-span">	</span> * sendKeys<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-tab-span">	</span> * <span class="s2">上传头像</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span> *<span class="s2">/</span></p>
+<p class="p2"><span class="Apple-tab-span">	</span><span class="s4"><b>public</b></span> <span class="s4"><b>void</b></span> upHeader<span class="s2">()</span><span class="Apple-converted-space"> </span></p>
+<p class="p2"><span class="Apple-tab-span">	</span>{</p>
+<p class="p3"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> &lt;a class="<span class="s3">avator</span>-<span class="s3">btn</span>-fake" <span class="s3">herf</span>="javascript:void<span class="s2">(</span>0<span class="s2">)</span>"&gt;<span class="s2">上传头像</span>&lt;<span class="s2">/</span>a&gt;</p>
+<p class="p3"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> &lt;input id="upload" class="hide" title="<span class="s2">上传头像</span>" name="fileField" accept="image<span class="s2">/</span><span class="s3">gif</span><span class="s2">,</span>image<span class="s2">/</span><span class="s3">jpeg</span><span class="s2">,</span>image<span class="s2">/</span><span class="s3">jpg</span><span class="s2">,</span>image<span class="s2">/</span><span class="s3">png</span>" type="file"<span class="s2">/</span>&gt;</p>
+<p class="p3"><span class="s2">//</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> &lt;input class="hide" name="type" value="1" type="hidden"<span class="s2">/</span>&gt;</p>
+<p class="p4"><br></p>
+<p class="p5"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s6"> </span>上传头像</p>
+<p class="p5"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>//<span class="s6"> </span>点击上传</p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s2">//</span> <span class="s2">点击</span>a<span class="s2">标签下的</span>input<span class="s2">控件//</span>type="file"</p>
+<p class="p6"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s7">driver</span><span class="s1">.findElement</span><span class="s8">(</span><span class="s1">By.<i>id</i></span><span class="s8">(</span>"upload"<span class="s8">))</span><span class="s1">.sendKeys</span><span class="s8">(</span><span class="s2">“</span>E:\\Users\\Zhou\\Downloads\\IMG_7880.PNG"<span class="s8">);</span></p>
+<p class="p2"><span class="Apple-tab-span">	</span>}</p>
+</body>
+</html>
