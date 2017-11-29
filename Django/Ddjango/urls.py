@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from GetJson import getJson
-from GetJson import login
+
+from Ddjango.ZYJson.GetJson import getJson
+from Ddjango.ZYJson.GetJson import login,loginPost
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls), #http://127.0.0.1(local):8000
     url(r'^getJson/', getJson),
-    url(r'^login/', login)
+    url(r'^login/', login), #GET
+    url(r'^loginPost/', loginPost)
 ]

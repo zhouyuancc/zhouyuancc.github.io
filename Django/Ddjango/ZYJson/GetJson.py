@@ -10,18 +10,13 @@ def getJson(request) :
     result = {}
     result['key1'] = "value1"
     result['key2'] = "value2"
-    result = json.dumps(result)
+    result = json.dumps(result) # 转json格式
     return HttpResponse(result, content_type='application/json;charset=utf-8')
 
 
-# 登录的GET/POST方法
+# 登录的GET方法
 def login(request):
-    if request.method == "POST":
-        user = request.POST.get("user")
-        psw = request.POST.get("psw")
-        return HttpResponse(user)
-
-    elif request.method == "GET":
+    if  request.method == "GET":
         # http://127.0.0.1:8000/login/?user=user&psw=psw
         user = request.GET.get("user")
         psw = request.GET.get("psw")
@@ -32,7 +27,21 @@ def login(request):
         result = json.dumps(result)
         #{"user": "user", "psw": "psw"}
         return HttpResponse(result, content_type='application/json;charset=utf-8')
+    else:
+        return render_to_response('index.html')
 
+# 登录的POST方法
+def loginPost(request):
+    if request.method == "POST":
+        user = request.POST.get("user")
+        psw = request.POST.get("psw")
+        # 序列化
+        result = {}
+        result['user'] = user
+        result['psw'] = psw
+        result = json.dumps(result)
+        # {"user": "user", "psw": "psw"}
+        return HttpResponse(result, content_type='application/json;charset=utf-8')
     else:
         return render_to_response('index.html')
 
