@@ -39,11 +39,15 @@ class RunTest:
                     print "depend_case: " + depend_case
 
                     self.depend_data = DependentData(depend_case)
-                    print "self.depend_data: " + type(self.depend_data)
+                    print type(self.depend_data)
 
                     # 响应数据
                     depend_response_data = self.depend_data.get_data_for_key(i)
-                    print "depend_response_data: "+depend_response_data
+                    if depend_response_data == None:
+                        self.data.write_result(i, 'fail')
+                        print "测试失败"
+                        return
+                    print depend_response_data
 
                     # 获取依赖的key
                     depend_key = self.data.get_depend_key(i)

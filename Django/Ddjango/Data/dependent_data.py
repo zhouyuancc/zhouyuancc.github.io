@@ -37,21 +37,26 @@ class DependentData:
     def get_data_for_key(self, row):
 
         depend_data = self.excelData.get_depend_key(row)
-        print "depend_data: "+type(depend_data)
+        print depend_data
 
         response_data = self.run_dependent()
-        print "response_data: "+type(response_data)
+        print "response_data: "+str(type(response_data))
+        print response_data
 
         json_exe = parse(depend_data)
         # print "json_exe: " + str(json_exe)
 
         madle = json_exe.find(response_data)
         print "madle: " + str(madle)
-        print "[math.value for math in madle][0]: "+[math.value for math in madle][0]
-        # for math in madle:
-        #     # math是字典: math.value
-        return [math.value for math in madle][0]
-        # 返回 第一个且只有一个 的math.value
+
+        if madle != []:
+            print "[math.value for math in madle][0]: "+[math.value for math in madle][0]
+            # for math in madle:
+            #     # math是字典: math.value
+            return [math.value for math in madle][0]
+            # 返回 第一个且只有一个 的math.value
+        else:
+            return None
 
 if __name__ == '__main__':
     order = {
@@ -78,5 +83,6 @@ if __name__ == '__main__':
     }
     res = "data.out_trade_no"
     json_exe = parse(res)
+    # 从json中找parse(res): data字典out_trade_no键的值
     madle = json_exe.find(order)
     print [math.value for math in madle][0]
