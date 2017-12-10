@@ -10,6 +10,7 @@ from Ddjango.ZYTool.RunMethodTool import RunMethod
 from Ddjango.Data.get_excelData import GetExcelData
 from Ddjango.ZYTool.CommonUtil import CommonTool
 from Ddjango.Data.dependent_data import DependentData
+from Ddjango.ZYTool.SendEmail import SendEmail
 
 class RunTest:
     def __init__(self):
@@ -17,10 +18,13 @@ class RunTest:
         self.run_method = RunMethod()
         self.data = GetExcelData()
         self.commonTool = CommonTool() # 文件CommonUtil中的CommonTool类
+        self.send_mail = SendEmail() # 文件SendEmail中的SendEmail类
 
     # 程序执行的主入口
     def go_on_run(self):
         res = None
+        pass_count = []
+        fail_count = []
         #10 0,1,2,3,...,9
         rows_count = self.data.get_case_lines()
         for i in range(1, rows_count):
@@ -44,9 +48,10 @@ class RunTest:
                     # 响应数据
                     depend_response_data = self.depend_data.get_data_for_key(i)
                     if depend_response_data == None:
-                        self.data.write_result(i, 'fail')
+                        self.data.write_result(i, depend_case)
+                        fail_count.append(i)
                         print "测试失败"
-                        return
+                        continue
                     print depend_response_data
 
                     # 获取依赖的key
@@ -61,12 +66,22 @@ class RunTest:
                 if self.commonTool.is_contain(expect, res):
                     # 写入excel的实际结果
                     self.data.write_result(i, 'pass')
+                    pass_count.append(i)
                     print "测试通过"
                 else:
                     # 写入excel的实际结果
-                    self.data.write_result(i, 'fail')
+                    self.data.write_result(i, res)
+                    fail_count.append(i)
                     print "测试失败"
                 # print res
+        print "---------"
+        print pass_count
+        print fail_count
+        print len(pass_count)
+        print len(fail_count)
+        # 发送邮件 - case结果统计
+        # 此次运行接口个数共11.0个, 通过个数为0.0个, 失败个数为11.0, 通过率为0.00%, 失败率为100.00%
+        self.send_mail.send_main(pass_count, fail_count)
 
 if __name__ == '__main__':
     run = RunTest()
