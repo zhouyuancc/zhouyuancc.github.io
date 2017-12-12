@@ -21,4 +21,21 @@ res = requests.post(url, data).json()
 response_url = res['data']['url'][0]
 request_url = response_url + "&callback=jQuery21008240514814031887_1508666806688&_=1508666806689"
 cookie = requests.get(request_url).cookies
-print cookie
+# print cookie
+# <RequestsCookieJar[<Cookie apsid=M5M2Q3YzBkOGVjYzdkYzE3OTM4M2IwYzIwYjRkMWYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANTI0OTE5MQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADc2NjMyNGI4OWE3MWMzNDMxMDFhOTczMTMxZWY0NTk0LpV%2BWi6Vflo%3DMG for .imooc.com/>, <Cookie cvde=5a2f952e436dd-1 for .imooc.com/>, <Cookie imooc_isnew=1 for .imooc.com/>, <Cookie imooc_isnew_ct=1513067822 for .imooc.com/>, <Cookie imooc_uuid=e816328e-3428-4ba4-b55f-7b0725d35bd6 for .imooc.com/>, <Cookie loginstate=1 for .imooc.com/>, <Cookie PHPSESSID=1qunbuud8ln47gun0hu7808qa5 for www.imooc.com/>]>
+
+# cookiejar类型 转换成 dict字典
+cookie = requests.utils.dict_from_cookiejar(cookie)
+# print cookie
+# {'loginstate': '1', 'apsid': 'M5M2Q3YzBkOGVjYzdkYzE3OTM4M2IwYzIwYjRkMWYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANTI0OTE5MQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADc2NjMyNGI4OWE3MWMzNDMxMDFhOTczMTMxZWY0NTk0LpV%2BWi6Vflo%3DMG', 'imooc_isnew_ct': '1513067822', 'cvde': '5a2f952e436dd-1', 'imooc_isnew': '1', 'PHPSESSID': '1qunbuud8ln47gun0hu7808qa5', 'imooc_uuid': 'e816328e-3428-4ba4-b55f-7b0725d35bd6'}
+# 拿到cookie
+print cookie['apsid']
+# M5M2Q3YzBkOGVjYzdkYzE3OTM4M2IwYzIwYjRkMWYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANTI0OTE5MQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGJkYmQyNWYwNDQ2ZjQ4ZThlYmI2YjdmZmVmZTllMmEwhpV%2BWoaVflo%3DMG
+
+url1 = "http://baidu.com"
+print requests.get(url = url1, cookies = cookie).text
+
+
+
+
+

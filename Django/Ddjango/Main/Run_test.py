@@ -59,6 +59,10 @@ class RunTest:
                     # 依赖的返回数据 更新到request_data的依赖key
                     request_data[depend_key] = depend_response_data
 
+                # cookie
+                if header == 'write':
+                    # res = self.
+
                 res = self.run_method.run_main(method, url, request_data, header)
 
                 # print type(expect) # <type 'unicode'>
