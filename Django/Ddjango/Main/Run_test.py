@@ -11,6 +11,8 @@ from Ddjango.Data.get_excelData import GetExcelData
 from Ddjango.ZYTool.CommonUtil import CommonTool
 from Ddjango.Data.dependent_data import DependentData
 from Ddjango.ZYTool.SendEmail import SendEmail
+from Ddjango.ZYTool.operation_header import OperationHeader
+from Ddjango.ZYTool.OperationJsonTool import OperationJson
 
 class RunTest:
     def __init__(self):
@@ -61,9 +63,19 @@ class RunTest:
 
                 # cookie
                 if header == 'write':
-                    # res = self.
-
-                res = self.run_method.run_main(method, url, request_data, header)
+                    res = self.run_method.run_main(method, url, request_data)
+                    op_header = OperationHeader(res)
+                    op_header.write_cookie()
+                elif header == 'yes':
+                    op_json = OperationJson('../DataConfig/cookie.json')
+                    cookie = op_json.getJsonData('apsid')
+                    # cookie需要一个字典
+                    cookies = {
+                        'apsid':cookie
+                    }
+                    res = self.run_method.run_main(method,url,request_data,cookies)
+                else:
+                    res = self.run_method.run_main(method, url, request_data)
 
                 # print type(expect) # <type 'unicode'>
                 # print type(res) # <type 'unicode'>

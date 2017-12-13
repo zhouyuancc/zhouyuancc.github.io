@@ -35,6 +35,9 @@ print cookie['apsid']
 url1 = "http://baidu.com"
 print requests.get(url = url1, cookies = cookie).text
 
+class OperationHeader:
+    pass
+
 
 
 

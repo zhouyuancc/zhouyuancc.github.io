@@ -26,11 +26,13 @@ class DependentData:
         row_num = self.opera_excel.get_row_num(self.case_id)
         # 获取接口要传的参数
         request_data = self.excelData.get_data_for_json(row_num)
-        header = self.excelData.is_header(row_num)
+        # header = self.excelData.is_header(row_num)
+        # if header == 'yes':
+            # operajson取值
         method = self.excelData.get_request_method(row_num)
         url = self.excelData.get_request_url(row_num)
         # 执行
-        res = run_method.run_main(method, url, request_data, header)
+        res = run_method.run_main(method, url, request_data)
         return json.loads(res)
 
     # 根据 依赖的key 去获取执行 依赖测试case 的响应, 然后返回
