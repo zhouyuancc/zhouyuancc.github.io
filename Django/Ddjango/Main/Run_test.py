@@ -79,7 +79,10 @@ class RunTest:
 
                 # print type(expect) # <type 'unicode'>
                 # print type(res) # <type 'unicode'>
-                if self.commonTool.is_contain(expect, res):
+
+                # 预期结果 字典 与 从数据库获取的 实际结果的 字典 相等
+                if self.commonTool.is_equal_dict(expect, res) == 0:
+                # if self.commonTool.is_contain(expect, res):
                     # 写入excel的实际结果
                     self.data.write_result(i, 'pass')
                     pass_count.append(i)

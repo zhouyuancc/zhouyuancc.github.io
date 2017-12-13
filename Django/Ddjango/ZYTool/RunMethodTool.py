@@ -8,9 +8,9 @@ class RunMethod:
         res = None
         if cookies != None:
             # headers
-            res = requests.post(url=url, data=data, cookies=cookies)
+            res = requests.post(url=url, data=data,verify=False, cookies=cookies)
         else:
-            res = requests.post(url=url, data=data)
+            res = requests.post(url=url, data=data,verify=False)
         # status_code 状态码 200 404 500 505
         print 'post状态码: '+ str(res.status_code)
         return res.json()
@@ -32,6 +32,8 @@ class RunMethod:
             res = self.post_main(url, data, cookies)
         else:
             res = self.get_main(url, data, cookies)
+
+        return json.dumps(res, ensure_ascii=False)
         # 格式化json
-        return json.dumps(res, ensure_ascii=False, sort_keys=True, indent=2)
+        # return json.dumps(res, ensure_ascii=False, sort_keys=True, indent=2)
 

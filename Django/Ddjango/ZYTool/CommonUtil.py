@@ -1,4 +1,7 @@
 # coding:utf-8
+
+import json
+
 class CommonTool:
 
     '''
@@ -29,6 +32,26 @@ class CommonTool:
             flag = False
         return flag
 
+
+    '''
+    判断2个字典是否相等
+    '''
+    def is_equal_dict(self, dict_one, dict_two):
+
+        # 若dict_one是字符串
+        if isinstance(dict_one, str):
+            # 字符串 转 字典
+            dict_two = json.loads(dict_one)
+
+        if isinstance(dict_two, str):
+            dict_two = json.loads(dict_two)
+
+        # 判断2个字典是否相等
+        # return
+            # 0: 相等
+            # 1: dict_one 大
+            # -1: dict_one 小
+        return cmp(dict_one, dict_two)
 
 
 
